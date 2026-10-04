@@ -1,0 +1,653 @@
+{
+ "replay_matches_saved": true,
+ "target": {
+  "key": "('make', ('made', (('edge', 2), ('reach', 0), ('hard', 3), ('contain', 0), ('warm', 0), ('float', 0), ('tight', 0), ('plastic', 0), ('fuel', 0), ('flex', 0))))",
+  "type": "behaviour",
+  "first_year": 115,
+  "people_first_10y": 3,
+  "last_year": 991,
+  "lasting": true
+ },
+ "kind_profile": {
+  "edge": 2,
+  "reach": 0,
+  "hard": 3,
+  "contain": 0,
+  "warm": 0,
+  "float": 0,
+  "tight": 0,
+  "plastic": 0,
+  "fuel": 0,
+  "flex": 0
+ },
+ "first_ever_of_kind": {
+  "year": 4,
+  "how": "play",
+  "who": "p00025",
+  "sig": "flint/flint"
+ },
+ "first_deliberate_make": {
+  "year": 115,
+  "who": "p00113",
+  "sig": "flint/flint"
+ },
+ "makers_in_first_10_years": [
+  "p00094",
+  "p00113",
+  "p00123"
+ ],
+ "sigs_of_this_kind": {
+  "flint/flint": {
+   "events": 15,
+   "first_year": 4,
+   "recipe": {
+    "verb": "strike",
+    "target": "flint",
+    "tool": "flint"
+   },
+   "first_by": "p00020",
+   "first_year_known": 2,
+   "involves_clay": false
+  },
+  "flint/stone": {
+   "events": 8,
+   "first_year": 36,
+   "recipe": {
+    "verb": "strike",
+    "target": "flint",
+    "tool": "stone"
+   },
+   "first_by": "p00001",
+   "first_year_known": 0,
+   "involves_clay": false
+  }
+ },
+ "learning_of_these": [
+  [
+   9,
+   "p00031",
+   "p00004",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   9,
+   "p00023",
+   "p00004",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   12,
+   "p00035",
+   "p00004",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   17,
+   "p00041",
+   "p00004",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   19,
+   "p00013",
+   "mark:..v",
+   "flint/flint",
+   "read"
+  ],
+  [
+   22,
+   "p00047",
+   "p00004",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   22,
+   "p00039",
+   "p00048",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   23,
+   "p00001",
+   "p00048",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   24,
+   "p00039",
+   "p00048",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   25,
+   "p00017",
+   "p00048",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   28,
+   "p00001",
+   "p00025",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   29,
+   "p00049",
+   "p00004",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   31,
+   "p00054",
+   "p00025",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   34,
+   "p00053",
+   "p00034",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   36,
+   "p00044",
+   "mark:ovv",
+   "flint/stone",
+   "read"
+  ],
+  [
+   38,
+   "p00063",
+   "p00025",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   38,
+   "p00060",
+   "mark:.vv",
+   "flint/stone",
+   "read"
+  ],
+  [
+   38,
+   "p00061",
+   "p00035",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   38,
+   "p00056",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   39,
+   "p00064",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   39,
+   "p00055",
+   "p00035",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   39,
+   "p00044",
+   "mark:^.v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   39,
+   "p00044",
+   "mark:^.v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   39,
+   "p00044",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   40,
+   "p00044",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   40,
+   "p00044",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   40,
+   "p00044",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   40,
+   "p00044",
+   "mark:^.v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   40,
+   "p00062",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   40,
+   "p00026",
+   "mark:^.v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   40,
+   "p00060",
+   "p00048",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   40,
+   "p00026",
+   "mark:^.v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   41,
+   "p00026",
+   "mark:^.v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   41,
+   "p00026",
+   "mark:^.v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   41,
+   "p00066",
+   "p00035",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   41,
+   "p00067",
+   "mark:..v",
+   "flint/stone",
+   "read"
+  ],
+  [
+   44,
+   "p00062",
+   "p00070",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   44,
+   "p00057",
+   "p00070",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   45,
+   "p00069",
+   "p00023",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   46,
+   "p00058",
+   "p00053",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   46,
+   "p00071",
+   "p00023",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   47,
+   "p00035",
+   "p00023",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   47,
+   "p00051",
+   "p00035",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   49,
+   "p00051",
+   "p00053",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   54,
+   "p00047",
+   "p00055",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   56,
+   "p00033",
+   "p00060",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   57,
+   "p00058",
+   "p00023",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   59,
+   "p00061",
+   "p00055",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   61,
+   "p00078",
+   "p00063",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   62,
+   "p00066",
+   "p00023",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   63,
+   "p00081",
+   "p00082",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   64,
+   "p00068",
+   "p00082",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   68,
+   "p00051",
+   "p00055",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   68,
+   "p00086",
+   "p00082",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   69,
+   "p00061",
+   "p00055",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   69,
+   "p00035",
+   "p00055",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   72,
+   "p00051",
+   "p00053",
+   "flint/stone",
+   "taught"
+  ],
+  [
+   72,
+   "p00084",
+   "p00091",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   72,
+   "p00087",
+   "p00091",
+   "flint/flint",
+   "taught"
+  ],
+  [
+   73,
+   "p00093",
+   "mark:v^|",
+   "flint/stone",
+   "read"
+  ]
+ ],
+ "people": {
+  "p00123": {
+   "id": "p00123",
+   "name": "Sosei",
+   "born_year": 106,
+   "age_at_115": 8.9,
+   "generation": 4,
+   "genes": {
+    "curiosity": 0.46,
+    "diligence": 0.4,
+    "sociability": 0.36,
+    "kindness": 0.62,
+    "temper": 0.75,
+    "anxiety": 0.37,
+    "care": 0.51,
+    "boldness": 0.56
+   },
+   "mother": "Hadeirin",
+   "father": "Meivir",
+   "alive": true,
+   "death": null,
+   "skills": {
+    "foraging": 1.0,
+    "hunting": 0.0,
+    "crafting": 0.14
+   },
+   "recipes_now": [
+    "((clay+clay)#fiber+wood)#fiber",
+    "(clay+clay)#fiber",
+    "(clay+fiber)#fiber",
+    "(fiber+stone)#fiber",
+    "flint/flint",
+    "stone/stone"
+   ]
+  },
+  "p00025": {
+   "id": "p00025",
+   "name": "Daiyei",
+   "born_year": 1,
+   "age_at_115": 113.9,
+   "generation": 1,
+   "genes": {
+    "curiosity": 0.46,
+    "diligence": 0.4,
+    "sociability": 0.32,
+    "kindness": 0.51,
+    "temper": 0.77,
+    "anxiety": 0.31,
+    "care": 0.67,
+    "boldness": 0.41
+   },
+   "mother": "Roshous",
+   "father": "Tokeir",
+   "alive": false,
+   "death": [
+    62,
+    "old age"
+   ],
+   "skills": {
+    "foraging": 1.0,
+    "hunting": 0.0,
+    "crafting": 0.82
+   },
+   "recipes_now": []
+  },
+  "p00094": {
+   "id": "p00094",
+   "name": "Vetibin",
+   "born_year": 70,
+   "age_at_115": 44.3,
+   "generation": 3,
+   "genes": {
+    "curiosity": 0.68,
+    "diligence": 0.38,
+    "sociability": 0.43,
+    "kindness": 0.5,
+    "temper": 0.54,
+    "anxiety": 0.26,
+    "care": 0.57,
+    "boldness": 0.36
+   },
+   "mother": "Muyor",
+   "father": "Laken",
+   "alive": false,
+   "death": [
+    124,
+    "old age"
+   ],
+   "skills": {
+    "foraging": 1.0,
+    "hunting": 0.01,
+    "crafting": 0.29
+   },
+   "recipes_now": []
+  },
+  "p00113": {
+   "id": "p00113",
+   "name": "Mouthir",
+   "born_year": 96,
+   "age_at_115": 18.8,
+   "generation": 4,
+   "genes": {
+    "curiosity": 0.41,
+    "diligence": 0.52,
+    "sociability": 0.53,
+    "kindness": 0.49,
+    "temper": 0.61,
+    "anxiety": 0.4,
+    "care": 0.78,
+    "boldness": 0.58
+   },
+   "mother": "Beho",
+   "father": "Voushu",
+   "alive": false,
+   "death": [
+    130,
+    "starvation"
+   ],
+   "skills": {
+    "foraging": 1.0,
+    "hunting": 0.0,
+    "crafting": 0.15
+   },
+   "recipes_now": []
+  }
+ },
+ "passive_firings_before_year_115": 36,
+ "passive_firings_total_to_135": 47,
+ "makes_per_year_105_125": {
+  "105": 0,
+  "106": 0,
+  "107": 0,
+  "108": 3,
+  "109": 1,
+  "110": 0,
+  "111": 0,
+  "112": 0,
+  "113": 0,
+  "114": 0,
+  "115": 1,
+  "116": 1,
+  "117": 1,
+  "118": 1,
+  "119": 0,
+  "120": 2,
+  "121": 2,
+  "122": 0,
+  "123": 0,
+  "124": 0,
+  "125": 0
+ },
+ "population_by_decade": [
+  29,
+  27,
+  28,
+  33,
+  33,
+  34,
+  34,
+  33,
+  31,
+  32,
+  37,
+  40,
+  47
+ ]
+}
