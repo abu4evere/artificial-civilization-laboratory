@@ -1,5 +1,18 @@
 # Artificial Civilization Laboratory
 
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
+[![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen)](pyproject.toml)
+[![Last commit](https://img.shields.io/github/last-commit/abu4evere/simulated-world)](https://github.com/abu4evere/simulated-world/commits/master)
+
+**Human nature built in, culture left to emerge.** An agent-based simulation
+of a small prehistoric people on a set of islands. Bodies, feelings, memory,
+weather, animals and the physics of materials are programmed; tools, fire,
+shelter, myths, symbols, trust and feuds are not. Whatever culture appears is
+discovered by the people themselves, passed on by teaching and talk, and lost
+when nobody remembers it. A read-only historian names what happened, and
+pre-registered experiments ([`experiments/`](experiments/)) measure how far
+it gets.
+
 A small world you can watch but not control. Twenty people start out knowing
 nothing: no tools, no fire, no farming, no rules. Everything after that is up
 to them.
