@@ -243,31 +243,59 @@ def _wet_and_dry(world, p) -> None:
             if h[1] <= 0 or it["wet"] >= 8:
                 it["holds"] = None
 
-    # Passive water catchment & submersion (E7)
-    if tile.water or (weather.raining(world, p.loc) and pile_shape(tile.pile)[1] < 0.3):
-        for it in p.items:
-            cap = matter.can_hold(it, "water")
-            if cap > 0:
-                h = it.get("holds")
-                if h is None or h[0] == "water":
-                    cur = h[1] if h else 0
-                    if cur < cap:
-                        it["holds"] = ["water", cap]
-                        world.emit("consequence", p.id, None, p.loc, what="water_passive", thing=it["sig"])
+    _passive_water(world, p, tile)
+    _passive_heat(world, p, tile)
 
-    # Passive radiant heat / baking & smoking (E7)
-    if tile.fire > 0:
-        heat_level = 6
-        for i, it in enumerate(list(p.items)):
-            if it.get("plastic", 0) >= 50 and it.get("wet", 0) <= matter.DRY:
-                out, burned = matter.heat(it, heat_level)
-                if out is not None and out["sig"] != it["sig"]:
-                    p.items[i] = out
-                    knowhow.remember_recipe(world, p, out["sig"], {"verb": "heat", "target": it["sig"]}, "heated", props=out)
-                    world.emit("consequence", p.id, None, p.loc, what="ceramic_passive", thing=out["sig"])
-        if p.food > p.kept:
-            p.kept = p.food
-            world.emit("consequence", p.id, None, p.loc, what="food_heated")
+
+def _passive_water(world, p, tile) -> None:
+    """E7 (spec 3.1). Rain falls into any open watertight hollow thing carried outside a covered heap,
+    and going into a river or lake fills it. A week of rain is the only measure of rain there is, so
+    it fills the thing."""
+    submerged = tile.water or tile.biome == "river"
+    if not (submerged or (weather.raining(world, p.loc) and pile_shape(tile.pile)[1] <= 0.5)):
+        return
+    for it in p.items:
+        cap = matter.can_hold(it, "water")
+        h = it.get("holds")
+        if cap > 0 and (h is None or h[0] == "water") and (h[1] if h else 0) < cap:
+            it["holds"] = ["water", cap]
+            world.emit("consequence", p.id, None, p.loc, what="water_passive", thing=it["sig"],
+                       how="submerged" if submerged else "rain")
+
+
+def _passive_heat(world, p, tile) -> None:
+    """E7 (spec 3.2). A fire hot enough (6+) sets whatever dry plastic stuff is carried by it, a
+    shaped thing or a lump of raw clay, the same way holding it in the fire would. Food by a fire
+    already rots slower in the smoke; that is only counted here."""
+    if tile.fire <= 0:
+        return
+    if p.food > 0:
+        world.emit("consequence", p.id, None, p.loc, what="food_by_fire")
+    level = tile.fire_heat
+    if level < 6:
+        return
+    for i, it in enumerate(list(p.items)):
+        if it.get("plastic", 0) >= 50 and it.get("wet", 0) <= matter.DRY:
+            out, _ = matter.heat(it, level)
+            if out is not None and out["sig"] != it["sig"]:
+                p.items[i] = out
+                _baked(world, p, it["sig"], out, level)
+    for m in matter.MATERIALS:
+        if matter.RAW[m][7] >= 50 and p.mats.get(m, 0.0) >= 1.0 and p.damp.get(m, 0) <= matter.DRY:
+            thing = matter.raw_props(m)
+            thing["wet"] = 0
+            out, _ = matter.heat(thing, level)
+            if out is not None and out["sig"] != thing["sig"]:
+                from .actions import _keep
+                p.mats[m] -= 1.0
+                _keep(p, out, world.cfg.item_limit)
+                _baked(world, p, m, out, level)
+
+
+def _baked(world, p, part: str, out: dict, level: int) -> None:
+    knowhow.remember_recipe(world, p, out["sig"], {"verb": "heat", "part": part, "level": level}, "heated",
+                            props=out)
+    world.emit("consequence", p.id, None, p.loc, what="ceramic_passive", thing=out["sig"])
 
 
 def _who_is_inside(world, living: list) -> dict:
