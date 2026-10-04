@@ -1,0 +1,16 @@
+seed 101: done, 77 years, 21s, identical at 100: None
+  seed 102: year 100 identical to E1: True
+seed 102: done, 200 years, 710s, identical at 100: True
+  seed 103: year 100 identical to E1: True
+seed 103: done, 200 years, 332s, identical at 100: True
+  seed 104: year 100 identical to E1: True
+seed 104: done, 200 years, 716s, identical at 100: True
+  seed 105: year 100 identical to E1: True
+  seed 105: year 100 identical to E1: True
+seed 105: done, 185 years, 214s, identical at 100: True
+  seed 106: year 100 identical to E1: True
+seed 106: done, 200 years, 383s, identical at 100: True
+  seed 107: year 100 identical to E1: True
+seed 107: done, 200 years, 365s, identical at 100: True
+  seed 108: year 100 identical to E1: True
+seed 108: done, 200 years, 195s, identical at 100: True

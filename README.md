@@ -1,0 +1,254 @@
+# Artificial Civilization Laboratory
+
+A small world you can watch but not control. Twenty people start out knowing
+nothing: no tools, no fire, no farming, no rules. Everything after that is up
+to them.
+
+## Their world, always on
+
+Their world lives on its own clock: **fifteen real minutes is one day for them**.
+A week passes every hour and three quarters, a year about every four days, and
+a generation about every three months. It keeps going whether or not anyone is
+watching. The people know nothing of hours, weeks or years; those are only
+shown to you.
+
+| To | Do this |
+|---|---|
+| start it in the background, with no window | double-click `start_world.bat` |
+| look in | double-click `watch_world.bat`, or open http://127.0.0.1:8765/ |
+| stop it | double-click `stop_world.bat` (it saves first) |
+
+What you see:
+- **The land.** Trees, berry bushes, rocks and deer change with the seasons:
+  blossom in spring, red leaves in autumn, snow in winter.
+- **Days and nights.** Each of their days is fifteen minutes here. People wake
+  at dawn, walk out to the week's work, come home at dusk and sleep around the
+  fire.
+- **People.** Each one has arms and legs, hair and clothes in their family's
+  colour. They pick berries, chop wood, strike stones (with sparks), hunt
+  deer with spears, carry babies on their backs, sit by fires, court and fight.
+- **Conversations.** Whoever spent the week with someone (talking, courting,
+  caring, giving food) stays with them through the day, and the two talk back
+  and forth. What they say comes from what really passed between them in the
+  simulation:
+  - news ("Did you hear? Ka killed Mo!");
+  - a skill taught ("Watch: strike flint with stone");
+  - thanks for food, or a cry of "Thief!".
+
+  The listener answers from their own feelings: "No... not Mo!" if they loved
+  Mo, "We have to watch out for Ka" if they didn't. Bold speech carries real
+  news or knowledge; lighter speech is everyday talk. The side panel lists
+  every line as it is said.
+- **Evenings.** By the fire, couples talk over the day. Parents tell their
+  children stories taken from their own memories ("I remember when Neishoul
+  died. I still miss them."). That is how old events reach the young.
+- **What they make.** Huts, fires, baskets, sown rows and spears appear as the
+  people work them out.
+- **Real weather.** Rain, snow, storms (a dark patch over the land) and floods
+  on the river banks are drawn when they really happen in their world.
+- **Marks.** Scratches people leave on rock, wood or the ground, drawn where
+  they are. They mean nothing unless the people come to link them with
+  something.
+- **Their clock.** The panel shows their time of day (for example
+  `06:42 · morning`), the day of their week, the season and the year. Only you
+  see it; they have no clock.
+
+Scroll to zoom in and drag to look around. Click anyone to follow them; the
+camera stays with them, and the side panel shows their family, what they
+remember, what they know how to make, what they have come to believe, and
+**what is on their mind**:
+- the thoughts pulling at them this week, strongest first, and whether they
+  are focused or overthinking;
+- the choices they weighed and the one they took;
+- what puzzles them, and how many times they have gone back to test it;
+- what they were told but have not tried yet, and who told them;
+- the marks they know, and what each has come to go with for them;
+- their feelings: mood, fear, anger, grief, loneliness, thirst.
+Nothing on the page can change their world.
+
+The world is kept in `world/`:
+- It saves after every week.
+- If the computer is off for a while, it catches up on the weeks it missed
+  when it starts again, so their time never stands still.
+- `world/chronicle.md` is everything that has happened so far.
+- `python -m acl live --new` begins a new world. The old one is moved to
+  `world/old/`, never deleted.
+
+### Putting it online so it never stops
+
+`Dockerfile` and `fly.toml` run the same world on a server that never sleeps,
+at about $2 a month on Fly.io. Online, the page is watch-only, and nothing
+outside the server can stop or speed up the world.
+
+## Trying things out
+
+```bash
+python -m acl watch
+```
+
+That opens a separate, throwaway world at whatever speed you like. Your
+people's world is not touched.
+
+## What is built in, and what is not
+
+**Built in, as nature:**
+- **Bodies:** hunger, cold, sickness, ageing, birth and death.
+- **Feelings:** love for one's children, grief, anger, fear, loneliness, and
+  grudges against people who hurt you or yours.
+- **Memory**, and the urge to tell others what happened.
+- **Learning:** trying things, noticing what worked, and copying people who
+  seem to do well.
+- **Physics:** what stone, flint, bone, wood, fiber and hide are like, what
+  happens when you strike one against another or tie them together, how fire
+  burns, and how seed grows in the ground.
+
+**Not built in, and left for them:**
+- tools and weapons;
+- making fire, and keeping it;
+- shelter and dwellings;
+- sowing seed, and storing food;
+- trade, leaders, bands and settlements;
+- revenge customs and feuds.
+
+Nothing the people think with contains a list of inventions. Nobody is told
+that flint struck with stone leaves a sharp edge, or that hides and wood piled up keep the
+winter out. If someone finds out, it is because they fiddled with things and
+noticed what helped. They teach what they found to their children, or it dies
+with them.
+
+The [historian](acl/historian.py) watches and gives names afterwards: "the
+first blade", "the first fire made by people", "the first dwelling", "a feud".
+It judges inventions only by what they can do (edge, reach, hardness, how they
+hold and how they warm). It never influences anyone, and a test checks that.
+
+All the rules and numbers are in [DESIGN.md](DESIGN.md).
+
+## A run, in its own words
+
+From seed 42. These lines are copied from the chronicle the historian wrote:
+
+> **Year 1** Veleiko struck flint with flint and was left with a sharp edge: the first blade.
+> **Year 5** Naber tied a blade and wood together with fiber and was left with a sharp point on a long shaft: the first spear.
+> **Year 7** Thoulailis struck flint where dry things lay, and they caught: the first fire made by people.
+> **Year 10** Mutuden took in the orphan Saikei, no relation, the first time a stranger raised another's child.
+> **Year 11** At (12, 5) the heap of things people had left grew big enough to keep out a fifth of the winter cold: the first dwelling. Veleiko had put in the most.
+
+## Commands
+
+```bash
+python -m acl live
+```
+Their world, on its own clock. `--hours-per-day` changes the pace, and `--new` begins a new world.
+
+```bash
+python -m acl stop
+```
+Stop it, saving first.
+
+```bash
+python -m acl watch --seed 42
+```
+A throwaway world at any speed. `--speed` sets weeks per second, and `--out DIR` saves a report of what you watched when you stop.
+
+```bash
+python -m acl run --seed 42 --years 100
+```
+Run without watching. Writes a report, chronicle, event log and snapshots to `runs/seed42/`.
+
+```bash
+python -m acl resume runs/seed42/final.json.gz --years 50
+```
+Carry on from a snapshot.
+
+```bash
+python -m acl check --seeds 1-10 --years 100
+```
+Score the success criteria across many seeds.
+
+```bash
+python -m acl replay --seed 42 --years 40
+```
+Prove the same seed always gives the same history, whether run straight through or resumed from a snapshot.
+
+```bash
+python -m pytest
+```
+Run the tests.
+
+It needs Python 3.10 or newer and nothing else. No packages and no network.
+A 100-year run takes about a minute.
+
+## What a run writes
+
+| File | What it is |
+|---|---|
+| `report.html` | Charts (population, who can make what, what people believe, dwellings, fields, fires, stores), the final map, the chronicle |
+| `chronicle.md` | The history the historian wrote |
+| `history.json` | Yearly statistics, bands, settlements, feuds, oral history |
+| `metrics.json` | The numbers the success criteria use |
+| `events.jsonl.gz` | Every event, one per line |
+| `snapshot_y*.json.gz`, `final.json.gz` | Full saved worlds you can resume |
+
+## Success criteria for this first version
+
+The `check` command scores each seed on six criteria:
+1. People are still alive after 100 years.
+2. The population grew past the founders.
+3. At least 3 generations were born.
+4. At least half of children reached 16.
+5. People lead varied lives (normalised action entropy ≥ 0.5).
+6. At least 5 of these 8 unprogrammed patterns appeared:
+   - exchange between unrelated people;
+   - bands;
+   - revenge;
+   - settlements;
+   - a made thing that 30% of people know;
+   - fire made by hand;
+   - dwellings;
+   - sowing or storing food on purpose.
+
+These are health checks, not targets. Passing on one seed proves little, which
+is why `check` runs many.
+
+## Project layout
+
+| File | Contents |
+|---|---|
+| `acl/config.py` | Every number |
+| `acl/matter.py` | Materials, striking, tying, what things do, heaps |
+| `acl/world.py` | Land, seasons, weather, seeds, fire, the weekly loop, saving |
+| `acl/person.py` | A person |
+| `acl/mind.py` | How a person decides |
+| `acl/actions.py` | What happens when they act |
+| `acl/knowhow.py` | What people work out, and how it passes on |
+| `acl/social.py` | Memories, witnesses, grudges |
+| `acl/information.py` | Telling and believing: imperfect retelling, the listener's judgement, hearsay |
+| `acl/inquiry.py` | Surprise, puzzles and going back to test |
+| `acl/marks.py` | Marks, and what people come to link them with |
+| `acl/thought.py` | Attention: what is on someone's mind, focus, overthinking |
+| `acl/mindview.py` | What is on someone's mind, in words, for the page |
+| `acl/geo.py` | The islands, rivers, lakes and kinds of land |
+| `acl/fauna.py` | Animals and the food chain |
+| `acl/weather.py` | Rain, droughts, storms, floods, cold, water and thirst |
+| `acl/decision.py`, `acl/experiment.py` | Experiment 0: the decision interface and its read-only logs |
+| `acl/biology.py` | Eating, cold, sickness, birth, death, feelings, learning |
+| `acl/historian.py` | The read-only historian |
+| `acl/viewer.py`, `acl/viewer.html` | The live 2D world, its clock, saving and catching up |
+| `start_world.bat`, `watch_world.bat`, `stop_world.bat` | One-click start, look in, stop on Windows |
+| `Dockerfile`, `fly.toml` | Running it online |
+| `acl/report.py` | The HTML report |
+| `acl/runner.py`, `acl/checks.py`, `acl/__main__.py` | Running, checking, the command line |
+
+## Not yet
+
+- **LLM-driven people.** Kept out on purpose for now, because a language model
+  already knows about money and farming and would copy rather than invent. One
+  could later write diaries or give voice to the customs the historian finds.
+- **More physics to discover:** clay and pottery, cooking that changes food,
+  disease that spreads.
+- **Lies, requests and promises.** People can tell stories, show skills and
+  pass on beliefs, but cannot ask, promise or deliberately deceive. Those come
+  after the lower layers, by choice.
+- **Rules made by the people themselves**, such as who may take food from
+  whose store and what happens to a killer. Today these only show up as
+  patterns of revenge and avoidance.

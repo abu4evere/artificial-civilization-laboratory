@@ -1,0 +1,8 @@
+code_baseline 901 pop at 50/100/150: [7, 0] fires: 24 person-weeks at a fire: 60
+code_e6 901 pop at 50/100/150: [2, 0] fires: 23 person-weeks at a fire: 49
+code_baseline 902 pop at 50/100/150: [13, 4, 0] fires: 32 person-weeks at a fire: 79
+code_e6 902 pop at 50/100/150: [20, 10, 1] fires: 16 person-weeks at a fire: 129
+code_baseline 903 pop at 50/100/150: [0] fires: 9 person-weeks at a fire: 10
+code_e6 903 pop at 50/100/150: [4, 0] fires: 27 person-weeks at a fire: 150
+code_baseline 904 pop at 50/100/150: [0] fires: 7 person-weeks at a fire: 12
+code_e6 904 pop at 50/100/150: [31, 37, 54] fires: 38 person-weeks at a fire: 202

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# The live world (state, logs, archived worlds) belongs to this machine
+world/
+runs/
+
+# Experiment world snapshots: large and regenerable from seed + frozen code.
+# The per-run JSON summaries, logs and reports are kept.
+experiments/**/*.json.gz
+
+# Local tooling and editor files
+.claude/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Office lock files
+~$*

@@ -1,0 +1,297 @@
+{
+ "seed": 302,
+ "traced": "clay^5",
+ "years": 100,
+ "replay_matches_year100": true,
+ "opportunities": {
+  "at a fire": {
+   "adult_weeks": 31,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 13,
+    "join": 4,
+    "talk": 4,
+    "play": 2,
+    "make": 2,
+    "give": 2
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding clay": {
+   "adult_weeks": 16,
+   "step_among_top_choices": 0,
+   "step_taken": 2,
+   "chosen_instead": {
+    "forage": 7,
+    "join": 2,
+    "talk": 2,
+    "make": 2,
+    "attack": 1,
+    "gather": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire with raw food": {
+   "adult_weeks": 24,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 8,
+    "join": 4,
+    "talk": 4,
+    "play": 2,
+    "give": 2,
+    "attack": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding dry clay": {
+   "adult_weeks": 6,
+   "step_among_top_choices": 0,
+   "step_taken": 1,
+   "chosen_instead": {
+    "forage": 3,
+    "attack": 1,
+    "make": 1,
+    "join": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding a shaped clay thing": {
+   "adult_weeks": 8,
+   "step_among_top_choices": 0,
+   "step_taken": 2,
+   "chosen_instead": {
+    "forage": 4,
+    "play": 2,
+    "put": 1,
+    "talk": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding a DRY shaped clay thing": {
+   "adult_weeks": 3,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 2,
+    "talk": 1
+   },
+   "scores_when_considered": []
+  }
+ },
+ "held_in_fire": [
+  [
+   272,
+   "p00006",
+   "clay~point",
+   "burned, cracked or only dried"
+  ],
+  [
+   686,
+   "p00039",
+   "clay",
+   "clay^5"
+  ]
+ ],
+ "maker": {
+  "id": "p00039",
+  "name": "Beimak",
+  "genes": {
+   "curiosity": 0.59,
+   "diligence": 0.21,
+   "sociability": 0.16,
+   "kindness": 0.27,
+   "temper": 0.53,
+   "anxiety": 0.55,
+   "care": 0.24,
+   "boldness": 0.34
+  },
+  "born_tick": 456,
+  "died": [
+   700,
+   "starvation"
+  ]
+ },
+ "trace": {
+  "events": [
+   {
+    "t": 686,
+    "k": "play",
+    "a": "p00039",
+    "thing": "clay^5"
+   },
+   {
+    "t": 702,
+    "k": "knowledge_lost",
+    "thing": "clay^5"
+   }
+  ],
+  "uses": [],
+  "weekly": [
+   {
+    "t": 688,
+    "who": "p00039",
+    "loc": [
+     2,
+     24
+    ],
+    "chose": "talk",
+    "itemval": 0.0,
+    "knows": true,
+    "holds": false,
+    "puzzles": [],
+    "considered": [
+     [
+      "rest",
+      "",
+      0.32,
+      0
+     ],
+     [
+      "gather",
+      "stone",
+      0.3,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      0.15,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 692,
+    "who": "p00039",
+    "loc": [
+     1,
+     27
+    ],
+    "chose": "gather",
+    "itemval": 0.0,
+    "knows": true,
+    "holds": false,
+    "puzzles": [],
+    "considered": [
+     [
+      "rest",
+      "",
+      0.51,
+      0
+     ],
+     [
+      "gather",
+      "stone",
+      0.12,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 696,
+    "who": "p00039",
+    "loc": [
+     1,
+     27
+    ],
+    "chose": "rest",
+    "itemval": 0.0,
+    "knows": true,
+    "holds": false,
+    "puzzles": [],
+    "considered": [
+     [
+      "rest",
+      "",
+      0.72,
+      1
+     ],
+     [
+      "talk",
+      "p00029",
+      0.36,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      0.36,
+      0
+     ],
+     [
+      "talk",
+      "p00042",
+      0.33,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 700,
+    "who": "p00039",
+    "loc": [
+     1,
+     27
+    ],
+    "chose": "rest",
+    "itemval": 0.0,
+    "knows": true,
+    "holds": false,
+    "puzzles": [],
+    "considered": [
+     [
+      "rest",
+      "",
+      0.78,
+      1
+     ],
+     [
+      "gather",
+      "stone",
+      0.12,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00029",
+      0.06,
+      0
+     ]
+    ]
+   }
+  ],
+  "maker": "p00039",
+  "maker_died": [
+   700,
+   "starvation"
+  ],
+  "lost": 702
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "seed": 304,
+ "traced": "(bone+hide)#fiber",
+ "years": 100,
+ "replay_matches_year100": true,
+ "opportunities": {
+  "at a fire": {
+   "adult_weeks": 43,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 20,
+    "talk": 6,
+    "join": 6,
+    "give": 4,
+    "explore": 2,
+    "rest": 2
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding clay": {
+   "adult_weeks": 24,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 13,
+    "join": 4,
+    "talk": 2,
+    "gather": 2,
+    "put": 1,
+    "give": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding dry clay": {
+   "adult_weeks": 16,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 9,
+    "gather": 2,
+    "join": 2,
+    "put": 1,
+    "give": 1,
+    "talk": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire with raw food": {
+   "adult_weeks": 30,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 11,
+    "talk": 6,
+    "join": 5,
+    "give": 3,
+    "explore": 2,
+    "put": 1
+   },
+   "scores_when_considered": []
+  },
+  "holding a watertight thing": {
+   "adult_weeks": 180,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 71,
+    "give": 42,
+    "talk": 32,
+    "join": 30,
+    "rest": 3,
+    "gather": 1
+   },
+   "scores_when_considered": []
+  },
+  "holding a watertight thing at fresh water": {
+   "adult_weeks": 102,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 38,
+    "give": 22,
+    "talk": 21,
+    "join": 20,
+    "gather": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding a shaped clay thing": {
+   "adult_weeks": 5,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 4,
+    "join": 1
+   },
+   "scores_when_considered": []
+  },
+  "at a fire holding a DRY shaped clay thing": {
+   "adult_weeks": 2,
+   "step_among_top_choices": 0,
+   "step_taken": 0,
+   "chosen_instead": {
+    "forage": 2
+   },
+   "scores_when_considered": []
+  }
+ },
+ "maker": {
+  "id": "p00014",
+  "name": "Reibik",
+  "genes": {
+   "curiosity": 0.35,
+   "diligence": 0.57,
+   "sociability": 0.83,
+   "kindness": 0.44,
+   "temper": 0.13,
+   "anxiety": 0.24,
+   "care": 0.21,
+   "boldness": 0.13
+  },
+  "born_tick": -1377,
+  "died": [
+   930,
+   "illness"
+  ]
+ }
+}
+held in fire: []
+traced events: [{'t': 636, 'k': 'play', 'a': 'p00014', 'thing': '(bone+hide)#fiber'}, {'t': 733, 'k': 'make', 'a': 'p00014', 'thing': '(bone+hide)#fiber'}, {'t': 799, 'k': 'learn', 'a': 'p00022', 'b': 'p00014', 'thing': '(bone+hide)#fiber', 'how': 'taught'}, {'t': 850, 'k': 'learn', 'a': 'p00038', 'b': 'p00014', 'thing': '(bone+hide)#fiber', 'how': 'taught'}, {'t': 854, 'k': 'learn', 'a': 'p00031', 'b': 'p00014', 'thing': '(bone+hide)#fiber', 'how': 'taught'}, {'t': 1907, 'k': 'learn', 'a': 'p00048', 'b': 'p00035', 'thing': '(bone+hide)#fiber', 'how': 'taught', 'meant': '(bone+hide)#hide'}, {'t': 3409, 'k': 'learn', 'a': 'p00076', 'b': 'p00035', 'thing': '(bone+hide)#fiber', 'how': 'taught', 'meant': '(bone+hide)#hide'}, {'t': 3501, 'k': 'learn', 'a': 'p00048', 'b': 'p00035', 'thing': '(bone+hide)#fiber', 'how': 'taught', 'meant': '(bone+hide)#hide'}, {'t': 3668, 'k': 'learn', 'a': 'p00044', 'b': 'p00035', 'thing': '(bone+hide)#fiber', 'how': 'taught', 'meant': '(bone+hide)#hide'}, {'t': 3744, 'k': 'knowledge_lost', 'thing': '(bone+hide)#fiber'}]
+uses: [[637, 'p00014', 0.209, 0.0], [638, 'p00014', 0.209, 0.031], [641, 'p00014', 0.209, 0.058], [641, 'p00014', 0.329, 0.081], [642, 'p00014', 0.209, 0.118], [645, 'p00014', 0.209, 0.132], [647, 'p00014', 0.209, 0.143], [650, 'p00014', 0.209, 0.153], [651, 'p00014', 0.12, 0.161], [652, 'p00014', 0.209, 0.155], [654, 'p00014', 0.209, 0.163], [655, 'p00014', 0.209, 0.17], [656, 'p00014', 0.247, 0.176], [658, 'p00014', 0.209, 0.187], [661, 'p00014', 0.209, 0.19], [663, 'p00014', 0.313, 0.193], [664, 'p00014', 0.329, 0.211], [665, 'p00014', 0.209, 0.229], [665, 'p00014', 0.247, 0.226], [666, 'p00014', 0.313, 0.229]]

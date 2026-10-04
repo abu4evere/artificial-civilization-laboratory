@@ -1,0 +1,1232 @@
+THE ARTIFICIAL CIVILIZATION
+The creator writes the laws of the universe, not the history.
+The agents create the history.
+Core Objective
+Create a persistent artificial world containing autonomous beings that live, learn, reproduce, form relationships, experience changing internal states, discover uses for the world around them, create tools, exchange resources, develop cultures, and potentially build civilizations. The creator should define conditions rather than directly write outcomes.
+The central constraint is emergence. No agent receives a predetermined life story. No civilization, culture, economy, technology tree, religion, government, nation, or other high-level social outcome is guaranteed. Agents can fail, die, lose knowledge, and disappear; different seeds should be capable of producing different histories.
+This expanded draft does not replace the experimental discipline. It makes the existing rules more explicit so the coder, experimenter, and observer can interpret the same rule in the same way.
+How to read this version
+The book has two layers. First is the 27-chapter long-term architecture. Second is the existing numbered-law ledger inherited from the earlier World Bible. The law numbers are intentionally preserved so experiments and implementation notes remain traceable across versions.
+The long-term architecture is a vision map, not a demand to implement everything immediately. The current MVP implementation focus is Chapters 1–8 of the 27-chapter architecture. Chapters 9–27 remain future layers that should be introduced only when experiments show the foundational world can support them without scripting outcomes.
+A detailed rule contains four parts: Meaning, Operational interpretation, Emergence boundary, and—where useful—an Example / test case. The extra text explains the rule; it does not create an additional hidden outcome.
+Long-term 27-Chapter Architecture
+Chapter 1 — First Principles &amp; Purpose  [MVP ACTIVE]
+Chapter 2 — Reality, Time &amp; Space  [MVP ACTIVE]
+Chapter 3 — Matter, Physics &amp; Chemistry  [MVP ACTIVE]
+Chapter 4 — Environment, Resources &amp; Natural Processes  [MVP ACTIVE]
+Chapter 5 — Biology, Bodies &amp; Life  [MVP ACTIVE]
+Chapter 6 — Genetics, Inheritance &amp; Evolution  [MVP ACTIVE]
+Chapter 7 — Ecology, Food Chains &amp; Ecosystem Dynamics  [MVP ACTIVE]
+Chapter 8 — Agents, Needs, Drives &amp; Individuality  [MVP ACTIVE]
+Chapter 9 — Perception, Cognition &amp; Decision-Making  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 10 — Memory, Learning &amp; Knowledge  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 11 — Emotion, Motivation &amp; Internal States  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 12 — Communication, Language &amp; Information  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 13 — Relationships, Family &amp; Social Behavior  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 14 — Discovery, Experimentation &amp; Science  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 15 — Culture, Symbols &amp; Traditions  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 16 — Creation, Invention &amp; Technology  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 17 — Cooperation, Competition &amp; Conflict  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 18 — Influence, Reputation &amp; Power  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 19 — Exchange, Specialization &amp; Economy  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 20 — Norms, Institutions &amp; Collective Organization  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 21 — History, Records &amp; Generational Continuity  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 22 — Civilization, Expansion &amp; Complexity  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 23 — Adaptation, Collapse, Death &amp; Extinction  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 24 — Emergence, Open-Endedness &amp; Unpredictability  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 25 — Observer, Measurement &amp; Experimental Method  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 26 — System Boundaries, Integrity &amp; Non-Cheating  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Chapter 27 — Reproducibility, Scaling &amp; Long-Term Worlds  [LONG-TERM / ADD ONLY WHEN JUSTIFIED]
+Structural fix made in this draft
+The earlier v8 document placed the 27-chapter architecture next to a seven-chapter historical law ledger, which could make the numbering look contradictory. This draft keeps both on purpose: the architecture describes the eventual scope, while the law ledger preserves the historical law numbers and experimental continuity. The MVP is explicitly limited to the first eight architecture chapters during the foundational stage.
+EXPANDED LAW LEDGER
+The following sections retain the law numbering from the existing World Bible. The purpose of the added prose is clarification, not creation of new outcomes. Where a law was already tied to experimental findings in v8.0, that relationship is preserved below.
+CHAPTER 1 — Universal Laws (Reality and Agent Foundations)
+Status: FROZEN
+LAW 1: Time Exists
+Meaning
+Simulation time is a real state variable. Events occur in an ordered sequence, agents age through that sequence, and causes must precede their effects in the world history. The observer may render time in a more convenient clock, but the underlying order remains part of the world.
+Operational interpretation
+Use a single authoritative simulation clock and a documented mapping between real time and simulated time. The current calendar uses 52 weeks of 7 days, with agents making decisions on the weekly schedule used by the current experiments.
+Emergence boundary
+Time may change the opportunities available to agents, but it must not automatically assign goals, progress, or civilization stages.
+Example / test case
+A storm occurring after a settlement is built cannot be recorded as if the settlement had been built in response to that future storm.
+LAW 2: Time Is Irreversible
+Meaning
+The world keeps a forward causal history. Once an event has happened, later agents may remember, forget, misinterpret, or record it, but the physical event itself is not rewritten.
+Operational interpretation
+Advance world state monotonically and preserve event order in logs so replay can reconstruct the same history.
+Emergence boundary
+Irreversibility does not require perfect memory. History can be socially or individually misremembered even while the underlying world history remains fixed.
+Example / test case
+A murder in year 20 can be remembered for generations, while later generations can still blame the wrong person.
+LAW 3: Space Exists
+Meaning
+Distance is part of the cost of living in the world. Agents must move through the world rather than teleporting between known locations.
+Operational interpretation
+Resolve movement tile by tile or through an equivalent path-consistent mechanism. Obstacles and terrain encountered along the route must matter.
+Emergence boundary
+Space must not be used as a hidden narrative gate. If two places are reachable under the world physics, agents can eventually attempt to reach them without a special story trigger.
+Example / test case
+A water gap blocks an agent without an appropriate floating capability because the route contains water; the path cannot simply be skipped.
+LAW 4: Physical Objects Have State
+Meaning
+Objects are not labels alone. Their properties, location, condition, and relationships to other objects can change as agents interact with them or as nature acts on them.
+Operational interpretation
+Represent physical objects with persistent state and resolve transformations from properties plus actions rather than from named recipe lookups.
+Emergence boundary
+Object state should not secretly contain the answer to what the object is “for.” Usefulness is discovered through outcomes.
+Example / test case
+Two pieces of material can acquire a different combined state when combined, without the simulation checking a predefined “tool recipe.”
+LAW 5: Energy Is Limited
+Meaning
+Useful action requires energy and energy is finite. Agents and organisms therefore face real tradeoffs between action, rest, feeding, movement, and other demands.
+Operational interpretation
+Track energy as part of the physical state and make major actions consume or alter it. Depletion can lead to weakness, reduced capability, or death according to the biological model.
+Emergence boundary
+Never use a universal reward that makes one activity valuable for all agents. Energy pressure creates constraints; agents still need to interpret circumstances.
+Example / test case
+A long journey can become impossible when an agent spends more energy moving than it can recover from the environment.
+LAW 6: World Produces Resources
+Meaning
+The environment generates, contains, or renews resources through world processes rather than through unlimited inventory.
+Operational interpretation
+Resources should originate from places, organisms, weather, growth, transformation, or other world processes that can be measured and changed.
+Emergence boundary
+Resource production should not guarantee that a population finds a particular resource at the right time. Availability is a world condition, not a quest marker.
+Example / test case
+Rain can create temporary fresh-water opportunities, while seasonal changes can alter where food is available.
+LAW 7: Resources Are Scarce
+Meaning
+Resources are finite relative to demand. Scarcity creates pressure, tradeoffs, competition, experimentation, specialization, and possible conflict without prescribing which of these outcomes will occur.
+Operational interpretation
+Give the world finite quantities, regeneration limits, spatial distribution, and consumption effects that agents can perceive imperfectly.
+Emergence boundary
+Do not force scarcity to produce markets or war. It simply makes resources matter.
+Example / test case
+A patch of edible plants can be depleted faster than it regenerates, changing the local options available to nearby agents.
+LAW 8: Nature Changes
+Meaning
+Weather, seasons, terrain conditions, populations, and other natural variables change over time. Different places can experience different conditions.
+Operational interpretation
+Use changing environmental state such as wet/dry periods, storms, floods, hard winters, and local temperature conditions already used by the current experiments.
+Emergence boundary
+Nature must not act as a hidden storyteller. A change can have consequences, but the world should not create a specific “plot” response.
+Example / test case
+A flood may destroy an access route, alter food availability, or have little visible effect depending on what is located there.
+LAW 9: Food Chains Exist
+Meaning
+Organisms exist within ecological relationships. Food is not an isolated inventory category: populations feed, compete, reproduce, migrate, and can affect one another.
+Operational interpretation
+Represent species or creature populations and ecological dependencies sufficiently for changes in one population to propagate through the environment.
+Emergence boundary
+The food chain must not force humans to eat a particular species or guarantee ecological balance. Extinction and population collapse remain possible.
+Example / test case
+A reduction in one prey population can reduce a predator population later, which can then change another population.
+LAW 10: Environment Is Indifferent
+Meaning
+The world has no main character and does not protect agents because they are important. Survival depends on the same world conditions for everyone.
+Operational interpretation
+World processes continue regardless of individual importance. Failure, death, extinction, and empty regions are valid states.
+Emergence boundary
+Do not rescue a promising agent, settlement, invention, or lineage merely because it is interesting to the observer.
+Example / test case
+A whole founding population can disappear and remain valid experimental data.
+LAW 11: Every Agent Is an Individual
+Meaning
+Each agent maintains its own state and history. Shared population-level statistics do not replace the individual differences that shape decisions.
+Operational interpretation
+Give agents persistent identity, local knowledge, memories, internal variables, and inherited traits where those systems exist.
+Emergence boundary
+Individuality does not mean every agent must be radically unique. Similar personalities can emerge from inheritance and environment without becoming scripted characters.
+Example / test case
+Two agents can experience the same event and later make different choices because their histories differ.
+LAW 12: Limited Knowledge
+Meaning
+An agent does not automatically know the full world state. Knowledge must have a source: experience, observation, communication, record, inference, or inheritance of the limited kinds the system explicitly allows.
+Operational interpretation
+Partition world truth from agent-visible state. The agent receives only the information its sensors, memory, communication, or learned models can provide.
+Emergence boundary
+The observer may know the world state for measurement, but agent logic must not read the observer’s hidden state.
+Example / test case
+An agent can know where a nearby river is from experience while remaining ignorant of a distant island.
+LAW 13: Imperfect Perception
+Meaning
+Agents can perceive incorrectly, incompletely, or with limited range and attention. What the observer renders as exact text is not automatically identical to what an agent “knows.”
+Operational interpretation
+Perception should produce an agent-level observation that can contain uncertainty, omission, or stale information. English speech bubbles and thought renderings are observer translations, not proof of an internal language.
+Emergence boundary
+Perception noise must not be a random excuse for arbitrary behavior; it should remain tied to the sensing limits and world conditions.
+Example / test case
+An agent may hear that water is nearby yet discover on arrival that the report was stale because the source meant water that was farther away.
+LAW 14: Needs Exist
+Meaning
+Agents and organisms have needs that create pressure on decisions and connect behavior to survival and internal state. Current foundations include needs such as hunger, thirst, sleep, shelter, safety, social connection, reproduction, autonomy, and curiosity.
+Operational interpretation
+Represent needs as changing internal conditions affected by environment and action. Need satisfaction should come from actual world consequences, not free counters.
+Emergence boundary
+Needs are pressures, not scripts. A hungry agent does not receive a hard-coded “find food” command; it evaluates available options through its decision system.
+Example / test case
+An agent near an unfamiliar edible organism may investigate because hunger and uncertainty coexist, then learn from the result.
+LAW 15: Drives Exist
+Meaning
+Agents can have persistent motivational tendencies such as survival, security, curiosity, social connection, status, reproduction, exploration, achievement, possession, or care.
+Operational interpretation
+Represent drives as individual tendencies that influence attention or action evaluation without directly selecting an action.
+Emergence boundary
+A drive must not force a universal behavior or guarantee a social institution. The same drive can express differently in different circumstances.
+Example / test case
+Two agents with strong social tendencies may still avoid one another if fear and past experience dominate the current context.
+LAW 16: Personality Influences but Does Not Determine
+Meaning
+Inherited or persistent traits bias how an agent responds without turning its future into a fixed script. Existing inherited temperament traits include dimensions such as curiosity, sociability, persistence, anxiety, temper, boldness, kindness, and care.
+Operational interpretation
+Use traits as weighted influences on perception, memory, goal formation, or action selection where appropriate. Preserve room for learning and experience to change outcomes.
+Emergence boundary
+Do not map a trait directly to a guaranteed action, role, job, morality, or fate.
+Example / test case
+A bold agent may approach an unfamiliar creature more often than a cautious agent, but either can learn to avoid it after costly encounters.
+LAW 17: Memory Is Selective
+Meaning
+Memory is not an exact database copy of the world. Agents retain some events, lose others, and interpret memories through their own experience.
+Operational interpretation
+Use bounded memory, importance or salience, abstraction, and forgetting mechanisms rather than unlimited perfect recall.
+Emergence boundary
+Memory errors can change social history, but the observer must retain separate world truth for measurement.
+Example / test case
+A remembered murder can persist across generations while details, names, or blame drift over time.
+LAW 18: Agents Learn From Experience; Failure Is Information
+Meaning
+Actions produce outcomes that can update beliefs, skills, preferences, and future expectations. Failure is therefore a source of information rather than merely a penalty.
+Operational interpretation
+Log the relation between chosen action and observed result, and allow the agent’s later decisions to use those experiences.
+Emergence boundary
+Learning must not grant omniscience. One failed attempt can update a belief without revealing a complete causal model.
+Example / test case
+An agent that becomes sick after eating an unfamiliar organism may lower its confidence that the organism is safe, without immediately knowing the chemical reason.
+LAW 19: Knowledge Is Shared Imperfectly
+Meaning
+Information can move between agents, but transmission can lose detail, distort meaning, arrive late, or be judged against the receiver’s existing trust and evidence.
+Operational interpretation
+Keep speaker knowledge, message content, receiver interpretation, and verified world outcome distinct.
+Emergence boundary
+Communication must not synchronize every agent into one shared global belief state.
+Example / test case
+A claim about an animal can spread as a story even after its original observation becomes uncertain or contested.
+LAW 20: Communication, Emotion, Relationships, Family &amp; Generations Are Foundational
+Meaning
+Agents interact through communication and social relationships, experience derived internal states, reproduce, and belong to generational processes. These systems give individual histories continuity beyond a single lifetime.
+Operational interpretation
+Keep speech, emotional state, relationship dimensions, family links, births, deaths, and generational inheritance as separate but interacting systems.
+Emergence boundary
+None of these systems guarantees friendship, love, marriage, hierarchy, religion, government, or another specific social institution.
+Example / test case
+A parent can pass on behavior or temperament without passing on the exact knowledge that produced the behavior.
+CHAPTER 2 — Emergence, Culture &amp; Civilization
+Status: FROZEN
+LAW 21: Principle of Emergence
+Meaning
+The creator supplies rules, constraints, resources, and agents; complex social structures must arise from interactions among those components rather than being inserted as finished outcomes.
+Operational interpretation
+Keep high-level structures outside the initial world state unless the experiment explicitly introduces them as conditions.
+Emergence boundary
+Do not pre-create governments, markets, religions, sports, professions, or nations merely to demonstrate that they exist.
+Example / test case
+If a market-like pattern appears because agents repeatedly exchange scarce goods, the pattern is an emergent result rather than a predefined “market” module.
+LAW 22: Shared Meaning Is Assigned by Agents
+Meaning
+A symbol, practice, or object gains social meaning when agents come to associate it with something and that association affects later behavior.
+Operational interpretation
+Start marks or symbolic tokens without built-in meanings and detect repeated agent-created associations.
+Emergence boundary
+The world must not declare “this symbol means water.” Meaning is a social state built from agent behavior.
+Example / test case
+A repeated mark near a water source can eventually become useful as a location cue if agents consistently connect the mark with that place.
+LAW 23: Symbol Evolution
+Meaning
+Meanings are not permanently fixed once discovered. They can broaden, narrow, split, merge, or drift as generations and contexts change.
+Operational interpretation
+Track symbolic associations over time and allow competing interpretations to coexist when the underlying evidence differs.
+Emergence boundary
+Symbol drift should not be programmed toward a desired language.
+Example / test case
+A mark first used for a particular shelter can later be treated as a general symbol for safe shelter if repeated use changes its social association.
+LAW 24: False Beliefs Are Allowed
+Meaning
+Agents can hold beliefs that are incomplete, outdated, incorrect, or contradicted by later evidence. A simulated society should not be forced toward perfect rationality.
+Operational interpretation
+Maintain a distinction between belief state and world truth, with confidence and update mechanisms that respond to evidence.
+Emergence boundary
+False belief must not be injected simply to make stories interesting. It should arise naturally from limited evidence, communication, memory, and interpretation.
+Example / test case
+An agent may believe a certain animal is dangerous because of hearsay even after many direct encounters are harmless.
+LAW 25: Rumors
+Meaning
+Information can spread beyond direct witnesses through social transmission, and each retelling can change fidelity.
+Operational interpretation
+Represent chains of transmission and keep source relationships distinct from verified truth.
+Emergence boundary
+Rumor generation should not assign a fixed “rumor count.” What becomes rumor depends on social pathways and repeated transmission.
+Example / test case
+A report of distant danger can spread through several agents and become stronger, weaker, or distorted before it reaches another group.
+LAW 26: Myths &amp; Legends
+Meaning
+Stories can persist longer than the events that produced them and can accumulate social meaning, simplification, and distortion.
+Operational interpretation
+Allow narratives to be remembered and transmitted across generations without requiring the original event to remain physically observable.
+Emergence boundary
+A myth is not required to become religion or ideology. It can remain a local story, warning, memorial, or explanation.
+Example / test case
+A killing remembered 180 years later can preserve the existence of the event while the identity of the killer becomes increasingly uncertain.
+LAW 27: Cultural Inheritance
+Meaning
+Behavioral patterns, symbols, stories, practices, and skills can persist socially between generations.
+Operational interpretation
+Permit imitation, teaching, observation, records, and repeated group practice to transfer patterns that are not encoded as genetic traits.
+Emergence boundary
+Cultural inheritance must compete with forgetting, death, isolation, and changing conditions.
+Example / test case
+A building practice can survive for many generations if successors repeatedly observe, imitate, and benefit from it.
+LAW 28: Goal Generation
+Meaning
+Agents can generate goals from unresolved needs, surprises, opportunities, conflicts, or prediction errors rather than receiving a complete task list from the creator.
+Operational interpretation
+Translate salient internal or environmental events into candidate objectives for the agent’s own action-selection system.
+Emergence boundary
+Do not hard-code high-level goals such as “become a farmer” or “build a government.” The goal mechanism creates pressure; the specific goal is local to the agent.
+Example / test case
+Repeated surprise about where food disappears can produce investigation without the world ever naming “study the food chain.”
+LAW 29: Invention Cycle
+Meaning
+Invention can arise through trying actions, combining materials or practices, observing consequences, and retaining successful procedures.
+Operational interpretation
+Provide primitive actions, properties, and a memory mechanism that can record useful sequences.
+Emergence boundary
+The cycle must not depend on a hidden recipe table.
+Example / test case
+An unfamiliar combination can become a reusable process only after an agent observes what happened and chooses to repeat it.
+LAW 30: Scripts and Reusable Procedures
+Meaning
+Agents can preserve successful sequences as procedures or macros so that complex behaviors do not have to be rediscovered from scratch each time.
+Operational interpretation
+Represent procedures as combinations of lower-level actions that remain subject to ordinary world resolution.
+Emergence boundary
+A script is not a guarantee of success. Changing conditions can make an old procedure fail.
+Example / test case
+A repeated sequence for handling a material can later become a learned procedure, but it may fail when the material’s condition changes.
+LAW 31: Technology Requires Preconditions
+Meaning
+Complex techniques require lower-level capabilities, materials, knowledge, and opportunities that make the technique possible.
+Operational interpretation
+Let the world’s action and property system naturally constrain what can be built.
+Emergence boundary
+Do not create a hard-coded technology tree. Preconditions arise from physics, materials, skills, and social transmission.
+Example / test case
+A deeper spear-like invention requires a suitable shaft, a point or cutting capability, and a process for combining them, rather than a “spear unlocked” flag.
+LAW 32: Surplus
+Meaning
+Persistent surplus is a world condition in which production, storage, or resource efficiency can exceed immediate consumption, creating new room for optional activity.
+Operational interpretation
+Let surplus result from successful strategies, resource abundance, storage, reduced needs, or cooperation.
+Emergence boundary
+Surplus does not automatically create markets or leisure classes. Those are possible later responses.
+Example / test case
+If food can be stored safely, an agent may have more time available for experimentation or social activity than before.
+LAW 33: Specialization
+Meaning
+Agents can become unevenly skilled or occupied because repeated practice, differing traits, local resources, social coordination, or opportunity make some activities more attractive than others.
+Operational interpretation
+Track learned competence or repeated practice without assigning fixed professions.
+Emergence boundary
+Do not create “farmer,” “smith,” or “merchant” roles as default categories. Roles must be discoverable social patterns.
+Example / test case
+A group may contain one person who becomes unusually skilled at making a certain object simply because they repeatedly practice the process.
+LAW 34: Trade
+Meaning
+Agents can exchange resources, services, information, or access when both parties perceive the exchange as useful under their circumstances.
+Operational interpretation
+Permit giving and reciprocal or conditional exchange through primitive interaction capabilities.
+Emergence boundary
+Do not require currency, market prices, contracts, or money. Those are possible inventions, not prerequisites.
+Example / test case
+An agent with extra food may exchange it for a tool it values more, even without a named “trade” system.
+LAW 35: Reputation
+Meaning
+Agents can carry forward judgments about others based on observed behavior, reported outcomes, and their own experience.
+Operational interpretation
+Maintain source-specific records that can influence trust separately from friendship or affection.
+Emergence boundary
+Reputation is not the same as a global score assigned by the world. It is relational and can differ between observers.
+Example / test case
+Someone can be trusted by one group and distrusted by another because their histories with that agent differ.
+LAW 36: Norms
+Meaning
+Repeated social expectations can stabilize into patterns that influence behavior even when they are not physically enforced.
+Operational interpretation
+Detect repeated behavioral regularities and permit social consequences such as approval, rejection, teaching, or retaliation.
+Emergence boundary
+Do not create a fixed moral code. A norm only exists if agents collectively reproduce a pattern.
+Example / test case
+A group may develop a repeated expectation to share a certain resource after repeated cooperative encounters.
+LAW 37: Institutions
+Meaning
+Durable coordination structures can form when repeated practices, records, roles, or authority relationships persist beyond individual encounters.
+Operational interpretation
+Allow stable patterns of coordination and information storage to persist across people and generations.
+Emergence boundary
+Do not spawn an institution because population reaches a threshold. The structure must be behaviorally supported.
+Example / test case
+A repeated process for resolving a resource dispute could become institutional if agents keep using and transmitting it.
+LAW 38: Diversity
+Meaning
+Different groups and individuals can maintain different beliefs, practices, symbols, skills, and social patterns under different histories and environments.
+Operational interpretation
+Preserve local conditions and imperfect information so neighboring populations are not forced into immediate cultural convergence.
+Emergence boundary
+Diversity is not a guaranteed value or objective. Some cultures can disappear; others can persist or merge.
+Example / test case
+Two islands can develop different practices because their food sources, hazards, and contact histories differ.
+LAW 39: Civilization Is a Process
+Meaning
+Civilization is not a switch or checklist. It is a changing pattern of population, knowledge, infrastructure, coordination, specialization, and accumulated history.
+Operational interpretation
+Measure civilization retrospectively through observable complexity rather than giving agents a “civilization level.”
+Emergence boundary
+Do not declare that a settlement becomes a civilization after reaching a numeric threshold.
+Example / test case
+A population may display advanced record keeping while remaining small and politically fragmented.
+LAW 40: Cultural Detection
+Meaning
+Culture must be detected from persistent behavior, symbols, and transmission rather than assumed from agent labels or creator intent.
+Operational interpretation
+Observer tools should search for repeated patterns across agents and generations.
+Emergence boundary
+Detection belongs to the observer and must not change agent behavior.
+Example / test case
+A practice counts as cultural only when it persists and affects behavior beyond one isolated individual action.
+LAW 41: Cultural Impact
+Meaning
+A cultural pattern matters when it changes what agents actually do, believe, remember, make, or coordinate.
+Operational interpretation
+Measure downstream behavioral effects rather than counting symbols alone.
+Emergence boundary
+A large number of marks without behavioral consequences is not automatically meaningful culture.
+Example / test case
+A shared mark becomes important when agents change travel or shelter decisions because they trust what it signals.
+LAW 42: Open-Endedness
+Meaning
+The world should permit novel combinations and structures not listed in advance.
+Operational interpretation
+Keep system boundaries at primitive actions, constraints, properties, and observations rather than outcome catalogs.
+Emergence boundary
+Open-endedness does not mean infinite complexity immediately. Capability emerges as existing primitives interact and are recombined.
+Example / test case
+A new social practice can arise without there being a code path named after that practice.
+LAW 43: Final Principle of Culture
+Meaning
+The creator simulates the conditions under which meaning and culture can emerge, not a finished culture.
+Operational interpretation
+Treat cultural mechanisms as enabling constraints and observer-detected patterns.
+Emergence boundary
+Do not convert cultural categories into mandatory world objects.
+Example / test case
+The simulator can detect a shared practice after it appears without having generated the practice beforehand.
+CHAPTER 3 — Laws of Knowledge
+Status: FROZEN
+LAW 44: Knowledge Is Not Innate
+Meaning
+Agents begin without a complete catalog of world facts or techniques. Knowledge must come from permitted sources.
+Operational interpretation
+Initialize only genuinely required biological or architectural priors and keep learned information separate.
+Emergence boundary
+Instinct-like defaults must not secretly contain the world’s useful technology.
+Example / test case
+An agent should not begin knowing that an unfamiliar plant is edible merely because the code has marked it as food in a human-readable database.
+LAW 45: Knowledge Is Personal and Local
+Meaning
+What one agent knows can differ from what another knows because exposure, travel, communication, and memory differ.
+Operational interpretation
+Attach knowledge or beliefs to agents or groups rather than maintaining a single global truth table for decision logic.
+Emergence boundary
+The observer can maintain global world truth for evaluation, but agents cannot use that hidden truth.
+Example / test case
+A hunter can know a safe route that a neighboring agent has never traveled.
+LAW 46: Knowledge Has Cost
+Meaning
+Acquiring, verifying, storing, transmitting, or using knowledge consumes resources such as time, energy, attention, risk, or social effort.
+Operational interpretation
+Tie learning opportunities to actual experiences, attention, and the cost of investigation.
+Emergence boundary
+Do not give knowledge a universal fixed price. Cost depends on the world and agent.
+Example / test case
+Testing whether a distant water report is accurate requires travel and exposes the tester to whatever hazards exist on that route.
+LAW 47: Sources of Knowledge
+Meaning
+Knowledge can originate from direct experience, experimentation, communication, inheritance of learned patterns, or inference.
+Operational interpretation
+Track provenance when practical so the observer can distinguish where a belief came from.
+Emergence boundary
+No source is automatically correct. Each source can be noisy or misleading.
+Example / test case
+An agent may learn that an animal is dangerous by being injured, seeing an injury, hearing a trusted report, or inferring danger from repeated evidence.
+LAW 48: Forms of Knowledge
+Meaning
+Knowledge can be declarative, procedural, social, causal, normative, or symbolic, and different forms can behave differently.
+Operational interpretation
+Represent useful distinctions where the implementation can support them without forcing every belief into a single structure.
+Emergence boundary
+Do not assume one data structure captures all human-like knowledge. The observer can treat them as analytical categories.
+Example / test case
+Knowing “this place has water” differs from knowing “how to make the container that carries water.”
+LAW 49: Knowledge Can Be Wrong
+Meaning
+A stored belief can disagree with world truth, sometimes for a long time.
+Operational interpretation
+Maintain separate world state and belief state and allow evidence to update confidence.
+Emergence boundary
+The system should not deliberately enforce a fixed percentage of false beliefs.
+Example / test case
+A local story about a dangerous animal can remain believed until contradictory evidence becomes stronger than the history supporting it.
+LAW 50: Knowledge Is Fragile
+Meaning
+Knowledge can disappear when people die, memory fails, records decay, or transmission stops.
+Operational interpretation
+Tie knowledge persistence to actual carriers: minds, practices, records, objects, and institutions when they exist.
+Emergence boundary
+Do not preserve every discovered technique globally unless the world gives it a carrier.
+Example / test case
+A technique known by one person can vanish after that person dies if nobody observed, recorded, or copied it.
+LAW 51: Knowledge Transmission Is Imperfect
+Meaning
+Teaching and communication transform information. Receivers may misunderstand, simplify, embellish, or reject what they hear.
+Operational interpretation
+Model the transmission chain separately from source truth and receiver belief.
+Emergence boundary
+Do not silently correct transmitted information to match the original source.
+Example / test case
+A repeated story can keep the event but alter the actor, location, or cause.
+LAW 52: Knowledge Can Be Externalized
+Meaning
+Knowledge can leave the mind and persist in physical form through marks, objects, structures, or other records.
+Operational interpretation
+Permit durable records when agents have the capability to create them and let those records be interpreted through experience.
+Emergence boundary
+Externalization must not provide semantic meaning for free. A mark begins without guaranteed interpretation.
+Example / test case
+A durable mark can preserve a technique after the original maker dies if later agents learn how to connect it with the practice.
+LAW 53: Specialization of Knowledge
+Meaning
+As knowledge accumulates, individuals or groups can know different subsets and become more capable in certain areas through repeated practice.
+Operational interpretation
+Allow uneven knowledge distribution and role-like specialization to arise through learning and opportunity.
+Emergence boundary
+No job titles are required. Specialization is a behavioral consequence of uneven knowledge.
+Example / test case
+One person may become the most reliable source for a particular material process because they repeatedly perform it.
+LAW 54: Meta-Knowledge
+Meaning
+Agents can hold knowledge about the reliability, source, difficulty, or limits of other knowledge.
+Operational interpretation
+Allow beliefs to include provenance and confidence, not just content.
+Emergence boundary
+Meta-knowledge must remain local and can itself be wrong.
+Example / test case
+An agent can know that a certain person is usually right about water reports without knowing why that person is reliable.
+LAW 55: Knowledge and Power
+Meaning
+Useful knowledge can change who can coordinate resources, predict events, perform valuable tasks, or influence others.
+Operational interpretation
+Let knowledge have consequences through the ordinary world rather than assigning it a direct “power” multiplier.
+Emergence boundary
+Knowledge need not always produce domination. It can also be shared, ignored, lost, or rendered obsolete.
+Example / test case
+Knowing a safe path during a storm can make one agent temporarily more valuable to a group.
+LAW 56: Verification and Trust
+Meaning
+Agents can compare claims with outcomes and maintain records of whether sources have held in the past.
+Operational interpretation
+Separate friendship-based trust from track records of tested accuracy. Verified or disproved claims should update source credibility.
+Emergence boundary
+The world must not globally label someone “truthful.” Credibility is held by individual receivers.
+Example / test case
+A receiver may increase confidence in a source after several water reports are verified, even if the source is not a close friend.
+LAW 57: Knowledge Accumulates
+Meaning
+Knowledge can build across generations when it is retained, transmitted, tested, and improved.
+Operational interpretation
+Allow successful practices to survive through memory, teaching, records, and repeated use.
+Emergence boundary
+Accumulation is not guaranteed. Isolation, forgetting, environmental change, and population loss can reverse it.
+Example / test case
+A simple process can become the starting point for a more complex invention if later agents understand and improve it.
+LAW 58: Knowledge Frontier
+Meaning
+At any time, there can be things no living agent or group currently knows, including facts the observer can measure externally.
+Operational interpretation
+Keep the internal knowledge space smaller than the full world state.
+Emergence boundary
+Do not reveal the hidden frontier merely because the creator knows it exists.
+Example / test case
+A mountain, species, material property, or distant population can remain unknown until someone obtains evidence.
+LAW 59: Knowledge Detection
+Meaning
+The observer can detect when a fact or technique has become widely known, specialized, lost, contested, or newly discovered.
+Operational interpretation
+Use read-only measurement across beliefs, practices, and transmission histories.
+Emergence boundary
+Detection must never write knowledge back into agents.
+Example / test case
+The observer can report that only two living agents know a process without making the process more likely to survive.
+LAW 60: Knowledge Is a Living, Contested, Incomplete Process
+Meaning
+Knowledge is never a finished global database. It changes through experience, dispute, transmission, verification, and loss.
+Operational interpretation
+Design systems so belief states, evidence, records, and learned procedures can update over time.
+Emergence boundary
+Do not collapse knowledge into one authoritative truth store that agents can query.
+Example / test case
+A population can simultaneously contain a correct procedure, a false explanation for it, and several competing stories about its origin.
+CHAPTER 4 — Laws of Discovery and Science
+Status: FROZEN
+LAW 61: Belief Is Not Knowledge
+Meaning
+A high-confidence belief is still a belief unless its support survives comparison with reality.
+Operational interpretation
+Keep belief/confidence separate from observer truth and expose the gap to experiments.
+Emergence boundary
+Do not award knowledge status because confidence is high or because many people repeat a claim.
+Example / test case
+Ten agents repeating the same untested rumor do not automatically create ten independent pieces of evidence.
+LAW 62: Reality Is the Final Arbiter
+Meaning
+When a belief about the physical world can be tested, the world outcome decides whether the prediction held.
+Operational interpretation
+Use actual world outcomes as the reference for post-hoc accuracy measurement.
+Emergence boundary
+Reality should not be altered to preserve a popular belief.
+Example / test case
+If an agent predicts water at a location and repeatedly finds none, the prediction should count as failed evidence even if many people believed it.
+LAW 63: Curiosity Creates an Opening
+Meaning
+Surprise, uncertainty, prediction error, or unexplained variation can create a reason for further investigation.
+Operational interpretation
+Allow unresolved surprises to influence attention or candidate goal generation.
+Emergence boundary
+Curiosity must not be a universal exploration reward. Its effect depends on agent traits, needs, emotions, memories, and circumstances.
+Example / test case
+An agent may investigate an unfamiliar organism because it is hungry and uncertain, while another ignores it because it is frightened or busy.
+LAW 64: Experimentation
+Meaning
+Experimentation is deliberate action taken to learn about the world rather than only to achieve an immediate practical outcome.
+Operational interpretation
+Permit agents to try controlled or repeated actions and observe consequences.
+Emergence boundary
+Do not require a formal scientific method. Early experiments can be messy, accidental, or socially transmitted.
+Example / test case
+Trying different ways to process a material can reveal a property even before an agent knows why the successful method works.
+LAW 65: Testing Requires Comparison
+Meaning
+A single surprising event is weak evidence. Repeated or comparative outcomes make it easier to distinguish a reliable pattern from chance.
+Operational interpretation
+Let agents compare outcomes across trials, locations, materials, people, or conditions.
+Emergence boundary
+The system should not force every agent to run identical experiments. Different agents can reach different confidence levels from different histories.
+Example / test case
+Testing a food item only once may be less informative than repeated outcomes across individuals and preparation methods.
+LAW 66: Falsification Is More Powerful Than Confirmation
+Meaning
+Evidence that contradicts a prediction should strongly reduce confidence, while a confirming outcome need not prove a claim absolutely.
+Operational interpretation
+Update beliefs so failed predictions matter materially; current methodology emphasizes being proved wrong more than being proved right.
+Emergence boundary
+Do not hard-code certainty. A false positive or accidental success can still influence a belief if the agent interprets it as evidence.
+Example / test case
+One reliable counterexample can seriously weaken a general belief that a certain location always contains water.
+LAW 67: Models Can Improve
+Meaning
+Agents can form simplified internal expectations about how things work and revise them after prediction errors.
+Operational interpretation
+Allow learned expectations or causal/procedural summaries to update with experience.
+Emergence boundary
+Do not require a single globally correct model or a perfect physics simulator inside every agent.
+Example / test case
+An agent can move from “this mark means water nearby” to “this mark often points toward water, but not always.”
+LAW 68: Hidden Regularities
+Meaning
+The world can contain patterns not obvious from immediate observation. Some regularities may only appear after repeated experience or transmission.
+Operational interpretation
+Keep enough environmental structure for repeated patterns to exist without labeling them for agents.
+Emergence boundary
+Do not expose hidden variables as cheat codes.
+Example / test case
+Seasonal food availability can become predictable to agents that spend enough time observing it.
+LAW 69: Discovery Can Be Individual or Collective
+Meaning
+Important discoveries can originate from one agent, a small group, or accumulated contributions across many people.
+Operational interpretation
+Let information and techniques move through social networks, records, and imitation.
+Emergence boundary
+Do not designate “the discoverer” in advance. The observer may detect first discovery after the fact.
+Example / test case
+One agent may notice a material property while another agent develops the first practical procedure based on it.
+LAW 70: Social Error Correction
+Meaning
+Groups can improve belief accuracy when independent experiences, disagreements, testing, or records reveal contradictions.
+Operational interpretation
+Permit competing claims to coexist and allow social transmission of evidence and source records.
+Emergence boundary
+A group is not automatically wise. Social pressure can also preserve false beliefs.
+Example / test case
+Several agents can challenge a water report after independently failing to find the reported source.
+LAW 71: Superstition Competes With Reliable Knowledge
+Meaning
+Explanations that feel socially satisfying can compete with explanations that predict reality well.
+Operational interpretation
+Allow beliefs to spread for social or emotional reasons while still permitting reality-based correction.
+Emergence boundary
+Do not create a predefined superstition system or force rationalism to win.
+Example / test case
+A ritual can persist because it is socially meaningful even after its supposed causal explanation repeatedly fails.
+LAW 72: Reliable Knowledge Under Pressure
+Meaning
+Knowledge that survives consequences can become more valuable because failure carries real cost.
+Operational interpretation
+Let survival, resource loss, illness, or social consequences make some prediction errors more consequential than others.
+Emergence boundary
+Reliability is still contextual. A source can be accurate in one domain and poor in another.
+Example / test case
+A wrong warning about a dangerous animal can cost more than a wrong claim about a minor resource.
+LAW 73: Discovery Cascades
+Meaning
+One discovery can create new questions, capabilities, resources, or experiments that increase the space of future discoveries.
+Operational interpretation
+Allow successful inventions and knowledge to change future options.
+Emergence boundary
+Do not prewrite the exact chain of discoveries. The cascade emerges from changed possibility space.
+Example / test case
+Learning to transport water can create new incentives to find containers, storage, or routes that were previously irrelevant.
+LAW 74: External Records Strengthen Discovery
+Meaning
+Durable records can preserve discoveries beyond an individual lifetime and reduce dependence on memory alone.
+Operational interpretation
+Let records become observable sources with their own track records when agents learn to interpret them.
+Emergence boundary
+A record can still be misunderstood, damaged, or forgotten. External storage is not perfect truth.
+Example / test case
+A mark documenting a successful technique can let a later generation rediscover it after all original users have died.
+LAW 75: Discovery Detection
+Meaning
+The observer can identify when a new causal regularity, technique, or reliable procedure appears in the world history.
+Operational interpretation
+Use read-only comparison across earlier and later world states and knowledge records.
+Emergence boundary
+Detection belongs to measurement; it does not announce discoveries to agents.
+Example / test case
+The observer can flag the first repeated successful use of a previously unknown process.
+LAW 76: Truth Is Approached, Not Given
+Meaning
+Reliable knowledge is a moving frontier produced by repeated testing and correction, not a finished database handed to agents.
+Operational interpretation
+Allow uncertainty, revision, and partial models to persist.
+Emergence boundary
+The creator may know ground truth but must not use that knowledge to shortcut agent learning.
+Example / test case
+An agent can know a useful correlation without understanding its underlying mechanism.
+CHAPTER 5 — Laws of Information
+Status: FROZEN
+LAW 77: Information Is Distinct From Knowledge
+Meaning
+Information is what is transmitted, stored, or exposed; knowledge is what an agent actually believes, understands, or can use.
+Operational interpretation
+Track messages and records separately from their effects on a receiver’s belief state.
+Emergence boundary
+A message does not become knowledge merely because it was delivered.
+Example / test case
+A warning can arrive intact but be rejected because the receiver distrusts its source.
+LAW 78: Information Has Cost
+Meaning
+Information requires channels, attention, storage, transmission effort, or access.
+Operational interpretation
+Make communication and record creation consume world resources where appropriate.
+Emergence boundary
+Do not assign an arbitrary universal cost to every message. Cost depends on medium and circumstances.
+Example / test case
+Sending a messenger across an island takes time and exposes the messenger to environmental risk.
+LAW 79: Information Travels Through Channels
+Meaning
+Speech, demonstration, marks, messengers, rituals, records, and other media can carry information.
+Operational interpretation
+Represent channels with their own reach, bandwidth, latency, and fidelity characteristics.
+Emergence boundary
+The channel should not secretly guarantee understanding.
+Example / test case
+A face-to-face demonstration may transmit a procedure more clearly than a short verbal description.
+LAW 80: Fidelity Is Never Perfect
+Meaning
+Transmission can omit, distort, reorder, or reinterpret information.
+Operational interpretation
+Allow noise, memory limits, ambiguous symbols, and social retelling to affect message fidelity.
+Emergence boundary
+Do not inject random corruption into every message regardless of medium. The failure mode should follow the channel and agent.
+Example / test case
+A long chain of retelling can change a warning even when the original speaker was accurate.
+LAW 81: Information Can Be Stored Externally
+Meaning
+Physical records can preserve information beyond the life of an individual.
+Operational interpretation
+Let agents create and later encounter durable marks or other persistent information carriers.
+Emergence boundary
+Storage capacity and interpretation remain limited; a record is not an omniscient archive.
+Example / test case
+A mark can preserve a location cue after the person who created it dies.
+LAW 82: Information Asymmetry Is Natural
+Meaning
+Different agents can hold different information because they occupy different places, have different experiences, or control different channels.
+Operational interpretation
+Allow unequal access to reports, records, locations, and observations.
+Emergence boundary
+Do not automatically equalize information across a population.
+Example / test case
+A traveler can know of a distant resource that nearby agents have never seen.
+LAW 83: Information Can Be Controlled
+Meaning
+Agents may choose when to share, withhold, distort, or limit access to information.
+Operational interpretation
+Allow ordinary social incentives and capabilities to influence communication.
+Emergence boundary
+Do not create a special “information control” mechanic when ordinary communication choices already produce it.
+Example / test case
+A person may keep a productive location secret because sharing it would change who arrives there.
+LAW 84: Trust Is Separate From Content
+Meaning
+A receiver evaluates both what was said and who or what the source is believed to be.
+Operational interpretation
+Keep message content separate from source reputation, relationship, and evidence history.
+Emergence boundary
+Do not make trust a universal truth meter. A trusted person can still be wrong.
+Example / test case
+A receiver may accept a report from a close friend despite weak evidence, while rejecting a stranger’s identical report.
+LAW 85: Information Enables Scale
+Meaning
+Coordination becomes possible across larger groups when information can travel reliably enough between people and places.
+Operational interpretation
+Allow messages and records to connect agents who cannot directly observe one another.
+Emergence boundary
+Scale should emerge from real channel reach and coordination costs, not from a population-size bonus.
+Example / test case
+A durable record can reduce the need for every new generation to rediscover the same route.
+LAW 86: Records Create Contested History
+Meaning
+Once events or claims are stored in records, different records can support different versions of history.
+Operational interpretation
+Keep source provenance and permit conflicting records to persist.
+Emergence boundary
+The observer can compare all records with ground truth, but agents should not automatically have that comparison.
+Example / test case
+Two marks created by different witnesses can disagree about what happened because each preserves a different interpretation.
+LAW 87: Information Can Become a Resource
+Meaning
+Access to timely, accurate, or rare information can have practical value when it changes decisions or outcomes.
+Operational interpretation
+Allow information scarcity to influence social behavior and exchange without defining money or markets.
+Emergence boundary
+Information need not always be valuable. Its value depends on what agents can do with it.
+Example / test case
+Knowing that a dangerous route is flooded may matter greatly before travel and very little afterward.
+LAW 88: Bandwidth, Latency, and Noise Matter
+Meaning
+Channels differ in how much information they can carry, how quickly it arrives, and how likely it is to lose fidelity.
+Operational interpretation
+Represent enough channel constraints to create meaningful differences between communication modes.
+Emergence boundary
+Do not optimize channels globally for realism if a simpler model already creates the intended conditions.
+Example / test case
+A local face-to-face report may be fast but short, while a durable mark may be slow to create but persist for years.
+LAW 89: Information-System Detection
+Meaning
+The observer can detect stable communication networks, record systems, message bottlenecks, or channels that change social coordination.
+Operational interpretation
+Measure flows without injecting information into the world.
+Emergence boundary
+Detection must remain read-only.
+Example / test case
+The observer can identify that a particular location acts as an information hub because messages repeatedly pass through it.
+LAW 90: Information Is the Circulatory System of Large Societies
+Meaning
+Large-scale coordination depends on information moving between people and places; without communication, complex coordination becomes difficult to sustain.
+Operational interpretation
+Let information systems influence the durability and reach of collective activity through ordinary communication mechanisms.
+Emergence boundary
+This does not guarantee large societies. Population size, resources, geography, and conflict can still prevent scale.
+Example / test case
+A settlement may have many people but remain locally fragmented if communication across neighborhoods is poor.
+INFLUENCE LAYER
+Status: FROZEN
+LAW 91: Beliefs Cannot Be Directly Written
+Meaning
+No external controller should directly set an agent’s belief to force a desired social outcome. The receiver performs the final update.
+Operational interpretation
+Implement communication as an input to the receiver’s own belief and decision process. Keep observer state separate from agent state.
+Emergence boundary
+Threats, demonstrations, persuasion, teaching, and authority can influence beliefs because they are agent-visible causes, but no hidden “set belief” operation is allowed.
+Example / test case
+A demonstration can change belief when the receiver interprets it as evidence; the creator cannot simply mark the receiver as convinced.
+LAW 92: Influence Depends on Multiple Levers
+Meaning
+Influence depends on the interaction of message clarity, trust, attention, social proof, emotional receptivity, evidence, and relationship context. These factors are conceptual levers, not a required runtime multiplication formula.
+Operational interpretation
+At runtime, use the agent’s ordinary perception, trust, attention, emotional state, evidence history, and relationship context. Use formal analysis later to study which factors actually mattered.
+Emergence boundary
+Do not inject a universal influence score or make influence automatically successful. The receiver can resist, misunderstand, ignore, or update.
+Example / test case
+A clear claim from a trusted friend can still fail to persuade if the receiver has strong contradictory evidence.
+CHAPTER 6 — Laws of Power
+Status: FROZEN
+LAW 93: Power Is Relational
+Meaning
+Power is not a permanent property of a person. It exists in relationships where one actor can reliably affect the options or behavior of another.
+Operational interpretation
+Represent power through resources, information, access, coordination, social dependence, or institutional position that can change over time.
+Emergence boundary
+Do not give an agent a global power stat that determines all interactions.
+Example / test case
+A person may have high influence over one resource but little influence over another group.
+LAW 94: Power Has Multiple Forms
+Meaning
+Power can arise from physical capability, economic control, information, social relationships, attention, or durable institutions.
+Operational interpretation
+Track the underlying sources rather than assuming a single universal power meter.
+Emergence boundary
+Forms can overlap but should not be collapsed into one mandatory hierarchy.
+Example / test case
+Control over a food source can create economic power without producing political authority.
+LAW 95: Attention Is Scarce
+Meaning
+Agents have limited ability to notice, process, remember, and respond to competing signals.
+Operational interpretation
+Model attention, focus, distraction, or overthinking as constraints on information processing.
+Emergence boundary
+Attention should not become a universal reward. It is a limited cognitive resource.
+Example / test case
+A hungry or frightened agent may ignore a complex social message because its attention is occupied by immediate survival.
+LAW 96: Influence Precedes Authority
+Meaning
+Repeated influence can become recognized authority when others treat a source as entitled to guide or coordinate behavior.
+Operational interpretation
+Allow repeated successful influence and social recognition to produce authority-like patterns.
+Emergence boundary
+Authority is not created by a hidden title assignment.
+Example / test case
+A person whose predictions repeatedly hold may begin to be consulted without the world naming them a leader.
+LAW 97: Coordination Is Power
+Meaning
+The ability to align multiple agents toward a shared action creates capabilities unavailable to isolated individuals.
+Operational interpretation
+Let communication, trust, roles, shared goals, and procedures permit coordinated activity.
+Emergence boundary
+Coordination can fail, fragment, or be contested.
+Example / test case
+Several agents can move a large object together even when none can move it alone.
+LAW 98: Authority Can Become Legitimate
+Meaning
+Others may continue following an authority because they perceive its role as valid, useful, fair, inherited, customary, or otherwise acceptable.
+Operational interpretation
+Allow legitimacy beliefs to arise from social history rather than defining legitimacy as a numeric property.
+Emergence boundary
+Legitimacy is not guaranteed by success or power and can disappear.
+Example / test case
+A dispute-resolution process may become accepted because agents repeatedly experience it as predictable and useful.
+LAW 99: Power Requires Maintenance
+Meaning
+Control can weaken when resources disappear, trust collapses, rivals emerge, knowledge spreads, or institutions lose support.
+Operational interpretation
+Make power dependent on conditions that must be continuously reproduced.
+Emergence boundary
+Do not freeze power relations once formed.
+Example / test case
+A once-dominant group can lose influence after its resource base becomes scarce.
+LAW 100: Institutions Make Power Durable
+Meaning
+Rules, roles, records, routines, and repeated expectations can preserve power beyond one individual interaction.
+Operational interpretation
+Allow persistent patterns of coordination and authority to survive through records and repeated behavior.
+Emergence boundary
+Institutions must still depend on living agents and resources; they are not magic entities.
+Example / test case
+A recurring decision procedure can continue after its original creator dies if others maintain and teach it.
+LAW 101: Power Can Concentrate
+Meaning
+Unequal control over scarce resources, information, coordination, or institutions can cause power to accumulate unevenly.
+Operational interpretation
+Permit asymmetric access and path-dependent accumulation.
+Emergence boundary
+Do not enforce inequality or class hierarchy as a required endpoint.
+Example / test case
+A small group controlling a scarce resource may become unusually influential if others depend on it.
+LAW 102: Power Is Contested
+Meaning
+Agents can resist, cooperate, compete, defect, challenge authority, or create alternatives to existing power structures.
+Operational interpretation
+Ensure agents retain agency and ordinary capabilities to interact, withdraw, coordinate, and challenge.
+Emergence boundary
+Do not script rebellion, revolution, or war. They are possible behavioral responses, not required features.
+Example / test case
+A group may abandon a dominant source if alternative resources or trusted relationships become available.
+LAW 103: Collapse Is Always Possible
+Meaning
+Any social or power structure can break down if its supporting conditions disappear.
+Operational interpretation
+Allow dependency chains, resource shortages, population loss, information failure, and leadership death to affect social structures.
+Emergence boundary
+Collapse should not be scheduled for dramatic effect.
+Example / test case
+An institution depending on a specific record can fragment if that record is destroyed and no one remembers its procedures.
+LAW 104: Final Law of Power
+Meaning
+Power emerges from the interaction of resources, knowledge, information, attention, relationships, coordination, and institutions, and remains contingent on changing conditions.
+Operational interpretation
+Treat power as an analytical outcome of the underlying systems rather than a primary world primitive.
+Emergence boundary
+Do not create a universal “power level” that agents can read.
+Example / test case
+The observer can explain a historical concentration of power after the fact without having caused it.
+CHAPTER 7 — Laws of Creation &amp; Invention
+Status: LOCKED
+LAW 105: Properties, Not Recipes
+Meaning
+Objects and materials should be represented by properties that can interact with actions, rather than by a list of named recipes.
+Operational interpretation
+Calculate outcomes from properties, action capabilities, and world conditions.
+Emergence boundary
+No “axe recipe” or “raft recipe” should be required if the same result can emerge from primitive operations and material properties.
+Example / test case
+Two materials can produce an unexpected useful object because their combined properties satisfy a physical condition.
+LAW 106: Primitive Actions Only
+Meaning
+The physical world exposes a compact set of atomic capabilities such as move, take, drop, eat, drink, rest, give, signal, combine, separate, or similar grounded operations.
+Operational interpretation
+Keep high-level outcomes out of the primitive action layer. Complex behavior emerges by sequencing primitives.
+Emergence boundary
+Do not encode “farm,” “trade,” “build house,” “play sport,” or “form government” as atomic actions.
+Example / test case
+A structure can emerge from repeated take, move, combine, place, and repeat behavior if the physical system permits it.
+LAW 107: Materials Are Defined by Properties
+Meaning
+Material identity matters through physical characteristics that affect what actions can do with it.
+Operational interpretation
+Maintain a small expandable property vocabulary and resolve transformations through those properties.
+Emergence boundary
+Properties should not secretly encode a final named use.
+Example / test case
+A material with reach, rigidity, edge, containment, warmth, or float-like properties can support different emergent uses.
+LAW 108: The World Resolves Outcomes
+Meaning
+Agents propose actions; the world determines what actually happens according to physical, biological, and social state.
+Operational interpretation
+Keep consequence resolution outside the decision policy. The agent can choose but cannot directly dictate the result.
+Emergence boundary
+The world resolver must not quietly “help” a desired action succeed because the agent chose it.
+Example / test case
+Combining two materials can fail, succeed partially, or create a new state depending on their actual properties and conditions.
+LAW 109: Usefulness Is Discovered, Not Declared
+Meaning
+An object is useful because agents experience or observe a consequence that matters to them, not because the creator assigned a human-readable purpose.
+Operational interpretation
+Make uses observable through outcomes such as carrying, warming, crossing, storing, or other world effects.
+Emergence boundary
+Do not automatically tell an agent what each object is good for.
+Example / test case
+A raft matters only after an agent experiences that it permits access to a place that would otherwise be unreachable.
+LAW 110: Processes Are Remembered and Repeated
+Meaning
+A successful sequence can become a repeatable procedure rather than a one-time coincidence.
+Operational interpretation
+Store learned sequences or structured knowledge about action conditions and outcomes.
+Emergence boundary
+Repetition should remain conditional. A procedure can stop working when inputs or environment change.
+Example / test case
+A successful method of preparing a material can become habitual among a group if it is remembered and taught.
+LAW 111: Processes Are Taught and Copied
+Meaning
+Agents can transmit successful procedures socially, allowing learned skills to spread beyond the original inventor.
+Operational interpretation
+Permit demonstration, imitation, instruction, and record-based learning.
+Emergence boundary
+Teaching remains imperfect and optional. A process can fail to spread or drift as it is copied.
+Example / test case
+One person’s successful technique can become common in a group without a global skill unlock.
+LAW 112: Improvement Is Open-Ended
+Meaning
+A successful process can sometimes be modified to improve speed, reliability, durability, efficiency, or suitability to new conditions.
+Operational interpretation
+Allow repeated experimentation and comparison over existing procedures.
+Emergence boundary
+Do not define a final optimal version or a fixed technology ladder.
+Example / test case
+A container can be modified repeatedly until a group discovers a more reliable way to carry water.
+LAW 113: Creation Changes the Possibility Space
+Meaning
+When agents create a new persistent object, process, symbol, structure, or institution, they may gain options that did not previously exist.
+Operational interpretation
+Let newly created states become normal inputs to later actions and decisions.
+Emergence boundary
+Creation changes available conditions; it does not announce the social result that must follow.
+Example / test case
+A bridge-like structure can create new movement routes, which may later change settlement patterns.
+LAW 114: Creation Knowledge Can Be Lost
+Meaning
+Invented procedures can disappear when knowledge carriers die, records decay, or the technique stops being practiced.
+Operational interpretation
+Tie invention persistence to actual transmission and storage mechanisms.
+Emergence boundary
+Do not keep every invention in a hidden global catalog.
+Example / test case
+A technique known by one isolated person can vanish without leaving a usable trace.
+LAW 115: Techniques Can Be Externalized
+Meaning
+Processes can be represented outside the mind through marks, demonstrations, stored objects, or built environments.
+Operational interpretation
+Let external records or persistent artifacts carry enough information for later learning where the agent can infer it.
+Emergence boundary
+Externalization must still require interpretation and can be misunderstood.
+Example / test case
+A sequence of marks can help later agents recover a construction process even if the original builder is gone.
+LAW 116: Invention Is Problem-Driven and Opportunity-Driven
+Meaning
+New techniques can arise from immediate needs, constraints, accidents, curiosity, environmental opportunities, or combinations of existing knowledge.
+Operational interpretation
+Allow multiple pathways into experimentation without imposing a single invention motive.
+Emergence boundary
+Do not attach a universal “invent more” reward.
+Example / test case
+A food shortage, a new material, or an unusual successful accident can each create pressure for experimentation.
+LAW 117: Genuine Invention Can Be Detected
+Meaning
+A new invention is meaningful when a behavior or state was not previously present and later becomes reproducible or socially transmissible.
+Operational interpretation
+Observer tools should compare before/after histories and detect novel stable processes.
+Emergence boundary
+Detection occurs after the fact; the observer should not declare an invention before the world demonstrates it.
+Example / test case
+The first repeated construction of a previously absent object can be flagged as an invention event.
+LAW 118: Final Physical Core
+Meaning
+The physical invention system reduces to matter or materials with properties plus primitive actions and a world resolver.
+Operational interpretation
+Keep this layer small enough that new combinations remain possible without writing outcome-specific code.
+Emergence boundary
+Any extra convenience layer must not bypass the physical core for agents.
+Example / test case
+A newly named tool should still operate through the same material and action rules as everything else.
+LAW 119: Invention Is Not Limited to Physical Objects
+Meaning
+Novelty can appear in norms, rituals, symbols, contracts, organizations, procedures, or decision methods as well as in physical artifacts.
+Operational interpretation
+Allow repeated social behavior and symbolic systems to become persistent patterns.
+Emergence boundary
+Do not instantiate specific institutions merely because this law mentions them.
+Example / test case
+A group can invent a new way of resolving disputes without creating a module called “court.”
+LAW 120: Complex Inventions Build From Earlier Inventions
+Meaning
+Later inventions can reuse materials, skills, procedures, records, and social practices developed earlier.
+Operational interpretation
+Let prior persistent states become inputs to future experimentation and coordination.
+Emergence boundary
+Do not turn dependencies into a fixed technology tree. The order and combination are historical.
+Example / test case
+A later storage technique can build on an earlier container process, even if no creator planned the chain.
+VERSION 8 — Laws From the First Runs
+Status: DRAFT LAYER
+LAW 121: Reality Must Be Checkable
+Meaning
+The world should present agents with frequent, consistent opportunities to compare claims or beliefs against outcomes. A claim that can never be checked cannot accumulate evidence in the ordinary sense.
+Operational interpretation
+Provide observable consequences for reports about resources, animals, places, actions, and other claims that agents can actually investigate.
+Emergence boundary
+This does not make truth automatically persuasive. It only creates the possibility of verification.
+Example / test case
+A report that a location contains water can be checked by visiting; a vague claim with no observable consequence cannot be tested in the same way.
+LAW 122: Credibility Is Earned by Record
+Meaning
+Each receiver can maintain a source-specific history of whether someone’s claims have held. Repeated verified performance can gradually matter more than simple goodwill.
+Operational interpretation
+Maintain per-agent source reliability records and allow those records to influence belief updating.
+Emergence boundary
+Credibility is not a universal global score and can differ by receiver and subject domain.
+Example / test case
+One agent may be highly trusted for water reports but not for animal behavior.
+LAW 123: Doing Leaves Traces
+Meaning
+Physical actions can change places in ways that remain observable after the actor leaves. Traces provide indirect evidence of previous activity.
+Operational interpretation
+Model traces such as turned earth, stone flakes, ash, bones, disturbed material, or other persistent-but-fading evidence where appropriate.
+Emergence boundary
+Traces are not messages by default. Their meaning must be inferred by the observer agent.
+Example / test case
+A later traveler can notice ash and infer that a fire occurred without knowing who made it or why.
+LAW 124: Uses Must Be Experienced
+Meaning
+An object’s value comes from outcomes an agent experiences or witnesses and can connect to its goals or needs.
+Operational interpretation
+Ensure that real uses produce consequences that can be observed, remembered, and later evaluated.
+Emergence boundary
+Do not mark objects as useful solely because the creator knows their human interpretation.
+Example / test case
+Agents began carrying rafts more often only when crossings made the benefit of floating materially visible.
+LAW 125: Records Can Be Sources
+Meaning
+A durable mark or record can become a source of information when an agent has learned an association between that record and a place, practice, event, or object. The record develops a history of being right or wrong just like a person’s reports do.
+Operational interpretation
+Track record creation, persistence, interpretation, and later outcomes so records can participate in knowledge transmission.
+Emergence boundary
+This does not guarantee the invention of writing or assign a fixed semantic code. The association must develop through experience.
+Example / test case
+A mark associated with a useful technique can outlive its original maker and teach the procedure to someone who would otherwise have no living teacher.
+EXPERIMENTAL EVIDENCE PRESERVED FROM v8.0
+The expanded prose should not erase the evidence that motivated the later laws. The first runs remain part of the history of the rule book.
+Culture can appear without scripting
+In the recorded E1 runs, a building practice—heaping materials against the cold—persisted for about 190 years in 7 of 8 worlds and produced real dwellings. A killing in year 20 was still remembered 180 years later by 62 people across five generations, although later generations often blamed the wrong person. This supports the distinction between persistent cultural transmission and perfect historical accuracy.
+Trust initially followed food more than verified accuracy
+Food gifts caused most measured movement in trust, while tested claims were rare and had little relationship with source accuracy in the early design. The lesson was not to hard-code truth-based authority, but to create more opportunities for claims to be checked and for agents to retain source-specific records.
+Belief can outlive practice
+Sowing beliefs persisted after sowing behavior faded because the immediate payoff to the sower was weak. This demonstrates that social belief, personal behavior, and material payoff are separate variables and should not be collapsed into one “rational” state.
+Knowing a use is not the same as using it
+Rafts were invented quickly, but carrying them remained uncommon until the physical environment gave agents a felt reason to value floating. The rule-book response was to make real uses perceptible, not to reward raft use directly.
+Small physics gaps can change history
+Water crossings of up to three tiles could previously be completed by a jump-like movement check. That allowed many crossings without requiring floating capability and reduced isolation. Later movement handling made the path constraint physical rather than a single landing-tile check. The broader lesson is that small physical rules can have large social consequences.
+Meaning can form and drift
+Marks became shared symbols in the recorded worlds, often referring to places such as water, shelter, or graves, and meanings could drift over time. This is evidence for starting symbolic marks as meaningless rather than assigning a semantic dictionary to agents.
+CREATOR METHOD
+M1 — Predictions First
+Before an experiment runs, write the predictions and freeze them. Afterward, score each prediction as confirmed, wrong, or unclear. This protects the experiment from being rewritten by hindsight.
+M2 — Kill Criterion
+Every experiment states in advance what result would show the tested idea failed or was unsupported. A mechanism survives by evidence, not enthusiasm.
+M3 — Freeze During Experiments
+Do not change the world rules while the experiment is running. Add only read-only measurement. A mid-run mechanic change makes causal interpretation unreliable.
+M4 — Measurement Never Touches the World
+Observers, historians, surprise logs, and metrics must not modify simulation state. A recorder is validated by comparing a run with the recorder against an otherwise identical run without it.
+M5 — Many Worlds
+One seed demonstrates one history. Use multiple deterministic seeds to distinguish robust patterns from accidents.
+M6 — Law Accounting
+Every implementation feature should identify the laws it supports and note where the implementation violates, approximates, or does not yet cover a law. This keeps the code honest about its relationship to the Bible.
+M7 — Conditions, Not Outcomes
+Before adding a major system, ask whether it creates a condition that agents can use, or whether it quietly scripts the social result. Conditions belong in the world; named outcomes should be earned through agent behavior.
+M8 — The Bible Comes First
+When the implementation requires a rule that the current Bible does not contain, document the departure and amend the next version before treating the new behavior as canonical.
+M9 — One Observer Layer
+The Surprise Log, historian, and experiment measurements should ultimately form one read-only observer layer rather than several competing measurement systems. Observers explain what happened; they do not participate in the history.
+MVP IMPLEMENTATION BOUNDARY
+The first implementation target is the foundational part of the 27-chapter architecture: Chapters 1–8. This means the world should first establish reality, physical constraints, environment, biology, ecology, and autonomous agents with needs, drives, perception, cognition, memory, learning, emotion, and individuality. High-level social systems should not be required to exist before the core can demonstrate stable individual and ecological behavior.
+The runtime decision controller should remain lightweight and heuristic-driven. Formal statistics, causal models, mixed models, Bayesian analysis, and similar mathematics belong primarily in the observer and analysis layer unless an experiment explicitly demonstrates that a model is needed as an internal cognitive mechanism. Runtime core state should remain deterministic and discrete where practical; floats may be used for rendering or offline analysis, but must not silently alter core decisions.
+The primitive-action boundary is equally important. The world should expose atomic capabilities grounded in the physical and biological systems. High-level outcomes such as farming, markets, governments, sports, religions, or modern science should not be atomic actions. Agents must have to assemble complex behavior from lower-level capabilities and learned procedures.
+KNOWN GAPS THAT REMAIN OPEN
+• Speech bubbles remain an English observer rendering; the agents do not yet have an emergent language system.
+• Requests, warnings, plans, lies, and promises are named communication categories but do not yet have complete mechanisms.
+• The exact long-term biology layer—body morphology, disease, aging, inherited physical traits, and richer population ecology—should be developed through experiments rather than assumed from chapter titles alone.
+• The observer measurements and the unified Observer Layer still require implementation cleanup so that all measurement remains read-only and non-duplicative.
+• The long-term chapters should be expanded only when the foundational experiments show that the underlying primitives are sufficient to support them without hard-coding outcomes.
+FINAL STATUS
+This document is an expanded draft, not a declaration that every chapter is already implemented. It preserves the long-term vision while making the current rules explicit enough for implementation, testing, and debate. The foundational chain remains: Reality → Culture → Knowledge → Discovery → Information → Influence → Power → Creation. The governing principle remains unchanged: the creator writes the laws of the universe, not the history.
+Build the world. Start the clock. Let them live.

@@ -1,0 +1,29 @@
+{
+ "seed": 303,
+ "technique": "(fiber+fiber)#fiber",
+ "holders_year900": 33,
+ "holders_year1000": 27,
+ "gained_by": {
+  "invented it in play": 32,
+  "taught": 74
+ },
+ "alive_year1000_replay": 65,
+ "alive_year1000_original": 65,
+ "beliefs": {
+  "fiber@3": {
+   "holders_year900": 52,
+   "holders_year1000": 43,
+   "times_told": 640
+  },
+  "wood@3": {
+   "holders_year900": 0,
+   "holders_year1000": 1,
+   "times_told": 496
+  },
+  "fiber@2": {
+   "holders_year900": 44,
+   "holders_year1000": 43,
+   "times_told": 709
+  }
+ }
+}
