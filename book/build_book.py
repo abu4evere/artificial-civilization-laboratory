@@ -11,6 +11,7 @@ Source format, one paragraph per line, blank lines between:
     # Part heading       (starts a new page)
     ## Chapter heading
     - bullet item        **bold** inline
+    // note              not printed: notes for the editor, such as slots for the creator's own writing
     anything else        a body paragraph
 """
 from __future__ import annotations
@@ -76,7 +77,7 @@ def body_xml(lines: list[str]) -> str:
 
 
 def build():
-    lines = SOURCE.read_text(encoding="utf-8").splitlines()
+    lines = [l for l in SOURCE.read_text(encoding="utf-8").splitlines() if not l.startswith("//")]
     src = zipfile.ZipFile(BOOK)
     doc = src.read("word/document.xml").decode("utf-8")
     head = doc[: doc.index("<w:body>") + len("<w:body>")]
