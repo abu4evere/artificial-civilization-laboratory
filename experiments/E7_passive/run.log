@@ -1,0 +1,107 @@
+e7 seed 304, 20 years: without 17e12e4986afa880  with 17e12e4986afa880  -> READ-ONLY
+baseline seed 304, 20 years: without 89fa38cbd717bece  with 89fa38cbd717bece  -> READ-ONLY
+  e7 seed 301: year 100, 32 alive, 131s
+  e7 seed 301: year 200, 38 alive, 288s
+  e7 seed 301: year 300, 41 alive, 463s
+  e7 seed 301: year 400, 41 alive, 637s
+  e7 seed 301: year 500, 31 alive, 814s
+  e7 seed 301: year 600, 35 alive, 979s
+  e7 seed 301: year 700, 47 alive, 1157s
+  e7 seed 301: year 800, 47 alive, 1343s
+  e7 seed 301: year 900, 48 alive, 1537s
+  e7 seed 301: year 1000, 34 alive, 1740s
+e7 seed 301: done, 1000 years, LFA 115, FEC {'water_passive': 1, 'ceramic_passive': 226, 'food_by_fire': 646}, 1740s
+  e7 seed 302: year 100, 91 alive, 278s
+  e7 seed 302: year 200, 83 alive, 712s
+  e7 seed 302: year 300, 61 alive, 1047s
+  e7 seed 302: year 400, 18 alive, 1201s
+  e7 seed 302: year 500, 26 alive, 1306s
+  e7 seed 302: year 600, 58 alive, 1507s
+  e7 seed 302: year 700, 41 alive, 1688s
+  e7 seed 302: year 800, 24 alive, 1834s
+  e7 seed 302: year 900, 43 alive, 1975s
+  e7 seed 302: year 1000, 53 alive, 2152s
+e7 seed 302: done, 1000 years, LFA 54, FEC {'water_passive': 0, 'ceramic_passive': 100, 'food_by_fire': 481}, 2152s
+  e7 seed 303: year 100, 56 alive, 158s
+  e7 seed 303: year 200, 63 alive, 393s
+  e7 seed 303: year 300, 64 alive, 639s
+  e7 seed 303: year 400, 66 alive, 895s
+  e7 seed 303: year 500, 53 alive, 1156s
+  e7 seed 303: year 600, 63 alive, 1430s
+  e7 seed 303: year 700, 54 alive, 1705s
+  e7 seed 303: year 800, 64 alive, 1964s
+  e7 seed 303: year 900, 63 alive, 2304s
+  e7 seed 303: year 1000, 59 alive, 2652s
+e7 seed 303: done, 1000 years, LFA 25, FEC {'water_passive': 0, 'ceramic_passive': 12, 'food_by_fire': 80}, 2652s
+  e7 seed 304: year 100, 34 alive, 193s
+  e7 seed 304: year 200, 40 alive, 499s
+  e7 seed 304: year 300, 31 alive, 764s
+  e7 seed 304: year 400, 40 alive, 1004s
+  e7 seed 304: year 500, 43 alive, 1240s
+  e7 seed 304: year 600, 35 alive, 1483s
+  e7 seed 304: year 700, 41 alive, 1683s
+  e7 seed 304: year 800, 37 alive, 1969s
+  e7 seed 304: year 900, 37 alive, 2208s
+  e7 seed 304: year 1000, 37 alive, 2464s
+e7 seed 304: done, 1000 years, LFA 11, FEC {'water_passive': 1, 'ceramic_passive': 21, 'food_by_fire': 133}, 2464s
+  e7 seed 305: year 100, 1 alive, 56s
+e7 seed 305: done, 115 years, LFA 17, FEC {'water_passive': 1, 'ceramic_passive': 30, 'food_by_fire': 100}, 58s
+  e7 seed 306: year 100, 51 alive, 193s
+  e7 seed 306: year 200, 49 alive, 451s
+  e7 seed 306: year 300, 34 alive, 657s
+  e7 seed 306: year 400, 11 alive, 779s
+e7 seed 306: done, 465 years, LFA 19, FEC {'water_passive': 0, 'ceramic_passive': 250, 'food_by_fire': 595}, 799s
+  e7 seed 307: year 100, 1 alive, 59s
+e7 seed 307: done, 104 years, LFA 12, FEC {'water_passive': 0, 'ceramic_passive': 1, 'food_by_fire': 76}, 60s
+e7 seed 308: done, 95 years, LFA 11, FEC {'water_passive': 0, 'ceramic_passive': 7, 'food_by_fire': 162}, 55s
+  baseline seed 301: year 100, 42 alive, 132s
+  baseline seed 301: year 200, 44 alive, 322s
+  baseline seed 301: year 300, 41 alive, 523s
+  baseline seed 301: year 400, 42 alive, 692s
+  baseline seed 301: year 500, 28 alive, 865s
+  baseline seed 301: year 600, 41 alive, 1035s
+  baseline seed 301: year 700, 46 alive, 1206s
+  baseline seed 301: year 800, 37 alive, 1382s
+  baseline seed 301: year 900, 45 alive, 1569s
+  baseline seed 301: year 1000, 37 alive, 1758s
+baseline seed 301: done, 1000 years, LFA 28, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 1758s
+  baseline seed 302: year 100, 41 alive, 128s
+  baseline seed 302: year 200, 34 alive, 318s
+  baseline seed 302: year 300, 34 alive, 533s
+  baseline seed 302: year 400, 28 alive, 700s
+  baseline seed 302: year 500, 53 alive, 1062s
+  baseline seed 302: year 600, 65 alive, 1400s
+  baseline seed 302: year 700, 56 alive, 1757s
+  baseline seed 302: year 800, 63 alive, 2098s
+  baseline seed 302: year 900, 68 alive, 2597s
+  baseline seed 302: year 1000, 56 alive, 3066s
+baseline seed 302: done, 1000 years, LFA 22, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 3066s
+  baseline seed 303: year 100, 59 alive, 284s
+  baseline seed 303: year 200, 47 alive, 705s
+  baseline seed 303: year 300, 42 alive, 1120s
+  baseline seed 303: year 400, 53 alive, 1398s
+  baseline seed 303: year 500, 58 alive, 1713s
+  baseline seed 303: year 600, 57 alive, 2029s
+  baseline seed 303: year 700, 56 alive, 2395s
+  baseline seed 303: year 800, 55 alive, 2658s
+  baseline seed 303: year 900, 53 alive, 2914s
+  baseline seed 303: year 1000, 58 alive, 3172s
+baseline seed 303: done, 1000 years, LFA 25, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 3172s
+  baseline seed 304: year 100, 38 alive, 125s
+  baseline seed 304: year 200, 42 alive, 289s
+  baseline seed 304: year 300, 36 alive, 462s
+  baseline seed 304: year 400, 30 alive, 597s
+  baseline seed 304: year 500, 36 alive, 740s
+  baseline seed 304: year 600, 42 alive, 896s
+  baseline seed 304: year 700, 38 alive, 1058s
+  baseline seed 304: year 800, 37 alive, 1217s
+  baseline seed 304: year 900, 33 alive, 1380s
+  baseline seed 304: year 1000, 38 alive, 1538s
+baseline seed 304: done, 1000 years, LFA 66, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 1538s
+baseline seed 305: done, 70 years, LFA 6, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 26s
+  baseline seed 306: year 100, 2 alive, 77s
+baseline seed 306: done, 124 years, LFA 14, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 80s
+  baseline seed 307: year 100, 1 alive, 58s
+baseline seed 307: done, 103 years, LFA 14, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 58s
+baseline seed 308: done, 96 years, LFA 14, FEC {'water_passive': 0, 'ceramic_passive': 0, 'food_by_fire': 0}, 60s
+ALL DONE
