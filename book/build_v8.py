@@ -3,7 +3,7 @@
 Chapters 1-7 are copied unchanged (v7.1 §6: frozen, do not edit). Only the v7.1 amendment
 layer and the closing status are replaced, using the book's own paragraph formatting.
 
-Usage: python bible/build_v8.py  (writes bible/THE_ARTIFICIAL_CIVILIZATION_World_Bible_v8_DRAFT.docx)
+Usage: python book/build_v8.py  (writes book/THE_ARTIFICIAL_CIVILIZATION_World_Bible_v8_DRAFT.docx)
 """
 from __future__ import annotations
 

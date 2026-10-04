@@ -22,10 +22,10 @@ Last checked against the code: 2026-10-03.
 (v7 grouped Laws 29–43 in ranges), so Laws 35–43 below are numbered differently from v8.1 (v8.1: 35 Reputation,
 36 Norms, 37 Institutions, 38 Diversity, 39 Civilization, 40 Cultural Detection, 41 Cultural Impact,
 42 Open-Endedness, 43 Final Principle of Culture). The current per-law status, in v8.1 numbering and in the
-creator's notation (Implemented / Partial / Future mechanism / Example only), is `bible/law_status_v81.py`,
+creator's notation (Implemented / Partial / Future mechanism / Example only), is `book/law_status_v81.py`,
 and it is printed under every law in
-`bible/THE_ARTIFICIAL_CIVILIZATION_World_Bible_v8_1_EXPANDED_DRAFT_with_status.docx`
-(built by `bible/build_v81_status.py`). Where the two differ, `law_status_v81.py` is newer. Under v8.1's wording:
+`book/THE_ARTIFICIAL_CIVILIZATION_World_Bible_v8_1_EXPANDED_DRAFT_with_status.docx`
+(built by `book/build_v81_status.py`). Where the two differ, `law_status_v81.py` is newer. Under v8.1's wording:
 Law 97 counts as Partial (hunting together catches more than hunting alone), and Laws 33 and 53 count as Partial
 (skills are tracked and differ). The tables below will be redone in v8.1 numbering after E5.
 

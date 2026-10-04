@@ -5,7 +5,7 @@ The creator's file is read, never changed. Two edits, both agreed with the creat
   2. The status notation (Implemented / Partial / Future mechanism / Example only) is explained after
      "How to read this version", and every law ends with its status (from law_status_v81.py).
 
-Usage: python bible/build_v81_status.py
+Usage: python book/build_v81_status.py
 """
 from __future__ import annotations
 
