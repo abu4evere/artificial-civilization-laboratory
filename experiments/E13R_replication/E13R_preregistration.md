@@ -1,7 +1,7 @@
-# E13R — Replicating E13 with a safeguard that can be measured: design (DRAFT, not frozen)
+# E13R — Replicating E13 with a safeguard that can be measured: pre-registration (FROZEN)
 
-**Status:** reviewed by the creator; decisions recorded below. Ready to freeze as `E13R-frozen` on the creator's final
-sign-off, before any code is written. No E13R code exists and nothing has run.
+**Status:** signed off by the creator and frozen as `E13R-frozen` before any E13R code was written. Not to be edited
+after the results.
 
 ## 1. Why
 
@@ -49,9 +49,9 @@ adult within sight (`perception`, 4 tiles) with the most food in hand, more than
 introduced. Arm C from E13 (children-alive filter) is dropped, by the creator's decision: the filter left few models, the signal
 collapsed and one of its worlds died out; the runs go to replication power instead.
 
-**Seeds:** 8 new seeds, 501–508, 120 years, fixed now; a world that dies out counts as it falls. E13's seeds are not
-reused, so this is a true replication. Cost: 40 runs at about 6 minutes each, 4 at a time, roughly an hour.
-**[DECIDE: 8 seeds unless the creator asks for more]**
+**Seeds:** 16 new seeds, 501–516, 120 years, fixed now; a world that dies out counts as it falls. E13's seeds are not
+reused, so this is a true replication. 16 rather than 8 by the creator's decision: E13 varied a great deal between
+worlds, and E13R exists to settle a disputed result. Cost: 80 runs at about 6 minutes each, 4 at a time.
 
 ## 4. Validity (hard fail unless stated)
 
@@ -59,12 +59,16 @@ reused, so this is a true replication. Cost: 40 runs at about 6 minutes each, 4 
 - **V2** Zero check: E13R code with B2 off reproduces Arm A's population at every 10-year sample, all seeds.
 - **V3** Code unchanged during runs (fingerprints before and after); no crashes.
 - **L1 Sham (route, whole world).** Arm S, where the copying step does everything except write the habit, must give a
-  **state hash identical to Arm A at year 120 in all 8 seeds**. This proves that choosing models, looking and computing
+  **state hash identical to Arm A at year 120 in all 16 seeds**. This proves that choosing models, looking and computing
   the lesson change nothing at all. Cannot be empty.
 - **L2 Instrumented check (route, each update).** In Arm B, seed 501, the first 20 years: before and after every copying
   step, snapshot every person's full state and the world's random state. The only difference allowed is the one
   forage habit entry of the observer. At least 1,000 copying updates must be checked, or L2 is unscorable and so
   failed. Plus a unit test: an observer with no qualifying model foraging that week is left exactly unchanged.
+
+**Hard stop.** Failure of L1 or L2 (including unscorable) terminates E13R before any outcome is read. To make this
+physical rather than a promise, the runner checks L2 first, then runs only Arms A and S and checks L1; Arms B, N and P
+are run only if both pass. If either fails, no outcome arm exists to look at.
 
 Together L1 and L2 answer E13's open question directly: any difference between A and B can only have started as a
 change to a watcher's own foraging habit. What follows from that through ordinary life, people eating, sharing and
@@ -77,13 +81,13 @@ neighbours, planners, carers; children's winter starvation last, read only if th
 
 ## 6. Predictions
 
-### Replication (Arm B against Arm A, pooled over 8 seeds)
+### Replication (Arm B against Arm A, pooled over 16 seeds)
 
 - **R1 Headline (creator's decision):** the share of planner-autumns followed by planning the next autumn is at least
   3× Arm A's and at least 3%, with at least 20 planner-autumns in B (minimum sample; below it, unscorable). E13's 10%
   is not kept: it was frozen before the size of any effect was known, and E13 reached 6.3% against 0.9%. Repeat planning
   measures whether a lesson survives its own success (E9.4); it is the headline because E13 was framed by it.
-- **R2** Manipulation check: habit value for autumn foraging with 2+ weeks of food higher than A in at least 6 of 8 seeds.
+- **R2** Manipulation check: habit value for autumn foraging with 2+ weeks of food higher than A in at least 12 of 16 seeds.
 - **R3** Planner-autumns at least 2× A's.
 - **R4** Carers holding 20+ at least 5 points above A.
 - **R5** Planners' neighbours forage in the next autumn at least 1.1× A's (missed in E13; kept to see if it was noise).
@@ -105,7 +109,7 @@ For each of planner-autumns and habit value, the share of B's effect each arm ke
 arm are reported, with effect per 1,000 updates, so that "P did less" is not mistaken for "planners teach less".
 
 **Priors, written before the run** (the E2 custom). Creator: leans toward N, because the weak neighbour effect in E13
-(1.07×) does not look planner-specific. **[DECIDE: the creator's odds as numbers, if wanted]** Assistant: 60% that N
+(1.07×) looks broad rather than planner-specific: **N 65%, both 20%, P 15%**. Assistant: 60% that N
 keeps most of the effect (general habit), 25% both, 15% P alone.
 
 Even a P result shows only that learning from very well-stocked models is enough, within this mechanism; calling
