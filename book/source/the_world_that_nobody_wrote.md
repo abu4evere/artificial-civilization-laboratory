@@ -795,6 +795,12 @@ Human societies seem to have answered this with things that outlast experience. 
 
 That may be the next question. Not how a person learns to prepare, but how a people keeps a lesson that its own success would erase.
 
+**Provisional conclusion, in the creator's words (October 2026).** ACL individuals can learn from winter, but the lesson is not self-sustaining. Successful preparation removes the experience that created the lesson, causing the lesson to fade. No tested individual-learning mechanism has yet produced stable, population-level winter preparation.
+
+What this does and does not rule out should be said precisely. Tested and failed: freeing people to remake what they hold (E8 Arm 1); anticipating a season one has gone short in (E9); the lesson of a lost child, and of a witnessed death (E10). Never tested, only set aside because people almost never chose to make anything: protecting composite recipes from the memory ceiling, apprenticeship, and larger populations. They were moved down the queue, not refuted, and may matter again if a people ever begins to prepare.
+
+The creator also marked the limit of the conclusion itself: it shows that individual learning from experience is not enough. It does not show that stories, or any other form of shared memory, are what is missing. That is the next hypothesis, not a finding.
+
 # Part VI — Lives
 
 These are stories from real worlds, told as closely to the record as possible. Every person here lived in a seeded world, and every event is in a replay, a chronicle or an autopsy. Where the record is silent, so is the story.
