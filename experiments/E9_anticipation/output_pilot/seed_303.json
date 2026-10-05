@@ -1,0 +1,76 @@
+{
+ "seed": 303,
+ "replay_matches_saved": true,
+ "mean_hunger": {
+  "spring": 0.267,
+  "summer": 0.242,
+  "autumn": 0.245,
+  "winter": 0.447
+ },
+ "starving_share": {
+  "spring": 0.0205,
+  "summer": 0.0081,
+  "autumn": 0.0104,
+  "winter": 0.1434
+ },
+ "shadow_winter_expectation": {
+  "n": 171,
+  "median": 0.576,
+  "share_over_0.3": 0.959
+ },
+ "share_weeks_A2_would_raise_pull": {
+  "spring": 0.497,
+  "summer": 0.53,
+  "autumn": 0.569,
+  "winter": 0.314
+ },
+ "median_raise_when_it_does": {
+  "winter": 0.089,
+  "spring": 0.089,
+  "summer": 0.09,
+  "autumn": 0.161
+ },
+ "B_shadow_winter_expectation": {
+  "median": 0.218,
+  "share_over_0.3": 0.433,
+  "share_over_0.1": 0.702
+ },
+ "B_share_weeks_would_raise_pull": {
+  "spring": 0.242,
+  "summer": 0.3,
+  "autumn": 0.502,
+  "winter": 0.231
+ },
+ "B_median_raise": {
+  "winter": 0.001,
+  "spring": 0.0,
+  "summer": 0.0,
+  "autumn": 0.046
+ },
+ "starvation_deaths_by_prior_hungry_winters": {
+  "2": 1,
+  "5": 3,
+  "18": 2,
+  "11": 2,
+  "0": 13,
+  "20": 3,
+  "14": 2,
+  "16": 1,
+  "8": 2,
+  "26": 3,
+  "31": 1,
+  "24": 1,
+  "13": 3,
+  "27": 2,
+  "21": 1,
+  "22": 2,
+  "3": 1,
+  "1": 3,
+  "12": 2,
+  "4": 3,
+  "30": 1,
+  "33": 1,
+  "25": 1,
+  "15": 1
+ }
+}
