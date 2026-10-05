@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** during E13R (October 2026).
+**Last updated:** after E13R (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -24,7 +24,7 @@ pass on and build on what they learn, until their practices outgrow any one life
 | 0. The world | Is there a world worth living in? | **done** (physics, seasons, bodies, minds) |
 | 1. Culture appears | Does anything cultural emerge unscripted? | **done** (E1–E5: traditions, trust, stories) |
 | 2. Why it stops | Where does the chain from possible to practised break? | **mostly done** (E6–E12) |
-| 3. Transmission | Can a useful practice pass between adults? | **in progress: E13R** |
+| 3. Transmission | Can a useful practice pass between adults? | **in progress:** E13R done; a habit passes, a plan does not |
 | 4. Persistence | Does it last when nobody is there to copy? | next |
 | 5. A people's practice | Does it become a tradition of the whole people? | later |
 | 6. Scale | What do larger, connected populations keep? | later |
@@ -37,21 +37,26 @@ Winter kills, and autumn offers enough to prepare (E8). People could learn to ex
 did prepared (E9). A carer's store protects their children five-fold (E9.2). But preparing removes the hunger that taught
 it, so planners stop (E9.3, E9.4). Loss and witnessing barely move people (E10). Stories reach everyone, too faintly
 (E11). Planners were seen and respected, and not copied, because no adult could copy another (E12). Copying the visibly
-successful gave the strongest lead yet, but its safeguard could not be measured (E13). **E13R decides whether that lead is
-real.**
+successful gave the strongest lead yet, but its safeguard could not be measured (E13). E13R measured it: the copying acts
+only through the watcher's own habit, and what passes between adults is a general habit of foraging while moderately
+stocked, learned from anyone better fed, not winter preparation. Children were not saved.
 
 ---
 
 ## Stage 3, now: E13R and what follows it
 
-E13R is frozen and running. Its result decides the next step. **These branches are fixed now, before the result**, so the
-path cannot bend to fit what comes out.
+These branches were fixed before E13R's result, so the path could not bend to fit what came out.
+
+**E13R result: B replicates (R2, R3, R4 held), N carries it.** The headline (repeat planning) failed, neighbours did not
+change and children were not saved. **Branch taken: "B replicates, N carries it".** Before stage 4, the assistant
+recommends a read-only autopsy: why better-stocked carers did not protect their children, and whether the spread habit is
+linked to preparation at all. **Awaiting the creator's decision.**
 
 | E13R result | what it means | next step |
 |---|---|---|
 | **L1 or L2 fails** (hard stop) | the copying code does something beyond the watcher's habit | fix the code; rerun E13R. No outcomes read. |
 | **B does not replicate** (R2 or R3 fails) | E13's lead was specific to its four worlds | go back to stage 3 with reading Phase 2.5: a different learning signal (Ndousse), group-level transmission (social protocell), or children learning from successful adults |
-| **B replicates, N carries it** | what spreads is a general "forage while things are good" habit | stage 4, testing the general habit |
+| **B replicates, N carries it** ← **taken** | what spreads is a general "forage while things are good" habit | stage 4, testing the general habit |
 | **B replicates, P carries it** | planners pass on a preparation practice | stage 4, testing the planners' practice |
 | **B replicates, both or mixed** | no single source | stage 4; the source question stays open in the book |
 

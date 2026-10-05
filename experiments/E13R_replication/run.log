@@ -1,0 +1,117 @@
+V1 a: READ-ONLY
+V1 b: READ-ONLY
+L2: 15172 steps, 6894 updates, 0 bad: PASS
+a seed 504: alive 29, 170s
+a seed 502: alive 39, 200s
+a seed 501: alive 31, 208s
+a seed 503: alive 47, 300s
+a seed 508: alive 0, 63s
+a seed 507: alive 36, 288s
+a seed 506: alive 42, 374s
+a seed 509: alive 28, 235s
+a seed 505: alive 86, 524s
+a seed 513: alive 0, 36s
+a seed 511: alive 21, 186s
+a seed 512: alive 16, 166s
+a seed 510: alive 58, 292s
+a seed 514: alive 3, 100s
+zero seed 501: alive 31, 214s
+zero seed 502: alive 39, 212s
+a seed 516: alive 53, 292s
+a seed 515: alive 76, 392s
+zero seed 504: alive 29, 155s
+zero seed 503: alive 47, 277s
+zero seed 508: alive 0, 54s
+zero seed 507: alive 36, 243s
+zero seed 506: alive 42, 315s
+zero seed 505: alive 86, 461s
+zero seed 509: alive 28, 194s
+zero seed 513: alive 0, 27s
+zero seed 511: alive 21, 164s
+zero seed 514: alive 3, 83s
+zero seed 512: alive 16, 144s
+zero seed 510: alive 58, 254s
+s seed 501: alive 31, 191s
+s seed 502: alive 39, 183s
+zero seed 516: alive 53, 247s
+zero seed 515: alive 76, 349s
+s seed 504: alive 29, 162s
+s seed 503: alive 47, 279s
+s seed 508: alive 0, 56s
+s seed 507: alive 36, 244s
+s seed 506: alive 42, 332s
+s seed 505: alive 86, 476s
+s seed 509: alive 28, 201s
+s seed 513: alive 0, 28s
+s seed 511: alive 21, 168s
+s seed 514: alive 3, 86s
+s seed 512: alive 16, 152s
+s seed 510: alive 58, 255s
+s seed 516: alive 53, 192s
+s seed 515: alive 76, 262s
+seed 501: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 502: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 503: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 504: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 505: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 506: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 507: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 508: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 509: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 510: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 511: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 512: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 513: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 514: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 515: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 516: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes 
+L1/V2/V3: PASS
+b seed 502: alive 0, 29s
+b seed 501: alive 41, 320s
+b seed 503: alive 48, 321s
+b seed 504: alive 72, 451s
+b seed 508: alive 0, 32s
+b seed 505: alive 87, 518s
+b seed 506: alive 30, 236s
+b seed 507: alive 39, 271s
+b seed 509: alive 23, 155s
+b seed 510: alive 12, 112s
+b seed 512: alive 18, 146s
+b seed 511: alive 38, 205s
+b seed 516: alive 0, 72s
+b seed 514: alive 21, 191s
+b seed 513: alive 49, 224s
+n seed 502: alive 0, 32s
+b seed 515: alive 61, 363s
+n seed 503: alive 51, 277s
+n seed 501: alive 42, 325s
+n seed 504: alive 75, 435s
+n seed 508: alive 0, 32s
+n seed 506: alive 38, 229s
+n seed 507: alive 42, 283s
+n seed 509: alive 33, 187s
+n seed 505: alive 92, 495s
+n seed 512: alive 0, 105s
+n seed 511: alive 35, 214s
+n seed 510: alive 41, 287s
+n seed 516: alive 0, 69s
+n seed 514: alive 21, 193s
+n seed 513: alive 48, 253s
+p seed 501: alive 31, 196s
+p seed 502: alive 36, 191s
+n seed 515: alive 77, 408s
+p seed 504: alive 29, 158s
+p seed 503: alive 44, 285s
+p seed 508: alive 0, 56s
+p seed 507: alive 48, 240s
+p seed 506: alive 54, 299s
+p seed 509: alive 40, 221s
+p seed 512: alive 0, 77s
+p seed 505: alive 83, 467s
+p seed 513: alive 0, 28s
+p seed 511: alive 21, 172s
+p seed 514: alive 1, 86s
+p seed 510: alive 65, 285s
+p seed 515: alive 39, 199s
+p seed 516: alive 58, 188s
+ALL DONE

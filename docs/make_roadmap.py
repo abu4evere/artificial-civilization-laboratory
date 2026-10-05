@@ -17,7 +17,7 @@ STAGES = [  # (title, subtitle, status)
     ("0. The world", "Physics, seasons, bodies, minds", "done"),
     ("1. Culture appears", "Traditions and stories, E1–E5", "done"),
     ("2. Why it stops", "Bottleneck mapped, E6–E13", "done"),
-    ("3. Transmission", "Now: E13R is running", "now"),
+    ("3. Transmission", "E13R: a habit passes, not a plan", "now"),
     ("4. Persistence", "Survives with models gone?", "ahead"),
     ("5. A people's practice", "Preparing becomes a tradition", "ahead"),
     ("6. Scale", "100 people against 30", "ahead"),
@@ -26,9 +26,10 @@ STAGES = [  # (title, subtitle, status)
 ]
 BRANCH_FROM = 3                                   # the stage whose outcomes are drawn to the right
 BRANCH_LABEL = "E13R outcomes, fixed in advance"
+TAKEN = 2                                         # index of the branch E13R took (None before the result)
 BRANCHES = [("Safeguard fails", "Fix code, rerun E13R"),
             ("No replication", "Try another route"),
-            ("Replicates", "On to stage 4")]
+            ("Replicates", "N carries it: stage 4")]
 
 COLORS = {  # fill, stroke, title, subtitle
     "done": ("#E1F5EE", "#0F6E56", "#085041", "#0F6E56"),
@@ -50,8 +51,8 @@ def layout():
     cy = Y0 + BRANCH_FROM * STEP + BH // 2
     n = len(BRANCHES)
     ys = [cy + (k - (n - 1) / 2) * 68 for k in range(n)]
-    for (t, s), y in zip(BRANCHES, ys):
-        boxes.append(("branch", BX, int(y - BH / 2), BBW, t, s, "box"))
+    for k, ((t, s), y) in enumerate(zip(BRANCHES, ys)):
+        boxes.append(("branch", BX, int(y - BH / 2), BBW, t, s, "now" if k == TAKEN else "box"))
     legend_y = Y0 + len(STAGES) * STEP + 14
     return boxes, cy, [int(y) for y in ys], legend_y, legend_y + 40
 

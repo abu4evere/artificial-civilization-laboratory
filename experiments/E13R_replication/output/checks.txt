@@ -1,0 +1,20 @@
+V1 a seed 501, 20 years: READ-ONLY
+V1 b seed 501, 20 years: READ-ONLY
+L2 arm b seed 501, 20 years: 15172 copying steps, 6894 habit updates (minimum 1000), 0 with any other change: PASS
+seed 501: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 502: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 503: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 504: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 505: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 506: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 507: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 508: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 509: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 510: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 511: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 512: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 513: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 514: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 515: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+seed 516: L1 sham = control yes; V2 zero = control yes; V3 code unchanged yes
+L1/V2/V3: PASS
