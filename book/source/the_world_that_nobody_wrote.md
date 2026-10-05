@@ -1051,9 +1051,33 @@ The project's defence is to assume that cheating, when it happens, will come fro
 
 The challenge was never making civilization happen. It was learning whether it would happen without help.
 
+## Chapter 71 — Relatives and Ancestors
+
+ACL was not built from a reading list. Most of what it found, it found by running worlds and looking. But it is not alone, and several of its discoveries were known, in other forms, long before it began. This chapter places it among its relatives, and says plainly where it rediscovered what others knew. Sources are listed in Appendix C.
+
+**Worlds where life evolves.** The oldest relatives are artificial-life systems in which digital organisms reproduce and mutate, such as Tierra and Avida, which showed that evolution in a computer can produce real novelty. Two recent projects carry this toward societies. JaxLife runs very large populations of agents with deep neural networks on graphics processors, in a world with terrain, weather and robots the agents can program; its authors aim at agents that accumulate open-ended culture and technologies across generations, and report rudimentary communication, agriculture and tool use. Werld, an open-source project, starts thirty agents with small evolving brains on a graph, with no reward of any kind and an energy cost for every neuron, connection and signal, so that complexity must pay for itself.
+
+Both aim where ACL aims. Both get there mainly by evolution: agents whose networks work better leave more offspring, and pass those networks on. In ACL nothing is inherited but the body. Whatever a person comes to know, they learned in their own lifetime and must pass on by being watched, by raising children, or by telling, or it is lost. Human culture grew far faster than human genes changed, which is why ACL chose the harder road. Its price is scale: JaxLife's worlds dwarf ACL's, and the question of what a hundred connected people achieve against thirty is still open here. Two of Werld's ideas, that complexity should cost energy and that hidden senses could be discovered, are recorded for later.
+
+**Worlds run by minds that already know.** SimWorld builds realistic cities for testing agents driven by language models. Generative agents in a small town, and Project Sid's many-agent societies in Minecraft, show such agents forming routines, relationships, roles, rules, and even religions. These are valuable for building and testing agents. They cannot answer ACL's question. A language model trained on human writing already knows what a village, a trade and a law are, and when its agents build one, no one can tell whether civilization emerged or was remembered. This is the trap named in Chapter 73, and the reason for ACL's founding rule.
+
+**Worlds with written rules.** Sugarscape grew trade, migration, inequality and conflict from simple agents on a grid, and showed how much social pattern can come from very little. But its behaviours, trade included, were rules its designers wrote. ACL forbids writing any behaviour it hopes to see.
+
+**Learning agents that learn from each other.** The nearest scientific relatives are not worlds but experiments with learning agents. In 2021, Ndousse and colleagues found that ordinary reinforcement-learning agents placed beside experts mostly did not learn from them; the agents needed a changed environment and an added learning signal before social learning appeared. That is E12's finding in another setting: the planners were seen, and nobody followed. In 2024, Cook and colleagues found that knowledge accumulated across generations of agents when learning from others was balanced with learning alone.
+
+**What the study of human culture already knew.** Researchers of cultural evolution have argued for decades that humans owe their success to cumulative culture: learning from others so that knowledge outgrows any one mind. ACL kept arriving at their ideas from the other side.
+
+- **Small, isolated peoples lose skills.** Henrich's account of Tasmania, cut off by rising seas, argues that a small population can lose techniques because too few people learn them well; studies of Oceanic island tools and of laboratory groups found more complex culture in larger populations. ACL's E4 found isolation behind its missing births, and E7.6 found skill collapsing across generations, in populations of a few dozen.
+- **Learning from the successful.** Henrich and Gil-White argued that people learn preferentially from those who visibly do well, and that prestige grows from this. E13 built this kind of learning, chosen by visible success, because a pilot found that the planners were usually the best fed in sight and almost never the most respected.
+- **Storing food is not universal among foragers.** Binford distinguished foragers, who move to food, from collectors, who store it, and tied storage to seasonal environments; Testart linked storage to settled life, denser populations and inequality. ACL's people met a seasonal world and, for twelve experiments, did not store.
+
+None of this makes ACL's findings less its own. Its people were never told any of it. But a serious reader will know this work, and the book should say where ACL rediscovered it rather than let the rediscovery look like invention.
+
+**Where ACL stands.** ACL is small and slow beside JaxLife, and plain beside SimWorld. What it offers instead is method: frozen predictions, controls on identical worlds, measurement that never touches the world, leak tests, replication, and failures published as failures. Most open-ended simulations can say what happened. ACL tries to say what caused it.
+
 # Part VIII — The Future
 
-## Chapter 71 — Open Questions
+## Chapter 72 — Open Questions
 
 This chapter records questions. It does not answer them.
 
@@ -1095,7 +1119,7 @@ About ACL's own findings:
 - Is the interaction bottleneck in the world, or in the people?
 - And the oldest question, from before the record began: is anyone in there? Can a person born in ACL be someone?
 
-## Chapter 72 — The Minimum Conditions
+## Chapter 73 — The Minimum Conditions
 
 An idea took shape in October 2026, in conversation rather than in an experiment, and it is recorded here as an idea.
 
@@ -1105,7 +1129,7 @@ ACL may not need Earth. It may need only the minimum conditions that make cumula
 
 There is a trap on the way, and it was named at the same time. Better minds are allowed; minds that already know are not. A newborn has human capacities and no human knowledge. A language model trained on human writing has the knowledge. Put it in a world and it may rebuild pottery quickly, but no one could ever tell whether civilization emerged or was remembered.
 
-## Chapter 73 — How This Book Is Kept
+## Chapter 74 — How This Book Is Kept
 
 This is a living book, meant to be updated after every major experiment, in the same spirit it was written.
 
@@ -1172,3 +1196,29 @@ Dates are as recorded in the repository. World Bible versions 1 to 6 are not pre
 - **Historian:** the read-only observer that names firsts after they happen. It never influences anyone.
 - **Autopsy:** a read-only replay of a finished world, with probes, to find where a chain of discovery broke.
 - **Replay:** running a saved world again from its seed, to watch it more closely. A replay is trusted only if it reproduces the saved world exactly.
+
+# Appendix C — Sources
+
+Artificial worlds and agents:
+
+- Lu, C., Beukman, M., Matthews, M. and Foerster, J. (2024). JaxLife: An Open-Ended Agentic Simulator. arXiv:2409.00853. Code: github.com/luchris429/JaxLife.
+- Werld: agentic life simulation from inception. Open-source project, github.com/nocodemf/werld.
+- Ren, J., Zhuang, Y., Ye, X., Mao, L. and others (2025). SimWorld: An Open-ended Realistic Simulator for Autonomous Agents in Physical and Social Worlds. arXiv:2512.01078.
+- Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R. and others (2023). Generative Agents: Interactive Simulacra of Human Behavior. arXiv:2304.03442.
+- Altera.AL and others (2024). Project Sid: Many-agent simulations toward AI civilization. arXiv:2411.00114.
+- Epstein, J. M. and Axtell, R. (1996). Growing Artificial Societies: Social Science from the Bottom Up. MIT Press.
+- Ofria, C. and Wilke, C. O. (2004). Avida: A Software Platform for Research in Computational Evolutionary Biology. Artificial Life 10(2).
+
+Learning agents that learn from each other:
+
+- Ndousse, K., Eck, D., Levine, S. and Jaques, N. (2021). Emergent Social Learning via Multi-agent Reinforcement Learning. ICML 2021; arXiv:2010.00581.
+- Cook, J., Lu, C., Hughes, E., Leibo, J. Z. and Foerster, J. (2024). Artificial Generational Intelligence: Cultural Accumulation in Reinforcement Learning. arXiv:2406.00392.
+
+Human cultural evolution:
+
+- Henrich, J. and Gil-White, F. J. (2001). The evolution of prestige: freely conferred deference as a mechanism for enhancing the benefits of cultural transmission. Evolution and Human Behavior 22(3).
+- Henrich, J. (2004). Demography and Cultural Evolution: How Adaptive Cultural Processes Can Produce Maladaptive Losses. The Tasmanian Case. American Antiquity 69(2).
+- Kline, M. A. and Boyd, R. (2010). Population size predicts technological complexity in Oceania. Proceedings of the Royal Society B 277.
+- Derex, M., Beugin, M.-P., Godelle, B. and Raymond, M. (2013). Experimental evidence for the influence of group size on cultural complexity. Nature 503.
+- Binford, L. R. (1980). Willow Smoke and Dogs' Tails: Hunter-Gatherer Settlement Systems and Archaeological Site Formation. American Antiquity 45(1).
+- Testart, A. (1982). The Significance of Food Storage Among Hunter-Gatherers: Residence Patterns, Population Densities, and Social Inequalities. Current Anthropology 23(5).

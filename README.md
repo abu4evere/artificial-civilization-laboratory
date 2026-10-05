@@ -252,6 +252,34 @@ is why `check` runs many.
 | `acl/report.py` | The HTML report |
 | `acl/runner.py`, `acl/checks.py`, `acl/__main__.py` | Running, checking, the command line |
 
+## Related work
+
+ACL belongs to a long line of artificial worlds, and differs from most of them in two ways.
+
+**What accumulates, and how.** In most open-ended simulations, behaviour improves through evolution: agents whose
+networks work better leave more offspring, and pass those networks on. In ACL, nothing is inherited but the body.
+What a person knows, they learned in their own lifetime, from experience, from watching or from stories, and it dies
+with them unless someone else learns it.
+
+**How claims are made.** Every experiment freezes its predictions before any code, compares against a control on the
+same worlds, checks that measurement never touches the world, and tests for leaks: ways the experimenter's knowledge
+could have been scripted in. Failures are published as failures. The record is in [experiments/](experiments/INDEX.md).
+
+| project | how behaviour improves | human knowledge built in | evidence |
+|---|---|---|---|
+| [JaxLife](https://github.com/luchris429/JaxLife) ([Lu et al., 2024](https://arxiv.org/abs/2409.00853)) | evolution of agents' networks, at GPU scale | no | paper |
+| [Werld](https://github.com/nocodemf/werld) | evolution of NEAT brains | no | observed runs |
+| [SimWorld](https://github.com/SimWorld-AI/SimWorld) ([Ren et al., 2025](https://arxiv.org/abs/2512.01078)) | none; agents are language models | yes | agent benchmarks |
+| [Generative Agents](https://arxiv.org/abs/2304.03442), [Project Sid](https://arxiv.org/abs/2411.00114) | none; agents are language models | yes | demonstrations |
+| Sugarscape (Epstein and Axtell, 1996) | rules written by the designers | in the rules | exploratory models |
+| **ACL** | **learning within lifetimes, passed on socially** | **no** | **pre-registered experiments** |
+
+The nearest scientific relatives are studies of cultural accumulation in learning agents
+([Ndousse et al., 2021](https://arxiv.org/abs/2010.00581); [Cook et al., 2024](https://arxiv.org/abs/2406.00392)) and
+the study of human cultural evolution, which ACL keeps rediscovering: learning from the successful
+([Henrich and Gil-White, 2001](https://doi.org/10.1016/s1090-5138(00)00071-4)) and the loss of skills in small,
+isolated populations ([Henrich, 2004](https://doi.org/10.2307/4128416)). The book has the longer account.
+
 ## Not yet
 
 - **LLM-driven people.** Kept out on purpose for now, because a language model
