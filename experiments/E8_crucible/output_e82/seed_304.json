@@ -1,0 +1,27 @@
+{
+ "seed": 304,
+ "replay_matches_saved": true,
+ "forage": {
+  "forage_acts": 52292,
+  "food_foraged": 966433.8699999729,
+  "food_from_tools_ub": 21181.46447462513
+ },
+ "share_food_from_tools_ub": 0.0219,
+ "mean_food_per_forage_week": 18.48,
+ "made_things": 1350,
+ "payback_median": 0.0,
+ "payback_share_ge1": 0.099,
+ "payback_share_ge2": 0.044,
+ "food": {
+  "hunter_weeks": 59,
+  "adult_weeks": 114031,
+  "week_on_hand": 77872,
+  "starving": 5246
+ },
+ "hunts": {
+  "without_tool_hunts": 28,
+  "without_tool_success": 3,
+  "with_tool_hunts": 30,
+  "with_tool_success": 3
+ }
+}
