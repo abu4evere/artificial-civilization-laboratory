@@ -50,7 +50,11 @@ These branches were fixed before E13R's result, so the path could not bend to fi
 **E13R result: B replicates (R2, R3, R4 held), N carries it.** The headline (repeat planning) failed, neighbours did not
 change and children were not saved. **Branch taken: "B replicates, N carries it".** Before stage 4, the assistant
 recommends a read-only autopsy: why better-stocked carers did not protect their children, and whether the spread habit is
-linked to preparation at all. **Awaiting the creator's decision.**
+linked to preparation at all. **Autopsy done** (`experiments/E13R_replication/autopsy/findings.md`): stocked carers
+still protect children, but at every food level children in the copying worlds starved more; the copied habit is
+year-round, not autumn; people enter winter with more food (16 of 16 worlds) and end it with none. Copying did not help
+winter. What is missing is not getting food but making it last until spring. **Awaiting the creator's decision: keep the
+branch (test whether this habit persists) or change it, with this reason recorded.**
 
 | E13R result | what it means | next step |
 |---|---|---|
