@@ -1,0 +1,2 @@
+arm0 seed 304, 20 years: READ-ONLY
+a2full seed 304, 20 years: READ-ONLY

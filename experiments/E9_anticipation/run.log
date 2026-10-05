@@ -1,0 +1,16 @@
+verify arm0: READ-ONLY
+verify a2full: READ-ONLY
+arm0 seed 301: 120 years, alive 40, matches saved E7 True, 225s
+zero seed 304: 120 years, alive 39, matches saved E7 True, 229s
+arm0 seed 303: 120 years, alive 50, matches saved E7 True, 304s
+a2low seed 301: 120 years, alive 25, matches saved E7 False, 161s
+arm0 seed 304: 120 years, alive 39, matches saved E7 True, 225s
+arm0 seed 302: 120 years, alive 96, matches saved E7 True, 486s
+a2low seed 303: 120 years, alive 19, matches saved E7 False, 124s
+a2low seed 304: 120 years, alive 42, matches saved E7 False, 202s
+a2full seed 301: 120 years, alive 38, matches saved E7 False, 268s
+a2low seed 302: 120 years, alive 92, matches saved E7 False, 482s
+a2full seed 302: 120 years, alive 55, matches saved E7 False, 360s
+a2full seed 304: 120 years, alive 38, matches saved E7 False, 175s
+a2full seed 303: 120 years, alive 73, matches saved E7 False, 306s
+ALL DONE
