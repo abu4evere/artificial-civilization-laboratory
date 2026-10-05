@@ -67,3 +67,21 @@ Autumn foraging share of adults who have never gone short in any winter.
 4. **wrong** — winter starvation deaths, A2-full 133 vs Arm 0 139 (needs ≤ 80%).
 5. **wrong** — A2-full adult-autumns reaching 80 food in hand: 112 of 11560 (0.97%; needs ≥ 1%).
 6. **confirmed** — leak test (section 2).
+
+## 6. Descriptive: the people who reached the carrying limit (not a frozen test)
+
+| arm | adult-autumns reaching 80 | went short last winter | autumn weeks foraging | food entering winter (median) | everyone else's |
+|---|---|---|---|---|---|
+| arm0 | 0 | – | – | – | 12 |
+| A2-low | 5 | 60% | 55% | 39 | 13 |
+| A2-full | 112 | 100% | 73% | 74 | 12 |
+
+For the few people it moved, A2 did what the hypothesis said: they foraged much more in autumn and entered winter
+with six times the food. It moved too few to change any frozen measure. E9.1 asks why.
+
+## Reading, per the frozen decision table
+
+Prediction 1 (the manipulation check) failed in A2-full: anticipating a season one has gone short in, as built,
+does not change autumn behaviour enough to matter, even at full strength. The leak test passed, so the mechanism did
+not act on anyone who had nothing to anticipate. The table's next step is to ask why the lesson is so faint for most
+adults; E9.1 does that.
