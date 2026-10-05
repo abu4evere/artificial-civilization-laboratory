@@ -1,7 +1,7 @@
 # E13R — Replicating E13 with a safeguard that can be measured: design (DRAFT, not frozen)
 
-**Status:** draft for the creator's review. No E13R code exists and nothing has run. After sign-off it will be frozen
-as `E13R-frozen` before any code is written. Items marked **[DECIDE]** are the creator's.
+**Status:** reviewed by the creator; decisions recorded below. Ready to freeze as `E13R-frozen` on the creator's final
+sign-off, before any code is written. No E13R code exists and nothing has run.
 
 ## 1. Why
 
@@ -46,11 +46,12 @@ adult within sight (`perception`, 4 tiles) with the most food in hand, more than
 | **P** planners only | on | only adults holding **80 or more** food | source test |
 
 80 is E9.3's existing planner threshold, applied to food a neighbour can see in hand at that moment. No new number is
-introduced. Arm C from E13 (children-alive filter) is dropped: it did little and one of its worlds died out. **[DECIDE]**
+introduced. Arm C from E13 (children-alive filter) is dropped, by the creator's decision: the filter left few models, the signal
+collapsed and one of its worlds died out; the runs go to replication power instead.
 
 **Seeds:** 8 new seeds, 501–508, 120 years, fixed now; a world that dies out counts as it falls. E13's seeds are not
 reused, so this is a true replication. Cost: 40 runs at about 6 minutes each, 4 at a time, roughly an hour.
-**[DECIDE: 8 seeds or more]**
+**[DECIDE: 8 seeds unless the creator asks for more]**
 
 ## 4. Validity (hard fail unless stated)
 
@@ -78,14 +79,10 @@ neighbours, planners, carers; children's winter starvation last, read only if th
 
 ### Replication (Arm B against Arm A, pooled over 8 seeds)
 
-**[DECIDE] the headline threshold.** E13 froze "at least 10% of planner-autumns followed by planning the next autumn"
-and reached 6.3%. Two options:
-- **(a) Keep 10%.** Strict continuity; E13R then tests a stronger claim than E13 showed.
-- **(b) Replicate what E13 found** (assistant's recommendation): repeat-planning share at least 3× Arm A's and at least
-  3%, with at least 20 planner-autumns in B. E13 itself would pass this; a replication asks whether it holds again on
-  new worlds.
-
-Then:
+- **R1 Headline (creator's decision):** the share of planner-autumns followed by planning the next autumn is at least
+  3× Arm A's and at least 3%, with at least 20 planner-autumns in B (minimum sample; below it, unscorable). E13's 10%
+  is not kept: it was frozen before the size of any effect was known, and E13 reached 6.3% against 0.9%. Repeat planning
+  measures whether a lesson survives its own success (E9.4); it is the headline because E13 was framed by it.
 - **R2** Manipulation check: habit value for autumn foraging with 2+ weeks of food higher than A in at least 6 of 8 seeds.
 - **R3** Planner-autumns at least 2× A's.
 - **R4** Carers holding 20+ at least 5 points above A.
@@ -107,8 +104,12 @@ For each of planner-autumns and habit value, the share of B's effect each arm ke
 **Dose caution, stated now:** planners are rare, so Arm P will make far fewer copying updates than B or N. Updates per
 arm are reported, with effect per 1,000 updates, so that "P did less" is not mistaken for "planners teach less".
 
-**[DECIDE] the creator's and the assistant's odds, written before the run** (the E2 custom). Assistant: 60% that N
+**Priors, written before the run** (the E2 custom). Creator: leans toward N, because the weak neighbour effect in E13
+(1.07×) does not look planner-specific. **[DECIDE: the creator's odds as numbers, if wanted]** Assistant: 60% that N
 keeps most of the effect (general habit), 25% both, 15% P alone.
+
+Even a P result shows only that learning from very well-stocked models is enough, within this mechanism; calling
+planners the founders of a practice would need lineage evidence (who learned from whom, across generations).
 
 ## 7. Descriptive measures (reported, not scored)
 
@@ -119,7 +120,10 @@ keeps most of the effect (general habit), 25% both, 15% P alone.
 ## 8. What E13R can and cannot conclude
 
 - If L1 and L2 pass and R1–R4 hold: copying the visibly successful reliably moves preparation-related behaviour
-  between adults, through the designed channel only. The cap stays: this would show that social learning solved
+  between adults, through the designed channel only. The transmission bottleneck counts as crossed only if R3 (more
+  planners) holds; R1 alone would show that lessons survive success, not that they spread. It is not evidence of
+  self-sustaining culture: nothing yet tests whether the practice persists if copying were later switched off, or
+  across generations without it. The cap stays: this would show that social learning solved
   the transmission bottleneck E12 identified, not civilization.
 - If R1–R4 do not hold on new worlds: E13's lead was specific to its four worlds.
 - The source test says what is passed on, within this mechanism and this strength only.
