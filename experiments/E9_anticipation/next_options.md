@@ -45,6 +45,17 @@ lived through or witnessed, and never from a rule about seasons, storing or tool
 - **Why:** lets a lesson outlive the people who learned it: the most civilisation-like route.
 - **Risk:** the most moving parts; last in line.
 
+## O2 feasibility pilot (read-only, descriptive, 2026-10-06)
+
+`run_o2_pilot.py` replayed the four control worlds (E7 code, 120 years; probe read-only, replays matched E9). 81
+children starved: 57 in winter, 23 in spring, 1 in summer. They were in the care of 54 different carers; 49 were
+alive the next autumn and 42 still had children to protect.
+
+So O2 would give about ten carers per world per 120 years a strong lesson. Each lesson would be powerful and aimed
+exactly where the deaths are, but rare: on its own, O2 would likely protect only a handful of children over a run.
+Its real promise is in combination with a way for the lesson to spread (O3, witnessing; O4, stories), which is a
+reason to test O2 first and then O2 + O3 as a second arm, rather than O2 alone as the final answer.
+
 ## Suggested order (the assistant's view; the creator decides)
 
 1. ~~Read E9.2's result first.~~ **E9.2 is in:** a carer's food at the start of winter cuts their children's risk of
