@@ -1,0 +1,35 @@
+e7 seed 304, 20 years: 17e12e4986afa880 / 17e12e4986afa880 -> READ-ONLY
+baseline seed 304, 20 years: 89fa38cbd717bece / 89fa38cbd717bece -> READ-ONLY
+e7 seed 301: 1000 years, replay matches: True, 1798s
+e7 seed 302: 1000 years, replay matches: True, 2145s
+e7 seed 303: 1000 years, replay matches: True, 2609s
+e7 seed 304: 1000 years, replay matches: True, 1725s
+e7 seed 305: 114 years, replay matches: True, 49s
+e7 seed 306: 464 years, replay matches: True, 764s
+e7 seed 307: 103 years, replay matches: True, 62s
+e7 seed 308: 94 years, replay matches: True, 61s
+baseline seed 301: CRASHED
+baseline seed 302: CRASHED
+baseline seed 303: CRASHED
+baseline seed 304: CRASHED
+baseline seed 305: CRASHED
+baseline seed 306: CRASHED
+baseline seed 307: CRASHED
+baseline seed 308: CRASHED
+ALL DONE
+e7 seed 304, 20 years: 17e12e4986afa880 / 17e12e4986afa880 -> READ-ONLY
+baseline seed 304, 20 years: 89fa38cbd717bece / 89fa38cbd717bece -> READ-ONLY
+baseline seed 301: 1000 years, replay matches: True, 2389s
+baseline seed 302: 1000 years, replay matches: True, 2335s
+baseline seed 303: CRASHED
+baseline seed 304: CRASHED
+baseline seed 305: CRASHED
+baseline seed 306: CRASHED
+baseline seed 308: CRASHED
+ALL DONE
+baseline seed 305: 69 years, replay matches: True, 38s
+baseline seed 306: 123 years, replay matches: True, 134s
+baseline seed 308: 95 years, replay matches: True, 102s
+baseline seed 304: 1000 years, replay matches: True, 1916s
+baseline seed 303: 1000 years, replay matches: True, 2794s
+ALL DONE (parallel resume)
