@@ -1,7 +1,7 @@
-# E9 — Anticipation (A2): pre-registration DRAFT
+# E9 — Anticipation (A2): pre-registration (FROZEN)
 
-**Status:** DRAFT for the creator's sign-off. Not yet frozen. No E9 code exists. Once signed off, this file is
-committed and tagged `E9-frozen` before any code is written.
+**Status:** signed off by the creator on 2026-10-05 and frozen (tag `E9-frozen`) before any E9 code was written.
+Not to be edited after the results. Only the three arms below will run; no other mechanism is part of E9.
 
 **Chosen mechanism:** A2, seasonal anticipation of going short, chosen by the creator from `candidates.md`.
 
@@ -79,14 +79,24 @@ Checked against the rule in `candidates.md`:
 **Known compromise, carried over, not added:** people in ACL already key beliefs to the season they are in
 (`fiber@3`), and the material choices already look one season ahead. A2 uses that existing ability.
 
+## 4a. Validity checks (kill criteria)
+
+- The probe changes nothing (state hash with and without it, 20 years, both codes).
+- **Zero-weight check:** the A2 code with WEIGHT = 0 reproduces Arm 0's population at every 10-year sample for
+  120 years (seed 304). This proves the new code changes behaviour only through anticipation.
+- Arm 0 reproduces the saved E7 runs; code fingerprints unchanged during the runs; no crashes.
+- **Leak test (hard fail):** if prediction 6 fails, E9 is declared failed whatever its other results, because the
+  mechanism would be acting on people who have nothing to anticipate.
+
 ## 5. Measures
 
 - **Manipulation check:** adults who went short in the previous winter forage in a larger share of their autumn
   weeks than in Arm 0.
 - **Preparation:** food in hand, seeds and stores at the first week of winter (as E8.4).
 - **Survival:** winter starvation deaths; infant deaths; population at 60, 90, 120.
-- **The chain:** share of adult-autumns reaching 80 food in hand (the carrying limit); worth and making of carriers;
-  later-born adults' crafting skill; recipes held; traditions.
+- **The chain:** share of adult-autumns reaching 80 food in hand (the carrying limit); carriers made per decade
+  (things the historian would call a carrier); mean worth of carriers to those who know them; later-born adults'
+  crafting skill; recipes held.
 - **Cost:** plant food left on tiles at the end of autumn; starvation outside winter.
 - **Leak test:** among adults with no recorded short week in any winter (expectation for winter exactly 0), autumn
   foraging share must not differ from Arm 0 beyond ordinary variation. By construction their decisions are
@@ -101,6 +111,12 @@ Checked against the rule in `candidates.md`:
 4. **Survival.** In A2-full, winter starvation deaths over 120 years are at least 20% fewer than Arm 0's, pooled.
 5. **The chain begins.** In A2-full, at least 1% of adult-autumns reach 80 food in hand (Arm 0: 0.0%), pooled.
 6. **No leak.** In both arms, adults whose winter expectation is 0 show autumn foraging within ±10% of Arm 0's.
+
+## 7. Order of analysis (binding, set by the creator)
+
+Validity first. Then the causal links, in this order, before anything about survival is looked at:
+autumn food held; food entering winter; carrying-limit hits; carrier making and carrier worth. Only then
+deaths, infant deaths and population.
 
 **What the result would decide:**
 - 1 fails in A2-full: anticipating a lived hardship a season early does not change behaviour here, even at full
