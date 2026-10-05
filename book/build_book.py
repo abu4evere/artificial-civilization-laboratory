@@ -16,6 +16,7 @@ Source format, one paragraph per line, blank lines between:
     # Part I — Name      a part page;  "# Appendix A — Name" and "# Some Title" open unnumbered sections
     ## Chapter N — Name  a chapter opening
     - bullet item        **bold** inline
+    ![caption](path)     a figure, full text width, with its caption below; path relative to book/
     // note              not printed: notes for the editor, such as slots for the creator's own writing
     anything else        a body paragraph
 """
@@ -141,6 +142,29 @@ def cover_image() -> str:
 
 
 # --- the book -------------------------------------------------------------------------------------------
+IMAGE_RE = re.compile(r"^!\[(.*)\]\((.+)\)$")
+IMAGES: list[Path] = []                           # figures in the body, in order; filled while building
+
+
+def figure(caption: str, path: Path) -> str:
+    """A picture set inline at full text width, centred, with its caption beneath."""
+    IMAGES.append(path)
+    n = len(IMAGES)
+    w, h = png_size(path)
+    cx = TEXT_W * EMU // 1440
+    cy = cx * h // w
+    pic = f'''<w:p><w:pPr><w:pStyle w:val="Figure"/></w:pPr><w:r><w:drawing>
+<wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="{cx}" cy="{cy}"/><wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="{100 + n}" name="Figure {n}" descr="{escape(caption)}"/>
+<wp:cNvGraphicFramePr><a:graphicFrameLocks noChangeAspect="1"/></wp:cNvGraphicFramePr>
+<a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic>
+<pic:nvPicPr><pic:cNvPr id="{100 + n}" name="figure{n}.png"/><pic:cNvPicPr/></pic:nvPicPr>
+<pic:blipFill><a:blip r:embed="rIdFig{n}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill>
+<pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="{cx}" cy="{cy}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr>
+</pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>'''
+    return pic + para(caption, "Caption")
+
+
 PART_RE = re.compile(r"^(Part [IVXLC]+|Appendix [A-Z])\s+—\s+(.+)$")
 CHAP_RE = re.compile(r"^Chapter (\d+)\s+—\s+(.+)$")
 
@@ -161,6 +185,8 @@ def parse(lines):
             blocks.append(("chapter", line[3:]))
         elif line.startswith("- "):
             blocks.append(("bullet", line[2:]))
+        elif IMAGE_RE.match(line):
+            blocks.append(("image", line))
         else:
             blocks.append(("text", line))
     return title, subtitles, blocks
@@ -245,6 +271,11 @@ def body(blocks) -> str:
             after_heading = True
             in_part_intro = False
             continue
+        if kind == "image":
+            m = IMAGE_RE.match(text)
+            out.append(figure(m.group(1), (HERE / m.group(2)).resolve()))
+            after_heading = True
+            continue
         if kind == "bullet":
             out.append(para(text, "ListBullet"))
             after_heading = True          # the paragraph after a list starts flush, as after a heading
@@ -324,6 +355,9 @@ def styles_xml() -> str:
         style("TOC1", "toc 1", f'<w:keepNext/>{tab}<w:spacing w:before="200" w:after="40"/>',
               rpr(21, caps=True, spacing=20, color=ACCENT)),
         style("TOC2", "toc 2", f'{tab}<w:spacing w:after="20"/><w:ind w:left="240"/>', rpr(21)),
+        style("Figure", "Figure", '<w:keepNext/><w:spacing w:before="240" w:after="80"/><w:jc w:val="center"/>', rpr(24)),
+        style("Caption", "caption", '<w:spacing w:after="240"/><w:jc w:val="center"/>',
+              rpr(19, italic=True, color="4A4440")),
         style("Spacer", "Spacer", '<w:spacing w:before="0" w:after="0" w:line="240" w:lineRule="auto"/>', rpr(2)),
         style("Footer", "footer", '<w:jc w:val="center"/>', rpr(19, color="4A4440")),
     ]
@@ -380,7 +414,7 @@ DOC_RELS = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
             '<Relationship Id="rIdSettings" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/>'
             '<Relationship Id="rIdFooter" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml"/>'
             '<Relationship Id="rIdCover" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/cover.png"/>'
-            '</Relationships>')
+            '{figures}</Relationships>')
 
 
 def core(title) -> str:
@@ -399,6 +433,7 @@ APP = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
 
 
 def build():
+    IMAGES.clear()
     title, subtitles, blocks = parse(SOURCE.read_text(encoding="utf-8").splitlines())
     w, h = png_size(COVER)
     assert abs(w / h - 2 / 3) < 0.01, f"cover should be 2:3, is {w}x{h}"
@@ -415,15 +450,19 @@ def build():
         "word/numbering.xml": NUMBERING,
         "word/settings.xml": SETTINGS,
         "word/footer1.xml": FOOTER,
-        "word/_rels/document.xml.rels": DOC_RELS,
+        "word/_rels/document.xml.rels": DOC_RELS.format(figures="".join(
+            f'<Relationship Id="rIdFig{n}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" '
+            f'Target="media/figure{n}.png"/>' for n in range(1, len(IMAGES) + 1))),
     }
     tmp = BOOK.with_suffix(".tmp")
     with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as z:
         for name, text in parts.items():
             z.writestr(name, text.encode("utf-8"))
         z.write(COVER, "word/media/cover.png")
+        for n, path in enumerate(IMAGES, 1):
+            z.write(path, f"word/media/figure{n}.png")
     tmp.replace(BOOK)
-    words = sum(len(t.split()) for k, t in blocks)
+    words = sum(len(t.split()) for k, t in blocks if k != "image")
     chapters = sum(1 for k, _ in blocks if k == "chapter")
     print(f"built {BOOK.name}: {chapters} chapters, {words} words")
 

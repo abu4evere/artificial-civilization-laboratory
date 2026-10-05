@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="688" viewBox="0 0 680 688" font-family="Garamond, Georgia, serif" role="img">
+<title>ACL roadmap</title>
+<rect width="680" height="688" fill="#FFFFFF"/>
+<rect x="405" y="140" width="240" height="232" rx="4" fill="none" stroke="#B4B2A9" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text x="421" y="160" font-size="13" fill="#5F5E5A">E13R outcomes, fixed in advance</text>
+<line x1="190" y1="93" x2="190" y2="104" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="99.0" x2="190" y2="104" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="99.0" x2="190" y2="104" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="190" y1="159" x2="190" y2="170" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="165.0" x2="190" y2="170" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="165.0" x2="190" y2="170" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="190" y1="225" x2="190" y2="236" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="231.0" x2="190" y2="236" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="231.0" x2="190" y2="236" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="190" y1="291" x2="190" y2="302" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="297.0" x2="190" y2="302" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="297.0" x2="190" y2="302" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="190" y1="357" x2="190" y2="368" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="363.0" x2="190" y2="368" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="363.0" x2="190" y2="368" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="190" y1="423" x2="190" y2="434" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="429.0" x2="190" y2="434" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="429.0" x2="190" y2="434" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="190" y1="489" x2="190" y2="500" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="495.0" x2="190" y2="500" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="495.0" x2="190" y2="500" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="190" y1="555" x2="190" y2="566" stroke="#888780" stroke-width="1.2"/>
+<line x1="186.5" y1="561.0" x2="190" y2="566" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="193.5" y1="561.0" x2="190" y2="566" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="341" y1="264" x2="385" y2="264" stroke="#888780" stroke-width="1.2"/>
+<line x1="385" y1="196" x2="385" y2="332" stroke="#888780" stroke-width="1.2"/>
+<line x1="385" y1="196" x2="423" y2="196" stroke="#888780" stroke-width="1.2"/>
+<line x1="418.0" y1="199.5" x2="423" y2="196" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="418.0" y1="192.5" x2="423" y2="196" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="385" y1="264" x2="423" y2="264" stroke="#888780" stroke-width="1.2"/>
+<line x1="418.0" y1="267.5" x2="423" y2="264" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="418.0" y1="260.5" x2="423" y2="264" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="385" y1="332" x2="423" y2="332" stroke="#888780" stroke-width="1.2"/>
+<line x1="418.0" y1="335.5" x2="423" y2="332" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="418.0" y1="328.5" x2="423" y2="332" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+<rect x="40" y="40" width="300" height="52" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<text x="56" y="62" font-size="16" font-weight="bold" fill="#085041">0. The world</text>
+<text x="56" y="81" font-size="13.5" fill="#0F6E56">Physics, seasons, bodies, minds</text>
+<rect x="40" y="106" width="300" height="52" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<text x="56" y="128" font-size="16" font-weight="bold" fill="#085041">1. Culture appears</text>
+<text x="56" y="147" font-size="13.5" fill="#0F6E56">Traditions and stories, E1–E5</text>
+<rect x="40" y="172" width="300" height="52" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<text x="56" y="194" font-size="16" font-weight="bold" fill="#085041">2. Why it stops</text>
+<text x="56" y="213" font-size="13.5" fill="#0F6E56">Bottleneck mapped, E6–E13</text>
+<rect x="40" y="238" width="300" height="52" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="1.4"/>
+<text x="56" y="260" font-size="16" font-weight="bold" fill="#712B13">3. Transmission</text>
+<text x="56" y="279" font-size="13.5" fill="#993C1D">Now: E13R is running</text>
+<rect x="40" y="304" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+<text x="56" y="326" font-size="16" font-weight="bold" fill="#444441">4. Persistence</text>
+<text x="56" y="345" font-size="13.5" fill="#5F5E5A">Survives with models gone?</text>
+<rect x="40" y="370" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+<text x="56" y="392" font-size="16" font-weight="bold" fill="#444441">5. A people's practice</text>
+<text x="56" y="411" font-size="13.5" fill="#5F5E5A">Preparing becomes a tradition</text>
+<rect x="40" y="436" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+<text x="56" y="458" font-size="16" font-weight="bold" fill="#444441">6. Scale</text>
+<text x="56" y="477" font-size="13.5" fill="#5F5E5A">100 people against 30</text>
+<rect x="40" y="502" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+<text x="56" y="524" font-size="16" font-weight="bold" fill="#444441">7. Accumulation</text>
+<text x="56" y="543" font-size="13.5" fill="#5F5E5A">Tools build on tools</text>
+<rect x="40" y="568" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+<text x="56" y="590" font-size="16" font-weight="bold" fill="#444441">8. Society</text>
+<text x="56" y="609" font-size="13.5" fill="#5F5E5A">Trade, roles, their own rules</text>
+<rect x="425" y="170" width="200" height="52" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.8"/>
+<text x="441" y="192" font-size="16" font-weight="bold" fill="#2C2C2A">Safeguard fails</text>
+<text x="441" y="211" font-size="13.5" fill="#5F5E5A">Fix code, rerun E13R</text>
+<rect x="425" y="238" width="200" height="52" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.8"/>
+<text x="441" y="260" font-size="16" font-weight="bold" fill="#2C2C2A">No replication</text>
+<text x="441" y="279" font-size="13.5" fill="#5F5E5A">Try another route</text>
+<rect x="425" y="306" width="200" height="52" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.8"/>
+<text x="441" y="328" font-size="16" font-weight="bold" fill="#2C2C2A">Replicates</text>
+<text x="441" y="347" font-size="13.5" fill="#5F5E5A">On to stage 4</text>
+<rect x="40" y="648" width="14" height="14" rx="3" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<text x="62" y="660" font-size="13.5" fill="#5F5E5A">Done</text>
+<rect x="120" y="648" width="14" height="14" rx="3" fill="#FAECE7" stroke="#993C1D" stroke-width="0.8"/>
+<text x="142" y="660" font-size="13.5" fill="#5F5E5A">Now</text>
+<rect x="200" y="648" width="14" height="14" rx="3" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+<text x="222" y="660" font-size="13.5" fill="#5F5E5A">Ahead</text>
+</svg>

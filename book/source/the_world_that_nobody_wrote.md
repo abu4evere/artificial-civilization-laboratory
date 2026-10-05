@@ -1059,7 +1059,7 @@ ACL was not built from a reading list. Most of what it found, it found by runnin
 
 Both aim where ACL aims. Both get there mainly by evolution: agents whose networks work better leave more offspring, and pass those networks on. In ACL nothing is inherited but the body. Whatever a person comes to know, they learned in their own lifetime and must pass on by being watched, by raising children, or by telling, or it is lost. Human culture grew far faster than human genes changed, which is why ACL chose the harder road. Its price is scale: JaxLife's worlds dwarf ACL's, and the question of what a hundred connected people achieve against thirty is still open here. Two of Werld's ideas, that complexity should cost energy and that hidden senses could be discovered, are recorded for later.
 
-**Worlds run by minds that already know.** SimWorld builds realistic cities for testing agents driven by language models. Generative agents in a small town, and Project Sid's many-agent societies in Minecraft, show such agents forming routines, relationships, roles, rules, and even religions. These are valuable for building and testing agents. They cannot answer ACL's question. A language model trained on human writing already knows what a village, a trade and a law are, and when its agents build one, no one can tell whether civilization emerged or was remembered. This is the trap named in Chapter 73, and the reason for ACL's founding rule.
+**Worlds run by minds that already know.** SimWorld builds realistic cities for testing agents driven by language models. Generative agents in a small town, and Project Sid's many-agent societies in Minecraft, show such agents forming routines, relationships, roles, rules, and even religions. These are valuable for building and testing agents. They cannot answer ACL's question. A language model trained on human writing already knows what a village, a trade and a law are, and when its agents build one, no one can tell whether civilization emerged or was remembered. This is the trap named in Chapter 74, and the reason for ACL's founding rule.
 
 **Worlds with written rules.** Sugarscape grew trade, migration, inequality and conflict from simple agents on a grid, and showed how much social pattern can come from very little. But its behaviours, trade included, were rules its designers wrote. ACL forbids writing any behaviour it hopes to see.
 
@@ -1077,7 +1077,19 @@ None of this makes ACL's findings less its own. Its people were never told any o
 
 # Part VIII — The Future
 
-## Chapter 72 — Open Questions
+## Chapter 72 — The Road Ahead
+
+In October 2026, in the middle of E13R, the creator said the project felt as if it might lose its way. So the way was written down: nine stages from a world worth living in to a society, where the project stood among them, and how each next step would be decided.
+
+![The ACL roadmap, as drawn during E13R. Teal: done. Coral: now. Grey: ahead. The three outcomes of E13R were fixed before its result.](../docs/roadmap.png)
+
+The first three stages were behind it. The world existed; culture had appeared in it unscripted; and twelve experiments had mapped where the chain from a possible practice to a kept one broke. The fourth stage, whether a useful practice can pass from one adult to another, was the one in progress, and E13R would decide it.
+
+The most important part of the map is the fork beside that stage. What would follow E13R was written before E13R had a result: a failed safeguard would mean fixing the code and running again, a failure to replicate would mean another route to transmission, and a replication would mean moving on to the next question, whether a practice survives when nobody is left to copy it. Writing the branches first is the same discipline as freezing predictions. It keeps the path from bending to fit whatever comes out.
+
+The roadmap is kept in the repository beside the code, and redrawn after every experiment. The chapters of this book are how the project got here; the roadmap is where it means to go next, and it is allowed to be wrong.
+
+## Chapter 73 — Open Questions
 
 This chapter records questions. It does not answer them.
 
@@ -1119,7 +1131,7 @@ About ACL's own findings:
 - Is the interaction bottleneck in the world, or in the people?
 - And the oldest question, from before the record began: is anyone in there? Can a person born in ACL be someone?
 
-## Chapter 73 — The Minimum Conditions
+## Chapter 74 — The Minimum Conditions
 
 An idea took shape in October 2026, in conversation rather than in an experiment, and it is recorded here as an idea.
 
@@ -1129,7 +1141,7 @@ ACL may not need Earth. It may need only the minimum conditions that make cumula
 
 There is a trap on the way, and it was named at the same time. Better minds are allowed; minds that already know are not. A newborn has human capacities and no human knowledge. A language model trained on human writing has the knowledge. Put it in a world and it may rebuild pottery quickly, but no one could ever tell whether civilization emerged or was remembered.
 
-## Chapter 74 — How This Book Is Kept
+## Chapter 75 — How This Book Is Kept
 
 This is a living book, meant to be updated after every major experiment, in the same spirit it was written.
 

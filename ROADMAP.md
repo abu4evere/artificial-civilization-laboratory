@@ -5,6 +5,11 @@ It is updated after every experiment, like the book.
 
 **Last updated:** during E13R (October 2026).
 
+![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
+
+*The picture is drawn by [`docs/make_roadmap.py`](docs/make_roadmap.py) (also as [SVG](docs/roadmap.svg)). After each
+experiment, edit its stage list and run `python docs/make_roadmap.py`; the book uses the same picture.*
+
 ---
 
 ## The goal, in one line
