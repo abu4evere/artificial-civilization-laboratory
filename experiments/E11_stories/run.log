@@ -1,0 +1,16 @@
+verify arm0: READ-ONLY
+verify s1high: READ-ONLY
+arm0 seed 301: 120 years, alive 40, 237s
+zero seed 304: 120 years, alive 31, 238s
+s1low seed 301: 79 years, alive 0, 73s
+arm0 seed 303: 120 years, alive 50, 321s
+arm0 seed 304: 120 years, alive 39, 235s
+arm0 seed 302: 120 years, alive 96, 511s
+s1low seed 303: 120 years, alive 55, 288s
+s1low seed 304: 120 years, alive 42, 222s
+s1low seed 302: 120 years, alive 122, 552s
+s1high seed 301: 120 years, alive 64, 352s
+s1high seed 302: 120 years, alive 62, 308s
+s1high seed 303: 120 years, alive 59, 281s
+s1high seed 304: 120 years, alive 50, 180s
+ALL DONE
