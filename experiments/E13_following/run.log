@@ -1,0 +1,16 @@
+verify a: READ-ONLY
+verify b: READ-ONLY
+zero seed 304: alive 38, matches E9 True, 230s
+a seed 301: alive 38, matches E9 True, 274s
+a seed 303: alive 73, matches E9 True, 367s
+a seed 302: alive 55, matches E9 True, 384s
+a seed 304: alive 38, matches E9 True, 231s
+b seed 301: alive 45, matches E9 False, 318s
+b seed 303: alive 44, matches E9 False, 360s
+b seed 304: alive 37, matches E9 False, 302s
+b seed 302: alive 77, matches E9 False, 440s
+c seed 304: alive 0, matches E9 False, 65s
+c seed 301: alive 45, matches E9 False, 385s
+c seed 303: alive 59, matches E9 False, 303s
+c seed 302: alive 86, matches E9 False, 456s
+ALL DONE

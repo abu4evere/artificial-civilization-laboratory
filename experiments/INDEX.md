@@ -32,6 +32,7 @@ connect is told in the book (`book/source/the_world_that_nobody_wrote.md`).
 | E9.4 | Does the lesson undo itself? | Yes, measured: preparing prevents going short, the lesson then falls to a quarter, and preparing only happens above a threshold (≈0.4) that the fallen lesson no longer reaches. | 2 / 3 | `E9_anticipation/E9_4_results.md` |
 | E11 | Can stories of hunger deaths, carrying cause and season, keep the lesson alive (S1, at 0.25 and 0.50)? | The channel is vast (≈40,000 hearings) but each hearing moves people little (1.04×); planners 0 → 16 → 53 with story strength; 2 of 53 plan again; no change in winter outcomes. Leak test passed. | 2 / 7 | `E11_stories/results.md` |
 | E12 | What happened around the planners socially? | They were more visible, fed more people and gained standing; nobody around them changed, and their children did not plan more. No channel lets an adult copy what a neighbour does. | 4 / 4 | `E12_planners_social/results.md` |
+| E13 | Does following a visibly better-fed neighbour (B2) spread preparation? | Declared failed by its own rule: the leak test could not be performed (no one never sees a better-fed forager), a design error in the test. Unclaimed signals in Arm B: planners 4.1×, repeat planning 6.3% vs 0.9%, carers +8.1 points. Replication with a workable leak test needed. | 3 / 7 | `E13_following/results.md` |
 
 ## The chain so far
 
