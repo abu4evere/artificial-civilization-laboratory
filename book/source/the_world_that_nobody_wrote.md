@@ -1,6 +1,6 @@
 % The World That Nobody Wrote
 %% How we tried to build a civilization instead of simulating one
-%% Living edition 3 · written after E6.6, while E7 was running · October 2026
+%% Living edition 4 · written after E7 and its autopsy, while E7.6 and E7.7 were running · October 2026
 
 # A Note Before Reading
 
@@ -184,6 +184,8 @@ A book that claims principles should also list where they are not kept. These ar
 - **Speech is English.** The conversations a visitor sees in the viewer are an English rendering of what really passed between people. The people have no language of their own yet. The marks they scratch are the only symbols that are truly theirs.
 - **A floating instinct.** A person carrying something that floats well enough will set out across the water toward land they have seen, or sometimes at random. That knowledge, that a floating thing is a way across the sea, is supplied rather than learned. It was found in a code review in October 2026 and has not yet been removed.
 - **A fixed list of pulls.** The kinds of things that can pull at a person's mind (hunger, worry, a puzzle, grief, cold and so on) are a fixed list. Goals can attach to particular things a person has found, but the kinds of goal cannot grow.
+- **A memory that discards composite inventions.** Each person can remember at most twelve recipes. A new one beyond that pushes out the least valued, and a brand-new invention is valued at nothing, so a full memory often loses a thing the moment it is made. Ties are broken by the recipe's name, and the names of composite things (things tied from other things) begin with a bracket, which sorts first. So among equally valued recipes, the composite one is always dropped. Nobody designed this as nature. It is a detail of tie-breaking, found in October 2026 while building the E7.7 probe, and it falls hardest on exactly the inventions a cumulative chain is made of.
+- **Watching is narrow.** People can work out a recipe by watching someone in only two situations: seeing them land on new shore with a raft, and hunting beside them. A carrier, a warm wrap, a blade used for foraging or a piece of fired clay can be inherited, carried and lived beside for a lifetime without anyone learning how it was made.
 - **Fixed situations for habits.** Habits are learned for a fixed set of situations. The people cannot invent new situations to have habits about.
 
 A history that records its principles but not its compromises is a kind of advertisement.
@@ -328,15 +330,53 @@ The other five were quieter. Each would have meant testing something other than 
 
 All six were fixed, recorded in a separate note, and frozen under a tag before the first world ran. The pre-registration itself was not touched. Two parts of the design turned out to have nothing to act on: in this world nothing can be set down on a tile, so nothing on a tile can catch rain, and each person's food is one pooled amount with no age, so "food eaten past its natural rot" cannot be measured.
 
-Sixteen worlds are running as this is written, eight with the passive physics and eight without, a thousand years each. The answer is not in, and this book does not guess it.
+All sixteen worlds then ran a thousand years each, and every validity check held: no crash, no change of code during the runs, a recorder that changed nothing, and a baseline that reproduced E6 exactly.
 
-An experiment can be lost before it starts, quietly, inside a single field name.
+Half of the idea worked. Fires hardened clay in front of people 647 times, against none under the old code. People kept what the fire made. Twenty-five fired objects outlived the people who first carried them, and six were still being carried more than fifty years later.
+
+The other half never had a chance. In eight worlds over up to a thousand years, rain or a river filled a vessel three times, and nobody ever drank carried water. The world cannot fill vessels nobody makes.
+
+And novelty did not continue. Across the eight worlds, 628 lasting new things appeared in the first century and one after it. The frozen rule gave the same two words as E6: **bottleneck remains**. Three of seven predictions were confirmed.
+
+Two things were not predicted and are recorded as leads, not findings. E7 worlds lived longer: seed 306 reached year 465 instead of 124. And eleven new traditions began after year 100.
+
+The single late novelty, in seed 301 in year 115, looked for a while like a world that had almost found something. The next chapter tells what it really was.
+
+An experiment can be lost before it starts, quietly, inside a single field name. And a hopeful result can turn out to be something else entirely, which is why the next step was another autopsy.
+
+## Chapter 22 — E7.5: The Year-115 Flake
+
+Seed 301 was the only world in any experiment whose latest lasting novelty came after its first century. Before building anything on that, it was taken apart.
+
+The world was replayed under the E7 code to year 135, and the replay matched the saved run at every ten-year mark. The probe found that the novelty was not new. It was a flint flake: flint struck with flint or with stone. The flake had been known since year 2, made in play in year 4, taught at least twenty-four times and read from marks on rock many more. What happened in year 115 was narrower. For the first time, three people deliberately made a flake of middling sharpness within ten years.
+
+Two facts explained it. Deliberate making had become rare: the whole world made anything from a recipe zero to three times a year. And a flake's sharpness depends on the skill of the person striking it. The three makers were unskilled, at 0.14 to 0.29, where the founder who first made the flake had reached 0.82. Their flakes came out duller, and the novelty measure, which sorts things by how sharp they are, counted a duller flake as a new kind of thing.
+
+Fired clay played no part in it.
+
+So E7's one late novelty was most likely a sign of skill being lost, not of discovery. E7's real effect on late novelty was none. And the novelty measure had a weakness nobody had seen: it could count a decline as something new. Every late novelty in future experiments is to be checked for this before it is reported.
+
+## Chapter 23 — E7.6 and E7.7: Counting What Is Kept
+
+The autopsy left a suspicion: perhaps the worlds were not frozen at all, but slowly forgetting. Two read-only audits were designed to find out, each with predictions frozen and tagged before it ran. Neither changes a line of how the worlds behave.
+
+E7.6 replays all sixteen E7 worlds and records, every twenty-five years, the skill of the best crafter, the top ten and everyone alive; how many recipes the living still hold; how often people make things deliberately and in play; and whether watertight vessels exist at all. It then sets all of it against population, to see whether larger worlds keep more.
+
+E7.7 asks a sharper question, put by the creator: when someone carries, inherits or lives beside a useful thing, how often do they go on to learn to make it, and how often do they actually make one?
+
+Building the probes turned up three facts in the code that change how the question is asked. They are facts about the rules, not results:
+
+- Crafting skill grows only by practice. Founders start at 0.2 to 0.4, everyone born later at nothing. Skill is never taught, never inherited, and it dies with the person.
+- Watching teaches only in two situations, a raft landing and a shared hunt. Everything else must be taught, read from a mark, or found again in play.
+- Each person remembers at most twelve recipes, and when memory is full, composite inventions are the ones it drops first.
+
+Both audits are running as this is written. Their results belong to the next edition.
 
 # Part IV — The Great Debates
 
 Some of the most important turns in ACL's thinking came from arguments, not experiments: two serious positions, held before the evidence, and settled, or not settled, by what the worlds did. This part records them as they appear in the record. Where the record shows who held which view, it says so. Where it does not, the positions are described without names.
 
-## Chapter 22 — Isolation or Distraction?
+## Chapter 24 — Isolation or Distraction?
 
 **The question.** Why did E2's population fall?
 
@@ -348,7 +388,7 @@ Some of the most important turns in ACL's thinking came from arguments, not expe
 
 **What changed.** Two things. A respect for the simplest physical explanation, and a rule of thumb that survives in every later experiment: eight worlds can mislead; when they disagree with intuition, run more before believing either.
 
-## Chapter 23 — Richer Matter or Richer Discovery?
+## Chapter 25 — Richer Matter or Richer Discovery?
 
 **The question.** After the E5 freeze: why does novelty stop?
 
@@ -358,7 +398,7 @@ Some of the most important turns in ACL's thinking came from arguments, not expe
 
 **What changed.** The project's model of the problem. Richness of the world is necessary but not enough. What matters is whether anything leads a person from what is possible to what is done.
 
-## Chapter 24 — Opportunity or Interaction?
+## Chapter 26 — Opportunity or Interaction?
 
 **The question.** After E6: where exactly does the chain of discovery break?
 
@@ -370,7 +410,7 @@ The fourth was the intuitive favourite. Knowledge loss had been everywhere in E1
 
 **What changed.** The name of the problem. It became the interaction bottleneck.
 
-## Chapter 25 — The Reward Horizon
+## Chapter 27 — The Reward Horizon
 
 **The question.** If people never fill a vessel because the payoff comes weeks later and far away, is the real problem that they cannot learn from delayed rewards at all?
 
@@ -380,7 +420,7 @@ The fourth was the intuitive favourite. Knowledge loss had been everywhere in E1
 
 **What changed.** The suspicion was dropped. The problem is not learning from delay. It is the first step, which no delay can teach because it never happens.
 
-## Chapter 26 — Fix the World or Fix the People?
+## Chapter 28 — Fix the World or Fix the People?
 
 **The question.** Once the interaction bottleneck was named, which side should be mended?
 
@@ -392,11 +432,11 @@ The record says plainly where the creator stood: the creator preferred, for now,
 
 **The argument against it.** If the bottleneck is truly in the decision, mending the world may only move it. A people that never tries anything unrewarded might drink from a vessel that rain filled and still never think to fill one.
 
-**What the evidence says.** Not yet anything. E7 was designed to tell the two apart. If the world produces many first encounters and nobody takes them up, its frozen rules call that Failure B: the bottleneck is in the people after all.
+**What the evidence says.** E7 answered half of it. For heat, the world produced hundreds of first encounters, and people kept the results but built nothing on them. That is close to what the frozen rules called Failure B: the bottleneck lies, at least partly, beyond the world. For water, the world produced almost no encounters, because the vessels it was meant to fill almost never exist. Neither failure mode's definition was met exactly, and the debate is narrower than before, not closed.
 
 // CREATOR'S NOTE (to be written): Why did you prefer to leave the people unchanged? Is that a principle, or a choice for now?
 
-## Chapter 27 — Topology or Multipliers?
+## Chapter 29 — Topology or Multipliers?
 
 **The question.** Are all inventions alike, or do some matter differently?
 
@@ -406,19 +446,31 @@ The record says plainly where the creator stood: the creator preferred, for now,
 
 **What changed.** The project began to ask of every new piece of physics: does this add a multiplier, or does it add a new connection to the map?
 
-## Chapter 28 — Physics or Cognition?
+## Chapter 30 — Physics or Cognition?
 
 **The question.** Under all the others: is the freeze a property of the world, or of the minds in it?
 
 **The positions.** Everything from E6 to E7 has tried the world side first, partly from principle and partly because the world side is easier to change cleanly. The record also shows a decision made in advance about fire: before E6, the creator decided not to touch how fire works, so that whatever fire did would be what the world did on its own. But the autopsy's own last line points the other way: people try new things almost only in play, and adults play in about one week in a hundred.
 
-**What the evidence says.** Not yet enough. This debate is open, and it may be the one that decides the project.
+**What the evidence says.** Not yet enough, but it has moved. E7 showed that richer encounters with the world do not, on their own, start a chain. And the code facts found while building E7.6 and E7.7 point to the minds and the society: skill that cannot be taught, watching that teaches almost nothing, and a memory that discards composite inventions. This debate is still open, and it may be the one that decides the project.
+
+## Chapter 31 — Population or Transmission?
+
+**The question.** If the worlds are losing what they know, is it because there are too few people, or because what one person knows cannot pass to another?
+
+**The positions.** The creator ranked population first. The worlds hold twenty to ninety people, the size of one village. When a single master dies, a fifth of a world's expertise can go with them, and there is no other village to learn from. The assistant pointed to transmission: in today's code a skill cannot be passed on at all, however many people there are.
+
+**What reframed it.** The two are not rivals. In the standard model of cultural loss from human evolution studies, a skill survives when the number of learners, multiplied by how faithfully they copy the best, outweighs what is lost when people die. A large population that copies badly still loses its skills. A small population that copies perfectly still loses them when its few experts die. The useful question is not which one, but what each contributes.
+
+**What was proposed.** One experiment with four arms: today's worlds; worlds four times larger; worlds where people slowly gain skill by watching someone better than themselves; and both together. The pattern of which arms stop the decline would answer the question. If none of them do, both suspects fall, and a third rises: that ACL's inventions give no reason to build on them, because fired clay, so far, solves nothing.
+
+**What the evidence says.** Nothing yet. The design waits for the two audits, so that it is built on measurement rather than on the debate itself.
 
 # Part V — The Discoveries
 
 These are ideas the project did not have when it began. Each came from evidence and is stated as strongly as the evidence allows, and no more.
 
-## Chapter 29 — Civilization Is a Chain
+## Chapter 32 — Civilization Is a Chain
 
 The autopsies produced the framework that now organises almost all of ACL's thinking. For a discovery to become part of a culture, it has to pass through six links:
 
@@ -435,7 +487,7 @@ A discovery must survive every link. The record shows breaks at every one. Many 
 
 Seen this way, civilization looks less like a single event and more like a fragile chain, made over and over, in which every link must hold.
 
-## Chapter 30 — Topology Changes History
+## Chapter 33 — Topology Changes History
 
 Most inventions are multipliers. A sharper blade cuts a little faster. A better carrier carries a little more. Life gets easier, but it does not change shape.
 
@@ -445,7 +497,7 @@ The phrase inside the project became: **topology changes history**.
 
 The evidence is still mostly the shape of what did not happen. Once the raft's use could be felt, islands connected: open-water crossings went from almost none in E1 to between 7 and 167 per world in E2. The watertight vessel could have changed the map and never did, because it was never filled. Everything else ACL's people made was a multiplier, and the list of kinds was complete in eleven years. The working idea is that open-ended history needs a steady supply of map-changing inventions, and that a world whose physics offers only multipliers will freeze. It is a hypothesis, not a result.
 
-## Chapter 31 — Why Delayed Utility Is Hard
+## Chapter 34 — Why Delayed Utility Is Hard
 
 Many of the most important inventions in human history pay off later and somewhere else. Stored grain feeds you in winter. Carried water saves you in the desert. A sown field feeds you next year.
 
@@ -453,7 +505,7 @@ ACL's people can learn from delays. E6.6 showed it. What they cannot do is begin
 
 There is a cost hidden in one of the long-delay channels, and it belongs here. Beliefs about leaving things at places credit everything left at a spot in the past year, whether or not it caused what followed. They learn long delays, but without discrimination. Superstition is built into them on purpose (Law 71).
 
-## Chapter 32 — Why Transmission Alone Is Not Enough
+## Chapter 35 — Why Transmission Alone Is Not Enough
 
 The water vessel in seed 304 was taught by its maker to three people, and passed on to four more, and survived sixty years. Transmission worked.
 
@@ -461,19 +513,19 @@ What was transmitted was a carrier. The vessel's one world-changing property, th
 
 Transmission multiplies observation. It cannot create it.
 
-## Chapter 33 — Why Opportunity Alone Is Not Enough
+## Chapter 36 — Why Opportunity Alone Is Not Enough
 
 E6 was built on the belief that richer opportunities would make richer history. The autopsy counted the opportunities, and the count ended that belief. A watertight vessel at fresh water, 102 weeks, never filled. Raw food at a fire, dozens of adult-weeks in two worlds, never once held in the flame.
 
 An opportunity nobody acts on is invisible. A world can be full of possibilities and still have no history.
 
-## Chapter 34 — Isolation Kills Small Peoples
+## Chapter 37 — Isolation Kills Small Peoples
 
 This was found while looking for something else. A band of five alone on an island almost always dies out. Within a few generations everyone is related, and nobody is left to pair with. Only 17% of bands that never mixed had a living line at year 100.
 
 Every barrier in the physics, a wider channel or a removed jump, is therefore also a decision about who will have descendants. In most of E5's long-lived worlds, everyone alive descended from a single band of five.
 
-## Chapter 35 — Belief Is Not Practice
+## Chapter 38 — Belief Is Not Practice
 
 Several findings warn against treating what people believe, what they do, and what is true as one thing.
 
@@ -488,7 +540,7 @@ A world where people always believe what is true, always do what they believe, a
 
 These are stories from real worlds, told as closely to the record as possible. Every person here lived in a seeded world, and every event is in a replay, a chronicle or an autopsy. Where the record is silent, so is the story.
 
-## Chapter 36 — The Raft
+## Chapter 39 — The Raft
 
 The islands were meant to keep peoples apart. Each founding band started on its own island, and without something that floats, nobody could cross.
 
@@ -514,7 +566,7 @@ There was a price, and it took two experiments to see. Removing the jump also st
 
 The raft story wrote Law 124: uses must be experienced. An invention does not matter when it is made. It matters when someone lives through its use.
 
-## Chapter 37 — Beimak
+## Chapter 40 — Beimak
 
 Beimak was born in seed 302 in the eighth year of the world, to Thikor and Reloulour, both founders. There were older siblings, Baiyugos, born in the world's first years, and Keikenem, and a younger one, Thadim, who in year 13 was not yet three.
 
@@ -544,7 +596,7 @@ That is the whole history of pottery in seed 302: one child, one lump, sixteen w
 
 **Why it mattered.** Beimak's lump proved that the physics worked: heat did exactly what it was meant to do. It showed how rare the chance was: across the first century of that world, adults stood at a fire holding a dry, fireable shaped piece of clay in only three weeks. And it showed something harder to see in the tables. In ACL, the people most likely to try something new are the ones who play, and the ones who play are children, who are also the ones most likely to die.
 
-## Chapter 38 — Reibik
+## Chapter 41 — Reibik
 
 Reibik was one of the founders of seed 304, already about twenty-six when the world began. Reibik was very sociable (0.83), calm (temper 0.13), not especially bold (0.13) and not especially curious (0.35). Reibik had a partner, Vothi, and over the world's first fourteen years six children: Riyaishin, Mathis, Baigi, Noshe, Shabai and Houhaineil.
 
@@ -572,7 +624,7 @@ Reibik died of illness in year 17, about forty-four years old. Nobody ever held 
 
 // CREATOR'S NOTE (to be written): What was it like to read Reibik's 102 weeks for the first time? What did you realise in that moment about the bottleneck?
 
-## Chapter 39 — The Autopsy
+## Chapter 42 — The Autopsy
 
 The autopsy deserves its own chapter for how it was done, not only for what it found.
 
@@ -586,7 +638,7 @@ The autopsy ended with options, not a decision. Mend the chain from the world's 
 
 Every fix proposed before the autopsy would have targeted the wrong link.
 
-## Chapter 40 — Two Peoples Who Never Met
+## Chapter 43 — Two Peoples Who Never Met
 
 In E5, the frozen prediction said there would be no distinct peoples. Seed 301 proved it wrong.
 
@@ -600,7 +652,7 @@ They were two peoples, with two histories, across a stretch of sea, and neither 
 
 **Why it mattered.** It showed that distinct cultures can form and hold for a millennium without being written. It also showed the limit of that result. The prediction about rival identities scored "confirmed", but only because the two peoples never met. Rivalry needs contact. It was not tested, and it was not refuted.
 
-## Chapter 41 — The Killing of Ludol
+## Chapter 44 — The Killing of Ludol
 
 Seed 104, E1. In year 14, a person named Roukarail attacked a person named Kaileir. It was the first violence anyone in that world had done. The same year was a hungry one; three people starved after a poor growing season.
 
@@ -614,11 +666,25 @@ None of them had been there. And the memory itself held. One hundred and eighty 
 
 **Why it mattered.** It was the first clear evidence that ACL's people could carry history beyond living memory, which is the beginning of what a culture is. And in the same breath it showed that what a people carries is not the same as what happened. A people's past is something they make out of retellings. ACL does not correct them, and should not.
 
+## Chapter 45 — Mouthir and the Duller Flake
+
+Seed 301, under the E7 code. Daiyei was born in the world's first year. At four, playing, Daiyei struck flint against flint and was left with a sharp flake. Over a long life Daiyei's crafting skill rose to 0.82, the hand of a practised maker. Daiyei died of old age in year 62.
+
+The flake did not die with Daiyei. It was taught at least twenty-four times, by several teachers, and it was read from marks on rock by people who had never met the one who made them.
+
+Mouthir was born in year 96, four generations down. Mouthir was caring (0.78) and fairly bold (0.58), and had almost no practice at making anything: a crafting skill of 0.15. In year 115, at about eighteen, Mouthir took flint and struck a flake from a remembered recipe. In the next few years Vetibin, forty-four and curious, did the same, and so did Sosei, a child of eight. Their skills were 0.29 and 0.14. Their flakes came out duller than Daiyei's had been.
+
+The measure that watches for new things saw three people making a kind of flake nobody had deliberately made before, and recorded the first lasting novelty after year 100 in the history of ACL. It was the same flake, made worse.
+
+Mouthir starved in year 130.
+
+**Why it mattered.** It was the most hopeful number E7 produced, and it turned out to be a measure of loss. It is in this book because the project almost believed it.
+
 # Part VII — The Science of Open-Endedness
 
 The method was not designed at the start. It grew out of mistakes, and by version 8 of the World Bible it had been written down as nine rules, M1 to M9. This part explains why each part of it exists.
 
-## Chapter 42 — Why Predictions Are Frozen
+## Chapter 46 — Why Predictions Are Frozen
 
 Before every experiment, the predictions are written down and frozen. Afterwards each is scored: confirmed, wrong, or unclear. Nothing is edited once the results are in.
 
@@ -628,7 +694,7 @@ Freezing also forces precision. "Rafts will matter" cannot be scored. "Every sur
 
 With the predictions comes a kill criterion: a result, stated in advance, that would show the idea failed. E2 came within five people of its own. A mechanism survives by evidence, not by enthusiasm.
 
-## Chapter 43 — Why Autopsies Come Before Interventions
+## Chapter 47 — Why Autopsies Come Before Interventions
 
 When something does not emerge, the temptation is to add it, or to add whatever seems to be missing. ACL has learned to replay the world and find the broken link first.
 
@@ -636,13 +702,13 @@ The cost of skipping that step is in the record. E6 was an intervention made bef
 
 An autopsy is cheap compared with an experiment built on the wrong diagnosis.
 
-## Chapter 44 — Why Experiments Need Controls and Many Worlds
+## Chapter 48 — Why Experiments Need Controls and Many Worlds
 
 One seed shows one history. Histories in ACL diverge from the first week, and a single world can do almost anything. Seed 105 under E2 dwindled away because almost nobody had a mate on their island. Seed 107 alone held 20 of E2's 53 starved infants. Neither says what the E2 code does in general.
 
 So every comparison runs the same seeds under both codes, and a difference has to hold across many worlds. When eight were not enough, E4 ran twenty-four, with a threshold fixed in advance and an interval around the gap. Any change to the code changes the random history of every world, so only patterns across worlds can be trusted.
 
-## Chapter 45 — Why Failures Are Worth More Than Assumptions
+## Chapter 49 — Why Failures Are Worth More Than Assumptions
 
 Almost everything ACL knows that it did not know at the start came from a failure.
 
@@ -654,7 +720,7 @@ Almost everything ACL knows that it did not know at the start came from a failur
 
 An assumption that is never tested teaches nothing. A failure that is honestly recorded teaches something every time it is reread.
 
-## Chapter 46 — Why Measurement Must Not Touch the World
+## Chapter 50 — Why Measurement Must Not Touch the World
 
 Observers, the historian and every experiment's recorder must never change the world they watch (M4). This is checked, not assumed. Before an experiment's runs, a world is run for twenty years with the recorder and without it, and the two final states must be identical, down to a fingerprint of every value.
 
@@ -662,7 +728,7 @@ A recorder that so much as drew a random number would change the history it was 
 
 The same principle is why the code is frozen during experiments (M3). In E7, each run records a fingerprint of its code at the start and at the end, and a run whose fingerprint changed is thrown out.
 
-## Chapter 47 — Why the Experimenter Is the Most Likely Cheater
+## Chapter 51 — Why the Experimenter Is the Most Likely Cheater
 
 Every time a problem appears in ACL, the easiest solution is to put the answer straight into the simulation. Add a reward for filling vessels. Give people a little knowledge about fire. Let the historian's names leak into the people's minds.
 
@@ -674,7 +740,7 @@ The challenge was never making civilization happen. It was learning whether it w
 
 # Part VIII — The Future
 
-## Chapter 48 — Open Questions
+## Chapter 52 — Open Questions
 
 This chapter records questions. It does not answer them.
 
@@ -692,14 +758,27 @@ About civilization:
 About ACL's own findings:
 
 - Why does novelty stop? The shallowness of the physics, the smallness of the populations, the absence of any pull toward the unrewarded, or something not yet suspected?
-- Will the world performing the first step be enough? E7 is running.
+- Will the world performing the first step be enough? E7 suggests not on its own: fire made hundreds of encounters and nothing built on them.
+- Are the worlds frozen, or slowly forgetting? E7.6 is measuring it.
+- When people live with useful things, how often do they learn to make them? E7.7 is measuring it.
+- Can identity be measured? If a person were copied into another world, the share of their choices that still match the original, measured against how much the original changes over the same years and how much a stranger matches by chance, would turn the oldest question in this book into a number.
 - Why were E6's worlds harsher? Four of eight died out, and the cause was never found.
 - Would larger, connected populations hold on to more of what they find?
 - Can rival identities form when distinct peoples finally meet?
 - Is the interaction bottleneck in the world, or in the people?
 - And the oldest question, from before the record began: is anyone in there? Can a person born in ACL be someone?
 
-## Chapter 49 — How This Book Is Kept
+## Chapter 53 — The Minimum Conditions
+
+An idea took shape in October 2026, in conversation rather than in an experiment, and it is recorded here as an idea.
+
+For a while the project seemed impossible, because Earth is impossibly rich, and no simulation will ever have its physics. The answer was that it may not need to. Aeroplanes do not copy birds. They found the principle that makes flight possible, lift, and built that.
+
+ACL may not need Earth. It may need only the minimum conditions that make cumulative culture possible: some world in which things can be combined into things that make other things, problems worth solving, enough people that knowledge outlives any one of them, and minds that can pass on what they learn. If ACL ever shows that a short list like that is enough, civilization would turn out to be a consequence of conditions, not a miracle of one planet.
+
+There is a trap on the way, and it was named at the same time. Better minds are allowed; minds that already know are not. A newborn has human capacities and no human knowledge. A language model trained on human writing has the knowledge. Put it in a world and it may rebuild pottery quickly, but no one could ever tell whether civilization emerged or was remembered.
+
+## Chapter 54 — How This Book Is Kept
 
 This is a living book, meant to be updated after every major experiment, in the same spirit it was written.
 
@@ -730,7 +809,10 @@ Dates are as recorded in the repository. World Bible versions 1 to 6 are not pre
 - **E6.** Richer matter. Bottleneck remains.
 - **E6.5, E6.6.** The autopsies. Beimak and Reibik; the interaction bottleneck; delayed learning shown to work.
 - **3 October 2026 — E7 designed and frozen.**
-- **4 October 2026 — E7 audited, fixed and launched.** Running at the time of writing.
+- **4 October 2026 — E7 audited, fixed and launched.** Six problems fixed before any world ran.
+- **4 October 2026 — E7 results.** Valid. Fire hardens clay hundreds of times; water almost never; bottleneck remains.
+- **4 October 2026 — E7.5.** The year-115 novelty is a duller flint flake, made by unskilled people.
+- **4 October 2026 — E7.6 and E7.7 frozen and launched.** The memory ceiling and the narrowness of watching found in the code. Running at the time of writing.
 
 # Appendix B — Words Used in This Book
 
