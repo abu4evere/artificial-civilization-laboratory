@@ -572,36 +572,35 @@ Until E7.6, the project assumed that ACL's worlds reached a plateau: that novelt
 
 The audits showed that the plateau was an illusion. The worlds were steadily running down.
 
-The mechanism is a closed feedback loop:
+To explain the forty-fold collapse of making and the ten-fold collapse of skill, the project formed a working hypothesis. It is an interpretation, not yet an experiment, and E8 is designed to test it.
 
-- Tools in ACL are durable. A stone blade or wooden carrier lasts twenty to fifty weeks of regular use.
-- The mind suppresses making an item if the person is already holding one. While someone holds a blade, the pull to make another is zero.
-- Adults play only in about one week in a hundred, when curiosity briefly outweighs hunger and fatigue.
-- Because adults rarely play and never remake what they hold, they almost never gain crafting skill.
-- As the skilled founders die, the next generation knaps with novice hands: skill 0.10 to 0.20 instead of 0.80.
-- Novice hands produce dull, inferior tools.
-- Inferior tools yield low utility in foraging, hunting, and cutting.
-- By Law 124, utility experienced is what creates subjective value. Low utility produces low value.
-- When a dull tool finally breaks thirty years later, its low value provides almost no motivation to remake it.
-- The person makes even less, their children practice even less, and skill collapses to near zero.
+The hypothesis names a closed feedback loop:
 
-This is the degenerative loop. It explains why deliberate making fell forty-fold and crafting skill ten-fold. A culture cannot sustain tools if the tools are too durable to require practice, and too poorly made to feel worthwhile.
+- When an adult holds a tool, the decision rules skip remaking it unless something extra pulls on them, such as an active inquiry or a seasonal belief about a place.
+- Adults play only rarely, in about one week in a hundred, when curiosity briefly outweighs hunger and fatigue.
+- Because adults rarely play and seldom remake what they already hold, they get few opportunities to practice making.
+- As the skilled founders die, later generations make things with less practiced hands.
+- Less practiced hands produce duller, less effective tools.
+- Less effective tools yield lower utility in foraging, hunting, and cutting.
+- By Law 124, experienced utility is what creates subjective value. Lower utility produces lower value.
+- Lower value gives even less reason to remake the tool when it eventually wears out.
+- With even less making, the next generation practices even less, and skill continues to decay.
+
+If this loop is real, it means culture in ACL did not stall because possibilities were missing. It stalled because what was once known was not practiced enough to survive.
 
 ## Chapter 40 — The Memory Ceiling on Composites
 
-Civilization advances by combining simple things into complex things. A handle bound to a blade makes an axe; a hollow frame bound to a skin makes a boat.
+In E7.7, simple things made in play were kept in memory 96% of the time (3,984 kept, 162 forgotten). Composite things were forgotten at the moment they were made 21% of the time (7,982 kept, 2,160 forgotten): a five-fold penalty.
 
-In ACL, composite inventions suffered a hidden structural penalty.
+The cause was not in the nature of people or of discovery. It was an accident of code.
 
-Each person can remember at most twelve recipes. When a person discovers or learns a thirteenth, the memory rules prune the recipe with the lowest subjective value.
+Each person remembers at most twelve recipes. When someone discovers a thirteenth, the memory rules prune the recipe with the lowest subjective value. A brand-new recipe starts with value zero, because it has not yet been used.
 
-Simple tools, like a scraped stick or a flint flake, are made and used in the same act. They acquire immediate value.
+When several recipes share the lowest value, Python breaks the tie alphabetically by the recipe's signature. Simple tool signatures begin with letters, such as `flint/flint` or `stone/wood`. Composite signatures begin with parentheses, such as `(stone/stone+wood)#fiber`. In ASCII order, the opening parenthesis sorts before any letter.
 
-Composite tools require an intermediate step: knapping a specific core, or binding a hollow frame. That intermediate component has no independent use; its value is zero. When the crafter finishes the intermediate part and moves to the final assembly, or learns a new recipe from a neighbour, the intermediate recipe is the least valued thing in their head. The memory rule drops it.
+So when a crafter whose memory is already full invents a composite tool in play, the brand-new invention is tied for lowest value at zero, sorts first alphabetically, and is immediately deleted in the very next line of code. The person tied two things together, held the result, and instantly forgot how they had done it.
 
-In E7.7, simple things made in play were kept in memory 96% of the time. Composite things were forgotten on making 21% of the time: a five-fold penalty.
-
-A civilization cannot accumulate multi-stage technologies if its memory architecture treats intermediate components as useless clutter.
+This is an accident of tie-breaking, not nature. It belongs to the book's Known Compromises, and E8 is designed to remove it.
 
 # Part VI — Lives
 
