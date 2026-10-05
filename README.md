@@ -278,7 +278,8 @@ The nearest scientific relatives are studies of cultural accumulation in learnin
 ([Ndousse et al., 2021](https://arxiv.org/abs/2010.00581); [Cook et al., 2024](https://arxiv.org/abs/2406.00392)) and
 the study of human cultural evolution, which ACL keeps rediscovering: learning from the successful
 ([Henrich and Gil-White, 2001](https://doi.org/10.1016/s1090-5138(00)00071-4)) and the loss of skills in small,
-isolated populations ([Henrich, 2004](https://doi.org/10.2307/4128416)). The book has the longer account.
+isolated populations ([Henrich, 2004](https://doi.org/10.2307/4128416)). The book has the longer account, and
+[RESOURCES.md](RESOURCES.md) the project's full reading list.
 
 ## Not yet
 
