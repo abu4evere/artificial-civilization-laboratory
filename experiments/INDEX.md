@@ -26,7 +26,7 @@ connect is told in the book (`book/source/the_world_that_nobody_wrote.md`).
 | E8.4 | Could they have prepared for winter? | Yes: median autumn surplus 163; median adult enters winter with 13. | 5 / 5 | `E8_crucible/E8_4_results.md` |
 | E9 | Does anticipating a season one has gone short in make people prepare? | Faintly: leak test passed, central test failed; for the first time some people fill their hands before winter, and those few store six times the food. | 2 / 6 | `E9_anticipation/results.md` |
 | E9.1 | Whom does anticipation reach? | Nearly everyone, faintly; only those with a strong lesson store. | 1 / 3 | `E9_anticipation/E9_1_results.md` |
-| E9.2 | Does a carer's store protect children through winter? | (running at the time of writing) | – | `E9_anticipation/E9_2_children_autopsy.md` |
+| E9.2 | Does a carer's store protect children through winter? | Yes: a few weeks' more food in the carer's hands cuts a child's winter starvation five-fold; such carers are rare (0.2%), and anticipation makes them nine times commoner. | 3 / 3 | `E9_anticipation/E9_2_results.md` |
 
 ## The chain so far
 

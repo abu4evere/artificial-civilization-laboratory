@@ -47,10 +47,11 @@ lived through or witnessed, and never from a rule about seasons, storing or tool
 
 ## Suggested order (the assistant's view; the creator decides)
 
-1. Read E9.2's result first.
-2. If carers' stores protect children: **O2**, alone, with a leak test like E9's (no change for anyone who never lost a
-   child to that season).
-3. If they do not: **O1**, alone.
+1. ~~Read E9.2's result first.~~ **E9.2 is in:** a carer's food at the start of winter cuts their children's risk of
+   starving five-fold (1.11% → 0.20% between under 20 and 20–49 food). The reward for storing is real and falls on the
+   children. That makes **O2** the option most directly aimed at where the deaths are.
+2. **O2**, alone, with a leak test like E9's (no change for anyone who never lost a child to that season).
+3. **O1**, alone, as the alternative or second arm.
 4. O3 and O4 only after one of O1 or O2 has shown the lesson can be strong enough to matter.
 
 Whichever is chosen should keep E9's discipline: candidate rules written out, a read-only pilot to check the lesson
