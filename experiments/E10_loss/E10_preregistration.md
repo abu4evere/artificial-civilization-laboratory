@@ -1,7 +1,8 @@
-# E10 — The lesson of a lost child (O2) and of a death witnessed (O3): pre-registration DRAFT
+# E10 — The lesson of a lost child (O2) and of a death witnessed (O3): pre-registration (FROZEN)
 
-**Status:** DRAFT for the creator's sign-off. Not frozen. No E10 code exists. Once signed off it is committed and
-tagged `E10-frozen` before any code is written.
+**Status:** signed off by the creator on 2026-10-06, with one change (O3 tested at two witness strengths instead of
+one, so its value is a dose-response test rather than a single guess), and frozen as `E10-frozen` before any E10 code
+was written. Not to be edited after the results.
 
 **Chosen by the creator (2026-10-06):** O2 first, then O2 + O3, from `../E9_anticipation/next_options.md`.
 
@@ -27,8 +28,8 @@ Built on the E7 code alone (not on E9's A2). A new expectation per season, `expe
 **(a) Learning, where a death from starvation happens (`biology.py`, beside the death):**
 - **O2:** if the dead person was under 12, their carer (`caregiver`, else `mother`), if alive, gets
   `expect["loss@s"] = 1.0`, where s is the season of the death.
-- **O3 (second arm only):** every adult (16+) within sight (`cfg.perception`) of anyone who dies of starvation,
-  other than an O2 carer, gets `expect["loss@s"] = max(expect["loss@s"], 0.5)`.
+- **O3 (O2+O3 arms only):** every adult (16+) within sight (`cfg.perception`) of anyone who dies of starvation,
+  other than an O2 carer, gets `expect["loss@s"] = max(expect["loss@s"], WITNESS)`.
 
 **(b) Fading, every week, for everyone alive (`biology.py`):** every `loss@s` is multiplied by 0.985, the rate at
 which grief already fades in the code. A loss in winter still weighs about 0.6 the next autumn and 0.27 the one after.
@@ -43,16 +44,18 @@ pull. Stealing, taking, giving, play and everything else keep today's hunger.
 
 ## 4. Arms and numbers
 
-| arm | mechanism | WEIGHT | O3 witness value |
+| arm | mechanism | WEIGHT | WITNESS |
 |---|---|---|---|
 | 0 | E7 code (control) | – | – |
 | O2 | (a) O2, (b), (c) | 1.0 | – |
-| O2+O3 | (a) O2 and O3, (b), (c) | 1.0 | 0.5 |
+| O2+O3-low | (a) O2 and O3, (b), (c) | 1.0 | 0.25 |
+| O2+O3-high | (a) O2 and O3, (b), (c) | 1.0 | 0.50 |
 
 Reasons, fixed now: **WEIGHT 1.0** because E9 showed the weaker dose (0.375) inert and the strength of this lesson
-lies in the lesson itself; **0.5** for a witnessed death because nothing in the code gives a precedent for how much
-less a stranger's death weighs than one's own child's, and half is the plainest choice between nothing and all.
-**0.985 per week** is grief's own fading rate. No other values will be tried in E10.
+lies in the lesson itself. **WITNESS** has no precedent in the code for how much less a stranger's death weighs than
+one's own child's, so it is not a single guess but a dose-response test, set by the creator: **0.25** (conservative,
+unlikely to overpower O2) and **0.50** (half of a direct loss). **0.985 per week** is grief's own fading rate. No
+other values will be tried in E10.
 
 Seeds 301–304, 120 years, probed every 10 years and every autumn and winter.
 
@@ -64,6 +67,9 @@ Seeds 301–304, 120 years, probed every 10 years and every autumn and winter.
 | Anything fires because it is autumn? | No. The same rule runs every season, one season ahead of a loss. A loss in spring is felt in winter. |
 | A fact about winter the person has not lived or seen? | No. Only a death they suffered (O2) or saw (O3). |
 | Inherited or told? | No. (Stories are O4, not part of E10.) |
+
+**Planned after E10, whatever its result (creator's request):** a read-only autopsy of the 112 adult-autumns in
+E9 A2-full that reached the carrying limit: the first naturally occurring winter planners in ACL.
 | Changes how anything is valued? | No. |
 | Could it make people steal? | No: stealing keeps today's hunger. |
 
@@ -82,25 +88,28 @@ Validity and the leak test first. Then the causal links: autumn foraging of less
 winter; the share of child-winters whose carer holds 20+ food; carrying-limit hits; carriers made. Only then deaths:
 children's winter starvation, all starvation, population.
 
-## 8. Predictions (to be frozen with this file)
+## 8. Predictions
 
 1. **The lesson moves the bereaved (O2).** In the first autumn after losing a child, bereaved carers forage in at least
    1.3× as many autumn weeks as bereaved carers in Arm 0, pooled over seeds.
-2. **The witnessed lesson moves witnesses (O2+O3).** In the first autumn after witnessing a starvation death,
+2. **The witnessed lesson moves witnesses (O2+O3-high).** In the first autumn after witnessing a starvation death,
    witnesses caring for children forage in at least 1.2× as many autumn weeks as comparable witnesses in Arm 0,
    pooled.
-3. **Better-stocked carers (O2+O3).** The share of child-winters whose carer holds 20 or more food at the first week
-   of winter is at least 5 percentage points higher than in Arm 0, pooled.
-4. **Children saved (O2+O3).** Children's winter starvation per child-winter is at least 20% lower than in Arm 0,
-   pooled.
-5. **O2 alone is too rare to change the world.** In O2, children's winter starvation per child-winter is within ±20%
+3. **Dose response.** Witnesses' autumn foraging, relative to Arm 0, rises less in O2+O3-low than in O2+O3-high;
+   and the share of child-winters whose carer holds 20+ food is lower in O2+O3-low than in O2+O3-high, pooled.
+4. **Better-stocked carers (O2+O3-high).** The share of child-winters whose carer holds 20 or more food at the first
+   week of winter is at least 5 percentage points higher than in Arm 0, pooled.
+5. **Children saved (O2+O3-high).** Children's winter starvation per child-winter is at least 20% lower than in
+   Arm 0, pooled.
+6. **O2 alone is too rare to change the world.** In O2, children's winter starvation per child-winter is within ±20%
    of Arm 0's, pooled.
-6. **No leak.** The leak test (section 6) passes in both arms.
+7. **No leak.** The leak test (section 6) passes in all three mechanism arms.
 
 **What the result would decide:**
 - 1 fails: even losing a child, felt a season early at full strength, does not move people; the anticipation route is
   closed in this form.
 - 1 holds, 2 fails: own loss teaches, witnessing does not; next is whether stories (O4) can carry it.
+- 2 holds, 3 fails: witnessing moves people, but not in proportion to its weight; read the two O3 arms with care.
 - 1–3 hold, 4 fails: lessons spread and carers stock more, but it does not save children; measure where the food goes.
 - 1–4 hold: the first lesson in ACL that spreads, prepares people for winter and saves lives, learned only from what
   people lived through or saw. Run the 300-year follow-up, with novelty and carrier predictions frozen first.
