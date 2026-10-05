@@ -30,3 +30,6 @@ Thumbs.db
 
 # Build leftovers
 book/*.tmp
+
+# E13R timing trial and analysis smoke-test (throwaway)
+experiments/E13R_replication/l2_timing/
