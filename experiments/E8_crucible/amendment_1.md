@@ -99,4 +99,51 @@ today (only food can be given; things pass only by inheritance at death).
   and so their own practice.
 - Risk: two changes at once (a new act and a new reason to make). Larger change than R1 or R2.
 
-**Chosen:** _(to be filled in and frozen by the creator before coding)_
+**Chosen: R2**, by the creator on 2026-10-05, because Arm 1 must answer one upstream question as clearly as
+possible ("is practice what is missing?"): R1's effect may be too small to read, and R3 changes two things at
+once.
+
+**R2 exactly (the only change in Arm 1's code, in `mind.py`, the "make again" loop):**
+
+```
+held = _holding(p, sig)
+if held and v == p.itemval.get(sig, 0.0):      # today this case is skipped
+    if p.itemval.get(sig, 0.0) <= 0:            # practise only what has proved its worth
+        continue
+    v = 0.5 * v                                 # at half the pull
+if v <= best_u or not can_make(p, recipe):
+    continue
+```
+
+Every case today's rule allows is untouched, at full strength. Arm 1 only adds remaking a held, valued thing
+at half its pull. The other two uses of `_holding` (parts and materials wanted for recipes) are unchanged.
+
+## A9. Arm 0 and Arm 1: frozen predictions
+
+Seeds 301–304, 120 years, Arm 0 = the E7 code, Arm 1 = the E7 code with R2. Measured every 10 years by a
+read-only probe. "Later-born" = born after year 30, when nearly every founder is dead or old.
+
+1. **Manipulation check.** Deliberate makes per person-decade, years 50–120, are at least 3× Arm 0's in all 4
+   seeds. If this fails, Arm 1 did not test its hypothesis and predictions 2–6 are not interpreted.
+2. **Skill outlives the founders.** Mean crafting skill of later-born adults (16+) at year 120 is at least 2×
+   Arm 0's in at least 3 of 4 seeds.
+3. **More is kept.** Unique recipes held by the living at year 120 are at least 1.3× Arm 0's in at least 3 of 4
+   seeds.
+4. **Composites are not crowded out.** The share of composite recipes among those held at year 120 is no lower
+   than Arm 0's (within 2 percentage points) in at least 3 of 4 seeds.
+5. **Traditions.** Techniques held by 3+ people in every 10-year sample from year 30 to 120 number at least as
+   many as in Arm 0 in at least 3 of 4 seeds.
+6. **Practice has a price, but not a famine.** All 4 Arm 1 worlds are alive at year 120; population at year 120
+   is at least 80% of Arm 0's in at least 3 of 4 seeds; starvation deaths over 120 years are at most 1.3× Arm 0's
+   pooled.
+
+**What the result will decide:**
+- 1 fails: making was not freed by this rule; autopsy why people do not make before anything else.
+- 1 holds, 2–5 mostly fail: practice alone does not keep a culture; apprenticeship and population (Arms 2, 4)
+  become the next tests.
+- 1–5 mostly hold, 6 holds: practice scarcity was a real cause; the next step is a 300-year run of Arm 1 with
+  novelty predictions (A1).
+- 1–5 hold, 6 fails: practice works but the economy cannot pay for it; surplus becomes the question.
+
+**Validity (kill criteria):** the probe changes nothing (state hash with and without it, 20 years, both codes);
+Arm 0 reproduces the saved E7 runs' populations; code fingerprints unchanged during the runs; no crashes.
