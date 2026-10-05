@@ -27,3 +27,6 @@ Thumbs.db
 
 # Office lock files
 ~$*
+
+# Build leftovers
+book/*.tmp
