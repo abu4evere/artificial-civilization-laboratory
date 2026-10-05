@@ -31,6 +31,7 @@ connect is told in the book (`book/source/the_world_that_nobody_wrote.md`).
 | E9.3 | Who were the first winter planners, and what did they do? | Ordinary people with a hard lesson; they gave 30% away; no child in their care starved; 1 of 113 planned again. The lesson undoes itself. | 3 / 3 | `E9_anticipation/E9_3_results.md` |
 | E9.4 | Does the lesson undo itself? | Yes, measured: preparing prevents going short, the lesson then falls to a quarter, and preparing only happens above a threshold (≈0.4) that the fallen lesson no longer reaches. | 2 / 3 | `E9_anticipation/E9_4_results.md` |
 | E11 | Can stories of hunger deaths, carrying cause and season, keep the lesson alive (S1, at 0.25 and 0.50)? | The channel is vast (≈40,000 hearings) but each hearing moves people little (1.04×); planners 0 → 16 → 53 with story strength; 2 of 53 plan again; no change in winter outcomes. Leak test passed. | 2 / 7 | `E11_stories/results.md` |
+| E12 | What happened around the planners socially? | They were more visible, fed more people and gained standing; nobody around them changed, and their children did not plan more. No channel lets an adult copy what a neighbour does. | 4 / 4 | `E12_planners_social/results.md` |
 
 ## The chain so far
 
