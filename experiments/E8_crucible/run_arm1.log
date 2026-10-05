@@ -1,0 +1,11 @@
+arm0 seed 304, 20 years: 17e12e4986afa880 / 17e12e4986afa880 -> READ-ONLY
+arm1 seed 304, 20 years: f10044f42b0107b2 / f10044f42b0107b2 -> READ-ONLY
+arm0 seed 301: 120 years, alive 40, matches saved E7: True, 224s
+arm0 seed 304: 120 years, alive 39, matches saved E7: True, 228s
+arm0 seed 303: 120 years, alive 50, matches saved E7: True, 306s
+arm1 seed 303: 100 years, alive 0, matches saved E7: False, 90s
+arm1 seed 304: 76 years, alive 0, matches saved E7: False, 58s
+arm0 seed 302: 120 years, alive 96, matches saved E7: True, 480s
+arm1 seed 301: 120 years, alive 80, matches saved E7: False, 336s
+arm1 seed 302: 120 years, alive 103, matches saved E7: False, 419s
+ALL DONE
