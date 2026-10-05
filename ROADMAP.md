@@ -159,4 +159,11 @@ These hold at every stage, whatever the results:
 - Measuring identity: copy a person into another world and see how much of them persists (Part VIII, open questions).
 - Why E6's worlds were harsher (never found).
 - Rival identities when separate peoples meet.
+- **A language barrier.** Today "talk" passes stories, reputations, places and know-how perfectly between any two people,
+  even strangers from peoples that never met: in effect, telepathy across groups. Stories and teaching could get through
+  only partly between people who share little (for example, limited by familiarity or by shared marks). Matters before
+  any study of separate peoples meeting.
+- **Wariness of strangers, as nature?** A stranger now starts at zero on every feeling, with no caution toward the
+  unfamiliar. Whether a mild inborn caution belongs in ACL's nature is an open question: writing it in risks scripting
+  group conflict, so it needs the creator's sign-off and a careful design.
 - Writing ACL up as a paper (Hughes et al. for framing).
