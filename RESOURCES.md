@@ -6,6 +6,43 @@ says why it matters for ACL and which experiments it speaks to. **Read first** m
 Using a source never means copying a behaviour into ACL. Sources may suggest what to *measure* and which *capacities* a
 person could plausibly have; the founding rule still holds: nature is programmed, culture is written by nobody.
 
+## Reading plan
+
+The creator's order, with the assistant's suggested changes applied. Full citations for each item are in the sections
+below.
+
+**Phase 1 — Understand culture**
+1. Mesoudi (2011), *Cultural Evolution*: the readable overview; read first. Then Mesoudi (2011), acquisition costs.
+2. Boyd & Richerson (1985), *Culture and the Evolutionary Process*: the formal foundation; easier after Mesoudi.
+3. Henrich & Gil-White (2001), prestige; then Henrich (2004), Tasmania.
+4. Tomasello (1999), *The Cultural Origins of Human Cognition*: the ratchet effect.
+5. Kendal et al. (2018), social learning strategies.
+
+**Phase 2 — Understand artificial societies**
+6. Sugarscape (Epstein & Axtell, 1996)
+7. The social protocell hypothesis (Andersson & Czárán, 2023)
+8. Iterated learning (Kirby, Cornish & Smith, 2008)
+
+**Phase 2.5 — Artificial agents that learn culture** (closest to ACL's current work; can be read first)
+9. Ndousse et al. (2021), emergent social learning
+10. Cook et al. (2024), cultural accumulation across generations
+11. Dalmaijer (2022), cumulative culture in artificial navigators
+12. Bhoopchand et al. (2023), imitation as cultural transmission
+13. Jaques et al. (2019), social influence as intrinsic motivation
+
+**Phase 3 — Understand modern AI worlds**
+14. Crafter (Hafner, 2021): read before Craftax, which is built on it.
+15. Craftax and Multi-Agent Craftax (2024, 2025)
+16. Neural MMO (2021): mainly a benchmark; skim.
+17. Melting Pot (2021): mainly a benchmark; skim.
+
+**Phase 4 — Understand open-ended intelligence**
+18. Avida (Ofria & Wilke, 2004): how to run artificial-life experiments rigorously.
+19. POET (Wang et al., 2019)
+20. Hughes et al. (2024), open-endedness
+21. JaxLife (Lu et al., 2024)
+22. Werld
+
 ---
 
 ## 1. Social learning and cumulative culture in artificial agents
