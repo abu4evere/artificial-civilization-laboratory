@@ -279,7 +279,8 @@ The nearest scientific relatives are studies of cultural accumulation in learnin
 the study of human cultural evolution, which ACL keeps rediscovering: learning from the successful
 ([Henrich and Gil-White, 2001](https://doi.org/10.1016/s1090-5138(00)00071-4)) and the loss of skills in small,
 isolated populations ([Henrich, 2004](https://doi.org/10.2307/4128416)). The book has the longer account, and
-[RESOURCES.md](RESOURCES.md) the project's full reading list.
+[RESOURCES.md](RESOURCES.md) the project's full reading list. Where the project is going, and how each next
+step is decided, is in [ROADMAP.md](ROADMAP.md).
 
 ## Not yet
 
