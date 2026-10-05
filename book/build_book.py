@@ -183,7 +183,7 @@ def front_matter(title, subtitles) -> str:
     # edition page
     out.append(spacer(5000))
     for line in (title, edition,
-                 "Written from the experiment records of the Artificial Civilization Laboratory, E0 to E7. "
+                 "Written from the experiment records of the Artificial Civilization Laboratory, E0 to E7.7. "
                  "Every number in this book comes from a record in the project's repository; every name is a "
                  "person who lived in a seeded world.",
                  "This is a living book. It is meant to be revised after every major experiment, and earlier "
