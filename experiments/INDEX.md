@@ -29,6 +29,7 @@ connect is told in the book (`book/source/the_world_that_nobody_wrote.md`).
 | E9.2 | Does a carer's store protect children through winter? | Yes: a few weeks' more food in the carer's hands cuts a child's winter starvation five-fold; such carers are rare (0.2%), and anticipation makes them nine times commoner. | 3 / 3 | `E9_anticipation/E9_2_results.md` |
 | E10 | Does losing a child (O2) or witnessing a death (O3, at 0.25 and 0.50) teach preparation? | Bereaved forage 1.2× next autumn, witnesses barely; no change in how anyone enters winter. Differences in child deaths go in no consistent direction and nothing upstream explains them. | 2 / 7 | `E10_loss/results.md` |
 | E9.3 | Who were the first winter planners, and what did they do? | Ordinary people with a hard lesson; they gave 30% away; no child in their care starved; 1 of 113 planned again. The lesson undoes itself. | 3 / 3 | `E9_anticipation/E9_3_results.md` |
+| E9.4 | Does the lesson undo itself? | Yes, measured: preparing prevents going short, the lesson then falls to a quarter, and preparing only happens above a threshold (≈0.4) that the fallen lesson no longer reaches. | 2 / 3 | `E9_anticipation/E9_4_results.md` |
 
 ## The chain so far
 

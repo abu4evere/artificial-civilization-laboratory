@@ -785,7 +785,7 @@ The creator put it this way, and E8.3 added its last sentence: the surprising di
 
 ## Chapter 53 — A Lesson That Undoes Itself
 
-This is an interpretation of E9.3, not a tested result, and it is stated as one.
+This began as an interpretation of E9.3. At the creator's insistence it was then tested before anything was built on it (E9.4, below), and the test confirmed it.
 
 The planners stored food because they had gone short. Having stored, they did not go short. And the lesson they acted on was learned from going short: in a winter without it, the memory moves toward nothing. So the next autumn there is nothing left to anticipate, nobody lays anything by, and the shortage that taught them comes back. A lesson learned only from suffering is erased by its own success.
 
@@ -794,6 +794,8 @@ If that is right, it explains why no lesson tried in E9 or E10 changed how a peo
 Human societies seem to have answered this with things that outlast experience. A story about a winter no one alive remembers. A custom of filling the store whether or not anyone is hungry. A granary that stays full because emptying it is forbidden. A rule. All of them keep the lesson when the suffering that taught it is gone. ACL's people have stories, but no story of hunger reaches them as a reason to act; they have heaps, but nothing keeps food in them.
 
 That may be the next question. Not how a person learns to prepare, but how a people keeps a lesson that its own success would erase.
+
+**The test (E9.4).** Every adult in four worlds was followed from one autumn to the next. Those who prepared went short far less: six in ten of them had a winter with no hungry week at all, against about three in ten of those who had gone short and did not prepare. After a winter like that, their lesson fell to a quarter of its strength; among those who did not prepare and went short again, it held. And preparing turned out to be a threshold. Almost no one prepared with a lesson weaker than about four tenths; a quarter of those at five tenths or more did. A planner's well-fed winter left their lesson at about an eighth, far below the line. They would not prepare again until hunger built it back up. How far the lesson falls is set by the rule the mind learns by. That it falls at all is because the preparation worked.
 
 **Provisional conclusion, in the creator's words (October 2026).** ACL individuals can learn from winter, but the lesson is not self-sustaining. Successful preparation removes the experience that created the lesson, causing the lesson to fade. No tested individual-learning mechanism has yet produced stable, population-level winter preparation.
 
