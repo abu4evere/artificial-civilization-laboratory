@@ -1,0 +1,20 @@
+verify arm0: READ-ONLY
+verify o3high: READ-ONLY
+arm0 seed 301: 120 years, alive 40, matches E7 True, 227s
+zero seed 304: 120 years, alive 39, matches E7 True, 229s
+arm0 seed 303: 120 years, alive 50, matches E7 True, 306s
+arm0 seed 304: 120 years, alive 39, matches E7 True, 233s
+o2 seed 301: 120 years, alive 44, matches E7 False, 246s
+arm0 seed 302: 120 years, alive 96, matches E7 True, 494s
+o2 seed 304: 120 years, alive 31, matches E7 False, 233s
+o2 seed 302: 120 years, alive 89, matches E7 False, 438s
+o2 seed 303: 120 years, alive 55, matches E7 False, 317s
+o3low seed 303: 95 years, alive 0, matches E7 False, 68s
+o3low seed 301: 120 years, alive 85, matches E7 False, 414s
+o3low seed 304: 120 years, alive 32, matches E7 False, 227s
+o3high seed 303: 101 years, alive 0, matches E7 False, 66s
+o3low seed 302: 120 years, alive 45, matches E7 False, 394s
+o3high seed 301: 120 years, alive 64, matches E7 False, 335s
+o3high seed 304: 120 years, alive 35, matches E7 False, 174s
+o3high seed 302: 120 years, alive 80, matches E7 False, 406s
+ALL DONE
