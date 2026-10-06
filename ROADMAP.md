@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after C1 (October 2026).
+**Last updated:** after N6 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -220,6 +220,14 @@ Partners forage independently and foraging makes most splits; beyond reach the p
 third of reunions are chance. Nothing in nature keeps a couple together while they forage. C1 also corrected F2's
 "20% → 46%" (per couple 58% → 65%). **Next: the creator decides**; candidates (the threshold gap, a shared camp, the
 pull's strength) each need evidence first (rule 17).
+
+**N6 evidence done, the creator's choice** (`experiments/N6_living_together/evidence.md`): real foragers return to a
+central place each night; spouses often forage apart by day but share a camp; separation lowers fertility. At ACL's
+weekly step a real couple would be together almost every week, so ACL's "apart half the weeks" has no counterpart; the
+gap is the absence of a shared home base. Candidates: align the thresholds (L1), a shared home base (L2, best
+anchored), a pair bond at any distance (L3); division of labour and residence rules are culture and may not be written.
+**Next (assistant's view; the creator decides):** a read-only feasibility check (rule 12) of how far apart partners'
+personal homes lie today, then a design for sign-off.
 
 | E13R result | what it means | next step |
 |---|---|---|
