@@ -49,13 +49,13 @@ pre-registration; research methods
 
 ---
 
-## Record 2 (new version of the existing software record, v1.0 → v1.1)
+## Record 2 (new version of the existing software record, v1.0 → v1.2)
 
 Use **"New version"** on the existing record (not a new upload), so the concept DOI stays the same.
 
 **Resource type:** Software
 **Title:** Artificial Civilization Laboratory (ACL)
-**Version:** v1.1
+**Version:** v1.2
 **Access:** Restricted (as v1.0). **Licence:** as v1.0 (all rights reserved).
 **Files:** a snapshot of the repository at the release commit (`git archive` of the tagged commit, see below)
 **Related works:** *is documented by* → the book record (Record 1)
@@ -85,17 +85,23 @@ Use **"New version"** on the existing record (not a new upload), so the concept 
 >   after the founders, partners are rarely found in a small, scattered people (F1, confirmed on a holdout).
 > - Given perfect partner finding (a diagnostic, not a realistic mechanism), 7 of 64 die instead of 22: search is
 >   most of the problem; the smallest worlds run out of eligible partners altogether (F2).
+> - Couples are apart about half their weeks: partners forage independently, a gap between two code thresholds
+>   leaves couples at 3 tiles neither able to conceive nor drawn together, and food outbids the pull back (C1,
+>   confirmed on a holdout).
 >
 > **Changes since v1.0:** baseline-fragility study F1 (discovery and holdout); evidence review N5 on how real
-> foragers find partners; stage 0 reopened; diagnostic experiment F2 (search mostly, size at the margin); rules 12–19 added to the rule book;
+> foragers find partners; stage 0 reopened; diagnostic experiment F2 (search mostly, size at the margin); read-only study C1 on why couples drift apart,
+> with an open correction to F2's figure on couples apart; rules 12–19 added to the rule book;
 > uncertainty experiment U (stopped at its pilot, recorded).
 >
 > Copyright © 2026 Abdurashid Khudoyberdiev. All rights reserved. No licence is granted to copy or reuse this work.
 
-**Making the snapshot (after F2 is written up and committed):**
+**The snapshot (made after C1; v1.1, made after F2, was superseded before upload):**
 
-    git tag v1.1
-    git archive --format=zip --prefix=acl-v1.1/ -o release/acl-v1.1.zip v1.1
+    git tag v1.2
+    git archive --format=zip --prefix=acl-v1.2/ -o release/acl-v1.2.zip v1.2
+
+Upload `release/acl-v1.2.zip`.
 
 ---
 
