@@ -70,8 +70,11 @@ rarely eligible (food above two weeks' household need in 13% of adult-weeks, 2.7
 material takes the one put option in 28% of eligible weeks), usually outscored (5.4% of offers; beaten by giving 39%,
 talking 23%, joining 17%, foraging only 4%). Stashers learn it kept food better than carrying it, never that it saved a
 winter; the belief spreads. The creator's hypothesis (reward values only present hunger) is partly supported: put earns
-no immediate reward and its habit is a quarter of foraging's, but the strongest rival is social. **Awaiting the
-creator: what next.**
+no immediate reward and its habit is a quarter of foraging's, but the strongest rival is social.
+
+**G1 (who receives the food) done** (`experiments/G1_who_receives/findings.md`): 72% of gifts go to family, a third
+to siblings (16 of 16 worlds); 63% to people with under half a week of food; 53% is repayment; strangers 1.4%. A
+family's surplus is held in its members' stomachs and debts, not in a store. **Awaiting the creator: what next.**
 
 | E13R result | what it means | next step |
 |---|---|---|
