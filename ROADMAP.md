@@ -85,7 +85,12 @@ winters). The bottleneck is not distribution but how much there is to distribute
 touched; autumn is foraged like any season; no carrying limit, little moving. People stop when fed: foraging falls from
 86% of autumn weeks (under half a week of food) to 6% (two to four weeks). In the code, hunger is 1 − weeks ÷ 2, zero at
 two weeks, exactly the line where stashing becomes possible. **The chain from E8 to U1 now runs to one line of nature:
-when a person stops feeling hungry. Awaiting the creator: what next.**
+when a person stops feeling hungry.**
+
+**N1 candidates written** (`experiments/N1_satiety/candidates.md`, no code, no experiment): thirteen readings of "what
+should a satisfied person feel?", each judged for nature, culture, scripting risk, human capacity and leak. C6 (seasonal
+instinct) and C9 (food brings standing) rejected; C3 (smooth satiety), C4 (insecurity learned from experience), C11 (the
+body as a store) and C8 (a longer mind, not satiety) stand out. **Awaiting the creator's choice.**
 
 | E13R result | what it means | next step |
 |---|---|---|
