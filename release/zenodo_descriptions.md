@@ -13,7 +13,7 @@ real human history. F2 is filled in; only the upload date in [square brackets] i
 **Additional title (subtitle):** How we tried to build a civilization instead of simulating one
 **Creator:** Khudoyberdiev, Abdurashid
 **Publication date:** [date of upload]
-**Version:** v1 (95 chapters, October 2026)
+**Version:** v1 (96 chapters, October 2026)
 **Language:** English
 **Access:** Restricted. **Licence:** none granted (all rights reserved; if the form requires a choice, select the
 closest "all rights reserved / not open" option, and keep the sentence at the end of the description).
