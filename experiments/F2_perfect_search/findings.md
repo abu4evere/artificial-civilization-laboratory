@@ -41,6 +41,7 @@ test.)
    was out of reach ("apart") rose from 20% to **46%**: ACL's couples drift apart in the ordinary course of foraging.
    Pairing fixed, proximity becomes the next limit on births. (A finding about ACL's nature for the creator; no change
    proposed.)
+   **Correction (C1, before its holdout):** the 20% and 46% were shares of all woman-weeks, including women with no partner. Per partnered, non-pregnant woman-week, partners were out of reach in 57.8% (F1) and 65.1% (F2) (`C1_couples_apart/reconcile.md`): most of the rise came from far more women having partners; couples were already apart about half the time.
 5. **Once people pair, food binds.** With more births and larger populations, the share of person-weeks starving rose
    (3.6% → 4.6%), starvation's share of deaths rose (33% → 50%), and child deaths per birth rose (0.20 → 0.26). A
    population freed from the mating bottleneck grows into the food limit: the winter questions of stage 3 return,

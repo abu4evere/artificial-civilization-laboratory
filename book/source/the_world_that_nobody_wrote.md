@@ -819,6 +819,8 @@ Two more things came into view once people could pair. Couples brought together 
 
 None of it was a mechanism to adopt. Real foragers widen their mating networks through culture, and ACL could not write culture. What F2 showed was that ACL lacked something that made a wider network reachable, and at the margin, enough people to begin with.
 
+*Correction, added in October 2026 during C1:* the figures above for couples out of reach were shares of all women's weeks, including women with no partner. Counted per couple, partners were already out of reach about three weeks in five in the unchanged worlds, and only a little more under perfect finding. Couples had not begun to drift apart because of F2; they had always been apart about half the time, and F2 only made it visible by giving most women a partner.
+
 # Part IV — The Great Debates
 
 Some of the most important turns in ACL's thinking came from arguments, not experiments: two serious positions, held before the evidence, and settled, or not settled, by what the worlds did. This part records them as they appear in the record. Where the record shows who held which view, it says so. Where it does not, the positions are described without names.

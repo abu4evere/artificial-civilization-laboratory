@@ -208,7 +208,8 @@ persist even with perfect search? Then size before search.
 finding on F1's 64 seeds): **7 of 64 died out against 22, frozen verdict "both"**. Search is most of the problem
 (17 of 22 saved; populations grow, median 67 against 28 at year 120); size is real at the margin (in the 7 that still
 die, no eligible partner existed anywhere: tiny worlds run out of non-kin of the right age). Two new limits appear once
-people pair: couples drift apart (out of reach in 46% of women's weeks), and larger peoples meet the food limit
+people pair: couples drift apart (out of reach in 46% of women's weeks; corrected by C1: per couple 58% in the control
+and 65% under F2, so couples were already apart about half the time), and larger peoples meet the food limit
 (starvation half of all deaths). **Next: the creator decides** among size (M1), anchored search or dispersal (M2/M3),
 and couples' proximity; any choice anchored (rule 17) and checked for feasibility (rule 12).
 
