@@ -1,0 +1,36 @@
+verify c: READ-ONLY
+verify l: READ-ONLY
+c seed 604: alive 0
+c seed 605: alive 0
+c seed 602: alive 32
+c seed 601: alive 30
+c seed 606: alive 31
+c seed 603: alive 35
+c seed 609: alive 0
+c seed 611: alive 0
+c seed 612: alive 0
+c seed 608: alive 37
+c seed 613: alive 0
+c seed 607: alive 48
+c seed 610: alive 39
+c seed 614: alive 19
+l seed 601: alive 22
+l seed 602: alive 6
+c seed 616: alive 42
+l seed 603: alive 0
+c seed 615: alive 57
+l seed 604: alive 40
+l seed 606: alive 17
+l seed 605: alive 15
+l seed 607: alive 7
+l seed 608: alive 0
+l seed 609: alive 0
+l seed 610: alive 0
+l seed 613: alive 0
+l seed 612: alive 0
+l seed 611: alive 22
+l seed 616: alive 0
+l seed 614: alive 9
+l seed 615: alive 30
+c seed 601_rerun: alive 30
+ALL DONE

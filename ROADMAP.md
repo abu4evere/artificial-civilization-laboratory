@@ -148,7 +148,15 @@ survival and population: winter growth is an important stabiliser of ACL's world
 with same-seed controls** (recorded in the book, Chapter 49). **Draft written**
 (`experiments/L1_no_winter_growth/pilot2_and_amendment_draft.md`): a new pilot on seeds 711–718, both arms, survival and
 population only, stopping on excess extinction against the control; and Amendment 1 to the frozen design for the
-population confound (population beside every measure, verdict on paired surviving worlds). **Awaiting sign-off.**
+population confound (population beside every measure, verdict on paired surviving worlds). **Signed off and frozen (`L1-pilot2-frozen`).**
+
+**L1 done** (`experiments/L1_no_winter_growth/results.md`): the redesigned pilot passed (C lost 3 of 8, L 1 of 8). The
+main run was valid; **outcome A**: the manipulation check failed, because L1 worlds ended far smaller (final median 6
+against 30) and so had as much winter food per person (design flaw admitted: measured per person, not per tile). 0 of 3
+delayed-return criteria on six paired seeds; by the frozen rule the null says nothing about lean seasons. Post-hoc
+observation: a steady leaner winter was absorbed by density, not by behaviour, as the human evidence suggests. A lean
+season people cannot adjust to by numbers (unpredictable bad winters, L5) would be a different test. **Awaiting the
+creator.**
 
 | E13R result | what it means | next step |
 |---|---|---|
