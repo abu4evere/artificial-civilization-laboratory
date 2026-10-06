@@ -138,7 +138,14 @@ experiment must count a non-storage answer as a finding. Storage in human forage
 clumped, owned resources. **N3 in the book (Chapter 48). L1 pre-registration drafted** (`experiments/L1_no_winter_growth/preregistration_draft.md`,
 not frozen): one setting changed (winter plant regrowth 0.15 → 0, no code change), control and L1 on seeds 601–616, a
 survival pilot on 701–704 read for survival only, and a frozen test of the immediate-return hypothesis (removing winter
-growth alone will not create substantial delayed-return behaviour). **Awaiting the creator's sign-off.**
+growth alone will not create substantial delayed-return behaviour).
+
+**L1 frozen (`L1-frozen`); survival pilot triggered the stop rule:** 2 of 4 pilot worlds died out (702, 704), so the
+experiment did not run. A post-pilot survival-only diagnostic (recorded before it ran: the unchanged world on the same
+seeds) found both explanations partly true: seed 702 dies in the unchanged world too (fragile), seed 704 dies only under
+L1, and every surviving L1 world ends smaller (31 against 44; 32 against 94). Removing winter growth materially harms
+survival and population: winter growth is an important stabiliser of ACL's world. **Awaiting the creator: redesign the
+pilot with same-seed controls, treat this as the finding, or move to L6.**
 
 | E13R result | what it means | next step |
 |---|---|---|

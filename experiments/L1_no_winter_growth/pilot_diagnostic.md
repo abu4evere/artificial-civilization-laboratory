@@ -18,3 +18,20 @@ every ten years and whether the world died out, exactly as the pilot did. It use
 
 The frozen pre-registration (`preregistration.md`) is unchanged. The main experiment does not run on the strength of
 this diagnostic alone; any next step returns to the creator.
+
+## Result (added after it was run)
+
+| seed | unchanged world (C) | L1 (pilot) |
+|---|---|---|
+| 701 | survived; peak 59, year 120: **44** | survived; year 120: **31** |
+| 702 | **died out** (around year 80) | **died out** (around year 70) |
+| 703 | survived; grew to **94** | survived; year 120: **32** |
+| 704 | survived, small (year 120: 9) | **died out** (around year 60) |
+
+**Against the readings written in advance, both are partly true.** Seed 702 is fragile: it dies in the unchanged world
+too, so one of the two pilot extinctions was not caused by L1. Seed 704 dies only under L1. And in every surviving seed,
+L1 worlds end smaller (31 against 44; 32 against 94). Removing winter growth materially harms survival and population:
+winter growth is an important stabiliser of ACL's world, although D1 found winter barely lean in food on the land.
+
+Four seeds, survival only; no outcome measure was read. The frozen pre-registration is unchanged; the main experiment
+has not run. The next step is the creator's.
