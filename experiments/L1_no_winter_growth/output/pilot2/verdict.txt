@@ -1,0 +1,1 @@
+died out: C 3 of 8, L 1 of 8; excess under L -2 (limit 1); both arms alive in 5 of 8 (need 5): PASS
