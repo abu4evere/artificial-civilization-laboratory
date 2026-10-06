@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = Path(__file__).parent
 
 STAGES = [  # (title, subtitle, status)
-    ("0. The world", "F2: search, then size", "now"),
+    ("0. The world", "C1: couples drift apart", "now"),
     ("1. Culture appears", "Traditions and stories, E1–E5", "done"),
     ("2. Why it stops", "Bottleneck mapped, E6–E13", "done"),
     ("3. Transmission", "Paused until stage 0 holds", "ahead"),

@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after F2 (October 2026).
+**Last updated:** after C1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -212,6 +212,14 @@ people pair: couples drift apart (out of reach in 46% of women's weeks; correcte
 and 65% under F2, so couples were already apart about half the time), and larger peoples meet the food limit
 (starvation half of all deaths). **Next: the creator decides** among size (M1), anchored search or dispersal (M2/M3),
 and couples' proximity; any choice anchored (rule 17) and checked for feasibility (rule 12).
+
+**C1 done, the creator's choice** (`experiments/C1_couples_apart/findings.md`; read-only, confirmed on a holdout):
+ACL's couples are apart about half their weeks in the unchanged world. Two in five apart weeks sit at exactly 3 tiles,
+in a gap between two separately written thresholds (conception within 2; the pull toward a partner only beyond 3).
+Partners forage independently and foraging makes most splits; beyond reach the pull is present but outbid by food; a
+third of reunions are chance. Nothing in nature keeps a couple together while they forage. C1 also corrected F2's
+"20% → 46%" (per couple 58% → 65%). **Next: the creator decides**; candidates (the threshold gap, a shared camp, the
+pull's strength) each need evidence first (rule 17).
 
 | E13R result | what it means | next step |
 |---|---|---|
