@@ -17,7 +17,7 @@ STAGES = [  # (title, subtitle, status)
     ("0. The world", "Physics, seasons, bodies, minds", "done"),
     ("1. Culture appears", "Traditions and stories, E1–E5", "done"),
     ("2. Why it stops", "Bottleneck mapped, E6–E13", "done"),
-    ("3. Transmission", "E13R: a habit passes, not a plan", "now"),
+    ("3. Transmission", "Now: why food runs out", "now"),
     ("4. Persistence", "Survives with models gone?", "ahead"),
     ("5. A people's practice", "Preparing becomes a tradition", "ahead"),
     ("6. Scale", "100 people against 30", "ahead"),
@@ -29,7 +29,7 @@ BRANCH_LABEL = "E13R outcomes, fixed in advance"
 TAKEN = 2                                         # index of the branch E13R took (None before the result)
 BRANCHES = [("Safeguard fails", "Fix code, rerun E13R"),
             ("No replication", "Try another route"),
-            ("Replicates", "N carries it: stage 4")]
+            ("Replicates", "Changed: why food runs out")]
 
 COLORS = {  # fill, stroke, title, subtitle
     "done": ("#E1F5EE", "#0F6E56", "#085041", "#0F6E56"),

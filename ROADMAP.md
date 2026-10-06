@@ -24,7 +24,7 @@ pass on and build on what they learn, until their practices outgrow any one life
 | 0. The world | Is there a world worth living in? | **done** (physics, seasons, bodies, minds) |
 | 1. Culture appears | Does anything cultural emerge unscripted? | **done** (E1–E5: traditions, trust, stories) |
 | 2. Why it stops | Where does the chain from possible to practised break? | **mostly done** (E6–E12) |
-| 3. Transmission | Can a useful practice pass between adults? | **in progress:** E13R done; a habit passes, a plan does not |
+| 3. Transmission | Can a useful practice pass between adults? | **in progress:** a habit passes, a plan does not; now: why food does not last through winter |
 | 4. Persistence | Does it last when nobody is there to copy? | next |
 | 5. A people's practice | Does it become a tradition of the whole people? | later |
 | 6. Scale | What do larger, connected populations keep? | later |
@@ -53,14 +53,18 @@ recommends a read-only autopsy: why better-stocked carers did not protect their 
 linked to preparation at all. **Autopsy done** (`experiments/E13R_replication/autopsy/findings.md`): stocked carers
 still protect children, but at every food level children in the copying worlds starved more; the copied habit is
 year-round, not autumn; people enter winter with more food (16 of 16 worlds) and end it with none. Copying did not help
-winter. What is missing is not getting food but making it last until spring. **Awaiting the creator's decision: keep the
-branch (test whether this habit persists) or change it, with this reason recorded.**
+winter. What is missing is not getting food but making it last until spring.
+
+**Branch changed by the creator (after the autopsy):** instead of stage 4 (testing whether the copied habit persists),
+stay in stage 3 and **investigate why food does not last through winter**. Reason: the habit E13R found is not
+preparation and did not help winter, so making it persist would not move the project; the autopsy points to keeping
+food, not getting it. Recorded openly, as a change made after the result and why.
 
 | E13R result | what it means | next step |
 |---|---|---|
 | **L1 or L2 fails** (hard stop) | the copying code does something beyond the watcher's habit | fix the code; rerun E13R. No outcomes read. |
 | **B does not replicate** (R2 or R3 fails) | E13's lead was specific to its four worlds | go back to stage 3 with reading Phase 2.5: a different learning signal (Ndousse), group-level transmission (social protocell), or children learning from successful adults |
-| **B replicates, N carries it** ← **taken** | what spreads is a general "forage while things are good" habit | stage 4, testing the general habit |
+| **B replicates, N carries it** ← **taken, then changed** (see above) | what spreads is a general "forage while things are good" habit | stage 4, testing the general habit |
 | **B replicates, P carries it** | planners pass on a preparation practice | stage 4, testing the planners' practice |
 | **B replicates, both or mixed** | no single source | stage 4; the source question stays open in the book |
 
