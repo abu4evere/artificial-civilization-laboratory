@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after N6 (October 2026).
+**Last updated:** after H1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -228,6 +228,11 @@ gap is the absence of a shared home base. Candidates: align the thresholds (L1),
 anchored), a pair bond at any distance (L3); division of labour and residence rules are culture and may not be written.
 **Next (assistant's view; the creator decides):** a read-only feasibility check (rule 12) of how far apart partners'
 personal homes lie today, then a design for sign-off.
+
+**H1 done** (`experiments/H1_partner_homes/findings.md`; read-only, rule 12): partners' homes lie within conception
+distance only about half the time; about 30% are 4 or more tiles apart; homes change in about 18% of adult-weeks.
+Frozen rule: **mixed**. Aligning the thresholds (L1) alone would leave much of the separation; a shared home base (L2)
+is what the evidence points to. **Next: the creator decides** (L1, L2, or L1 then L2 as separate experiments).
 
 | E13R result | what it means | next step |
 |---|---|---|
