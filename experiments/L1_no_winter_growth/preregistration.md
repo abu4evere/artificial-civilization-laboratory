@@ -1,7 +1,8 @@
-# L1 — No growth in winter: pre-registration (DRAFT, not frozen)
+# L1 — No growth in winter: pre-registration (FROZEN)
 
-**Status:** draft for the creator's sign-off. No L1 code, pilot or run exists. On sign-off it will be frozen and tagged
-`L1-frozen` before the survival pilot. Items marked **[DECIDE]** are the creator's.
+**Status:** signed off by the creator and frozen as `L1-frozen` before the survival pilot, the probe or any run. Not to
+be edited after the results. The creator's decisions: A2-full people, 16 seeds, the pilot stop rule and the
+falsification thresholds as drafted.
 
 ## 1. Why
 
@@ -30,17 +31,18 @@ Vitasse et al. 2014; Bowling et al. 2024). It will not be tuned.
 | **L** L1 | winter regrowth factor **0** | same |
 
 The people are A2-full, as in every analysis since E9 (W1, S1, G1, P1, U1, D1, D2 were all on it), so L1's results can
-be read against that chain. **[DECIDE: A2-full people, or the plain world (no anticipation)?]**
+be read against that chain. (The creator: switching people now would leave it unknown whether a result came from the
+lean season or from different people.)
 
-**Seeds:** 16 new seeds, **601–616**, both arms, 120 years. A world that dies out counts as it falls.
-**[DECIDE: 16 seeds, or more?]**
+**Seeds:** 16 new seeds, **601–616**, both arms, 120 years. A world that dies out counts as it falls. (A surprising
+result can be replicated later with more seeds.)
 
 ## 4. Survival pilot (before the experiment, read only for survival)
 
 A harder world that simply dies out teaches nothing (E6: four of eight harsher worlds died out). Before the experiment:
 L1 on four pilot seeds, **701–704**, 120 years. **Read only population every ten years and whether the world died out.**
 Nothing else from the pilot is looked at. **Stop rule:** if two or more of the four pilot worlds die out, the experiment
-does not run, and the design returns to the creator. **[DECIDE: the stop rule.]**
+does not run, and the design returns to the creator.
 
 ## 5. Validity
 
@@ -84,12 +86,19 @@ behaviour.
 2. **D-b** share of carers with food stashed at the start of winter at least **3×** C's **and** at least 10%;
 3. **D-c** autumn-to-summer foraging ratio at least **1.2×** C's.
 
-**[DECIDE: these thresholds.]**
+The thresholds are set high on purpose: a nudge in stashing from 7% to 9% is noise around the existing equilibrium,
+not delayed return emerging.
 
 - **If two or more are met:** the immediate-return hypothesis takes a serious hit. A realistic winter alone moved ACL's
   people toward delayed return with the capacities they already have.
 - **If fewer than two are met:** the hypothesis survives this test. It does not prove it: L1 may simply not have bitten
   (section 9).
+
+**Reading a null (frozen, the creator's words):** "Failure to create delayed-return behaviour is not evidence that lean
+seasons are irrelevant. It is evidence only that removing winter growth alone is insufficient under ACL's current world
+structure." **And a null is read only after the manipulation check:** if M1 and M2 show winter did not get leaner in L
+(outcome A), a null says nothing about lean seasons at all, only that this setting did not make one. Only if winter did
+get leaner may a null be read as evidence that the absence of storage is not mainly caused by mild winters.
 
 ## 9. The outcomes, written before any data
 
