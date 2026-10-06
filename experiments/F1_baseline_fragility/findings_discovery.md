@@ -63,6 +63,12 @@ Not shared: sex imbalance, starvation, early fertility, isolation, mate shortage
    within sight, mostly never pairs; when the founders' pairs age past 45 births end, and the world ages out over the
    next half-century, with fertile women still alive and single for decades (e.g. seed 817: 168 woman-years after the
    last birth, 166 of them single).
+   **Correction (found by the leads check, before any holdout data):** point 3 first said this held "in any world".
+   It does not. Over all years, single women had no eligible man within sight in 97% of single-woman-years in extinct
+   worlds (median population 10), 87% in survivors' first 40 years (median 27), but **44%** in survivors' years 40–119
+   (median 34). Mates come within sight once a world is large enough; the claim is about small worlds. Lead L2 in
+   `leads_check.py` was written with the wrong all-world threshold and fails on discovery itself (59%); it is kept
+   unchanged and reported as failed, not re-tuned.
 5. **Survivors are not better at pairing;** they are larger, so more of their few pairings happen, and their children
    pair into a bigger pool. The same search rule operates in every world; size decides whether it is enough.
 
