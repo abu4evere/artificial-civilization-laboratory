@@ -74,7 +74,13 @@ no immediate reward and its habit is a quarter of foraging's, but the strongest 
 
 **G1 (who receives the food) done** (`experiments/G1_who_receives/findings.md`): 72% of gifts go to family, a third
 to siblings (16 of 16 worlds); 63% to people with under half a week of food; 53% is repayment; strangers 1.4%. A
-family's surplus is held in its members' stomachs and debts, not in a store. **Awaiting the creator: what next.**
+family's surplus is held in its members' stomachs and debts, not in a store.
+
+**P1 (risk pooling) done** (`experiments/P1_risk_pooling/findings.md`): the family network pools risk (family food cuts
+the poorest members' winter starvation 25-fold; deaths rarely amid plenty; giving does not leave givers short) but pools
+almost nothing (help follows ~10% of hungry weeks; families hold a ninth of their winter; more sharing, no better
+winters). The bottleneck is not distribution but how much there is to distribute when winter comes. **Awaiting the
+creator: what next.**
 
 | E13R result | what it means | next step |
 |---|---|---|
