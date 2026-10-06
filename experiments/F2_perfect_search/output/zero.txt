@@ -1,0 +1,4 @@
+switch off, seed 601, 20 years: copy reproduces the control world: yes
+switch off, seed 811, 20 years: copy reproduces the control world: yes
+switch on, seed 601, 20 years: oracle pairings made: 17 (yes)
+All: PASS
