@@ -99,7 +99,9 @@ class Probe:
             self.add("hunger", s, "under 0.5 weeks" if weeks < 0.5 else "0.5–1" if weeks < 1 else "1–2" if weeks < 2
                      else "2–4" if weeks < 4 else "4+ weeks", amt)
             if ranked and q.age(world.tick) >= 16 * WPY:
-                pc = sum(1 for v in ranked if v < respect[q.id]) / len(ranked)
+                # computed directly: the recipient may have died later in the same week
+                mine = sum(o.rel[q.id].respect for o in living if q.id in o.rel and o.id != q.id)
+                pc = sum(1 for v in ranked if v < mine) / len(ranked)
                 self.add("status", s, "bottom quarter" if pc < 0.25 else "second quarter" if pc < 0.5
                          else "third quarter" if pc < 0.75 else "top quarter", amt)
             self.add("repay", s, "paying back" if e.get("returned") else "not paying back", amt)
