@@ -197,6 +197,25 @@ if __name__ == "__main__":
         sys.exit(0 if died < 2 else 1)
     elif cmd == "pilotone":
         pilot(int(sys.argv[2]))
+    elif cmd == "diag":
+        # post-pilot methodological check (pilot_diagnostic.md): the unchanged world on the pilot seeds, population only
+        with ThreadPoolExecutor(4) as pool:
+            list(pool.map(lambda s: subprocess.call(me + ["diagone", str(s)]), PILOT))
+    elif cmd == "diagone":
+        setup()
+        seed = int(sys.argv[2])
+        w = make_world("c", seed)
+        probe = PilotProbe()
+        w.observers.append(probe)
+        for _ in range(120 * WPY):
+            w.step()
+            if not w.living():
+                break
+        died = not w.living()
+        (OUT / "diagnostic").mkdir(parents=True, exist_ok=True)
+        (OUT / "diagnostic" / f"seed_{seed}.json").write_text(json.dumps({"seed": seed, "pops": probe.pops, "died_out": died}),
+                                                              encoding="utf-8")
+        print(f"control seed {seed}: {'DIED OUT' if died else 'survived'}; population every 10 years {probe.pops}", flush=True)
     elif cmd == "verify":
         sys.exit(0 if verify(sys.argv[2]) else 1)
     elif cmd == "all":
