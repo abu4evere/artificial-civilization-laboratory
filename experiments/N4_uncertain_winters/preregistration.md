@@ -112,3 +112,33 @@ when the manipulation check shows W's years are as variable as intended.
 3. Calibration (food variability only), then freeze the width and the whole design (`U-frozen`).
 4. Probe and analysis written and tested before any data.
 5. Pilot with same-seed controls; then the main run; report in the frozen order.
+
+## 10. Operational definitions (written with the probe and analysis, before the calibration verdict and any data)
+
+Written after sign-off, while the calibration ran and before its verdict was read; they make sections 6–8 computable
+and change none of them. Code: `run_u_main.py` (probe, pilot, main), `analyse_u.py` (analysis), both tested on a
+throwaway seed (999, 20 years; output discarded) and the probe shown read-only in all three arms.
+
+- **Paired worlds:** seeds where all three arms are alive at year 120. The verdict uses them; pooled values are reported.
+- **M1 variability:** for each world, the year-to-year coefficient of variation of mid-autumn plant food per land tile
+  (year 1 dropped, as in the calibration); median over paired worlds. For W, over the whole world; for P, **within a
+  quarter** (median of the four quarters), because a world-wide average blurs regions that vary separately. The
+  intended variability is shown if W's whole-world M1 and P's within-quarter M1 are each **at least 0.75 × the
+  calibration's median CV at the chosen width**. Otherwise a null is not read as evidence about H-L5 (section 7).
+- **M2 mean kept:** median over paired worlds of mean mid-autumn food per land tile; W and P within **10%** of C. If
+  not, the report flags that the arm's world was richer or poorer as well as more variable.
+- **M3:** mid-autumn food on land per person, descriptive.
+- **Storage measures** (as L1): S1 median over households of (carer's and dependants' food + carer's stashes) ÷
+  13 weeks of their need, at the first week of winter; S2 share of carers with any food stashed then; S3 (share of
+  adult autumn-weeks foraging) ÷ (share of adult summer-weeks foraging).
+- **Sharing and moving:** G food given away per adult-week; M tiles moved per adult-week (wrapped Chebyshev distance
+  between an adult's weekly positions); all seasons.
+- **Prediction 1 met:** at least two of S1–S3 with **both** W ≥ 1.5× C **and** W ≥ 1.25× P. **Prediction 2 met:**
+  P ≥ 1.2× W on G or on M. A ratio whose denominator is zero is met only if the numerator is positive, and flagged.
+- **"Storage rose" in an arm:** at least two of S1–S3 at least 1.5× C.
+- **Outcome rule (section 8), in this order:** collapse if W or P loses more than one world beyond C; else H-L5
+  supported if prediction 1 met; else "both alike" if storage rose in both W and P; else falsified if storage rose in P
+  and in more measures than in W; else "patchy half" if prediction 2 met; else "nothing moves" if storage rose in
+  neither; else "mixed", reported as it is.
+- **Validity:** pilot PASS; probe read-only (20 years, seed 901, every arm); code fingerprint unchanged; C seed 901
+  rerun gives the same world hash and populations; P's zero checks PASS.
