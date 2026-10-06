@@ -2,7 +2,6 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen)](pyproject.toml)
-[![Last commit](https://img.shields.io/github/last-commit/abu4evere/simulated-world)](https://github.com/abu4evere/simulated-world/commits/master)
 
 **Human nature built in, culture left to emerge.** An agent-based simulation
 of a small prehistoric people on a set of islands. Bodies, feelings, memory,
