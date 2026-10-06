@@ -120,6 +120,10 @@ confounded with belief fading (corrected in D1 and the book); setting fading asi
 possession), not all of it (it stays small, likely held by S1's gates; and winter is barely lean). **Priority as set by
 the creator: N3 evidence review next, then an L1 pilot if the evidence supports it, then L6.**
 
+**Rule for property (the creator, after D2):** possession is a dangerous lever. "Storage didn't emerge → add ownership
+→ storage emerges" would write the answer in. If property is studied, the same order as everything since E13R applies:
+read-only first, map it completely, then candidates, then evidence, then the least change, then an experiment.
+
 **N3 candidates written** (`experiments/N3_lean_season/candidates.md`, no code, no choice): nine readings of a harder
 lean season, judged for realism, tuning risk, targeting, effect from the rules, viability and continuity. Why winter is
 mild now: winter regrowth roughly cancels dieback, and a forage week only bites when a tile falls below about 20. L1 (no
