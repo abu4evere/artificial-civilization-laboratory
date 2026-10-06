@@ -83,3 +83,7 @@ Holdout seeds 1101–1124 (`run_f1.py holdout`, then `analyse_f1.py holdout`). R
 signatures G1 and G7 again ≥ 2/3 of extinct and ≤ 1/3 of survivors; and (exploratory leads, tested descriptively) births
 stopping ≥ 15 years before extinction in most extinct worlds, and single women mostly without an eligible man within
 sight while one exists in the world. No fixes are proposed here; that is the creator's decision after the holdout.
+
+**Traceability (rule 16, added after the rule was adopted):** the exploratory numbers in "The mechanism" were first read
+with one-off snippets; they are now reproduced by `explore_f1.py` (output `explore_discovery.md`), and match. Lead tests:
+`leads_check.py`.

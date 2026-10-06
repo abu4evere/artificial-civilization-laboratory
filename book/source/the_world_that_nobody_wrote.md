@@ -1253,7 +1253,17 @@ The project's defence is to assume that cheating, when it happens, will come fro
 
 The challenge was never making civilization happen. It was learning whether it would happen without help.
 
-## Chapter 87 — Relatives and Ancestors
+## Chapter 87 — Rules Bought by Failures
+
+For most of its life ACL ran on eleven rules, set down early: nature programmed and culture written by nobody, predictions frozen before code, pilots first, measurement that never touches the world, failures published as failures, and the creator's signature on every design. In October 2026, in the middle of an investigation into why a third of the control worlds died out, eight more were added. None of them changed what the project was looking for. Each was paid for by something that had gone wrong.
+
+U had been designed around a target the world could not reach: a grassland's year-to-year swing in food, which ACL's land smoothed away whatever the weather did. So the twelfth rule: before designing around a condition, check, read-only, that the world can produce it. U's manipulation check had then been set against what the calibration managed rather than what the science needed, and so it passed when it should have warned. The thirteenth: a manipulation that falls short does not redefine success. L1, U and the fragility study had all been shaken by worlds that shrank or died, so the fourteenth asks every design that reads surviving worlds to say first how many it can expect. D1's confounded reading, and patterns that looked like findings in the fragility study before fresh worlds had been asked, gave the fifteenth: what is found by looking is a hypothesis until it holds on worlds nobody has seen. The sixteenth came from the assistant's own mistakes, a claim widened past its data and, earlier, work reported that had not been done: every number must come from a script in the repository, and no claim may reach beyond what was measured.
+
+The seventeenth looks forward. The fragility study pointed at nature itself, at how far a person can look for a partner, and the easy next step would be to widen that reach until the worlds survived. That would be tuning the world toward the answer, the oldest temptation in the project wearing new clothes. So: nature is anchored to evidence about the real world, fixed before the run, and never tuned toward an outcome. The last two only wrote down what was already done: population beside every measure, verdicts on worlds alive in every arm; and corrections appended, dated and visible, never rewritten.
+
+The creator's view was that good method grows this way. Rules invented in advance guard against imagined errors. These guard against errors that happened.
+
+## Chapter 88 — Relatives and Ancestors
 
 ACL was not built from a reading list. Most of what it found, it found by running worlds and looking. But it is not alone, and several of its discoveries were known, in other forms, long before it began. This chapter places it among its relatives, and says plainly where it rediscovered what others knew. Sources are listed in Appendix C.
 
@@ -1261,7 +1271,7 @@ ACL was not built from a reading list. Most of what it found, it found by runnin
 
 Both aim where ACL aims. Both get there mainly by evolution: agents whose networks work better leave more offspring, and pass those networks on. In ACL nothing is inherited but the body. Whatever a person comes to know, they learned in their own lifetime and must pass on by being watched, by raising children, or by telling, or it is lost. Human culture grew far faster than human genes changed, which is why ACL chose the harder road. Its price is scale: JaxLife's worlds dwarf ACL's, and the question of what a hundred connected people achieve against thirty is still open here. Two of Werld's ideas, that complexity should cost energy and that hidden senses could be discovered, are recorded for later.
 
-**Worlds run by minds that already know.** SimWorld builds realistic cities for testing agents driven by language models. Generative agents in a small town, and Project Sid's many-agent societies in Minecraft, show such agents forming routines, relationships, roles, rules, and even religions. These are valuable for building and testing agents. They cannot answer ACL's question. A language model trained on human writing already knows what a village, a trade and a law are, and when its agents build one, no one can tell whether civilization emerged or was remembered. This is the trap named in Chapter 90, and the reason for ACL's founding rule.
+**Worlds run by minds that already know.** SimWorld builds realistic cities for testing agents driven by language models. Generative agents in a small town, and Project Sid's many-agent societies in Minecraft, show such agents forming routines, relationships, roles, rules, and even religions. These are valuable for building and testing agents. They cannot answer ACL's question. A language model trained on human writing already knows what a village, a trade and a law are, and when its agents build one, no one can tell whether civilization emerged or was remembered. This is the trap named in Chapter 91, and the reason for ACL's founding rule.
 
 **Worlds with written rules.** Sugarscape grew trade, migration, inequality and conflict from simple agents on a grid, and showed how much social pattern can come from very little. But its behaviours, trade included, were rules its designers wrote. ACL forbids writing any behaviour it hopes to see.
 
@@ -1279,7 +1289,7 @@ None of this makes ACL's findings less its own. Its people were never told any o
 
 # Part VIII — The Future
 
-## Chapter 88 — The Road Ahead
+## Chapter 89 — The Road Ahead
 
 In October 2026, in the middle of E13R, the creator said the project felt as if it might lose its way. So the way was written down: nine stages from a world worth living in to a society, where the project stood among them, and how each next step would be decided.
 
@@ -1291,7 +1301,7 @@ The most important part of the map is the fork beside that stage. What would fol
 
 The roadmap is kept in the repository beside the code, and redrawn after every experiment. The chapters of this book are how the project got here; the roadmap is where it means to go next, and it is allowed to be wrong.
 
-## Chapter 89 — Open Questions
+## Chapter 90 — Open Questions
 
 This chapter records questions. It does not answer them.
 
@@ -1333,7 +1343,7 @@ About ACL's own findings:
 - Is the interaction bottleneck in the world, or in the people?
 - And the oldest question, from before the record began: is anyone in there? Can a person born in ACL be someone?
 
-## Chapter 90 — The Minimum Conditions
+## Chapter 91 — The Minimum Conditions
 
 An idea took shape in October 2026, in conversation rather than in an experiment, and it is recorded here as an idea.
 
@@ -1343,7 +1353,7 @@ ACL may not need Earth. It may need only the minimum conditions that make cumula
 
 There is a trap on the way, and it was named at the same time. Better minds are allowed; minds that already know are not. A newborn has human capacities and no human knowledge. A language model trained on human writing has the knowledge. Put it in a world and it may rebuild pottery quickly, but no one could ever tell whether civilization emerged or was remembered.
 
-## Chapter 91 — How This Book Is Kept
+## Chapter 92 — How This Book Is Kept
 
 This is a living book, meant to be updated after every major experiment, in the same spirit it was written.
 
@@ -1411,6 +1421,7 @@ Dates are as recorded in the repository. World Bible versions 1 to 6 are not pre
 - **October 2026 — L1 run.** The redesigned pilot passed (the unchanged worlds died out more often than the leaner ones). The experiment ran as frozen: its manipulation check failed, because the leaner worlds ended with far fewer people and so as much winter food each (a design flaw, admitted: food was measured per person, not per tile). By the frozen rule, a null that says nothing about lean seasons. Observed: a steady lean season is absorbed by density, not by storing.
 - **October 2026 — H-L5, N4 and V1 (overnight).** The creator's hypothesis that delayed return answers uncertainty, not average scarcity. Candidates for unpredictable winters; evidence that sharing insures only what is not common to the whole group, and that real grassland production varies about a third from year to year against ACL's fourteenth; and a read-only study of ACL's own bad years: deadly, but not teaching storage. A design comparing world-wide with patchy bad years drafted for sign-off.
 - **October 2026 — U stopped at the pilot.** Signed off for a grassland target. ACL's land smoothed even the widest weather to about 11% variation in food a year (grassland about 37%); at that width the pilot lost 7 and 6 of 8 worlds against the control's 4, with no seed keeping all three arms alive. Hard stop; no behaviour measured; the design returns to the creator.
+- **October 2026 — Rules 12 to 19.** During the fragility study (F1), eight rules added to the eleven, each paid for by a failure: feasibility before design; manipulation checks anchored to the target; baseline survival first; discovery confirmed on a holdout; every number traceable; nature anchored, not tuned; population beside every measure; corrections appended, not rewritten.
 
 # Appendix B — Words Used in This Book
 

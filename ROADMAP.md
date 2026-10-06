@@ -252,6 +252,33 @@ These hold at every stage, whatever the results:
 10. **Failures are published as failures.** Never change a verdict after seeing it.
 11. **The creator signs off every design** before it is frozen.
 
+**Added October 2026, signed off by the creator during F1 (before F1's holdout finished).** Each was paid for by a real
+failure, stop, confound or correction:
+
+12. **Feasibility before design.** Before designing an experiment around a world setting or target condition, perform a
+    read-only feasibility check to verify that the world can actually produce that condition. If the condition cannot be
+    produced, the design must be revised before sign-off. *(U: ACL could not reach grassland-level variability.)*
+13. **Manipulation checks protect the scientific target.** Manipulation checks must be anchored to the scientific target
+    being tested, not to the magnitude achieved by the manipulation itself. A manipulation that falls short of its target
+    does not redefine success. *(U's check became detached from the grassland target.)*
+14. **Baseline survival is reported first.** Any experiment whose interpretation depends on surviving worlds must begin
+    by reporting the control survival rate and the expected number of paired worlds available for comparison. *(L1, U
+    and F1 were all affected by extinction and shrinking populations.)*
+15. **Discovery and confirmation are separate.** Patterns found through exploratory analysis are hypotheses until they
+    are tested on fresh, unseen worlds. Findings discovered on one set of seeds must be confirmed on a holdout before
+    being treated as established. *(D1 and F1.)*
+16. **Every reported number must be traceable.** Every quantitative claim in a report must be reproducible from a script
+    committed to the repository. Claims must not extend beyond the population, worlds, or conditions actually measured.
+    *(F1's "in any world" overstatement; an earlier claim of work not done.)*
+17. **Nature is anchored, not tuned.** Changes to nature must be anchored to external evidence about the real world.
+    Values are chosen from evidence and fixed before running experiments. Nature may not be tuned toward a desired
+    outcome. *(The temptation F1 opens: widening mate search until worlds survive.)*
+18. **Population accompanies interpretation.** Population must be reported alongside any behavioral measure when
+    population differences could influence interpretation. Where possible, verdicts are based on worlds surviving in
+    all relevant arms. *(L1's Amendment 1, made a rule.)*
+19. **Corrections are appended, not rewritten.** Errors are corrected openly through dated amendments. Earlier
+    conclusions remain visible and are not silently rewritten. *(Long practice, made a rule.)*
+
 ## The cycle for every experiment
 
 1. Name the question, from this roadmap.
