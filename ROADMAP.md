@@ -135,7 +135,10 @@ are dormant in winter; zero growth is the realistic value) and L6 (lean seasons 
 seasons leave foragers plant-poor, but no rate is given, and real foragers turn to meat: ACL's hunting is almost nil);
 animals only for L3. Real people meet lean seasons by meat, body reserves, moving and storing, so any harder-winter
 experiment must count a non-storage answer as a finding. Storage in human foragers goes with predictability, richness and
-clumped, owned resources. **Next, by the creator's order: an L1 pilot, if the creator agrees.**
+clumped, owned resources. **N3 in the book (Chapter 48). L1 pre-registration drafted** (`experiments/L1_no_winter_growth/preregistration_draft.md`,
+not frozen): one setting changed (winter plant regrowth 0.15 → 0, no code change), control and L1 on seeds 601–616, a
+survival pilot on 701–704 read for survival only, and a frozen test of the immediate-return hypothesis (removing winter
+growth alone will not create substantial delayed-return behaviour). **Awaiting the creator's sign-off.**
 
 | E13R result | what it means | next step |
 |---|---|---|
