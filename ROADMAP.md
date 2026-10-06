@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after E13R (October 2026).
+**Last updated:** after F1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -182,6 +182,17 @@ present world no weather setting gives realistic food variability, and the close
 control worlds die out within 120 years, which limits every paired design. **The design returns to the creator**
 (options in `pilot_stop.md`: stop U; a narrower width by a new advance rule; make the land itself vary; first address
 baseline fragility).
+
+**The creator chose option 4: F1, baseline fragility** (`experiments/F1_baseline_fragility/findings.md`; read-only,
+40 saved control worlds, confirmed on 24 new). Control worlds die out at **34%** (22 of 64), not from hunger, food or
+neglect: **births stop 40–65 years before extinction and the people age out.** Women of childbearing age have no partner;
+pairing happens mostly among the founders; in small worlds a partner is almost never within sight, because people court
+only within 4 tiles on a 40 × 40 world. Worlds that lose more children early are smaller by year 20 and do not recover.
+They can be identified decades ahead (population at year 20; at year 30, population below the 20 founders and at most
+three fertile women). **This is a gap in stage 0 (the world), not in culture:** every stage 3–5 result has been read on
+worlds a third of which were ageing out. Rules 12 to 19 were added during F1. **Next: the creator decides** whether to
+reopen stage 0; any change to how people find partners must be anchored to real evidence (rule 17) and checked for
+feasibility first (rule 12).
 
 | E13R result | what it means | next step |
 |---|---|---|
