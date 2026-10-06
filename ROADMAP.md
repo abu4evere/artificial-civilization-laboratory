@@ -172,7 +172,16 @@ Hoogeveen 2001), but uncertainty can also favour sharing and moving (Lewis et al
 winters kill (~7× starvation in the poorest quarter) but do not teach storage (more sowing, a few more planners, no more
 household stock, fewer stashing); poor years cluster (0.73). **U design drafted** (`experiments/N4_uncertain_winters/preregistration_draft.md`,
 not frozen): control vs wider world-wide years (W, settings only) vs wider patchy years (P, new code), width calibrated to
-real variability by measuring land only. **Awaiting the creator's sign-off.**
+real variability by measuring land only. **Signed off** (grassland target, quarters for regions).
+
+**U, October 2026: stopped at the pilot** (`experiments/N4_uncertain_winters/pilot_stop.md`). Calibration (land only):
+even the widest weather (0 to 1.9) moves autumn food per tile only ~11% a year against ~37% in grassland; the widest was
+used by the frozen rule and the shortfall recorded before freezing (`U-frozen`). Pilot at that width: worlds died out
+C 4, W 7, P 6 of 8; all three arms alive in 0 of 8: **hard stop**, main run not done, no behaviour measured. In ACL's
+present world no weather setting gives realistic food variability, and the closest one kills. Also exposed: half of
+control worlds die out within 120 years, which limits every paired design. **The design returns to the creator**
+(options in `pilot_stop.md`: stop U; a narrower width by a new advance rule; make the land itself vary; first address
+baseline fragility).
 
 | E13R result | what it means | next step |
 |---|---|---|

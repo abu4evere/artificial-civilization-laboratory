@@ -1,0 +1,1 @@
+died out: C 4, W 7, P 6 of 8; excess W 3, P 2 (limit 1); all three arms alive in 0 of 8 (need 5): STOP
