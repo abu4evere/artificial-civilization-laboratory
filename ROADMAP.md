@@ -129,7 +129,13 @@ lean season, judged for realism, tuning risk, targeting, effect from the rules, 
 mild now: winter regrowth roughly cancels dieback, and a forage week only bites when a tile falls below about 20. L1 (no
 growth in winter) is the cleanest but may change little by arithmetic; L6 (colder places, leaner winters) the most
 realistic; L2 and L3 bite but turn on dials; L8 (crop survives winter) rejected; L7 is about people, not the world.
-**Awaiting the creator.**
+
+**N3 evidence review done** (`experiments/N3_lean_season/evidence.md`; no code): strong support for L1 (temperate plants
+are dormant in winter; zero growth is the realistic value) and L6 (lean seasons vary with climate); partial for L2 (short
+seasons leave foragers plant-poor, but no rate is given, and real foragers turn to meat: ACL's hunting is almost nil);
+animals only for L3. Real people meet lean seasons by meat, body reserves, moving and storing, so any harder-winter
+experiment must count a non-storage answer as a finding. Storage in human foragers goes with predictability, richness and
+clumped, owned resources. **Next, by the creator's order: an L1 pilot, if the creator agrees.**
 
 | E13R result | what it means | next step |
 |---|---|---|
