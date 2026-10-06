@@ -2,7 +2,7 @@
 
 Two records. **Access for both: Restricted** (metadata and DOI public; files released only to people the creator
 approves), matching LICENSE (all rights reserved). Everything below is stated as findings inside ACL, not claims about
-real human history. Placeholders in [square brackets] are filled in after F2.
+real human history. F2 is filled in; only the upload date in [square brackets] is left for the creator.
 
 ---
 
@@ -13,7 +13,7 @@ real human history. Placeholders in [square brackets] are filled in after F2.
 **Additional title (subtitle):** How we tried to build a civilization instead of simulating one
 **Creator:** Khudoyberdiev, Abdurashid
 **Publication date:** [date of upload]
-**Version:** v1 ([N] chapters, October 2026)
+**Version:** v1 (95 chapters, October 2026)
 **Language:** English
 **Access:** Restricted. **Licence:** none granted (all rights reserved; if the form requires a choice, select the
 closest "all rights reserved / not open" option, and keep the sentence at the end of the description).
@@ -35,8 +35,8 @@ pre-registration; research methods
 > controlled with the same random seeds, and read in a fixed order; negative results and corrections are kept, not
 > rewritten. It covers over forty studies, from the first traditions and stories, through the long search for why
 > ACL's people do not prepare for winter, to the discovery that a third of ACL's worlds die out not from hunger but
-> because, in a small and scattered people, partners are rarely found [, and F2's test of search against population
-> size].
+> because, in a small and scattered people, partners are rarely found , and a test showing that perfect partner finding saves most of
+> them, while the smallest still run out of partners.
 >
 > The findings are findings inside ACL. They show what happens in this simulated world under the stated rules; they
 > are not claims about how human history happened, though the book compares them with the evidence on real foragers
@@ -83,10 +83,11 @@ Use **"New version"** on the existing record (not a new upload), so the concept 
 >   food only about a third as much as a real grassland's, and that weather was lethal (V1, U).
 > - A third of control worlds (22 of 64) die out, not from hunger but because births stop decades before the end:
 >   after the founders, partners are rarely found in a small, scattered people (F1, confirmed on a holdout).
-> - [F2: whether perfect partner finding saves them, separating search from population size.]
+> - Given perfect partner finding (a diagnostic, not a realistic mechanism), 7 of 64 die instead of 22: search is
+>   most of the problem; the smallest worlds run out of eligible partners altogether (F2).
 >
 > **Changes since v1.0:** baseline-fragility study F1 (discovery and holdout); evidence review N5 on how real
-> foragers find partners; stage 0 reopened; diagnostic experiment F2 [result]; rules 12–19 added to the rule book;
+> foragers find partners; stage 0 reopened; diagnostic experiment F2 (search mostly, size at the margin); rules 12–19 added to the rule book;
 > uncertainty experiment U (stopped at its pilot, recorded).
 >
 > Copyright © 2026 Abdurashid Khudoyberdiev. All rights reserved. No licence is granted to copy or reuse this work.

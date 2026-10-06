@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after F1 (October 2026).
+**Last updated:** after F2 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -203,6 +203,14 @@ low density (Pearce). ACL: the whole world is 20 founders, below every estimate;
 no physical scale. Most real means are culture and may not be written; memory of people known, travel and dispersal are
 nature. **Next (assistant's view; the creator decides):** a read-only feasibility check (rule 12): would 20 founders
 persist even with perfect search? Then size before search.
+
+**F2 done** (`experiments/F2_perfect_search/findings.md`; signed off and frozen; a diagnostic copy with perfect partner
+finding on F1's 64 seeds): **7 of 64 died out against 22, frozen verdict "both"**. Search is most of the problem
+(17 of 22 saved; populations grow, median 67 against 28 at year 120); size is real at the margin (in the 7 that still
+die, no eligible partner existed anywhere: tiny worlds run out of non-kin of the right age). Two new limits appear once
+people pair: couples drift apart (out of reach in 46% of women's weeks), and larger peoples meet the food limit
+(starvation half of all deaths). **Next: the creator decides** among size (M1), anchored search or dispersal (M2/M3),
+and couples' proximity; any choice anchored (rule 17) and checked for feasibility (rule 12).
 
 | E13R result | what it means | next step |
 |---|---|---|
