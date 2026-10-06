@@ -111,7 +111,14 @@ Part A, largely no: food is predictable (tile r 0.90) and storable as seed, but 
 24%), and winter is barely lean (land food per person 504 against 582 in autumn); the world favours immediate-return
 living. Part B, yes but: sowing returns 2.36 food per seed and is repeated (77% sow again), but 52% of its crop is
 eaten by non-kin, sowers' belief falls more often than it rises, and it is 1.6% of food. **By the creator's rule,
-changing people's psychology is premature. Awaiting the creator.**
+changing people's psychology is premature.**
+
+**N3 candidates written** (`experiments/N3_lean_season/candidates.md`, no code, no choice): nine readings of a harder
+lean season, judged for realism, tuning risk, targeting, effect from the rules, viability and continuity. Why winter is
+mild now: winter regrowth roughly cancels dieback, and a forage week only bites when a tile falls below about 20. L1 (no
+growth in winter) is the cleanest but may change little by arithmetic; L6 (colder places, leaner winters) the most
+realistic; L2 and L3 bite but turn on dials; L8 (crop survives winter) rejected; L7 is about people, not the world.
+**Awaiting the creator.**
 
 | E13R result | what it means | next step |
 |---|---|---|
