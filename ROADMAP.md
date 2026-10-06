@@ -90,7 +90,14 @@ when a person stops feeling hungry.**
 **N1 candidates written** (`experiments/N1_satiety/candidates.md`, no code, no experiment): thirteen readings of "what
 should a satisfied person feel?", each judged for nature, culture, scripting risk, human capacity and leak. C6 (seasonal
 instinct) and C9 (food brings standing) rejected; C3 (smooth satiety), C4 (insecurity learned from experience), C11 (the
-body as a store) and C8 (a longer mind, not satiety) stand out. **Awaiting the creator's choice.**
+body as a store) and C8 (a longer mind, not satiety) stand out.
+
+**N1 evidence and least-change documents written** (`experiments/N1_satiety/evidence.md`, `least_change.md`; no code,
+no choice): human evidence verified against PubMed and Crossref. Strong for C11 (body reserves), strong capacity but
+weak use for C8, moderate and mixed for C4, moderate and general for C3. The least change that addresses U1 directly is
+C3 scoped to `food_hunger` (one expression, three uses, one number, zero check possible). Caution: human
+immediate-return societies store little despite full foresight, so C0 (no change to nature) stays on the table.
+**Awaiting the creator's choice.**
 
 | E13R result | what it means | next step |
 |---|---|---|
