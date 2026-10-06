@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you refer to this work, please cite it as below. No license is granted to copy or reuse it; see LICENSE."
+title: "Artificial Civilization Laboratory (ACL)"
+abstract: "A simulation that tests whether culture and civilization can emerge in a world where nature is programmed and culture is written by nobody, with pre-registered experiments and the book The World That Nobody Wrote."
+authors:
+  - family-names: "Khudoyberdiev"
+    given-names: "Abdurashid"
+repository-code: "https://github.com/abu4evere/simulated-world"
+license: "LicenseRef-All-Rights-Reserved"
+type: software
+date-released: "2026-10-05"

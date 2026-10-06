@@ -215,6 +215,9 @@ def front_matter(title, subtitles) -> str:
                  "This is a living book. It is meant to be revised after every major experiment, and earlier "
                  "chapters are corrected in the open, never quietly rewritten.",
                  "Cover: an archipelago at dusk, drawn for this edition.",
+                 "© 2026 Abdurashid Khudoyberdiev. All rights reserved. No part of this book may be copied, "
+                 "reproduced, adapted or distributed, or presented as anyone else's work, without written permission "
+                 "from the author.",
                  "github.com/abu4evere/simulated-world"):
         if line:
             out.append(para(line, "Colophon"))

@@ -282,6 +282,13 @@ isolated populations ([Henrich, 2004](https://doi.org/10.2307/4128416)). The boo
 [RESOURCES.md](RESOURCES.md) the project's full reading list. Where the project is going, and how each next
 step is decided, is in [ROADMAP.md](ROADMAP.md).
 
+## Copyright
+
+© 2026 Abdurashid Khudoyberdiev. **All rights reserved.** The ACL simulation, its code, experiment designs, results,
+roadmap, figures and the book *The World That Nobody Wrote* are the original work of Abdurashid Khudoyberdiev. No
+license is granted to copy, modify, redistribute or reuse any part of it, or to present it as anyone else's work,
+without written permission. See [LICENSE](LICENSE). To refer to this work, cite it as in [CITATION.cff](CITATION.cff).
+
 ## Not yet
 
 - **LLM-driven people.** Kept out on purpose for now, because a language model
