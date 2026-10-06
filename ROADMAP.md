@@ -155,8 +155,15 @@ main run was valid; **outcome A**: the manipulation check failed, because L1 wor
 against 30) and so had as much winter food per person (design flaw admitted: measured per person, not per tile). 0 of 3
 delayed-return criteria on six paired seeds; by the frozen rule the null says nothing about lean seasons. Post-hoc
 observation: a steady leaner winter was absorbed by density, not by behaviour, as the human evidence suggests. A lean
-season people cannot adjust to by numbers (unpredictable bad winters, L5) would be a different test. **Awaiting the
-creator.**
+season people cannot adjust to by numbers (unpredictable bad winters, L5) would be a different test.
+
+**New hypothesis, created by L1 (the creator):** **H-L5:** *delayed-return behaviour is primarily an adaptation to
+uncertainty rather than to average scarcity.* Sharpened from P1 (to be checked against the literature): storage should
+answer bad years that strike everyone at once (correlated risk) more than misfortune that strikes some (idiosyncratic
+risk, which sharing covers). **N4 candidates written** (`experiments/N4_uncertain_winters/candidates.md`): U0 keep, U1
+wider swings, U2 rare severe winters, U3 runs of bad years, U4 patchy bad years, U5 unpredictable timing, U6 (harsher
+and more variable: not a test of H-L5). L1's lessons bind all of them: mean-preserving, per-tile manipulation check,
+same-seed controls, population beside every measure. **Next, by the creator's order: the evidence review.**
 
 | E13R result | what it means | next step |
 |---|---|---|
