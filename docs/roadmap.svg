@@ -49,7 +49,7 @@
 <text x="56" y="213" font-size="13.5" fill="#0F6E56">Bottleneck mapped, E6–E13</text>
 <rect x="40" y="238" width="300" height="52" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="1.4"/>
 <text x="56" y="260" font-size="16" font-weight="bold" fill="#712B13">3. Transmission</text>
-<text x="56" y="279" font-size="13.5" fill="#993C1D">Found: hunger ends at 2 weeks</text>
+<text x="56" y="279" font-size="13.5" fill="#993C1D">Immediate-return? (N2)</text>
 <rect x="40" y="304" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
 <text x="56" y="326" font-size="16" font-weight="bold" fill="#444441">4. Persistence</text>
 <text x="56" y="345" font-size="13.5" fill="#5F5E5A">Survives with models gone?</text>
