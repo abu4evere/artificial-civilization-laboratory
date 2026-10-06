@@ -111,8 +111,11 @@ class Probe:
                     later = wks[i + 1:i + 5]
                     self.give_rows.append((b, gave, any(x[2] for x in later)))
                     if short:
+                        # a person who is fed in a week has eaten and is no longer short by the end of it, so help
+                        # is looked for in the two weeks after a short week
+                        got = any(x[3] for x in later[:2])
                         d = self.died_at.get(pid)
-                        self.short_rows.append((b, received, d is not None and t < d <= t + 4))
+                        self.short_rows.append((b, got, d is not None and t < d <= t + 4))
             self.start = {}
 
     def results(self):

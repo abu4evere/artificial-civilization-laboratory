@@ -30,6 +30,8 @@ grandchildren) and their partner.
    the dead had received any gift in the four weeks before.
 3. **Does help reach the hungry in time?** For adults going short in a winter week: how often they receive a gift that
    week; and, by their food band, how often they die within four weeks, with and without a gift.
+   *(Amended before any data, after a smoke test: someone fed in a week has eaten and is no longer short by its end,
+   so "a gift that week" is always zero. Help is looked for in the two weeks after a short week instead.)*
 4. **What does giving cost the giver?** For adults in winter weeks, by food band: how often they go short within the
    next four weeks, in weeks they gave food away and weeks they did not.
 5. **More sharing, better winters?** All of the above in Arm B against Arm A.
