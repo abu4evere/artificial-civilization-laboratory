@@ -53,3 +53,11 @@ The creator set the rule: "If either answer is no, then changing agent psycholog
 
 By the creator's own rule, **changing people's psychology is premature.** The world as built favours the
 immediate-return life ACL's people lead.
+
+## Correction (added after D2)
+
+Finding 8 above read the fall in sowers' belief over a year ("fell in 58%") as learning that sowing did not pay. D2
+showed that measure was confounded with fading (every belief fades about 8% a year) and with the balance of many small
+negative looks against fewer, larger positive ones. Separating the sources, experience raised sowers' belief in 55% of
+sowings and lowered it in 30%: on balance sowers learn that sowing works. The reading "sowers mostly learn that it did
+not pay" is withdrawn. See `../D2_sowing_learning/findings.md`.

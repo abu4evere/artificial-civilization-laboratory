@@ -113,6 +113,13 @@ living. Part B, yes but: sowing returns 2.36 food per seed and is repeated (77% 
 eaten by non-kin, sowers' belief falls more often than it rises, and it is 1.6% of food. **By the creator's rule,
 changing people's psychology is premature.**
 
+**D2 (why sowers learn failure) done** (`experiments/D2_sowing_learning/findings.md`): they don't. D1's measure was
+confounded with belief fading (corrected in D1 and the book); setting fading aside, experience raises sowers' belief in
+55% of sowings and lowers it in 30%. But returns are not captured: the sower's family gets back 1.08 per unit of seed
+(autumn sowing 0.84, a loss); others harvest more. Sowing explains part of the absence of delayed return (no
+possession), not all of it (it stays small, likely held by S1's gates; and winter is barely lean). **Priority as set by
+the creator: N3 evidence review next, then an L1 pilot if the evidence supports it, then L6.**
+
 **N3 candidates written** (`experiments/N3_lean_season/candidates.md`, no code, no choice): nine readings of a harder
 lean season, judged for realism, tuning risk, targeting, effect from the rules, viability and continuity. Why winter is
 mild now: winter regrowth roughly cancels dieback, and a forage week only bites when a tile falls below about 20. L1 (no
