@@ -32,11 +32,11 @@ def main():
 
     w("## Validity\n")
     checks = (OUT / "checks.txt").read_text(encoding="utf-8").strip()
-    pilot = (OUT / "pilot" / "verdict.txt").read_text(encoding="utf-8").strip()
+    pilot = (OUT / "pilot2" / "verdict.txt").read_text(encoding="utf-8").strip()   # redesigned pilot governs
     ok_probe = checks.count("READ-ONLY") >= 2 and "CHANGES" not in checks
     ok_code = all(r["code_hash"] == r["code_hash_after"] for r in D.values())
     ok_rerun = rerun["state_hash"] == D[("c", 601)]["state_hash"] and rerun["pops"] == D[("c", 601)]["pops"]
-    for label, ok in (("Survival pilot: " + pilot, "PASS" in pilot), ("Probe read-only, both arms", ok_probe),
+    for label, ok in (("Redesigned survival pilot: " + pilot, "PASS" in pilot), ("Probe read-only, both arms", ok_probe),
                       ("Code unchanged during runs", ok_code), ("Control reproduces itself on rerun (seed 601)", ok_rerun)):
         w(f"- {label}: **{'yes' if ok else 'NO'}**")
     valid = "PASS" in pilot and ok_probe and ok_code and ok_rerun
@@ -60,12 +60,39 @@ def main():
     leaner = m1 < 0.9 or m2 < 0.9
     w(f"\nWinter got leaner in L (M1 or M2 at least 10% lower): **{'yes' if leaner else 'no'}**.\n")
 
-    w("## The frozen test of the immediate-return hypothesis\n")
-    hh = {a: [h[0] / h[1] for sd in SEEDS for h in D[(a, sd)]["households"] if h[1] > 0] for a in "cl"}
-    da = {a: statistics.median(hh[a]) if hh[a] else 0.0 for a in "cl"}
-    db = {a: sum(D[(a, sd)]["carers"][0] for sd in SEEDS) / max(1, sum(D[(a, sd)]["carers"][1] for sd in SEEDS)) for a in "cl"}
-    dc = {a: (pooled(a, 2, "forage_choice") / pooled(a, 2, "adult_weeks")) / (pooled(a, 1, "forage_choice") / pooled(a, 1, "adult_weeks"))
-          for a in "cl"}
+    def alive(a, sd):
+        return len(D[(a, sd)]["pops"]) == 12 and D[(a, sd)]["pops"][-1] > 0
+    paired = [sd for sd in SEEDS if alive("c", sd) and alive("l", sd)]
+
+    def crit(seeds):
+        def P(a, s, key):
+            return sum(D[(a, x)]["n"].get(str(s), {}).get(key, 0.0) for x in seeds)
+        hh = {a: [h[0] / h[1] for sd in seeds for h in D[(a, sd)]["households"] if h[1] > 0] for a in "cl"}
+        da_ = {a: statistics.median(hh[a]) if hh[a] else 0.0 for a in "cl"}
+        db_ = {a: sum(D[(a, sd)]["carers"][0] for sd in seeds) / max(1, sum(D[(a, sd)]["carers"][1] for sd in seeds)) for a in "cl"}
+        dc_ = {a: (P(a, 2, "forage_choice") / max(1, P(a, 2, "adult_weeks"))) / max(1e-9, P(a, 1, "forage_choice") / max(1, P(a, 1, "adult_weeks")))
+               for a in "cl"}
+        return da_, db_, dc_
+
+    w("## Population (Amendment 1: reported beside every measure)\n")
+    w("| arm | worlds died out | final population, median (all seeds) | final population, median (paired seeds) |")
+    w("|---|---|---|---|")
+    for a, name in (("c", "C"), ("l", "L")):
+        finals = [D[(a, s)]["pops"][-1] if alive(a, s) else 0 for s in SEEDS]
+        pf = [D[(a, s)]["pops"][-1] for s in paired]
+        w(f"| {name} | {sum(1 for s in SEEDS if not alive(a, s))} of 16 | {statistics.median(finals):.0f} | "
+          + (f"{statistics.median(pf):.0f} |" if pf else "– |"))
+    w(f"\nPaired seeds (both arms alive at year 120): {len(paired)} of 16.\n")
+    w("**Frozen (Amendment 1):** L1 worlds are smaller than control worlds. Smaller populations have fewer people to share "
+      "with, learn from and sow beside; differences between the arms may come from the leaner winter directly, or through "
+      "the smaller population it produces. L1 cannot separate the two.\n")
+
+    w("## The frozen test of the immediate-return hypothesis (verdict on paired worlds; pooled for completeness)\n")
+    pda, pdb, pdc = crit(SEEDS)
+    w(f"Pooled over all 16 seeds: D-a C {pda['c']:.3f} / L {pda['l']:.3f}; D-b C {100 * pdb['c']:.1f}% / L {100 * pdb['l']:.1f}%; "
+      f"D-c C {pdc['c']:.3f} / L {pdc['l']:.3f}.\n")
+    da, db, dc = crit(paired)
+    w(f"**Paired seeds ({len(paired)}), the verdict:**\n")
     dd = {a: sum(D[(a, sd)]["seed_sown"] for sd in SEEDS) / max(1, sum(D[(a, sd)]["person_years"] for sd in SEEDS)) for a in "cl"}
     t1 = da["c"] > 0 and da["l"] >= 2 * da["c"]
     t2 = db["l"] >= 3 * db["c"] and db["l"] >= 0.10
@@ -97,12 +124,6 @@ def main():
                      ("food stashed in autumn per adult autumn-week", lambda a: pooled(a, 2, "stashed") / pooled(a, 2, "adult_weeks")),
                      ("adult winter starvation deaths per 1,000 adult winter-weeks", lambda a: 1000 * pooled(a, 3, "adult_starved") / pooled(a, 3, "adult_weeks"))):
         w(f"| {label} | {f('c'):.4f} | {f('l'):.4f} |")
-
-    w("\n## Population\n")
-    for a, name in (("c", "C"), ("l", "L")):
-        finals = [D[(a, s)]["pops"][-1] if len(D[(a, s)]["pops"]) == 12 else 0 for s in SEEDS]
-        died = sum(1 for s in SEEDS if len(D[(a, s)]["pops"]) < 12 or D[(a, s)]["pops"][-1] == 0)
-        w(f"- {name}: worlds that died out {died} of 16; final population median {statistics.median(finals):.0f}.")
 
     w("\n## Children's winter starvation (read last)\n")
     for a, name in (("c", "C"), ("l", "L")):

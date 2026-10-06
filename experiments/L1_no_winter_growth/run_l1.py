@@ -20,6 +20,7 @@ CODE = E13R / "code_e13r"
 ARMS = {"c": {}, "l": {"season_growth": (1.3, 1.0, 0.5, 0.0)}}
 SEEDS = tuple(range(601, 617))
 PILOT = tuple(range(701, 705))
+PILOT2 = tuple(range(711, 719))                  # redesigned pilot (pilot2_and_amendment.md)
 WPY, WPS = 52, 13
 WINTER = 3 * WPS
 OUT = HERE / "output"
@@ -150,6 +151,23 @@ def run(arm, seed, tag=""):
     print(f"{arm} seed {seed}{tag}: alive {len(w.living())}", flush=True)
 
 
+def pilot2(arm, seed):
+    """Redesigned pilot: both arms on the same seed, population only."""
+    setup()
+    w = make_world(arm, seed)
+    probe = PilotProbe()
+    w.observers.append(probe)
+    for _ in range(120 * WPY):
+        w.step()
+        if not w.living():
+            break
+    died = not w.living()
+    (OUT / "pilot2").mkdir(parents=True, exist_ok=True)
+    (OUT / "pilot2" / f"{arm}_seed_{seed}.json").write_text(
+        json.dumps({"arm": arm, "seed": seed, "pops": probe.pops, "died_out": died}), encoding="utf-8")
+    print(f"pilot2 {arm} seed {seed}: {'DIED OUT' if died else 'survived'}; population every 10 years {probe.pops}", flush=True)
+
+
 def pilot(seed):
     setup()
     w = make_world("l", seed)
@@ -195,6 +213,22 @@ if __name__ == "__main__":
         (OUT / "pilot" / "verdict.txt").write_text(f"{died} of {len(PILOT)} pilot worlds died out: {verdict}\n", encoding="utf-8")
         print(f"pilot: {died} of {len(PILOT)} died out: {verdict}", flush=True)
         sys.exit(0 if died < 2 else 1)
+    elif cmd == "pilot2":
+        jobs = [(a, s) for s in PILOT2 for a in ARMS]
+        with ThreadPoolExecutor(4) as pool:
+            list(pool.map(lambda j: subprocess.call(me + ["pilot2one", j[0], str(j[1])]), jobs))
+        R = {(a, s): json.loads((OUT / "pilot2" / f"{a}_seed_{s}.json").read_text(encoding="utf-8")) for a in ARMS for s in PILOT2}
+        died = {a: sum(R[(a, s)]["died_out"] for s in PILOT2) for a in ARMS}
+        excess = died["l"] - died["c"]
+        both = sum(1 for s in PILOT2 if not R[("c", s)]["died_out"] and not R[("l", s)]["died_out"])
+        ok = excess <= 1 and both >= 5
+        line = (f"died out: C {died['c']} of 8, L {died['l']} of 8; excess under L {excess} (limit 1); both arms alive in "
+                f"{both} of 8 (need 5): {'PASS' if ok else 'STOP'}")
+        (OUT / "pilot2" / "verdict.txt").write_text(line + "\n", encoding="utf-8")
+        print("pilot2: " + line, flush=True)
+        sys.exit(0 if ok else 1)
+    elif cmd == "pilot2one":
+        pilot2(sys.argv[2], int(sys.argv[3]))
     elif cmd == "pilotone":
         pilot(int(sys.argv[2]))
     elif cmd == "diag":
@@ -219,9 +253,9 @@ if __name__ == "__main__":
     elif cmd == "verify":
         sys.exit(0 if verify(sys.argv[2]) else 1)
     elif cmd == "all":
-        v = (OUT / "pilot" / "verdict.txt")
+        v = (OUT / "pilot2" / "verdict.txt")           # the redesigned pilot governs (pilot2_and_amendment.md)
         if not v.exists() or "PASS" not in v.read_text(encoding="utf-8"):
-            sys.exit("ABORT: the survival pilot has not passed")
+            sys.exit("ABORT: the redesigned survival pilot has not passed")
         for arm in ARMS:
             if subprocess.call(me + ["verify", arm]) != 0:
                 sys.exit("ABORT: probe changes the world")

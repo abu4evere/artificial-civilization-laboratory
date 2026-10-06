@@ -1,9 +1,10 @@
-# L1 — Redesigned pilot (same-seed controls) and Amendment 1 (DRAFT, not frozen)
+# L1 — Redesigned pilot (same-seed controls) and Amendment 1 (FROZEN)
 
-**Status:** draft for the creator's sign-off. Written after the first pilot's stop (2 of 4 died out) and the declared
-post-pilot diagnostic (`pilot_diagnostic.md`). No main-experiment data exists: seeds 601–616 have never been run. Items
-marked **[DECIDE]** are the creator's. On sign-off both parts are frozen together and tagged `L1-pilot2-frozen` before the
-new pilot runs.
+**Status:** signed off by the creator and frozen, both parts together, as `L1-pilot2-frozen`, before the new pilot ran.
+Written after the first pilot's stop (2 of 4 died out) and the declared post-pilot diagnostic (`pilot_diagnostic.md`). No
+main-experiment data exists: seeds 601–616 have never been run. The creator approved eight seeds, the excess-extinction
+limit, population beside every measure and the paired-world verdict, and changed one threshold (both arms alive in at
+least five of eight seeds, not six).
 
 ## Why redesign
 
@@ -16,14 +17,15 @@ have had, by so much that the main experiment could not be read?**
 ## Part 1 — The redesigned pilot
 
 - **Seeds:** eight new pilot seeds, **711–718**: none used before (not the first pilot's 701–704, which have now been
-  seen; not the experiment's 601–616). **[DECIDE: eight, or more?]**
+  seen; not the experiment's 601–616). Eight is enough for the pilot's binary question.
 - **Arms:** both, on every seed: C (unchanged) and L (no winter growth). Same code, same people as the frozen design.
 - **Read only:** population every ten years, and whether the world died out. Nothing else.
 - **Stop rule, against the control (all must hold for the main experiment to run):**
   1. **Excess extinction:** worlds that die out under L, minus worlds that die out under C on the same seeds, is at most
-     **one** of eight. **[DECIDE]**
-  2. **No collapse of the comparison:** in at least **six** of eight seeds, both arms are still alive at year 120, so
-     that the main experiment would have enough worlds where both arms can be compared. **[DECIDE]**
+     **one** of eight.
+  2. **No collapse of the comparison:** in at least **five** of eight seeds, both arms are still alive at year 120, so
+     that the main experiment would have enough worlds where both arms can be compared. (The creator: the pilot is to
+     prevent an uninterpretable experiment, not one that reveals the world became harder.)
 - **Shrinkage is not a stop reason.** Smaller populations under L are expected (the diagnostic) and are themselves a
   finding; Amendment 1 handles them in the main analysis.
 
@@ -34,8 +36,8 @@ The frozen design (`preregistration.md`) is unchanged except for these additions
 1. **Population reported beside every measure.** For each arm: population at each ten-year sample, final population,
    and worlds that died out, reported next to the manipulation check, the frozen test and the descriptive measures.
 2. **The frozen test is computed on worlds where both arms are alive at year 120** (paired seeds), as well as pooled
-   over all seeds; both are reported. **The frozen verdict uses the paired worlds.** **[DECIDE: verdict on paired worlds,
-   or pooled as originally frozen?]**
+   over all seeds; both are reported. **The frozen verdict uses the paired worlds**, because extinction would otherwise
+   change the composition of the sample; pooled results are reported for completeness.
 3. **Per-person and per-household forms only.** The three frozen criteria are already per household or per person
    (household stock ÷ need; share of carers stashing; share of weeks foraging), so they need no change; descriptive
    measures (food given, going short, deaths, seed sown) are reported per person or per adult-week, never as totals.
