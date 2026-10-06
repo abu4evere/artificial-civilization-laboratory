@@ -63,7 +63,15 @@ food, not getting it. Recorded openly, as a change made after the result and why
 **W1 (winter ledger) done** (`experiments/W1_winter_ledger/findings.md`): food does not fail to last; almost none is
 held. Winter is lived hand to mouth (winter gathering covers 102% of winter eating; stock at the start, 14%). The median
 family holds 11% of its winter need; rot is minor; stashes, the only way a family can hold a winter, are almost unused.
-People gather about what they eat in every season. **Next question, awaiting the creator: why does no one stash?**
+People gather about what they eat in every season.
+
+**S1 (stashing decisions) done** (`experiments/S1_stash_decisions/findings.md`): stashing fails three gates in a row:
+rarely eligible (food above two weeks' household need in 13% of adult-weeks, 2.7% in autumn), often displaced (a
+material takes the one put option in 28% of eligible weeks), usually outscored (5.4% of offers; beaten by giving 39%,
+talking 23%, joining 17%, foraging only 4%). Stashers learn it kept food better than carrying it, never that it saved a
+winter; the belief spreads. The creator's hypothesis (reward values only present hunger) is partly supported: put earns
+no immediate reward and its habit is a quarter of foraging's, but the strongest rival is social. **Awaiting the
+creator: what next.**
 
 | E13R result | what it means | next step |
 |---|---|---|
