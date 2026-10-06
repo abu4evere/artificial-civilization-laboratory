@@ -35,3 +35,5 @@ book/*.tmp
 experiments/E13R_replication/l2_timing/
 release/*.pdf
 release/*.zip
+paper/.tools/
+paper/*.docx.tmp
