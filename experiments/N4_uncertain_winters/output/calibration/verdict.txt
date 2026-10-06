@@ -1,0 +1,5 @@
+half-width 0.3: median CV 0.072, mean food per land tile 26.63 (1.000 of half-width 0.30's)
+half-width 0.5: median CV 0.069, mean food per land tile 26.53 (0.996 of half-width 0.30's)
+half-width 0.7: median CV 0.084, mean food per land tile 26.42 (0.992 of half-width 0.30's)
+half-width 0.95: median CV 0.109, mean food per land tile 25.88 (0.972 of half-width 0.30's)
+RULE: chosen half-width 0.95 (none reaches one third: the widest is used and the shortfall reported).

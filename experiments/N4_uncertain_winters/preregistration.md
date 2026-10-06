@@ -142,3 +142,29 @@ throwaway seed (999, 20 years; output discarded) and the probe shown read-only i
   neither; else "mixed", reported as it is.
 - **Validity:** pilot PASS; probe read-only (20 years, seed 901, every arm); code fingerprint unchanged; C seed 901
   rerun gives the same world hash and populations; P's zero checks PASS.
+
+## 11. Calibration verdict and freeze
+
+Calibration (seeds 801–804, W only, 120 years; `output/calibration/verdict.txt`), applied by section 3's rule without
+change:
+
+| half-width | median CV of mid-autumn food per land tile | mean food per land tile (of 0.30's) |
+|---|---|---|
+| 0.30 (as now) | 0.072 | 1.000 |
+| 0.50 | 0.069 | 0.996 |
+| 0.70 | 0.084 | 0.992 |
+| 0.95 (widest: weather 0 to 1.9) | 0.109 | 0.972 |
+
+**Chosen: half-width 0.95, the widest. None reaches one third: shortfall reported.** Even weather that runs from nothing
+to nearly double varies ACL's autumn food by about 11% a year, a third of grassland's 37% and about 1.5× the present 7%.
+As section 3 foresaw, **ACL's land itself is the limit**: plants regrow toward their caps, and the swings in the weather
+are largely smoothed away before autumn. Consequences, fixed now, before any pilot or main data:
+
+- The U experiment tests **uncertainty about 1.5× the present, not grassland uncertainty.** Section 10's manipulation
+  threshold (0.75 × 0.109 = 0.082) checks that the arms deliver what the calibration found, not the grassland target.
+- Any null is read, per section 7, only as "this variability, in ACL's current world, is insufficient", and the report
+  states beside it that the variability tested was a third of the realistic target.
+- Raising the land's own variability (caps, regrowth, dieback) would be a change to nature and a new design for the
+  creator, not part of U.
+
+Width for W and P: **weather_low 0.0, weather_high 1.9.** Frozen as `U-frozen`.

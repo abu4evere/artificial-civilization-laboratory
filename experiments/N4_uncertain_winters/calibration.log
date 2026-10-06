@@ -1,0 +1,21 @@
+calibration half-width 0.3 seed 804: cv 0.08169427506625787
+calibration half-width 0.3 seed 801: cv 0.06841715936902534
+calibration half-width 0.3 seed 802: cv 0.07639183665624814
+calibration half-width 0.3 seed 803: cv 0.06833103960954862
+calibration half-width 0.5 seed 801: cv 0.06656344921832431
+calibration half-width 0.5 seed 804: cv 0.0851159471429218
+calibration half-width 0.7 seed 801: cv 0.10493610998289166
+calibration half-width 0.7 seed 802: cv 0.06626784911297172
+calibration half-width 0.5 seed 802: cv 0.06859764374420635
+calibration half-width 0.5 seed 803: cv 0.06917668750384401
+calibration half-width 0.95 seed 801: cv 0.1182510227097569
+calibration half-width 0.95 seed 802: cv 0.09968866854958977
+calibration half-width 0.95 seed 803: cv 0.12531686732534023
+calibration half-width 0.7 seed 804: cv 0.09143700497101617
+calibration half-width 0.95 seed 804: cv 0.08319657739676985
+calibration half-width 0.7 seed 803: cv 0.07636190833738253
+half-width 0.3: median CV 0.072, mean food per land tile 26.63 (1.000 of half-width 0.30's)
+half-width 0.5: median CV 0.069, mean food per land tile 26.53 (0.996 of half-width 0.30's)
+half-width 0.7: median CV 0.084, mean food per land tile 26.42 (0.992 of half-width 0.30's)
+half-width 0.95: median CV 0.109, mean food per land tile 25.88 (0.972 of half-width 0.30's)
+RULE: chosen half-width 0.95 (none reaches one third: the widest is used and the shortfall reported).
