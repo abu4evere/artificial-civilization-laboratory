@@ -79,8 +79,13 @@ family's surplus is held in its members' stomachs and debts, not in a store.
 **P1 (risk pooling) done** (`experiments/P1_risk_pooling/findings.md`): the family network pools risk (family food cuts
 the poorest members' winter starvation 25-fold; deaths rarely amid plenty; giving does not leave givers short) but pools
 almost nothing (help follows ~10% of hungry weeks; families hold a ninth of their winter; more sharing, no better
-winters). The bottleneck is not distribution but how much there is to distribute when winter comes. **Awaiting the
-creator: what next.**
+winters). The bottleneck is not distribution but how much there is to distribute when winter comes.
+
+**U1 (upstream surplus) done** (`experiments/U1_upstream_surplus/findings.md`): the food is on the land and barely
+touched; autumn is foraged like any season; no carrying limit, little moving. People stop when fed: foraging falls from
+86% of autumn weeks (under half a week of food) to 6% (two to four weeks). In the code, hunger is 1 − weeks ÷ 2, zero at
+two weeks, exactly the line where stashing becomes possible. **The chain from E8 to U1 now runs to one line of nature:
+when a person stops feeling hungry. Awaiting the creator: what next.**
 
 | E13R result | what it means | next step |
 |---|---|---|

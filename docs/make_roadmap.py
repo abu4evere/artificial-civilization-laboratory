@@ -17,7 +17,7 @@ STAGES = [  # (title, subtitle, status)
     ("0. The world", "Physics, seasons, bodies, minds", "done"),
     ("1. Culture appears", "Traditions and stories, E1–E5", "done"),
     ("2. Why it stops", "Bottleneck mapped, E6–E13", "done"),
-    ("3. Transmission", "Kin pool risk; pool is empty", "now"),
+    ("3. Transmission", "Found: hunger ends at 2 weeks", "now"),
     ("4. Persistence", "Survives with models gone?", "ahead"),
     ("5. A people's practice", "Preparing becomes a tradition", "ahead"),
     ("6. Scale", "100 people against 30", "ahead"),
