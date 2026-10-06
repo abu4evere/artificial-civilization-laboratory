@@ -116,6 +116,38 @@ Sciences. University of Chicago Press. [doi:10.7208/chicago/9780226520452.001.00
   one is added.
 - **For ACL:** why tools that build on tools have not appeared since E6.
 
+**Read first — Woodburn, J. (1982).** Egalitarian societies. *Man* 17(3).
+[doi:10.2307/2801707](https://doi.org/10.2307/2801707)
+- Immediate-return societies (food eaten soon after it is got, shared widely, little stored) against delayed-return
+  societies (stores and lasting obligations). Not yet read in full; as described in the literature citing it.
+- **For ACL:** the interpretation that ACL may have converged on an immediate-return mode of life (N1, N2).
+
+**Peterson, N. (1993).** Demand sharing: reciprocity and the pressure for generosity among foragers. *American
+Anthropologist* 95(4). [doi:10.1525/aa.1993.95.4.02a00050](https://doi.org/10.1525/aa.1993.95.4.02a00050)
+- Much forager sharing is by demand. **For ACL:** ACL people cannot ask, so sharing on demand is absent (N2).
+
+**Schnegg, M. (2015).** Reciprocity on demand. *Human Nature* 26(3).
+[doi:10.1007/s12110-015-9236-5](https://doi.org/10.1007/s12110-015-9236-5)
+- Under a demand-sharing norm, real food networks are highly reciprocal. **For ACL:** matches G1 (53% repayment).
+
+**Kelly, R. L. (2013).** *The Lifeways of Hunter-Gatherers.* Cambridge University Press.
+[doi:10.1017/cbo9781139176132](https://doi.org/10.1017/cbo9781139176132)
+- The diversity of hunter-gatherers; a warning against using any of them as "human nature stripped to its core".
+
+**Bowles, S. and Choi, J.-K. (2018).** The Neolithic agricultural revolution and the origins of private property.
+*Journal of Political Economy* 127(5). [doi:10.1086/701789](https://doi.org/10.1086/701789)
+- Possession-based property among sedentary foragers as the condition for farming. **For ACL:** stashes are owned but
+  undefended (N2).
+
+**Marean, C. W. (2016).** The transition to foraging for dense and predictable resources and its impact on the
+evolution of modern humans. *Phil. Trans. R. Soc. B.* [doi:10.1098/rstb.2015.0239](https://doi.org/10.1098/rstb.2015.0239)
+- Dense, predictable resources make land worth defending. **For ACL:** does its world offer any (N2)?
+
+**Wengrow, D. and Graeber, D. (2015).** Farewell to the 'childhood of man': ritual, seasonality, and the origins of
+inequality. *Journal of the Royal Anthropological Institute* 21(3).
+[doi:10.1111/1467-9655.12247](https://doi.org/10.1111/1467-9655.12247)
+- Hunter-gatherers alternating between social modes in seasonal environments.
+
 **Kirby, S., Cornish, H. and Smith, K. (2008).** Cumulative cultural evolution in the laboratory: An experimental
 approach to the origins of structure in human language. PNAS 105(31).
 [doi:10.1073/pnas.0707835105](https://doi.org/10.1073/pnas.0707835105)

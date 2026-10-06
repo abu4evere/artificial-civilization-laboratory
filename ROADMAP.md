@@ -97,7 +97,15 @@ no choice): human evidence verified against PubMed and Crossref. Strong for C11 
 weak use for C8, moderate and mixed for C4, moderate and general for C3. The least change that addresses U1 directly is
 C3 scoped to `food_hunger` (one expression, three uses, one number, zero check possible). Caution: human
 immediate-return societies store little despite full foresight, so C0 (no change to nature) stays on the table.
-**Awaiting the creator's choice.**
+
+**Reframed (the creator, after N1's evidence):** U1 identified a candidate bottleneck, not a proven flaw. ACL may have
+converged on an **immediate-return** mode of life (Woodburn 1982), a normal and stable human pattern, rather than a
+broken one. The question shifts from "what should satiety be?" to **"under what conditions do delayed-return societies
+emerge, and does ACL's world contain them?"** **N2 design document written** (`experiments/N2_immediate_delayed/design.md`):
+ACL already shows immediate consumption, little storage, reciprocal kin sharing and no binding commitments; it lacks
+sharing on demand, possession of stores and any capacity to ask or promise; whether its world offers dense, predictable,
+storable resources is unmeasured. The N1 candidates stay, as hypotheses to weigh against this one. **Awaiting the
+creator.**
 
 | E13R result | what it means | next step |
 |---|---|---|
