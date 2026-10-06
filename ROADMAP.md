@@ -163,7 +163,16 @@ answer bad years that strike everyone at once (correlated risk) more than misfor
 risk, which sharing covers). **N4 candidates written** (`experiments/N4_uncertain_winters/candidates.md`): U0 keep, U1
 wider swings, U2 rare severe winters, U3 runs of bad years, U4 patchy bad years, U5 unpredictable timing, U6 (harsher
 and more variable: not a test of H-L5). L1's lessons bind all of them: mean-preserving, per-tile manipulation check,
-same-seed controls, population beside every measure. **Next, by the creator's order: the evidence review.**
+same-seed controls, population beside every measure.
+
+**Overnight (the creator asleep):** **N4 evidence review done** (`experiments/N4_uncertain_winters/evidence.md`): the
+sharpening holds (sharing insures idiosyncratic, not aggregate risk: Ravallion and Chaudhuri 1997, Townsend 1994,
+Hoogeveen 2001), but uncertainty can also favour sharing and moving (Lewis et al. 2014); real grassland production varies
+~37% a year (Shi et al. 2014). **V1 done** (`experiments/V1_bad_years/findings.md`): ACL's food varies ~7–8% a year; bad
+winters kill (~7× starvation in the poorest quarter) but do not teach storage (more sowing, a few more planners, no more
+household stock, fewer stashing); poor years cluster (0.73). **U design drafted** (`experiments/N4_uncertain_winters/preregistration_draft.md`,
+not frozen): control vs wider world-wide years (W, settings only) vs wider patchy years (P, new code), width calibrated to
+real variability by measuring land only. **Awaiting the creator's sign-off.**
 
 | E13R result | what it means | next step |
 |---|---|---|
