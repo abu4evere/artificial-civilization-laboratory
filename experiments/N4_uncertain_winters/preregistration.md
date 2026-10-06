@@ -1,7 +1,9 @@
-# U — Uncertain years: correlated against patchy (pre-registration DRAFT, not frozen)
+# U — Uncertain years: correlated against patchy (pre-registration, SIGNED OFF; width to be set by calibration)
 
-**Status:** drafted overnight while the creator slept, for the creator's sign-off. **Nothing frozen, no code written, no
-world run.** Items marked **[DECIDE]** are the creator's.
+**Status:** signed off by the creator. The creator's decisions: the **grassland** target (food variability about a
+third), **quarters** of the map as P's regions, and the pilot rules and prediction thresholds as drafted. Everything
+below is fixed except the weather width, which section 3's calibration rule sets mechanically; then the whole design is
+frozen and tagged `U-frozen` before any probe, pilot or run. Tagged `U-signoff` now.
 
 ## 1. Why
 
@@ -21,11 +23,17 @@ about 37%, Shi et al. 2014).
 | **W** wider, world-wide (U1) | the yearly growing-weather range widened around the same mean (0.95) | **correlated** |
 | **P** wider, patchy (U4) | the same width, but drawn separately for each region of the world | **idiosyncratic** |
 
-- **W needs no code**: `weather_low` and `weather_high` are settings. Because the number of random draws is unchanged, each
-  seed's years are the same draws as the control's, stretched wider: the cleanest possible pairing.
+- **W needs no code**: `weather_low` and `weather_high` are settings.
+
+  **Correction (found by the zero check, before any calibration or run):** this section first said that each seed's
+  years under W would be "the same draws as the control's, stretched wider". That is true only of the first year: once
+  W's land grows differently, people choose differently and use the world's random numbers differently, and the yearly
+  draws diverge, as between any two arms. W and C share a seed's starting world and first year, not its whole sequence
+  of years. P's guarantee is likewise narrower than first stated: it makes **no extra draws** from the world's random
+  stream (its regions draw from streams of their own).
 - **P needs code**: a growing-weather factor per region instead of one per world, with the same distribution as W.
-  **[DECIDE: region size, for example quarters of the map.]** The code must pass a zero check (with one region it must
-  reproduce W exactly).
+  Regions: **quarters of the map** (the creator). The code must pass a zero check (with one region it must reproduce W
+  exactly).
 - People: A2-full, as in every analysis since E9. Code: E13R's.
 
 ## 3. The width: anchored, not tuned
@@ -35,20 +43,27 @@ behaviour. Because plant caps and winter dieback are not linear, the weather wid
 be found, not assumed. **Calibration step (before freezing the width):** on four calibration seeds of its own, run W at a
 small set of widths, reading **only the coefficient of variation of mid-autumn food per land tile** and average food per
 tile (to confirm the mean is kept). Pick the width whose food variability is nearest a third. The calibration reads
-nothing about people. **[DECIDE: approve this calibration, and a second source on real variability before it.]**
+nothing about people. (Approved; the second source on real variability is Knapp and Smith 2001, in `evidence.md`.)
+
+**Calibration, fixed now:** widths around the same mean 0.95, half-widths **0.30 (as now), 0.50, 0.70, 0.95 (the
+widest)**, W only, on calibration seeds **801–804**, 120 years. Read: median over the four worlds of the year-to-year
+coefficient of variation of mid-autumn plant food per land tile, and mean food per land tile (against 0.30's, to check
+the mean is kept). **Rule:** the half-width whose median coefficient of variation is nearest 0.333 is used; if none
+reaches 0.333, the widest is used and the shortfall reported. Same width for W and P.
 
 **Which variability is realistic depends on the land.** Knapp and Smith (2001) found a fourfold range in year-to-year
 variability across biomes, grasslands the most and forests the least; ACL's present 7–8% may already resemble the least
-variable end. A target of a third makes ACL grassland-like. **[DECIDE: the biome ACL's variability should represent:
-grassland (about a third), or a stated other target from a source.]**
+variable end. **The creator chose grassland:** the target is a coefficient of variation of food per land tile near
+**one third** (Shi et al. 2014: 36.6%).
 
 If no width up to the widest possible (weather from 0 to 1.9) reaches a third, the widest is used and the shortfall is
 reported: ACL's land itself would then be the limit.
 
 ## 4. Pilot (same-seed controls, L1's lesson)
 
-All three arms on eight pilot seeds of their own; population and extinction only. Stop if an arm loses more than one
-world beyond the control on the same seeds, or if fewer than five seeds keep all three arms alive. **[DECIDE]**
+All three arms on eight pilot seeds of their own (**811–818**); population and extinction only. Stop if an arm loses
+more than one world beyond the control on the same seeds, or if fewer than five seeds keep all three arms alive.
+Main experiment seeds: **901–916** (never run before).
 
 ## 5. Validity
 
@@ -70,9 +85,9 @@ survive; all measures per person or per household.
 ## 7. Predictions (H-L5, frozen on sign-off)
 
 1. **Storage rises in W more than in P,** and more than in C. Operationally: at least two of the three storage measures
-   at least **1.5×** C in W, and W's at least **1.25×** P's. **[DECIDE: thresholds.]**
+   at least **1.5×** C in W, and W's at least **1.25×** P's.
 2. **Sharing or moving rises in P more than in W.** Operationally: food given away per adult-week, or tiles moved per
-   adult-week, at least **1.2×** W's in P. **[DECIDE.]**
+   adult-week, at least **1.2×** W's in P.
 
 **Falsification of H-L5's sharpened form:** storage rises as much or more in P as in W, or does not rise in W at all
 when the manipulation check shows W's years are as variable as intended.

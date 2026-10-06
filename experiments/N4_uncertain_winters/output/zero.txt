@@ -1,0 +1,6 @@
+1. U code, defaults, equals E13R code (world state without settings, seed 501, 10 years): yes
+2. U code with W's wider setting equals E13R code with the same setting: yes
+3. P makes no extra draws from the world's random stream (first year's world weather identical to W's; later years diverge in every arm as worlds differ): yes
+4. P draws four different regional weathers within the range: yes ([1.1668, 0.96, 0.9537, 1.5357])
+5. Region index maps the four corners to the four quarters: yes
+All: PASS
