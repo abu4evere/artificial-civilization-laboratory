@@ -1,0 +1,10 @@
+{
+    "title": "Artificial Civilization Laboratory (ACL)",
+    "creators": [
+        {"name": "Khudoyberdiev, Abdurashid"}
+    ],
+    "description": "A simulation that tests whether culture and civilization can emerge in a world where nature is programmed and culture is written by nobody, with pre-registered experiments and the book The World That Nobody Wrote. All rights reserved: no license is granted to copy or reuse this work.",
+    "upload_type": "software",
+    "access_right": "closed",
+    "keywords": ["artificial life", "cultural evolution", "simulation", "emergence"]
+}
