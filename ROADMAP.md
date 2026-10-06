@@ -60,6 +60,11 @@ stay in stage 3 and **investigate why food does not last through winter**. Reaso
 preparation and did not help winter, so making it persist would not move the project; the autopsy points to keeping
 food, not getting it. Recorded openly, as a change made after the result and why.
 
+**W1 (winter ledger) done** (`experiments/W1_winter_ledger/findings.md`): food does not fail to last; almost none is
+held. Winter is lived hand to mouth (winter gathering covers 102% of winter eating; stock at the start, 14%). The median
+family holds 11% of its winter need; rot is minor; stashes, the only way a family can hold a winter, are almost unused.
+People gather about what they eat in every season. **Next question, awaiting the creator: why does no one stash?**
+
 | E13R result | what it means | next step |
 |---|---|---|
 | **L1 or L2 fails** (hard stop) | the copying code does something beyond the watcher's habit | fix the code; rerun E13R. No outcomes read. |
