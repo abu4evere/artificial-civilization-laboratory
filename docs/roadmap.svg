@@ -38,18 +38,18 @@
 <line x1="385" y1="332" x2="423" y2="332" stroke="#888780" stroke-width="1.2"/>
 <line x1="418.0" y1="335.5" x2="423" y2="332" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
 <line x1="418.0" y1="328.5" x2="423" y2="332" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
-<rect x="40" y="40" width="300" height="52" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
-<text x="56" y="62" font-size="16" font-weight="bold" fill="#085041">0. The world</text>
-<text x="56" y="81" font-size="13.5" fill="#0F6E56">Physics, seasons, bodies, minds</text>
+<rect x="40" y="40" width="300" height="52" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="1.4"/>
+<text x="56" y="62" font-size="16" font-weight="bold" fill="#712B13">0. The world</text>
+<text x="56" y="81" font-size="13.5" fill="#993C1D">Reopened: worlds fail to pair</text>
 <rect x="40" y="106" width="300" height="52" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
 <text x="56" y="128" font-size="16" font-weight="bold" fill="#085041">1. Culture appears</text>
 <text x="56" y="147" font-size="13.5" fill="#0F6E56">Traditions and stories, E1–E5</text>
 <rect x="40" y="172" width="300" height="52" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
 <text x="56" y="194" font-size="16" font-weight="bold" fill="#085041">2. Why it stops</text>
 <text x="56" y="213" font-size="13.5" fill="#0F6E56">Bottleneck mapped, E6–E13</text>
-<rect x="40" y="238" width="300" height="52" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="1.4"/>
-<text x="56" y="260" font-size="16" font-weight="bold" fill="#712B13">3. Transmission</text>
-<text x="56" y="279" font-size="13.5" fill="#993C1D">F1: worlds die of failed pairing</text>
+<rect x="40" y="238" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+<text x="56" y="260" font-size="16" font-weight="bold" fill="#444441">3. Transmission</text>
+<text x="56" y="279" font-size="13.5" fill="#5F5E5A">Paused until stage 0 holds</text>
 <rect x="40" y="304" width="300" height="52" rx="4" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
 <text x="56" y="326" font-size="16" font-weight="bold" fill="#444441">4. Persistence</text>
 <text x="56" y="345" font-size="13.5" fill="#5F5E5A">Survives with models gone?</text>

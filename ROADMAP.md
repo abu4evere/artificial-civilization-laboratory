@@ -21,10 +21,10 @@ pass on and build on what they learn, until their practices outgrow any one life
 
 | stage | question | status |
 |---|---|---|
-| 0. The world | Is there a world worth living in? | **done** (physics, seasons, bodies, minds) |
+| 0. The world | Is there a world worth living in? | **reopened (October 2026):** a third of control worlds die out of failed pairing (F1); N5 evidence on how real foragers find partners |
 | 1. Culture appears | Does anything cultural emerge unscripted? | **done** (E1–E5: traditions, trust, stories) |
 | 2. Why it stops | Where does the chain from possible to practised break? | **mostly done** (E6–E12) |
-| 3. Transmission | Can a useful practice pass between adults? | **in progress:** a habit passes, a plan does not; now: why food does not last through winter |
+| 3. Transmission | Can a useful practice pass between adults? | **paused until stage 0 is settled;** was in progress: a habit passes, a plan does not; now: why food does not last through winter |
 | 4. Persistence | Does it last when nobody is there to copy? | next |
 | 5. A people's practice | Does it become a tradition of the whole people? | later |
 | 6. Scale | What do larger, connected populations keep? | later |
@@ -193,6 +193,16 @@ three fertile women). **This is a gap in stage 0 (the world), not in culture:** 
 worlds a third of which were ageing out. Rules 12 to 19 were added during F1. **Next: the creator decides** whether to
 reopen stage 0; any change to how people find partners must be anchored to real evidence (rule 17) and checked for
 feasibility first (rule 12).
+
+**Stage 0 reopened by the creator (October 2026).** Stage 3 is paused until the world can sustain its people.
+**N5 evidence done** (`experiments/N5_mate_search/evidence.md`): real foragers find spouses in networks of hundreds
+(mating pool ~500, Pearce 2014; minimum viable population ~75–150 even when any partner can be found, White 2017; more
+with space, Wobst 1974), by looking outside the local group (Kramer et al. 2017), through fluid camps (Hill et al. 2011;
+Dyble et al. 2015), aggregations, and mostly kin-arranged marriage (67–85%, Walker et al. 2011). Random movement fails at
+low density (Pearce). ACL: the whole world is 20 founders, below every estimate; search is random within sight; ACL has
+no physical scale. Most real means are culture and may not be written; memory of people known, travel and dispersal are
+nature. **Next (assistant's view; the creator decides):** a read-only feasibility check (rule 12): would 20 founders
+persist even with perfect search? Then size before search.
 
 | E13R result | what it means | next step |
 |---|---|---|

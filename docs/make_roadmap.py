@@ -14,10 +14,10 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = Path(__file__).parent
 
 STAGES = [  # (title, subtitle, status)
-    ("0. The world", "Physics, seasons, bodies, minds", "done"),
+    ("0. The world", "Reopened: worlds fail to pair", "now"),
     ("1. Culture appears", "Traditions and stories, E1–E5", "done"),
     ("2. Why it stops", "Bottleneck mapped, E6–E13", "done"),
-    ("3. Transmission", "F1: worlds die of failed pairing", "now"),
+    ("3. Transmission", "Paused until stage 0 holds", "ahead"),
     ("4. Persistence", "Survives with models gone?", "ahead"),
     ("5. A people's practice", "Preparing becomes a tradition", "ahead"),
     ("6. Scale", "100 people against 30", "ahead"),
