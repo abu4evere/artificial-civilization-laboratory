@@ -36,6 +36,13 @@ bibliographic record (or reviews confirming the work exists) and nothing more.
   (abstract read). Across 40 sites, above-ground production varied from year to year with a **coefficient of variation
   of 36.6%** (over four years), **synchronously across the region**; alpine grasslands were not more sensitive than other
   grassland types.
+- **Knapp, A. K. and Smith, M. D. (2001).** Variation among biomes in temporal dynamics of aboveground primary
+  production. *Science* 291(5503). [doi:10.1126/science.291.5503.481](https://doi.org/10.1126/science.291.5503.481)
+  (abstract read; added overnight as the second source the draft required). Eleven long-term research sites, 12 years on
+  average: year-to-year variability in production is **greatest in grasslands and old fields, least in forests**, a
+  **fourfold range** across biomes. (The abstract gives no coefficients of variation. If Shi et al.'s grassland figure of
+  about 0.37 sits near the top of that range, the least variable biomes would be near 0.09, close to ACL's present
+  level: an inference, not a reported number.)
 - **Ray, D. K. et al. (2015).** Climate variation explains a third of global crop yield variability. *Nature
   Communications* 6. [doi:10.1038/ncomms6989](https://doi.org/10.1038/ncomms6989) (abstract read). Year-to-year climate
   explains about a third of the world's crop-yield variability, more than 60% in parts of the breadbaskets.
@@ -56,7 +63,10 @@ bibliographic record (or reviews confirming the work exists) and nothing more.
 2. **But uncertainty does not point only to storage.** For mobile foragers in unpredictable environments, a model finds
    that sharing plus moving between camps is what survives (Lewis et al.). H-L5's experiment must allow that the answer to
    unpredictable winters is more sharing and more moving, and count it as a finding.
-3. **ACL is far more predictable than a real grassland.** Real above-ground production varies from year to year with a
+3. **ACL is far more predictable than a real grassland, and perhaps about as predictable as a forest.** Real
+   variability spans a fourfold range across biomes, grasslands the most variable and forests the least (Knapp and Smith
+   2001). The "realistic width" is therefore not one number but a choice of what kind of land ACL's worlds represent.
+   Grassland-like variability is about a third (Shi et al.). Real above-ground production varies from year to year with a
    coefficient of variation around a third (Shi et al.: 36.6%, synchronous across a region; one study, four years).
    ACL's world varies about 7% (D1). Raising ACL's variability toward real values is anchored to a source, not tuned:
    a width giving a coefficient of variation near a third is the realistic target (to be checked against more than one

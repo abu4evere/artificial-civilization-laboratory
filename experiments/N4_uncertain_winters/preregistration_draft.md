@@ -37,6 +37,11 @@ small set of widths, reading **only the coefficient of variation of mid-autumn f
 tile (to confirm the mean is kept). Pick the width whose food variability is nearest a third. The calibration reads
 nothing about people. **[DECIDE: approve this calibration, and a second source on real variability before it.]**
 
+**Which variability is realistic depends on the land.** Knapp and Smith (2001) found a fourfold range in year-to-year
+variability across biomes, grasslands the most and forests the least; ACL's present 7–8% may already resemble the least
+variable end. A target of a third makes ACL grassland-like. **[DECIDE: the biome ACL's variability should represent:
+grassland (about a third), or a stated other target from a source.]**
+
 If no width up to the widest possible (weather from 0 to 1.9) reaches a third, the widest is used and the shortfall is
 reported: ACL's land itself would then be the limit.
 
