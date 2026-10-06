@@ -144,8 +144,11 @@ growth alone will not create substantial delayed-return behaviour).
 experiment did not run. A post-pilot survival-only diagnostic (recorded before it ran: the unchanged world on the same
 seeds) found both explanations partly true: seed 702 dies in the unchanged world too (fragile), seed 704 dies only under
 L1, and every surviving L1 world ends smaller (31 against 44; 32 against 94). Removing winter growth materially harms
-survival and population: winter growth is an important stabiliser of ACL's world. **Awaiting the creator: redesign the
-pilot with same-seed controls, treat this as the finding, or move to L6.**
+survival and population: winter growth is an important stabiliser of ACL's world. **The creator chose: redesign the pilot
+with same-seed controls** (recorded in the book, Chapter 49). **Draft written**
+(`experiments/L1_no_winter_growth/pilot2_and_amendment_draft.md`): a new pilot on seeds 711–718, both arms, survival and
+population only, stopping on excess extinction against the control; and Amendment 1 to the frozen design for the
+population confound (population beside every measure, verdict on paired surviving worlds). **Awaiting sign-off.**
 
 | E13R result | what it means | next step |
 |---|---|---|
