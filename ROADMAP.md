@@ -104,8 +104,14 @@ broken one. The question shifts from "what should satiety be?" to **"under what 
 emerge, and does ACL's world contain them?"** **N2 design document written** (`experiments/N2_immediate_delayed/design.md`):
 ACL already shows immediate consumption, little storage, reciprocal kin sharing and no binding commitments; it lacks
 sharing on demand, possession of stores and any capacity to ask or promise; whether its world offers dense, predictable,
-storable resources is unmeasured. The N1 candidates stay, as hypotheses to weigh against this one. **Awaiting the
-creator.**
+storable resources is unmeasured. The N1 candidates stay, as hypotheses to weigh against this one.
+
+**D1 (is delayed return adaptive in ACL's world?) done** (`experiments/D1_delayed_return_world/findings.md`).
+Part A, largely no: food is predictable (tile r 0.90) and storable as seed, but not dense (the richest 10% of land holds
+24%), and winter is barely lean (land food per person 504 against 582 in autumn); the world favours immediate-return
+living. Part B, yes but: sowing returns 2.36 food per seed and is repeated (77% sow again), but 52% of its crop is
+eaten by non-kin, sowers' belief falls more often than it rises, and it is 1.6% of food. **By the creator's rule,
+changing people's psychology is premature. Awaiting the creator.**
 
 | E13R result | what it means | next step |
 |---|---|---|
