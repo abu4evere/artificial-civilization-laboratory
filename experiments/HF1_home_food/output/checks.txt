@@ -1,0 +1,4 @@
+observer, arm h, seed 501, 20 years: READ-ONLY
+observer, arm h, seed 1301, 20 years: READ-ONLY
+observer, arm c, seed 501, 20 years: READ-ONLY
+observer, arm c, seed 1301, 20 years: READ-ONLY
