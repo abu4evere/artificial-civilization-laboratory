@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after HF1 (October 2026).
+**Last updated:** after HF2 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -253,6 +253,13 @@ holdout on new seeds): **not confirmed**. The land around HB1's homes was only a
 (0.970 / 0.976); HB1's extra starvation repeats on new seeds but local depletion did not cause it. By the frozen design,
 **HB2 is not designed until the cause is found.** Leads for the next read-only check: hunting fell under HB1; HB1's
 couples had more children, and carers feed dependants first.
+
+**HF2 done** (`experiments/HF2_household_food/findings.md`; read-only, signed off, holdout on new seeds): **neither**
+frozen lead. Not mouths (HB1's carers had only 8–12% more dependants, and the extra hunger falls on every kind of adult);
+not meat (meat is about 0.02% of ACL's food). A lead written before the holdout and repeated in it: **under HB1, people
+gave each other about two fifths less food**, about three quarters of the drop in what adults took in. Consistent, not
+formally confirmed. **Next: the creator decides**; proposed HF3, a pre-registered read-only test of why gifts fell and
+whether losing them predicts starving. HB2 still waits.
 
 | E13R result | what it means | next step |
 |---|---|---|
