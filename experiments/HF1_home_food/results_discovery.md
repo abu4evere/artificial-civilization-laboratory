@@ -27,21 +27,21 @@ Replays reproduce saved runs (where saved) and code unchanged: **yes**.
 
 | measure | H (home base) | C (control) | H ÷ C |
 |---|---|---|---|
-| Q1 fullness within 3 tiles of home | 1.113 | 1.114 | 0.998 |
-| Q1 fullness on the ring 4–6 tiles out | 1.372 | 1.214 | 1.130 |
-| Q1 fullness within 3 tiles, spring | 1.157 | 1.169 | 0.989 |
-| Q1 fullness within 3 tiles, summer | 1.266 | 1.260 | 1.005 |
-| Q1 fullness within 3 tiles, autumn | 1.178 | 1.163 | 1.012 |
-| Q1 fullness within 3 tiles, winter | 0.849 | 0.863 | 0.983 |
+| Q1 fullness within 3 tiles of home | 0.774 | 0.798 | 0.970 |
+| Q1 fullness on the ring 4–6 tiles out | 0.946 | 0.911 | 1.039 |
+| Q1 fullness within 3 tiles, spring | 0.812 | 0.841 | 0.965 |
+| Q1 fullness within 3 tiles, summer | 0.881 | 0.889 | 0.990 |
+| Q1 fullness within 3 tiles, autumn | 0.815 | 0.826 | 0.986 |
+| Q1 fullness within 3 tiles, winter | 0.588 | 0.635 | 0.926 |
 | Q2 food per adult forage action | 18.934 | 19.608 | 0.966 |
 | Q2 food per forage action, within 3 tiles of home | 17.710 | 19.150 | 0.925 |
 | Q2 food per forage action, further from home | 18.758 | 19.250 | 0.974 |
 | Q2 food per forage action, forager without a couple home | 20.321 | 20.124 | 1.010 |
 | Q2 share of forage actions leaving the tile with < 1 unit | 0.399 | 0.426 | 0.936 |
 | Q2 share of adult forage actions within 3 tiles of home | 0.531 | 0.404 | 1.316 |
-| Q3 people per land tile within 3 tiles of home | 0.259 | 0.220 | 1.177 |
-| Q4 fullness around adults in their last 8 weeks before starving | 0.974 | 0.926 | 1.051 |
-| Q4 fullness around all adults in the same weeks | 0.971 | 0.989 | 0.983 |
+| Q3 people per land tile within 3 tiles of home | 0.256 | 0.217 | 1.180 |
+| Q4 fullness around adults in their last 8 weeks before starving | 0.712 | 0.822 | 0.867 |
+| Q4 fullness around all adults in the same weeks | 0.732 | 0.799 | 0.916 |
 | hunts per person-year | 0.048 | 0.080 | 0.597 |
 
 Couple-weeks with a home: H 109,793, C 117,422. Adult forage actions: H 226,697, C 215,369. Adult starvation deaths read: H 179, C 100.
