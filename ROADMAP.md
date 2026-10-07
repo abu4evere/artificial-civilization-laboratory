@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after T1 (October 2026).
+**Last updated:** after HB1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -240,6 +240,13 @@ is not read. Diagnosis: the added pull was among the top options but food outbid
 missing piece is a shared place that foraging returns to, not a pull toward a partner's position. Also learned: a slight
 change flipped the fate of 19 of 64 worlds (sign test p = 0.36 on 22 → 27), so differences of a few worlds are noise.
 **Next: HB1 (a shared home base)**, designed from N6's evidence, with a sham arm to measure the noise, for sign-off.
+
+**HB1 done** (`experiments/HB1_home_base/findings.md`; signed off and frozen, with a sham arm): couples were together
+almost every week (apart 57.8% → 0.1%) and had more children, but **extinction rose (33 of 64 vs 22; p = 0.043; sham
+p = 0.815)**. Exploratory: food near fixed homes ran short, adults and teens starved, widowhood rose and pairing slowed;
+crowding illness was not the driver. HB1 gave couples a central place without the residential mobility real central
+places have (Garg et al. 2021: foragers forage near home or move home to new areas). **Next: the creator decides**:
+HB2 (a home that moves with the food), or first measure food around homes read-only.
 
 | E13R result | what it means | next step |
 |---|---|---|
