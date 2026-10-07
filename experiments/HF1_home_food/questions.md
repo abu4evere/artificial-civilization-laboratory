@@ -1,7 +1,13 @@
-# HF1 — Did food run short around HB1's homes? (read-only check, rule 12; DRAFT for sign-off, questions to be frozen before any data)
+# HF1 — Did food run short around HB1's homes? (read-only check, rule 12; SIGNED OFF, questions frozen as `HF1-questions` before any data)
 
 **Chosen by the creator (October 2026), after HB1:** measure food around homes read-only before designing HB2. No fixes,
 no tuning, no code changes.
+
+**Signed off by the creator (October 2026):** the "not confirmed" cut-off tightened from 95% to **90%** (95% sat too close
+to no change); holdout on new seeds 1301–1316; first 40 years; discovery and holdout both required. Nothing has been run.
+
+**Scope (frozen):** HF1 tests whether local food depletion is present under HB1. It does not by itself establish that
+depletion causes starvation. The chain is HB1 → depletion → starvation; HF1 measures only the middle link.
 
 ## Why
 
@@ -39,13 +45,13 @@ couple home exists), arms H (HB1, `home_base = 1`) and C (the same code, setting
 
 Hunting is reported beside (hunts per person-year), to see whether meat made up for, or added to, any plant shortfall.
 
-## Decision rule (proposed; frozen at sign-off; read on discovery and holdout separately)
+## Decision rule (frozen; read on discovery and holdout separately)
 
 | | reading |
 |---|---|
-| In **both** sets: H's fullness within 3 tiles of home is **at most 80%** of C's, **and** H's food per forage action is lower than C's | **Depletion confirmed.** HB2's design can rest on it |
-| In **both** sets: H's fullness within 3 tiles of home is **at least 95%** of C's | **Not confirmed.** The hunger has another cause; HB2 is not designed until it is found |
-| Otherwise | **Mixed.** Reported as such; the creator decides |
+| In **both** sets: H's fullness within 3 tiles of home is **at most 80%** of C's, **and** H's food per forage action is lower than C's | **Depletion confirmed** (present under HB1; causation not established, see Scope) |
+| In **both** sets: H's fullness within 3 tiles of home is **at least 90%** of C's | **Not confirmed.** The hunger has another cause; HB2 is not designed until it is found |
+| Otherwise (including 80–90%, or ≤ 80% without lower forage returns, or the sets disagree) | **Mixed / inconclusive.** Reported as such; the creator decides |
 
 The 4–6 ring answers a second question beside the rule: whether, in H, food stood untouched a short walk beyond the
 home (a home that should have moved), or ran short everywhere (too many people for the land).
@@ -69,9 +75,9 @@ home (a home that should have moved), or ran short everywhere (too many people f
 - **Assistant:** depletion confirmed: H's fullness near home clearly below C's, food per forage action lower. Less sure
   about the ring: I expect food left a few tiles out (a home that should have moved), which would support HB2 directly.
 
-## Decisions for the creator
+## Decisions (taken by the creator at sign-off)
 
-1. **The threshold:** confirmed at **≤ 80%** of the control's fullness near home (with lower food per forage action);
-   not confirmed at **≥ 95%**?
-2. **Holdout on new seeds** 1301–1316 (unseen by HB1), as proposed?
-3. **First 40 years only**, as proposed?
+1. **Thresholds:** confirmed at **≤ 80%** of the control's fullness near home, with lower food per forage action; not
+   confirmed at **≥ 90%** (changed from the proposed 95%).
+2. **Holdout on new seeds** 1301–1316: yes.
+3. **First 40 years only:** yes.
