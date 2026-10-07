@@ -1,0 +1,33 @@
+h seed 1303: pops [34, 28, 26, 25], reproduces saved: None
+h seed 1301: pops [28, 30, 27, 31], reproduces saved: None
+h seed 1304: pops [30, 38, 28, 25], reproduces saved: None
+h seed 1302: pops [41, 34, 28, 30], reproduces saved: None
+h seed 1308: pops [21, 9, 5, 3], reproduces saved: None
+h seed 1306: pops [26, 21, 18, 14], reproduces saved: None
+h seed 1305: pops [29, 25, 26, 36], reproduces saved: None
+h seed 1307: pops [32, 31, 22, 24], reproduces saved: None
+h seed 1311: pops [18, 14, 12, 9], reproduces saved: None
+h seed 1310: pops [32, 25, 19, 9], reproduces saved: None
+h seed 1312: pops [26, 26, 23, 30], reproduces saved: None
+h seed 1309: pops [35, 41, 42, 41], reproduces saved: None
+h seed 1313: pops [23, 26, 29, 34], reproduces saved: None
+h seed 1314: pops [22, 30, 26, 23], reproduces saved: None
+h seed 1315: pops [30, 30, 26, 24], reproduces saved: None
+h seed 1316: pops [28, 30, 30, 30], reproduces saved: None
+c seed 1302: pops [18, 16, 21, 20], reproduces saved: None
+c seed 1304: pops [14, 4, 3], reproduces saved: None
+c seed 1301: pops [29, 35, 40, 50], reproduces saved: None
+c seed 1303: pops [23, 23, 22, 24], reproduces saved: None
+c seed 1308: pops [12, 7, 1], reproduces saved: None
+c seed 1305: pops [23, 30, 34, 42], reproduces saved: None
+c seed 1307: pops [21, 20, 16, 12], reproduces saved: None
+c seed 1310: pops [14, 11, 11, 8], reproduces saved: None
+c seed 1306: pops [41, 53, 54, 68], reproduces saved: None
+c seed 1309: pops [29, 36, 34, 34], reproduces saved: None
+c seed 1311: pops [24, 22, 27, 27], reproduces saved: None
+c seed 1313: pops [28, 26, 18, 16], reproduces saved: None
+c seed 1312: pops [26, 32, 32, 34], reproduces saved: None
+c seed 1315: pops [20, 19, 18, 19], reproduces saved: None
+c seed 1314: pops [29, 32, 28, 32], reproduces saved: None
+c seed 1316: pops [29, 30, 28, 36], reproduces saved: None
+ALL REPRODUCE, CODE UNCHANGED

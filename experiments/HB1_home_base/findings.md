@@ -37,6 +37,8 @@ it does not move when the food around it runs out. Families grew, the land aroun
 starvation, not crowding, undid the gain. A food-per-tile measure near homes was not recorded, so local depletion is
 inferred from starvation and deaths, not measured directly.
 
+**Correction (HF1, October 2026):** the reading above, that food near fixed homes ran short, was tested directly by HF1 (read-only, holdout on new seeds) and **not confirmed**: the land within 3 tiles of HB1's homes was about 3% less full than the control's (0.970 / 0.976). HB1's extra starvation is real and repeats, but its cause is open. The text above stands as written, with this correction beside it.
+
 ## Read against N6
 
 N6's evidence had two parts, and HB1 implemented one. Foragers return to a central place each night, **and the place

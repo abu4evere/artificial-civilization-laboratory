@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after HB1 (October 2026).
+**Last updated:** after HF1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -247,6 +247,12 @@ p = 0.815)**. Exploratory: food near fixed homes ran short, adults and teens sta
 crowding illness was not the driver. HB1 gave couples a central place without the residential mobility real central
 places have (Garg et al. 2021: foragers forage near home or move home to new areas). **Next: the creator decides**:
 HB2 (a home that moves with the food), or first measure food around homes read-only.
+
+**The creator chose to measure first. HF1 done** (`experiments/HF1_home_food/findings.md`; read-only, signed off,
+holdout on new seeds): **not confirmed**. The land around HB1's homes was only about 3% less full than the control's
+(0.970 / 0.976); HB1's extra starvation repeats on new seeds but local depletion did not cause it. By the frozen design,
+**HB2 is not designed until the cause is found.** Leads for the next read-only check: hunting fell under HB1; HB1's
+couples had more children, and carers feed dependants first.
 
 | E13R result | what it means | next step |
 |---|---|---|
