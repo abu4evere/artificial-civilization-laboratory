@@ -1,0 +1,5 @@
+settings off, seed 601, 20 years: copy reproduces the control world: yes
+settings off, seed 811, 20 years: copy reproduces the control world: yes
+arm h on, seed 601, 20 years: the world differs from the control: yes
+arm s on, seed 601, 20 years: the world differs from the control: yes
+All: PASS
