@@ -1,0 +1,33 @@
+h seed 502: pops [22, 20, 15, 12], reproduces saved: True
+h seed 501: pops [28, 23, 19, 15], reproduces saved: True
+h seed 504: pops [23, 25, 30, 42], reproduces saved: True
+h seed 503: pops [37, 39, 39, 34], reproduces saved: True
+h seed 505: pops [22, 20, 21, 14], reproduces saved: True
+h seed 507: pops [24, 25, 17, 25], reproduces saved: True
+h seed 506: pops [34, 37, 27, 33], reproduces saved: True
+h seed 510: pops [17, 13, 8], reproduces saved: True
+h seed 509: pops [29, 41, 38, 37], reproduces saved: True
+h seed 508: pops [39, 41, 33, 30], reproduces saved: True
+h seed 512: pops [35, 31, 25, 25], reproduces saved: True
+h seed 511: pops [39, 37, 39, 40], reproduces saved: True
+h seed 514: pops [32, 21, 16, 11], reproduces saved: True
+h seed 513: pops [30, 42, 44, 45], reproduces saved: True
+h seed 516: pops [22, 22, 24, 18], reproduces saved: True
+c seed 501: pops [22, 27, 30, 27], reproduces saved: True
+h seed 515: pops [30, 27, 33, 38], reproduces saved: True
+c seed 502: pops [20, 19, 22, 23], reproduces saved: True
+c seed 504: pops [18, 19, 22, 20], reproduces saved: True
+c seed 503: pops [30, 33, 41, 42], reproduces saved: True
+c seed 505: pops [24, 34, 48, 64], reproduces saved: True
+c seed 506: pops [27, 32, 38, 42], reproduces saved: True
+c seed 508: pops [22, 20, 12, 10], reproduces saved: True
+c seed 507: pops [26, 28, 31, 28], reproduces saved: True
+c seed 509: pops [21, 26, 25, 28], reproduces saved: True
+c seed 510: pops [22, 28, 32, 42], reproduces saved: True
+c seed 511: pops [28, 30, 27, 27], reproduces saved: True
+c seed 512: pops [28, 29, 28, 27], reproduces saved: True
+c seed 513: pops [17, 7, 4, 3], reproduces saved: True
+c seed 514: pops [16, 18, 16, 12], reproduces saved: True
+c seed 516: pops [27, 22, 22, 25], reproduces saved: True
+c seed 515: pops [21, 28, 31, 33], reproduces saved: True
+ALL REPRODUCE, CODE UNCHANGED

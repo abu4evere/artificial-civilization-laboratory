@@ -36,10 +36,11 @@ class Probe:
         self.n = Counter()
         self.recent = {}                      # adult id -> last 8 weeks of fullness within 3 tiles of where they were
         self.week_mean = deque(maxlen=8)      # mean of that measure over all adults, last 8 weeks
-        self.cap = None
 
     def fullness(self, world, centre, r0, r1):
-        """Mean plants ÷ cap over land tiles with a cap whose distance from centre is in [r0, r1]."""
+        """Mean plants ÷ cap over land tiles with a cap whose distance from centre is in [r0, r1]. The cap is the code's,
+        read live (plant_cap × the tile's fertility now: floods raise fertility). Food dropped by the dead is added to
+        plants and can take a tile above its cap; such values are kept, as the frozen definition is plants ÷ cap."""
         c = world.cfg
         tot = k = 0
         for dy in range(-r1, r1 + 1):
@@ -47,9 +48,10 @@ class Probe:
                 if max(abs(dx), abs(dy)) < r0:
                     continue
                 x, y = (centre[0] + dx) % c.width, (centre[1] + dy) % c.height
-                cap = self.cap[y][x]
+                tl = world.tiles[y][x]
+                cap = 0.0 if tl.water else c.plant_cap * tl.fertility
                 if cap > 0:
-                    tot += world.tiles[y][x].plants / cap
+                    tot += tl.plants / cap
                     k += 1
         return (tot / k if k else None), k
 
@@ -57,8 +59,6 @@ class Probe:
         from acl.util import distance
         c, tick = world.cfg, world.tick
         t = tick - 1
-        if self.cap is None:
-            self.cap = [[(0.0 if tl.water else c.plant_cap * tl.fertility) for tl in row] for row in world.tiles]
         living = world.living()
         if t % 520 == 519:
             self.pops.append(len(living))
