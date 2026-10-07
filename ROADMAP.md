@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after H1 (October 2026).
+**Last updated:** after T1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -233,6 +233,13 @@ personal homes lie today, then a design for sign-off.
 distance only about half the time; about 30% are 4 or more tiles apart; homes change in about 18% of adult-weeks.
 Frozen rule: **mixed**. Aligning the thresholds (L1) alone would leave much of the separation; a shared home base (L2)
 is what the evidence points to. **Next: the creator decides** (L1, L2, or L1 then L2 as separate experiments).
+
+**The creator chose L1 then L2, as T1 then HB1, then F3 comparing them.** **T1 done** (`experiments/T1_threshold_align/
+findings.md`; signed off and frozen): the manipulation check failed (apart weeks at 3 tiles did not fall), so its outcome
+is not read. Diagnosis: the added pull was among the top options but food outbid it, as C1 found beyond 3 tiles. The
+missing piece is a shared place that foraging returns to, not a pull toward a partner's position. Also learned: a slight
+change flipped the fate of 19 of 64 worlds (sign test p = 0.36 on 22 → 27), so differences of a few worlds are noise.
+**Next: HB1 (a shared home base)**, designed from N6's evidence, with a sham arm to measure the noise, for sign-off.
 
 | E13R result | what it means | next step |
 |---|---|---|
