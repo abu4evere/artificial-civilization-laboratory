@@ -1,4 +1,6 @@
-# T1 — Align the two thresholds (candidate L1 of N6) (DRAFT for the creator's sign-off; nothing frozen, nothing run)
+# T1 — Align the two thresholds (candidate L1 of N6) (pre-registration, SIGNED OFF and frozen as `T1-frozen`)
+
+**Signed off by the creator (October 2026):** the change as written (the pull toward a partner begins beyond 2 tiles), the outcome bands (≤ 15 / 16–20 / ≥ 21 of 64), and the same 64 seeds as F1. Nothing has been run.
 
 ## Why
 
