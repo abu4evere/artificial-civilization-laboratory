@@ -1,0 +1,1 @@
+HB1 feasibility pilot, seeds 1201-1204, 20 years: couples apart in 0.0% of 13,899 couple-weeks (must be at most 24%): PASS
