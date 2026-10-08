@@ -1,0 +1,4 @@
+code_mc1 fingerprint equals MC1's recorded one: yes
+settings off, ledger on, seed 2001, 20 years: copy reproduces the control world: yes
+settings off, ledger on, seed 2002, 20 years: copy reproduces the control world: yes
+All: PASS
