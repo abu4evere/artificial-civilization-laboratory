@@ -1,0 +1,5 @@
+arm h, seed 501, 20 years: logging copy with the log on equals HB1's code: yes
+arm h, seed 1601, 20 years: logging copy with the log on equals HB1's code: yes
+arm c, seed 501, 20 years: logging copy with the log on equals HB1's code: yes
+arm c, seed 1601, 20 years: logging copy with the log on equals HB1's code: yes
+All: PASS
