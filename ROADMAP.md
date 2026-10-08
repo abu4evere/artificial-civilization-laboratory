@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after MC1 (October 2026).
+**Last updated:** after N8 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -288,6 +288,13 @@ of 64; p = 0.503; sham p = 0.815). The first change in this series that is ancho
 harm. **The thread ends here: pair stability limited births, not survival.** F2's lever, finding partners, remains.
 **Next: the creator decides**: realistic, anchored mate search (N5's M2/M3); whether MC1 joins ACL's nature; size
 (M1) for the smallest worlds.
+
+**N8 done** (`experiments/N8_partner_finding/`): candidates P0–P5; evidence: **P1 (walk to where you last saw a known
+single) not anchored** (knowing many people across camps is supported, tracking where they are is not); **P2 (leave
+when there is no one) anchored in behaviour**, with no timing anchor, so only a timing-free form: outward instead of
+random steps when no eligible partner is in sight. **Power:** detecting half of F2's effect needs about 192–256 worlds;
+64 detect only large effects (so MC1's null cannot rule out a modest benefit). **Next: the creator decides** whether
+to design P2 (outward dispersal) at that size.
 
 | E13R result | what it means | next step |
 |---|---|---|
