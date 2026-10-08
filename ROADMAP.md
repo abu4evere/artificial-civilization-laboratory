@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after N7 (October 2026).
+**Last updated:** after MC1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -281,6 +281,13 @@ return to a central place each day and move it as local returns fall. **K2, a ca
 is anchored; K1 is dropped** (no evidence turns a day's range into ACL tiles, and its threshold would act on births).
 Feasibility already in the record: couples are beyond reach in 28–29% of couple-weeks (C1). **Next: the creator
 decides whether to design K2** (with a sham arm, a paired test and HF4's ledger from the start).
+
+**MC1 done** (`experiments/MC1_moving_camp/findings.md`; K2, signed off and frozen): couples apart 57.8% → 17.0%,
+births +12%, **no extra hunger** (food held at eating unchanged), but **no detectable effect on extinction** (26 vs 22
+of 64; p = 0.503; sham p = 0.815). The first change in this series that is anchored, achieves its aim and does no
+harm. **The thread ends here: pair stability limited births, not survival.** F2's lever, finding partners, remains.
+**Next: the creator decides**: realistic, anchored mate search (N5's M2/M3); whether MC1 joins ACL's nature; size
+(M1) for the smallest worlds.
 
 | E13R result | what it means | next step |
 |---|---|---|
