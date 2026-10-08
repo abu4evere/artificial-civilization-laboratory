@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after HF4 (October 2026).
+**Last updated:** after N7 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -275,6 +275,12 @@ distribution (no tail of a few badly-off people). Caveat recorded before the hol
 of the *extra* starvation. A shared home, as HB1 built it, made people hungrier through a broad, modest fall in food
 held, not one failure; HB2 is not designed. **Next (the creator's decision at sign-off): return to keeping couples
 together with a different, evidence-anchored design** that does not tie each week's foraging to a fixed home.
+
+**N7 done** (`experiments/N7_couple_designs/candidates.md`, `evidence.md`): candidates K0–K4; evidence that foragers
+return to a central place each day and move it as local returns fall. **K2, a camp that goes where the couple goes,
+is anchored; K1 is dropped** (no evidence turns a day's range into ACL tiles, and its threshold would act on births).
+Feasibility already in the record: couples are beyond reach in 28–29% of couple-weeks (C1). **Next: the creator
+decides whether to design K2** (with a sham arm, a paired test and HF4's ledger from the start).
 
 | E13R result | what it means | next step |
 |---|---|---|
