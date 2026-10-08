@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after HF3 (October 2026).
+**Last updated:** after HF4 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -268,6 +268,13 @@ real and repeats, but no single cause tested explains it** (not depletion, child
 hypothesis, not a finding: many small shifts pushing adults over the starvation line. **Next: the creator decides**:
 HF4, a read-only hunger ledger testing that hypothesis, or close the HB1 question and return to keeping couples
 together with a different design.
+
+**HF4 done, and the HB1 question closed** (`experiments/HF4_hunger_ledger/findings.md`): by the frozen rule, **small
+shifts explain the hunger**: under HB1 the food adults hold when they eat fell about 6–7% across the whole
+distribution (no tail of a few badly-off people). Caveat recorded before the holdout: the shift accounts for about half
+of the *extra* starvation. A shared home, as HB1 built it, made people hungrier through a broad, modest fall in food
+held, not one failure; HB2 is not designed. **Next (the creator's decision at sign-off): return to keeping couples
+together with a different, evidence-anchored design** that does not tie each week's foraging to a fixed home.
 
 | E13R result | what it means | next step |
 |---|---|---|
