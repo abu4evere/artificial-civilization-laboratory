@@ -1,0 +1,1 @@
+MC1 feasibility pilot, seeds 1701-1704, 20 years: couples apart in 10.2% of 17,471 couple-weeks (must be at most 24%): PASS
