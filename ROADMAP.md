@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after G1 (October 2026).
+**Last updated:** after N10 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -320,6 +320,12 @@ how fluid ACL's groups are, against "stable over months, not years". **Next: the
 the unpartnered do not move more. **Frozen reading: ACL's groups are more fixed than forager bands** (direction only).
 Three sides now agree: F1 (partners not found), P2 (singles rarely search), G1 (groups hardly mix). **Next: the
 creator decides** (e.g. candidates for movement between groups, evidence first).
+
+**N10 done** (`experiments/N10_world_size/evidence.md`; asked by the creator: is 40 × 40 too small?): **population
+size anchored**: viable forager populations need ~75–150 people (White 2017), real ones average ~840 (Hamilton et al.
+2007); ACL's 20 founders make one aggregated band, below viability. Density and tile scale not anchored. The idea is
+supported **in people**, not in space alone. **Next: the creator decides** whether to design S1 (people and land
+scaled together at ACL's own density; feasibility first).
 
 | E13R result | what it means | next step |
 |---|---|---|
