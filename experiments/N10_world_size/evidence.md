@@ -78,3 +78,11 @@ range). Runs would be several times slower (people and tiles both grow).
   founders spread, run time).
 - **(b)** Also test more space alone (same 20 founders), to show the prediction that it hurts.
 - **(c)** Not now.
+
+## Note added after review (rule 19), October 2026
+
+The creator pointed out a caveat that the text above understates: Hamilton et al. (2007) report the **typical sizes** of
+forager groups and populations, and White (2017) a **minimum viable population** in a non-spatial model. They describe
+different concepts, and **neither establishes the correct founder count or map size for ACL.** Phrases above such as
+"inside White's viable range" describe where a number falls, not a target. Any founder count or map size used in S1 is
+an operational choice, labelled as such.
