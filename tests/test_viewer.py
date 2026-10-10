@@ -52,6 +52,12 @@ def test_viewer_serves_world():
         status, body = _get(port, f"/person?id={pid}")
         info = json.loads(body)
         assert info["id"] == pid and "memories" in info and "makes" in info
+        brain = info["brain"]   # the brain scan: situation lit, 32 x 19 learned habits, options weighed
+        assert len(brain["q"]) == brain["n_contexts"] * len(brain["actions"]) and 0 <= brain["ctx"] < brain["n_contexts"]
+        assert "frames" not in info and "born_year" in frames[-1]
+
+        status, page = _get(port, "/story")   # the earlier pixel-art page is kept
+        assert status == 200 and b"<canvas" in page
 
         status, body = _get(port, "/speed?wps=0")
         assert json.loads(body)["wps"] == 0

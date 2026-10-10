@@ -13,10 +13,10 @@ off, it catches up on the weeks it missed when it starts again, so their time
 never stands still. The people know nothing of hours, weeks or years; those are
 only shown to you.
 
-The page draws the land, the seasons, night and day, and every person moving
-about with a small sign for what they are doing. Click anyone to follow their
-life: family, what they remember, what they know how to make, what they have
-come to believe, and what is on their mind this week (see mindview.py).
+The page shows the world as a map: the land shaded by its wild food, every person as a dot coloured by what they are
+doing, groups, fires and couples, with a plain summary of how the people are. Click anyone to see inside their mind:
+the situation they are in, the habits they have learned, how instinct and habit weighed their choices this week, and
+their life (see mindview.py). The earlier pixel-art page is kept at /story.
 """
 from __future__ import annotations
 
@@ -36,6 +36,8 @@ from .config import SEASONS, WEEKS_PER_YEAR
 from .historian import CLASSES, Historian, classify, describe
 from . import mindview, stage
 from .runner import chronicle_markdown, load_snapshot, new_world, save_snapshot, write_outputs
+from .mind import hunger_of
+from .person import A, ACTIONS, N_ACTIONS, N_CONTEXTS
 from .world import World
 
 HERE = Path(__file__).parent
@@ -66,6 +68,7 @@ class Live:
         self.stop = False
         self.lineage: dict[str, int] = {}
         self.news_seen = len(historian.chronicle)
+        self.year_stats: dict = {}     # births and deaths per year, for the page's overview
         self.last_script = {"says": [], "moments": [], "hunts": [], "dead": []}
         self.talk_log: list = []          # what was said in past weeks: [week, day, f, kind, a, a name, b name, text]
         self._publish([])
@@ -216,13 +219,23 @@ class Live:
         news = self.historian.chronicle[self.news_seen:]
         self.news_seen = len(self.historian.chronicle)
         living = w.living()
+        # Births and deaths this year, counted from the week's events (for the page's overview).
+        ys = self.year_stats
+        cur = ys.setdefault(w.year, {"born": 0, "died": 0})
+        for e in events:
+            if e.get("k") == "birth":
+                cur["born"] += 1
+            elif e.get("k") == "death":
+                cur["died"] += 1
+        for old in [y for y in ys if y < w.year - 1]:
+            del ys[old]
         frame = {
             "t": w.tick, "year": w.year, "week": w.week, "season": SEASONS[w.season], "weather": w.weather,
             "pop": len(living), "gen": max((p.generation for p in living), default=0),
             "people": stage.people_rows(w, self._line), "tiles": stage.tile_rows(w),
             "animals": stage.animal_rows(w), "news": news,
             "sky": stage.sky(w), "marks": stage.mark_rows(w),
-            "wps": self.wps, "now": time.time(),
+            "wps": self.wps, "now": time.time(), "born_year": cur["born"], "died_year": cur["died"],
         }
         if events:
             # Last week's conversations are over now: keep them where anyone can read them back.
@@ -241,6 +254,7 @@ class Live:
         w = self.world
         return {
             "seed": w.cfg.seed, "width": w.cfg.width, "height": w.cfg.height, "live": self.clock is not None,
+            "perception": w.cfg.perception,
             "tiles": [[round(t.fertility, 2), round(t.forest, 2), round(t.rock, 2), 1 if t.flinty else 0,
                        round(t.wildness, 2), 1 if t.water else 0, t.biome] for row in w.tiles for t in row],
             "chronicle": self.historian.chronicle[-80:],
@@ -290,6 +304,7 @@ class Live:
                 "things": [", ".join(CLASSES[c][0] for c in classify(it)) or "an odd thing they made" for it in p.items],
                 "memories": memories, "makes": makes, "beliefs": beliefs,
                 "mind": mindview.mind(w, p) if p.alive else None,
+                "brain": _brain(w, p) if p.alive else None,
                 "death": p.death_cause,
             }
 
@@ -297,6 +312,21 @@ class Live:
 def _name(world, pid) -> str:
     q = world.people.get(pid) if pid else None
     return q.name if q else ""
+
+
+def _brain(w, p) -> dict:
+    """How p decides, for the brain scan: what they sense and feel, the situation lit this week, the habits learned for
+    every situation, and how each option weighed this week splits into instinct and habit. Read-only."""
+    c, tick = w.cfg, w.tick
+    hunger = hunger_of(w, p, sum(d.need(c, tick) for d in w.dependents(p.id)))
+    base = p.last_ctx * N_ACTIONS
+    return {"ctx": p.last_ctx, "actions": list(ACTIONS), "n_contexts": N_CONTEXTS, "learned_weight": c.learned_weight,
+            "q": [round(v * 100) for v in p.q], "learned": sum(1 for v in p.q if v), "chosen": p.last_action,
+            "weighed": [[a, round(sc, 2), int(ch), round(c.learned_weight * p.q[base + A[a]], 2)] for a, _aim, sc, ch in p.considered],
+            "body": {"hunger": round(hunger, 2), "thirst": round(p.thirst, 2), "fatigue": round(1 - p.energy / 100, 2),
+                     "health": round(p.health / 100, 2), "mood": round(p.mood, 2), "fear": round(p.fear, 2),
+                     "anger": round(p.anger, 2), "grief": round(p.grief, 2), "loneliness": round(p.loneliness, 2)},
+            "genes": {g: round(v, 2) for g, v in p.genes.items()}}
 
 
 def _set_aside(home: Path) -> None:
@@ -367,6 +397,9 @@ def make_handler(live: Live, server_holder: list | None = None):
             if url.path == "/":
                 # Read fresh each time, so a better-looking page arrives without stopping their world.
                 self._send((HERE / "viewer.html").read_bytes(), "text/html; charset=utf-8")
+            elif url.path == "/story":
+                # The earlier pixel-art page, kept for reference; the lab view at "/" is the main one.
+                self._send((HERE / "viewer_pixel.html").read_bytes(), "text/html; charset=utf-8")
             elif url.path == "/terrain":
                 self._json(live.terrain())
             elif url.path == "/person":

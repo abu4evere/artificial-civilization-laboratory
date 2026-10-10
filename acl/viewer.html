@@ -4,1447 +4,414 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Their world</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* A cozy game look for the side panel; the map itself is pixel art. */
-:root{--wood:#3dd68c;--wood-2:#2a9d68;--paper:#0d1218;--paper-2:#161d26;--ink:#eaf0f6;--ink-2:#a7b3c0;
- --muted:#6d7a88;--accent:#3dd68c;--gold:#e5b347;--line:#263241;--bg-3:#1f2936}
+/* ACL: the living world, in two screens. The world: where everyone is and what they are doing. A person: their brain,
+   as the code really has it. Every number and light is read from the running world. The pixel-art page is at /story. */
+:root{--bg:#03060b;--panel:rgba(9,16,28,.9);--panel-2:#0b1424;--ink:#d6e8ff;--muted:#7f97b3;--line:#17263c;
+ --cyan:#38d6ff;--amber:#ffb547;--mag:#ff4fa3;--green:#5fe08a;--white:#fff}
 *{box-sizing:border-box}
 [hidden]{display:none !important}
 html,body{height:100%}
-body{margin:0;background:#0b0f15;color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden}
-.pix{font-family:"Pixelify Sans","Courier New",monospace}
-.app{display:grid;grid-template-columns:minmax(0,1fr) 340px;height:100vh}
-.stage{position:relative;min-width:0;overflow:hidden;background:#0b0f15}
-canvas#map{display:block;width:100%;height:100%;cursor:grab;touch-action:none;image-rendering:pixelated}
-canvas#map.dragging{cursor:grabbing}
-.panel{background:linear-gradient(180deg,var(--paper),#121923);border-left:1px solid var(--line);overflow-y:auto;padding:20px 18px 40px}
-h1{font:700 24px/1.1 "Pixelify Sans","Courier New",monospace;margin:0;color:var(--wood)}
-h2{font:600 15px "Pixelify Sans","Courier New",monospace;color:var(--wood);margin:20px 0 8px;letter-spacing:.02em}
-.date{color:var(--ink-2);margin-top:4px;font-variant-numeric:tabular-nums}
-.clock{color:var(--muted);font-size:12px;margin-top:2px;font-variant-numeric:tabular-nums}
-.hint a{color:var(--accent)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-.stat{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:10px 11px}
-.stat .l{font-size:12px;color:var(--ink-2)}
-.stat .v{font:700 22px "Pixelify Sans","Courier New",monospace;color:var(--wood)}
-.speed{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;align-items:center}
-.speed span{color:var(--ink-2);font-size:12px;margin-right:2px}
-.speed button,.cam button{border:2px solid var(--wood);background:var(--paper);color:var(--wood);border-radius:6px;
- padding:3px 10px;font:600 14px "Pixelify Sans","Courier New",monospace;cursor:pointer}
-.speed button.on{background:var(--wood);color:var(--paper)}
-.cam{position:absolute;right:12px;bottom:12px;display:flex;gap:6px;z-index:2}
-.cam button{box-shadow:0 3px 0 var(--wood);min-width:36px}
-.cam button:active{transform:translateY(2px);box-shadow:0 1px 0 var(--wood)}
-.news{display:flex;flex-direction:column;gap:6px}
-.news p{margin:0;padding:6px 8px;border-radius:6px;background:var(--paper-2)}
-.news p .y{color:var(--muted);font-size:12px;margin-right:6px;font-variant-numeric:tabular-nums}
-.news p.big{border-left:4px solid var(--gold)}
-.tip{position:absolute;pointer-events:none;background:var(--paper);color:var(--ink);border:3px solid var(--wood);
- border-radius:6px;padding:6px 10px;font-size:13px;box-shadow:0 4px 0 rgba(0,0,0,.3);display:none;max-width:280px;z-index:3}
-.tip .t{font:600 15px "Pixelify Sans","Courier New",monospace;color:var(--wood)}
-.tip .s{color:var(--ink-2);font-size:12px}
-.banner{position:absolute;top:16px;left:50%;transform:translateX(-50%);background:var(--paper);color:var(--ink);
- border:3px solid var(--wood);border-radius:8px;padding:10px 14px;max-width:min(560px,70%);
- box-shadow:0 5px 0 rgba(0,0,0,.35);opacity:0;transition:opacity .4s;pointer-events:none;z-index:2;
- font:600 15px "Pixelify Sans","Courier New",monospace}
-.banner.show{opacity:1}
-.help{position:absolute;left:12px;bottom:12px;color:#d5dee8;background:rgba(13,18,24,.78);border:1px solid var(--line);border-radius:8px;padding:6px 11px;
- font:14px "Pixelify Sans","Courier New",monospace;pointer-events:none;transition:opacity 1s;z-index:2}
-.person{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:14px}
-.person h3{margin:0;font:700 19px "Pixelify Sans","Courier New",monospace;color:var(--wood)}
-.person .sub{color:var(--ink-2);font-size:12px;margin-bottom:6px}
-.person ul{margin:4px 0 0;padding-left:18px}
-.person li{margin:2px 0}
-.person .k{color:var(--muted);font-size:12px;margin-top:8px;font-weight:600}
-.person button{float:right;border:0;background:none;color:var(--ink-2);cursor:pointer;font-size:18px}
-.hint{color:var(--muted);font-size:12px;margin-top:10px}
-.see{margin:0;padding-left:18px;color:var(--ink-2);font-size:13px}
-.see li{margin:2px 0}
-.mini{position:absolute;top:12px;right:12px;width:176px;height:176px;border-radius:6px;image-rendering:pixelated;
- box-shadow:0 4px 0 rgba(0,0,0,.4);border:4px solid var(--wood);cursor:pointer;z-index:2}
-.talk{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto}
-.talk .line{padding:6px 9px;border-radius:6px;background:var(--paper-2);border:2px solid transparent;cursor:pointer}
-.talk .line:hover{border-color:var(--wood-2)}
-.talk .when{color:var(--muted);font-size:11px}
-.talk .who{font:600 14px "Pixelify Sans","Courier New",monospace;color:var(--wood)}
-.talk .said{display:block}
-.talk .line.say .said{font-weight:600}
-.talk .line.chat .said{color:var(--ink-2)}
-.talk .empty,.people .empty{color:var(--muted);font-size:13px}
-.find{width:100%;padding:6px 9px;border-radius:6px;border:2px solid #d9c49a;background:#fffaf0;color:var(--ink);font:inherit;margin-bottom:6px}
-.people{display:flex;flex-direction:column;gap:2px;max-height:300px;overflow-y:auto}
-.people button{display:flex;align-items:center;gap:8px;text-align:left;border:0;background:none;color:var(--ink);
- font:inherit;padding:4px 6px;border-radius:6px;cursor:pointer}
-.people button:hover{background:var(--paper-2)}
-.people .dot{width:11px;height:11px;border-radius:2px;flex:none;border:2px solid #2b1d14}
-.people .what{color:var(--muted);font-size:12px;margin-left:auto;white-space:nowrap}
-@media (max-width:800px){.app{grid-template-columns:1fr;grid-template-rows:65vh auto;height:auto}
- body{overflow:auto}.panel{border-left:0;border-top:6px solid var(--wood)}}
+body{margin:0;background:radial-gradient(ellipse at 50% 40%,#0a1729 0%,#03060b 70%);color:var(--ink);
+ font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+.mono{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace}
+h2{font:500 11.5px ui-monospace,Consolas,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px}
+button{background:var(--panel-2);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer}
+button:hover{border-color:var(--cyan)}
+button.on{border-color:var(--cyan);color:var(--white);box-shadow:0 0 10px rgba(56,214,255,.35)}
+.view{display:grid;height:100vh;gap:12px;padding:12px 14px}
+/* header (both screens) */
+.head{display:flex;align-items:center;gap:16px;padding:10px 16px;flex-wrap:wrap}
+.head .t{font:600 17px ui-monospace,Consolas,monospace;letter-spacing:2px;color:var(--white)}
+.head .d{color:var(--muted);font-size:14px}
+.head .sp{margin-left:auto;display:flex;align-items:center;gap:6px}
+.head .sp span{color:var(--muted);font-size:12.5px}
+.led{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;background:var(--green);box-shadow:0 0 8px var(--green)}
+/* world screen */
+#world{grid-template-rows:auto auto minmax(0,1fr)}
+.summary{padding:12px 18px;font-size:17px;color:var(--white)}
+.summary .hint{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:12px;min-height:0}
+.stage{position:relative;min-height:0;overflow:hidden}
+canvas#map{display:block;width:100%;height:100%;cursor:pointer;touch-action:none}
+.legend{position:absolute;left:12px;top:12px;max-width:min(360px,60%);background:rgba(6,12,22,.82);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--ink);pointer-events:none}
+.legend .r{display:flex;flex-wrap:wrap;gap:4px 14px}
+.legend .n{color:var(--muted);font-size:12px;margin-top:6px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.zoom{position:absolute;right:12px;top:12px;display:flex;gap:6px}
+.click{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:rgba(6,12,22,.85);border:1px solid var(--cyan);border-radius:999px;padding:6px 14px;font-size:13.5px;color:var(--white);pointer-events:none;box-shadow:0 0 14px rgba(56,214,255,.25)}
+.tip{position:absolute;pointer-events:none;background:rgba(4,10,20,.95);border:1px solid var(--cyan);border-radius:9px;padding:8px 11px;font-size:13px;display:none;max-width:300px;z-index:3}
+.tip b{color:var(--white)}
+.side{display:flex;flex-direction:column;gap:12px;min-height:0}
+.box{padding:14px 16px}
+.row{display:grid;grid-template-columns:150px 1fr 30px;gap:10px;align-items:center;font-size:14px;margin:6px 0}
+.meter{height:8px;background:#0a1322;border-radius:4px;overflow:hidden}.meter i{display:block;height:100%;border-radius:4px}
+.v{text-align:right;color:var(--white);font:600 13px ui-monospace,Consolas,monospace}
+.health{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 14px}
+.health div{font-size:13.5px;color:var(--muted)}
+.health b{display:block;font:600 22px ui-monospace,Consolas,monospace;color:var(--white)}
+.feed{overflow-y:auto;min-height:0;flex:1}
+.feed p{margin:0 0 8px;font-size:14px}
+.feed .y{color:var(--muted);font:12px ui-monospace,Consolas,monospace;margin-right:8px}
+.feed p.first{border-left:3px solid var(--amber);padding-left:9px}
+/* person screen */
+#person{grid-template-rows:auto minmax(0,1fr)}
+.pmain{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:12px;min-height:0}
+.brainbox{position:relative;min-height:0;display:flex;flex-direction:column;padding:12px 14px}
+.brainbox .cols{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;color:var(--muted);font:11.5px ui-monospace,Consolas,monospace;letter-spacing:1.2px;text-transform:uppercase;margin-top:6px}
+canvas#brain{width:100%;flex:1;min-height:0;display:block}
+.btip{position:absolute;pointer-events:none;background:rgba(4,10,20,.95);border:1px solid var(--cyan);border-radius:9px;padding:7px 10px;font-size:13px;display:none;max-width:300px}
+.story{overflow-y:auto;padding:14px 16px}
+.story .n{font-size:24px;font-weight:650;color:var(--white)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.tag{background:#0a1322;border:1px solid var(--line);border-radius:7px;padding:2px 8px;font-size:13px}
+.k{font:11.5px ui-monospace,Consolas,monospace;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.opt{display:grid;grid-template-columns:130px 1fr 40px;gap:8px;align-items:center;font-size:14px;margin:5px 0}
+.opt .st{height:10px;background:#0a1322;border-radius:5px;position:relative;overflow:hidden}
+.opt .st i{position:absolute;top:0;bottom:0}
+.key{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
+.sw{display:inline-block;width:16px;height:4px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.story ul{margin:0;padding-left:18px}.story li{font-size:14px;margin:3px 0}
+.p{font-size:14px;color:var(--muted);margin:6px 0}
+.p b{color:var(--white)}
+a{color:var(--cyan)}
+@media (max-width:1000px){
+  body{overflow:auto}.view{height:auto}
+  .main,.pmain{grid-template-columns:1fr}.stage{height:68vh}.brainbox{height:70vh}
+}
 </style>
 </head>
 <body>
-<main class="app">
-  <section class="stage" id="stage">
-    <canvas id="map" aria-label="Their world, seen from above"></canvas>
-    <canvas id="mini" class="mini" aria-label="Where everyone is; click to look there"></canvas>
-    <div class="tip" id="tip"></div>
-    <div class="banner" id="banner"></div>
-    <div class="help" id="help">Scroll to zoom in · drag to look around · click someone, or a name on the right, to follow them</div>
-    <div class="cam">
-      <button id="zin" title="Closer">+</button><button id="zout" title="Further">−</button>
-      <button id="zall" title="The whole world">World</button>
+
+<!-- ======================== THE WORLD ======================== -->
+<div class="view" id="world">
+  <header class="panel head">
+    <span class="t">ACL · THEIR WORLD</span>
+    <span class="d" id="date"><span class="led"></span>connecting…</span>
+    <span class="sp" id="speed"></span>
+  </header>
+  <div class="panel summary" id="summary">…<span class="hint"></span></div>
+  <section class="main">
+    <div class="panel stage">
+      <canvas id="map" aria-label="Their world"></canvas>
+      <div class="legend">
+        <div class="r" id="legendKinds"></div>
+        <div class="n">Each dot is a person, coloured by what they are doing this week. A light pillar marks a group (its label says how many). Fires glow amber. Greener land holds more wild food.</div>
+      </div>
+      <div class="zoom"><button id="zin">+</button><button id="zout">−</button><button id="zall">Reset view</button></div>
+      <div class="click">Click any person to see inside their mind</div>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="side">
+      <div class="panel box"><h2>What people are doing</h2><div id="doing"></div></div>
+      <div class="panel box"><h2>How the people are</h2><div class="health" id="health"></div></div>
+      <div class="panel box" style="flex:1;display:flex;flex-direction:column;min-height:0">
+        <h2>What has happened <a href="/chronicle" target="_blank" rel="noopener" style="float:right">all ↗</a></h2>
+        <div class="feed" id="feed"></div>
+      </div>
     </div>
   </section>
-  <aside class="panel">
-    <div class="head">
-      <h1 id="title">Their world</h1>
-      <div class="date" id="date">connecting…</div>
-      <div class="clock" id="clock" hidden></div>
+</div>
+
+<!-- ======================== A PERSON ======================== -->
+<div class="view" id="person" hidden>
+  <header class="panel head">
+    <button id="back">← Back to the world</button>
+    <span class="t" id="pTitle">—</span>
+    <span class="d" id="pDate"></span>
+    <span class="sp"><button id="delta" title="Colour the learned connections by how much they changed since you opened this person">Show what they learned while you watched</button></span>
+  </header>
+  <section class="pmain">
+    <div class="panel brainbox">
+      <h2>Inside their mind, this week</h2>
+      <canvas id="brain" width="2400" height="1300" aria-label="Brain scan"></canvas>
+      <div class="cols"><span>What they sense and feel</span><span>Situation neurons (32)</span><span>Action neurons (19)</span><span>What they chose</span></div>
+      <div class="btip" id="btip"></div>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="l">People</div><div class="v" id="pop">–</div></div>
-      <div class="stat"><div class="l">Generation</div><div class="v" id="gen">–</div></div>
-      <div class="stat"><div class="l">Weather</div><div class="v" id="wx">–</div></div>
-    </div>
-    <div class="speed" id="speed"><span>Weeks per second</span></div>
-    <div id="person"></div>
-    <h2>What has happened</h2>
-    <div class="news" id="news"></div>
-    <p class="hint">Click a person to follow their life · <a href="/chronicle" target="_blank" rel="noopener">the whole chronicle</a></p>
-  </aside>
-</main>
+    <div class="panel story" id="story"></div>
+  </section>
+</div>
+
 <script>
 "use strict";
-// =============================================================================================
-// Palette and constants. The map is pixel art: everything is drawn as whole pixels on a small
-// canvas (48 pixels to a tile) and scaled up without smoothing.
-// =============================================================================================
-const TAU = Math.PI * 2;
-const TP = 48;                                          // art pixels per tile
-const OUT = "#2b1d14";                                  // the dark outline around everything
-const SKIN = ["#f6c9a0", "#e8b28a", "#c98e64", "#9a6644", "#704a31", "#f2d2b6"];
-const HAIR = ["#3a2618", "#5c3a22", "#7b4e2a", "#241a14", "#a86b32", "#c48a42"];
-const LINE = ["#3d7fd4", "#e0673a", "#36a86e", "#e9b13b", "#d86b9e", "#7a5bc9"];
-const PANTS = ["#6b4f3a", "#5a4632", "#7a5a40"];
-const GRASS = {   // poor ground -> rich ground
-  spring: ["#cdb978", "#a8b862", "#82b14c", "#62a03e", "#4b8a34"],
-  summer: ["#c6ad6a", "#a3a852", "#7da445", "#5d9339", "#477e30"],
-  autumn: ["#cfa463", "#bb9a52", "#a09346", "#86833c", "#6d7134"],
-  winter: ["#f3f6f8", "#e7ecf0", "#dbe2e8", "#cfd8df", "#c3cdd6"],
+// ---------- meanings --------------------------------------------------------------------------
+const KINDS = {
+  food:   {label: "getting food",     col: "#5fe08a", acts: ["forage", "hunt", "fish", "take", "fill"]},
+  work:   {label: "making, carrying", col: "#ffb547", acts: ["make", "gather", "put", "heat"]},
+  social: {label: "with others",      col: "#38d6ff", acts: ["talk", "give", "care", "court", "play"]},
+  move:   {label: "on the move",      col: "#e8f4ff", acts: ["explore", "join"]},
+  danger: {label: "fighting, fleeing", col: "#ff4fa3", acts: ["attack", "steal", "flee"]},
+  rest:   {label: "resting",          col: "#4f86c6", acts: ["rest", ""]},
 };
-const STONE = ["#a9a49a", "#8f8a80", "#77726a"];
-const DIRT = ["#b48d5e", "#9d7a50", "#866744"];
-const SAND = ["#d3b06a", "#c6a05a", "#b8924e"].map(hexRgb);
-const SNOWY = ["#eef2f6", "#dfe6ec"].map(hexRgb);
-const BAYER = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]];
-const SIGN = {rest: "💤", forage: "🌿", hunt: "🏹", fish: "🎣", gather: "✋", put: "📥", take: "📤", make: "🔨", play: "✨",
-  explore: "👣", give: "🎁", care: "🤲", talk: "💬", court: "💗", steal: "🤫", attack: "⚔️", flee: "💨", join: "🚶"};
+const KIND_OF = {}; for (const [k, v] of Object.entries(KINDS)) for (const a of v.acts) KIND_OF[a] = k;
+const WORDS = {rest:"rest", forage:"gather plants", hunt:"hunt", fish:"fish", gather:"pick something up", put:"set something down",
+  take:"fetch stored food", make:"make something", play:"play", explore:"explore", give:"give food", care:"care for someone",
+  talk:"talk", court:"court someone", steal:"steal", attack:"attack", flee:"flee", join:"go to someone or somewhere", heat:"tend a fire", fill:"fetch water"};
+const STAGE = ["baby", "child", "teen", "adult", "elder"];
+const P = {id:0, name:1, x:2, y:3, fx:4, fy:5, sex:6, stage:7, doing:8, aim:9, line:10, carer:11, things:12, mood:13,
+  sick:14, starving:15, grief:16, pregnant:17, health:18, partner:19, age:20, thought:21, state:22};
+const SEASONS = ["spring", "summer", "autumn", "winter"];
+const FOOD = ["under ½ week of food, or ill", "½–2 weeks of food", "2–6 weeks of food", "6+ weeks of food"];
+const BODY = ["hunger", "thirst", "fatigue", "health", "mood", "fear", "anger", "grief", "loneliness"];
+const GENES = ["curiosity", "diligence", "sociability", "kindness", "temper", "anxiety", "care", "boldness"];
+const SENSE = ["food held", "company", "season"];
+// which drives and inborn traits enter each action's instinct (read from acl/mind.py; links, not weights)
+const WIRE = {rest:["fatigue","health"], forage:["hunger","diligence"], hunt:["hunger","boldness","fear"], gather:["curiosity"],
+  put:["diligence"], take:["hunger","kindness"], make:["diligence"], play:["curiosity"],
+  explore:["curiosity","hunger","loneliness","sociability","boldness","thirst"], give:["kindness"], care:["kindness","care"],
+  talk:["sociability","loneliness","care"], court:["sociability","hunger"], steal:["hunger","kindness","temper"],
+  attack:["anger","temper","boldness","kindness"], flee:["fear","anxiety","boldness"], join:["loneliness","sociability","thirst","hunger"],
+  heat:["health"], fill:["thirst"]};
+const act = d => (d || "").split(" ")[0];
+const kindOf = d => KIND_OF[act(d)] || "rest";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+const ctxLabel = k => `${FOOD[Math.floor(k / 8)]} · ${(k % 8) >= 4 ? "with company" : "alone"} · ${SEASONS[k % 4]}`;
+function wrapD(d, n){ d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; }
+function hexRgb(h){ const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+function mixc(a, b, t){ const x = hexRgb(a), y = hexRgb(b); return `rgb(${x.map((v, i) => Math.round(v + (y[i] - v) * t)).join(",")})`; }
+function fit(c){ const r = c.getBoundingClientRect(), d = devicePixelRatio || 1; const w = Math.max(10, Math.round(r.width * d)), h = Math.max(10, Math.round(r.height * d));
+  if (c.width !== w || c.height !== h){ c.width = w; c.height = h; } return [w, h, d]; }
+$("legendKinds").innerHTML = Object.values(KINDS).map(k => `<span><span class="dot" style="background:${k.col};box-shadow:0 0 6px ${k.col}"></span>${k.label}</span>`).join("");
 
-// =============================================================================================
-// State
-// =============================================================================================
-const canvas = document.getElementById("map");
-const ctx = canvas.getContext("2d");
-const tip = document.getElementById("tip");
-const banner = document.getElementById("banner");
-let terrain = null, W = 20, H = 20, feats = [];
-let frame = null, frameAt = 0, interval = 250, liveMode = false, clock = null, clockOffset = 0;
-let rows = new Map(), says = [], moments = [], hunts = [], talks = [], evening = [], animals = [];
-let heard = [], heardKeys = new Set();   // every line that has appeared on screen this week
-const bodies = new Map();
-const cam = {x: 0, y: 0, z: 30, fit: 30, follow: null, vw: 0, vh: 0};
-let particles = [], graves = [], weather = [], gifts = [];
-let selected = null, selectedTimer = null, hover = null, lastT = performance.now(), lastPlan = null;
-const scene = document.createElement("canvas"), sctx = scene.getContext("2d");
-let ground = null, groundKey = "", props = [];
-const spriteCache = new Map();
+// ---------- state ------------------------------------------------------------------------------
+let terrain = null, W = 40, H = 40, live = false, frame = null, prev = null, frameAt = 0, interval = 500;
+let selected = null, personInfo = null, personAt = -1, firstQ = null, showDelta = false;
+const news = [];
+const view = {zoom: 1, panX: 0, panY: 0, tilt: 0.9};
 
-function hash(s) { let h = 2166136261; for (const c of String(s)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
-function rng(seed) { let s = seed >>> 0 || 1; return () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296; }
-function noise2(x, y) { let h = Math.imul(x, 374761393) + Math.imul(y, 668265263); h = Math.imul(h ^ (h >>> 13), 1274126177); return ((h ^ (h >>> 16)) >>> 0) / 4294967296; }
-function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
-function hexRgb(hex) { const n = parseInt(hex.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
-function rgb(c, a = 1) { return `rgba(${c[0]},${c[1]},${c[2]},${a})`; }
-function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
-function wrapD(d, n) { d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; }
-
-// =============================================================================================
-// Time: where we are in their week and their day
-// =============================================================================================
-function weekProgress(t) {
-  if (liveMode && clock) return clamp((Date.now() / 1000 + clockOffset - clock.last) / clock.period, 0, 0.99999);
-  return clamp((t - frameAt) / interval, 0, 0.99999);
+// ---------- the world as a tilted plane ---------------------------------------------------------
+const map = $("map"), g = map.getContext("2d");
+let MW = 0, MH = 0, DPR = 1, S = 1, CX = 0, CY = 0, groundKey = "";
+const DIST = 95;
+function setupMap(){ S = Math.min(MW / (W * 1.7), MH / (H * 1.12)) * view.zoom; CX = MW / 2 + view.panX; CY = MH * 0.52 + view.panY; }
+function proj(x, y, hgt = 0){
+  const u = x - W / 2, v = y - H / 2, z = DIST - v * Math.sin(view.tilt), k = DIST / z;
+  return [CX + u * S * k, CY + (v * Math.cos(view.tilt) - hgt) * S * k, k];
 }
-function dayOf(wp) { const d = wp * 7, day = Math.floor(d); return {day, f: d - day}; }
-function darkness(f) {
-  if (!liveMode) return 0;
-  if (f < 0.08) return 0.62 * (1 - f / 0.08);
-  if (f < 0.70) return 0;
-  if (f < 0.80) return 0.62 * (f - 0.70) / 0.10;
-  return 0.62;
+const ground = document.createElement("canvas"), gc = ground.getContext("2d");
+function paintGround(){
+  ground.width = MW; ground.height = MH; gc.clearRect(0, 0, MW, MH);
+  const R = W * 0.78;
+  const ring = (r, col, lw) => { gc.beginPath(); for (let i = 0; i <= 120; i++){ const a = i / 120 * Math.PI * 2, [sx, sy] = proj(W / 2 + r * Math.cos(a), H / 2 + r * Math.sin(a)); i ? gc.lineTo(sx, sy) : gc.moveTo(sx, sy); } gc.strokeStyle = col; gc.lineWidth = lw; gc.stroke(); };
+  ring(R, "rgba(56,214,255,.25)", 1.2 * DPR); ring(R + 3, "rgba(56,214,255,.08)", 1 * DPR);
+  for (let wk = 0; wk < 52; wk++){ const a = -Math.PI / 2 + wk / 52 * Math.PI * 2, big = wk % 13 === 0, r2 = R + (big ? 2.2 : 1);
+    const [x1, y1] = proj(W / 2 + R * Math.cos(a), H / 2 + R * Math.sin(a)), [x2, y2] = proj(W / 2 + r2 * Math.cos(a), H / 2 + r2 * Math.sin(a));
+    gc.strokeStyle = big ? "rgba(255,181,71,.7)" : "rgba(56,214,255,.3)"; gc.lineWidth = (big ? 2 : 1) * DPR; gc.beginPath(); gc.moveTo(x1, y1); gc.lineTo(x2, y2); gc.stroke(); }
+  SEASONS.forEach((s, i) => { const a = -Math.PI / 2 + (i * 13 + 6.5) / 52 * Math.PI * 2, [sx, sy] = proj(W / 2 + (R + 4) * Math.cos(a), H / 2 + (R + 4) * Math.sin(a));
+    gc.fillStyle = "rgba(214,232,255,.8)"; gc.font = `${12 * DPR}px ui-monospace,Consolas,monospace`; gc.textAlign = "center"; gc.textBaseline = "middle"; gc.fillText(s.toUpperCase(), sx, sy); });
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){
+    const i = y * W + x, tr = terrain.tiles[i], fr = frame.tiles[i], a = proj(x, y), b = proj(x + 1, y), c = proj(x + 1, y + 1), d = proj(x, y + 1);
+    gc.beginPath(); gc.moveTo(a[0], a[1]); gc.lineTo(b[0], b[1]); gc.lineTo(c[0], c[1]); gc.lineTo(d[0], d[1]); gc.closePath();
+    gc.fillStyle = tr[5] ? "#06121f" : mixc("#0c1714", "#2f7d5a", Math.min(1, fr[0] / 9)); gc.fill();
+    if (!tr[5]){ gc.strokeStyle = "rgba(56,214,255,.05)"; gc.lineWidth = 1; gc.stroke(); }
+  }
+  const e = [proj(0, 0), proj(W, 0), proj(W, H), proj(0, H)];
+  gc.beginPath(); e.forEach((p, i) => i ? gc.lineTo(p[0], p[1]) : gc.moveTo(p[0], p[1])); gc.closePath();
+  gc.strokeStyle = "rgba(56,214,255,.35)"; gc.lineWidth = 1.5 * DPR; gc.shadowColor = "#38d6ff"; gc.shadowBlur = 12 * DPR; gc.stroke(); gc.shadowBlur = 0;
 }
-function phaseOf(f) {
-  if (!liveMode) return f < 0.15 ? "go" : "work";
-  if (f < 0.06 || f >= 0.86) return "sleep";
-  if (f < 0.12) return "wake";
-  if (f < 0.22) return "go";
-  if (f < 0.70) return "work";
-  if (f < 0.80) return "return";
-  return "evening";
+function personPos(r, t){
+  if (!prev) return [r[P.x], r[P.y]];
+  const dx = wrapD(r[P.x] - r[P.fx], W), dy = wrapD(r[P.y] - r[P.fy], H), e = t < 1 ? t * t * (3 - 2 * t) : 1;
+  return [((r[P.fx] + dx * e) % W + W) % W, ((r[P.fy] + dy * e) % H + H) % H];
 }
-function clockOf(f) {
-  // Their day as a clock face for us: first light at five, sunset at seven, night from half past eight.
-  const pts = [[0, 5], [0.08, 6.5], [0.70, 19], [0.80, 20.5], [1, 29]];
-  let h = 5;
-  for (let k = 1; k < pts.length; k++) if (f <= pts[k][0]) { const [a, ha] = pts[k - 1], [b, hb] = pts[k]; h = ha + (hb - ha) * (f - a) / (b - a); break; }
-  const mins = Math.floor((h % 24) * 60);
-  return String(Math.floor(mins / 60)).padStart(2, "0") + ":" + String(mins % 60).padStart(2, "0");
+function groupsOf(rows){
+  const n = rows.length, parent = rows.map((_, i) => i), find = i => { while (parent[i] !== i){ parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
+  for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++)
+    if (Math.max(Math.abs(wrapD(rows[i][P.x] - rows[j][P.x], W)), Math.abs(wrapD(rows[i][P.y] - rows[j][P.y], H))) <= 2) parent[find(i)] = find(j);
+  const gs = new Map(); rows.forEach((r, i) => { const k = find(i); if (!gs.has(k)) gs.set(k, []); gs.get(k).push(r); }); return [...gs.values()];
 }
-function partOfDay(f) { return f < 0.08 ? "dawn" : f < 0.3 ? "morning" : f < 0.45 ? "midday" : f < 0.7 ? "afternoon" : f < 0.8 ? "evening" : "night"; }
-function span(s) { const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60); return h ? `${h} h ${m} min` : m ? `${m} min` : `${Math.round(s)} s`; }
-const DAYS = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh"];
-function at(day, f, now, len) { return now.day === day && now.f >= f && now.f < f + len; }
-function past(day, f, now) { return now.day > day || (now.day === day && now.f >= f); }
-
-// =============================================================================================
-// Where things stand on each tile (fixed per tile, so a place looks the same every visit)
-// =============================================================================================
-function buildFeatures() {
-  feats = [];
-  for (let i = 0; i < W * H; i++) {
-    const r = rng(hash("tile" + i));
-    const j = (x, y, s = 0.05) => [x + (r() - 0.5) * s * 2, y + (r() - 0.5) * s * 2];
-    feats.push({
-      trees: [j(0.2, 0.36), j(0.5, 0.24), j(0.8, 0.38), j(0.9, 0.62)],
-      bushes: [j(0.66, 0.6), j(0.84, 0.86), j(0.44, 0.5)],
-      rocks: [j(0.14, 0.9), j(0.3, 0.97), j(0.08, 0.72)],
-      tufts: Array.from({length: 14}, () => [0.04 + r() * 0.92, 0.06 + r() * 0.9]),
-      flowers: Array.from({length: 7}, () => [0.06 + r() * 0.88, 0.3 + r() * 0.66, Math.floor(r() * 4)]),
-      camp: [0.52, 0.76], hut: [0.3, 0.66], fire: [0.6, 0.84], stash: [0.84, 0.74],
-      field: [0.05, 0.68, 0.4, 0.28],
-    });
+let picks = [];
+function drawMap(now){
+  requestAnimationFrame(drawMap);
+  if (!terrain || !frame || $("world").hidden) return;
+  const [w, h, d] = fit(map); const key = `${w}:${h}:${frame.t}:${view.zoom}:${view.panX}:${view.panY}`;
+  if (key !== groundKey){ MW = w; MH = h; DPR = d; setupMap(); paintGround(); groundKey = key; }
+  g.clearRect(0, 0, MW, MH); g.drawImage(ground, 0, 0);
+  const t = Math.min(1, (now - frameAt) / Math.max(200, interval * .8)), pulse = (Math.sin(now / 420) + 1) / 2;
+  { const R = W * 0.78, a = -Math.PI / 2 + frame.week / 52 * Math.PI * 2, [sx, sy] = proj(W / 2 + R * Math.cos(a), H / 2 + R * Math.sin(a));
+    g.fillStyle = "#fff"; g.shadowColor = "#38d6ff"; g.shadowBlur = 20 * DPR; g.beginPath(); g.arc(sx, sy, (4 + 2 * pulse) * DPR, 0, 7); g.fill(); g.shadowBlur = 0;
+    g.fillStyle = "rgba(255,255,255,.85)"; g.font = `${11 * DPR}px ui-monospace,Consolas,monospace`; g.textAlign = "center"; g.fillText("THIS WEEK", sx, sy - 12 * DPR); }
+  for (let i = 0; i < frame.tiles.length; i++) if (frame.tiles[i][4]){
+    const [sx, sy, k] = proj(i % W + .5, Math.floor(i / W) + .5); g.fillStyle = "#ffb547"; g.shadowColor = "#ffb547"; g.shadowBlur = 16 * DPR; g.beginPath(); g.arc(sx, sy, 3.5 * DPR * k, 0, 7); g.fill(); g.shadowBlur = 0; }
+  const pos = new Map(); frame.people.forEach(r => pos.set(r[P.id], personPos(r, t)));
+  g.lineWidth = 1.3 * DPR; g.strokeStyle = "rgba(214,232,255,.45)";
+  frame.people.forEach(r => { const q = r[P.partner]; if (!q || r[P.id] > q || !pos.has(q)) return; const a = pos.get(r[P.id]), b = pos.get(q);
+    if (Math.abs(a[0] - b[0]) > W / 2 || Math.abs(a[1] - b[1]) > H / 2) return;
+    const [x1, y1] = proj(a[0] + .5, a[1] + .5), [x2, y2] = proj(b[0] + .5, b[1] + .5); g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke(); });
+  for (const grp of groupsOf(frame.people)){
+    if (grp.length < 2) continue;
+    const r0 = pos.get(grp[0][P.id]); let mx = 0, my = 0;
+    grp.forEach(r => { const p = pos.get(r[P.id]); mx += r0[0] + wrapD(p[0] - r0[0], W); my += r0[1] + wrapD(p[1] - r0[1], H); });
+    mx = ((mx / grp.length) % W + W) % W; my = ((my / grp.length) % H + H) % H;
+    const [bx, by, k] = proj(mx + .5, my + .5), [tx, ty] = proj(mx + .5, my + .5, 2 + 1.8 * Math.sqrt(grp.length));
+    const grad = g.createLinearGradient(bx, by, tx, ty); grad.addColorStop(0, "rgba(56,214,255,.5)"); grad.addColorStop(1, "rgba(56,214,255,0)");
+    g.strokeStyle = grad; g.lineWidth = (3 + grp.length * .3) * DPR * k; g.beginPath(); g.moveTo(bx, by); g.lineTo(tx, ty); g.stroke();
+    g.fillStyle = "rgba(214,232,255,.95)"; g.font = `${12 * DPR}px ui-monospace,Consolas,monospace`; g.textAlign = "center"; g.fillText(`${grp.length} people`, tx, ty - 6 * DPR);
+  }
+  picks = []; const seen = new Map();
+  for (const r of frame.people){
+    let [x, y] = pos.get(r[P.id]); const kk = Math.round(x) + "," + Math.round(y), n = (seen.get(kk) || 0) + 1; seen.set(kk, n);
+    if (n > 1){ x += Math.cos(n * 2.4) * .28; y += Math.sin(n * 2.4) * .28; }
+    const [sx, sy, k] = proj(x + .5, y + .5), grown = r[P.stage] >= 2, col = KINDS[kindOf(r[P.doing])].col, rad = (grown ? 4 : 2.4) * DPR * k * Math.max(1, view.zoom * .7);
+    g.fillStyle = col; g.shadowColor = col; g.shadowBlur = (grown ? 12 : 6) * DPR; g.globalAlpha = grown ? 1 : .8; g.beginPath(); g.arc(sx, sy, rad, 0, 7); g.fill(); g.shadowBlur = 0; g.globalAlpha = 1;
+    if (r[P.starving]){ g.strokeStyle = "#ff4fa3"; g.lineWidth = 1.5 * DPR; g.beginPath(); g.arc(sx, sy, rad + 3 * DPR, 0, 7); g.stroke(); }
+    picks.push([sx, sy, r]);
   }
 }
-function tileOf(x, y) { return ((((Math.floor(y) % H) + H) % H) * W) + (((Math.floor(x) % W) + W) % W); }
-
-// =============================================================================================
-// Pixel drawing helpers
-// =============================================================================================
-function R(c, x, y, w, h, col) { c.fillStyle = col; c.fillRect(Math.round(x), Math.round(y), w, h); }
-function disk(c, cx, cy, r, col) { for (let dy = -r; dy <= r; dy++) { const w = Math.floor(Math.sqrt(r * r - dy * dy) + 0.35); R(c, cx - w, cy + dy, 2 * w + 1, 1, col); } }
-function oval(c, cx, cy, rx, ry, col) { for (let dy = -ry; dy <= ry; dy++) { const w = Math.floor(rx * Math.sqrt(Math.max(0, 1 - (dy * dy) / (ry * ry))) + 0.35); R(c, cx - w, cy + dy, 2 * w + 1, 1, col); } }
-function tri(c, cx, top, half, height, col) { for (let k = 0; k <= height; k++) { const w = Math.round(half * k / height); R(c, cx - w, top + k, 2 * w + 1, 1, col); } }
-function line(c, x0, y0, x1, y1, col) {
-  const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0)) || 1;
-  for (let k = 0; k <= n; k++) R(c, x0 + (x1 - x0) * k / n, y0 + (y1 - y0) * k / n, 1, 1, col);
-}
-/** Give a sprite its dark outline: every empty pixel touching a filled one turns dark. */
-function outline(cv, col = OUT) {
-  const g = cv.getContext("2d"), w = cv.width, h = cv.height;
-  const img = g.getImageData(0, 0, w, h), d = img.data, [r, gg, b] = hexRgb(col), edge = [];
-  const solid = (x, y) => x >= 0 && y >= 0 && x < w && y < h && d[(y * w + x) * 4 + 3] > 140;
-  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
-    if (solid(x, y)) continue;
-    if (solid(x - 1, y) || solid(x + 1, y) || solid(x, y - 1) || solid(x, y + 1)) edge.push((y * w + x) * 4);
-  }
-  for (const o of edge) { d[o] = r; d[o + 1] = gg; d[o + 2] = b; d[o + 3] = 255; }
-  g.putImageData(img, 0, 0);
-  return cv;
-}
-function sprite(key, w, h, draw, line_ = true) {
-  let s = spriteCache.get(key);
-  if (!s) {
-    s = document.createElement("canvas"); s.width = w; s.height = h;
-    draw(s.getContext("2d"));
-    if (line_) outline(s);
-    spriteCache.set(key, s);
-  }
-  return s;
-}
-function shadow(c, x, y, rx, ry) { c.globalAlpha = 0.28; oval(c, x, y, rx, ry, "#1d2414"); c.globalAlpha = 1; }
-
-// ---- trees, bushes, rocks -------------------------------------------------------------------
-const LEAVES = {
-  spring: [["#3f7f37", "#5aa046", "#7cc256", "#b3e27a"], ["#3f7f37", "#5aa046", "#7cc256", "#b3e27a"]],
-  summer: [["#2a6230", "#3c8239", "#55a046", "#86c75c"], ["#2a6230", "#3c8239", "#55a046", "#86c75c"]],
-  autumn: [["#8a3a1d", "#c2532b", "#e0832f", "#f3be55"], ["#8f6219", "#c58d22", "#e6b739", "#f6dc78"]],
-};
-function treeSprite(season, v) {
-  return sprite(`tree|${season}|${v}`, 36, 46, g => {
-    const rr = rng(v * 7919 + 13);
-    R(g, 15, 30, 6, 14, "#7a4f2c"); R(g, 19, 30, 2, 14, "#5e3b1f"); R(g, 13, 42, 10, 2, "#6a4426");
-    if (season === "winter") {
-      for (const [x0, y0, x1, y1] of [[18, 31, 9, 14], [18, 30, 27, 13], [18, 28, 18, 6], [13, 22, 7, 19], [23, 20, 30, 17]]) {
-        line(g, x0, y0, x1, y1, "#6b4a2e"); line(g, x0 + 1, y0, x1 + 1, y1, "#6b4a2e");
-      }
-      R(g, 8, 13, 3, 1, "#ffffff"); R(g, 26, 12, 3, 1, "#ffffff"); R(g, 17, 5, 3, 1, "#ffffff");
-      return;
-    }
-    const [dk, md, lt, hl] = LEAVES[season][v % 2];
-    disk(g, 18, 19, 13, dk); disk(g, 10, 23, 8, dk); disk(g, 26, 23, 8, dk);
-    disk(g, 17, 17, 12, md); disk(g, 10, 21, 7, md); disk(g, 25, 21, 7, md);
-    disk(g, 14, 12, 6, lt); disk(g, 8, 19, 3, lt); disk(g, 22, 15, 3, lt);
-    for (let k = 0; k < 26; k++) { const a = rr() * TAU, d = rr() * 11; R(g, 17 + Math.cos(a) * d, 18 + Math.sin(a) * d, 1, 1, rr() < 0.5 ? dk : lt); }
-    R(g, 12, 9, 2, 1, hl); R(g, 11, 10, 1, 1, hl); R(g, 21, 12, 1, 1, hl);
-    if (season === "spring" && v % 3 === 0) for (let k = 0; k < 10; k++) R(g, 8 + rr() * 20, 8 + rr() * 18, 1, 1, rr() < 0.5 ? "#f7c6d9" : "#ffffff");
-    if (season === "summer" && v % 4 === 1) for (let k = 0; k < 5; k++) R(g, 9 + rr() * 18, 12 + rr() * 14, 2, 2, "#d23a3a");
-  });
-}
-function pineSprite(season, v) {
-  return sprite(`pine|${season}|${v}`, 30, 48, g => {
-    R(g, 13, 38, 4, 8, "#6a4426"); R(g, 15, 38, 2, 8, "#55361d");
-    const tiers = [[14, 3, 7, 12], [14, 11, 10, 14], [14, 21, 13, 17]];
-    for (const [cx, top, half, ht] of tiers) {
-      tri(g, cx, top, half, ht, "#1f5240"); tri(g, cx - 1, top + 1, half - 2, ht - 2, "#2c6d50");
-      tri(g, cx - 2, top + 3, Math.max(1, half - 6), ht - 6, "#3f8a62");
-      if (season === "winter") { tri(g, cx, top, Math.floor(half / 2), Math.floor(ht / 2), "#ffffff"); }
-    }
-    if (season !== "winter") { R(g, 10, 14, 1, 1, "#5fae7c"); R(g, 8, 26, 1, 1, "#5fae7c"); }
-  });
-}
-function bushSprite(season, berries, v) {
-  return sprite(`bush|${season}|${berries}|${v}`, 22, 17, g => {
-    if (season === "winter") {
-      for (const [x1, y1] of [[4, 4], [8, 2], [12, 1], [16, 3], [19, 6]]) line(g, 11, 15, x1, y1, "#6b5440");
-      R(g, 7, 2, 3, 1, "#ffffff"); R(g, 14, 1, 3, 1, "#ffffff");
-      return;
-    }
-    const [dk, md, lt] = season === "autumn" ? ["#5f6a26", "#7f8a32", "#a2ad48"] : ["#2b6a2c", "#3f8a39", "#62ac4c"];
-    disk(g, 7, 10, 5, dk); disk(g, 15, 10, 5, dk); disk(g, 11, 7, 6, dk);
-    disk(g, 7, 9, 4, md); disk(g, 15, 9, 4, md); disk(g, 11, 6, 5, md);
-    disk(g, 9, 4, 2, lt); R(g, 15, 6, 2, 1, lt);
-    if (berries) {
-      const col = season === "autumn" ? "#7c2b52" : "#d52d48", rr = rng(v + 3);
-      for (let k = 0; k < 6; k++) { const x = 4 + Math.floor(rr() * 14), y = 4 + Math.floor(rr() * 8); R(g, x, y, 2, 2, col); R(g, x, y, 1, 1, "#ffd6dc"); }
-    }
-  });
-}
-function rockSprite(v, big) {
-  const w = big ? 18 : 13, h = big ? 12 : 9;
-  return sprite(`rock|${v}|${big}`, w, h, g => {
-    oval(g, w / 2 | 0, h / 2 | 0, (w / 2 | 0) - 2, (h / 2 | 0) - 1, STONE[1]);
-    oval(g, w / 2 | 0, (h / 2 | 0) + 1, (w / 2 | 0) - 2, (h / 2 | 0) - 2, STONE[2]);
-    oval(g, (w / 2 | 0) - 1, (h / 2 | 0) - 1, (w / 2 | 0) - 4, (h / 2 | 0) - 3, STONE[0]);
-    R(g, 4, 2, 2, 1, "#d6d1c6");
-  });
-}
-function flintSprite() {
-  return sprite("flint", 9, 7, g => { tri(g, 4, 1, 3, 4, "#34465c"); R(g, 3, 2, 1, 1, "#7d93ad"); });
-}
-// ---- what people made ----------------------------------------------------------------------
-function hutSprite(size, season, hides) {
-  const half = 14 + size * 2, w = half * 2 + 8, h = half + 18;
-  return sprite(`hut|${size}|${season}|${hides}`, w, h, g => {
-    const cx = w >> 1, top = 5, base = h - 3;
-    line(g, cx - 2, top + 1, cx - 6, 1, "#5a3d22"); line(g, cx + 2, top + 1, cx + 6, 1, "#5a3d22");
-    for (let y = top; y <= base; y++) {
-      const hw = Math.round(half * (y - top) / (base - top));
-      for (let x = cx - hw; x <= cx + hw; x++) {
-        const band = Math.floor((x - cx + 40) / 4) % 2;
-        R(g, x, y, 1, 1, hides ? (band ? "#b68b5c" : "#9d744a") : (band ? "#a4834e" : "#8a6b3d"));
-      }
-    }
-    for (let y = top + 3; y <= base; y += 4) { const hw = Math.round(half * (y - top) / (base - top)); R(g, cx - hw, y, hw * 2 + 1, 1, "rgba(70,45,25,0.35)"); }
-    const dt = base - Math.round((base - top) * 0.45);
-    for (let y = dt; y <= base; y++) { const hw = Math.round(4 * (y - dt) / (base - dt)) + 1; R(g, cx - hw, y, hw * 2 + 1, 1, "#3a2414"); }
-    if (season === "winter") for (let y = top; y < top + 8; y++) { const hw = Math.round(half * (y - top) / (base - top)); R(g, cx - hw, y, hw * 2 + 1, 1, "#f5f8fa"); }
-  });
-}
-function heapSprite(pw, ps, ph) {
-  return sprite(`heap|${pw}|${ps}|${ph}`, 24, 16, g => {
-    for (let k = 0; k < Math.max(1, pw); k++) { R(g, 3, 11 - k * 3, 14, 3, "#8a5a32"); R(g, 3, 11 - k * 3, 14, 1, "#a8743f"); R(g, 16, 11 - k * 3, 3, 3, "#d9b07c"); R(g, 17, 12 - k * 3, 1, 1, "#9c6f42"); }
-    for (let k = 0; k < ps; k++) { oval(g, 5 + k * 5, 13, 2, 1, STONE[1]); R(g, 4 + k * 5, 12, 1, 1, STONE[0]); }
-    if (ph) { R(g, 8, 4, 11, 3, "#a37a50"); R(g, 9, 4, 9, 1, "#c19a6b"); }
-  });
-}
-function basketSprite() {
-  return sprite("basket", 12, 10, g => {
-    R(g, 2, 3, 8, 6, "#c09a5c"); for (let y = 3; y < 9; y++) for (let x = 2; x < 10; x++) if ((x + y) % 3 === 0) R(g, x, y, 1, 1, "#8f6c3a");
-    R(g, 1, 2, 10, 2, "#9a7642"); R(g, 3, 1, 6, 1, "#7d5e33");
-  });
-}
-function graveSprite() {
-  return sprite("grave", 18, 10, g => { oval(g, 9, 6, 7, 3, "#7b5b3e"); oval(g, 9, 5, 6, 2, "#8f6c4b"); oval(g, 6, 4, 2, 1, STONE[1]); oval(g, 12, 5, 2, 1, STONE[0]); R(g, 9, 0, 1, 4, "#6b4a2e"); R(g, 8, 1, 3, 1, "#6b4a2e"); });
-}
-function deerSprite(frameNo, male) {
-  return sprite(`deer|${frameNo}|${male}`, 22, 20, g => {
-    const o = 4, body = "#a2683a", belly = "#dcb88c", dark = "#6e4426";
-    if (frameNo === 3) {   // lying down
-      R(g, 4, o + 9, 11, 4, body); R(g, 6, o + 12, 8, 1, belly); R(g, 14, o + 7, 4, 3, body); R(g, 18, o + 8, 1, 1, dark); R(g, 3, o + 9, 2, 2, "#f2eadc");
-      return;
-    }
-    const legs = frameNo === 1 ? [[5, 1], [7, -1], [12, -1], [14, 1]] : [[5, 0], [7, 0], [12, 0], [14, 0]];
-    for (const [x, s] of legs) { R(g, x + s, o + 9, 1, 5, dark); }
-    R(g, 4, o + 5, 11, 5, body); R(g, 6, o + 9, 8, 1, belly); R(g, 3, o + 5, 2, 2, "#f2eadc");
-    if (frameNo === 2) { R(g, 14, o + 7, 2, 4, body); R(g, 15, o + 10, 4, 3, body); R(g, 18, o + 11, 1, 1, dark); }   // grazing
-    else {
-      R(g, 14, o + 2, 2, 5, body); R(g, 15, o, 4, 3, body); R(g, 19, o + 1, 1, 1, dark); R(g, 15, o - 1, 1, 1, body);
-      if (male) { line(g, 15, o - 1, 13, o - 4, "#d7c4a0"); line(g, 16, o - 1, 18, o - 4, "#d7c4a0"); R(g, 12, o - 4, 1, 1, "#d7c4a0"); R(g, 19, o - 4, 1, 1, "#d7c4a0"); }
-    }
-  });
-}
-function rabbitSprite(f) {
-  return sprite(`rabbit|${f}`, 16, 14, g => {
-    const hop = f ? 0 : 2, body = "#9c8672", ear = "#7d6a58";
-    R(g, 3, hop + 5, 10, 5, body); R(g, 11, hop + 6, 3, 3, body);        // body + haunch
-    R(g, 4, hop, 2, 6, ear); R(g, 7, hop - 1, 2, 7, ear);                // ears
-    R(g, 4, hop, 1, 3, "#cbbba6"); R(g, 7, hop - 1, 1, 3, "#cbbba6");    // inner ears
-    R(g, 5, hop + 5, 1, 1, "#241f1a");                                    // eye
-    R(g, 1, hop + 7, 2, 2, "#e9e0d2");                                    // tail
-    R(g, 3, hop + 9, 1, 2, "#6d5b48"); R(g, 11, hop + 9, 1, 2, "#6d5b48");
-  });
-}
-function bisonSprite(f) {
-  return sprite(`bison|${f}`, 32, 20, g => {
-    const o = f ? 0 : 1, body = "#5c4030", sh = "#3c2a20";
-    R(g, 3, o + 6, 24, 10, body);                                          // body
-    R(g, 3, o + 2, 17, 6, body); R(g, 4, o + 1, 13, 3, sh);                // hump
-    R(g, 24, o + 4, 6, 5, body);                                           // head
-    R(g, 22, o + 2, 2, 2, "#e7dcc6"); R(g, 26, o + 2, 2, 2, "#e7dcc6");    // horns
-    R(g, 25, o + 3, 1, 1, "#1f1a16");                                      // eye
-    R(g, 28, o + 8, 3, 1, "#8a6a48");                                      // beard
-    for (const lx of [5, 11, 19, 25]) R(g, lx, o + 15, 2, 3, "#33241c");   // legs
-  });
-}
-function wolfSprite(f) {
-  return sprite(`wolf|${f}`, 26, 16, g => {
-    const o = f ? 1 : 0, body = "#8a8a92", dark = "#57575f";
-    R(g, 4, o + 5, 16, 6, body);                                           // body
-    R(g, 16, o + 3, 7, 5, body);                                           // head
-    R(g, 15, o + 1, 2, 3, dark); R(g, 19, o + 1, 2, 3, dark);              // ears
-    R(g, 20, o + 4, 1, 1, "#191920"); R(g, 22, o + 3, 1, 1, "#191920");    // eye, nose
-    R(g, 1, o + 4, 4, 3, body); R(g, 0, o + 3, 2, 2, dark);                // tail
-    for (const lx of [5, 9, 14, 17]) R(g, lx, o + 10, 2, 4, dark);         // legs
-  });
-}
-function bearSprite(f) {
-  return sprite(`bear|${f}`, 28, 18, g => {
-    const o = f ? 0 : 1, body = "#6e4a30", dark = "#4a3120";
-    R(g, 3, o + 5, 20, 10, body);                                          // body
-    R(g, 19, o + 3, 7, 7, body);                                           // head
-    R(g, 20, o + 1, 2, 2, dark); R(g, 23, o + 1, 2, 2, dark);              // ears
-    R(g, 23, o + 5, 1, 1, "#1d1712"); R(g, 25, o + 6, 1, 1, "#1d1712");    // eye, nose
-    for (const lx of [6, 11, 16]) R(g, lx, o + 14, 4, 3, dark);            // legs
-  });
-}
-function fishSprite(f) {
-  return sprite(`fish|${f}`, 12, 7, g => {
-    const o = f ? 1 : 0;
-    tri(g, 5, o + 1, 4, 4, "#9fb6c9"); tri(g, 9, o + 3, 3, 2, "#8ba3ba");   // body + tail
-    R(g, 1, o + 2, 1, 1, "#1d2a35");                                        // eye
-    R(g, 3, o + 1, 1, 1, "#eef4f8");                                        // glint
-  });
-}
-
-// =============================================================================================
-// The land: painted once a week (and when the season changes)
-// =============================================================================================
-function paintGround() {
-  const PW = W * TP, PH = H * TP, season = frame.season, pal = GRASS[season].map(hexRgb), stone = STONE.map(hexRgb);
-  const c = document.createElement("canvas"); c.width = PW; c.height = PH;
-  const g = c.getContext("2d"), img = g.createImageData(PW, PH), d = img.data;
-  const fert = terrain.tiles.map(t => t[0]), rock = terrain.tiles.map(t => t[2]), water = terrain.tiles.map(t => t[5]), biome = terrain.tiles.map(t => t[6]);
-  const at2 = (arr, gx, gy) => {
-    const x0 = Math.floor(gx), y0 = Math.floor(gy), fx = gx - x0, fy = gy - y0;
-    const v = (x, y) => arr[(((y % H) + H) % H) * W + (((x % W) + W) % W)];
-    return v(x0, y0) * (1 - fx) * (1 - fy) + v(x0 + 1, y0) * fx * (1 - fy) + v(x0, y0 + 1) * (1 - fx) * fy + v(x0 + 1, y0 + 1) * fx * fy;
-  };
-  for (let py = 0; py < PH; py += 2) {
-    const gy = py / TP - 0.5;
-    for (let px = 0; px < PW; px += 2) {
-      const gx = px / TP - 0.5, f = at2(fert, gx, gy), r = at2(rock, gx, gy), wv = at2(water, gx, gy);
-      const b = biome[((py / TP) | 0) * W + ((px / TP) | 0)];
-      const n = noise2(px >> 1, py >> 1), t = BAYER[(py >> 1) & 3][(px >> 1) & 3] / 16;
-      let col;
-      if (wv > 0.5) {
-        const wave = noise2(px >> 2, py >> 2);
-        if (b === "deep") col = wave > 0.5 ? [26, 48, 76] : [32, 58, 90];
-        else if (b === "lake") col = wave > 0.5 ? [44, 90, 130] : [56, 108, 150];
-        else if (b === "river") col = wave > 0.5 ? [42, 96, 138] : [52, 112, 156];
-        else col = wave > 0.55 ? [36, 82, 130] : [54, 106, 154];
-      } else if (b === "desert" || b === "beach") {
-        col = SAND[clamp(Math.floor(n * 3 + t), 0, 2)];
-      } else if (b === "snow") {
-        col = (n + t > 0.5) ? SNOWY[0] : SNOWY[1];
-      } else if (b === "mountain") {
-        col = stone[clamp(Math.floor(n * 3), 0, 2)];
-      } else if (b === "tundra") {
-        col = pal[clamp(Math.floor((f * 0.8 + (n - 0.5) * 0.3) * 2 + t), 0, 4)];
-      } else {
-        col = pal[clamp(Math.floor((f * 1.05 + (n - 0.5) * 0.3) * 4 + t), 0, 4)];
-        if (r > 0.55 && season !== "winter" && (r - 0.55) * 4 + (n - 0.5) * 0.6 > t) col = stone[clamp(Math.floor(n * 3), 0, 2)];
-      }
-      for (const [ox, oy] of [[0, 0], [1, 0], [0, 1], [1, 1]]) {
-        const o = ((py + oy) * PW + px + ox) * 4;
-        d[o] = col[0]; d[o + 1] = col[1]; d[o + 2] = col[2]; d[o + 3] = 255;
-      }
-    }
-  }
-  g.putImageData(img, 0, 0);
-  props = [];
-  for (let i = 0; i < W * H; i++) {
-    const X = (i % W) * TP, Y = Math.floor(i / W) * TP, F = feats[i];
-    const [fertility, forest, rocky, flinty] = terrain.tiles[i];
-    const [plants, crop, warmth, heap, fire, stash, wood, stoneLv, game, fiber, pw, ps, ph] = frame.tiles[i];
-    if (terrain.tiles[i][5]) continue;   // sea and lakes: no trees, bushes, fields or camps
-    const spot = (p) => [Math.round(X + p[0] * TP), Math.round(Y + p[1] * TP)];
-    // worn earth where people live
-    if (fire || warmth >= 2 || heap) {
-      const [cx, cy] = spot(F.camp), rx = 17, ry = 9, dirt = DIRT.map(hexRgb);
-      for (let y = -ry; y <= ry; y++) for (let x = -rx; x <= rx; x++) {
-        const e = (x * x) / (rx * rx) + (y * y) / (ry * ry);
-        if (e <= 1 && e < 0.55 + noise2(cx + x, cy + y) * 0.6) R(g, cx + x, cy + y, 1, 1, rgb(dirt[(noise2(x + cx, y) * 3) | 0]));
-      }
-    }
-    // grass tufts, flowers, fallen leaves, snow sparkle
-    const tuftCol = season === "winter" ? "#aeb8bf" : season === "autumn" ? "#6d6a2c" : "#3d7a2e";
-    const nt = season === "winter" ? 3 : 5 + fiber * 3;
-    for (let k = 0; k < Math.min(nt, F.tufts.length); k++) {
-      const [x, y] = spot(F.tufts[k]);
-      R(g, x, y - 2, 1, 2, tuftCol); R(g, x - 2, y - 1, 1, 1, tuftCol); R(g, x + 2, y - 1, 1, 1, tuftCol); R(g, x - 1, y, 3, 1, tuftCol);
-    }
-    if ((season === "spring" || season === "summer") && fertility > 0.4) {
-      for (const [fx, fy, k] of F.flowers) {
-        const [x, y] = spot([fx, fy]);
-        const col = ["#fff4c2", "#f6d24a", "#f29ac0", "#9fc4ff"][k];
-        R(g, x - 1, y, 3, 1, col); R(g, x, y - 1, 1, 3, col); R(g, x, y, 1, 1, "#e8a03c");
-      }
-    }
-    if (season === "autumn") for (const [fx, fy, k] of F.flowers) { const [x, y] = spot([fx, fy]); R(g, x, y, 2, 1, ["#d9822b", "#c4512a", "#e3b23c", "#a8452a"][k]); }
-    // sown rows
-    if (crop > 0) {
-      const [fx, fy, fw, fh] = F.field, x0 = Math.round(X + fx * TP), y0 = Math.round(Y + fy * TP), w = Math.round(fw * TP), h = Math.round(fh * TP);
-      R(g, x0, y0, w, h, "#8a6340");
-      for (let y = y0 + 1; y < y0 + h - 1; y += 4) {
-        R(g, x0 + 1, y, w - 2, 2, "#6e4c2f");
-        for (let x = x0 + 2; x < x0 + w - 2; x += 4) {
-          if (season === "winter") { R(g, x, y - 1, 1, 1, "#9c8a6a"); continue; }
-          const green = season === "autumn" ? "#c9a43c" : "#4f9a38";
-          R(g, x, y - crop, 1, crop + 1, green); R(g, x - 1, y - crop + 1, 1, 1, green); R(g, x + 1, y - crop, 1, 1, green);
-          if (season === "autumn" || (season === "summer" && crop >= 2)) R(g, x, y - crop - 1, 2, 2, season === "autumn" ? "#e9c35a" : "#86c35a");
-        }
-      }
-    }
-    // things standing on the land, drawn in depth order with the people
-    const nt2 = forest > 0.45 ? Math.min(3, wood + (forest > 0.75 ? 1 : 0)) : 0;
-    for (let k = 0; k < nt2; k++) {
-      const [x, y] = spot(F.trees[k]), v = hash(i * 7 + k) % 8;
-      const pine = rocky > 0.5 || v % 3 === 0;
-      props.push({x, y, s: pine ? pineSprite(season, v) : treeSprite(season, v), sh: pine ? 7 : 10});
-    }
-    const nb = plants >= 7 ? 2 : plants >= 2 ? 1 : 0;
-    for (let k = 0; k < nb; k++) { const [x, y] = spot(F.bushes[k]); props.push({x, y, s: bushSprite(season, plants >= 3 && season !== "spring", (i + k) % 4), sh: 7}); }
-    if (rocky > 0.5 && !crop) for (let k = 0; k < Math.min(3, 1 + stoneLv); k++) { const [x, y] = spot(F.rocks[k]); props.push({x, y, s: rockSprite((i + k) % 3, k === 0 && stoneLv >= 2), sh: 0}); }
-    if (flinty) { const [x, y] = spot([0.88, 0.94]); props.push({x, y, s: flintSprite(), sh: 0}); }
-    if (warmth >= 2) { const [x, y] = spot(F.hut); props.push({x, y, s: hutSprite(Math.min(4, warmth >> 1), season, ph), sh: 14, hut: true}); }
-    else if (heap > 0) { const [x, y] = spot(F.hut); props.push({x, y, s: heapSprite(pw, ps, ph), sh: 8}); }
-    if (stash) { const [x, y] = spot(F.stash); props.push({x, y, s: basketSprite(), sh: 4}); }
-  }
-  return c;
-}
-
-// =============================================================================================
-// The week, played out: where each person should be right now, and what they are doing
-// =============================================================================================
-const P = {id: 0, name: 1, x: 2, y: 3, fx: 4, fy: 5, sex: 6, stage: 7, doing: 8, aim: 9, line: 10, carer: 11,
-           items: 12, mood: 13, sick: 14, starving: 15, grief: 16, pregnant: 17, health: 18, partner: 19, age: 20,
-           mind: 21, state: 22};
-function homeSpot(r, tx, ty) {
-  const i = tileOf(tx, ty), F = feats[i], tl = frame.tiles[i], h = hash(r[P.id]);
-  const family = r[P.partner] && r[P.partner] < r[P.id] ? r[P.partner] : r[P.carer] || r[P.id], fh = hash(family);
-  if (tl[4]) { const a = (h % 360) / 360 * TAU; return [tx + F.fire[0] + Math.cos(a) * 0.16, ty + F.fire[1] + Math.sin(a) * 0.07]; }
-  if (tl[2] >= 2) return [tx + F.hut[0] + ((h % 7) - 3) * 0.04, ty + F.hut[1] + 0.12 + ((h >> 3) % 3) * 0.03];
-  return [tx + F.camp[0] + ((fh % 9) - 4) * 0.04 + ((h % 3) - 1) * 0.03, ty + F.camp[1] + (((fh >> 4) % 5) - 2) * 0.03];
-}
-function animalSpot(sp, i, k, T) {
-  const x = i % W, y = Math.floor(i / W), h = hash(sp + i + k);
-  return [x + 0.5 + 0.3 * Math.sin(T / 47 + h % 17), y + 0.5 + 0.25 * Math.cos(T / 61 + (h >> 5) % 13)];
-}
-function workSpot(r, T) {
-  const tx = r[P.x], ty = r[P.y], i = tileOf(tx, ty), F = feats[i], h = hash(r[P.id]);
-  const doing = r[P.doing] || "", hop = Math.floor(T / 40 + (h % 5));
-  if (doing === "forage") { const b = F.bushes[hop % 3]; return [tx + b[0] + ((h % 3) - 1) * 0.05, ty + b[1] + 0.06]; }
-  if (doing.startsWith("gather")) {
-    const kind = doing.split(" ")[1];
-    const list = kind === "wood" ? F.trees : kind === "fiber" ? F.tufts : F.rocks;
-    const p = list[hop % (kind === "wood" ? 4 : 3)];
-    return [tx + p[0] + 0.07, ty + p[1] + 0.05];
-  }
-  if (doing === "hunt" || doing === "fish") { const d = animalSpot(doing === "fish" ? "fish" : "deer", i, 0, T), a = (h % 360) / 360 * TAU; return [d[0] + Math.cos(a) * 0.2, d[1] + Math.sin(a) * 0.12]; }
-  if (doing === "explore" || doing === "join" || doing === "flee") return [tx + 0.5 + 0.32 * Math.sin(T / 30 + h % 11), ty + 0.55 + 0.26 * Math.cos(T / 37 + h % 7)];
-  if (doing.startsWith("put")) {
-    const thing = doing.split(" ")[1];
-    if (hop % 2 === 0) return homeSpot(r, tx, ty);
-    if (thing === "seeds") return [tx + F.field[0] + 0.2, ty + F.field[1] + 0.14];
-    if (thing === "food") return [tx + F.stash[0] - 0.07, ty + F.stash[1] + 0.04];
-    if (thing === "wood" && frame.tiles[i][4]) return [tx + F.fire[0] - 0.1, ty + F.fire[1] + 0.02];
-    return [tx + F.hut[0] + 0.14, ty + F.hut[1] + 0.06];
-  }
-  if (doing === "take") return [tx + F.stash[0] - 0.08, ty + F.stash[1] + 0.04];
-  if (doing === "play" || doing === "make") { const s = homeSpot(r, tx, ty); return [s[0] + 0.06, s[1] + 0.02]; }
-  return homeSpot(r, tx, ty);
-}
-const PERSON_AIMED = ["talk", "give", "care", "court", "steal", "attack"];
-function poseFor(r, phase) {
-  const doing = r[P.doing] || "";
-  if (phase === "sleep") return "sleep";
-  if (phase === "evening" || phase === "wake") return r[P.sick] ? "lie" : "sit";
-  if (phase === "return" || phase === "go") return "stand";
-  if (r[P.sick] && doing === "rest") return "lie";
-  if (doing === "forage") return "pick";
-  if (doing.startsWith("gather")) return doing.endsWith("wood") ? "chop" : "pick";
-  if (doing.startsWith("put")) return "carry";
-  return {hunt: "hunt", fish: "look", talk: "talk", give: "give", care: "kneel", court: "court", steal: "crouch", attack: "glare",
-          play: "craft", make: "craft", rest: "sit", explore: "look", take: "pick", flee: "crouch"}[doing] || "stand";
-}
-function choreograph(t) {
-  const wp = weekProgress(t), now = dayOf(wp), phase = phaseOf(now.f), T = t / 1000;
-  const goals = new Map(), active = [];
-  for (const r of rows.values()) {
-    if (r.born && !past(r.born[0], r.born[1], now)) continue;
-    if (r.dies && past(r.dies[0], r.dies[1], now)) {
-      const b = bodies.get(r[P.id]);   // lies where they fell until evening; then there is only a grave
-      if (b && now.day === r.dies[0] && now.f < 0.8) goals.set(r[P.id], {x: b.x, y: b.y, pose: "dead", dead: true, r});
-      continue;
-    }
-    active.push(r);
-  }
-  for (const r of active) {
-    if (r[P.stage] === 0) continue;   // babies ride with their carer
-    let spot;
-    if (phase === "sleep" || phase === "wake" || phase === "evening") {
-      const first = now.day === 0 && phase !== "evening";
-      spot = first ? homeSpot(r, r[P.fx], r[P.fy]) : homeSpot(r, r[P.x], r[P.y]);
-    } else if (phase === "return") spot = homeSpot(r, r[P.x], r[P.y]);
-    else spot = workSpot(r, T);
-    goals.set(r[P.id], {x: spot[0], y: spot[1], pose: poseFor(r, phase), run: false, r});
-  }
-  for (const r of active) {   // those who set out to be with someone go to them by day
-    const g = goals.get(r[P.id]); if (!g) continue;
-    if ((phase === "work" || phase === "go") && PERSON_AIMED.includes(r[P.doing]) && goals.has(r[P.aim])) {
-      const o = goals.get(r[P.aim]), side = hash(r[P.id]) % 2 ? 1 : -1;
-      g.x = o.x + side * 0.14; g.y = o.y + 0.01; g.faceTo = r[P.aim];
-    }
-  }
-  for (const r of active) {   // children stay near whoever raises them, and run about when old enough
-    if (r[P.stage] !== 1) continue;
-    const g = goals.get(r[P.id]), c = goals.get(r[P.carer]);
-    if (!g || !c) continue;
-    const h = hash(r[P.id]);
-    if (phase === "sleep") { g.x = c.x + 0.06; g.y = c.y + 0.02; g.pose = "sleep"; continue; }
-    const play = r[P.age] >= 3 && (phase === "work" || phase === "go"), rad = play ? 0.18 : 0.08;
-    g.x = c.x + Math.cos(T / 4 + h % 13) * rad; g.y = c.y + 0.03 + Math.sin(T / 5 + h % 7) * rad * 0.6;
-    g.pose = play ? (Math.floor(T / 6 + h) % 3 === 0 ? "stand" : "play") : "stand";
-    g.run = play;
-  }
-  const bubbles = [], speaking = new Set();
-  const LINE = liveMode ? 7 : 1.2;   // seconds each line stays up
-  const converse = (list, together) => {
-    for (const [a, b, lines] of list) {
-      const ga = goals.get(a), gb = goals.get(b);
-      if (!ga || !gb || !lines.length || ga.dead || gb.dead) continue;
-      if (together) {   // the one who sought the other out stands beside them
-        const side = hash(a) % 2 ? 1 : -1;
-        ga.x = gb.x + side * 0.14; ga.y = gb.y + 0.01; ga.faceTo = b; gb.faceTo = a;
-      } else {          // otherwise they only talk if they happen to be close
-        const ba = bodies.get(a), bb = bodies.get(b);
-        if (!ba || !bb || Math.hypot(wrapD(ba.x - bb.x, W), wrapD(ba.y - bb.y, H)) > 0.6) continue;
-        ga.faceTo = b; gb.faceTo = a;
-      }
-      const slot = Math.floor((T + hash(a + b) % 23) / LINE) % (lines.length + 1);
-      if (slot >= lines.length) continue;   // a pause between lines
-      const [who, text, kind] = lines[slot], g = goals.get(who);
-      if (!g || speaking.has(who)) continue;
-      speaking.add(who);
-      if (g.pose === "sit" || g.pose === "stand" || g.pose === "pick" || g.pose === "chop") g.pose = g.pose === "sit" ? "sit" : "talk";
-      bubbles.push({who, text, kind, to: who === a ? b : a});
-    }
-  };
-  if (phase === "go" || phase === "work") converse(talks, true);
-  if (phase === "return") converse(talks, false);        // still talking on the way home
-  if (phase === "evening" || phase === "wake") converse(evening.length ? evening : coupleTalk(), false);
-  for (const s of says) {
-    const [kind, a, b, text, day, f] = s;
-    if (liveMode && !at(day, f, now, 0.05)) continue;
-    const ga = goals.get(a); if (!ga) continue;
-    if (b && goals.has(b) && liveMode) {
-      const gb = goals.get(b), side = hash(a) % 2 ? 1 : -1;
-      ga.x = gb.x + side * 0.14; ga.y = gb.y + 0.01; ga.faceTo = b;
-      if (ga.pose === "sleep" || ga.pose === "sit") ga.pose = "talk";
-      if (gb.pose === "pick" || gb.pose === "chop" || gb.pose === "sit") gb.pose = "stand";
-      gb.faceTo = a;
-    }
-    if (speaking.has(a)) continue;
-    speaking.add(a);
-    bubbles.push({who: a, text, kind, to: b});
-  }
-  if (!liveMode && bubbles.length > 10) bubbles.length = 10;
-  for (const bub of bubbles) {   // remember what has been said where it could be seen
-    const key = frame.t + "|" + bub.who + "|" + bub.text;
-    if (heardKeys.has(key)) continue;
-    heardKeys.add(key);
-    heard.push([frame.t, now.day, now.f, bub.kind, bub.who, nameOf(bub.who), bub.to ? nameOf(bub.to) : "", bub.text]);
-  }
-  for (const m of moments) {
-    const [kind, a, b, , , day, f] = m;
-    if (!liveMode) continue;
-    if ((kind === "fight" || kind === "kill") && at(day, f - 0.02, now, 0.05)) {
-      const ga = goals.get(a), gb = goals.get(b);
-      if (ga && gb) { ga.x = gb.x - 0.08; ga.y = gb.y; ga.pose = "fight"; ga.run = true; gb.pose = "fight"; ga.faceTo = b; gb.faceTo = a; }
-      if (gb && Math.random() < 0.3) puff(gb.x, gb.y);
-    }
-    if (kind === "gift" && at(day, f, now, 0.03)) giftFly(a, b);
-  }
-  for (const hn of hunts) {
-    const [x, y, party, success, day, f] = hn;
-    if (!liveMode) continue;
-    const i = tileOf(x, y), chase = at(day, f - 0.06, now, 0.06), done = past(day, f, now) && now.day === day && now.f < 0.8;
-    for (const id of party) {
-      const g = goals.get(id); if (!g) continue;
-      if (chase) { const d = animalSpot("deer", i, 0, T * 3); g.x = d[0] - 0.06 + (hash(id) % 3) * 0.05; g.y = d[1] + 0.04; g.run = true; g.pose = "hunt"; }
-      else if (done && success) g.carry = "meat";
-    }
-  }
-  return {goals, bubbles, now, phase};
-}
-
-// =============================================================================================
-// Bodies: they move with some weight to them, and step aside for each other
-// =============================================================================================
-function moveBodies(goals, dt) {
-  const walk = liveMode ? 0.045 : 2.5;
-  for (const [id, g] of goals) {
-    let b = bodies.get(id);
-    if (!b) { b = {x: g.x, y: g.y, vx: 0, vy: 0, step: 0, face: 1, speed: 0}; bodies.set(id, b); }
-    const dx = wrapD(g.x - b.x, W), dy = wrapD(g.y - b.y, H), d = Math.hypot(dx, dy);
-    if (d > 4) { b.x = g.x; b.y = g.y; b.vx = b.vy = 0; continue; }
-    const max = walk * (g.run ? 2.2 : 1), want = d > 0.004 ? Math.min(max, d * 1.8) : 0;
-    const k = Math.min(1, dt * 3);
-    b.vx += ((d > 0 ? dx / d * want : 0) - b.vx) * k; b.vy += ((d > 0 ? dy / d * want : 0) - b.vy) * k;
-  }
-  const list = [...goals.keys()].map(id => bodies.get(id));
-  for (let i = 0; i < list.length; i++) for (let j = i + 1; j < list.length; j++) {
-    const a = list[i], c = list[j], dx = wrapD(c.x - a.x, W), dy = wrapD(c.y - a.y, H), d2 = dx * dx + dy * dy;
-    if (d2 > 0 && d2 < 0.0121) { const d = Math.sqrt(d2), p = (0.11 - d) * 2.4 * dt; a.x -= dx / d * p; a.y -= dy / d * p; c.x += dx / d * p; c.y += dy / d * p; }
-  }
-  for (const [id, g] of goals) {
-    const b = bodies.get(id);
-    b.x = ((b.x + b.vx * dt) % W + W) % W; b.y = ((b.y + b.vy * dt) % H + H) % H;
-    b.speed = Math.hypot(b.vx, b.vy); b.step += b.speed * dt * (liveMode ? 90 : 3);
-    if (g.faceTo && bodies.has(g.faceTo)) b.face = wrapD(bodies.get(g.faceTo).x - b.x, W) >= 0 ? 1 : -1;
-    else if (Math.abs(b.vx) > 0.003) b.face = b.vx > 0 ? 1 : -1;
-  }
-  for (const id of [...bodies.keys()]) if (!goals.has(id)) bodies.delete(id);
-}
-
-// =============================================================================================
-// A person, in pixels. Parts are boxes; every box gets a dark outline first, then its colour.
-// =============================================================================================
-function drawPersonPx(c, x, y, r, b, g, T) {
-  const h = hash(r[P.id]), stage = r[P.stage], face = b.face || 1;
-  const skin = g.dead ? "#b9b3a8" : r[P.sick] ? "#c7d39b" : SKIN[h % SKIN.length];
-  const hair = stage === 4 ? "#dcd8cf" : HAIR[(h >> 3) % HAIR.length];
-  const shirt = LINE[r[P.line] % LINE.length], pants = PANTS[(h >> 5) % 3], items = r[P.items] || "";
-  const moving = b.speed > 0.004;
-  let pose = g.dead ? "dead" : moving ? (g.run ? "run" : "walk") : g.pose;
-  const parts = [], details = [];
-  const box = (px, py, w, hh, col) => parts.push([px, py, w, hh, col]);
-  const dot = (px, py, w, hh, col) => details.push([px, py, w, hh, col]);
-  const tick = Math.floor(T * 3 + (h % 7));
-  if (pose === "sleep" || pose === "lie" || pose === "dead") {
-    const len = stage === 1 ? 9 : 13;
-    box(-len / 2 - 5, -5, 6, 5, skin); box(-len / 2 - 6, -5, 2, 5, hair);
-    box(-len / 2 + 1, -5, len, 4, pose === "sleep" ? "#8a6a4a" : shirt);
-    if (pose === "sleep") dot(-len / 2 + 2, -5, len - 2, 1, "#a4825e");
-    if (pose === "sleep" && Math.random() < 0.004) zzz(b.x, b.y - 0.2);
-    paint(c, x, y, face, parts, details);
-    return;
-  }
-  const child = stage === 1, sc = child ? 0.7 : stage === 2 ? 0.9 : 1;
-  const L = Math.round(6 * sc), TB = Math.round(7 * sc), HD = child ? 6 : 7;
-  let lift = 0, armL = 0, armR = 0, bodyY = 0, headX = stage === 4 ? 1 : 0;
-  if (pose === "walk" || pose === "run") { const k = Math.floor(b.step) % 4; lift = k === 0 ? 1 : k === 2 ? -1 : 0; armL = lift; armR = -lift; bodyY = k % 2 ? -1 : 0; }
-  if (pose === "play") bodyY = -Math.round(Math.abs(Math.sin(T * 6 + h)) * 3);
-  const sitting = pose === "sit" || pose === "craft" || pose === "kneel";
-  if (pose === "pick" || pose === "crouch") bodyY = 2;
-  if (sitting) bodyY = pose === "kneel" ? 3 : 4;
-  const hipY = -L + bodyY, topY = hipY - TB, headY = topY - HD;
-  // a baby on the back sits behind everything else
-  if (g.baby) { box(-6, topY + 1, 4, 5, "#e7d6b6"); box(-6, topY - 2, 4, 3, SKIN[(h >> 6) % SKIN.length]); }
-  // legs
-  if (sitting) { box(-4, -3, 8, 3, pants); }
-  else {
-    box(-3, -L + (lift > 0 ? 1 : 0), 2, L - (lift > 0 ? 1 : 0), pants);
-    box(1, -L + (lift < 0 ? 1 : 0), 2, L - (lift < 0 ? 1 : 0), pants);
-  }
-  // body
-  box(-4, topY, 8, TB, shirt);
-  if (r[P.pregnant]) box(3, topY + 3, 2, 3, shirt);
-  if (items.includes("wrap")) box(-5, topY - 1, 10, 3, "#8b6542");
-  if (items.includes("carrier") && !sitting) box(-8, hipY - 3, 4, 4, "#c09a5c");
-  // arms, by what they are doing
-  const A = (px, py, w, hh) => { box(px, py, w, hh, shirt); };
-  const hand = (px, py) => dot(px, py, 2, 1, skin);
-  let hx = 4, hy = topY + TB - 1;
-  switch (pose) {
-    case "pick": A(-6, topY + 1, 2, 5); A(4, topY + 1, 2, 7); hand(4, topY + 8); hx = 4; hy = topY + 8; break;
-    case "chop": A(-6, topY + 1, 2, 5); if (tick % 2) { A(4, topY - 5, 2, 6); hand(4, topY - 6); hx = 4; hy = topY - 6; } else { A(4, topY + 1, 5, 2); hand(9, topY + 1); hx = 9; hy = topY + 1; } break;
-    case "craft": A(-6, topY + 1, 2, 4); A(4, topY + (tick % 2 ? 0 : 2), 4, 2); hand(8, topY + (tick % 2 ? 0 : 2)); if (Math.random() < 0.05) spark(b.x + face * 0.08, b.y - 0.12); break;
-    case "talk": A(-6, topY + 1, 2, 5); A(4, topY + (tick % 2 ? -1 : 1), 2, 4); hand(4, topY + (tick % 2 ? -2 : 5)); break;
-    case "give": A(-6, topY + 1, 2, 5); A(4, topY + 2, 6, 2); hand(10, topY + 2); dot(10, topY, 3, 2, "#c4562f"); break;
-    case "kneel": A(-6, topY + 1, 2, 4); A(4, topY + 2, 5, 2); hand(9, topY + 2); break;
-    case "court": A(-6, topY + 1, 2, 5); A(4, topY + 2, 5, 2); hand(9, topY + 2); if (Math.random() < 0.012) heart(b.x + face * 0.1, b.y - 0.35); break;
-    case "hunt": A(-6, topY + 1, 2, 5); A(4, topY - 4, 2, 5); hand(4, topY - 5); hx = 4; hy = topY - 5; break;
-    case "fight": A(-6, topY + 1, 2, 5); A(4, topY + 2, tick % 2 ? 7 : 4, 2); hand(tick % 2 ? 11 : 8, topY + 2); break;
-    case "carry": A(-1, topY + 2, 6, 2); A(4, topY + 3, 4, 2); hand(8, topY + 3);
-      dot(6, topY - 1, 5, 3, (r[P.doing] || "").endsWith("wood") ? "#8a5a32" : (r[P.doing] || "").endsWith("food") ? "#c4562f" : STONE[1]); break;
-    case "look": A(-6, topY + 1, 2, 5); A(3, headY + 2, 4, 2); hand(6, headY + 2); break;
-    case "play": A(-6, topY - 3 + (tick % 2) * 2, 2, 4); A(4, topY - 1 - (tick % 2) * 2, 2, 4); break;
-    default: A(-6, topY + 1 + armL, 2, 5); A(4, topY + 1 + armR, 2, 5); hand(-6, topY + 6 + armL); hand(4, topY + 6 + armR); hx = 4; hy = topY + 6 + armR;
-  }
-  // head and hair
-  box(-3 + headX, headY, HD, HD - 1, skin);
-  box(-3 + headX, headY - 1, HD, 2, hair);
-  if (r[P.sex] === "F" && stage >= 2) { box(-4 + headX, headY, 1, 6, hair); box(HD - 3 + headX, headY, 1, 4, hair); }
-  else box(-3 + headX, headY + 1, 1, 2, hair);
-  // face: eyes look the way they face
-  dot(face > 0 ? 1 + headX : -1 + headX, headY + 3, 1, 2, OUT); dot(face > 0 ? 3 + headX : 1 + headX, headY + 3, 1, 2, OUT);
-  if (r[P.grief] && Math.sin(T * 2 + h) > 0.5) dot(face > 0 ? 3 + headX : 1 + headX, headY + 5, 1, 1, "#7cc4ff");
-  if (r[P.mood] > 0.65 && !child) dot(1 + headX, headY + 5, 2, 1, "#c2675a");
-  if (stage === 4) dot(-3 + headX, headY + 4, 1, 1, "#d8cbb8");
-  // what is in hand
-  const tools = [];
-  if (items.includes("spear") && !sitting && pose !== "carry") {
-    const up = pose === "hunt" || pose === "fight";
-    tools.push(c2 => { line(c2, hx + 1, hy + 4, hx + (up ? 6 : 2), hy - (up ? 13 : 16), "#6b4a2a"); R(c2, hx + (up ? 6 : 2), hy - (up ? 15 : 18), 2, 3, "#3b4a5e"); });
-  } else if (pose === "chop" || (items.includes("club") && !sitting)) {
-    tools.push(c2 => { line(c2, hx + 1, hy + 1, hx + 3, hy - 4, "#5a3d22"); R(c2, hx + 2, hy - 6, 3, 3, STONE[1]); });
-  }
-  if (g.carry === "meat") dot(hx + 1, hy - 1, 4, 3, "#a8382c");
-  paint(c, x, y, face, parts, details, tools);
-}
-function paint(c, x, y, face, parts, details, tools = []) {
-  const flip = (px, w) => face > 0 ? px : -px - w;
-  c.fillStyle = OUT;
-  for (const [px, py, w, hh] of parts) c.fillRect(x + flip(px, w) - 1, y + py - 1, w + 2, hh + 2);
-  for (const [px, py, w, hh, col] of parts) { c.fillStyle = col; c.fillRect(x + flip(px, w), y + py, w, hh); }
-  for (const [px, py, w, hh, col] of details) { c.fillStyle = col; c.fillRect(x + flip(px, w), y + py, w, hh); }
-  if (tools.length) {
-    c.save(); c.translate(x, y); if (face < 0) c.scale(-1, 1);
-    for (const t of tools) t(c);
-    c.restore();
-  }
-}
-
-// =============================================================================================
-// Fire, particles and weather
-// =============================================================================================
-function drawFire(c, x, y, T, i) {
-  for (let k = 0; k < 7; k++) { const a = k / 7 * TAU; R(c, x + Math.cos(a) * 7 - 1, y + Math.sin(a) * 3 - 1, 3, 2, k % 2 ? STONE[1] : STONE[2]); }
-  R(c, x - 5, y - 1, 10, 2, "#6e4426"); R(c, x - 3, y - 3, 6, 2, "#8a5a32");
-  const fl = Math.floor(T * 9 + i) % 3;
-  const layers = [[6, 12 + fl, "#d9481c"], [4, 9 + (fl === 1 ? 2 : 0), "#f39a2b"], [2, 5 + (fl === 2 ? 2 : 0), "#ffe17a"]];
-  for (const [half, ht, col] of layers) {
-    for (let k = 0; k < ht; k++) {
-      const w = Math.max(0, Math.round(half * (1 - k / ht) ** 0.7)), sway = Math.round(Math.sin(T * 6 + k * 0.6 + i) * (k / ht) * 2);
-      R(c, x - w + sway, y - 3 - k, 2 * w + 1, 1, col);
-    }
-  }
-  if (Math.random() < 0.1) particles.push({kind: "smoke", wx: x / TP, wy: (y - 14) / TP, vx: 0.01, vy: -0.05, life: 3});
-  if (Math.random() < 0.12) particles.push({kind: "spark", wx: x / TP, wy: (y - 10) / TP, vx: (Math.random() - 0.5) * 0.06, vy: -0.14, life: 0.6});
-}
-const GLYPH = {"|": ["010", "010", "010", "010"], "-": ["000", "111", "000", "000"], "/": ["001", "001", "010", "100"],
-  "\\": ["100", "010", "010", "001"], "o": ["010", "101", "101", "010"], "^": ["000", "010", "101", "000"],
-  "v": ["000", "101", "010", "000"], ".": ["000", "000", "010", "000"]};
-function drawMark(c, x, y, shape, depth, surf) {
-  // Scratches: pale on rock, dark on wood, a faint groove in the ground. Deeper marks show more.
-  const a = Math.min(1, 0.35 + depth), col = surf === "rock" ? `rgba(235,228,214,${a})` : surf === "wood" ? `rgba(70,42,22,${a})` : `rgba(96,70,44,${a * 0.8})`;
-  if (surf === "rock") { R(c, x - 2, y - 1, 15, 7, STONE[2]); R(c, x - 1, y - 2, 13, 1, STONE[1]); }
-  else if (surf === "wood") { R(c, x - 2, y - 1, 15, 7, "#9c6e42"); R(c, x - 2, y + 5, 15, 1, "#7a5232"); }
-  for (let k = 0; k < shape.length; k++) pattern(c, x + k * 4, y, GLYPH[shape[k]] || GLYPH["."], col);
-}
-function puff(wx, wy) { particles.push({kind: "puff", wx, wy, vx: (Math.random() - 0.5) * 0.02, vy: -0.01, life: 1}); }
-function spark(wx, wy) { for (let k = 0; k < 3; k++) particles.push({kind: "spark", wx, wy, vx: (Math.random() - 0.5) * 0.15, vy: -Math.random() * 0.15, life: 0.5}); }
-function heart(wx, wy) { particles.push({kind: "heart", wx, wy, vx: 0, vy: -0.04, life: 1.8}); }
-function zzz(wx, wy) { particles.push({kind: "z", wx, wy, vx: 0.012, vy: -0.03, life: 2.2}); }
-function giftFly(a, b) { if (!gifts.some(g => g.a === a && g.b === b)) gifts.push({a, b, t: 0}); }
-function stepParticles(dt) {
-  for (const p of particles) { p.wx += p.vx * dt; p.wy += p.vy * dt; p.life -= dt; if (p.kind === "smoke") p.vx += Math.sin(p.life * 3) * 0.002; }
-  particles = particles.filter(p => p.life > 0);
-  if (particles.length > 700) particles.splice(0, particles.length - 700);
-  for (const g of gifts) g.t += dt;
-  gifts = gifts.filter(g => g.t < 2.5);
-}
-const HEART = ["0101", "1111", "0110"], ZED = ["111", "010", "111"];
-function pattern(c, x, y, rowsP, col) { rowsP.forEach((row, j) => { for (let k = 0; k < row.length; k++) if (row[k] === "1") R(c, x + k, y + j, 1, 1, col); }); }
-function skyNow() {
-  // The weather as it really is in their world this week: rain (snow in winter), a storm, a flood.
-  const k = (frame && frame.sky) || {};
-  return {rain: !!k.rain && frame.season !== "winter", snow: !!k.rain && frame.season === "winter", storm: k.storm || null, flood: !!k.flood};
-}
-function seasonWeather(dt) {
-  const k = skyNow(), leaves = frame.season === "autumn" && !k.rain;
-  const want = k.snow ? 170 : k.rain ? (k.storm ? 240 : 120) : leaves ? 45 : 0;
-  while (weather.length < want) weather.push({x: Math.random(), y: Math.random(), v: 0.4 + Math.random() * 0.8, r: Math.random() * 6});
-  if (weather.length > want) weather.length = want;
-  for (const w of weather) {
-    w.y += dt * (k.snow ? 0.05 : k.rain ? (k.storm ? 0.9 : 0.6) : 0.07) * w.v; w.x += Math.sin(w.y * 10 + w.r) * dt * (k.storm ? 0.12 : 0.02);
-    if (w.y > 1) { w.y = 0; w.x = Math.random(); }
-  }
-}
-let floodTiles = null;
-function floodLand() {
-  if (floodTiles) return floodTiles;
-  floodTiles = [];
-  for (let i = 0; i < W * H; i++) {
-    if (terrain.tiles[i][6] !== "river") continue;
-    const x = i % W, y = Math.floor(i / W);
-    for (const [dx, dy] of [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]]) {
-      const nx = (x + dx + W) % W, ny = (y + dy + H) % H;
-      if (!terrain.tiles[ny * W + nx][5]) floodTiles.push([nx, ny]);
-    }
-  }
-  return floodTiles;
-}
-
-// =============================================================================================
-// Camera: zoom in steps, so pixels stay crisp
-// =============================================================================================
-function resize() {
-  const st = document.getElementById("stage"), dpr = window.devicePixelRatio || 1;
-  cam.vw = st.clientWidth; cam.vh = st.clientHeight;
-  canvas.width = Math.round(cam.vw * dpr); canvas.height = Math.round(cam.vh * dpr);
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const fit = Math.min(cam.vw / W, cam.vh / H), wasFit = Math.abs(cam.z - cam.fit) < 0.01;
-  cam.fit = fit;
-  if (wasFit || cam.z < fit) cam.z = fit;
-  clampCam();
-}
-window.addEventListener("resize", resize);
-function clampCam() {
-  const vw = cam.vw / cam.z, vh = cam.vh / cam.z;
-  cam.x = vw >= W ? (W - vw) / 2 : clamp(cam.x, 0, W - vw);
-  cam.y = vh >= H ? (H - vh) / 2 : clamp(cam.y, 0, H - vh);
-}
-function toScreen(wx, wy) { return [(wx - cam.x) * cam.z, (wy - cam.y) * cam.z]; }
-function toWorld(sx, sy) { return [sx / cam.z + cam.x, sy / cam.z + cam.y]; }
-const STEPS = [0.75, 1, 1.5, 2, 2.5, 3, 4, 5];   // screen pixels per art pixel
-function zoomLevels() { const fitS = cam.fit / TP; return [fitS, ...STEPS.filter(s => s > fitS * 1.15)]; }
-function zoomTo(sx, sy, s) {
-  const [wx, wy] = toWorld(sx, sy);
-  cam.z = s * TP; cam.x = wx - sx / cam.z; cam.y = wy - sy / cam.z; clampCam();
-}
-function zoomStep(sx, sy, dir) {
-  const lv = zoomLevels(), s = cam.z / TP;
-  let i = 0; for (let k = 0; k < lv.length; k++) if (Math.abs(lv[k] - s) < Math.abs(lv[i] - s)) i = k;
-  zoomTo(sx, sy, lv[clamp(i + dir, 0, lv.length - 1)]);
-}
-let wheelAcc = 0;
-canvas.addEventListener("wheel", ev => {
-  ev.preventDefault(); wheelAcc += ev.deltaY; hideHelp();
-  if (Math.abs(wheelAcc) < 60) return;
-  const r = canvas.getBoundingClientRect(); zoomStep(ev.clientX - r.left, ev.clientY - r.top, wheelAcc < 0 ? 1 : -1); wheelAcc = 0;
-}, {passive: false});
+requestAnimationFrame(drawMap);
+const tip = $("tip");
+function pickAt(e){ const r = map.getBoundingClientRect(), x = (e.clientX - r.left) * DPR, y = (e.clientY - r.top) * DPR; let best = null, bd = 1e9;
+  for (const [sx, sy, row] of picks){ const d = Math.hypot(sx - x, sy - y); if (d < bd){ bd = d; best = row; } } return bd < 16 * DPR ? best : null; }
 let drag = null;
-canvas.addEventListener("pointerdown", ev => { drag = {x: ev.clientX, y: ev.clientY, cx: cam.x, cy: cam.y, moved: false}; canvas.setPointerCapture(ev.pointerId); });
-canvas.addEventListener("pointermove", ev => {
-  const r = canvas.getBoundingClientRect();
-  hover = {sx: ev.clientX - r.left, sy: ev.clientY - r.top, cx: ev.clientX, cy: ev.clientY};
-  if (!drag) return;
-  const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
-  if (Math.abs(dx) + Math.abs(dy) > 4) { drag.moved = true; canvas.classList.add("dragging"); cam.follow = null; hideHelp(); }
-  if (drag.moved) { cam.x = drag.cx - dx / cam.z; cam.y = drag.cy - dy / cam.z; clampCam(); }
+map.addEventListener("pointerdown", e => { drag = {x: e.clientX, y: e.clientY, moved: false}; map.setPointerCapture(e.pointerId); });
+map.addEventListener("pointermove", e => {
+  if (drag){ const dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
+    if (drag.moved){ view.panX += dx * DPR; view.panY += dy * DPR; drag.x = e.clientX; drag.y = e.clientY; } return; }
+  const r = pickAt(e), box = map.getBoundingClientRect();
+  if (r){ tip.style.display = "block"; tip.style.left = Math.min(e.clientX - box.left + 14, box.width - 310) + "px"; tip.style.top = (e.clientY - box.top + 14) + "px";
+    tip.innerHTML = `<b>${esc(r[P.name])}</b> · ${r[P.sex] === "F" ? "woman" : "man"}, ${Math.floor(r[P.age])}<br>this week: ${esc(WORDS[act(r[P.doing])] || r[P.doing] || "rest")}${r[P.thought] ? `<br><span style="color:#7f97b3">thinking: ${esc(r[P.thought])}</span>` : ""}<br><span style="color:#38d6ff">click to see inside their mind</span>`; }
+  else tip.style.display = "none";
 });
-canvas.addEventListener("pointerup", ev => {
-  canvas.classList.remove("dragging");
-  if (drag && !drag.moved) { const r = canvas.getBoundingClientRect(), id = find(ev.clientX - r.left, ev.clientY - r.top); if (id) follow(id); }
-  drag = null;
-});
-canvas.addEventListener("pointerleave", () => { hover = null; tip.style.display = "none"; });
-canvas.addEventListener("dblclick", ev => { const r = canvas.getBoundingClientRect(); zoomStep(ev.clientX - r.left, ev.clientY - r.top, 2); });
-document.getElementById("zin").onclick = () => zoomStep(cam.vw / 2, cam.vh / 2, 1);
-document.getElementById("zout").onclick = () => zoomStep(cam.vw / 2, cam.vh / 2, -1);
-document.getElementById("zall").onclick = () => { cam.z = cam.fit; cam.follow = null; clampCam(); };
-let helpHidden = false;
-function hideHelp() { if (!helpHidden) { helpHidden = true; document.getElementById("help").style.opacity = 0; } }
-setTimeout(hideHelp, 20000);
+map.addEventListener("pointerup", e => { if (drag && !drag.moved){ const r = pickAt(e); if (r && r[P.stage] >= 2) openPerson(r[P.id]); } drag = null; });
+map.addEventListener("pointerleave", () => tip.style.display = "none");
+map.addEventListener("wheel", e => { e.preventDefault(); view.zoom = Math.max(.6, Math.min(4, view.zoom * (e.deltaY < 0 ? 1.12 : 1 / 1.12))); }, {passive: false});
+$("zin").onclick = () => view.zoom = Math.min(4, view.zoom * 1.3);
+$("zout").onclick = () => view.zoom = Math.max(.6, view.zoom / 1.3);
+$("zall").onclick = () => { view.zoom = 1; view.panX = 0; view.panY = 0; };
 
-// =============================================================================================
-// Each frame: compose the pixel scene, scale it up, then draw words on top
-// =============================================================================================
-function draw(t) {
-  const dt = Math.min(0.1, (t - lastT) / 1000); lastT = t;
-  if (terrain && frame) {
-    const T = t / 1000, plan = choreograph(t);
-    lastPlan = plan;
-    moveBodies(plan.goals, dt);
-    for (const r of rows.values()) {   // babies ride on their carer's back
-      if (r[P.stage] !== 0 || !plan.goals.has(r[P.carer])) continue;
-      if (r.born && !past(r.born[0], r.born[1], plan.now)) continue;
-      plan.goals.get(r[P.carer]).baby = true;
-    }
-    if (cam.follow && bodies.has(cam.follow)) {
-      const b = bodies.get(cam.follow);
-      cam.x += (b.x - cam.vw / cam.z / 2 - cam.x) * Math.min(1, dt * 2); cam.y += (b.y - cam.vh / cam.z / 2 - cam.y) * Math.min(1, dt * 2); clampCam();
-    }
-    stepParticles(dt); seasonWeather(dt);
-    render(plan, T, darkness(plan.now.f));
-    drawMini();
-    updateClock(plan);
-    if (hover) showTip(hover);
-  }
-  requestAnimationFrame(draw);
+// ---------- world panels -----------------------------------------------------------------------------
+const plural = (n, a, b) => `${n} ${n === 1 ? a : b}`;
+function worldPanels(){
+  const rows = frame.people, adults = rows.filter(r => r[P.stage] >= 3), kids = rows.filter(r => r[P.stage] < 2).length;
+  const couples = rows.filter(r => r[P.partner] && r[P.id] < r[P.partner]).length, starving = rows.filter(r => r[P.starving]).length;
+  const singles = rows.filter(r => r[P.stage] === 3 && !r[P.partner] && r[P.age] < 45).length, groups = groupsOf(rows).length;
+  const sky = frame.sky || {}, wx = sky.flood ? "floods" : sky.storm ? "a storm" : sky.rain ? (frame.season === "winter" ? "snow" : "rain") : "dry weather";
+  const yr = frame.weather >= 1.1 ? "a good growing year" : frame.weather <= 0.9 ? "a poor growing year" : "an ordinary growing year";
+  $("date").innerHTML = `<span class="led"${frame.pop ? "" : ' style="background:#ff4fa3;box-shadow:0 0 8px #ff4fa3"'}></span>Year ${frame.year}, week ${frame.week + 1} · ${frame.season} · ${wx} · ${yr}${!live && frame.wps === 0 ? " · paused" : ""}`;
+  $("summary").innerHTML = frame.pop
+    ? `${plural(frame.pop, "person lives", "people live")} in ${plural(groups, "group", "groups")}: ${plural(adults.length, "adult", "adults")} and ${plural(kids, "child", "children")}, ${plural(couples, "couple", "couples")}. ${starving ? `<span style="color:#ff4fa3">${starving} starving.</span>` : "No one is starving."} ${frame.born_year ?? 0} born and ${frame.died_year ?? 0} died this year.`
+      + `<span class="hint">${singles ? `${plural(singles, "adult under 45 has", "adults under 45 have")} no partner. ` : ""}This is generation ${frame.gen + 1}; the founders were generation 1.</span>`
+    : `No one is left.<span class="hint">The land is still here; there is no one to live on it.</span>`;
+  const grown = rows.filter(r => r[P.stage] >= 2), cnt = {}; for (const k in KINDS) cnt[k] = 0; grown.forEach(r => cnt[kindOf(r[P.doing])]++);
+  const n = Math.max(1, grown.length);
+  $("doing").innerHTML = Object.entries(KINDS).map(([k, v]) => `<div class="row"><span><span class="dot" style="background:${v.col}"></span>${v.label}</span><div class="meter"><i style="width:${cnt[k] / n * 100}%;background:${v.col};box-shadow:0 0 8px ${v.col}"></i></div><span class="v">${cnt[k]}</span></div>`).join("");
+  const N = Math.max(1, rows.length);
+  $("health").innerHTML = [
+    [Math.round(rows.filter(r => !r[P.starving]).length / N * 100) + "%", "are fed (not starving)"],
+    [Math.round(rows.reduce((s, r) => s + r[P.health], 0) / N), "average health, out of 100"],
+    [(rows.reduce((s, r) => s + r[P.mood], 0) / N).toFixed(2), "average mood, from −1 to 1"],
+    [adults.length ? Math.round(adults.filter(r => r[P.partner]).length / adults.length * 100) + "%" : "–", "of adults have a partner"],
+  ].map(([v, l]) => `<div><b>${v}</b>${l}</div>`).join("");
+  $("feed").innerHTML = news.slice(-50).reverse().map(([y, text, kind]) => `<p class="${kind === "first" ? "first" : ""}"><span class="y">year ${y}</span>${esc(text)}</p>`).join("") || '<p class="p">Nothing yet.</p>';
 }
-function fireHidden(i, now) {
-  for (const m of moments) if (m[0] === "fire" && tileOf(m[3], m[4]) === i && liveMode && !past(m[5], m[6], now)) return true;
-  return false;
-}
-function render(plan, T, dark) {
-  const PW = W * TP, PH = H * TP;
-  if (scene.width !== PW) { scene.width = PW; scene.height = PH; }
-  const key = `${frame.t}|${frame.season}`;
-  if (key !== groundKey) { ground = paintGround(); groundKey = key; }
-  const c = sctx;
-  c.imageSmoothingEnabled = false;
-  c.drawImage(ground, 0, 0);
-  // what part of the world is on screen, in art pixels
-  const vx0 = cam.x * TP - 40, vy0 = cam.y * TP - 60, vx1 = vx0 + cam.vw / cam.z * TP + 80, vy1 = vy0 + cam.vh / cam.z * TP + 120;
-  const inView = (x, y) => x > vx0 && x < vx1 && y > vy0 && y < vy1;
-  const draws = [];
-  // water shimmers, drawn onto the ground before anything standing
-  for (let i = 0; i < W * H; i++) {
-    if (!terrain.tiles[i][5]) continue;
-    const wx0 = Math.round(((i % W) + 0.5) * TP), wy0 = Math.round((Math.floor(i / W) + 0.5) * TP);
-    if (!inView(wx0, wy0)) continue;
-    for (let k = 0; k < 3; k++) {
-      const h = hash("wv" + i + k);
-      const x = Math.round(((i % W) + 0.18 + (h % 64) / 100) * TP), y = Math.round((Math.floor(i / W) + 0.2 + ((h >> 6) % 60) / 100) * TP);
-      if ((Math.floor(T * 4 + k * 2 + (h >> 12) % 5) % 4) < 2) R(c, x, y, 2, 1, "rgba(255,255,255,0.16)");
-    }
-  }
-  for (const p of props) if (inView(p.x, p.y)) draws.push({y: p.y, f: () => { if (p.sh) shadow(c, p.x, p.y, p.sh, Math.max(2, p.sh >> 2)); c.drawImage(p.s, p.x - (p.s.width >> 1), p.y - p.s.height + 2); }});
-  const fireTiles = [];
-  for (let i = 0; i < W * H; i++) if (frame.tiles[i][4] && !fireHidden(i, plan.now)) fireTiles.push(i);
-  for (const i of fireTiles) {
-    const F = feats[i], x = Math.round(((i % W) + F.fire[0]) * TP), y = Math.round((Math.floor(i / W) + F.fire[1]) * TP);
-    if (inView(x, y)) draws.push({y, f: () => drawFire(c, x, y, T, i)});
-  }
-  // animals, each kind drawn as itself
-  const huntedNow = new Map();
-  for (const [x, y, , success, day, f] of hunts) huntedNow.set(tileOf(x, y), {success, day, f});
-  const SPR = {rabbit: rabbitSprite, deer: deerSprite, bison: bisonSprite, wolf: wolfSprite, bear: bearSprite, fish: fishSprite};
-  for (let a = 0; a < animals.length; a++) {
-    const [sp, gx, gy, n] = animals[a];
-    const i = tileOf(gx, gy);
-    const hunt = huntedNow.get(i);
-    const chase = liveMode && hunt && at(hunt.day, hunt.f - 0.06, plan.now, 0.06);
-    const down = liveMode && hunt && hunt.success && plan.now.day === hunt.day && plan.now.f >= hunt.f && plan.now.f < 0.75;
-    if (liveMode && hunt && hunt.success && past(hunt.day, 0.75, plan.now)) continue;
-    const count = sp === "fish" ? Math.min(3, n) : Math.min(2, 1 + (n >= 6 ? 1 : 0));
-    for (let j = 0; j < count; j++) {
-      const [wx, wy] = animalSpot(sp, i, j + a, chase ? T * 3 : T), x = Math.round(wx * TP), y = Math.round(wy * TP);
-      if (!inView(x, y)) continue;
-      const fr = down ? 3 : chase ? 1 - (Math.floor(T * 8) % 2) : (Math.floor(T * 2 + a * 3 + j) % 4 === 0 ? 1 : 0);
-      const flip = Math.sin(T / 3 + j + a) < 0 && !chase;
-      const male = hash("a" + i + j + a) % 2 === 0;
-      const s = SPR[sp](sp === "deer" ? fr : fr % 2, male);
-      draws.push({y, f: () => {
-        if (sp !== "fish") shadow(c, x, y, sp === "bison" ? 9 : sp === "bear" ? 8 : 5, 2);
-        c.save(); c.translate(x, y); if (flip) c.scale(-1, 1);
-        c.drawImage(s, -(s.width >> 1), -s.height + 2); c.restore();
-      }});
-    }
-  }
-  for (const mk of frame.marks || []) {
-    const [mx, my, shape, depth, surf] = mk, h = hash(mx + "," + my + shape);
-    const x = Math.round((mx + 0.15 + (h % 50) / 100) * TP), y = Math.round((my + 0.25 + ((h >> 6) % 45) / 100) * TP);
-    if (!inView(x, y)) continue;
-    draws.push({y: y - 30, f: () => drawMark(c, x, y, shape, depth, surf)});
-  }
-  for (const gv of graves) {
-    if (gv.t === frame.t && liveMode && !past(gv.day, 0.8, plan.now)) continue;
-    const x = Math.round(gv.x * TP), y = Math.round(gv.y * TP);
-    if (inView(x, y)) draws.push({y, f: () => { const s = graveSprite(); c.drawImage(s, x - 9, y - s.height + 2); }});
-  }
-  const order = [...plan.goals.keys()].filter(id => bodies.has(id));
-  for (const id of order) {
-    const b = bodies.get(id), g = plan.goals.get(id), x = Math.round(b.x * TP), y = Math.round(b.y * TP);
-    if (!inView(x, y)) continue;
-    draws.push({y, f: () => {
-      shadow(c, x, y, g.r[P.stage] === 1 ? 3 : 4, 1);
-      drawPersonPx(c, x, y, g.r, b, g, T);
-      if (selected === id) { const bob = Math.round(Math.sin(T * 5) * 1.5), top = y - (g.r[P.stage] === 1 ? 22 : 30) + bob; c.fillStyle = OUT; c.fillRect(x - 3, top - 1, 7, 4); c.fillStyle = "#ffd23f"; c.fillRect(x - 2, top, 5, 2); c.fillRect(x - 1, top + 2, 3, 1); c.fillRect(x, top + 3, 1, 1); }
-    }});
-  }
-  draws.sort((a, b) => a.y - b.y);
-  for (const d of draws) d.f();
-  // particles
-  for (const p of particles) {
-    const x = Math.round(p.wx * TP), y = Math.round(p.wy * TP);
-    if (!inView(x, y)) continue;
-    if (p.kind === "smoke") { c.globalAlpha = 0.35 * p.life / 3; const s = 2 + Math.round((3 - p.life) * 1.5); R(c, x - (s >> 1), y - (s >> 1), s, s, "#d8d8d8"); c.globalAlpha = 1; }
-    else if (p.kind === "spark") R(c, x, y, 1, 1, Math.random() < 0.5 ? "#ffd25a" : "#ff8a2a");
-    else if (p.kind === "heart") pattern(c, x - 2, y, HEART, "#e2455e");
-    else if (p.kind === "z") { c.globalAlpha = Math.min(1, p.life / 2); pattern(c, x, y, ZED, "#ffffff"); c.globalAlpha = 1; }
-    else if (p.kind === "puff") { c.globalAlpha = 0.6 * p.life; R(c, x - 3, y - 3, 6, 4, "#cdb796"); c.globalAlpha = 1; }
-  }
-  for (const gf of gifts) {
-    const a = bodies.get(gf.a), b = bodies.get(gf.b); if (!a || !b) continue;
-    const k = clamp(gf.t / 2, 0, 1), wx = a.x + wrapD(b.x - a.x, W) * k, wy = a.y + wrapD(b.y - a.y, H) * k - 0.25 - Math.sin(k * Math.PI) * 0.1;
-    R(c, wx * TP - 2, wy * TP - 1, 4, 3, "#c4562f"); R(c, wx * TP - 1, wy * TP - 2, 2, 1, "#4f9a38");
-  }
-  // night falls; fires and hut doorways glow through it
-  if (dark > 0) {
-    c.fillStyle = `rgba(14,20,52,${dark})`; c.fillRect(0, 0, PW, PH);
-    c.globalCompositeOperation = "lighter";
-    for (const i of fireTiles) {
-      const F = feats[i], x = ((i % W) + F.fire[0]) * TP, y = (Math.floor(i / W) + F.fire[1]) * TP - 6, rad = TP * (1.4 + Math.sin(T * 7 + i) * 0.04);
-      const gr = c.createRadialGradient(x, y, 1, x, y, rad); gr.addColorStop(0, `rgba(255,150,60,${dark * 0.9})`); gr.addColorStop(1, "rgba(255,150,60,0)");
-      c.fillStyle = gr; c.fillRect(x - rad, y - rad, rad * 2, rad * 2);
-    }
-    for (const p of props) if (p.hut) { c.fillStyle = `rgba(255,190,100,${dark * 0.7})`; c.fillRect(p.x - 2, p.y - 8, 5, 6); }
-    c.globalCompositeOperation = "source-over";
-  }
-  // scale the pixel world up onto the screen
-  const s = cam.z / TP;
-  ctx.fillStyle = "#1b2417"; ctx.fillRect(0, 0, cam.vw, cam.vh);
-  ctx.imageSmoothingEnabled = s < 1;
-  ctx.drawImage(scene, 0, 0, PW, PH, Math.round(-cam.x * cam.z), Math.round(-cam.y * cam.z), PW * s, PH * s);
-  // weather, in big soft pixels on the screen
-  const ps = Math.max(2, Math.round(s * 1.5));
-  const sky = skyNow();
-  if (sky.flood) {             // the rivers over their banks
-    ctx.fillStyle = "rgba(70,120,170,0.35)";
-    for (const [fx, fy] of floodLand()) { const [sx, sy] = toScreen(fx, fy); if (sx > -cam.z && sy > -cam.z && sx < cam.vw && sy < cam.vh) ctx.fillRect(sx, sy, cam.z + 1, cam.z + 1); }
-  }
-  if (sky.storm) {             // a storm darkens the land under it
-    const [x0, y0] = toScreen(sky.storm[0] - sky.storm[2], sky.storm[1] - sky.storm[2]);
-    ctx.fillStyle = "rgba(20,30,50,0.3)"; ctx.fillRect(x0, y0, (2 * sky.storm[2] + 1) * cam.z, (2 * sky.storm[2] + 1) * cam.z);
-  }
-  for (const w of weather) {
-    const x = Math.round(w.x * cam.vw / ps) * ps, y = Math.round(w.y * cam.vh / ps) * ps;
-    if (sky.snow) { ctx.fillStyle = "rgba(255,255,255,0.9)"; ctx.fillRect(x, y, ps, ps); }
-    else if (sky.rain) { ctx.fillStyle = "rgba(150,180,215,0.55)"; ctx.fillRect(x, y, ps, ps * 2); }
-    else { ctx.fillStyle = ["#d9822b", "#c4512a", "#e3b23c"][Math.floor(w.r) % 3]; ctx.fillRect(x, y, ps * 2, ps); }
-  }
-  if (dark > 0.3 && frame.season === "summer") {   // fireflies
-    ctx.fillStyle = `rgba(230,255,120,${dark})`;
-    for (let k = 0; k < 40; k++) { const fx = (Math.sin(k * 12.9 + T * 0.3) * 0.5 + 0.5) * cam.vw, fy = (Math.cos(k * 7.3 + T * 0.23) * 0.5 + 0.5) * cam.vh; if (Math.sin(T * 3 + k) > 0.3) ctx.fillRect(fx, fy, ps, ps); }
-  }
-  // words and markers, at screen sharpness
-  const labels = [];
-  for (const id of order) {
-    const b = bodies.get(id), g = plan.goals.get(id), r = g.r;
-    const [sx, sy] = toScreen(b.x, b.y);
-    if (sx < -40 || sy < -40 || sx > cam.vw + 40 || sy > cam.vh + 40) continue;
-    if (s < 1) {   // from far away everyone gets a pin, and a sign for what they are doing
-      const top = sy - 24 * s - 8;
-      ctx.fillStyle = OUT; ctx.fillRect(sx - 5, top - 5, 10, 10);
-      ctx.fillStyle = LINE[r[P.line] % LINE.length]; ctx.fillRect(sx - 4, top - 4, 8, 8);
-      const sign = g.pose === "sleep" ? "💤" : g.dead ? "🕯️" : SIGN[(r[P.doing] || "").split(" ")[0]];
-      if (sign) { ctx.font = "12px \"Segoe UI Emoji\",sans-serif"; ctx.textAlign = "left"; ctx.fillText(sign, sx + 6, top + 5); }
-    }
-    if ((s >= 2.5 || selected === id || (hover && hover.id === id)) && s >= 1) labels.push([sx, sy + 6 * s + 6, r[P.name]]);
-  }
-  placeLabels(labels);
-  bubblesPlaced = [];
-  for (const bub of plan.bubbles) {
-    const b = bodies.get(bub.who); if (!b) continue;
-    const g = plan.goals.get(bub.who), [sx, sy] = toScreen(b.x, b.y);
-    if (sx < -60 || sy < -60 || sx > cam.vw + 60 || sy > cam.vh + 60) continue;
-    const ht = g && g.r[P.stage] === 1 ? 17 : 24;
-    bubble(sx, sy - ht * s - 6, bub.text, bub.kind);
-  }
+function speedButtons(){
+  const el = $("speed"); if (live){ el.innerHTML = "<span>their world keeps its own time</span>"; return; }
+  if (!el.querySelector("button")){ el.innerHTML = "<span>weeks per second</span>";
+    [["Pause", 0], ["1", 1], ["4", 4], ["16", 16], ["52", 52]].forEach(([l, v]) => { const b = document.createElement("button"); b.textContent = l; b.dataset.v = v; b.onclick = () => fetch("/speed?wps=" + v); el.appendChild(b); }); }
+  el.querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.v === frame.wps));
 }
 
-// ---- labels and speech --------------------------------------------------------------------------
-const FONT = "\"Pixelify Sans\",\"Courier New\",monospace";
-function placeLabels(list) {
-  const placed = [];
-  ctx.font = `600 13px ${FONT}`;
-  for (const [sx, sy0, text] of list.sort((a, b) => a[1] - b[1])) {
-    const w = ctx.measureText(text).width + 10;
-    let sy = sy0;
-    while (placed.some(p => Math.abs(p[0] - sx) < (p[2] + w) / 2 && Math.abs(p[1] - sy) < 17)) sy += 17;
-    placed.push([sx, sy, w]);
-    ctx.fillStyle = "rgba(43,29,20,0.88)"; ctx.fillRect(Math.round(sx - w / 2), Math.round(sy - 9), Math.round(w), 16);
-    ctx.fillStyle = "#fff4d6"; ctx.textAlign = "center"; ctx.fillText(text, sx, sy + 3);
-  }
+// ---------- a person: the brain scan ------------------------------------------------------------------
+function openPerson(id){ selected = id; personInfo = null; firstQ = null; personAt = -1; $("world").hidden = true; $("person").hidden = false; loadPerson(); }
+$("back").onclick = () => { selected = null; personInfo = null; $("person").hidden = true; $("world").hidden = false; groundKey = ""; };
+$("delta").onclick = e => { showDelta = !showDelta; e.target.classList.toggle("on", showDelta); };
+function loadPerson(){
+  if (!selected) return; const id = selected;
+  fetch("/person?id=" + encodeURIComponent(id)).then(r => r.json()).then(p => { if (id !== selected) return;
+    personInfo = p; personAt = frame ? frame.t : 0; if (p.brain && !firstQ) firstQ = p.brain.q.slice(); story(); });
 }
-let bubblesPlaced = [];
-function bubble(sx, sy, text, kind) {
-  if (cam.z / TP < 0.6) {
-    ctx.font = "16px \"Segoe UI Emoji\",sans-serif"; ctx.textAlign = "center";
-    ctx.fillText(kind === "think" ? "💭" : "💬", sx, sy); return;
-  }
-  const size = 17;
-  ctx.font = `${kind === "say" ? "700" : "500"} ${size}px ${FONT}`; ctx.textAlign = "center";
-  const maxW = 300, words = text.split(" "), lines = [];
-  let ln = "";
-  for (const w of words) { const t = ln ? ln + " " + w : w; if (ctx.measureText(t).width > maxW && ln) { lines.push(ln); ln = w; } else ln = t; }
-  lines.push(ln);
-  const w = Math.round(Math.max(...lines.map(l => ctx.measureText(l).width)) + 24), h = lines.length * (size + 4) + 16;
-  let x = Math.round(sx - w / 2), y = Math.round(sy - h);
-  const tailY = sy;
-  for (let tries = 0; tries < 6; tries++) {
-    const hit = bubblesPlaced.find(b => x < b[0] + b[2] && x + w > b[0] && y < b[1] + b[3] && y + h > b[1]);
-    if (!hit) break;
-    y = hit[1] - h - 8; sy = y + h;
-  }
-  bubblesPlaced.push([x, y, w, h]);
-  // a soft shadow lifts the bubble off the busy map
-  ctx.fillStyle = "rgba(0,0,0,0.35)"; ctx.fillRect(x + 2, y + 3, w, h);
-  if (sy !== tailY) { ctx.fillStyle = "#ffffff"; ctx.fillRect(Math.round(sx) - 1, sy, 2, tailY - sy); }
-  const border = kind === "say" ? "#0d1218" : "#3a4654", fill = kind === "say" ? "#ffffff" : "#eef3f8";
-  // a dialogue box with stepped pixel corners
-  ctx.fillStyle = border; ctx.fillRect(x + 2, y, w - 4, h); ctx.fillRect(x, y + 2, w, h - 4); ctx.fillRect(x + 1, y + 1, w - 2, h - 2);
-  ctx.fillStyle = fill; ctx.fillRect(x + 3, y + 2, w - 6, h - 4); ctx.fillRect(x + 2, y + 3, w - 4, h - 6);
-  if (kind === "think") { ctx.fillStyle = border; ctx.fillRect(Math.round(sx) - 3, sy + 3, 6, 4); ctx.fillRect(Math.round(sx) + 3, sy + 9, 4, 3); }
-  else { ctx.fillStyle = border; for (let k = 0; k < 5; k++) ctx.fillRect(Math.round(sx) - 4 + k, sy - 2 + k, 9 - 2 * k, 1); ctx.fillStyle = fill; for (let k = 0; k < 4; k++) ctx.fillRect(Math.round(sx) - 3 + k, sy - 2 + k, 7 - 2 * k, 1); }
-  ctx.fillStyle = kind === "say" ? "#0d1218" : "#2a3542";
-  lines.forEach((l, k) => ctx.fillText(l, sx, y + 8 + size + k * (size + 4) - 2));
+const bc = $("brain"), bg = bc.getContext("2d"), BW = bc.width, BH = bc.height, hits = [];
+const X = [250, 880, 1560, 2010];
+const inputs = [...SENSE.map(n => ({n, kind: "sense"})), ...BODY.map(n => ({n, kind: "body"})), ...GENES.map(n => ({n, kind: "gene"}))];
+inputs.forEach((o, i) => { o.x = X[0]; o.y = 70 + i * (BH - 160) / (inputs.length - 1) + (o.kind === "body" ? 22 : o.kind === "gene" ? 44 : 0); });
+function curve(x1, y1, x2, y2, col, a, w){ bg.globalAlpha = a; bg.strokeStyle = col; bg.lineWidth = w; bg.beginPath(); bg.moveTo(x1, y1); const m = (x1 + x2) / 2; bg.bezierCurveTo(m, y1, m, y2, x2, y2); bg.stroke(); }
+function bez(x1, y1, x2, y2, t){ const m = (x1 + x2) / 2, u = 1 - t; return [u*u*u*x1 + 3*u*u*t*m + 3*u*t*t*m + t*t*t*x2, u*u*u*y1 + 3*u*u*t*y1 + 3*u*t*t*y2 + t*t*t*y2]; }
+function nodeAt(x, y, r, col, glow, a = 1){ bg.globalAlpha = a; bg.shadowColor = col; bg.shadowBlur = glow; bg.fillStyle = col; bg.beginPath(); bg.arc(x, y, r, 0, 7); bg.fill(); bg.shadowBlur = 0; }
+function label(s, x, y, col, size, align){ bg.globalAlpha = 1; bg.fillStyle = col; bg.font = `${size}px system-ui,Segoe UI,sans-serif`; bg.textAlign = align; bg.textBaseline = "middle"; bg.fillText(s, x, y); }
+function drawBrain(now){
+  requestAnimationFrame(drawBrain);
+  if ($("person").hidden) return;
+  bg.globalCompositeOperation = "source-over"; bg.clearRect(0, 0, BW, BH); hits.length = 0;
+  const b = personInfo && personInfo.brain; if (!b){ label(personInfo && !personInfo.alive ? "They have died." : "Reading their mind…", BW / 2, BH / 2, "#7f97b3", 34, "center"); return; }
+  const NA = b.actions.length, NC = b.n_contexts, ctxN = [...Array(NC)].map((_, k) => ({k, x: X[1] + (k % 2 ? 36 : -36), y: 50 + k * (BH - 100) / (NC - 1)}));
+  const actN = b.actions.map((a, i) => ({a, x: X[2], y: 80 + i * (BH - 160) / (NA - 1)}));
+  const vals = showDelta && firstQ ? b.q.map((v, i) => v - firstQ[i]) : b.q, vmax = Math.max(5, ...vals.map(Math.abs)), t = now / 1000;
+  const level = {...b.body, ...b.genes}, chosen = b.chosen, opts = b.weighed, oy = i => BH / 2 - (opts.length - 1) * 75 + i * 150;
+  bg.globalCompositeOperation = "lighter";
+  for (let k = 0; k < NC; k++) for (let j = 0; j < NA; j++){ const v = vals[k * NA + j]; if (!v) continue; const on = k === b.ctx;
+    curve(ctxN[k].x, ctxN[k].y, actN[j].x, actN[j].y, v > 0 ? "#38d6ff" : "#ff4fa3", (on ? .18 : .05) + (on ? .75 : .4) * Math.abs(v) / vmax, on ? 2 + 5 * Math.abs(v) / vmax : 1.2); }
+  inputs.forEach(o => { if (o.kind === "sense") return; const lv = Math.abs(level[o.n] || 0);
+    actN.forEach(n => { if ((WIRE[n.a] || []).includes(o.n)) curve(o.x, o.y, n.x, n.y, "#ffb547", .05 + .45 * lv * (n.a === chosen ? 1.6 : .7), 1 + 2.5 * lv); }); });
+  inputs.filter(o => o.kind === "sense").forEach(o => curve(o.x, o.y, ctxN[b.ctx].x, ctxN[b.ctx].y, "#ffffff", .55, 2.5));
+  opts.forEach(([a, sc, ch], i) => { const n = actN[b.actions.indexOf(a)]; if (n) curve(n.x, n.y, X[3], oy(i), ch ? "#ffffff" : "#38d6ff", ch ? .9 : .35, ch ? 5 : 2); });
+  const cn = ctxN[b.ctx], chN = actN[b.actions.indexOf(chosen)];
+  const pulse = (x1, y1, x2, y2, col, ph) => { const [px, py] = bez(x1, y1, x2, y2, (t * .45 + ph) % 1); nodeAt(px, py, 6, col, 24); };
+  inputs.filter(o => o.kind === "sense").forEach((o, i) => pulse(o.x, o.y, cn.x, cn.y, "#ffffff", i / 3));
+  if (chN){ pulse(cn.x, cn.y, chN.x, chN.y, "#38d6ff", 0); pulse(cn.x, cn.y, chN.x, chN.y, "#38d6ff", .5);
+    inputs.forEach((o, i) => { if ((WIRE[chosen] || []).includes(o.n)) pulse(o.x, o.y, chN.x, chN.y, "#ffb547", i / 7); });
+    const ci = opts.findIndex(o => o[2]); if (ci >= 0) pulse(chN.x, chN.y, X[3], oy(ci), "#ffffff", .25); }
+  bg.globalCompositeOperation = "source-over";
+  inputs.forEach(o => { const lv = o.kind === "sense" ? 1 : Math.abs(level[o.n] || 0), col = o.kind === "sense" ? "#ffffff" : "#ffb547";
+    nodeAt(o.x, o.y, 9 + 9 * lv, col, 18 * lv + 4, .35 + .65 * lv);
+    const val = o.kind === "sense" ? (o.n === "food held" ? FOOD[Math.floor(b.ctx / 8)].split(" of")[0] : o.n === "company" ? ((b.ctx % 8) >= 4 ? "yes" : "no") : SEASONS[b.ctx % 4]) : (level[o.n] ?? 0).toFixed(2);
+    label(o.n, o.x - 26, o.y, "#a9bdd6", 25, "right"); label(val, o.x + 26, o.y, "#ffffff", 23, "left");
+    hits.push({x: o.x, y: o.y, r: 26, tip: `${o.n}: ${val}${o.kind === "gene" ? " (inborn temperament)" : o.kind === "sense" ? " (one of three senses that pick the situation neuron)" : " (this week)"}`}); });
+  ctxN.forEach(n => { const on = n.k === b.ctx; nodeAt(n.x, n.y, on ? 16 : 7, on ? "#ffffff" : "#2f6f9a", on ? 40 : 6, on ? 1 : .8);
+    hits.push({x: n.x, y: n.y, r: 16, tip: `situation ${n.k + 1} of 32: ${ctxLabel(n.k)}${on ? " (lit this week)" : ""}`}); });
+  label(ctxLabel(b.ctx), cn.x + (cn.x > X[1] ? 30 : -30), cn.y, "#ffffff", 23, cn.x > X[1] ? "left" : "right");
+  actN.forEach((n, j) => { const v = vals[b.ctx * NA + j], isC = n.a === chosen, wd = opts.some(o => o[0] === n.a), col = isC ? "#ffffff" : wd ? "#38d6ff" : "#2f6f9a";
+    nodeAt(n.x, n.y, isC ? 18 : wd ? 12 : 8, col, isC ? 46 : wd ? 18 : 4); label(n.a, n.x + 28, n.y, isC ? "#ffffff" : "#a9bdd6", 25, "left");
+    hits.push({x: n.x, y: n.y, r: 20, tip: `${WORDS[n.a]}: learned habit in this situation ${(b.q[b.ctx * NA + j] / 100).toFixed(2)}${showDelta ? ` (changed ${(v >= 0 ? "+" : "") + (v / 100).toFixed(2)} while you watched)` : ""}`}); });
+  opts.forEach(([a, sc, ch], i) => { const y = oy(i);
+    bg.fillStyle = ch ? "rgba(255,255,255,.12)" : "rgba(56,214,255,.06)"; bg.strokeStyle = ch ? "#ffffff" : "#1d4a66"; bg.lineWidth = ch ? 3 : 1.5;
+    bg.beginPath(); bg.roundRect(X[3] - 10, y - 46, 370, 92, 14); bg.fill(); bg.stroke();
+    label(WORDS[a] || a, X[3] + 8, y - 14, ch ? "#ffffff" : "#bcd3ea", 25, "left"); label(`score ${sc.toFixed(2)}${ch ? "  ✓ chosen" : ""}`, X[3] + 8, y + 20, ch ? "#ffffff" : "#7f97b3", 21, "left"); });
 }
-
-// ---- the mini-map ---------------------------------------------------------------------------------
-const mini = document.getElementById("mini"), mctx = mini.getContext("2d");
-function drawMini() {
-  const dpr = window.devicePixelRatio || 1, size = mini.clientWidth;
-  if (mini.width !== Math.round(size * dpr)) { mini.width = Math.round(size * dpr); mini.height = Math.round(size * dpr); }
-  mctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const k = size / Math.max(W, H), pal = GRASS[frame.season];
-  for (let i = 0; i < W * H; i++) {
-    const [fert, forest, rock] = terrain.tiles[i], b = terrain.tiles[i][6];
-    if (terrain.tiles[i][5]) { mctx.fillStyle = b === "deep" ? "#1c3550" : b === "lake" ? "#3a729c" : b === "river" ? "#3d84b6" : "#2a6fb0"; mctx.fillRect(Math.floor((i % W) * k), Math.floor(Math.floor(i / W) * k), Math.ceil(k), Math.ceil(k)); continue; }
-    if (b === "desert" || b === "beach") mctx.fillStyle = "#c9a25a";
-    else if (b === "snow") mctx.fillStyle = "#e6ecf1";
-    else if (b === "mountain") mctx.fillStyle = "#8a867d";
-    else if (b === "tundra") mctx.fillStyle = "#9aa77c";
-    else mctx.fillStyle = rock > 0.6 && frame.season !== "winter" ? STONE[1] : pal[clamp(Math.floor(fert * 5), 0, 4)];
-    mctx.fillRect(Math.floor((i % W) * k), Math.floor(Math.floor(i / W) * k), Math.ceil(k), Math.ceil(k));
-    if (forest > 0.6) { mctx.fillStyle = frame.season === "winter" ? "#4a6a5a" : "#2c6d50"; mctx.fillRect((i % W) * k + k * 0.3, Math.floor(i / W) * k + k * 0.3, k * 0.3, k * 0.3); }
-    const tl = frame.tiles[i];
-    if (tl[2] >= 2) { mctx.fillStyle = "#5e3b1c"; mctx.fillRect((i % W) * k + k * 0.25, Math.floor(i / W) * k + k * 0.25, k * 0.5, k * 0.5); }
-    if (tl[4]) { mctx.fillStyle = "#ff8a2a"; mctx.fillRect((i % W) * k + k * 0.6, Math.floor(i / W) * k + k * 0.6, k * 0.3, k * 0.3); }
-  }
-  for (const [id, b] of bodies) {
-    const r = rows.get(id); if (!r) continue;
-    const sel = id === selected;
-    mctx.fillStyle = OUT; mctx.fillRect(b.x * k - (sel ? 3 : 2), b.y * k - (sel ? 3 : 2), sel ? 6 : 4, sel ? 6 : 4);
-    mctx.fillStyle = sel ? "#ffd23f" : LINE[r[P.line] % LINE.length]; mctx.fillRect(b.x * k - (sel ? 2 : 1), b.y * k - (sel ? 2 : 1), sel ? 4 : 2, sel ? 4 : 2);
-  }
-  mctx.strokeStyle = "#fff8e6"; mctx.lineWidth = 2;
-  mctx.strokeRect(cam.x * k, cam.y * k, Math.min(W, cam.vw / cam.z) * k, Math.min(H, cam.vh / cam.z) * k);
-}
-function miniJump(ev) {
-  const r = mini.getBoundingClientRect(), k = r.width / Math.max(W, H), wx = (ev.clientX - r.left) / k, wy = (ev.clientY - r.top) / k;
-  if (cam.z / TP < 1.5) cam.z = 2 * TP;
-  cam.follow = null; cam.x = wx - cam.vw / cam.z / 2; cam.y = wy - cam.vh / cam.z / 2; clampCam(); hideHelp();
-}
-let miniDrag = false;
-mini.addEventListener("pointerdown", ev => { miniDrag = true; mini.setPointerCapture(ev.pointerId); miniJump(ev); });
-mini.addEventListener("pointermove", ev => { if (miniDrag) miniJump(ev); });
-mini.addEventListener("pointerup", () => { miniDrag = false; });
-
-// =============================================================================================
-// Frames from the world
-// =============================================================================================
-let talkLog = [], talkKey = "", camReady = false;
-function nameOf(id) { const r = rows.get(id); return r ? r[P.name] : ""; }
-function onFrame(f) {
-  const now = performance.now();
-  if (f.clock) { clock = f.clock; clockOffset = f.now - Date.now() / 1000; }
-  interval = f.wps > 0 ? Math.min(1000, 1000 / f.wps) : 1000;
-  const prevT = frame ? frame.t : -1;
-  frame = f; frameAt = now;
-  if (f.t !== prevT) {
-    if (prevT >= 0) for (const s of says) talkLog.push([prevT, s[4], s[5], s[0], s[1], nameOf(s[1]), s[2] ? nameOf(s[2]) : "", s[3]]);
-    if (talkLog.length > 400) talkLog.splice(0, talkLog.length - 400);
-    rows = new Map();
-    for (const r of f.people) rows.set(r[P.id], r);
-    says = f.says || []; moments = f.moments || []; hunts = f.hunts || [];
-    evening = f.evening || []; animals = f.animals || [];
-    talks = f.talks || groupSays(says);
-    heard = []; heardKeys = new Set();
-    for (const m of moments) if (m[0] === "birth" && rows.has(m[2])) rows.get(m[2]).born = [m[5], m[6]];
-    for (const d of f.dead || []) {   // they are still alive at the start of the week
-      const [id, name, x, y, sex, stage, line_, cause, day, ff] = d;
-      const row = [id, name, x, y, x, y, sex, stage, "rest", "", line_, "", "", 0.3, cause === "illness" ? 1 : 0, cause === "starvation" ? 1 : 0, 0, 0, 20, "", 30];
-      row.dies = [day, ff];
-      rows.set(id, row);
-      graves.push({x: x + 0.7, y: y + 0.9, name, t: f.t, day, f: ff});
-    }
-    graves = graves.filter(g => f.t - g.t < 52);
-  }
-  document.getElementById("pop").textContent = f.pop;
-  document.getElementById("gen").textContent = f.gen;
-  const wet = f.sky ? f.sky.wet : 1;
-  document.getElementById("wx").textContent = (wet < 0.65 ? "dry" : wet > 1.1 ? "wet" : "fair") + (f.sky && f.sky.storm ? " · storm" : f.sky && f.sky.flood ? " · flood" : f.sky && f.sky.rain ? " · rain" : "");
-  if (!liveMode) { document.getElementById("date").textContent = `Year ${f.year} · week ${f.week + 1} · ${f.season}`; markSpeed(f.wps); }
-  if (f.news && f.news.length) addNews(f.news, true);
-  if (!camReady && f.people.length) { cam.z = cam.fit; clampCam(); camReady = true; }
-}
-function coupleTalk() {
-  // Couples say goodnight at the camp even in a week saved before evening talk existed.
-  const out = [];
-  for (const r of rows.values()) if (r[P.partner] && r[P.partner] > r[P.id] && rows.has(r[P.partner]))
-    out.push([r[P.id], r[P.partner], [[r[P.id], "Good night.", "chat"], [r[P.partner], "Sleep well.", "chat"]]]);
-  return out;
-}
-function groupSays(list) {
-  const pairs = new Map();
-  for (const [kind, a, b, text, day, f] of [...list].sort((x, y) => (x[4] - y[4]) || (x[5] - y[5]))) {
-    if (!b || kind === "think") continue;
-    const key = a < b ? a + "|" + b : b + "|" + a;
-    if (!pairs.has(key)) pairs.set(key, [a, b, []]);
-    pairs.get(key)[2].push([a, text, kind]);
-  }
-  return [...pairs.values()];
-}
-let lastClockText = "";
-function updateClock(plan) {
-  if (!liveMode || !clock) return;
-  const now = Date.now() / 1000 + clockOffset, next = Math.max(0, clock.last + clock.period - now), dayLen = clock.period / 7;
-  const text = `${clockOf(plan.now.f)} · ${partOfDay(plan.now.f)} · ${DAYS[plan.now.day]} day of the week · ${frame.season}, year ${frame.year}`;
-  const pace = Math.abs(dayLen - 3600) < 1 ? "1 hour here is 1 day there" : `${span(dayLen)} here is 1 day there`;
-  const sub = `${pace} · next week begins in ${span(next)}`;
-  if (text + sub !== lastClockText) { document.getElementById("date").textContent = text; document.getElementById("clock").textContent = sub; lastClockText = text + sub; }
-}
-function setSpeed(wps) { fetch("/speed?wps=" + wps); markSpeed(wps); }
-function markSpeed(wps) { document.querySelectorAll("#speed button").forEach(b => b.classList.toggle("on", Number(b.dataset.w) === wps)); }
-[["Pause", 0], ["1", 1], ["4", 4], ["16", 16], ["52", 52]].forEach(([label, w]) => {
-  const b = document.createElement("button"); b.textContent = label; b.dataset.w = w;
-  b.addEventListener("click", () => setSpeed(w)); document.getElementById("speed").appendChild(b);
-});
-function addNews(items, fresh) {
-  const box = document.getElementById("news");
-  for (const e of items) {
-    if (e.kind === "band" || e.kind === "leader") continue;
-    const p = document.createElement("p"), y = document.createElement("span");
-    y.className = "y"; y.textContent = "Year " + e.year;
-    p.append(y, document.createTextNode(e.text));
-    if (["invention", "first", "settlement", "revenge", "feud", "loss"].includes(e.kind)) p.classList.add("big");
-    box.prepend(p);
-    if (fresh && ["invention", "first", "settlement", "revenge", "feud"].includes(e.kind)) showBanner(e.text);
-  }
-  while (box.children.length > 60) box.lastChild.remove();
-}
-let bannerTimer = null;
-function showBanner(text) { banner.textContent = text; banner.classList.add("show"); clearTimeout(bannerTimer); bannerTimer = setTimeout(() => banner.classList.remove("show"), 6000); }
-
-// =============================================================================================
-// Looking closer
-// =============================================================================================
-function find(sx, sy) {
-  let best = null, bd = Math.max(14, cam.z * 0.3) ** 2;
-  for (const [id, b] of bodies) {
-    const [px, py] = toScreen(b.x, b.y), dx = px - sx, dy = (py - 10 * cam.z / TP) - sy, d = dx * dx + dy * dy;
-    if (d < bd) { bd = d; best = id; }
-  }
-  return best;
-}
-const DOING = {rest: "resting", forage: "picking berries and plants", hunt: "hunting", "gather wood": "gathering wood",
-  "gather stone": "gathering stones", "gather flint": "gathering flint", "gather fiber": "gathering fiber",
-  take: "fetching food left earlier", make: "making something again", play: "fiddling with things to see what happens",
-  explore: "exploring", give: "giving food", care: "looking after someone", talk: "talking", court: "courting",
-  steal: "stealing", attack: "fighting", flee: "running away", join: "heading to someone"};
-const STAGE = ["baby", "child", "teenager", "adult", "elder"];
-function showTip(h) {
-  const id = find(h.sx, h.sy);
-  h.id = id;
-  tip.replaceChildren();
-  if (!id || !rows.has(id)) { tip.style.display = "none"; return; }
-  const r = rows.get(id);
-  const add = (text, cls) => { const d = document.createElement("div"); if (cls) d.className = cls; d.textContent = text; tip.appendChild(d); };
-  add(`${r[P.name]}, ${STAGE[r[P.stage]]}, ${Math.floor(r[P.age])}`, "t");
-  const doing = r[P.doing] || "", what = doing.startsWith("put") ? "setting down " + doing.split(" ")[1] : DOING[doing] || "being looked after";
-  const ph = lastPlan ? lastPlan.phase : "work";
-  add(ph === "sleep" ? "asleep" : ph === "evening" ? "resting by the camp" : `this week: ${what}`, "s");
-  if (r[P.items]) add("carries " + r[P.items].split(",").map(c => ({wrap: "a fur wrap", spear: "a spear", blade: "a blade", carrier: "a basket", club: "a club"}[c] || c)).join(", "), "s");
-  if (r[P.sick]) add("sick", "s"); if (r[P.starving]) add("hungry", "s"); if (r[P.grief]) add("grieving", "s");
-  if (r[P.mind]) add("on their mind: " + r[P.mind] + (r[P.state] ? ` (${r[P.state]})` : ""), "s");
-  add("click to follow", "s");
-  tip.style.display = "block";
-  const st = document.getElementById("stage").getBoundingClientRect();
-  let left = h.cx - st.left + 14;
-  if (left + tip.offsetWidth > st.width) left = h.cx - st.left - tip.offsetWidth - 14;
-  tip.style.left = left + "px"; tip.style.top = (h.cy - st.top + 14) + "px";
-}
-function follow(id) {
-  selected = id; cam.follow = id;
-  if (cam.z / TP < 1.5) { const b = bodies.get(id); cam.z = 2 * TP; if (b) { cam.x = b.x - cam.vw / cam.z / 2; cam.y = b.y - cam.vh / cam.z / 2; } clampCam(); }
-  clearInterval(selectedTimer);
-  const load = () => fetch("/person?id=" + encodeURIComponent(id)).then(r => r.json()).then(renderPerson);
-  load(); selectedTimer = setInterval(load, 4000);
-}
-function renderPerson(d) {
-  const box = document.getElementById("person");
-  box.replaceChildren();
-  if (!d || !d.id) return;
-  const card = document.createElement("div"); card.className = "person";
-  const close = document.createElement("button"); close.textContent = "×"; close.title = "Stop following";
-  close.addEventListener("click", () => { selected = null; cam.follow = null; clearInterval(selectedTimer); box.replaceChildren(); });
-  const h = document.createElement("h3"); h.textContent = d.name;
-  const sub = document.createElement("div"); sub.className = "sub";
-  sub.textContent = d.alive ? `${d.age} years old · generation ${d.generation} · health ${d.health} · mood ${d.mood}` : `died: ${d.death}`;
-  card.append(close, h, sub);
-  const section = (title, items) => {
-    if (!items || !items.length) return;
-    const k = document.createElement("div"); k.className = "k"; k.textContent = title;
-    const ul = document.createElement("ul");
-    for (const it of items) { const li = document.createElement("li"); li.textContent = it; ul.appendChild(li); }
-    card.append(k, ul);
-  };
-  const fam = [];
-  if (d.mother || d.father) fam.push("child of " + [d.mother, d.father].filter(Boolean).join(" and "));
-  if (d.partner) fam.push("partner of " + d.partner);
-  if (d.children.length) fam.push("children: " + d.children.join(", "));
-  section("Family", fam);
-  const t = d.temperament, traits = [];
-  const word = (v, hi, lo) => v > 0.7 ? hi : v < 0.3 ? lo : null;
-  [["curiosity", "very curious", "incurious"], ["kindness", "kind", "unkind"], ["temper", "hot-tempered", "calm"],
-   ["sociability", "sociable", "solitary"], ["care", "a devoted carer", "a distant carer"], ["boldness", "bold", "timid"],
-   ["diligence", "hard-working", "easy-going"], ["anxiety", "anxious", "unflappable"]].forEach(([g, hi, lo]) => { const w = word(t[g], hi, lo); if (w) traits.push(w); });
-  section("Nature", traits.length ? [traits.join(", ")] : ["nothing extreme"]);
-  const m = d.mind;
-  if (m) {
-    const bar = v => "▮".repeat(Math.max(1, Math.min(6, Math.round(v * 4))));
-    const head = m.state ? ` · ${m.state}, ${m.weeks} weeks on the same thing` : "";
-    section("On their mind" + head, m.thoughts.map(t => `${bar(t.pull)} ${t.text}`));
-    section("Weighed this week", m.weighed.map(w => `${w.chosen ? "▶" : "·"} ${w.text} (${w.score})`));
-    section("Puzzling over", m.puzzles.map(z => `${z.text}${z.tests ? ` · tried again ${z.tests}×` : ""}`));
-    section("Told, not yet tried", m.heard);
-    section("Whose word they trust", m.records || []);
-    section("Marks they know", m.marks.map(k => `<${k.shape}> seen ${k.seen}× · ${k.goes_with ? "goes with " + k.goes_with : "means nothing to them yet"}`));
-    const fe = m.feelings;
-    section("Feelings", [`mood ${fe.mood} · fear ${fe.fear} · anger ${fe.anger} · grief ${fe.grief} · lonely ${fe.loneliness}` + (fe.thirst ? ` · thirst ${fe.thirst}` : "")]);
-  }
-  section("Remembers", d.memories);
-  section("Knows how to make", d.makes.map(m => `${m.what}: ${m.how}`));
-  section("Has come to believe", d.beliefs);
-  const carry = Object.entries(d.carrying).filter(([, v]) => v > 0).map(([k, v]) => `${v} ${k}`);
-  section("Carrying", [...d.things, ...(carry.length ? [carry.join(", ")] : [])]);
-  box.appendChild(card);
+requestAnimationFrame(drawBrain);
+const btip = $("btip");
+bc.addEventListener("mousemove", e => { const r = bc.getBoundingClientRect(), sx = BW / r.width, sy = BH / r.height, x = (e.clientX - r.left) * sx, y = (e.clientY - r.top) * sy;
+  const h = hits.find(o => Math.hypot(o.x - x, o.y - y) < o.r + 8), box = bc.parentElement.getBoundingClientRect();
+  if (h){ btip.style.display = "block"; btip.textContent = h.tip; btip.style.left = Math.min(e.clientX - box.left + 14, box.width - 310) + "px"; btip.style.top = (e.clientY - box.top + 14) + "px"; } else btip.style.display = "none"; });
+bc.addEventListener("mouseleave", () => btip.style.display = "none");
+function story(){
+  const p = personInfo; if (!p) return; const m = p.mind || {}, b = p.brain;
+  $("pTitle").textContent = p.name.toUpperCase();
+  $("pDate").textContent = frame ? `year ${frame.year}, week ${frame.week + 1} · ${frame.season}` : "";
+  const fam = [p.partner ? `partner <b>${esc(p.partner)}</b>` : "no partner", p.mother ? `mother ${esc(p.mother)}` : "", p.father ? `father ${esc(p.father)}` : "",
+    p.children && p.children.length ? `children ${p.children.map(esc).join(", ")}` : ""].filter(Boolean).join(" · ");
+  const mx = b ? Math.max(.01, ...b.weighed.map(o => Math.abs(o[1]))) : 1;
+  $("story").innerHTML = `<div class="n">${esc(p.name)}</div>
+    <div class="tags">${[`${p.sex === "F" ? "woman" : "man"}, ${Math.floor(p.age)}`, p.stage, `generation ${p.generation + 1}`, `health ${p.health}`].map(x => `<span class="tag">${x}</span>`).join("")}${p.alive ? "" : `<span class="tag" style="color:#ff4fa3">died: ${esc(p.death)}</span>`}</div>
+    <p class="p">${fam}</p>
+    ${b ? `<div class="k">Why they chose what they did</div>
+      ${b.weighed.map(([a, sc, ch, lr]) => { const inst = sc - lr, w = v => Math.max(0, v) / mx * 100;
+        return `<div class="opt"><span${ch ? ' style="color:#fff;font-weight:600"' : ""}>${esc(WORDS[a] || a)}${ch ? " ✓" : ""}</span><div class="st" title="instinct ${inst.toFixed(2)}, habit ${lr.toFixed(2)}"><i style="left:0;width:${w(inst)}%;background:#ffb547"></i><i style="left:${w(inst)}%;width:${w(lr)}%;background:#38d6ff"></i></div><span class="v">${sc.toFixed(2)}</span></div>`; }).join("")}
+      <div class="key"><span><span class="sw" style="background:#ffb547"></span>instinct (drives and temperament, written by nature)</span><span><span class="sw" style="background:#38d6ff"></span>habit (learned from their own life)</span></div>
+      <p class="p">They have learned <b>${b.learned} of 608</b> habits so far. The choice has some chance in it, so the top score does not always win.</p>` : ""}
+    ${(m.thoughts || []).length ? `<div class="k">On their mind</div><ul>${m.thoughts.slice(0, 5).map(o => `<li>${esc(o.text)}</li>`).join("")}</ul>` : ""}
+    ${(p.memories || []).length ? `<div class="k">They remember</div><ul>${p.memories.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+    ${(p.makes || []).length ? `<div class="k">They know how to make</div><ul>${p.makes.map(x => `<li>${esc(x.what)}</li>`).join("")}</ul>` : ""}
+    ${(p.beliefs || []).length ? `<div class="k">They have come to believe</div><ul>${p.beliefs.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+    <div class="k">How to read the brain</div>
+    <p class="p">Three senses (white) light <b>one of 32 situation neurons</b>: how much food they hold, whether anyone is near, and the season. That neuron's lines to the <b>19 action neurons</b> are their habits for this situation: cyan where an action went well before, magenta where it went badly. Amber lines are instinct: which drives and inborn traits push towards which action. Hover any point for details.</p>
+    <p class="p">This is not a neural network. It is a body, a temperament, and a table of habits each person grew from their own life.</p>`;
 }
 
-// =============================================================================================
-// Start
-// =============================================================================================
+// ---------- the stream --------------------------------------------------------------------------------
 fetch("/terrain").then(r => r.json()).then(t => {
-  terrain = t; W = t.width; H = t.height;
-  liveMode = !!t.live;
-  talkLog = t.log || [];
-  document.getElementById("title").textContent = liveMode ? "Their world" : "Seed " + t.seed;
-  if (liveMode) { document.getElementById("speed").hidden = true; document.getElementById("clock").hidden = false; }
-  buildFeatures();
-  resize();
-  addNews(t.chronicle, false);
+  terrain = t; W = t.width; H = t.height; live = t.live;
+  (t.chronicle || []).forEach(x => news.push([x.year, x.text, x.kind]));
   const es = new EventSource("/stream");
-  es.onmessage = ev => onFrame(JSON.parse(ev.data));
-  es.onerror = () => { document.getElementById("date").textContent = "connection lost, retrying…"; };
-  requestAnimationFrame(t2 => { lastT = t2; draw(t2); });
+  es.onmessage = e => {
+    const f = JSON.parse(e.data);
+    if (frame && f.t === frame.t){ frame.wps = f.wps; speedButtons(); worldPanels(); return; }
+    prev = frame; frame = f; interval = frameAt ? performance.now() - frameAt : 500; frameAt = performance.now();
+    (f.news || []).forEach(x => news.push([x.year, x.text, x.kind]));
+    speedButtons(); worldPanels();
+    if (selected && f.t !== personAt) loadPerson();
+  };
 });
 </script>
 </body>
