@@ -37,3 +37,6 @@ release/*.pdf
 release/*.zip
 paper/.tools/
 paper/*.docx.tmp
+
+# Generated brain-scan pages (rebuild with tools/mind_views/brain_scan.py)
+tools/mind_views/out/

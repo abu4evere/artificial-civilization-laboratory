@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACL Brain Scan</title>
+<style>
+:root{--bg:#04070d;--panel:#0b1220;--ink:#d8ecff;--muted:#7f95b0;--line:#16243a;--cyan:#38d6ff;--mag:#ff4fa3;--amber:#ffb547;--white:#ffffff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1320px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:0;font-weight:650;letter-spacing:.3px}
+.sub{color:var(--muted);font-size:13px;margin:4px 0 12px}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.bar input[type=range]{flex:1;min-width:160px;accent-color:var(--cyan)}
+button,.chip{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+button:hover,.chip:hover{border-color:var(--cyan)}
+button.on{border-color:var(--cyan);box-shadow:0 0 10px rgba(56,214,255,.35)}
+.wk{color:var(--muted);font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{border-radius:999px;padding:3px 10px;font-size:12px}
+.chip.sel{border-color:var(--cyan);color:var(--white);box-shadow:0 0 8px rgba(56,214,255,.5) inset}
+.stage{position:relative;background:radial-gradient(ellipse at 50% 45%,#0b1a2e 0%,#04070d 70%);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+canvas{display:block;width:100%;height:auto}
+.tip{position:absolute;pointer-events:none;background:rgba(5,12,24,.92);border:1px solid var(--cyan);border-radius:8px;padding:6px 9px;font-size:12px;display:none;max-width:280px}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);margin-top:6px;color:var(--muted);font-size:11px;letter-spacing:.8px;text-transform:uppercase;text-align:center}
+.info{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-top:14px}
+@media (max-width:860px){.info{grid-template-columns:1fr}.cols{font-size:9px}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+.card h2{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin:0 0 8px;font-weight:600}
+.opt{display:grid;grid-template-columns:110px 1fr 46px;gap:8px;align-items:center;font-size:13px;margin:4px 0}
+.opt.ch b{color:var(--white)}
+.stack{height:10px;background:#0f1a2b;border-radius:5px;position:relative;overflow:hidden}
+.stack i{position:absolute;top:0;bottom:0}
+.v{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.key{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+p.small{font-size:12.5px;color:var(--muted);margin:6px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Brain scan of an ACL person</h1>
+  <div class="sub" id="sub"></div>
+  <div class="bar">
+    <button id="play">Play</button>
+    <input id="week" type="range" min="0" max="51" value="0" aria-label="Week">
+    <span class="wk" id="wk"></span>
+    <button id="delta" title="Colour the learned connections by how much they changed since the first week shown">Show learning this year</button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="stage">
+    <canvas id="cv" width="2400" height="1480" aria-label="Brain scan"></canvas>
+    <div class="tip" id="tip"></div>
+  </div>
+  <div class="cols"><span>Senses, body, temperament</span><span>Situation neurons (32)</span><span>Action neurons (19)</span><span>This week's decision</span></div>
+  <div class="info">
+    <div class="card"><h2>How the decision was made</h2><div id="opts"></div>
+      <div class="key"><span><span class="sw" style="background:var(--amber)"></span>instinct: drives and temperament (written by nature)</span><span><span class="sw" style="background:var(--cyan)"></span>habit: learned from experience</span></div>
+    </div>
+    <div class="card"><h2>What you are looking at</h2><div id="explain"></div></div>
+  </div>
+</div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const ACT = D.actions, NA = ACT.length, NC = D.n_contexts;
+const SEASONS = ['spring','summer','autumn','winter'];
+const FOOD = ['under ½ week of food, or ill','½–2 weeks of food','2–6 weeks of food','6+ weeks of food'];
+const BODY = ['hunger','thirst','fatigue','health','mood','fear','anger','grief','loneliness'];
+const GENES = ['curiosity','diligence','sociability','kindness','temper','anxiety','care','boldness'];
+const SENSE = ['food held','company','season'];
+// which drives and genes enter each action's instinct formula (read from acl/mind.py; links, not weights)
+const WIRE = {rest:['fatigue','health'], forage:['hunger','diligence'], hunt:['hunger','boldness','fear'], gather:['curiosity'],
+  put:['diligence'], take:['hunger','kindness'], make:['diligence'], play:['curiosity'],
+  explore:['curiosity','hunger','loneliness','sociability','boldness','thirst'], give:['kindness'], care:['kindness','care'],
+  talk:['sociability','loneliness','care'], court:['sociability','hunger'], steal:['hunger','kindness','temper'],
+  attack:['anger','temper','boldness','kindness'], flee:['fear','anxiety','boldness'], join:['loneliness','sociability','thirst','hunger'],
+  heat:['health'], fill:['thirst']};
+const WORDS = {rest:'rest', forage:'gather plants', hunt:'hunt', gather:'pick up', put:'set down', take:'fetch stored food', make:'make something',
+  play:'play', explore:'explore', give:'give food', care:'care for someone', talk:'talk', court:'court', steal:'steal', attack:'attack',
+  flee:'flee', join:'go to someone/somewhere', heat:'tend a fire', fill:'fill a container'};
+const name = id => D.names[id] || 'someone';
+const ctxLabel = k => `${FOOD[Math.floor(k / 8)]} · ${(k % 8) >= 4 ? 'with company' : 'alone'} · ${SEASONS[k % 4]}`;
+
+let wi = 0, sel = null, timer = null, showDelta = false, t0 = performance.now();
+const cv = document.getElementById('cv'), g = cv.getContext('2d'), CW = cv.width, CH = cv.height;
+const X = [230, 880, 1580, 2040];
+const inputs = [...SENSE.map(n => ({n, kind:'sense'})), ...BODY.map(n => ({n, kind:'body'})), ...GENES.map(n => ({n, kind:'gene'}))];
+inputs.forEach((o, i) => { o.x = X[0]; o.y = 90 + i * (CH - 180) / (inputs.length - 1) + (o.kind === 'body' ? 24 : o.kind === 'gene' ? 48 : 0); });
+const ctxN = [...Array(NC)].map((_, k) => ({k, x: X[1] + (k % 2 ? 40 : -40), y: 70 + k * (CH - 140) / (NC - 1)}));
+const actN = ACT.map((a, i) => ({a, x: X[2], y: 110 + i * (CH - 220) / (NA - 1)}));
+
+document.getElementById('sub').textContent = `Control world, seed ${D.seed}, year ${D.year + 1}. Every line is read from the running code. ` +
+  `Learned habits: Q-learning, rate ${D.learning_rate}, discount ${D.discount}, counted at weight ${D.learned_weight} against instinct.`;
+
+const frame = () => D.frames[wi];
+const person = id => frame().people.find(p => p.id === id);
+function firstQ(id){ for (const f of D.frames){ const p = f.people.find(q => q.id === id); if (p) return p.q; } return null; }
+
+function line(x1, y1, x2, y2, col, a, w){
+  g.globalAlpha = a; g.strokeStyle = col; g.lineWidth = w;
+  g.beginPath(); g.moveTo(x1, y1);
+  const mx = (x1 + x2) / 2; g.bezierCurveTo(mx, y1, mx, y2, x2, y2); g.stroke();
+}
+function bez(x1, y1, x2, y2, t){
+  const mx = (x1 + x2) / 2, u = 1 - t;
+  return [u*u*u*x1 + 3*u*u*t*mx + 3*u*t*t*mx + t*t*t*x2, u*u*u*y1 + 3*u*u*t*y1 + 3*u*t*t*y2 + t*t*t*y2];
+}
+function node(x, y, r, col, glow, a = 1){
+  g.globalAlpha = a; g.shadowColor = col; g.shadowBlur = glow; g.fillStyle = col;
+  g.beginPath(); g.arc(x, y, r, 0, 7); g.fill(); g.shadowBlur = 0;
+}
+function text(s, x, y, col, size, align){ g.globalAlpha = 1; g.fillStyle = col; g.font = `${size}px system-ui,Segoe UI,sans-serif`; g.textAlign = align; g.textBaseline = 'middle'; g.fillText(s, x, y); }
+
+const hits = [];
+function draw(){
+  const P = person(sel);
+  g.globalCompositeOperation = 'source-over'; g.clearRect(0, 0, CW, CH);
+  hits.length = 0;
+  if (!P) return;
+  const cyan = '#38d6ff', mag = '#ff4fa3', amber = '#ffb547';
+  const q = P.q, q0 = firstQ(P.id);
+  const vals = showDelta ? q.map((v, i) => v - q0[i]) : q;
+  const vmax = Math.max(5, ...vals.map(Math.abs));
+  const act = P.ctx, chosen = P.action;
+  const t = (performance.now() - t0) / 1000;
+  g.globalCompositeOperation = 'lighter';
+  // learned habits: 32 x 19 connections
+  for (let k = 0; k < NC; k++) for (let j = 0; j < NA; j++){
+    const v = vals[k * NA + j]; if (!v) continue;
+    const on = k === act, a = (on ? .18 : .05) + (on ? .75 : .4) * Math.abs(v) / vmax;
+    line(ctxN[k].x, ctxN[k].y, actN[j].x, actN[j].y, v > 0 ? cyan : mag, a, on ? 2 + 4 * Math.abs(v) / vmax : 1.2);
+  }
+  // instinct: drives and genes into actions
+  const level = {...P.body, ...P.genes};
+  inputs.forEach(o => {
+    if (o.kind === 'sense') return;
+    const lv = Math.abs(level[o.n] || 0);
+    actN.forEach(n => { if ((WIRE[n.a] || []).includes(o.n)) line(o.x, o.y, n.x, n.y, amber, .05 + .45 * lv * (n.a === chosen ? 1.6 : .7), 1 + 2.5 * lv); });
+  });
+  // senses into the active situation neuron
+  inputs.filter(o => o.kind === 'sense').forEach(o => line(o.x, o.y, ctxN[act].x, ctxN[act].y, '#ffffff', .55, 2.5));
+  // options weighed into the decision
+  const opts = P.weighed, oy = i => CH / 2 - (opts.length - 1) * 70 + i * 140;
+  opts.forEach(([a, sc, ch], i) => {
+    const n = actN[ACT.indexOf(a)];
+    line(n.x, n.y, X[3], oy(i), ch ? '#ffffff' : cyan, ch ? .9 : .35, ch ? 5 : 2);
+  });
+  // pulses along the live path
+  const pulse = (x1, y1, x2, y2, col, ph) => { const [px, py] = bez(x1, y1, x2, y2, (t * .45 + ph) % 1); node(px, py, 6, col, 24); };
+  const cn = ctxN[act], chN = actN[ACT.indexOf(chosen)];
+  inputs.filter(o => o.kind === 'sense').forEach((o, i) => pulse(o.x, o.y, cn.x, cn.y, '#ffffff', i / 3));
+  if (chN){
+    pulse(cn.x, cn.y, chN.x, chN.y, cyan, 0); pulse(cn.x, cn.y, chN.x, chN.y, cyan, .5);
+    inputs.forEach((o, i) => { if ((WIRE[chosen] || []).includes(o.n)) pulse(o.x, o.y, chN.x, chN.y, amber, i / 7); });
+    const ci = opts.findIndex(o => o[2]); if (ci >= 0) pulse(chN.x, chN.y, X[3], oy(ci), '#ffffff', .25);
+  }
+  g.globalCompositeOperation = 'source-over';
+  // nodes
+  inputs.forEach(o => {
+    const lv = o.kind === 'sense' ? 1 : Math.abs(level[o.n] || 0);
+    const col = o.kind === 'sense' ? '#ffffff' : amber;
+    node(o.x, o.y, 9 + 9 * lv, col, 18 * lv + 4, .35 + .65 * lv);
+    const val = o.kind === 'sense' ? (o.n === 'food held' ? FOOD[Math.floor(act / 8)].split(' of')[0] : o.n === 'company' ? ((act % 8) >= 4 ? 'yes' : 'no') : SEASONS[act % 4]) : (level[o.n] ?? 0).toFixed(2);
+    text(o.n, o.x - 26, o.y, '#a9bdd6', 24, 'right'); text(val, o.x + 26, o.y, '#ffffff', 22, 'left');
+    hits.push({x:o.x, y:o.y, r:26, tip:`${o.n}: ${val}${o.kind === 'gene' ? ' (temperament, fixed from birth)' : o.kind === 'sense' ? ' (one of three senses that pick the situation neuron)' : ' (this week)'}`});
+  });
+  ctxN.forEach(n => {
+    const on = n.k === act;
+    node(n.x, n.y, on ? 16 : 7, on ? '#ffffff' : '#2f6f9a', on ? 40 : 6, on ? 1 : .8);
+    hits.push({x:n.x, y:n.y, r:16, tip:`situation ${n.k}: ${ctxLabel(n.k)}${on ? ' (active this week)' : ''}`});
+  });
+  text(ctxLabel(act), ctxN[act].x + (ctxN[act].x > X[1] ? 30 : -30), ctxN[act].y, '#ffffff', 22, ctxN[act].x > X[1] ? 'left' : 'right');
+  actN.forEach((n, j) => {
+    const v = vals[act * NA + j], isCh = n.a === chosen, weighed = opts.some(o => o[0] === n.a);
+    const col = isCh ? '#ffffff' : weighed ? cyan : '#2f6f9a';
+    node(n.x, n.y, isCh ? 18 : weighed ? 12 : 8, col, isCh ? 46 : weighed ? 18 : 4);
+    text(n.a, n.x + 28, n.y, isCh ? '#ffffff' : '#a9bdd6', 24, 'left');
+    hits.push({x:n.x, y:n.y, r:20, tip:`${WORDS[n.a]}: learned habit in this situation ${(q[act * NA + j] / 100).toFixed(2)}${showDelta ? ` (changed ${(v / 100 >= 0 ? '+' : '') + (v / 100).toFixed(2)} this year)` : ''}`});
+  });
+  opts.forEach(([a, sc, ch, lr], i) => {
+    const y = oy(i);
+    g.globalAlpha = 1; g.fillStyle = ch ? 'rgba(255,255,255,.12)' : 'rgba(56,214,255,.06)'; g.strokeStyle = ch ? '#ffffff' : '#1d4a66';
+    g.lineWidth = ch ? 3 : 1.5; g.beginPath(); g.roundRect(X[3] - 10, y - 44, 345, 88, 14); g.fill(); g.stroke();
+    text(WORDS[a], X[3] + 6, y - 14, ch ? '#ffffff' : '#bcd3ea', 23, 'left');
+    text(`score ${sc.toFixed(2)}${ch ? '  ✓ chosen' : ''}`, X[3] + 6, y + 18, ch ? '#ffffff' : '#7f95b0', 20, 'left');
+  });
+  text(name(P.id), 40, 36, '#ffffff', 30, 'left');
+}
+
+function panels(){
+  const P = person(sel); if (!P) return;
+  const mx = Math.max(.01, ...P.weighed.map(o => Math.abs(o[1])));
+  document.getElementById('opts').innerHTML = P.weighed.map(([a, sc, ch, lr]) => {
+    const inst = sc - lr, w = v => Math.max(0, v) / mx * 100;
+    return `<div class="opt${ch ? ' ch' : ''}"><span>${ch ? '<b>' + WORDS[a] + ' ✓</b>' : WORDS[a]}</span>
+      <div class="stack" title="instinct ${inst.toFixed(2)}, habit ${lr.toFixed(2)}"><i style="left:0;width:${w(inst)}%;background:var(--amber)"></i><i style="left:${w(inst)}%;width:${w(lr)}%;background:var(--cyan)"></i></div>
+      <span class="v">${sc.toFixed(2)}</span></div>`;
+  }).join('') + `<p class="small">Each score = instinct (drives × temperament, as nature wrote them; includes what holds their attention) + habit (0.6 × what they learned about this action in this situation). The pick has some randomness, so the top score does not always win.</p>`;
+  const learned = P.q.filter(v => v).length;
+  const top = P.q.map((v, i) => [v, i]).sort((a, b) => b[0] - a[0])[0];
+  document.getElementById('explain').innerHTML = `
+    <p class="small"><b style="color:#fff">${name(P.id)}</b>, ${P.sex === 'F' ? 'woman' : 'man'}, ${P.age}${P.partner ? ', partner ' + name(P.partner) : ', no partner'}.</p>
+    <p class="small"><b style="color:#fff">${learned} of ${NC * NA}</b> learned connections have been shaped by experience; the rest are still blank. Strongest habit anywhere: <b style="color:#fff">${WORDS[ACT[top[1] % NA]]}</b> when ${ctxLabel(Math.floor(top[1] / NA))} (${(top[0] / 100).toFixed(2)}).</p>
+    <p class="small">Left: three senses pick one of 32 <b style="color:#fff">situation neurons</b> (food held × company × season). The lit neuron's 19 connections to the <b style="color:#fff">action neurons</b> are this person's habits for that situation (cyan helps, magenta discourages). Amber lines are <b style="color:#ffb547">instinct</b>: which drives and temperament feed which action, from the code's formulas (links, not exact weights).</p>
+    <p class="small">This is not a neural network: there are no hidden layers. It is a body with drives, a temperament, and a table of habits learned by reinforcement, week by week, from how things turned out.</p>`;
+}
+
+function chips(){
+  const el = document.getElementById('chips');
+  el.innerHTML = frame().people.map(p => `<span class="chip${p.id === sel ? ' sel' : ''}" data-id="${p.id}">${name(p.id)}</span>`).join('');
+  el.querySelectorAll('.chip').forEach(b => b.onclick = () => { sel = b.dataset.id; render(); });
+}
+function render(){
+  const f = frame();
+  if (!sel || !person(sel)) sel = (f.people[0] || {}).id;
+  document.getElementById('week').value = wi;
+  document.getElementById('wk').textContent = `week ${wi + 1} of ${D.frames.length} · ${SEASONS[f.season]}`;
+  chips(); panels();
+}
+function loop(){ draw(); requestAnimationFrame(loop); }
+document.getElementById('week').max = D.frames.length - 1;
+document.getElementById('week').oninput = e => { wi = +e.target.value; render(); };
+document.getElementById('play').onclick = () => {
+  const b = document.getElementById('play');
+  if (timer){ clearInterval(timer); timer = null; b.textContent = 'Play'; return; }
+  b.textContent = 'Pause'; timer = setInterval(() => { wi = (wi + 1) % D.frames.length; render(); }, 900);
+};
+document.getElementById('delta').onclick = e => { showDelta = !showDelta; e.target.classList.toggle('on', showDelta); };
+const tip = document.getElementById('tip');
+cv.addEventListener('mousemove', e => {
+  const r = cv.getBoundingClientRect(), k = CW / r.width, x = (e.clientX - r.left) * k, y = (e.clientY - r.top) * k;
+  const h = hits.find(o => Math.hypot(o.x - x, o.y - y) < o.r + 6);
+  if (h){ tip.style.display = 'block'; tip.textContent = h.tip; tip.style.left = Math.min(r.width - 290, e.clientX - r.left + 14) + 'px'; tip.style.top = (e.clientY - r.top + 14) + 'px'; }
+  else tip.style.display = 'none';
+});
+cv.addEventListener('mouseleave', () => tip.style.display = 'none');
+render(); loop();
+</script>
+</body>
+</html>
