@@ -1,0 +1,12 @@
+{
+ "seconds_per_world": {
+  "c": 220.2,
+  "l": 568.9,
+  "lp": 964.8,
+  "p": 473.6,
+  "s": 220.2
+ },
+ "projected_hours_256": 43.5,
+ "limit_hours": 48,
+ "use_seeds": 256
+}
