@@ -3,60 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Their world</title>
+<title>ACL · Their world</title>
 <style>
-/* ACL: the living world, in two screens. The world: where everyone is and what they are doing. A person: their brain,
-   as the code really has it. Every number and light is read from the running world. The pixel-art page is at /story. */
-:root{--bg:#03060b;--panel:rgba(9,16,28,.9);--panel-2:#0b1424;--ink:#d6e8ff;--muted:#7f97b3;--line:#17263c;
- --cyan:#38d6ff;--amber:#ffb547;--mag:#ff4fa3;--green:#5fe08a;--white:#fff}
+/* ACL observatory. Every number, colour and shape is read from the running world: the relief is the land's real height
+   and biome; groups are the historian's named bands; charts come from the historian's yearly record. People have no
+   faces in ACL, so none are drawn. The pixel-art page is kept at /story. */
+:root{--bg:#060b14;--panel:#0b1322;--panel-2:#0f1a2c;--ink:#dce9f8;--muted:#8299b4;--dim:#4a6080;--line:#1a2840;
+ --cyan:#3fc8ff;--amber:#ffb547;--mag:#ff5fa8;--green:#5fe08a;--white:#fff;--red:#ff6b5f}
 *{box-sizing:border-box}
 [hidden]{display:none !important}
 html,body{height:100%}
-body{margin:0;background:radial-gradient(ellipse at 50% 40%,#0a1729 0%,#03060b 70%);color:var(--ink);
- font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
-.mono{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace}
-h2{font:500 11.5px ui-monospace,Consolas,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px}
-button{background:var(--panel-2);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+h2{font:600 12px system-ui,Segoe UI,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px}
+button{background:var(--panel-2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
 button:hover{border-color:var(--cyan)}
-button.on{border-color:var(--cyan);color:var(--white);box-shadow:0 0 10px rgba(56,214,255,.35)}
-.view{display:grid;height:100vh;gap:12px;padding:12px 14px}
-/* header (both screens) */
+button.on,.tab.on{border-color:var(--cyan);color:var(--white);background:#10233a}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;vertical-align:0;margin-right:6px}
+/* header */
+header.top{display:flex;align-items:center;gap:18px;padding:0 16px;height:54px;border-bottom:1px solid var(--line);background:#081020}
+.logo b{font:800 22px system-ui,Segoe UI,sans-serif;letter-spacing:1px;color:var(--white)}
+.logo span{color:var(--muted);font-size:13px;margin-left:8px}
+.wname{font-weight:650;color:var(--white);font-size:16px}
+.chip{color:var(--ink);font-size:13.5px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.status{color:var(--green)}.status.paused{color:var(--amber)}.status.dead{color:var(--red)}
+nav{margin-left:auto;display:flex;gap:4px}
+.tab{background:none;border:1px solid transparent;padding:7px 14px;border-radius:9px;color:var(--muted)}
+.speed{display:flex;gap:4px;align-items:center}
+.speed span{color:var(--muted);font-size:12px;margin-right:2px}
+/* world view */
+#world{height:100vh;display:grid;grid-template-rows:54px minmax(0,1fr)}
+.grid{display:grid;grid-template-columns:270px minmax(0,1fr) 350px;grid-template-rows:minmax(0,1fr) 250px;gap:12px;padding:12px;min-height:0}
+.left{grid-row:1/3;display:flex;flex-direction:column;gap:12px;min-height:0;overflow-y:auto}
+.right{grid-row:1/3;grid-column:3;display:flex;flex-direction:column;gap:12px;min-height:0;overflow-y:auto}
+.box{padding:13px 14px}
+.ov{display:grid;grid-template-columns:22px 1fr auto 34px;gap:6px;align-items:center;padding:5px 0;font-size:14px}
+.ov svg{width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:1.6}
+.ov b{color:var(--white);font-variant-numeric:tabular-nums;text-align:right}
+.ov i{font-style:normal;font-size:12px;text-align:right;color:var(--muted)}
+.ov i.up{color:var(--green)}.ov i.dn{color:var(--red)}
+.ev{display:grid;grid-template-columns:14px 1fr;gap:9px;padding:6px 0;font-size:13.5px}
+.ev .d{width:10px;height:10px;border-radius:50%;margin-top:5px}
+.ev small{display:block;color:var(--muted);font-size:12px}
+canvas#mini{width:100%;display:block;border-radius:8px;cursor:pointer;background:#05101c}
+.leg{display:grid;grid-template-columns:1fr 1fr;gap:3px 10px;font-size:12.5px;margin-top:8px;color:var(--ink)}
+/* map */
+.stage{position:relative;min-height:0;overflow:hidden;border-radius:12px;border:1px solid var(--line);background:#061424}
+canvas#map{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+canvas#map.drag{cursor:grabbing}
+.mapctl{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:6px}
+.mapctl button{width:36px;height:36px;padding:0;font-size:18px}
+.layers{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:4px;background:rgba(8,16,32,.85);border:1px solid var(--line);border-radius:10px;padding:4px}
+.layers button{border:1px solid transparent;background:none}
+.layers button.on{background:#12304d;border-color:var(--cyan)}
+.scale{position:absolute;right:14px;bottom:16px;color:var(--ink);font-size:12px;text-align:center}
+.scale div{height:6px;border:1.5px solid var(--ink);border-top:0;margin-top:2px}
+.tip{position:absolute;pointer-events:none;background:rgba(6,12,24,.95);border:1px solid var(--cyan);border-radius:9px;padding:7px 10px;font-size:13px;display:none;max-width:290px;z-index:3}
+.tip b{color:var(--white)}
+.hint{position:absolute;left:12px;top:12px;background:rgba(8,16,32,.85);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:13px;color:var(--ink)}
+/* bottom charts */
+.bottom{display:flex;flex-direction:column;min-height:0;padding:10px 12px}
+.btabs{display:flex;gap:4px;margin-bottom:8px}
+.charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;flex:1;min-height:0}
+.chart{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;display:flex;flex-direction:column;min-height:0}
+.chart h3{font-size:13px;font-weight:600;margin:0 0 4px;color:var(--white)}
+.chart canvas{flex:1;min-height:0;width:100%}
+.chart p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.wide{grid-column:1/4}
+/* person card */
+.pc{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center}
+.badge{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;font:700 28px system-ui;color:#061020}
+.pc .n{font-size:19px;font-weight:650;color:var(--white)}
+.pc .s{font-size:13px;color:var(--muted)}
+.alive{color:var(--green);font-size:13px}
+.ptabs{display:flex;gap:2px;margin:12px 0 8px;border-bottom:1px solid var(--line)}
+.ptabs button{border:0;border-bottom:2px solid transparent;border-radius:0;background:none;color:var(--muted);padding:6px 10px}
+.ptabs button.on{color:var(--white);border-bottom-color:var(--cyan)}
+.bar{display:grid;grid-template-columns:22px 70px 1fr 42px;gap:8px;align-items:center;font-size:13.5px;margin:7px 0}
+.meter{height:7px;background:#0a1424;border-radius:4px;overflow:hidden}.meter i{display:block;height:100%;border-radius:4px}
+.v{text-align:right;color:var(--white);font-variant-numeric:tabular-nums;font-size:13px}
+.th{display:grid;grid-template-columns:1fr 46px;gap:8px;font-size:13.5px;padding:3px 0}
+.th span:last-child{text-align:right;color:var(--muted)}
+.rt{display:grid;grid-template-columns:86px 1fr;gap:8px;font-size:13.5px;padding:3px 0}
+.rt span:first-child{color:var(--muted)}
+.btn-wide{width:100%;margin-top:10px;padding:8px;border-color:#245074;background:#0d2238;color:var(--white)}
+.act{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center}
+.act .ic{width:40px;height:40px;border-radius:10px;background:#0f2238;display:grid;place-items:center;font-size:18px}
+.empty{color:var(--muted);font-size:13px}
+.k{font:600 11.5px system-ui;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+ul.l{margin:0;padding-left:18px}ul.l li{font-size:13.5px;margin:3px 0}
+/* other tabs */
+.page{padding:16px;overflow-y:auto;min-height:0}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:600;font-size:12px;letter-spacing:.6px;text-transform:uppercase;cursor:pointer;user-select:none}
+tr.r:hover{background:#0f1c30;cursor:pointer}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.note{color:var(--muted);font-size:13px;margin:6px 0}
+/* brain screen (from the previous version) */
+#person{height:100vh;display:grid;grid-template-rows:auto minmax(0,1fr);gap:12px;padding:12px 14px}
 .head{display:flex;align-items:center;gap:16px;padding:10px 16px;flex-wrap:wrap}
 .head .t{font:600 17px ui-monospace,Consolas,monospace;letter-spacing:2px;color:var(--white)}
 .head .d{color:var(--muted);font-size:14px}
 .head .sp{margin-left:auto;display:flex;align-items:center;gap:6px}
-.head .sp span{color:var(--muted);font-size:12.5px}
-.led{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;background:var(--green);box-shadow:0 0 8px var(--green)}
-/* world screen */
-#world{grid-template-rows:auto auto minmax(0,1fr)}
-.summary{padding:12px 18px;font-size:17px;color:var(--white)}
-.summary .hint{display:block;font-size:13px;color:var(--muted);margin-top:2px}
-.main{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:12px;min-height:0}
-.stage{position:relative;min-height:0;overflow:hidden}
-canvas#map{display:block;width:100%;height:100%;cursor:pointer;touch-action:none}
-.legend{position:absolute;left:12px;top:12px;max-width:min(360px,60%);background:rgba(6,12,22,.82);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--ink);pointer-events:none}
-.legend .r{display:flex;flex-wrap:wrap;gap:4px 14px}
-.legend .n{color:var(--muted);font-size:12px;margin-top:6px}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-.zoom{position:absolute;right:12px;top:12px;display:flex;gap:6px}
-.click{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:rgba(6,12,22,.85);border:1px solid var(--cyan);border-radius:999px;padding:6px 14px;font-size:13.5px;color:var(--white);pointer-events:none;box-shadow:0 0 14px rgba(56,214,255,.25)}
-.tip{position:absolute;pointer-events:none;background:rgba(4,10,20,.95);border:1px solid var(--cyan);border-radius:9px;padding:8px 11px;font-size:13px;display:none;max-width:300px;z-index:3}
-.tip b{color:var(--white)}
-.side{display:flex;flex-direction:column;gap:12px;min-height:0}
-.box{padding:14px 16px}
-.row{display:grid;grid-template-columns:150px 1fr 30px;gap:10px;align-items:center;font-size:14px;margin:6px 0}
-.meter{height:8px;background:#0a1322;border-radius:4px;overflow:hidden}.meter i{display:block;height:100%;border-radius:4px}
-.v{text-align:right;color:var(--white);font:600 13px ui-monospace,Consolas,monospace}
-.health{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 14px}
-.health div{font-size:13.5px;color:var(--muted)}
-.health b{display:block;font:600 22px ui-monospace,Consolas,monospace;color:var(--white)}
-.feed{overflow-y:auto;min-height:0;flex:1}
-.feed p{margin:0 0 8px;font-size:14px}
-.feed .y{color:var(--muted);font:12px ui-monospace,Consolas,monospace;margin-right:8px}
-.feed p.first{border-left:3px solid var(--amber);padding-left:9px}
-/* person screen */
-#person{grid-template-rows:auto minmax(0,1fr)}
 .pmain{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:12px;min-height:0}
 .brainbox{position:relative;min-height:0;display:flex;flex-direction:column;padding:12px 14px}
 .brainbox .cols{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;color:var(--muted);font:11.5px ui-monospace,Consolas,monospace;letter-spacing:1.2px;text-transform:uppercase;margin-top:6px}
@@ -66,56 +115,65 @@ canvas#brain{width:100%;flex:1;min-height:0;display:block}
 .story .n{font-size:24px;font-weight:650;color:var(--white)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
 .tag{background:#0a1322;border:1px solid var(--line);border-radius:7px;padding:2px 8px;font-size:13px}
-.k{font:11.5px ui-monospace,Consolas,monospace;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
 .opt{display:grid;grid-template-columns:130px 1fr 40px;gap:8px;align-items:center;font-size:14px;margin:5px 0}
 .opt .st{height:10px;background:#0a1322;border-radius:5px;position:relative;overflow:hidden}
 .opt .st i{position:absolute;top:0;bottom:0}
 .key{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
 .sw{display:inline-block;width:16px;height:4px;border-radius:2px;vertical-align:middle;margin-right:5px}
 .story ul{margin:0;padding-left:18px}.story li{font-size:14px;margin:3px 0}
-.p{font-size:14px;color:var(--muted);margin:6px 0}
-.p b{color:var(--white)}
+.p{font-size:14px;color:var(--muted);margin:6px 0}.p b{color:var(--white)}
 a{color:var(--cyan)}
-@media (max-width:1000px){
-  body{overflow:auto}.view{height:auto}
-  .main,.pmain{grid-template-columns:1fr}.stage{height:68vh}.brainbox{height:70vh}
-}
+@media (max-width:1200px){body{overflow:auto}#world{height:auto}.grid{grid-template-columns:1fr;grid-template-rows:auto}
+ .left,.right{grid-row:auto;grid-column:auto;overflow:visible}.stage{height:70vh}.bottom{height:auto}.charts{grid-template-columns:1fr}.chart{height:220px}
+ .pmain{grid-template-columns:1fr}.brainbox{height:70vh}#person{height:auto}}
 </style>
 </head>
 <body>
-
-<!-- ======================== THE WORLD ======================== -->
-<div class="view" id="world">
-  <header class="panel head">
-    <span class="t">ACL · THEIR WORLD</span>
-    <span class="d" id="date"><span class="led"></span>connecting…</span>
-    <span class="sp" id="speed"></span>
+<div id="world">
+  <header class="top">
+    <div class="logo"><b>ACL</b><span>Artificial Civilization Laboratory</span></div>
+    <span class="wname" id="wname">—</span>
+    <span class="chip status" id="status">● connecting</span>
+    <span class="chip" id="cYear">Year –</span>
+    <span class="chip" id="cWeek">Week –</span>
+    <span class="chip" id="cSeason">–</span>
+    <span class="speed" id="speed"></span>
+    <nav id="nav"><button class="tab on" data-v="map">World</button><button class="tab" data-v="people">People</button><button class="tab" data-v="groups">Groups</button><button class="tab" data-v="research">Research</button></nav>
   </header>
-  <div class="panel summary" id="summary">…<span class="hint"></span></div>
-  <section class="main">
-    <div class="panel stage">
+
+  <div class="grid" id="vMap">
+    <aside class="left">
+      <div class="panel box"><h2>World overview</h2><div id="overview"></div></div>
+      <div class="panel box"><h2>Current events</h2><div id="events"></div></div>
+      <div class="panel box"><h2 id="miniTitle">World map</h2><canvas id="mini" width="480" height="480"></canvas><div class="leg" id="legend"></div></div>
+    </aside>
+
+    <section class="stage">
       <canvas id="map" aria-label="Their world"></canvas>
-      <div class="legend">
-        <div class="r" id="legendKinds"></div>
-        <div class="n">Each dot is a person, coloured by what they are doing this week. A light pillar marks a group (its label says how many). Fires glow amber. Greener land holds more wild food.</div>
-      </div>
-      <div class="zoom"><button id="zin">+</button><button id="zout">−</button><button id="zall">Reset view</button></div>
-      <div class="click">Click any person to see inside their mind</div>
+      <div class="hint" id="hint">Click a person to follow them · drag to look around · scroll to zoom</div>
+      <div class="mapctl"><button id="zin" title="Closer">+</button><button id="zout" title="Further">−</button><button id="zall" title="Whole world" style="font-size:12px">All</button></div>
+      <div class="layers" id="layers"><button class="on" data-l="people">People</button><button class="on" data-l="groups">Groups</button><button data-l="resources">Resources</button><button class="on" data-l="terrain">Terrain</button></div>
+      <div class="scale" id="scale">10 tiles<div style="width:60px"></div></div>
       <div class="tip" id="tip"></div>
-    </div>
-    <div class="side">
-      <div class="panel box"><h2>What people are doing</h2><div id="doing"></div></div>
-      <div class="panel box"><h2>How the people are</h2><div class="health" id="health"></div></div>
-      <div class="panel box" style="flex:1;display:flex;flex-direction:column;min-height:0">
-        <h2>What has happened <a href="/chronicle" target="_blank" rel="noopener" style="float:right">all ↗</a></h2>
-        <div class="feed" id="feed"></div>
-      </div>
-    </div>
-  </section>
+    </section>
+
+    <aside class="right">
+      <div class="panel box" id="card"><h2>Selected person</h2><p class="empty">Click anyone on the map, or in People, to see who they are and what is on their mind.</p></div>
+    </aside>
+
+    <section class="panel bottom">
+      <div class="btabs" id="btabs"><button class="on" data-b="pop">Population</button><button data-b="groups">Groups</button><button data-b="health">Health</button><button data-b="events">Events</button></div>
+      <div class="charts" id="charts"></div>
+    </section>
+  </div>
+
+  <div class="page" id="vPeople" hidden><div class="panel box"><h2>People <span id="pCount"></span></h2><p class="note">Everyone alive now. Click a column to sort, a row to follow that person on the map.</p><table id="ptable"></table></div></div>
+  <div class="page" id="vGroups" hidden><div class="panel box"><h2>Groups</h2><p class="note" id="gNote"></p><div class="cards" id="gcards"></div></div></div>
+  <div class="page" id="vResearch" hidden><div class="panel box"><h2>Research: ACL's findings, measured live in this world</h2><div id="research"></div></div></div>
 </div>
 
-<!-- ======================== A PERSON ======================== -->
-<div class="view" id="person" hidden>
+<!-- the brain screen (opened from a person's card) -->
+<div id="person" hidden>
   <header class="panel head">
     <button id="back">← Back to the world</button>
     <span class="t" id="pTitle">—</span>
@@ -135,19 +193,12 @@ a{color:var(--cyan)}
 
 <script>
 "use strict";
-// ---------- meanings --------------------------------------------------------------------------
-const KINDS = {
-  food:   {label: "getting food",     col: "#5fe08a", acts: ["forage", "hunt", "fish", "take", "fill"]},
-  work:   {label: "making, carrying", col: "#ffb547", acts: ["make", "gather", "put", "heat"]},
-  social: {label: "with others",      col: "#38d6ff", acts: ["talk", "give", "care", "court", "play"]},
-  move:   {label: "on the move",      col: "#e8f4ff", acts: ["explore", "join"]},
-  danger: {label: "fighting, fleeing", col: "#ff4fa3", acts: ["attack", "steal", "flee"]},
-  rest:   {label: "resting",          col: "#4f86c6", acts: ["rest", ""]},
-};
-const KIND_OF = {}; for (const [k, v] of Object.entries(KINDS)) for (const a of v.acts) KIND_OF[a] = k;
+// ================= meanings =================
 const WORDS = {rest:"rest", forage:"gather plants", hunt:"hunt", fish:"fish", gather:"pick something up", put:"set something down",
   take:"fetch stored food", make:"make something", play:"play", explore:"explore", give:"give food", care:"care for someone",
   talk:"talk", court:"court someone", steal:"steal", attack:"attack", flee:"flee", join:"go to someone or somewhere", heat:"tend a fire", fill:"fetch water"};
+const ICON = {rest:"☾", forage:"❀", hunt:"➶", fish:"≈", gather:"✋", put:"▾", take:"▴", make:"⚒", play:"✦", explore:"⌖", give:"❤", care:"✚",
+  talk:"❝", court:"♥", steal:"!", attack:"⚔", flee:"↯", join:"→", heat:"♨", fill:"💧"};
 const STAGE = ["baby", "child", "teen", "adult", "elder"];
 const P = {id:0, name:1, x:2, y:3, fx:4, fy:5, sex:6, stage:7, doing:8, aim:9, line:10, carer:11, things:12, mood:13,
   sick:14, starving:15, grief:16, pregnant:17, health:18, partner:19, age:20, thought:21, state:22};
@@ -156,171 +207,365 @@ const FOOD = ["under ½ week of food, or ill", "½–2 weeks of food", "2–6 we
 const BODY = ["hunger", "thirst", "fatigue", "health", "mood", "fear", "anger", "grief", "loneliness"];
 const GENES = ["curiosity", "diligence", "sociability", "kindness", "temper", "anxiety", "care", "boldness"];
 const SENSE = ["food held", "company", "season"];
-// which drives and inborn traits enter each action's instinct (read from acl/mind.py; links, not weights)
 const WIRE = {rest:["fatigue","health"], forage:["hunger","diligence"], hunt:["hunger","boldness","fear"], gather:["curiosity"],
   put:["diligence"], take:["hunger","kindness"], make:["diligence"], play:["curiosity"],
   explore:["curiosity","hunger","loneliness","sociability","boldness","thirst"], give:["kindness"], care:["kindness","care"],
   talk:["sociability","loneliness","care"], court:["sociability","hunger"], steal:["hunger","kindness","temper"],
   attack:["anger","temper","boldness","kindness"], flee:["fear","anxiety","boldness"], join:["loneliness","sociability","thirst","hunger"],
   heat:["health"], fill:["thirst"]};
+const BAND_COLS = ["#5fe08a", "#b083ff", "#ffb547", "#3fc8ff", "#ff7aa8", "#e8e36a", "#6ee7d8", "#ff9f5a"];
+const BIO_RGB = {};
+const BIOME = {deep:"#082640", sea:"#0d3a5c", lake:"#1a5a86", river:"#2b7fb3", beach:"#c9b37a", plains:"#7fa35a", forest:"#2f6b3a",
+  woods:"#4a7f45", hills:"#7f8a5c", mountain:"#7d7a72", snow:"#e6edf2", desert:"#c7a466", tundra:"#93a08e"};
 const act = d => (d || "").split(" ")[0];
-const kindOf = d => KIND_OF[act(d)] || "rest";
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $ = id => document.getElementById(id);
 const ctxLabel = k => `${FOOD[Math.floor(k / 8)]} · ${(k % 8) >= 4 ? "with company" : "alone"} · ${SEASONS[k % 4]}`;
 function wrapD(d, n){ d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; }
 function hexRgb(h){ const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
-function mixc(a, b, t){ const x = hexRgb(a), y = hexRgb(b); return `rgb(${x.map((v, i) => Math.round(v + (y[i] - v) * t)).join(",")})`; }
+for (const k in BIOME) BIO_RGB[k] = hexRgb(BIOME[k]);
 function fit(c){ const r = c.getBoundingClientRect(), d = devicePixelRatio || 1; const w = Math.max(10, Math.round(r.width * d)), h = Math.max(10, Math.round(r.height * d));
   if (c.width !== w || c.height !== h){ c.width = w; c.height = h; } return [w, h, d]; }
-$("legendKinds").innerHTML = Object.values(KINDS).map(k => `<span><span class="dot" style="background:${k.col};box-shadow:0 0 6px ${k.col}"></span>${k.label}</span>`).join("");
+const plural = (n, a, b) => `${n} ${n === 1 ? a : b}`;
 
-// ---------- state ------------------------------------------------------------------------------
-let terrain = null, W = 40, H = 40, live = false, frame = null, prev = null, frameAt = 0, interval = 500;
-let selected = null, personInfo = null, personAt = -1, firstQ = null, showDelta = false;
-const news = [];
-const view = {zoom: 1, panX: 0, panY: 0, tilt: 0.9};
+// ================= state =================
+let terrain = null, W = 40, H = 40, live = false, frame = null, prev = null, frameAt = 0, interval = 500, last = null;
+let selected = null, personInfo = null, personAt = -1, firstQ = null, showDelta = false, follow = false, history = [], historyN = -1;
+const news = [], thoughtsLog = new Map(), groupSnaps = [];
+const layers = {people: true, groups: true, resources: false, terrain: true};
+const cam = {x: 20, y: 20, z: 14, fit: 14, touched: false};
+let bottomTab = "pop";
 
-// ---------- the world as a tilted plane ---------------------------------------------------------
-const map = $("map"), g = map.getContext("2d");
-let MW = 0, MH = 0, DPR = 1, S = 1, CX = 0, CY = 0, groundKey = "";
-const DIST = 95;
-function setupMap(){ S = Math.min(MW / (W * 1.7), MH / (H * 1.12)) * view.zoom; CX = MW / 2 + view.panX; CY = MH * 0.52 + view.panY; }
-function proj(x, y, hgt = 0){
-  const u = x - W / 2, v = y - H / 2, z = DIST - v * Math.sin(view.tilt), k = DIST / z;
-  return [CX + u * S * k, CY + (v * Math.cos(view.tilt) - hgt) * S * k, k];
-}
-const ground = document.createElement("canvas"), gc = ground.getContext("2d");
-function paintGround(){
-  ground.width = MW; ground.height = MH; gc.clearRect(0, 0, MW, MH);
-  const R = W * 0.78;
-  const ring = (r, col, lw) => { gc.beginPath(); for (let i = 0; i <= 120; i++){ const a = i / 120 * Math.PI * 2, [sx, sy] = proj(W / 2 + r * Math.cos(a), H / 2 + r * Math.sin(a)); i ? gc.lineTo(sx, sy) : gc.moveTo(sx, sy); } gc.strokeStyle = col; gc.lineWidth = lw; gc.stroke(); };
-  ring(R, "rgba(56,214,255,.25)", 1.2 * DPR); ring(R + 3, "rgba(56,214,255,.08)", 1 * DPR);
-  for (let wk = 0; wk < 52; wk++){ const a = -Math.PI / 2 + wk / 52 * Math.PI * 2, big = wk % 13 === 0, r2 = R + (big ? 2.2 : 1);
-    const [x1, y1] = proj(W / 2 + R * Math.cos(a), H / 2 + R * Math.sin(a)), [x2, y2] = proj(W / 2 + r2 * Math.cos(a), H / 2 + r2 * Math.sin(a));
-    gc.strokeStyle = big ? "rgba(255,181,71,.7)" : "rgba(56,214,255,.3)"; gc.lineWidth = (big ? 2 : 1) * DPR; gc.beginPath(); gc.moveTo(x1, y1); gc.lineTo(x2, y2); gc.stroke(); }
-  SEASONS.forEach((s, i) => { const a = -Math.PI / 2 + (i * 13 + 6.5) / 52 * Math.PI * 2, [sx, sy] = proj(W / 2 + (R + 4) * Math.cos(a), H / 2 + (R + 4) * Math.sin(a));
-    gc.fillStyle = "rgba(214,232,255,.8)"; gc.font = `${12 * DPR}px ui-monospace,Consolas,monospace`; gc.textAlign = "center"; gc.textBaseline = "middle"; gc.fillText(s.toUpperCase(), sx, sy); });
-  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){
-    const i = y * W + x, tr = terrain.tiles[i], fr = frame.tiles[i], a = proj(x, y), b = proj(x + 1, y), c = proj(x + 1, y + 1), d = proj(x, y + 1);
-    gc.beginPath(); gc.moveTo(a[0], a[1]); gc.lineTo(b[0], b[1]); gc.lineTo(c[0], c[1]); gc.lineTo(d[0], d[1]); gc.closePath();
-    gc.fillStyle = tr[5] ? "#06121f" : mixc("#0c1714", "#2f7d5a", Math.min(1, fr[0] / 9)); gc.fill();
-    if (!tr[5]){ gc.strokeStyle = "rgba(56,214,255,.05)"; gc.lineWidth = 1; gc.stroke(); }
+// ================= the relief map (real height and biome) =================
+const relief = document.createElement("canvas"), PX = 12;
+function paintRelief(){
+  relief.width = W * PX; relief.height = H * PX;
+  const g = relief.getContext("2d"), img = g.createImageData(W * PX, H * PX), d = img.data;
+  const hgt = (x, y) => terrain.tiles[((y % H + H) % H) * W + ((x % W + W) % W)][7];
+  const hi = (fx, fy) => { const x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0;
+    return (hgt(x0, y0) * (1 - tx) + hgt(x0 + 1, y0) * tx) * (1 - ty) + (hgt(x0, y0 + 1) * (1 - tx) + hgt(x0 + 1, y0 + 1) * tx) * ty; };
+  for (let py = 0; py < H * PX; py++) for (let px = 0; px < W * PX; px++){
+    const fx = px / PX - .5, fy = py / PX - .5, tx = Math.floor(px / PX), ty = Math.floor(py / PX), tile = terrain.tiles[ty * W + tx];
+    // colour blended between the four nearest tile centres, so the land reads as terrain, not squares
+    const x0 = Math.floor(fx), y0 = Math.floor(fy), ux = fx - x0, uy = fy - y0;
+    const cAt = (x, y) => BIO_RGB[terrain.tiles[((y % H + H) % H) * W + ((x % W + W) % W)][6]] || BIO_RGB.plains;
+    const c00 = cAt(x0, y0), c10 = cAt(x0 + 1, y0), c01 = cAt(x0, y0 + 1), c11 = cAt(x0 + 1, y0 + 1);
+    let col = [0, 1, 2].map(k => (c00[k] * (1 - ux) + c10[k] * ux) * (1 - uy) + (c01[k] * (1 - ux) + c11[k] * ux) * uy);
+    if (layers.terrain){
+      const dx = hi(fx + .25, fy) - hi(fx - .25, fy), dy = hi(fx, fy + .25) - hi(fx, fy - .25);
+      let shade = tile[5] ? 1 : Math.max(.55, Math.min(1.35, 1 + (-dx - dy) * 3.2));      // light from the north-west
+      if (tile[5] && tile[6] !== "lake") shade = .8 + .3 * Math.max(0, Math.min(1, hgt(tx, ty) + .4));   // shallower sea is lighter
+      const n = ((Math.imul(px * 73856093 ^ py * 19349663, 83492791) >>> 0) % 1000) / 1000;
+      if (tile[6] === "forest" || tile[6] === "woods") shade *= n < (tile[6] === "forest" ? .35 : .2) ? .72 : 1.04;   // trees
+      if (tile[6] === "mountain" || tile[6] === "hills") shade *= .94 + n * .12;
+      col = col.map(v => Math.max(0, Math.min(255, v * shade)));
+    }
+    const i = (py * W * PX + px) * 4; d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
   }
-  const e = [proj(0, 0), proj(W, 0), proj(W, H), proj(0, H)];
-  gc.beginPath(); e.forEach((p, i) => i ? gc.lineTo(p[0], p[1]) : gc.moveTo(p[0], p[1])); gc.closePath();
-  gc.strokeStyle = "rgba(56,214,255,.35)"; gc.lineWidth = 1.5 * DPR; gc.shadowColor = "#38d6ff"; gc.shadowBlur = 12 * DPR; gc.stroke(); gc.shadowBlur = 0;
+  g.putImageData(img, 0, 0);
 }
+
+// bands: the historian's named bands; everyone else is "no band"
+function bandOf(){ const m = new Map(); (frame.bands || []).forEach(([id, name, members, ann], i) => members.forEach(pid => m.set(pid, {id, name, i, ann}))); return m; }
+function bandColor(i){ return BAND_COLS[i % BAND_COLS.length]; }
+const bandIndex = new Map(); let nextBand = 0;
+function stableBandIdx(id){ if (!bandIndex.has(id)) bandIndex.set(id, nextBand++); return bandIndex.get(id); }
+
+const map = $("map"), g = map.getContext("2d");
+let MW = 0, MH = 0, DPR = 1, picks = [];
+function toScreen(x, y){ return [MW / 2 + (x - cam.x) * cam.z, MH / 2 + (y - cam.y) * cam.z]; }
 function personPos(r, t){
   if (!prev) return [r[P.x], r[P.y]];
   const dx = wrapD(r[P.x] - r[P.fx], W), dy = wrapD(r[P.y] - r[P.fy], H), e = t < 1 ? t * t * (3 - 2 * t) : 1;
   return [((r[P.fx] + dx * e) % W + W) % W, ((r[P.fy] + dy * e) % H + H) % H];
 }
-function groupsOf(rows){
-  const n = rows.length, parent = rows.map((_, i) => i), find = i => { while (parent[i] !== i){ parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
-  for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++)
-    if (Math.max(Math.abs(wrapD(rows[i][P.x] - rows[j][P.x], W)), Math.abs(wrapD(rows[i][P.y] - rows[j][P.y], H))) <= 2) parent[find(i)] = find(j);
-  const gs = new Map(); rows.forEach((r, i) => { const k = find(i); if (!gs.has(k)) gs.set(k, []); gs.get(k).push(r); }); return [...gs.values()];
+function nearCopy(x, y){ return [cam.x + wrapD(x - cam.x, W), cam.y + wrapD(y - cam.y, H)]; }   // the copy nearest the view (the world wraps)
+function glyph(cx, cy, s, col, ring){
+  g.fillStyle = col; g.strokeStyle = "rgba(4,10,20,.85)"; g.lineWidth = Math.max(1, s * .12);
+  g.beginPath(); g.arc(cx, cy - s * .55, s * .28, 0, 7); g.fill(); g.stroke();
+  g.beginPath(); g.moveTo(cx - s * .34, cy + s * .55); g.quadraticCurveTo(cx, cy - s * .5, cx + s * .34, cy + s * .55); g.closePath(); g.fill(); g.stroke();
+  if (ring){ g.strokeStyle = "#fff"; g.lineWidth = 2 * DPR; g.beginPath(); g.arc(cx, cy, s * 1.05, 0, 7); g.stroke(); }
 }
-let picks = [];
 function drawMap(now){
   requestAnimationFrame(drawMap);
-  if (!terrain || !frame || $("world").hidden) return;
-  const [w, h, d] = fit(map); const key = `${w}:${h}:${frame.t}:${view.zoom}:${view.panX}:${view.panY}`;
-  if (key !== groundKey){ MW = w; MH = h; DPR = d; setupMap(); paintGround(); groundKey = key; }
-  g.clearRect(0, 0, MW, MH); g.drawImage(ground, 0, 0);
-  const t = Math.min(1, (now - frameAt) / Math.max(200, interval * .8)), pulse = (Math.sin(now / 420) + 1) / 2;
-  { const R = W * 0.78, a = -Math.PI / 2 + frame.week / 52 * Math.PI * 2, [sx, sy] = proj(W / 2 + R * Math.cos(a), H / 2 + R * Math.sin(a));
-    g.fillStyle = "#fff"; g.shadowColor = "#38d6ff"; g.shadowBlur = 20 * DPR; g.beginPath(); g.arc(sx, sy, (4 + 2 * pulse) * DPR, 0, 7); g.fill(); g.shadowBlur = 0;
-    g.fillStyle = "rgba(255,255,255,.85)"; g.font = `${11 * DPR}px ui-monospace,Consolas,monospace`; g.textAlign = "center"; g.fillText("THIS WEEK", sx, sy - 12 * DPR); }
-  for (let i = 0; i < frame.tiles.length; i++) if (frame.tiles[i][4]){
-    const [sx, sy, k] = proj(i % W + .5, Math.floor(i / W) + .5); g.fillStyle = "#ffb547"; g.shadowColor = "#ffb547"; g.shadowBlur = 16 * DPR; g.beginPath(); g.arc(sx, sy, 3.5 * DPR * k, 0, 7); g.fill(); g.shadowBlur = 0; }
+  if (!terrain || !frame || $("world").hidden || $("vMap").hidden) return;
+  [MW, MH, DPR] = fit(map);
+  cam.fit = Math.min(MW / W, MH / H) * .98; if (!cam.touched){ cam.z = cam.fit; cam.x = W / 2; cam.y = H / 2; }
+  const t = Math.min(1, (now - frameAt) / Math.max(200, interval * .8));
   const pos = new Map(); frame.people.forEach(r => pos.set(r[P.id], personPos(r, t)));
-  g.lineWidth = 1.3 * DPR; g.strokeStyle = "rgba(214,232,255,.45)";
-  frame.people.forEach(r => { const q = r[P.partner]; if (!q || r[P.id] > q || !pos.has(q)) return; const a = pos.get(r[P.id]), b = pos.get(q);
-    if (Math.abs(a[0] - b[0]) > W / 2 || Math.abs(a[1] - b[1]) > H / 2) return;
-    const [x1, y1] = proj(a[0] + .5, a[1] + .5), [x2, y2] = proj(b[0] + .5, b[1] + .5); g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke(); });
-  for (const grp of groupsOf(frame.people)){
-    if (grp.length < 2) continue;
-    const r0 = pos.get(grp[0][P.id]); let mx = 0, my = 0;
-    grp.forEach(r => { const p = pos.get(r[P.id]); mx += r0[0] + wrapD(p[0] - r0[0], W); my += r0[1] + wrapD(p[1] - r0[1], H); });
-    mx = ((mx / grp.length) % W + W) % W; my = ((my / grp.length) % H + H) % H;
-    const [bx, by, k] = proj(mx + .5, my + .5), [tx, ty] = proj(mx + .5, my + .5, 2 + 1.8 * Math.sqrt(grp.length));
-    const grad = g.createLinearGradient(bx, by, tx, ty); grad.addColorStop(0, "rgba(56,214,255,.5)"); grad.addColorStop(1, "rgba(56,214,255,0)");
-    g.strokeStyle = grad; g.lineWidth = (3 + grp.length * .3) * DPR * k; g.beginPath(); g.moveTo(bx, by); g.lineTo(tx, ty); g.stroke();
-    g.fillStyle = "rgba(214,232,255,.95)"; g.font = `${12 * DPR}px ui-monospace,Consolas,monospace`; g.textAlign = "center"; g.fillText(`${grp.length} people`, tx, ty - 6 * DPR);
+  if (follow && selected && pos.has(selected)){ const [x, y] = pos.get(selected); const [nx, ny] = nearCopy(x + .5, y + .5); cam.x += (nx - cam.x) * .15; cam.y += (ny - cam.y) * .15; cam.touched = true; }
+  g.fillStyle = "#061424"; g.fillRect(0, 0, MW, MH); g.imageSmoothingEnabled = cam.z < PX;
+  // the land, in as many copies as the view needs (the world wraps)
+  const [ox, oy] = toScreen(0, 0), sw = W * cam.z, sh = H * cam.z;
+  for (let kx = Math.floor(-ox / sw) - 1; kx * sw + ox < MW; kx++) for (let ky = Math.floor(-oy / sh) - 1; ky * sh + oy < MH; ky++)
+    g.drawImage(relief, ox + kx * sw, oy + ky * sh, sw, sh);
+  // resources: wild food left on each land tile, fires, sown ground
+  if (layers.resources){
+    for (let i = 0; i < frame.tiles.length; i++){ if (terrain.tiles[i][5]) continue; const x = i % W, y = Math.floor(i / W), fr = frame.tiles[i];
+      const [a, b] = nearCopy(x, y), [sx, sy] = toScreen(a, b);
+      g.fillStyle = `rgba(${Math.round(255 - fr[0] * 22)},${Math.round(80 + fr[0] * 18)},70,.38)`; g.fillRect(sx, sy, cam.z + .5, cam.z + .5);
+      if (fr[1] > 0){ g.strokeStyle = "rgba(255,230,120,.8)"; g.lineWidth = 1; g.strokeRect(sx + 2, sy + 2, cam.z - 4, cam.z - 4); } }
   }
+  for (let i = 0; i < frame.tiles.length; i++) if (frame.tiles[i][4]){ const [a, b] = nearCopy(i % W + .5, Math.floor(i / W) + .5), [sx, sy] = toScreen(a, b);
+    g.fillStyle = "#ffb547"; g.shadowColor = "#ffb547"; g.shadowBlur = 14 * DPR; g.beginPath(); g.arc(sx, sy, Math.max(3, cam.z * .18), 0, 7); g.fill(); g.shadowBlur = 0; }
+  const bands = bandOf();
+  // groups: one halo per named band, around its members
+  if (layers.groups){
+    (frame.bands || []).forEach(([id, name, members]) => {
+      const pts = members.filter(m => pos.has(m)).map(m => pos.get(m)); if (pts.length < 2) return;
+      const [x0, y0] = nearCopy(pts[0][0], pts[0][1]); let mx = 0, my = 0;
+      pts.forEach(([x, y]) => { mx += x0 + wrapD(x - x0, W); my += y0 + wrapD(y - y0, H); }); mx /= pts.length; my /= pts.length;
+      const rad = Math.max(1.4, ...pts.map(([x, y]) => Math.hypot(x0 + wrapD(x - x0, W) - mx, y0 + wrapD(y - y0, H) - my))) + 1;
+      const col = bandColor(stableBandIdx(id)), [sx, sy] = toScreen(mx + .5, my + .5), [r1, g1, b1] = hexRgb(col);
+      g.fillStyle = `rgba(${r1},${g1},${b1},.12)`; g.strokeStyle = `rgba(${r1},${g1},${b1},.75)`; g.lineWidth = 1.5 * DPR;
+      g.beginPath(); g.arc(sx, sy, rad * cam.z, 0, 7); g.fill(); g.stroke();
+      g.fillStyle = col; g.font = `600 ${11.5 * DPR}px system-ui,Segoe UI,sans-serif`; g.textAlign = "center"; g.fillText(name.replace("the band of ", "") + "'s band", sx, sy - rad * cam.z - 5 * DPR);
+    });
+  }
+  // couples
+  g.strokeStyle = "rgba(255,255,255,.45)"; g.lineWidth = 1.2 * DPR;
+  if (layers.people) frame.people.forEach(r => { const q = r[P.partner]; if (!q || r[P.id] > q || !pos.has(q)) return;
+    const [ax, ay] = nearCopy(...pos.get(r[P.id])), b = pos.get(q), bx = ax + wrapD(b[0] - ax, W), by = ay + wrapD(b[1] - ay, H);
+    const [x1, y1] = toScreen(ax + .5, ay + .5), [x2, y2] = toScreen(bx + .5, by + .5); g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke(); });
+  // people
   picks = []; const seen = new Map();
-  for (const r of frame.people){
-    let [x, y] = pos.get(r[P.id]); const kk = Math.round(x) + "," + Math.round(y), n = (seen.get(kk) || 0) + 1; seen.set(kk, n);
-    if (n > 1){ x += Math.cos(n * 2.4) * .28; y += Math.sin(n * 2.4) * .28; }
-    const [sx, sy, k] = proj(x + .5, y + .5), grown = r[P.stage] >= 2, col = KINDS[kindOf(r[P.doing])].col, rad = (grown ? 4 : 2.4) * DPR * k * Math.max(1, view.zoom * .7);
-    g.fillStyle = col; g.shadowColor = col; g.shadowBlur = (grown ? 12 : 6) * DPR; g.globalAlpha = grown ? 1 : .8; g.beginPath(); g.arc(sx, sy, rad, 0, 7); g.fill(); g.shadowBlur = 0; g.globalAlpha = 1;
-    if (r[P.starving]){ g.strokeStyle = "#ff4fa3"; g.lineWidth = 1.5 * DPR; g.beginPath(); g.arc(sx, sy, rad + 3 * DPR, 0, 7); g.stroke(); }
+  if (layers.people) for (const r of frame.people){
+    let [x, y] = nearCopy(...pos.get(r[P.id])); const key = Math.round(x) + "," + Math.round(y), n = (seen.get(key) || 0) + 1; seen.set(key, n);
+    if (n > 1){ x += Math.cos(n * 2.4) * .3; y += Math.sin(n * 2.4) * .3; }
+    const [sx, sy] = toScreen(x + .5, y + .5), b = bands.get(r[P.id]) || (r[P.carer] && bands.get(r[P.carer]));
+    const s = Math.max(6, Math.min(16, cam.z * .55)) * (r[P.stage] >= 2 ? 1 : .7);
+    glyph(sx, sy, s, b ? bandColor(stableBandIdx(b.id)) : "#d9e4f0", r[P.id] === selected);
+    if (r[P.starving]){ g.strokeStyle = "#ff6b5f"; g.lineWidth = 1.5 * DPR; g.beginPath(); g.arc(sx, sy, s * .9, 0, 7); g.stroke(); }
+    if (r[P.id] === selected){ g.font = `600 ${13 * DPR}px system-ui,Segoe UI,sans-serif`; g.textAlign = "center";
+      const tw = g.measureText(r[P.name]).width; g.fillStyle = "rgba(6,12,24,.85)"; g.fillRect(sx - tw / 2 - 6, sy - s * 2.2 - 14 * DPR, tw + 12, 18 * DPR);
+      g.fillStyle = "#fff"; g.fillText(r[P.name], sx, sy - s * 2.2); }
     picks.push([sx, sy, r]);
   }
+  const tiles10 = 10 * cam.z / DPR; $("scale").innerHTML = `10 tiles<div style="width:${Math.round(tiles10)}px"></div>`;
+  drawMini(pos);
 }
 requestAnimationFrame(drawMap);
+const mini = $("mini"), mg = mini.getContext("2d");
+function drawMini(pos){
+  const w = mini.width, h = mini.height; mg.drawImage(relief, 0, 0, w, h);
+  const bands = bandOf();
+  frame.people.forEach(r => { const [x, y] = pos.get(r[P.id]), b = bands.get(r[P.id]); mg.fillStyle = b ? bandColor(stableBandIdx(b.id)) : "#fff";
+    mg.beginPath(); mg.arc((x + .5) / W * w, (y + .5) / H * h, 3.5, 0, 7); mg.fill(); });
+  const vw = MW / cam.z, vh = MH / cam.z; mg.strokeStyle = "#3fc8ff"; mg.lineWidth = 2;
+  mg.strokeRect(((cam.x - vw / 2) / W) * w, ((cam.y - vh / 2) / H) * h, vw / W * w, vh / H * h);
+}
+mini.addEventListener("click", e => { const r = mini.getBoundingClientRect(); cam.x = (e.clientX - r.left) / r.width * W; cam.y = (e.clientY - r.top) / r.height * H; cam.touched = true; follow = false; });
+
+// interaction
 const tip = $("tip");
 function pickAt(e){ const r = map.getBoundingClientRect(), x = (e.clientX - r.left) * DPR, y = (e.clientY - r.top) * DPR; let best = null, bd = 1e9;
   for (const [sx, sy, row] of picks){ const d = Math.hypot(sx - x, sy - y); if (d < bd){ bd = d; best = row; } } return bd < 16 * DPR ? best : null; }
 let drag = null;
 map.addEventListener("pointerdown", e => { drag = {x: e.clientX, y: e.clientY, moved: false}; map.setPointerCapture(e.pointerId); });
 map.addEventListener("pointermove", e => {
-  if (drag){ const dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
-    if (drag.moved){ view.panX += dx * DPR; view.panY += dy * DPR; drag.x = e.clientX; drag.y = e.clientY; } return; }
+  if (drag){ const dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 3){ drag.moved = true; map.classList.add("drag"); follow = false; }
+    if (drag.moved){ cam.x -= dx * DPR / cam.z; cam.y -= dy * DPR / cam.z; drag.x = e.clientX; drag.y = e.clientY; cam.touched = true; } return; }
   const r = pickAt(e), box = map.getBoundingClientRect();
-  if (r){ tip.style.display = "block"; tip.style.left = Math.min(e.clientX - box.left + 14, box.width - 310) + "px"; tip.style.top = (e.clientY - box.top + 14) + "px";
-    tip.innerHTML = `<b>${esc(r[P.name])}</b> · ${r[P.sex] === "F" ? "woman" : "man"}, ${Math.floor(r[P.age])}<br>this week: ${esc(WORDS[act(r[P.doing])] || r[P.doing] || "rest")}${r[P.thought] ? `<br><span style="color:#7f97b3">thinking: ${esc(r[P.thought])}</span>` : ""}<br><span style="color:#38d6ff">click to see inside their mind</span>`; }
+  if (r){ tip.style.display = "block"; tip.style.left = Math.min(e.clientX - box.left + 14, box.width - 300) + "px"; tip.style.top = (e.clientY - box.top + 14) + "px";
+    tip.innerHTML = `<b>${esc(r[P.name])}</b> · ${r[P.sex] === "F" ? "woman" : "man"}, ${Math.floor(r[P.age])}<br>this week: ${esc(WORDS[act(r[P.doing])] || r[P.doing] || "rest")}${r[P.thought] ? `<br><span style="color:#8299b4">thinking: ${esc(r[P.thought])}</span>` : ""}`; }
   else tip.style.display = "none";
 });
-map.addEventListener("pointerup", e => { if (drag && !drag.moved){ const r = pickAt(e); if (r && r[P.stage] >= 2) openPerson(r[P.id]); } drag = null; });
+map.addEventListener("pointerup", e => { map.classList.remove("drag"); if (drag && !drag.moved){ const r = pickAt(e); if (r) selectPerson(r[P.id]); } drag = null; });
 map.addEventListener("pointerleave", () => tip.style.display = "none");
-map.addEventListener("wheel", e => { e.preventDefault(); view.zoom = Math.max(.6, Math.min(4, view.zoom * (e.deltaY < 0 ? 1.12 : 1 / 1.12))); }, {passive: false});
-$("zin").onclick = () => view.zoom = Math.min(4, view.zoom * 1.3);
-$("zout").onclick = () => view.zoom = Math.max(.6, view.zoom / 1.3);
-$("zall").onclick = () => { view.zoom = 1; view.panX = 0; view.panY = 0; };
+map.addEventListener("wheel", e => { e.preventDefault(); const f = e.deltaY < 0 ? 1.15 : 1 / 1.15; cam.z = Math.max(cam.fit * .8, Math.min(70, cam.z * f)); cam.touched = true; }, {passive: false});
+$("zin").onclick = () => { cam.z = Math.min(70, cam.z * 1.35); cam.touched = true; };
+$("zout").onclick = () => { cam.z = Math.max(cam.fit * .8, cam.z / 1.35); cam.touched = true; };
+$("zall").onclick = () => { cam.touched = false; follow = false; };
+$("layers").querySelectorAll("button").forEach(b => b.onclick = () => { layers[b.dataset.l] = !layers[b.dataset.l]; b.classList.toggle("on", layers[b.dataset.l]); if (b.dataset.l === "terrain") paintRelief(); });
 
-// ---------- world panels -----------------------------------------------------------------------------
-const plural = (n, a, b) => `${n} ${n === 1 ? a : b}`;
-function worldPanels(){
-  const rows = frame.people, adults = rows.filter(r => r[P.stage] >= 3), kids = rows.filter(r => r[P.stage] < 2).length;
-  const couples = rows.filter(r => r[P.partner] && r[P.id] < r[P.partner]).length, starving = rows.filter(r => r[P.starving]).length;
-  const singles = rows.filter(r => r[P.stage] === 3 && !r[P.partner] && r[P.age] < 45).length, groups = groupsOf(rows).length;
-  const sky = frame.sky || {}, wx = sky.flood ? "floods" : sky.storm ? "a storm" : sky.rain ? (frame.season === "winter" ? "snow" : "rain") : "dry weather";
-  const yr = frame.weather >= 1.1 ? "a good growing year" : frame.weather <= 0.9 ? "a poor growing year" : "an ordinary growing year";
-  $("date").innerHTML = `<span class="led"${frame.pop ? "" : ' style="background:#ff4fa3;box-shadow:0 0 8px #ff4fa3"'}></span>Year ${frame.year}, week ${frame.week + 1} · ${frame.season} · ${wx} · ${yr}${!live && frame.wps === 0 ? " · paused" : ""}`;
-  $("summary").innerHTML = frame.pop
-    ? `${plural(frame.pop, "person lives", "people live")} in ${plural(groups, "group", "groups")}: ${plural(adults.length, "adult", "adults")} and ${plural(kids, "child", "children")}, ${plural(couples, "couple", "couples")}. ${starving ? `<span style="color:#ff4fa3">${starving} starving.</span>` : "No one is starving."} ${frame.born_year ?? 0} born and ${frame.died_year ?? 0} died this year.`
-      + `<span class="hint">${singles ? `${plural(singles, "adult under 45 has", "adults under 45 have")} no partner. ` : ""}This is generation ${frame.gen + 1}; the founders were generation 1.</span>`
-    : `No one is left.<span class="hint">The land is still here; there is no one to live on it.</span>`;
-  const grown = rows.filter(r => r[P.stage] >= 2), cnt = {}; for (const k in KINDS) cnt[k] = 0; grown.forEach(r => cnt[kindOf(r[P.doing])]++);
-  const n = Math.max(1, grown.length);
-  $("doing").innerHTML = Object.entries(KINDS).map(([k, v]) => `<div class="row"><span><span class="dot" style="background:${v.col}"></span>${v.label}</span><div class="meter"><i style="width:${cnt[k] / n * 100}%;background:${v.col};box-shadow:0 0 8px ${v.col}"></i></div><span class="v">${cnt[k]}</span></div>`).join("");
-  const N = Math.max(1, rows.length);
-  $("health").innerHTML = [
-    [Math.round(rows.filter(r => !r[P.starving]).length / N * 100) + "%", "are fed (not starving)"],
-    [Math.round(rows.reduce((s, r) => s + r[P.health], 0) / N), "average health, out of 100"],
-    [(rows.reduce((s, r) => s + r[P.mood], 0) / N).toFixed(2), "average mood, from −1 to 1"],
-    [adults.length ? Math.round(adults.filter(r => r[P.partner]).length / adults.length * 100) + "%" : "–", "of adults have a partner"],
-  ].map(([v, l]) => `<div><b>${v}</b>${l}</div>`).join("");
-  $("feed").innerHTML = news.slice(-50).reverse().map(([y, text, kind]) => `<p class="${kind === "first" ? "first" : ""}"><span class="y">year ${y}</span>${esc(text)}</p>`).join("") || '<p class="p">Nothing yet.</p>';
+// ================= left column =================
+const ICONS = {pop:'<svg viewBox="0 0 16 16"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 14c0-3 2-4.5 4.5-4.5S10.5 11 10.5 14"/><circle cx="11.5" cy="5.5" r="2"/><path d="M11 9.5c2 0 3.5 1.3 3.5 4"/></svg>',
+  grp:'<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2"/></svg>', adult:'<svg viewBox="0 0 16 16"><circle cx="8" cy="4" r="2.5"/><path d="M3.5 15c0-4 2-6 4.5-6s4.5 2 4.5 6"/></svg>',
+  child:'<svg viewBox="0 0 16 16"><circle cx="8" cy="6" r="2"/><path d="M5 15c0-3 1.3-4.5 3-4.5S11 12 11 15"/></svg>', birth:'<svg viewBox="0 0 16 16"><path d="M8 14s-5-3-5-7a2.5 2.5 0 0 1 5-1 2.5 2.5 0 0 1 5 1c0 4-5 7-5 7z"/></svg>',
+  death:'<svg viewBox="0 0 16 16"><path d="M5 15V7a3 3 0 0 1 6 0v8M3 15h10"/></svg>', couple:'<svg viewBox="0 0 16 16"><circle cx="5.5" cy="8" r="3.5"/><circle cx="10.5" cy="8" r="3.5"/></svg>'};
+function overview(){
+  const rows = frame.people, adults = rows.filter(r => r[P.stage] >= 2).length, kids = rows.length - adults, couples = rows.filter(r => r[P.partner] && r[P.id] < r[P.partner]).length;
+  const bands = (frame.bands || []).length, cur = {pop: frame.pop, grp: bands, adult: adults, child: kids, couple: couples, birth: frame.born_year ?? 0, death: frame.died_year ?? 0};
+  const lab = {pop: "Population", grp: "Bands", adult: "Teens and adults", child: "Children (under 13)", couple: "Couples", birth: "Births this year", death: "Deaths this year"};
+  $("overview").innerHTML = Object.keys(lab).map(k => { const d = last && k in last ? cur[k] - last[k] : 0;
+    return `<div class="ov">${ICONS[k]}<span>${lab[k]}</span><b>${cur[k]}</b><i class="${d > 0 ? "up" : d < 0 ? "dn" : ""}">${d > 0 ? "+" + d : d < 0 ? d : "—"}</i></div>`; }).join("") +
+    `<p class="note" style="margin-top:8px">Change since last week on the right. Bands are the groups ACL's historian names once people have lived together for two years.</p>`;
+  last = cur;
 }
-function speedButtons(){
-  const el = $("speed"); if (live){ el.innerHTML = "<span>their world keeps its own time</span>"; return; }
-  if (!el.querySelector("button")){ el.innerHTML = "<span>weeks per second</span>";
-    [["Pause", 0], ["1", 1], ["4", 4], ["16", 16], ["52", 52]].forEach(([l, v]) => { const b = document.createElement("button"); b.textContent = l; b.dataset.v = v; b.onclick = () => fetch("/speed?wps=" + v); el.appendChild(b); }); }
+const KINDCOL = {first: "#ffb547", band: "#3fc8ff", leader: "#b083ff", famine: "#ff6b5f", drought: "#ff9f5a", myth: "#e8e36a", symbol: "#6ee7d8", settlement: "#5fe08a", population: "#8299b4", era: "#fff"};
+function eventsPanel(){
+  $("events").innerHTML = news.slice(-5).reverse().map(([y, text, kind, t]) => `<div class="ev"><span class="d" style="background:${KINDCOL[kind] || "#8299b4"}"></span><span>${esc(text.length > 110 ? text.slice(0, 108) + "…" : text)}<small>Year ${y}${t != null ? " · week " + (t % 52 + 1) : ""}</small></span></div>`).join("") || '<p class="empty">Nothing yet.</p>';
+}
+function legendPanel(){
+  const bs = (frame.bands || []).slice(0, 6).map(([id, name]) => `<span><span class="dot" style="background:${bandColor(stableBandIdx(id))}"></span>${esc(name.replace("the band of ", ""))}'s band</span>`).join("");
+  $("legend").innerHTML = bs + `<span><span class="dot" style="background:#d9e4f0"></span>no band yet</span><span><span class="dot" style="background:#ffb547"></span>fire</span><span><span class="dot" style="background:#fff;border:2px solid #fff"></span>selected</span><span><span class="dot" style="background:none;border:2px solid #ff6b5f"></span>starving</span>`;
+  $("miniTitle").textContent = `World map (${W} × ${H} tiles)`;
+}
+
+// ================= person card =================
+function selectPerson(id){ selected = id; personInfo = null; firstQ = null; personAt = -1; follow = false; loadPerson(); renderCard(); }
+function logThoughts(){   // each person's headline thought, as it changes week by week (since this page was opened)
+  frame.people.forEach(r => { const th = r[P.thought]; if (!th) return; const L = thoughtsLog.get(r[P.id]) || [];
+    if (!L.length || L[L.length - 1][1] !== th) L.push([frame.t, th]); if (L.length > 8) L.shift(); thoughtsLog.set(r[P.id], L); });
+}
+let cardTab = "overview";
+function renderCard(){
+  const el = $("card"), r = selected && frame && frame.people.find(q => q[P.id] === selected), p = personInfo;
+  if (!selected){ el.innerHTML = '<h2>Selected person</h2><p class="empty">Click anyone on the map, or in People, to see who they are and what is on their mind.</p>'; return; }
+  if (!r && !(p && !p.alive)){ el.innerHTML = '<h2>Selected person</h2><p class="empty">Reading…</p>'; return; }
+  const sex = (p ? p.sex : r[P.sex]), name = p ? p.name : r[P.name], age = p ? Math.floor(p.age) : Math.floor(r[P.age]);
+  const band = p && p.band, bandCol = band ? bandColor(stableBandIdx((frame.bands.find(b => b[1] === band) || [0])[0])) : "#d9e4f0";
+  const b = p && p.brain, body = b ? b.body : null;
+  const bars = body ? [["♥", "Health", body.health, "#3fc8ff"], ["◔", "Hunger", body.hunger, "#ffb547"], ["💧", "Thirst", body.thirst, "#4f9dff"],
+    ["☺", "Mood", (body.mood + 1) / 2, "#5fe08a"], ["⚡", "Energy", (p.energy ?? 0) / 100, "#9cc4ff"]] : [];
+  const tabs = ["overview", "mind", "family", "history"].map(t => `<button class="${cardTab === t ? "on" : ""}" data-t="${t}">${t[0].toUpperCase() + t.slice(1)}</button>`).join("");
+  let body2 = "";
+  if (cardTab === "overview") body2 = p && !p.alive ? `<p class="empty">${esc(name)} has died (${esc(p.death)}). Their family and history remain in the other tabs.</p>` : bars.length ? bars.map(([ic, l, v, c]) => `<div class="bar"><span>${ic}</span><span>${l}</span><div class="meter"><i style="width:${Math.max(0, Math.min(1, v)) * 100}%;background:${c}"></i></div><span class="v">${Math.round(v * 100)}%</span></div>`).join("") + '<p class="note">Mood is shown from −1 (0%) to +1 (100%).</p>' : '<p class="empty">Reading…</p>';
+  if (cardTab === "mind") body2 = `${(p && p.mind && p.mind.thoughts || []).slice(0, 5).map(o => `<div class="th"><span>${esc(o.text)}</span><span>${o.pull.toFixed(2)}</span></div>`).join("") || '<p class="empty">Nothing holds their attention.</p>'}
+    ${b ? `<p class="note">Lit this week: <b style="color:#fff">${esc(ctxLabel(b.ctx))}</b>. ${b.learned} of 608 habits learned.</p>` : ""}`;
+  if (cardTab === "family") body2 = p ? `<div class="th"><span>Partner</span><span style="color:#fff">${esc(p.partner || "none")}</span></div><div class="th"><span>Mother</span><span style="color:#fff">${esc(p.mother || "—")}</span></div><div class="th"><span>Father</span><span style="color:#fff">${esc(p.father || "—")}</span></div><div class="th"><span>Children alive</span><span style="color:#fff">${p.children.length ? esc(p.children.join(", ")) : "none"}</span></div>` : "";
+  if (cardTab === "history") body2 = p ? `${(p.memories || []).length ? `<ul class="l">${p.memories.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : '<p class="empty">No strong memories yet.</p>'}${(p.makes || []).length ? `<div class="k">Knows how to make</div><ul class="l">${p.makes.map(x => `<li>${esc(x.what)}</li>`).join("")}</ul>` : ""}${(p.beliefs || []).length ? `<div class="k">Has come to believe</div><ul class="l">${p.beliefs.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}` : "";
+  const log = (thoughtsLog.get(selected) || []).slice().reverse();
+  const doing = r ? act(r[P.doing]) : "";
+  const nextIn = live && frame.clock ? Math.max(0, frame.clock.last + frame.clock.period - (Date.now() / 1000)) : (frame.wps ? 1 / frame.wps : null);
+  const fmtT = s => s == null ? "paused" : s >= 3600 ? `~${(s / 3600).toFixed(1)} hours` : s >= 60 ? `~${Math.round(s / 60)} minutes` : `~${Math.max(1, Math.round(s))} seconds`;
+  el.innerHTML = `<h2>Selected person</h2>
+    <div class="pc"><div class="badge" style="background:${bandCol}">${esc(name[0])}</div>
+      <div><div class="n">${esc(name)} <span style="font-size:15px;color:#8299b4">${sex === "F" ? "♀" : "♂"}</span></div><div class="s">Age ${age} · ${p && !p.alive ? `<span style="color:#ff6b5f">died: ${esc(p.death)}</span>` : '<span class="alive">● alive</span>'}</div>
+      <div class="s">${band ? esc(band.replace("the band of ", "") + "'s band") : "no band yet"}${p && p.loc ? ` · at (${p.loc[0]}, ${p.loc[1]})` : ""}</div></div></div>
+    <div class="ptabs" id="ptabs">${tabs}</div>${body2}
+    ${p && !p.alive ? "" : '<button class="btn-wide" id="fullMind">Open their brain scan →</button>'}
+    <div class="k">Recent thoughts <span style="text-transform:none;letter-spacing:0;font-weight:400">(since you opened this page)</span></div>
+    ${log.length ? log.slice(0, 5).map(([t, th]) => { const wk = frame.t - t; return `<div class="rt"><span>${wk === 0 ? "this week" : plural(wk, "week ago", "weeks ago")}</span><span>${esc(th)}</span></div>`; }).join("") : '<p class="empty">Collecting…</p>'}
+    ${r ? `<div class="k">Current action</div><div class="act"><span class="ic">${ICON[doing] || "☾"}</span><div><b style="color:#fff">${esc(WORDS[doing] || r[P.doing] || "rest")}</b><div class="note" style="margin:0">Next week in ${fmtT(nextIn)}</div></div></div>
+    <button class="btn-wide" id="followBtn">${follow ? "Following on the map" : "Follow on the map"}</button>` : ""}`;
+  el.querySelectorAll("#ptabs button").forEach(bt => bt.onclick = () => { cardTab = bt.dataset.t; renderCard(); });
+  if ($("fullMind")) $("fullMind").onclick = () => { $("world").hidden = true; $("person").hidden = false; story(); };
+  if ($("followBtn")) $("followBtn").onclick = () => { follow = !follow; showView("map"); renderCard(); };
+}
+window.onPerson = () => renderCard();
+
+// ================= bottom charts =================
+function lineChart(c, xs, series, opts = {}){
+  const [w, h, d] = fit(c), x = c.getContext("2d"); x.clearRect(0, 0, w, h);
+  const pad = {l: 34 * d, r: 8 * d, t: 8 * d, b: 18 * d}, n = xs.length;
+  if (n < 2){ x.fillStyle = "#4a6080"; x.font = `${12 * d}px system-ui`; x.fillText(opts.empty || "collecting…", pad.l, 20 * d); return; }
+  const hi = opts.max ?? Math.max(1, ...series.flatMap(s => s.v)) * 1.15, lo = opts.min ?? 0;
+  const X = i => pad.l + (xs[i] - xs[0]) / Math.max(1e-9, xs[n - 1] - xs[0]) * (w - pad.l - pad.r), Y = v => pad.t + (1 - (v - lo) / (hi - lo)) * (h - pad.t - pad.b);
+  x.strokeStyle = "#1a2840"; x.fillStyle = "#8299b4"; x.font = `${10.5 * d}px system-ui`; x.lineWidth = 1;
+  for (let k = 0; k <= 2; k++){ const v = lo + (hi - lo) * k / 2, y = Y(v); x.beginPath(); x.moveTo(pad.l, y); x.lineTo(w - pad.r, y); x.stroke(); x.textAlign = "right"; x.fillText(opts.pct ? Math.round(v * 100) + "%" : (Math.abs(v) < 10 ? v.toFixed(1) : Math.round(v)), pad.l - 5 * d, y + 3 * d); }
+  x.textAlign = "center"; [0, Math.floor((n - 1) / 2), n - 1].forEach(i => x.fillText((opts.xl || (v => v))(xs[i]), X(i), h - 4 * d));
+  series.forEach(s => { x.beginPath(); s.v.forEach((v, i) => i ? x.lineTo(X(i), Y(v)) : x.moveTo(X(i), Y(v))); x.strokeStyle = s.col; x.lineWidth = 2 * d; x.setLineDash(s.dash ? [5 * d, 4 * d] : []); x.stroke(); x.setLineDash([]); });
+  if (opts.ref != null){ const y = Y(opts.ref); x.strokeStyle = "#ffb547"; x.setLineDash([4 * d, 4 * d]); x.beginPath(); x.moveTo(pad.l, y); x.lineTo(w - pad.r, y); x.stroke(); x.setLineDash([]); x.fillStyle = "#ffb547"; x.textAlign = "right"; x.fillText(opts.refLabel, w - pad.r, y - 4 * d); }
+}
+function donut(c, parts){
+  const [w, h, d] = fit(c), x = c.getContext("2d"); x.clearRect(0, 0, w, h);
+  const R = Math.min(w * .3, h * .42), cx = R + 10 * d, cy = h / 2, tot = Math.max(1, parts.reduce((s, p) => s + p[1], 0)); let a0 = -Math.PI / 2;
+  x.lineWidth = R * .38; parts.forEach(([l, v, col]) => { if (!v) return; const a1 = a0 + v / tot * Math.PI * 2; x.strokeStyle = col; x.beginPath(); x.arc(cx, cy, R, a0 + .02, a1 - .02); x.stroke(); a0 = a1; });
+  x.fillStyle = "#fff"; x.font = `700 ${18 * d}px system-ui`; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(tot, cx, cy - 6 * d); x.font = `${10 * d}px system-ui`; x.fillStyle = "#8299b4"; x.fillText("total", cx, cy + 10 * d);
+  x.textAlign = "left"; x.font = `${12 * d}px system-ui`; parts.forEach(([l, v, col], i) => { const y = cy - (parts.length - 1) * 11 * d + i * 22 * d;
+    x.fillStyle = col; x.beginPath(); x.arc(cx + R + 26 * d, y, 4.5 * d, 0, 7); x.fill(); x.fillStyle = "#dce9f8"; x.fillText(l, cx + R + 36 * d, y); x.textAlign = "right"; x.fillText(Math.round(v / tot * 100) + "%", w - 4 * d, y); x.textAlign = "left"; });
+}
+function stability(){   // G1's measure, live: of adults co-resident (same camp-radius group) at week t, the share still so k weeks later
+  const lags = [1, 4, 13, 26, 52, 104], out = [];
+  for (const k of lags){ let num = 0, den = 0;
+    for (let i = 0; i + k < groupSnaps.length; i++){ const a = groupSnaps[i], b = groupSnaps[i + k];
+      for (const [pair] of a.pairs) if (b.alive.has(pair.split("|")[0]) && b.alive.has(pair.split("|")[1])){ den++; num += b.pairs.has(pair) ? 1 : 0; } }
+    if (den) out.push([k, num / den]); }
+  return out;
+}
+function snapGroups(){
+  const rows = frame.people.filter(r => r[P.stage] >= 3), n = rows.length, parent = rows.map((_, i) => i), find = i => { while (parent[i] !== i){ parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
+  for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) if (Math.max(Math.abs(wrapD(rows[i][P.x] - rows[j][P.x], W)), Math.abs(wrapD(rows[i][P.y] - rows[j][P.y], H))) <= 2) parent[find(i)] = find(j);
+  const pairs = new Map(); for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) if (find(i) === find(j)){ const a = rows[i][P.id], b = rows[j][P.id]; pairs.set(a < b ? a + "|" + b : b + "|" + a, 1); }
+  groupSnaps.push({t: frame.t, alive: new Set(rows.map(r => r[P.id])), pairs}); if (groupSnaps.length > 260) groupSnaps.shift();
+  return new Set(rows.map((_, i) => find(i))).size;
+}
+function charts(){
+  const el = $("charts");
+  const box = (id, title, note, cls = "") => `<div class="chart ${cls}"><h3>${title}</h3><canvas id="${id}"></canvas>${note ? `<p>${note}</p>` : ""}</div>`;
+  const rows = frame.people, ages = rows.map(r => r[P.age]);
+  if (bottomTab === "pop"){
+    el.innerHTML = box("cPop", "Population over time", "From the historian's yearly record.") + box("cAge", "Age distribution", "Everyone alive now.") + box("cStab", "Group stability (G1's measure)", "Of adults living together, the share still together after a given time, measured since this page was opened.");
+    const ys = history.map(r => r.year); lineChart($("cPop"), ys.length > 1 ? ys : [0, 1], [{v: history.length > 1 ? history.map(r => r.population) : [frame.pop, frame.pop], col: "#3fc8ff"}], {xl: v => "Year " + v, empty: "needs a full year"});
+    donut($("cAge"), [["Children (0–12)", ages.filter(a => a < 13).length, "#5fe08a"], ["Young (13–29)", ages.filter(a => a >= 13 && a < 30).length, "#3fc8ff"], ["Middle (30–49)", ages.filter(a => a >= 30 && a < 50).length, "#ffb547"], ["Old (50+)", ages.filter(a => a >= 50).length, "#b083ff"]]);
+    const st = stability(); lineChart($("cStab"), st.map(s => s[0]), [{v: st.map(s => s[1]), col: "#3fc8ff"}], {min: 0, max: 1, pct: true, xl: k => k >= 52 ? (k / 52) + " yr" : k + " wk", ref: .78, refLabel: "G1 control worlds: 78% after 2 years", empty: "collecting weeks…"});
+  } else if (bottomTab === "groups"){
+    el.innerHTML = box("cBands", "Bands over time", "Named bands each week since this page was opened.") + `<div class="chart" style="grid-column:2/4;overflow:auto"><h3>Bands now</h3>${(frame.bands || []).map(([id, name, m, ann]) => `<div class="th"><span><span class="dot" style="background:${bandColor(stableBandIdx(id))}"></span>${esc(name)}${ann ? "" : " (forming)"}</span><span>${m.length}</span></div>`).join("") || '<p class="empty">No band has formed yet.</p>'}</div>`;
+    lineChart($("cBands"), groupSnaps.map(s => s.t), [{v: groupSnaps.map(s => s.nb ?? 0), col: "#b083ff"}], {xl: t => "wk " + t});
+  } else if (bottomTab === "health"){
+    el.innerHTML = box("cHealth", "Average health (0–100)", "Yearly, from the historian.") + box("cMood", "Average mood (−1 to 1)", "Yearly, from the historian.") + box("cBD", "Births and deaths per year", "Yearly, from the historian. Blue births, red deaths.");
+    const ys = history.map(r => r.year);
+    lineChart($("cHealth"), ys, [{v: history.map(r => r.health), col: "#3fc8ff"}], {min: 0, max: 100, xl: v => "Year " + v, empty: "needs a full year"});
+    lineChart($("cMood"), ys, [{v: history.map(r => r.mood), col: "#5fe08a"}], {min: -1, max: 1, xl: v => "Year " + v, empty: "needs a full year"});
+    lineChart($("cBD"), ys, [{v: history.map(r => r.births), col: "#3fc8ff"}, {v: history.map(r => r.deaths), col: "#ff6b5f"}], {xl: v => "Year " + v, empty: "needs a full year"});
+  } else {
+    el.innerHTML = `<div class="chart wide" style="overflow:auto"><h3>All events (newest first)</h3>${news.slice().reverse().map(([y, text, kind]) => `<div class="ev"><span class="d" style="background:${KINDCOL[kind] || "#8299b4"}"></span><span>${esc(text)}<small>Year ${y} · ${esc(kind)}</small></span></div>`).join("")}</div>`;
+  }
+}
+$("btabs").querySelectorAll("button").forEach(b => b.onclick = () => { bottomTab = b.dataset.b; $("btabs").querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)); charts(); });
+
+// ================= other tabs =================
+let sortKey = "name", sortDir = 1;
+function peoplePage(){
+  const bands = bandOf(), rows = frame.people.map(r => ({id: r[P.id], name: r[P.name], age: Math.floor(r[P.age]), sex: r[P.sex] === "F" ? "woman" : "man",
+    stage: STAGE[r[P.stage]], band: (bands.get(r[P.id]) || {}).name || "", partner: r[P.partner] ? (frame.people.find(q => q[P.id] === r[P.partner]) || [])[P.name] || "" : "",
+    doing: WORDS[act(r[P.doing])] || r[P.doing] || "rest", health: r[P.health], mood: r[P.mood], thought: r[P.thought] || ""}));
+  rows.sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : a[sortKey] < b[sortKey] ? -1 : 0) * sortDir);
+  const cols = [["name", "Name"], ["age", "Age"], ["sex", "Sex"], ["stage", "Stage"], ["band", "Band"], ["partner", "Partner"], ["doing", "This week"], ["health", "Health"], ["mood", "Mood"], ["thought", "On their mind"]];
+  $("pCount").textContent = `(${rows.length})`;
+  $("ptable").innerHTML = `<tr>${cols.map(([k, l]) => `<th data-k="${k}">${l}${sortKey === k ? (sortDir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr>` +
+    rows.map(r => `<tr class="r" data-id="${r.id}">${cols.map(([k]) => `<td>${esc(k === "mood" ? r[k].toFixed(2) : k === "band" ? r[k].replace("the band of ", "") : r[k])}</td>`).join("")}</tr>`).join("");
+  $("ptable").querySelectorAll("th").forEach(th => th.onclick = () => { sortDir = sortKey === th.dataset.k ? -sortDir : 1; sortKey = th.dataset.k; peoplePage(); });
+  $("ptable").querySelectorAll("tr.r").forEach(tr => tr.onclick = () => { selectPerson(tr.dataset.id); follow = true; showView("map"); });
+}
+function groupsPage(){
+  const named = frame.bands || [];
+  $("gNote").textContent = `${plural(named.length, "named band", "named bands")} now. ACL's historian names a band once its grown members have lived near each other and cared for one another for two years; it is declared gone after two years missing. People outside any band are not shown here.`;
+  $("gcards").innerHTML = named.map(([id, name, members, ann]) => `<div class="panel box"><h2 style="color:${bandColor(stableBandIdx(id))}">${esc(name)}${ann ? "" : " · forming"}</h2>${members.map(m => { const r = frame.people.find(q => q[P.id] === m);
+      return r ? `<div class="th" style="cursor:pointer" data-id="${m}"><span>${esc(r[P.name])}, ${Math.floor(r[P.age])}</span><span>${esc(WORDS[act(r[P.doing])] || "rest")}</span></div>` : ""; }).join("")}</div>`).join("") || '<p class="empty">No band has formed yet.</p>';
+  $("gcards").querySelectorAll("[data-id]").forEach(el => el.onclick = () => { selectPerson(el.dataset.id); follow = true; showView("map"); });
+}
+function researchPage(){
+  const rows = frame.people, seekers = rows.filter(r => r[P.stage] === 3 && !r[P.partner] && r[P.age] < 45);
+  const elig = seekers.filter(p => rows.some(q => q[P.stage] === 3 && !q[P.partner] && q[P.sex] !== p[P.sex] && Math.abs(q[P.age] - p[P.age]) <= 15 &&
+    Math.max(Math.abs(wrapD(q[P.x] - p[P.x], W)), Math.abs(wrapD(q[P.y] - p[P.y], H))) <= (terrain.perception || 4))).length;
+  const st = stability(), two = st.find(s => s[0] === 104), one = st.find(s => s[0] === 52);
+  const item = (study, q, now, ref) => `<div class="panel box" style="margin-bottom:10px"><h2>${study}</h2><div style="font-size:15px;color:#fff">${q}</div><p class="note">${now}</p><p class="note" style="color:#ffb547">${ref}</p></div>`;
+  $("research").innerHTML =
+    item("F1 · why worlds die", "Single adults under 45 with a possible partner in sight", seekers.length ? `Now: ${elig} of ${seekers.length} (${Math.round(elig / seekers.length * 100)}%). Kinship is not checked here, so this slightly overcounts.` : "No single adults under 45 now.", "In ACL's control worlds, single women almost never had an eligible man in sight (98% had none); finding partners is the main lever (F2).") +
+    item("G1 · how fluid groups are", "Adults living together, still together after a year / two years", st.length ? `This world, since the page was opened: ${one ? Math.round(one[1] * 100) + "% after a year" : "a year not yet observed"}${two ? ", " + Math.round(two[1] * 100) + "% after two years" : ""}.` : "Collecting weeks…", "Control worlds: 78% after two years. Forager bands keep their people for months, not years.") +
+    item("N10 · how big their world is", `${frame.pop} people on ${W} × ${H} tiles, in ${plural((frame.bands || []).length, "named band", "named bands")}`, `Real forager peoples average about 840 people across several bands (Hamilton et al. 2007).`, "S1 is testing larger worlds and more founders (frozen protocol; results pending).") +
+    `<p class="note">These are live readings from this one world, not results: ACL's results come from frozen experiments on hundreds of worlds (see the book and experiments/INDEX.md).</p>`;
+}
+function showView(v){
+  ["map", "people", "groups", "research"].forEach(k => $("v" + k[0].toUpperCase() + k.slice(1)).hidden = k !== v);
+  $("nav").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  if (frame){ if (v === "people") peoplePage(); if (v === "groups") groupsPage(); if (v === "research") researchPage(); }
+}
+$("nav").querySelectorAll("button").forEach(b => b.onclick = () => showView(b.dataset.v));
+
+// ================= header =================
+function header(){
+  $("wname").textContent = `World · seed ${terrain.seed}`;
+  const st = $("status"); st.className = "chip status" + (!frame.pop ? " dead" : !live && frame.wps === 0 ? " paused" : "");
+  st.textContent = !frame.pop ? "● no one left" : live ? "● Living" : frame.wps === 0 ? "● Paused" : "● Running";
+  $("cYear").textContent = "Year " + frame.year; $("cWeek").textContent = "Week " + (frame.week + 1);
+  const sky = frame.sky || {}, wx = sky.flood ? "flood" : sky.storm ? "storm" : sky.rain ? (frame.season === "winter" ? "snow" : "rain") : "dry";
+  $("cSeason").textContent = `${frame.season[0].toUpperCase() + frame.season.slice(1)} · ${wx}`;
+  const el = $("speed"); if (live){ el.innerHTML = ""; return; }
+  if (!el.querySelector("button")){ el.innerHTML = "<span>speed</span>"; [["❚❚", 0], ["1", 1], ["4", 4], ["16", 16], ["52", 52]].forEach(([l, v]) => { const b = document.createElement("button"); b.textContent = l; b.dataset.v = v; b.title = v ? v + " weeks per second" : "pause"; b.onclick = () => fetch("/speed?wps=" + v); el.appendChild(b); }); }
   el.querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.v === frame.wps));
 }
 
 // ---------- a person: the brain scan ------------------------------------------------------------------
 function openPerson(id){ selected = id; personInfo = null; firstQ = null; personAt = -1; $("world").hidden = true; $("person").hidden = false; loadPerson(); }
-$("back").onclick = () => { selected = null; personInfo = null; $("person").hidden = true; $("world").hidden = false; groundKey = ""; };
+$("back").onclick = () => { $("person").hidden = true; $("world").hidden = false; };
 $("delta").onclick = e => { showDelta = !showDelta; e.target.classList.toggle("on", showDelta); };
 function loadPerson(){
   if (!selected) return; const id = selected;
   fetch("/person?id=" + encodeURIComponent(id)).then(r => r.json()).then(p => { if (id !== selected) return;
-    personInfo = p; personAt = frame ? frame.t : 0; if (p.brain && !firstQ) firstQ = p.brain.q.slice(); story(); });
+    personInfo = p; personAt = frame ? frame.t : 0; if (p.brain && !firstQ) firstQ = p.brain.q.slice(); if (!$("person").hidden) story(); if (window.onPerson) window.onPerson(); });
 }
 const bc = $("brain"), bg = bc.getContext("2d"), BW = bc.width, BH = bc.height, hits = [];
 const X = [250, 880, 1560, 2010];
@@ -399,20 +644,31 @@ function story(){
     <p class="p">This is not a neural network. It is a body, a temperament, and a table of habits each person grew from their own life.</p>`;
 }
 
-// ---------- the stream --------------------------------------------------------------------------------
+
+
+// ================= the stream =================
+function render(){
+  header(); overview(); eventsPanel(); legendPanel();
+  const v = ["map", "people", "groups", "research"].find(k => !$("v" + k[0].toUpperCase() + k.slice(1)).hidden);
+  if (v === "map") charts(); else showView(v);
+  renderCard();
+}
 fetch("/terrain").then(r => r.json()).then(t => {
-  terrain = t; W = t.width; H = t.height; live = t.live;
-  (t.chronicle || []).forEach(x => news.push([x.year, x.text, x.kind]));
+  terrain = t; W = t.width; H = t.height; live = t.live; paintRelief();
+  (t.chronicle || []).forEach(x => news.push([x.year, x.text, x.kind, x.t]));
   const es = new EventSource("/stream");
   es.onmessage = e => {
     const f = JSON.parse(e.data);
-    if (frame && f.t === frame.t){ frame.wps = f.wps; speedButtons(); worldPanels(); return; }
+    if (frame && f.t === frame.t){ frame.wps = f.wps; header(); return; }
     prev = frame; frame = f; interval = frameAt ? performance.now() - frameAt : 500; frameAt = performance.now();
-    (f.news || []).forEach(x => news.push([x.year, x.text, x.kind]));
-    speedButtons(); worldPanels();
+    (f.news || []).forEach(x => news.push([x.year, x.text, x.kind, x.t]));
+    logThoughts(); snapGroups(); if (groupSnaps.length) groupSnaps[groupSnaps.length - 1].nb = (f.bands || []).length;
+    if (f.years_n !== historyN){ historyN = f.years_n; fetch("/history").then(r => r.json()).then(h => { history = h; if (bottomTab !== "groups") charts(); }); }
+    render();
     if (selected && f.t !== personAt) loadPerson();
   };
 });
+window.addEventListener("resize", () => { if (frame) charts(); });
 </script>
 </body>
 </html>

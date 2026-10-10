@@ -13,10 +13,12 @@ off, it catches up on the weeks it missed when it starts again, so their time
 never stands still. The people know nothing of hours, weeks or years; those are
 only shown to you.
 
-The page shows the world as a map: the land shaded by its wild food, every person as a dot coloured by what they are
-doing, groups, fires and couples, with a plain summary of how the people are. Click anyone to see inside their mind:
-the situation they are in, the habits they have learned, how instinct and habit weighed their choices this week, and
-their life (see mindview.py). The earlier pixel-art page is kept at /story.
+The page shows the world as a relief map drawn from the land's real height and biome, with every person on it,
+the bands the historian has named, fires and couples; an overview, the chronicle, charts from the historian's yearly
+record, and tabs for people, bands and live readings of ACL's findings. Click anyone to see their state, thoughts,
+family and history, and open their brain scan: the situation they are in, the habits they have learned, and how
+instinct and habit weighed their choices this week (see mindview.py). ACL's people have no faces, so none are drawn.
+The earlier pixel-art page is kept at /story.
 """
 from __future__ import annotations
 
@@ -236,6 +238,8 @@ class Live:
             "animals": stage.animal_rows(w), "news": news,
             "sky": stage.sky(w), "marks": stage.mark_rows(w),
             "wps": self.wps, "now": time.time(), "born_year": cur["born"], "died_year": cur["died"],
+            "bands": [[b["id"], b["name"], b["members"], 1 if b.get("announced") else 0] for b in self.historian.bands],
+            "years_n": len(self.historian.years),
         }
         if events:
             # Last week's conversations are over now: keep them where anyone can read them back.
@@ -256,10 +260,16 @@ class Live:
             "seed": w.cfg.seed, "width": w.cfg.width, "height": w.cfg.height, "live": self.clock is not None,
             "perception": w.cfg.perception,
             "tiles": [[round(t.fertility, 2), round(t.forest, 2), round(t.rock, 2), 1 if t.flinty else 0,
-                       round(t.wildness, 2), 1 if t.water else 0, t.biome] for row in w.tiles for t in row],
+                       round(t.wildness, 2), 1 if t.water else 0, t.biome, round(t.height, 3)] for row in w.tiles for t in row],
             "chronicle": self.historian.chronicle[-80:],
             "log": self.talk_log[-300:],
         }
+
+    def history(self) -> list:
+        """One row per finished year, as the historian keeps it (the fields the page charts)."""
+        with self.lock:
+            keep = ("year", "population", "births", "deaths", "children", "pairs", "mood", "health", "generation")
+            return [{k: r[k] for k in keep} for r in self.historian.years]
 
     def chronicle_page(self) -> str:
         with self.lock:
@@ -293,7 +303,8 @@ class Live:
                 thing, season = key.split("@")
                 beliefs.append(_belief_words(thing, int(season), v))
             return {
-                "id": p.id, "name": p.name, "sex": p.sex, "alive": p.alive,
+                "id": p.id, "name": p.name, "sex": p.sex, "alive": p.alive, "loc": list(p.loc),
+                "energy": round(p.energy), "band": next((b["name"] for b in self.historian.bands if p.id in b["members"]), None),
                 "age": round(p.years(tick), 1), "stage": p.stage(tick), "generation": p.generation,
                 "health": round(p.health), "mood": round(p.mood, 2), "doing": p.doing,
                 "mother": name(p.mother), "father": name(p.father), "partner": name(p.partner),
@@ -400,6 +411,8 @@ def make_handler(live: Live, server_holder: list | None = None):
             elif url.path == "/story":
                 # The earlier pixel-art page, kept for reference; the lab view at "/" is the main one.
                 self._send((HERE / "viewer_pixel.html").read_bytes(), "text/html; charset=utf-8")
+            elif url.path == "/history":
+                self._json(live.history())
             elif url.path == "/terrain":
                 self._json(live.terrain())
             elif url.path == "/person":

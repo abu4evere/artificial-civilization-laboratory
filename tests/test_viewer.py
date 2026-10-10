@@ -56,6 +56,11 @@ def test_viewer_serves_world():
         assert len(brain["q"]) == brain["n_contexts"] * len(brain["actions"]) and 0 <= brain["ctx"] < brain["n_contexts"]
         assert "frames" not in info and "born_year" in frames[-1]
 
+        assert "bands" in frames[-1] and info["loc"] and "energy" in info
+        status, body = _get(port, "/history")   # the historian's yearly rows
+        assert status == 200 and isinstance(json.loads(body), list)
+        assert len(terrain["tiles"][0]) == 8     # height is sent for the relief map
+
         status, page = _get(port, "/story")   # the earlier pixel-art page is kept
         assert status == 200 and b"<canvas" in page
 
