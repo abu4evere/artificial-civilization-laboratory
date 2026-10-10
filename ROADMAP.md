@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after MC1-L (October 2026).
+**Last updated:** after P2's pilot (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -301,6 +301,13 @@ to design P2 (outward dispersal) at that size.
 effect −0.023, 95% interval [−0.086, +0.039], below half of F2's effect (0.116). **Frozen rule: MC1 is genuinely
 weak.** Pair stability limits births, not survival: now a confident null. The sham's noise matched the power model.
 **Next: the creator decides** whether to design P2 (outward dispersal) at 256 worlds.
+
+**P2 stopped at its pilot** (`experiments/P2_outward_search/pilot_stop.md`; signed off and frozen: outward instead
+of random steps for seekers with no eligible partner in sight, direction only). Seekers have no one in sight in 95%
+of their weeks, but the search wins against food, water and home so seldom that the outward step was taken in
+**3.9% of trigger weeks** (frozen gate 5%). Main run not started. **The question is now how much people search, not
+where;** only evidence may set that. **Next: the creator decides** (evidence on time spent seeking others; a
+direction-only variant; or N8's other candidates).
 
 | E13R result | what it means | next step |
 |---|---|---|
