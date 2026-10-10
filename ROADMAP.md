@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after N9 (October 2026).
+**Last updated:** after G1 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -314,6 +314,12 @@ search is **partly anchored, direction only**: visiting and residential change a
 range more widely, but no source read gives how often a person travels or what share of time, and none compares the
 unmarried with the married. **No number can be set; P2 is closed in its present form.** Lead: a read-only check of
 how fluid ACL's groups are, against "stable over months, not years". **Next: the creator decides.**
+
+**G1 done** (`experiments/G1_group_fluidity/findings.md`; read-only, discovery + holdout): of adults living together,
+85% still are after 4 weeks and **78% after two years**, in both sets; the curve is flat after the first month, and
+the unpartnered do not move more. **Frozen reading: ACL's groups are more fixed than forager bands** (direction only).
+Three sides now agree: F1 (partners not found), P2 (singles rarely search), G1 (groups hardly mix). **Next: the
+creator decides** (e.g. candidates for movement between groups, evidence first).
 
 | E13R result | what it means | next step |
 |---|---|---|
