@@ -1,0 +1,5 @@
+code_p2 settings off (observers on) vs control code, 40x40, 20 founders, seed 3001, 20 years: identical world: yes
+code_p2 settings off (observers on) vs control code, 40x40, 20 founders, seed 3002, 20 years: identical world: yes
+code_p2 settings off (observers on) vs control code, 80x80, 20 founders, seed 3001, 20 years: identical world: yes
+code_p2 settings off (observers on) vs control code, 80x80, 80 founders, seed 3002, 20 years: identical world: yes
+All: PASS
