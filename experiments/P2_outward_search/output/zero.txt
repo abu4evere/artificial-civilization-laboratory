@@ -1,0 +1,6 @@
+settings off, log and observers on, seed 2257, 20 years: copy reproduces the control world: yes
+settings off, log and observers on, seed 2258, 20 years: copy reproduces the control world: yes
+arm p on, seed 2257, 20 years: the world differs from the control: yes
+arm s on, seed 2257, 20 years: the world differs from the control: yes
+code_p2 fingerprint: f9133a6c7acc90e9caa444430f9250e81e3703cae63696caf875c9ef74534e76
+All: PASS
