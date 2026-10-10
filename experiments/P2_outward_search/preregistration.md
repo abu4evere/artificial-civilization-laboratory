@@ -1,4 +1,6 @@
-# P2 — Leave when there is no one: outward search by the unpartnered (candidate P2 of N8) (pre-registration, DRAFT for the creator's sign-off; nothing frozen, nothing run)
+# P2 — Leave when there is no one: outward search by the unpartnered (candidate P2 of N8) (pre-registration, SIGNED OFF and frozen as `P2-frozen`)
+
+**Signed off by the creator (October 2026):** outward means away from (a) the centre of all remembered places; (a) 256 new seeds 2257–2512, all three arms; the manipulation check is a direction (encounter share higher in P than C, paired sign test p < 0.05); the pilot stops if the outward step is taken in fewer than 5% of trigger weeks. Nothing has been run.
 
 ## Why
 
@@ -141,7 +143,7 @@ creator, after the evidence.
 default), the log and the observer; zero checks; smoke test on a throwaway seed. 3. Feasibility pilot (2513–2516).
 4. If it passes, the main run (C, P, S on 2257–2512). 5. Report in the frozen order; index, roadmap, picture, book.
 
-## Decisions for the creator
+## Decisions (taken by the creator at sign-off: (a), (a), direction, 5% gate)
 
 1. **"Away from the places they have known": the centre to step away from.**
    - **(a) the centre of all remembered places** (up to 8; the mean position on the wrapping map, taken per axis; no
