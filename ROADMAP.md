@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after P2's pilot (October 2026).
+**Last updated:** after N9 (October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -308,6 +308,12 @@ of their weeks, but the search wins against food, water and home so seldom that 
 **3.9% of trigger weeks** (frozen gate 5%). Main run not started. **The question is now how much people search, not
 where;** only evidence may set that. **Next: the creator decides** (evidence on time spent seeking others; a
 direction-only variant; or N8's other candidates).
+
+**N9 done** (`experiments/N9_search_effort/evidence.md`; questions frozen before search): how much the unpartnered
+search is **partly anchored, direction only**: visiting and residential change are frequent across foragers, men
+range more widely, but no source read gives how often a person travels or what share of time, and none compares the
+unmarried with the married. **No number can be set; P2 is closed in its present form.** Lead: a read-only check of
+how fluid ACL's groups are, against "stable over months, not years". **Next: the creator decides.**
 
 | E13R result | what it means | next step |
 |---|---|---|
