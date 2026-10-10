@@ -1,4 +1,6 @@
-# S1 — World size: more land, and more people (pre-registration, DRAFT for the creator's sign-off; nothing frozen, no main run)
+# S1 — World size: more land, and more people (pre-registration, SIGNED OFF and frozen as `S1-frozen`)
+
+**Signed off by the creator (October 2026):** 256 new seeds (3001–3256); a run-time limit of 2 days; a fourth arm **P** (40 × 40, 80 founders) added, making a 2 × 2 design; thresholds as drafted. Nothing has been run beyond the feasibility check.
 
 ## Why
 
@@ -15,11 +17,16 @@
 1. **Does a larger world change survival?** L (80 × 80, 20 founders) against C (40 × 40, 20 founders).
 2. **Does adding founders change survival, given the larger world?** LP (80 × 80, 80 founders) against L.
 
-LP against C is reported **descriptively only**: it changes land and people at once.
+3. **Does adding founders change survival without more land?** P (40 × 40, 80 founders) against C. (Added at sign-off.)
+
+LP against C, and LP against P, are reported **descriptively only** (the 2 × 2 interaction is described, not tested).
+**Multiplicity:** three primary comparisons, each read at p < 0.05 as before; Holm-adjusted p-values are reported
+beside them, and any reading that does not survive the adjustment is marked as such.
 
 **Known confound (the code's own rule, not altered):** founders form `min(4, founders / 4)` bands, so LP's 80 founders
-start as **4 bands of 20** (C and L: 4 bands of 5). Question 2 therefore tests "more founders, in larger founding bands";
-it cannot separate the two.
+start as **4 bands of 20** (C and L: 4 bands of 5), and so do P's. Questions 2 and 3 therefore test "more founders,
+in larger founding bands"; they cannot separate the two. P also has four times today's crowding (8 land tiles per
+founder).
 
 ## Arms (all in `code_p2` with every P2/MC1 setting off, which reproduces the control world; settings only)
 
@@ -28,6 +35,7 @@ it cannot separate the two.
 | **C** | 40 × 40 | 20 | — |
 | **L** | 80 × 80 | 20 | — |
 | **LP** | 80 × 80 | 80 | — |
+| **P** | 40 × 40 | 80 | — (added at sign-off) |
 | **S** sham | 40 × 40 | 20 | `sham_draw = 1` (as before) |
 
 L and LP with the same seed share the same land (the land is made before the founders); C and L cannot share land.
@@ -54,7 +62,7 @@ first years: 1.0 / 1.5 / 5.6 seconds per world-year.
 
 ## Outcome rule (frozen at sign-off)
 
-For each question separately (L vs C; LP vs L), paired by seed, exact two-sided sign test on worlds that differ, and the
+For each question separately (L vs C; LP vs L; P vs C), paired by seed, exact two-sided sign test on worlds that differ, and the
 paired difference in extinction share with a 95% bootstrap interval (10,000 resamples, fixed generator seed):
 
 | | reading |
@@ -69,9 +77,11 @@ reach p < 0.05; if it does, every reading carries that caveat.
 
 ## Pilot before the main run (rule 12; runtime only)
 
-One LP world, 120 years, on a throwaway seed (9101): **only its run time is recorded**, because populations can grow and
-make later years slower than the feasibility estimate. If the projected main run exceeds the creator's limit (decision
-2), the sample is reduced before freezing, never after.
+One LP world and one P world, 120 years each, on throwaway seeds (9101, 9102): **only their run times are recorded**,
+because populations can grow and make later years slower than the feasibility estimate. The main run's projected time
+is 256 × (C + L + LP + P + S per-world times) ÷ 4 workers. **Pre-registered contingency:** if it exceeds 48 hours, the
+main run uses the first 128 seeds (3001–3128) instead; this is decided from the pilot's run time alone, before any
+main-run data.
 
 ## Hard stops
 
@@ -84,7 +94,7 @@ make later years slower than the feasibility estimate. If the projected main run
 - **Assistant:** L **worse** than C (the same 20 people spread thinner, bands twice as far apart); LP **better** than L
   (four times the partners in sight at the start). Held loosely.
 
-## Decisions for the creator
+## Decisions (taken by the creator at sign-off)
 
 1. **Seeds:** (a) 256 new seeds (power as in MC1-L), or (b) 128 (half the time; detects only large effects).
 2. **Runtime limit:** the feasibility estimate is ~19 hours for 256 seeds, but LP may slow as it grows; the pilot will
