@@ -1,0 +1,64 @@
+{
+ "reproduce": "python tools/mind_views/brain_scan.py 501 10  (control code; seed 501; year 11, week 1; person Vadumis)",
+ "seed": 501,
+ "tick": 521,
+ "name": "Vadumis",
+ "sex": "M",
+ "age": 36.4,
+ "partner": null,
+ "habits_learned_of_608": 78,
+ "court_habit_max_over_32_situations": 0.01,
+ "strongest_habits": [
+  [
+   "give",
+   0.37
+  ],
+  [
+   "forage",
+   0.35
+  ],
+  [
+   "give",
+   0.26
+  ]
+ ],
+ "this_week_weighed": [
+  [
+   "forage",
+   0.99,
+   0,
+   0.21
+  ],
+  [
+   "rest",
+   0.54,
+   1,
+   0.01
+  ],
+  [
+   "join",
+   0.44,
+   0,
+   0.01
+  ],
+  [
+   "join",
+   0.37,
+   0,
+   0.01
+  ]
+ ],
+ "chose": "rest",
+ "situation": 12,
+ "body": {
+  "hunger": 0.84,
+  "thirst": 0.0,
+  "fatigue": 0.0,
+  "health": 0.97,
+  "mood": 0.55,
+  "fear": 0.0,
+  "anger": 0.0,
+  "grief": 0.43,
+  "loneliness": 0.08
+ }
+}
