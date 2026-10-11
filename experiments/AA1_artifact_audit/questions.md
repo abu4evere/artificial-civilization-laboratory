@@ -71,3 +71,20 @@ without measure; after WS1, before ID1)
 
 A1 (corner crossing) happens, perhaps often, because diagonal moves are common and many channels are narrow; A2 is rare
 (the generator puts sea around the edges); A3 is small. Held loosely.
+
+## Code review for A4 and A6 (read-only; written before the observer is written, as the frozen plan requires)
+
+A full read of `mind.py` (where choices are made) found these further cases. Each is measured with the same rules as
+the others (shares with absolute counts and 95% intervals; 5% material; borderline band), and each is classified against
+the world's intended rules before being called a flaw.
+
+| | what a person "knows" | where | measured as |
+|---|---|---|---|
+| **A6a** | the **exact food** a nearby person holds (`q.edible()`), when judging their hunger to give | `mind.decide`, give option | every gift decision uses it; reported: gifts per person-year and gifted food as a share of all food eaten |
+| **A6b** | **exactly how much food** a nearby person carries (`q.food`), when deciding to steal | `mind.decide`, steal option | every theft decision uses it; reported: thefts per person-year and stolen food as a share of all food eaten |
+| **A6c** | **eligible singles up to 2 tiles beyond sight**: partner search scans `perception + 2` tiles; sight is `perception` | `mind.decide`, partner search | share of partner-search "go to" moves aimed at someone beyond sight |
+| **A6d** | **water up to 7 tiles away** when judging whether a place is dry (water within sight of the *place*, not of the person) | `mind.decide`, `dry_seen` | share of dryness judgements that rested on water beyond the person's own sight |
+
+No case was found of a choice reading another person's habits or temperament, a tile's contents beyond sight other than
+A6d, or the random stream's future. Movement, foraging and storage gave no further non-information shortcut beyond A1–A3
+(A4: none added).
