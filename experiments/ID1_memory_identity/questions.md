@@ -1,4 +1,7 @@
-# ID1 — What makes an ACL person who they are? (questions, DRAFT for the creator's sign-off; nothing frozen or run)
+# ID1 — What makes an ACL person who they are? (SIGNED OFF and frozen as `ID1-frozen`)
+
+**Signed off by the creator (October 2026):** window 26 weeks; restore after 26 weeks; 128 focal people in F1's 64 control
+worlds (two each); run after WS1 finishes. Nothing has been run.
 
 **Asked by the creator (October 2026),** from the idea "is memory the foundation of identity?". In ACL a person is made of
 separate parts, each a different kind of state in the code. ID1 asks which parts make a person behave as **that** person.
@@ -50,7 +53,7 @@ in the other, one part of one person is replaced (the **swap**).
   their own original mix.
 - Beside each: the world's population and the focal person's age, partner and survival through the window.
 
-## Decisions for the creator
+## Decisions (taken by the creator at sign-off: 26-week window; restore at 26 weeks; 128 people in 64 worlds; after WS1)
 
 1. **Window:** behaviour over (a) 13 weeks, (b) 26 weeks, or (c) 52 weeks after the swap. Longer shows lasting effects but
    lets the world's chaos grow.
@@ -70,3 +73,39 @@ How human identity works. ACL's "memory" and "habits" are far simpler than a hum
 Habits and temperament will matter most; memories (episodic) the least, because in the code memories mostly colour
 feelings, not choices; restoring will mostly bring people back, but not completely, because the weeks lived in between
 change their habits too. Held loosely.
+
+## Operational details (fixed at freezing, before any run)
+
+- **Worlds and moment:** F1's 64 control seeds, control code (`code_e13r`), the world as it stands at the start of
+  **year 20** (most worlds are still alive then; F1's dying worlds mostly die later). A world with no eligible pair is
+  skipped and reported; the sample is then smaller, never topped up from other seeds.
+- **Focal people and donors:** chosen with `random.Random(seed)` among living people aged 20–45: two focal people per
+  world, each with a donor of the same sex, within 10 years of age, not kin (kinship 0) and not their partner. The two
+  focal people in a world are different people, and neither is the other's donor.
+- **Runs per focal person (each 52 weeks from the same snapshot):** the **original** (nothing touched); the **sham**
+  (one extra random draw at the moment of the swap, person untouched); **eight swap arms** (temperament, habits,
+  memories, relationships, know-how, beliefs, places, and everything except temperament). In every swap arm, the swapped
+  part is **restored at week 26** to the focal person's own values as they were at the moment of the swap. References
+  to the focal person inside swapped relationships or memories are left as they are (the donor's view of the focal
+  person becomes the focal person's view of themselves; this is recorded as a known oddity, and it applies to
+  relationships only).
+- **Behaviour window:** weeks 1–26 (swapped) and weeks 27–52 (restored). Action mix = share of weeks spent on each of the
+  19 actions. Weeks in which the focal person is dead are excluded; a focal person alive for fewer than 13 weeks of a
+  window is dropped from that window, and the count is reported.
+- **Drift** = Jensen–Shannon divergence (base 2) between the arm's action mix and the original copy's, same window.
+- **Q1 (which parts move a person):** for each of the eight arms, paired Wilcoxon signed-rank test of arm drift vs sham
+  drift in weeks 1–26 (two-sided); Holm adjustment over the eight; **"moves the person"** if Holm-adjusted p < 0.05 and
+  the median paired difference is positive.
+- **Q2 (pull toward the donor):** for each arm, the focal person counts as pulled if the arm's action mix (weeks 1–26)
+  is closer (JSD) to the donor's original-copy mix than to the focal person's own original-copy mix; exact sign test
+  against the same count in the sham; Holm over eight.
+- **Q3 (is temperament enough):** read from the "everything except temperament" arm under Q2: pulled toward the donor
+  (p < 0.05) = **the person follows their parts, not their temperament**; not pulled and Q1 significant = **changed, but
+  not into the donor**; neither = **temperament holds them**.
+- **Q4 (does restoring bring them back):** for each arm that moved the person in Q1, weeks 27–52 drift vs sham drift
+  (paired Wilcoxon, Holm): p ≥ 0.05 = **no detectable lasting change** (not proof of full return); p < 0.05 = **a
+  lasting change**: the weeks lived with the other part changed them.
+- **Rule 15:** discovery = the 32 worlds 501–516 and 601–616; reading written down; then holdout = 811–818 and
+  1101–1124. A reading stands only if the holdout agrees in direction and significance.
+- **Hard stops:** the original copy reproduces the uncopied control run exactly (state hash at week 52); the sham and
+  every swap differ from it; code fingerprint unchanged.
