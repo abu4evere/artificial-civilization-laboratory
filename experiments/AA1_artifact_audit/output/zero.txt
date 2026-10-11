@@ -1,0 +1,4 @@
+logging copy with log and observer on, seed 501, 20 years: reproduces the control world: yes
+logging copy with log and observer on, seed 601, 20 years: reproduces the control world: yes
+code_aa1 fingerprint: e2d3e1d84072bb72dd842e0f65afa7062f6fa627c4f21a61ee9da0e78ba85c45
+All: PASS
