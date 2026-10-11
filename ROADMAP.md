@@ -315,10 +315,10 @@ range more widely, but no source read gives how often a person travels or what s
 unmarried with the married. **No number can be set; P2 is closed in its present form.** Lead: a read-only check of
 how fluid ACL's groups are, against "stable over months, not years". **Next: the creator decides.**
 
-**G1 done** (`experiments/G1_group_fluidity/findings.md`; read-only, discovery + holdout): of adults living together,
+**GF1 done** (`experiments/GF1_group_fluidity/findings.md`; first named G1, renamed because G1 was already taken by "who receives the food"; read-only, discovery + holdout): of adults living together,
 85% still are after 4 weeks and **78% after two years**, in both sets; the curve is flat after the first month, and
 the unpartnered do not move more. **Frozen reading: ACL's groups are more fixed than forager bands** (direction only).
-Three sides now agree: F1 (partners not found), P2 (singles rarely search), G1 (groups hardly mix). **Next: the
+Three sides now agree: F1 (partners not found), P2 (singles rarely search), GF1 (groups hardly mix). **Next: the
 creator decides** (e.g. candidates for movement between groups, evidence first).
 
 **N10 done** (`experiments/N10_world_size/evidence.md`; asked by the creator: is 40 × 40 too small?): **population

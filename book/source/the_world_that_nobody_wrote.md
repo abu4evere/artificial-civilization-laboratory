@@ -993,7 +993,7 @@ The creator looked at the world and felt it was too small for them. Forty tiles 
 
 The answer came back in people, not in land. Across three hundred and thirty-nine foraging societies, the same ladder appeared again and again: a family of four or five, a band of about sixteen, a larger band of about fifty, a seasonal gathering of about a hundred and sixty, and a whole people of about eight hundred and forty, each rung close to four times the one below. A model of how small a people could be and still not die out by bad luck put the floor at about a hundred and fifty, perhaps seventy-five.
 
-ACL began with twenty. Its worlds held between twenty and forty. The whole world was one band, with no other bands to marry into, visit, or move to. That was the same thing F1, P2 and G1 had each found from its own side: the people could not find partners, did not go looking, and stayed with the few they knew. It was not that the land was too small. There was land to spare; most of it was empty. It was that there were too few people on it for a people to exist at all.
+ACL began with twenty. Its worlds held between twenty and forty. The whole world was one band, with no other bands to marry into, visit, or move to. That was the same thing F1, P2 and GF1 had each found from its own side: the people could not find partners, did not go looking, and stayed with the few they knew. It was not that the land was too small. There was land to spare; most of it was empty. It was that there were too few people on it for a people to exist at all.
 
 How many people a tile of ACL's land should hold, the sources could not say, because a tile has no size in kilometres. So any larger world would have to keep ACL's own crowding and grow its land and its founders together. Whether to build one was left to the creator.
 
@@ -1656,7 +1656,7 @@ Dates are as recorded in the repository. World Bible versions 1 to 6 are not pre
 - **October 2026 — MC1-L.** The moving camp re-tested on 256 new worlds: couples together, more children, extinction unchanged (93 against 87); any benefit smaller than half of perfect finding's. Genuinely weak, by the rule written beforehand.
 - **October 2026 — P2.** Single people with no one in sight would step outward instead of at random. Stopped at its pilot: they almost never had anyone in sight, but they chose to search so seldom (about four weeks in a hundred) that the change barely acted. The question became how much people search, not where.
 - **October 2026 — N9.** How much the unpartnered search: foragers visit and move often, by every account, but no source read says how often a person goes. No number could be set; the outward step was closed in its present form.
-- **October 2026 — G1.** How fluid ACL's groups are: adults living together are still together two years later 78 times in 100, in both discovery and holdout. Forager bands keep their people for months, not years; ACL's keep them for years.
+- **October 2026 — GF1.** How fluid ACL's groups are: adults living together are still together two years later 78 times in 100, in both discovery and holdout. Forager bands keep their people for months, not years; ACL's keep them for years.
 - **October 2026 — N10.** Is the world too small? In people, yes: a viable forager people needs 75–150 or more and real ones average about 840; ACL's twenty make a single band. Land alone was not the shortage.
 
 # Appendix B — Words Used in This Book

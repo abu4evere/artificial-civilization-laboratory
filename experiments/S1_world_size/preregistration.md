@@ -102,3 +102,10 @@ main-run data.
 3. **A fourth arm P (40 × 40, 80 founders)?** It would complete a 2 × 2 design and show whether people help without more
    land (at four times today's crowding). Not proposed by default; it adds cost and changes crowding.
 4. **Thresholds** as above (as MC1-L).
+
+## Note added (rule 19), October 2026: name
+
+S1 was already the name of an earlier study (`S1_stash_decisions`: why stashing almost never wins). This study is
+renamed **WS1 (world size)**. Because its main run is writing into this folder, the folder is renamed only after the run
+finishes; its tags (`S1-feasibility-plan`, `S1-frozen`) stay, with `WS1-` tags added at the same commits. Nothing in
+the design, seeds, thresholds or analysis changes.

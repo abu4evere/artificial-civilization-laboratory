@@ -1,9 +1,9 @@
-"""G1 — how fluid are ACL's groups? (questions.md, frozen as `G1-questions`). Read-only replays of control worlds
+"""GF1 — how fluid are ACL's groups? (questions.md, frozen as `G1-questions`). Read-only replays of control worlds
 (`code_e13r`, F1's setup) with a weekly group observer.
 
-  python experiments/G1_group_fluidity/run_g1.py verify      # observer read-only (two seeds, 20 years)
-  python experiments/G1_group_fluidity/run_g1.py discovery   # F1's 64 seeds, checked against F1's saved populations
-  python experiments/G1_group_fluidity/run_g1.py holdout     # 64 new seeds 2601-2664 (only after findings_discovery.md)
+  python experiments/GF1_group_fluidity/run_g1.py verify      # observer read-only (two seeds, 20 years)
+  python experiments/GF1_group_fluidity/run_g1.py discovery   # F1's 64 seeds, checked against F1's saved populations
+  python experiments/GF1_group_fluidity/run_g1.py holdout     # 64 new seeds 2601-2664 (only after findings_discovery.md)
 """
 from __future__ import annotations
 

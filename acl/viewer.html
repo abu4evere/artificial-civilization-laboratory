@@ -466,7 +466,7 @@ function donut(c, parts){
   x.textAlign = "left"; x.font = `${12 * d}px system-ui`; parts.forEach(([l, v, col], i) => { const y = cy - (parts.length - 1) * 11 * d + i * 22 * d;
     x.fillStyle = col; x.beginPath(); x.arc(cx + R + 26 * d, y, 4.5 * d, 0, 7); x.fill(); x.fillStyle = "#dce9f8"; x.fillText(l, cx + R + 36 * d, y); x.textAlign = "right"; x.fillText(Math.round(v / tot * 100) + "%", w - 4 * d, y); x.textAlign = "left"; });
 }
-function stability(){   // G1's measure, live: of adults co-resident (same camp-radius group) at week t, the share still so k weeks later
+function stability(){   // GF1's measure, live: of adults co-resident (same camp-radius group) at week t, the share still so k weeks later
   const lags = [1, 4, 13, 26, 52, 104], out = [];
   for (const k of lags){ let num = 0, den = 0;
     for (let i = 0; i + k < groupSnaps.length; i++){ const a = groupSnaps[i], b = groupSnaps[i + k];
@@ -486,10 +486,10 @@ function charts(){
   const box = (id, title, note, cls = "") => `<div class="chart ${cls}"><h3>${title}</h3><canvas id="${id}"></canvas>${note ? `<p>${note}</p>` : ""}</div>`;
   const rows = frame.people, ages = rows.map(r => r[P.age]);
   if (bottomTab === "pop"){
-    el.innerHTML = box("cPop", "Population over time", "From the historian's yearly record.") + box("cAge", "Age distribution", "Everyone alive now.") + box("cStab", "Group stability (G1's measure)", "Of adults living together, the share still together after a given time, measured since this page was opened.");
+    el.innerHTML = box("cPop", "Population over time", "From the historian's yearly record.") + box("cAge", "Age distribution", "Everyone alive now.") + box("cStab", "Group stability (GF1's measure)", "Of adults living together, the share still together after a given time, measured since this page was opened.");
     const ys = history.map(r => r.year); lineChart($("cPop"), ys.length > 1 ? ys : [0, 1], [{v: history.length > 1 ? history.map(r => r.population) : [frame.pop, frame.pop], col: "#3fc8ff"}], {xl: v => "Year " + v, empty: "needs a full year"});
     donut($("cAge"), [["Children (0–12)", ages.filter(a => a < 13).length, "#5fe08a"], ["Young (13–29)", ages.filter(a => a >= 13 && a < 30).length, "#3fc8ff"], ["Middle (30–49)", ages.filter(a => a >= 30 && a < 50).length, "#ffb547"], ["Old (50+)", ages.filter(a => a >= 50).length, "#b083ff"]]);
-    const st = stability(); lineChart($("cStab"), st.map(s => s[0]), [{v: st.map(s => s[1]), col: "#3fc8ff"}], {min: 0, max: 1, pct: true, xl: k => k >= 52 ? (k / 52) + " yr" : k + " wk", ref: .78, refLabel: "G1 control worlds: 78% after 2 years", empty: "collecting weeks…"});
+    const st = stability(); lineChart($("cStab"), st.map(s => s[0]), [{v: st.map(s => s[1]), col: "#3fc8ff"}], {min: 0, max: 1, pct: true, xl: k => k >= 52 ? (k / 52) + " yr" : k + " wk", ref: .78, refLabel: "GF1 control worlds: 78% after 2 years", empty: "collecting weeks…"});
   } else if (bottomTab === "groups"){
     el.innerHTML = box("cBands", "Bands over time", "Named bands each week since this page was opened.") + `<div class="chart" style="grid-column:2/4;overflow:auto"><h3>Bands now</h3>${(frame.bands || []).map(([id, name, m, ann]) => `<div class="th"><span><span class="dot" style="background:${bandColor(stableBandIdx(id))}"></span>${esc(name)}${ann ? "" : " (forming)"}</span><span>${m.length}</span></div>`).join("") || '<p class="empty">No band has formed yet.</p>'}</div>`;
     lineChart($("cBands"), groupSnaps.map(s => s.t), [{v: groupSnaps.map(s => s.nb ?? 0), col: "#b083ff"}], {xl: t => "wk " + t});
@@ -534,8 +534,8 @@ function researchPage(){
   const item = (study, q, now, ref) => `<div class="panel box" style="margin-bottom:10px"><h2>${study}</h2><div style="font-size:15px;color:#fff">${q}</div><p class="note">${now}</p><p class="note" style="color:#ffb547">${ref}</p></div>`;
   $("research").innerHTML =
     item("F1 · why worlds die", "Single adults under 45 with a possible partner in sight", seekers.length ? `Now: ${elig} of ${seekers.length} (${Math.round(elig / seekers.length * 100)}%). Kinship is not checked here, so this slightly overcounts.` : "No single adults under 45 now.", "In ACL's control worlds, single women almost never had an eligible man in sight (98% had none); finding partners is the main lever (F2).") +
-    item("G1 · how fluid groups are", "Adults living together, still together after a year / two years", st.length ? `This world, since the page was opened: ${one ? Math.round(one[1] * 100) + "% after a year" : "a year not yet observed"}${two ? ", " + Math.round(two[1] * 100) + "% after two years" : ""}.` : "Collecting weeks…", "Control worlds: 78% after two years. Forager bands keep their people for months, not years.") +
-    item("N10 · how big their world is", `${frame.pop} people on ${W} × ${H} tiles, in ${plural((frame.bands || []).length, "named band", "named bands")}`, `Real forager peoples average about 840 people across several bands (Hamilton et al. 2007).`, "S1 is testing larger worlds and more founders (frozen protocol; results pending).") +
+    item("GF1 · how fluid groups are", "Adults living together, still together after a year / two years", st.length ? `This world, since the page was opened: ${one ? Math.round(one[1] * 100) + "% after a year" : "a year not yet observed"}${two ? ", " + Math.round(two[1] * 100) + "% after two years" : ""}.` : "Collecting weeks…", "Control worlds: 78% after two years. Forager bands keep their people for months, not years.") +
+    item("N10 · how big their world is", `${frame.pop} people on ${W} × ${H} tiles, in ${plural((frame.bands || []).length, "named band", "named bands")}`, `Real forager peoples average about 840 people across several bands (Hamilton et al. 2007).`, "WS1 is testing larger worlds and more founders (frozen protocol; results pending).") +
     `<p class="note">These are live readings from this one world, not results: ACL's results come from frozen experiments on hundreds of worlds (see the book and experiments/INDEX.md).</p>`;
 }
 function showView(v){
