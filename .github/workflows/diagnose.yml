@@ -5,7 +5,10 @@ on:
   workflow_dispatch:
 jobs:
   trace:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os: [windows-2022, windows-2025]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -16,10 +19,11 @@ jobs:
         shell: bash
         run: |
           python -VV
+          cmd //c ver
           python tools/ci/replay_trace.py experiments/E13R_replication/code_e13r 11 121 1.0 121 | tee trace.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: trace
+          name: trace-${{ matrix.os }}
           path: |
             trace.txt
             state_week_*.json
