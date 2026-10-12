@@ -1,4 +1,4 @@
-# LK1 — Does knowing where absent loved ones are keep ACL's worlds alive? (DRAFT for sign-off; not frozen; nothing run)
+# LK1 — Does knowing where absent loved ones are keep ACL's worlds alive? (SIGNED OFF and frozen as `LK1-frozen`; nothing run)
 
 **Asked by the creator (12 October 2026), after AA1:**
 - Test A5 separately, as a controlled experiment, keeping the current version as the control.
@@ -103,3 +103,66 @@ should not reach p < 0.05; if it does, every reading carries that caveat.
 4. **Order:** before MB1a, or after it. MB1a is read-only and doesn't depend on A5. But A5 changes how MB1a's "meeting"
    should be read, because people walk toward absent loved ones across bands.
 5. **Thresholds** as above (the same as WS1).
+
+## Sign-off (12 October 2026)
+
+The creator: **"adopt Law 126 as drafted, then freeze LK1."** Law 126 (World Bible v8.2) was adopted first, so LK1 is the
+first test of its failed-rule path: A5 is a known compromise; it has been measured (AA1); it is now tested against
+a replacement, with `nature-v1` preserved. The decisions above were not answered one by one, so **each is frozen as
+recommended in this draft**:
+
+1. Last-seen rule as drafted (operational details below).
+2. **256 seeds** (4001–4256).
+3. **20 founders, 40 × 40**, only.
+4. **Order of running:** not part of the design; the creator sets it before the run. (Recommended: before MB1a.)
+5. Thresholds as above (the same as WS1).
+
+**Law 126's checks before freezing:**
+- **The rule under test.** A5 was measured by AA1, and it breaks Law 12.
+- **The replacement rule.** Walking toward where one last saw someone passes the four tests:
+  - T1: it is a capacity (memory of places), not a content.
+  - T2: remembering where one last saw someone is human-universal by any account; no number is set by it.
+  - T3: it names no outcome.
+  - T4: its only channel is the person's own sight.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code copy `code_lk1`.** It starts from `experiments/P2_outward_search/code_p2`, with every P2/MC1 setting off. That
+  copy has `sham_draw` and was zero-checked against the control code for WS1. To it are added:
+  - AA1's logging hooks, unchanged from `code_aa1`, which write to a log held outside the world's state;
+  - **one new setting**, `loved_location` (`"current"`, the default, which is today's world; or `"last_seen"`).
+- **Arms:**
+  - **C:** `loved_location="current"`.
+  - **M:** `"last_seen"`.
+  - **S:** `"current"` and `sham_draw=1`.
+- **Loved ones:** as `mind._far_people` defines them: partner, mother, father, children, best friend; at most three
+  pulled toward, as today.
+- **In M, each week, before the person decides:**
+  - **Memory.** For each loved one within `perception` (4 tiles) of the person, record that loved one's tile and the
+    week. The record lives in the person's state, so it is saved and restored. It is held only in M; in C and S it does
+    not exist, so they equal today's world.
+  - **Seen now.** A loved one **in sight** is treated exactly as today: no pull if within `reach`, otherwise a pull
+    toward their current tile.
+  - **Not in sight, memory unspent.** The pull is toward the **remembered tile**, with today's pull formula unchanged.
+  - **Memory spent.** If the remembered tile is within the person's `perception` and the loved one is not in sight, the
+    person can see the spot is empty: the memory is **spent** and pulls no more until the loved one is seen again.
+  - **No memory, or a spent one:** no pull.
+- **Zero checks (hard stops):**
+  - `code_lk1` with `loved_location="current"` equals the control code (`code_e13r`, `anticipation_weight=1.0` as every
+    control): state hash, seeds 11 and 501, 20 years.
+  - Its logging leaves the hash unchanged (with and without the log).
+- **Manipulation check (pilot, four throwaway seeds 9201–9204, 10 years):**
+  - in M, zero "join" moves toward an out-of-sight loved one's current tile;
+  - some moves toward remembered tiles;
+  - in C, AA1's A5 share reproduced to within its holdout interval (27–31%).
+- **Measures, operationally (read-only, from the world's events and the log):**
+  - **Eligible single:** alive, 16 or older, unpartnered.
+  - **Pairings:** `pair` events, per eligible single-year.
+  - **Weeks to pairing:** from becoming an eligible single to the `pair` event, for those who pair.
+  - **Separation:** for each living partner pair and each living mother–child pair (child under 16), the share of
+    weeks the two are beyond `perception` of each other, and the median length of such spells.
+  - **Births** per woman-year (women 16–45).
+  - **A6c:** AA1's measure, unchanged.
+  - **Population** beside every measure.
+- **Analysis script** written and smoke-tested before any main-run data, as for every study.
+
