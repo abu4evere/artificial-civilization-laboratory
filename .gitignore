@@ -42,5 +42,5 @@ paper/*.docx.tmp
 tools/mind_views/out/
 
 # Local run logs of detached processes
-experiments/S1_world_size/run_detached.*
+experiments/WS1_world_size/run_detached*
 experiments/AA1_artifact_audit/after_ws1.log

@@ -65,8 +65,9 @@ years (0.777 / 0.782): more fixed than forager bands. First named G1; renamed be
 `N10_world_size/`
 
 **WS1 — World size.** Frozen: more land; more founders with more land; more founders without more land; sham; 256 seeds.
-**Running.** First named S1; renamed because S1 was taken. `S1_world_size/` (to be renamed `WS1_world_size/` when the run
-ends)
+Valid; sham quiet (95 vs 107). Died out of 256: C (40 × 40, 20) 107; L (80 × 80, 20) 108, no meaningful effect; LP
+(80 × 80, 80) 2, p < 0.001; P (40 × 40, 80) 23, p < 0.001. P settles at ~50, LP at ~140 (descriptive). Confound: 4 bands
+of 20. First named S1; renamed because S1 was taken. `WS1_world_size/`
 
 **Replay records used in the story:** `book/records/life_seed1112_Kibok_Riyei.json` (tools/mind_views/life_record.py),
 `book/records/brain_seed501_year11_Vadumis.json` (tools/mind_views/brain_scan.py).

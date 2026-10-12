@@ -171,7 +171,12 @@ every study in this movement had found from its own side: the people could not f
 stayed with the few they knew. It was why Kibok and Riyei, the last two children of their world, never had anyone to
 court.
 
-The world-size experiment, testing more land and more people, alone and together, against the world as it is, is
-running as this is written [WS1]. The book stops here, as it promised to, until the evidence exists.
+So the creator asked for both, kept apart [WS1]. On two hundred and fifty-six new worlds, today's died out in a hundred
+and seven. Four times the land, for the same twenty, died out in a hundred and eight: room made no difference. Eighty
+founders made all of it. On the large land two worlds died out; on today's land, four times as crowded, twenty-three.
+They were not dying more slowly. The crowded eighty settled at about fifty people and held there for ninety years; the
+others grew to about a hundred and forty.
 
-// When WS1 is reported, its result is told here in a short closing passage, and in full in The Record.
+What the twenty had lacked was not space but one another. Whether it was the larger people or the larger bands they came
+in that saved them, the experiment could not say: the world's own rule had made the eighty four bands of twenty. Whether
+those bands ever meet is the question the record turns to next.

@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after N10 (October 2026).
+**Last updated:** after WS1 (12 October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -21,7 +21,7 @@ pass on and build on what they learn, until their practices outgrow any one life
 
 | stage | question | status |
 |---|---|---|
-| 0. The world | Is there a world worth living in? | **reopened (October 2026):** a third of control worlds die out of failed pairing (F1); N5 evidence on how real foragers find partners |
+| 0. The world | Is there a world worth living in? | **reopened (October 2026):** a third of control worlds die out of failed pairing (F1). **WS1: people, not land, keep worlds alive** (80 founders: 0.8–9% die out, against 42%); next: do bands meet (MB1a), and a new baseline (creator's decision) |
 | 1. Culture appears | Does anything cultural emerge unscripted? | **done** (E1–E5: traditions, trust, stories) |
 | 2. Why it stops | Where does the chain from possible to practised break? | **mostly done** (E6–E12) |
 | 3. Transmission | Can a useful practice pass between adults? | **paused until stage 0 is settled;** was in progress: a habit passes, a plan does not; now: why food does not last through winter |
@@ -327,6 +327,18 @@ size anchored**: viable forager populations need ~75–150 people (White 2017), 
 supported **in people**, not in space alone. **Next: the creator decides** whether to design S1 (people and land
 scaled together at ACL's own density; feasibility first).
 
+**WS1 done** (`experiments/WS1_world_size/findings.md`; first named S1; frozen; 256 new seeds; valid, sham quiet). Baseline:
+C (40 × 40, 20 founders) died out in **107 of 256** worlds (41.8%). **More land alone: no meaningful effect** (L, 80 × 80
+with 20 founders: 108 died out; interval excludes half of F2's effect); survivors grow larger, not safer. **More
+founders: survival improves**, with land (LP, 80 × 80 with 80: **2** died out; +0.41) and without (P, 40 × 40 with 80:
+**23**; +0.33). Population, not a slow decline: P settles at ~50 people for 90 years, LP at ~140. Caveat: more founders
+came in larger founding bands (4 of 20), so founders and band size are not separated (MB1a, then MB1 Stage B). Prior
+"L worse than C" was wrong; "LP better than L" right. **Next: the next-phase plan below, for the creator's sign-off.**
+
+**Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
+week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
+(544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).
+
 | E13R result | what it means | next step |
 |---|---|---|
 | **L1 or L2 fails** (hard stop) | the copying code does something beyond the watcher's habit | fix the code; rerun E13R. No outcomes read. |
@@ -454,12 +466,37 @@ failure, stop, confound or correction:
 | 7. Accumulation | Tomasello; Mesoudi (acquisition costs); Kirby (iterated learning) |
 | 8. Society | Sugarscape (as a contrast); Melting Pot; Neural MMO |
 
-## Next-phase candidates (noted October 2026; to be ordered in the next-phase plan after WS1)
+## Next-phase plan (written after WS1, 12 October 2026; FOR THE CREATOR'S SIGN-OFF, nothing decided)
+
+**Frozen queue (unchanged):** AA1 (running) → MB1a (do bands meet?) → ID1 (what makes a person) → BL0 (do habits steer?).
+
+**Decisions proposed** (each still goes through its own questions, freeze and sign-off):
+
+1. **A new baseline world for culture studies:** 80 founders. Under 1–9% of such worlds die out, so later measures are
+   not swamped by extinction.
+   - **Recommendation: LP (80 × 80, 80 founders).** Today's crowding, 0.8% extinction, about 140 people.
+   - **Alternative: P (40 × 40, 80).** Cheaper per world, but four times today's crowding, with more child deaths.
+   - Decide after MB1a, which shows whether these worlds' four bands ever meet.
+   - It is a new baseline beside the 20-founder record, never replacing it. Everything run so far stays as it was.
+2. **MB1 Stage B** (same 80 people in 4, 8 or 16 bands): separates "more people" from "larger bands", the confound WS1
+   could not resolve. Only if MB1a shows bands meet at least rarely.
+3. **One new version of nature** (v2) bundling the fixes that need sign-off: ST1 (a float that breaks at sea puts its
+   owner ashore half-drowned) and any of AA1's shortcuts judged flaws. Zero checks; new reference hashes; the old
+   version kept for every past result.
+4. **Back to stage 3 (transmission) on the new baseline:** learning by watching (E12/E13R: seen, respected, not
+   copied), with BL0's answer deciding whether a learning mechanism comes first.
+5. **Profiling** (cProfile) after AA1: LP worlds took about six times as long as today's in WS1 (~17 minutes each against ~3; 64 worlds ≈ 4½ hours on four workers), so speed decides the cost of
+   every study on the new baseline. Report first; any optimisation must keep worlds bit-identical.
+
+**Held as candidates** (evidence first, not ordered): Lévy-like search, real seasons, cooperation from conditions,
+belonging and ownership, evolved instincts (below).
+
+## Next-phase candidates (noted October 2026)
 
 Each starts, as always, with frozen questions and an evidence review; none is designed yet.
 
-- **Survival first:** WS1 (world size) is running; AA1 (artifact audit, incl. A5: people know where absent loved ones
-  are) and ID1 (what makes a person who they are) follow.
+- **Survival first:** WS1 done (people, not land); AA1 (artifact audit, incl. A5: people know where absent loved ones
+  are) running; MB1a, ID1 and BL0 follow.
 - **Lévy-like search.** ACL's exploratory step is always 3 tiles in a random direction. Hadza foragers make Lévy walks
   (many short moves, rare long ones) in nearly half of foraging bouts (Raichlen et al., PNAS); flies search similarly.
   Rare long trips could connect bands (F1, P2, GF1). Evidence first: whether it describes moves between camps, not only
