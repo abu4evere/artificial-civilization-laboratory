@@ -136,3 +136,20 @@ further here.
    cross-cultural sample or review for "universal"; a single ethnography is enough only to show that groups vary.
 4. **What happens when a rule fails?** It is listed as a known compromise, measured (as AA1 did), and replaced only by a
    tested new version of nature. It is never removed silently.
+
+## Corrections and additions (appended 12 October 2026, after a review of the full World Bible; rule 19)
+
+1. **Newborn habits are permitted by the World Bible, not only contradicted by DESIGN.md.** Law 47 (Sources of
+   Knowledge) lists "inheritance of learned patterns" as a source. Law 44 (Knowledge Is Not Innate) says to initialise
+   "only genuinely required biological or architectural priors and keep learned information separate". **The World
+   Bible contradicts itself**; the verdict under T1/T4 stands, and Rule 20's inheritance clause is what would settle it.
+2. **Newborn habits fail three tests, not four.** They name no studied outcome (T3 passes).
+3. **A1 breaks Law 3's own test case:** "A water gap blocks an agent without an appropriate floating capability because
+   the route contains water; the path cannot simply be skipped." The corner crossing skips it.
+4. **A5 breaks Law 12, not Law 44.** It is not innate knowledge, but knowledge of where people are now.
+5. **The check also existed on paper.** Method rule **M6 (Law Accounting)**: "Every implementation feature should
+   identify the laws it supports and note where the implementation violates, approximates, or does not yet cover a
+   law." So the World Bible had the tests (Laws 12–18, 21, 44) and the check (M6). What was missing was **doing** the
+   check. Finding 0 is restated accordingly: not a missing rule, nor a missing check, but **a check written down and
+   not practised**.
+

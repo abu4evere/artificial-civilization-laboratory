@@ -1,13 +1,22 @@
 # Rule 20 — Where nature ends (DRAFT for the creator's review; not adopted)
 
-Drafted 12 October 2026 from the NL1 audit (`audit.md`). The audit found that most of this rule already existed in the
-World Bible, spread over Laws 12–18 and 21, and that **what was missing was the check, not the rule**: A5 broke Law 12
-("Knowledge must have a source") and sat in the code for months because nobody compared the code with the laws. So this
-rule mostly gathers what is written, adds the two pieces that were not (the evidence test, and the register), and makes
-the check routine.
+Drafted 12 October 2026 from the NL1 audit (`audit.md`), and revised the same day after a review of the full World
+Bible.
 
-When adopted, it goes in two places: as rule 20 in `ROADMAP.md` (beside rules 1–19), and as a new law in the World
-Bible, after Law 21. It starts with the short form; the parts after it say how it is applied.
+**What the audit and the review found:**
+- The tests already exist in the World Bible: Laws 12–18, 21 and 44.
+- So does the check: method rule **M6, "Law Accounting"**, says every feature should note where it violates a law.
+- What was missing was **doing the check**. A1 broke Law 3's own test case. A5 broke Law 12. Both sat in the code for
+  months.
+- Laws 44 and 47 contradict each other on inheriting learned patterns.
+
+**So this rule mostly gathers what is written.** It adds the two pieces that were not written: the evidence test and the
+register. It closes the inheritance contradiction. And it turns M6 into a routine practice, with a procedure and a
+record.
+
+When adopted, it goes in two places: as rule 20 in `ROADMAP.md` (beside rules 1–19), and as **Law 126** in the World
+Bible, in its four-part form (at the end of this draft), with the Known Gaps updated. It starts with the short form; the
+parts after it say how it is applied.
 
 ---
 
@@ -27,10 +36,10 @@ A rule belongs to nature only if it passes all four.
 
 | | test | the question | already written as |
 |---|---|---|---|
-| T1 | **Capacity, not content** | Does it give a capacity (to fear, to grieve, to learn), or a particular object, person, place or time? | Laws 14, 15, 16 |
+| T1 | **Capacity, not content** | Does it give a capacity (to fear, to grieve, to learn), or a particular object, person, place or time? | Laws 14, 15, 16, 44 |
 | T2 | **Evidence of universality** | Is there evidence that it is human-universal and present without teaching? If real peoples differ on it and pass the difference on by learning, it is culture. | **new to the World Bible** (from rule 17) |
 | T3 | **No outcome in the rule** | Does it name, or obviously aim at, a result an experiment is studying? | Law 21 |
-| T4 | **A channel for every piece of knowledge** | Does every fact the rule lets a person act on reach them through sight, memory of something they saw, being told, or inference from those? | Laws 12, 13, 18 |
+| T4 | **A channel for every piece of knowledge** | Does every fact the rule lets a person act on reach them through sight, memory of something they saw, being told, or inference from those? | Laws 12, 13, 18, 47; Law 3 for movement |
 
 **Standards of evidence (T2):** "universal" needs a cross-cultural sample or a review; one ethnography is enough only to
 show that peoples **vary**. The creator decides at sign-off whether the evidence meets the standard, and the decision
@@ -40,8 +49,11 @@ and its source are recorded beside the rule.
 disgust at rot). Such a rule passes T1 only with evidence that the narrowness itself is prepared by biology, not
 learned. Cases are decided one by one and recorded; no general cut is claimed.
 
-**Inheritance (closing Law 12's loophole):** Law 12 allows "inheritance of the limited kinds the system explicitly
-allows". Anything allowed to pass at birth must itself pass T1–T4. Temperament does. Learned habits do not (NL1).
+**Inheritance (closing Law 12's loophole and settling Laws 44 and 47):** Law 12 allows "inheritance of the limited
+kinds the system explicitly allows"; Law 47 lists "inheritance of learned patterns"; Law 44 says to keep learned
+information separate from what a newborn starts with. **Anything allowed to pass at birth must itself pass T1–T4.**
+Temperament does. Learned habits do not (NL1). "Inheritance of learned patterns" in Law 47 is read as **cultural**
+inheritance (learned from others, through a channel), not inheritance at birth.
 
 ## 2. When evidence is silent
 
@@ -65,7 +77,7 @@ a committed script) with its value, where it is, its source or "unanchored", and
 by more than half of F2's effect (with its bootstrap interval), the value is flagged **sensitive**, and every finding
 that rests on it says so.
 
-## 4. The check (the part that was missing)
+## 4. The check (M6, Law Accounting, made a practice)
 
 - **When:** at every new version of nature; before freezing any study whose reading rests on a particular rule; and at
   least once for all existing code (NL1 was the first; it is to be completed).
@@ -105,3 +117,43 @@ Every move is a new version of nature, signed off and recorded.
    (mating, sharing, search, learning) first?
 4. **Kinship and ownership knowledge:** decided case by case under T4 (is there a channel: seen, told?), as the
    reviewer suggests, or a general rule that people know only the kin they were raised with or told of?
+
+---
+
+## The World Bible text (as Law 126, in the Bible's four-part form)
+
+**LAW 126: Where Nature Ends**
+
+**Meaning**
+The creator writes capacities, never contents. A rule of nature may give agents only what they can feel, sense, learn
+and do; it must rest on evidence that it is universal; it must not name an outcome under study; and it must not give
+knowledge without a channel (Laws 3, 12–18, 21, 44, 47). Whatever is inherited at birth passes the same tests; learned
+patterns pass only through cultural inheritance, from others, through a channel.
+
+**Operational interpretation**
+Every rule of nature and every number it uses is listed in a register, with its source or the label "unanchored". A new
+mechanism without evidence is not added. A needed number without evidence is chosen before any experiment, never tuned,
+and tested for sensitivity. The code is checked against the laws, as M6 requires: at every new version of nature, and
+before freezing a study that rests on a rule. The check is read-only, and its findings are recorded.
+
+**Emergence boundary**
+The line between nature and culture moves only for new evidence about human beings, or for a shortcut found in the
+code; never because an outcome is wanted. A rule that fails the tests is kept as a known compromise, measured, and
+replaced only by a tested new version of nature, the old version preserved. Nothing is removed silently because it looks
+unrealistic.
+
+**Example / test case**
+The capacity to fear is nature; fear of wolves is learned. A person may walk toward where they last saw their partner,
+not toward where the partner is now (A5). A newborn starts with its parents' temperament, not their habits.
+
+**Implementation status:** Draft. Found violations recorded in NL1 and AA1. Under test: A5 (LK1, drafted). Fixed on a
+branch, not adopted: A1 (`nature-v2-a1`). To be measured: newborn habits (BL0, frozen).
+
+## Known Gaps: proposed additions to the World Bible's list
+
+- The check of code against laws (M6) has been done once (NL1, AA1) and is not yet routine.
+- The register of numbers exists for settings only. The ~1,340 constants inside formulas are counted, not yet classified.
+- Laws 44 and 47 conflict on inheriting learned patterns until Law 126 is adopted.
+- Information pathways measured but not decided: A6a (exact food of others), A6d (water beyond sight), store owners
+  and kin known without a channel (NL1 candidates N2 and N3).
+
