@@ -121,3 +121,26 @@ die out, not because it is viable. Median population at each decade mark (years 
 - A world with **80 founders is a candidate new baseline** for studies of culture, because only 0.8–9% of its worlds die
   out, so outcomes aren't swamped by extinction. That is a decision for the creator. It would be a new baseline, kept
   apart from the 20-founder record, never replacing it.
+
+## Note added 12 October 2026 (rule 19): scope of the claim, and every number traced
+
+After a review of these findings:
+
+**Scope.** "People, not land" in the record above is shorthand. The claim WS1 supports is narrower: **in these worlds,
+under ACL's current rules, adding land alone did not change extinction, while adding founders, in larger founding bands,
+reduced it greatly.** It is not a general law about populations, and it does not say whether more partners, larger bands,
+or both did the work. The heading "People, not land, is what keeps ACL's worlds alive" above is read in that sense.
+
+**Every statistical claim, traced** (`stats_trace.py` → `stats_trace.md`; same functions and method as the frozen
+analysis; added after it; changes no reading):
+
+| comparison | died out | saved / lost | exact two-sided sign test p | effect | 95% interval |
+|---|---|---|---|---|---|
+| Q1 L vs C | 107 vs 108 | 63 / 64 | 1.000 | −0.004 | [−0.090, +0.082] |
+| Q2 LP vs L | 108 vs 2 | 106 / 0 | 2.5 × 10⁻³² | +0.414 | [+0.355, +0.473] |
+| Q3 P vs C | 107 vs 23 | 88 / 4 | 1.2 × 10⁻²¹ | +0.328 | [+0.266, +0.391] |
+| sham S vs C | 107 vs 95 | 46 / 34 | 0.219 | +0.047 | [−0.020, +0.117] |
+
+The sham's interval includes zero, as the frozen check requires. Its upper end shows that one extra random draw can move
+extinction by up to about 12 points, by chance alone, at this sample. The founder effects are three to four times larger.
+The 2 × 2 interaction stays descriptive, as frozen.

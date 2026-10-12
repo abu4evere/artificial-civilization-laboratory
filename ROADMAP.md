@@ -21,7 +21,7 @@ pass on and build on what they learn, until their practices outgrow any one life
 
 | stage | question | status |
 |---|---|---|
-| 0. The world | Is there a world worth living in? | **reopened (October 2026):** a third of control worlds die out of failed pairing (F1). **WS1: people, not land, keep worlds alive** (80 founders: 0.8–9% die out, against 42%); next: do bands meet (MB1a), and a new baseline (creator's decision) |
+| 0. The world | Is there a world worth living in? | **reopened (October 2026):** a third of control worlds die out of failed pairing (F1). **WS1: in these worlds, more founders (in larger bands) cut extinction; more land alone did not** (80 founders: 0.8–9% die out, against 42%); next: do bands meet (MB1a), and a new baseline (creator's decision) |
 | 1. Culture appears | Does anything cultural emerge unscripted? | **done** (E1–E5: traditions, trust, stories) |
 | 2. Why it stops | Where does the chain from possible to practised break? | **mostly done** (E6–E12) |
 | 3. Transmission | Can a useful practice pass between adults? | **paused until stage 0 is settled;** was in progress: a habit passes, a plan does not; now: why food does not last through winter |
@@ -495,7 +495,7 @@ belonging and ownership, evolved instincts (below).
 
 Each starts, as always, with frozen questions and an evidence review; none is designed yet.
 
-- **Survival first:** WS1 done (people, not land); AA1 (artifact audit, incl. A5: people know where absent loved ones
+- **Survival first:** WS1 done (more founders cut extinction; land alone did not); AA1 (artifact audit, incl. A5: people know where absent loved ones
   are) running; MB1a, ID1 and BL0 follow.
 - **Lévy-like search.** ACL's exploratory step is always 3 tiles in a random direction. Hadza foragers make Lévy walks
   (many short moves, rare long ones) in nearly half of foraging bouts (Raichlen et al., PNAS); flies search similarly.

@@ -1011,6 +1011,8 @@ What the twenty lacked was not room but one another. With eighty, an unpartnered
 
 One thing could not be told apart. The world's own rule splits founders into at most four bands, so the eighty began as four bands of twenty, not of five. Whether it was the larger people or the larger bands that saved them, this test could not say. Whether those bands ever meet at all was the next question, already frozen.
 
+Nor was it a law. It was what these worlds did, under these rules, with these numbers: more land alone had not saved them, and more founders had. Why, exactly, the next experiments would have to say.
+
 # Part IV — The Great Debates
 
 Some of the most important turns in ACL's thinking came from arguments, not experiments: two serious positions, held before the evidence, and settled, or not settled, by what the worlds did. This part records them as they appear in the record. Where the record shows who held which view, it says so. Where it does not, the positions are described without names.
