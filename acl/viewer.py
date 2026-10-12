@@ -34,7 +34,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-from .config import SEASONS, WEEKS_PER_YEAR
+from .config import INFANT_END, SEASONS, WEEKS_PER_YEAR
 from .historian import CLASSES, Historian, classify, describe
 from . import mindview, stage
 from .runner import chronicle_markdown, load_snapshot, new_world, save_snapshot, write_outputs
@@ -291,7 +291,7 @@ class Live:
 
             memories = []
             for m in sorted(p.memories, key=lambda m: -(m.salience * m.strength))[:6]:
-                memories.append(_memory_words(w, m))
+                memories.append(_memory_words(w, m, p.id))
             makes = []
             for sig in sorted(p.recipes, key=lambda s: -p.itemval.get(s, 0.0))[:6]:
                 rec = w.knowledge.get(sig, {})
@@ -326,13 +326,17 @@ def _name(world, pid) -> str:
 
 
 def _brain(w, p) -> dict:
-    """How p decides, for the brain scan: what they sense and feel, the situation lit this week, the habits learned for
-    every situation, and how each option weighed this week splits into instinct and habit. Read-only."""
+    """How p decides, for the brain scan: what they sense and feel, the situation lit this week, the habit values for
+    every situation, and how each option weighed this week splits into instinct and habit. Read-only.
+    "valued" counts habits that are not zero: inherited at birth, absorbed from a carer, copied in talk or learned from
+    their own life; the world does not record which, so the viewer cannot tell them apart (NL1, N1/N5/N7)."""
     c, tick = w.cfg, w.tick
     hunger = hunger_of(w, p, sum(d.need(c, tick) for d in w.dependents(p.id)))
     base = p.last_ctx * N_ACTIONS
     return {"ctx": p.last_ctx, "actions": list(ACTIONS), "n_contexts": N_CONTEXTS, "learned_weight": c.learned_weight,
-            "q": [round(v * 100) for v in p.q], "learned": sum(1 for v in p.q if v), "chosen": p.last_action,
+            "q": [round(v * 100) for v in p.q], "valued": sum(1 for v in p.q if v), "chosen": p.last_action,
+            "decides": p.age(tick) >= INFANT_END,
+            "carer": (w.people[p.caregiver].name if p.caregiver and p.caregiver in w.people else ""),
             "weighed": [[a, round(sc, 2), int(ch), round(c.learned_weight * p.q[base + A[a]], 2)] for a, _aim, sc, ch in p.considered],
             "body": {"hunger": round(hunger, 2), "thirst": round(p.thirst, 2), "fatigue": round(1 - p.energy / 100, 2),
                      "health": round(p.health / 100, 2), "mood": round(p.mood, 2), "fear": round(p.fear, 2),
@@ -352,11 +356,13 @@ def _set_aside(home: Path) -> None:
     print(f"The previous world was set aside in {dest}")
 
 
-def _memory_words(w, m) -> str:
+def _memory_words(w, m, me: str = "") -> str:
     def nm(x):
         return w.people[x].name if x and x in w.people else "someone"
     year = m.tick // WEEKS_PER_YEAR
-    told = f" (told by {nm(m.source)})" if m.source else ""
+    # Where the memory came from: told by someone, lived through (they were part of it), or seen.
+    told = (f" (told by {nm(m.source)})" if m.source
+            else " (lived it)" if me and me in (m.actor, m.target) else " (saw it)")
     text = {
         "killed": f"{nm(m.actor)} killed {nm(m.target)}",
         "attacked": f"{nm(m.actor)} attacked {nm(m.target)}",

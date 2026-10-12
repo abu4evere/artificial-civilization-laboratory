@@ -56,7 +56,7 @@ p.small{font-size:12.5px;color:var(--muted);margin:6px 0}
   <div class="cols"><span>Senses, body, temperament</span><span>Situation neurons (32)</span><span>Action neurons (17)</span><span>This week's decision</span></div>
   <div class="info">
     <div class="card"><h2>How the decision was made</h2><div id="opts"></div>
-      <div class="key"><span><span class="sw" style="background:var(--amber)"></span>instinct: drives and temperament (written by nature)</span><span><span class="sw" style="background:var(--cyan)"></span>habit: learned from experience</span></div>
+      <div class="key"><span><span class="sw" style="background:var(--amber)"></span>instinct: drives and temperament (written by nature)</span><span><span class="sw" style="background:var(--cyan)"></span>habit: inherited, copied or learned</span></div>
     </div>
     <div class="card"><h2>What you are looking at</h2><div id="explain"></div></div>
   </div>
@@ -177,7 +177,7 @@ function draw(){
     const col = isCh ? '#ffffff' : weighed ? cyan : '#2f6f9a';
     node(n.x, n.y, isCh ? 18 : weighed ? 12 : 8, col, isCh ? 46 : weighed ? 18 : 4);
     text(n.a, n.x + 28, n.y, isCh ? '#ffffff' : '#a9bdd6', 24, 'left');
-    hits.push({x:n.x, y:n.y, r:20, tip:`${WORDS[n.a]}: learned habit in this situation ${(q[act * NA + j] / 100).toFixed(2)}${showDelta ? ` (changed ${(v / 100 >= 0 ? '+' : '') + (v / 100).toFixed(2)} this year)` : ''}`});
+    hits.push({x:n.x, y:n.y, r:20, tip:`${WORDS[n.a]}: habit in this situation ${(q[act * NA + j] / 100).toFixed(2)}${showDelta ? ` (changed ${(v / 100 >= 0 ? '+' : '') + (v / 100).toFixed(2)} this year)` : ''}`});
   });
   opts.forEach(([a, sc, ch, lr], i) => {
     const y = oy(i);
@@ -197,14 +197,14 @@ function panels(){
     return `<div class="opt${ch ? ' ch' : ''}"><span>${ch ? '<b>' + WORDS[a] + ' ✓</b>' : WORDS[a]}</span>
       <div class="stack" title="instinct ${inst.toFixed(2)}, habit ${lr.toFixed(2)}"><i style="left:0;width:${w(inst)}%;background:var(--amber)"></i><i style="left:${w(inst)}%;width:${w(lr)}%;background:var(--cyan)"></i></div>
       <span class="v">${sc.toFixed(2)}</span></div>`;
-  }).join('') + `<p class="small">Each score = instinct (drives × temperament, as nature wrote them; includes what holds their attention) + habit (0.6 × what they learned about this action in this situation). The pick has some randomness, so the top score does not always win.</p>`;
+  }).join('') + `<p class="small">Each score = instinct (drives × temperament, as nature wrote them; includes what holds their attention) + habit (0.6 × the habit value for this action in this situation: inherited, copied or learned). The pick has some randomness, so the top score does not always win.</p>`;
   const learned = P.q.filter(v => v).length;
   const top = P.q.map((v, i) => [v, i]).sort((a, b) => b[0] - a[0])[0];
   document.getElementById('explain').innerHTML = `
     <p class="small"><b style="color:#fff">${name(P.id)}</b>, ${P.sex === 'F' ? 'woman' : 'man'}, ${P.age}${P.partner ? ', partner ' + name(P.partner) : ', no partner'}.</p>
-    <p class="small"><b style="color:#fff">${learned} of ${NC * NA}</b> learned connections have been shaped by experience; the rest are still blank. Strongest habit anywhere: <b style="color:#fff">${WORDS[ACT[top[1] % NA]]}</b> when ${ctxLabel(Math.floor(top[1] / NA))} (${(top[0] / 100).toFixed(2)}).</p>
+    <p class="small"><b style="color:#fff">${learned} of ${NC * NA}</b> habits hold a value (inherited at birth, copied from carers and in talk, or learned from experience; the record does not say which); the rest are zero. Strongest habit anywhere: <b style="color:#fff">${WORDS[ACT[top[1] % NA]]}</b> when ${ctxLabel(Math.floor(top[1] / NA))} (${(top[0] / 100).toFixed(2)}).</p>
     <p class="small">Left: three senses pick one of 32 <b style="color:#fff">situation neurons</b> (food held × company × season). The lit neuron's 17 connections to the <b style="color:#fff">action neurons</b> are this person's habits for that situation (cyan helps, magenta discourages). Amber lines are <b style="color:#ffb547">instinct</b>: which drives and temperament feed which action, from the code's formulas (links, not exact weights).</p>
-    <p class="small">This is not a neural network: there are no hidden layers. It is a body with drives, a temperament, and a table of habits learned by reinforcement, week by week, from how things turned out.</p>`;
+    <p class="small">This is not a neural network: there are no hidden layers. It is a body with drives, a temperament, and a table of habits: part inherited at birth, part copied from others, part learned by reinforcement, week by week, from how things turned out.</p>`;
 }
 
 function chips(){

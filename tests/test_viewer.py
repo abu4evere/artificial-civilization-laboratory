@@ -52,9 +52,12 @@ def test_viewer_serves_world():
         status, body = _get(port, f"/person?id={pid}")
         info = json.loads(body)
         assert info["id"] == pid and "memories" in info and "makes" in info
-        brain = info["brain"]   # the brain scan: situation lit, 32 x 19 learned habits, options weighed
+        brain = info["brain"]   # the brain scan: situation lit, 32 x 17 habit values, options weighed
         assert len(brain["q"]) == brain["n_contexts"] * len(brain["actions"]) and 0 <= brain["ctx"] < brain["n_contexts"]
         assert "frames" not in info and "born_year" in frames[-1]
+        # Honest labels: habits that hold a value (not "learned"), whether they decide yet, and where each memory came from.
+        assert "valued" in brain and "learned" not in brain and isinstance(brain["decides"], bool)
+        assert all(m.endswith((")",)) and ("(told by " in m or "(lived it)" in m or "(saw it)" in m) for m in info["memories"])
 
         assert "bands" in frames[-1] and info["loc"] and "energy" in info
         status, body = _get(port, "/history")   # the historian's yearly rows
