@@ -166,7 +166,7 @@ recommended in this draft**:
   - **Population** beside every measure.
 - **Analysis script** written and smoke-tested before any main-run data, as for every study.
 
-## Pilot result and a proposed amendment (12 October 2026, before any main-run data; rule 19; AWAITING the creator's sign-off)
+## Pilot result and a proposed amendment (12 October 2026, before any main-run data; rule 19; APPROVED, see Amendment 1 below)
 
 **Zero checks: PASS** (`output/zero.txt`). With `loved_location="current"`, the copy reproduces the control world, with
 and without observers, on seeds 11 and 501; arms M and S differ from it.
@@ -191,4 +191,44 @@ and without observers, on seeds 11 and 501; arms M and S differ from it.
 "**C reproduces AA1's audit counts exactly on an AA1 seed (601, 120 years)**". This is already shown, and it is stricter
 than the original check: equality, not an interval. Nothing else changes: not the arms, seeds, measures, outcome rule,
 nor any threshold.
+
+## Amendment 1 (approved by the creator, 12 October 2026, before any main-run data; frozen as `LK1-amend1`)
+
+**The change.** Pilot check 3 is replaced.
+
+- **Original check 3 (SUPERSEDED, kept in the record):** "in C, AA1's A5 share (~30%) is reproduced to within its
+  holdout interval (27.2–31.4%)", on the pilot's four throwaway seeds over 10 years.
+  - **Its result:** **25.0%** (1,079 of 4,310), **outside** the interval, so the pilot read **FAIL**. Recorded in
+    `output_pilot/manipulation.txt`, which is kept unchanged.
+- **Replacement check 3:** "**C reproduces AA1's recorded audit counts exactly on an AA1 world (seed 601, 120 years)**".
+  - **Its result:** exact equality on every count compared: go-to moves 11,872; toward loved ones 4,567; beyond sight
+    2,989; partner search 329 / 151; crossings 170; gifts 17,226. (The run was a check, not main-run data; its output
+    was deleted after comparison.)
+
+**Why.** The original compared **incompatible time windows**: a 10-year pilot on other worlds against an interval
+measured over 120 years. A world's first decade need not share its 120-year A5 share. The replacement compares the
+same world over the same 120 years.
+
+**What the replacement shows, and what it does not.** It shows that C reproduces AA1 on that world: control-arm
+fidelity. It does **not** prove identical behaviour on every seed, nor the validity of every LK1 measure. That rests on:
+
+- the independent zero checks (seeds 11 and 501, with and without observers: PASS);
+- the main-run validity checks in `analyse_lk1.py`:
+  - one code fingerprint in every world;
+  - **the manipulation verified in the main run itself**: M's go-to moves toward an out-of-sight loved one's current
+    tile must total **0**, and moves toward remembered tiles must be **above 0**.
+
+  If any of these fails, the run is reported **not valid** and no outcome is read.
+
+**Also recorded.** The first pilot attempt failed check 1 (276 moves), which was traced to a labelling bug and fixed.
+The file holding that first attempt was overwritten when the pilot was re-run after the fix; its numbers are kept in the
+section above.
+
+**Code revision frozen for the main run:**
+- commit `a725702`;
+- `code_lk1` fingerprint `765312576e42ffba6a3bee469208ced06f749b72c86db8577ad489cc23525d22`;
+- runner `run_lk1.py` and analysis `analyse_lk1.py` as committed at that revision.
+
+**No further changes to the design, code or analysis once main-run results begin.** If a validity check fails, the run is
+stopped and reported, not adjusted.
 
