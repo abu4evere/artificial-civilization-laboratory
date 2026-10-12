@@ -125,7 +125,7 @@ Replays only, about F1's cost (64 worlds × 120 years) plus logging. Runs **afte
 Whether ACL's learning resembles a fly's or a person's. It measures whether, and from where, learned values change
 behaviour in ACL.
 
-## Proposed Amendment 1 (12 October 2026, before any BL0 code or run; rule 19; AWAITING the creator's sign-off)
+## Amendment 1 (12 October 2026, before any BL0 code or run; rule 19; APPROVED by the creator the same day; frozen as `BL0-amend1`)
 
 **A gap in the frozen split, found while answering a reviewer.** Q2 splits each habit value into three parts:
 inherited (I), caregiver (C) and own experience (E). A full search of the code (every line that writes a habit value)
@@ -151,3 +151,7 @@ frozen design could not have run as written.
 - **Q3's lineage measure** carries T's origin generation in the same way.
 
 Nothing else changes: not the worlds, questions, measures, nor the thresholds (decision rules, as signed off).
+
+**Approval (12 October 2026).** Approved on the standard conditions: dated and visible; reason recorded beside it; the
+frozen design above left as written; the check that the parts add up kept (now I + C + E + T). The gap was found by
+reading the design against BL0's own consistency check before any code: the check would have stopped the run.
