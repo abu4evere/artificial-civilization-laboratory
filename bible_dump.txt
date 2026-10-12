@@ -1184,6 +1184,17 @@ Emergence boundary
 This does not guarantee the invention of writing or assign a fixed semantic code. The association must develop through experience.
 Example / test case
 A mark associated with a useful technique can outlive its original maker and teach the procedure to someone who would otherwise have no living teacher.
+LAW 126: Where Nature Ends
+Meaning
+The creator writes capacities, never contents. A rule of nature may give agents only what they can feel, sense, learn and do; it must rest on evidence that it is universal; it must not name an outcome under study; and it must not give knowledge without a channel (Laws 3, 12–18, 21, 44, 47). Whatever is inherited at birth passes the same tests; learned patterns pass only through cultural inheritance, from others, through a channel.
+Operational interpretation
+Every rule of nature and every number it uses is listed in a register, with its source or the label “unanchored”. A new mechanism without evidence is not added. A needed number without evidence is chosen before any experiment, never tuned, and tested for sensitivity. The code is checked against the laws, as M6 requires: at every new version of nature, and before freezing a study that rests on a rule. The check is read-only, and its findings are recorded.
+Emergence boundary
+The line between nature and culture moves only for new evidence about human beings, or for a shortcut found in the code; never because an outcome is wanted. A rule that fails the tests is kept as a known compromise, measured, and replaced only by a tested new version of nature, the old version preserved. Nothing is removed silently because it looks unrealistic.
+Example / test case
+The capacity to fear is nature; fear of wolves is learned. A person may walk toward where they last saw their partner, not toward where the partner is now (A5). A newborn starts with its parents’ temperament, not their habits.
+Implementation status
+Adopted; partial. Adopted by the creator on 12 October 2026 (v8.2), after the NL1 audit. Found violations recorded in NL1 and AA1. Under test: A5 (LK1). Fixed on a branch, not yet adopted: A1 (nature-v2-a1). To be measured: newborn habits (BL0).
 EXPERIMENTAL EVIDENCE PRESERVED FROM v8.0
 The expanded prose should not erase the evidence that motivated the later laws. The first runs remain part of the history of the rule book.
 Culture can appear without scripting
@@ -1227,6 +1238,10 @@ KNOWN GAPS THAT REMAIN OPEN
 • The exact long-term biology layer—body morphology, disease, aging, inherited physical traits, and richer population ecology—should be developed through experiments rather than assumed from chapter titles alone.
 • The observer measurements and the unified Observer Layer still require implementation cleanup so that all measurement remains read-only and non-duplicative.
 • The long-term chapters should be expanded only when the foundational experiments show that the underlying primitives are sufficient to support them without hard-coding outcomes.
+• The check of code against the laws (M6, Law 126) has been done once (NL1, AA1) and is not yet routine.
+• The register of numbers lists the settings only; the ~1,340 constants inside formulas are counted, not yet classified.
+• Laws 44 and 47 conflicted on inheriting learned patterns; Law 126 settles it (cultural inheritance only), but the code still passes habits at birth until a tested new version replaces it.
+• Information pathways measured but not decided: others’ exact food (A6a), water beyond sight (A6d), and store owners and kin known without a channel (NL1).
 FINAL STATUS
 This document is an expanded draft, not a declaration that every chapter is already implemented. It preserves the long-term vision while making the current rules explicit enough for implementation, testing, and debate. The foundational chain remains: Reality → Culture → Knowledge → Discovery → Information → Influence → Power → Creation. The governing principle remains unchanged: the creator writes the laws of the universe, not the history.
 Build the world. Start the clock. Let them live.

@@ -1,4 +1,4 @@
-# Rule 20 — Where nature ends (DRAFT for the creator's review; not adopted)
+# Rule 20 — Where nature ends (ADOPTED as drafted by the creator, 12 October 2026: ROADMAP rule 20; World Bible Law 126, v8.2)
 
 Drafted 12 October 2026 from the NL1 audit (`audit.md`), and revised the same day after a review of the full World
 Bible.
@@ -157,3 +157,6 @@ branch, not adopted: A1 (`nature-v2-a1`). To be measured: newborn habits (BL0, f
 - Information pathways measured but not decided: A6a (exact food of others), A6d (water beyond sight), store owners
   and kin known without a channel (NL1 candidates N2 and N3).
 
+## Adoption (12 October 2026)
+
+Adopted by the creator **as drafted**. Placement as drafted: rule 20 in `ROADMAP.md` and Law 126 in the World Bible (new file `book/THE_ARTIFICIAL_CIVILIZATION_World_Bible_v8_2_with_Law_126.docx`; v8.1 kept unchanged; `bible_dump.txt` updated to v8.2). Open points 2–4 above were not separately decided: point 2 stands as drafted (the check runs before freezing any study that rests on a rule); points 3 (how far to classify the ~1,340 constants) and 4 (kin and ownership knowledge: case by case or a general rule) remain open for the creator.

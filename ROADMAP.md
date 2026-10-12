@@ -443,6 +443,14 @@ failure, stop, confound or correction:
     all relevant arms. *(L1's Amendment 1, made a rule.)*
 19. **Corrections are appended, not rewritten.** Errors are corrected openly through dated amendments. Earlier
     conclusions remain visible and are not silently rewritten. *(Long practice, made a rule.)*
+20. **Nature gives capacities, never contents; it is anchored or labelled; and the code is checked against it.**
+    A rule of nature may give people only what they *can* feel, sense, learn and do (not what, whom, where or when), must
+    not name the outcome being studied, must not give knowledge without a channel, and must rest on evidence that it is
+    universal. A number nature needs but evidence cannot set is labelled unanchored, chosen before any experiment, and
+    never tuned. Existing code is checked against these tests, not only new changes; a rule that fails is recorded as a
+    known compromise, measured, and replaced only by a tested new version of nature. The line moves only for new
+    evidence or a found shortcut, never for a wanted outcome. World Bible Law 126 (v8.2); full text and procedure in
+    `experiments/NL1_nature_line/rule20_draft.md`. *(Wolves; the hunger rule, U1; A5, AA1; newborn habits, NL1.)*
 
 ## The cycle for every experiment
 
