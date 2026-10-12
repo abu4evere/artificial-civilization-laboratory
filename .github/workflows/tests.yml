@@ -25,7 +25,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.14"
+          python-version: "3.14.7"   # exactly the version the reference hashes were made with: a newer patch release
+                                     # can change a maths result in its last digit and so the course of a world
       - name: Install test tools
         run: |
           python -VV
