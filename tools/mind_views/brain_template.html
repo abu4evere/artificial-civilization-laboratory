@@ -53,7 +53,7 @@ p.small{font-size:12.5px;color:var(--muted);margin:6px 0}
     <canvas id="cv" width="2400" height="1480" aria-label="Brain scan"></canvas>
     <div class="tip" id="tip"></div>
   </div>
-  <div class="cols"><span>Senses, body, temperament</span><span>Situation neurons (32)</span><span>Action neurons (19)</span><span>This week's decision</span></div>
+  <div class="cols"><span>Senses, body, temperament</span><span>Situation neurons (32)</span><span>Action neurons (17)</span><span>This week's decision</span></div>
   <div class="info">
     <div class="card"><h2>How the decision was made</h2><div id="opts"></div>
       <div class="key"><span><span class="sw" style="background:var(--amber)"></span>instinct: drives and temperament (written by nature)</span><span><span class="sw" style="background:var(--cyan)"></span>habit: learned from experience</span></div>
@@ -126,7 +126,7 @@ function draw(){
   const act = P.ctx, chosen = P.action;
   const t = (performance.now() - t0) / 1000;
   g.globalCompositeOperation = 'lighter';
-  // learned habits: 32 x 19 connections
+  // learned habits: 32 x 17 connections
   for (let k = 0; k < NC; k++) for (let j = 0; j < NA; j++){
     const v = vals[k * NA + j]; if (!v) continue;
     const on = k === act, a = (on ? .18 : .05) + (on ? .75 : .4) * Math.abs(v) / vmax;
@@ -203,7 +203,7 @@ function panels(){
   document.getElementById('explain').innerHTML = `
     <p class="small"><b style="color:#fff">${name(P.id)}</b>, ${P.sex === 'F' ? 'woman' : 'man'}, ${P.age}${P.partner ? ', partner ' + name(P.partner) : ', no partner'}.</p>
     <p class="small"><b style="color:#fff">${learned} of ${NC * NA}</b> learned connections have been shaped by experience; the rest are still blank. Strongest habit anywhere: <b style="color:#fff">${WORDS[ACT[top[1] % NA]]}</b> when ${ctxLabel(Math.floor(top[1] / NA))} (${(top[0] / 100).toFixed(2)}).</p>
-    <p class="small">Left: three senses pick one of 32 <b style="color:#fff">situation neurons</b> (food held × company × season). The lit neuron's 19 connections to the <b style="color:#fff">action neurons</b> are this person's habits for that situation (cyan helps, magenta discourages). Amber lines are <b style="color:#ffb547">instinct</b>: which drives and temperament feed which action, from the code's formulas (links, not exact weights).</p>
+    <p class="small">Left: three senses pick one of 32 <b style="color:#fff">situation neurons</b> (food held × company × season). The lit neuron's 17 connections to the <b style="color:#fff">action neurons</b> are this person's habits for that situation (cyan helps, magenta discourages). Amber lines are <b style="color:#ffb547">instinct</b>: which drives and temperament feed which action, from the code's formulas (links, not exact weights).</p>
     <p class="small">This is not a neural network: there are no hidden layers. It is a body with drives, a temperament, and a table of habits learned by reinforcement, week by week, from how things turned out.</p>`;
 }
 

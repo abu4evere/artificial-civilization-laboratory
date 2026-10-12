@@ -1,6 +1,6 @@
 """Brain scan: a page showing how the people of one control world decide, week by week, read-only.
 
-For every teen and adult, each week: the situation neuron lit (food held x company x season, 32 in all), the 32 x 19
+For every teen and adult, each week: the situation neuron lit (food held x company x season, 32 in all), the 32 x 17
 table of learned habits (p.q, Q-learning), body and feelings, temperament, and the options weighed with their scores and
 their learned share. Runs the control code (experiments/E13R_replication/code_e13r) and writes one self-contained HTML
 page; nothing is written to the world or the code.

@@ -109,3 +109,11 @@ change their habits too. Held loosely.
   1101–1124. A reading stands only if the holdout agrees in direction and significance.
 - **Hard stops:** the original copy reproduces the uncopied control run exactly (state hash at week 52); the sham and
   every swap differ from it; code fingerprint unchanged.
+
+## Correction (appended 12 October 2026, before any ID1 code or run; rule 19)
+
+The habit table has **17 actions, not 19**: `acl/person.py` lists rest, forage, hunt, gather, put, take, make, play,
+explore, give, care, talk, court, steal, attack, flee, join. So **Habits** is the 32 × 17 table of **544** values (not
+608), and the behaviour measure is the share of each of the **17** actions. The figure 19 came from the brain-scan page,
+whose labels were wrong in the same way (corrected on the same day). Nothing else in the frozen design changes: the
+measures are defined over whatever actions the code has, and the swaps, sham, people, worlds and tests are unchanged.

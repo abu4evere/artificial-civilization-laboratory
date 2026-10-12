@@ -184,7 +184,7 @@ a{color:var(--cyan)}
     <div class="panel brainbox">
       <h2>Inside their mind, this week</h2>
       <canvas id="brain" width="2400" height="1300" aria-label="Brain scan"></canvas>
-      <div class="cols"><span>What they sense and feel</span><span>Situation neurons (32)</span><span>Action neurons (19)</span><span>What they chose</span></div>
+      <div class="cols"><span>What they sense and feel</span><span>Situation neurons (32)</span><span>Action neurons (17)</span><span>What they chose</span></div>
       <div class="btip" id="btip"></div>
     </div>
     <div class="panel story" id="story"></div>
@@ -422,7 +422,7 @@ function renderCard(){
   let body2 = "";
   if (cardTab === "overview") body2 = p && !p.alive ? `<p class="empty">${esc(name)} has died (${esc(p.death)}). Their family and history remain in the other tabs.</p>` : bars.length ? bars.map(([ic, l, v, c]) => `<div class="bar"><span>${ic}</span><span>${l}</span><div class="meter"><i style="width:${Math.max(0, Math.min(1, v)) * 100}%;background:${c}"></i></div><span class="v">${Math.round(v * 100)}%</span></div>`).join("") + '<p class="note">Mood is shown from −1 (0%) to +1 (100%).</p>' : '<p class="empty">Reading…</p>';
   if (cardTab === "mind") body2 = `${(p && p.mind && p.mind.thoughts || []).slice(0, 5).map(o => `<div class="th"><span>${esc(o.text)}</span><span>${o.pull.toFixed(2)}</span></div>`).join("") || '<p class="empty">Nothing holds their attention.</p>'}
-    ${b ? `<p class="note">Lit this week: <b style="color:#fff">${esc(ctxLabel(b.ctx))}</b>. ${b.learned} of 608 habits learned.</p>` : ""}`;
+    ${b ? `<p class="note">Lit this week: <b style="color:#fff">${esc(ctxLabel(b.ctx))}</b>. ${b.learned} of 544 habits learned.</p>` : ""}`;
   if (cardTab === "family") body2 = p ? `<div class="th"><span>Partner</span><span style="color:#fff">${esc(p.partner || "none")}</span></div><div class="th"><span>Mother</span><span style="color:#fff">${esc(p.mother || "—")}</span></div><div class="th"><span>Father</span><span style="color:#fff">${esc(p.father || "—")}</span></div><div class="th"><span>Children alive</span><span style="color:#fff">${p.children.length ? esc(p.children.join(", ")) : "none"}</span></div>` : "";
   if (cardTab === "history") body2 = p ? `${(p.memories || []).length ? `<ul class="l">${p.memories.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : '<p class="empty">No strong memories yet.</p>'}${(p.makes || []).length ? `<div class="k">Knows how to make</div><ul class="l">${p.makes.map(x => `<li>${esc(x.what)}</li>`).join("")}</ul>` : ""}${(p.beliefs || []).length ? `<div class="k">Has come to believe</div><ul class="l">${p.beliefs.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}` : "";
   const log = (thoughtsLog.get(selected) || []).slice().reverse();
@@ -634,13 +634,13 @@ function story(){
       ${b.weighed.map(([a, sc, ch, lr]) => { const inst = sc - lr, w = v => Math.max(0, v) / mx * 100;
         return `<div class="opt"><span${ch ? ' style="color:#fff;font-weight:600"' : ""}>${esc(WORDS[a] || a)}${ch ? " ✓" : ""}</span><div class="st" title="instinct ${inst.toFixed(2)}, habit ${lr.toFixed(2)}"><i style="left:0;width:${w(inst)}%;background:#ffb547"></i><i style="left:${w(inst)}%;width:${w(lr)}%;background:#38d6ff"></i></div><span class="v">${sc.toFixed(2)}</span></div>`; }).join("")}
       <div class="key"><span><span class="sw" style="background:#ffb547"></span>instinct (drives and temperament, written by nature)</span><span><span class="sw" style="background:#38d6ff"></span>habit (learned from their own life)</span></div>
-      <p class="p">They have learned <b>${b.learned} of 608</b> habits so far. The choice has some chance in it, so the top score does not always win.</p>` : ""}
+      <p class="p">They have learned <b>${b.learned} of 544</b> habits so far. The choice has some chance in it, so the top score does not always win.</p>` : ""}
     ${(m.thoughts || []).length ? `<div class="k">On their mind</div><ul>${m.thoughts.slice(0, 5).map(o => `<li>${esc(o.text)}</li>`).join("")}</ul>` : ""}
     ${(p.memories || []).length ? `<div class="k">They remember</div><ul>${p.memories.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
     ${(p.makes || []).length ? `<div class="k">They know how to make</div><ul>${p.makes.map(x => `<li>${esc(x.what)}</li>`).join("")}</ul>` : ""}
     ${(p.beliefs || []).length ? `<div class="k">They have come to believe</div><ul>${p.beliefs.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
     <div class="k">How to read the brain</div>
-    <p class="p">Three senses (white) light <b>one of 32 situation neurons</b>: how much food they hold, whether anyone is near, and the season. That neuron's lines to the <b>19 action neurons</b> are their habits for this situation: cyan where an action went well before, magenta where it went badly. Amber lines are instinct: which drives and inborn traits push towards which action. Hover any point for details.</p>
+    <p class="p">Three senses (white) light <b>one of 32 situation neurons</b>: how much food they hold, whether anyone is near, and the season. That neuron's lines to the <b>17 action neurons</b> are their habits for this situation: cyan where an action went well before, magenta where it went badly. Amber lines are instinct: which drives and inborn traits push towards which action. Hover any point for details.</p>
     <p class="p">This is not a neural network. It is a body, a temperament, and a table of habits each person grew from their own life.</p>`;
 }
 

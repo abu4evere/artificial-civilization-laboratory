@@ -118,3 +118,25 @@ Held loosely.
   between-lineage pairs exist there).
 - **Observer:** read-only, verified by state hash (with and without it) on two seeds per code copy before any run.
 - **Order of work:** WS1 (running) → AA1 → MB1a → ID1.
+
+## Correction: what the Hill et al. (2014) benchmark measures (appended 12 October 2026, before any MB1 run; rule 19)
+
+Re-read in full text (PLoS ONE 9(7): e102806; PMC4105570). The benchmark is narrower and less comparable than the text
+above says:
+
+- **Who:** random **same-sex** adult pairs drawn from the **whole population** (Ache: adults alive 1965–1970, 351
+  interviews, 32 subjects, 88 targets; Hadza: 850 interviews in 22 bands). The pairs are not restricted to people of
+  different bands, so "between-band contact among random Ache adult pairs" above is inexact: it is contact among random
+  adult pairs, most of whom lived in different bands.
+- **What:** yes/no recall ("did target ever ...") over the years both were adults, turned into a yearly probability by a
+  model in which elapsed time is the main predictor. "About 0.20 to 0.30 per year" is the Ache range for **conversing,
+  sleeping in the same camp, sharing food, and watching tool manufacture**; the Hadza were generally 2–5 times lower;
+  rarer activities ran 0.02–0.08.
+- **Not comparable with ACL's "within sight":** being within 4 tiles is neither conversation nor camping together. As
+  the text above already says, it is an upper bound on contact, so a high ACL rate would not show forager-like mixing,
+  but a low one does show its absence.
+
+**What this changes:** nothing in the frozen reading. The thresholds (0.05 and 0.005 per adult pair-year) stay as
+registered, labelled as operational cut-offs informed by this range, not as validated biological boundaries. Stage A
+will also report the rate restricted to same-sex adult pairs, the subset Hill et al. sampled, as a description beside the
+frozen measure, not in place of it.
