@@ -19,7 +19,11 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest
+    # Windows Server 2022, not windows-latest (Server 2025): Windows' own C maths library differs between builds in the
+    # last digit of pow(). Traced on 12 Oct 2026 (tools/ci/replay_trace.py): the frozen control world, seed 11, matched
+    # this PC (Windows 10, build 19045) on Server 2022 but parted on Server 2025 at week 121, where one memory strength
+    # ended ...782 here and ...781 there. Exact replays of ACL hold only where that library gives the same results.
+    runs-on: windows-2022
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
