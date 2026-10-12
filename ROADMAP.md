@@ -454,6 +454,26 @@ failure, stop, confound or correction:
 | 7. Accumulation | Tomasello; Mesoudi (acquisition costs); Kirby (iterated learning) |
 | 8. Society | Sugarscape (as a contrast); Melting Pot; Neural MMO |
 
+## Next-phase candidates (noted October 2026; to be ordered in the next-phase plan after WS1)
+
+Each starts, as always, with frozen questions and an evidence review; none is designed yet.
+
+- **Survival first:** WS1 (world size) is running; AA1 (artifact audit, incl. A5: people know where absent loved ones
+  are) and ID1 (what makes a person who they are) follow.
+- **Lévy-like search.** ACL's exploratory step is always 3 tiles in a random direction. Hadza foragers make Lévy walks
+  (many short moves, rare long ones) in nearly half of foraging bouts (Raichlen et al., PNAS); flies search similarly.
+  Rare long trips could connect bands (F1, P2, GF1). Evidence first: whether it describes moves between camps, not only
+  daily foraging.
+- **Learning by watching** (E12/E13R: seen, respected, not copied).
+- **Seasons from real environments** (forager seasonality evidence; N4 stopped because ACL's land would not vary).
+- **Cooperation from conditions, not rewards** (e.g. windfall vs steady food; P1 risk pooling).
+- **Belonging and ownership** (D2, HF2–HF3; evidence mixed: Apicella et al. 2014).
+- **Evolved instincts** (long term): let instinct weights evolve across generations instead of being written by hand,
+  as nature's wiring came from evolution (the lesson of the fly connectome, FlyWire 2024).
+- **Related work, no change of direction:** whole-brain emulation of the fruit fly (FlyWire connectome; Shiu et al. 2024;
+  Eon Systems 2026, unreviewed) shows behaviour from wiring nobody wrote: ACL's founding rule at the level of neurons.
+  ACL stays at the level of drives and habits, the right level for culture.
+
 ## Parking lot (ideas held, not scheduled)
 
 - Energy cost for complexity, and senses that can be discovered (from Werld).
