@@ -153,3 +153,19 @@ further here.
    check. Finding 0 is restated accordingly: not a missing rule, nor a missing check, but **a check written down and
    not practised**.
 
+## Two more candidates, found from a question about an infant in the viewer (appended 12 October 2026)
+
+A reviewer asked how a newborn (age 0) could have been "told" about its own birth. Read from the code:
+
+| | candidate | where | test | verdict |
+|---|---|---|---|---|
+| **N6** | **Infants are told stories and keep them from birth.** Anyone may choose to talk to a person of any age. In `actions._talk`, `social.gossip(world, p, q)` runs with no age limit, so a newborn stores memories ("told by …"). The other channels have limits: the child tells stories back from 3, is taught from 4, and hears reputations and places from 6. | `actions._talk` | T1/T2: the capacity to understand and keep a told story develops with age. Human infants are not known to keep what they are told in their first years (infantile amnesia is well documented; **no source checked in this audit**) | **likely fails T2 as built**; evidence to check |
+| **N7** | **Habit copying from anyone one talks with, at any age, of the whole table.** `actions._imitate` runs on every talk, with no age limit: the listener's 544 habit values each move toward the speaker's (rate 0.05, scaled by curiosity and respect) when the speaker is respected or happier. | `actions._imitate` | T4: the channel is presence and talk, but what passes is the speaker's internal values, not behaviour the listener saw | **uncertain, like N5**: values copied directly; reaches newborns |
+
+**What it means for the viewer's numbers.** The brain scan's "learned N of 544" counts every habit that is **not zero**,
+including inherited (N1), carer-absorbed (N5) and imitated (N7) values. A saved adult scan (Vadumis, aged 36, world 501;
+`book/records/brain_seed501_year11_Vadumis.json`) shows **78** non-zero habits. A newborn in the live world showed
+**73**. A newborn and a 36-year-old having nearly the same count suggests most of an adult's habit table is not
+learned from their own life. This is exactly what BL0's Q2 (frozen) measures. That record's field is named
+`habits_learned_of_608`; both the word "learned" and the 608 are wrong (the table is 544). The record is kept as it was.
+
