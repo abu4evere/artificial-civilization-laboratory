@@ -11,6 +11,7 @@ name: tests
 # (Windows minutes count double on GitHub's free plan).
 on:
   push:
+    branches: ["**"]   # branches only: pushing a tag (e.g. BL0-frozen) does not run the tests again
     paths: ["acl/**", "tests/**", "experiments/**/code_*/**", ".github/workflows/**", "pyproject.toml"]
   pull_request:
     paths: ["acl/**", "tests/**", "experiments/**/code_*/**", ".github/workflows/**", "pyproject.toml"]
@@ -26,6 +27,16 @@ jobs:
         with:
           python-version: "3.14"
       - name: Install test tools
-        run: python -m pip install pytest hypothesis
+        run: |
+          python -VV
+          python -m pip install pytest hypothesis
       - name: Run tests
-        run: python -m pytest -q
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pytest -q -rfE --tb=short 2>&1 | tee pytest_out.txt
+      - name: Put the failure on the run page
+        if: failure()
+        shell: bash
+        run: |
+          { echo "## Test failure (last 80 lines)"; echo '```'; tail -n 80 pytest_out.txt 2>/dev/null || echo "no test output: the failure was before the tests ran"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
