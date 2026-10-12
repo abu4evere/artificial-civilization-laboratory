@@ -1,0 +1,4 @@
+M: go-to moves toward an out-of-sight loved one's current tile: 0 (must be 0): yes
+M: go-to moves toward a remembered tile: 558 (must be > 0): yes
+C: A5 share 0.250 (1079 of 4310); AA1 holdout interval 0.272-0.314: OUTSIDE
+All: FAIL

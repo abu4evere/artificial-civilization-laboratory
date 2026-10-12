@@ -1,0 +1,8 @@
+loved_location current, observers off, seed 11, 20 years: reproduces the control world: yes
+loved_location current, observers on, seed 11, 20 years: reproduces the control world: yes
+loved_location current, observers off, seed 501, 20 years: reproduces the control world: yes
+loved_location current, observers on, seed 501, 20 years: reproduces the control world: yes
+arm m, seed 11, 20 years: the world differs from the control: yes
+arm s, seed 11, 20 years: the world differs from the control: yes
+code_lk1 fingerprint: 765312576e42ffba6a3bee469208ced06f749b72c86db8577ad489cc23525d22
+All: PASS

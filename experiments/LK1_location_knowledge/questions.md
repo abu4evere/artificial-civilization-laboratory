@@ -166,3 +166,29 @@ recommended in this draft**:
   - **Population** beside every measure.
 - **Analysis script** written and smoke-tested before any main-run data, as for every study.
 
+## Pilot result and a proposed amendment (12 October 2026, before any main-run data; rule 19; AWAITING the creator's sign-off)
+
+**Zero checks: PASS** (`output/zero.txt`). With `loved_location="current"`, the copy reproduces the control world, with
+and without observers, on seeds 11 and 501; arms M and S differ from it.
+
+**Pilot (`output_pilot/manipulation.txt`), first attempt: FAIL on checks 1 and 3.**
+
+1. **Check 1** (M: zero moves toward an out-of-sight loved one's current tile) showed 276. The cause was **a labelling
+   bug, not the rule**. A move toward a remembered spot was labelled "current" whenever the loved one had not moved since
+   being seen, because the label compared positions instead of recording where the target came from. Fixed: each move is
+   labelled by its source ("now" or "memory"). Afterwards: **0**, and 558 moves toward remembered spots
+   (276 + 282: the same moves, relabelled). Zero checks re-run after the fix: PASS. The fix touches only the label,
+   which is outside the world's state.
+2. **Check 2** (M: some moves toward remembered spots): PASS.
+3. **Check 3** (C: A5 share within AA1's holdout interval, 27.2–31.4%) gave **25.0%** (1,079 of 4,310). **The check was
+   mis-specified at freezing.** It compares a 10-year pilot on four throwaway seeds with an interval measured over 120
+   years on other seeds; the share in a world's first decade need not equal its 120-year share. What the check was meant
+   to show, that C measures A5 exactly as AA1 did, was tested directly instead. C, run on AA1's seed 601 for 120 years,
+   **reproduces AA1's counts exactly**: go-to moves 11,872; toward loved ones 4,567; beyond sight 2,989; partner search
+   329 / 151; crossings 170; gifts 17,226. The test output was not kept as main-run data.
+
+**Proposed amendment (for the creator's sign-off; the main run does not start until then):** replace check 3 with
+"**C reproduces AA1's audit counts exactly on an AA1 seed (601, 120 years)**". This is already shown, and it is stricter
+than the original check: equality, not an interval. Nothing else changes: not the arms, seeds, measures, outcome rule,
+nor any threshold.
+
