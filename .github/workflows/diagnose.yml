@@ -16,8 +16,10 @@ jobs:
         shell: bash
         run: |
           python -VV
-          python tools/ci/replay_trace.py experiments/E13R_replication/code_e13r 11 260 1.0 | tee trace.txt
+          python tools/ci/replay_trace.py experiments/E13R_replication/code_e13r 11 121 1.0 121 | tee trace.txt
       - uses: actions/upload-artifact@v4
         with:
           name: trace
-          path: trace.txt
+          path: |
+            trace.txt
+            state_week_*.json

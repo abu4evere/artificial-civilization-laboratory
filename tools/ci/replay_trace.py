@@ -1,6 +1,6 @@
 """Diagnostic: replay one world and print a state hash after every week, plus which code was imported.
 
-  python tools/ci/replay_trace.py <code dir> <seed> <weeks> [anticipation]
+  python tools/ci/replay_trace.py <code dir> <seed> <weeks> [anticipation] [dump week]
 
 Run on two machines and compare the outputs line by line: the first differing week locates where they part.
 """
@@ -22,3 +22,6 @@ print("week 0", w.state_hash()[:16])
 for wk in range(1, int(sys.argv[3]) + 1):
     w.step()
     print("week", wk, w.state_hash()[:16])
+    if len(sys.argv) > 5 and wk in (int(sys.argv[5]) - 1, int(sys.argv[5])):
+        with open(f"state_week_{wk}.json", "w", encoding="utf-8") as f:
+            json.dump(w.to_dict(), f, sort_keys=True)
