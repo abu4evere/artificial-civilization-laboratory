@@ -5,8 +5,10 @@ control copy used by the experiments (`experiments/E13R_replication/code_e13r`).
 regenerate the first set (python tests/test_reference_replays.py --update acl) and say so in the commit; the control copy
 is frozen and its hashes should never change.
 
-The hashes were made on Windows with Python 3.14; maths functions such as exp can differ in the last digit between
-systems, which can change a rare choice, so the check runs on the same system in CI.
+The hashes were made on Windows 10 (build 19045) with Python 3.14.7. Exact replay also depends on Windows' own C maths
+library: on Windows Server 2025 one pow() result differs in its last digit, and the frozen control world, seed 11, parts
+from this PC's at week 121 (traced with tools/ci/replay_trace.py, 12 October 2026). Windows Server 2022 matches this PC,
+so CI runs there. Worlds replayed on another system can therefore differ in detail while being the same model.
 """
 from __future__ import annotations
 
