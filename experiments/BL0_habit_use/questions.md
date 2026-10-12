@@ -124,3 +124,30 @@ Replays only, about F1's cost (64 worlds × 120 years) plus logging. Runs **afte
 
 Whether ACL's learning resembles a fly's or a person's. It measures whether, and from where, learned values change
 behaviour in ACL.
+
+## Proposed Amendment 1 (12 October 2026, before any BL0 code or run; rule 19; AWAITING the creator's sign-off)
+
+**A gap in the frozen split, found while answering a reviewer.** Q2 splits each habit value into three parts:
+inherited (I), caregiver (C) and own experience (E). A full search of the code (every line that writes a habit value)
+finds **six** writers:
+
+- birth (`biology.py`, 366);
+- upbringing (295);
+- own experience (282);
+- the gift nudge (`actions.py`, 499);
+- **imitation in talk (`actions.py`, 553, `_imitate`)**;
+- clearing at death (447).
+
+Imitation is **not** in the frozen split. Whenever a person talks with someone they respect, or who is happier, every
+one of their 544 habit values moves toward the speaker's (NL1's N7). Without a part for it, I + C + E would not equal the
+habit value, and **BL0's own zero check** ("I + C + E = the habit value, to 1e-9") would fail and stop the run. The
+frozen design could not have run as written.
+
+**Proposed change:** a fourth part, **copied in talk (T)**:
+- **Imitation:** all parts × (1 − rate), then T += rate × the speaker's habit value. The same bookkeeping as upbringing.
+- **The zero check** becomes I + C + E + T = the habit value.
+- **Q2's reading:** own experience's share is now of I + C + E + T. The "mostly learned" (≥ 50%) and "mostly inherited
+  or absorbed" (< 25%) rules apply unchanged, with "absorbed" covering both C and T.
+- **Q3's lineage measure** carries T's origin generation in the same way.
+
+Nothing else changes: not the worlds, questions, measures, nor the thresholds (decision rules, as signed off).
