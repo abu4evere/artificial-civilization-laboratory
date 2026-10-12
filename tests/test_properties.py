@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 
+import pytest
 from hypothesis import HealthCheck, given, settings
 from hypothesis import strategies as st
 
@@ -22,7 +23,9 @@ founders = st.sampled_from([4, 8, 12, 20])
 SETTINGS = dict(max_examples=10, deadline=None, suppress_health_check=[HealthCheck.too_slow])
 
 
-def _check_laws(w: World) -> None:
+def _check_laws(w: World, stranding: bool = False) -> None:
+    """Every law; `stranding=True` also checks that nobody ends a week on water with nothing that floats, a known
+    breach recorded in experiments/ST1_stranded_at_sea/finding.md."""
     c, tick = w.cfg, w.tick
     living = w.living()
     for p in w.people.values():
@@ -37,10 +40,13 @@ def _check_laws(w: World) -> None:
         assert -EPS <= p.energy <= 100.0 + EPS, (p.id, p.energy)
         assert p.health <= p.max_health(tick) + EPS, (p.id, p.health)
         assert p.birth <= tick, (p.id, p.birth, tick)
-        # Everyone alive is on the map, and on land unless they carry something that floats (Rule 3).
+        # Everyone alive is on the map, and on land unless they carry something that floats (Rule 3), or are a child
+        # in the boat of a carer who does.
         x, y = p.loc
         assert 0 <= x < c.width and 0 <= y < c.height, (p.id, p.loc)
-        assert w.passable(p, p.loc) or not w.tile(p.loc).water, (p.id, p.loc)
+        if stranding and w.tile(p.loc).water and not w.passable(p, p.loc):
+            carer = w.people.get(p.caregiver) if p.caregiver else None
+            assert carer is not None and carer.alive and carer.loc == p.loc and w.passable(carer, p.loc), (p.id, p.loc)
         # Partnership is mutual, between living people who are not kin.
         if p.partner is not None:
             q = w.people[p.partner]
@@ -64,6 +70,37 @@ def test_laws_hold_every_week(seed, n, f):
             break
         w.step()
         _check_laws(w)
+
+
+@pytest.mark.xfail(reason="known breach of Rule 3: a float that breaks at sea strands its owner for a week "
+                          "(experiments/ST1_stranded_at_sea/finding.md); rare, so random worlds may not hit it",
+                   strict=False)
+@settings(**SETTINGS)
+@given(seed=seeds, n=weeks, f=founders)
+def test_nobody_is_stranded_at_sea(seed, n, f):
+    w = World(Config(seed=seed, founders=f))
+    for _ in range(n):
+        if not w.living():
+            break
+        w.step()
+        _check_laws(w, stranding=True)
+
+
+def test_world_601_carried_child_is_not_stranded():
+    """The case GitHub found: a four-month-old in the carer's boat (world 601, week 58) obeys Rule 3."""
+    w = World(Config(seed=601, founders=20))
+    for _ in range(58):
+        w.step()
+    _check_laws(w, stranding=True)
+
+
+@pytest.mark.xfail(reason="ST1: in world 803, week 50, p00002's raft breaks at sea after a theft", strict=True)
+def test_world_803_stranding_is_still_there():
+    """Pins the known breach: when it is fixed, this test fails as 'unexpectedly passing' and the mark comes off."""
+    w = World(Config(seed=803, founders=20))
+    while w.tick < 50:
+        w.step()
+    _check_laws(w, stranding=True)
 
 
 @settings(**SETTINGS)

@@ -1,0 +1,601 @@
+{
+ "summary": {
+  "seeds": [
+   600,
+   601,
+   602,
+   603,
+   604,
+   605,
+   606,
+   607,
+   608,
+   609,
+   700,
+   701,
+   702,
+   703,
+   704,
+   705,
+   706,
+   707,
+   708,
+   709,
+   800,
+   801,
+   802,
+   803,
+   804,
+   805,
+   806,
+   807,
+   808,
+   809,
+   900,
+   901,
+   902,
+   903,
+   904,
+   905,
+   906,
+   907,
+   908,
+   909
+  ],
+  "years": 30,
+  "founders": 20,
+  "code": "acl (live)",
+  "totals": {
+   "person_weeks": 1291054,
+   "afloat": 2942,
+   "carried_by_afloat_carer": 219,
+   "stranded": 22,
+   "stranded_adult": 15,
+   "stranded_child": 7
+  },
+  "worlds_with_any_stranding": 13,
+  "stranded_share_of_weeks_on_water": 0.0069,
+  "stranded_share_of_all_person_weeks": 1.7e-05,
+  "longest_run_weeks": 1
+ },
+ "worlds": [
+  {
+   "seed": 600,
+   "counts": {
+    "person_weeks": 26089,
+    "afloat": 159,
+    "carried_by_afloat_carer": 8,
+    "stranded": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     1285,
+     "p00033",
+     16.7
+    ]
+   ]
+  },
+  {
+   "seed": 601,
+   "counts": {
+    "person_weeks": 37733,
+    "afloat": 39,
+    "carried_by_afloat_carer": 9
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 602,
+   "counts": {
+    "person_weeks": 22091
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 603,
+   "counts": {
+    "person_weeks": 53658,
+    "afloat": 76,
+    "carried_by_afloat_carer": 2
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 604,
+   "counts": {
+    "person_weeks": 26697,
+    "afloat": 63
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 605,
+   "counts": {
+    "person_weeks": 26073,
+    "afloat": 41
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 606,
+   "counts": {
+    "person_weeks": 29947,
+    "afloat": 106,
+    "carried_by_afloat_carer": 12
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 607,
+   "counts": {
+    "person_weeks": 32839,
+    "afloat": 142,
+    "carried_by_afloat_carer": 3
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 608,
+   "counts": {
+    "person_weeks": 35050,
+    "afloat": 97,
+    "carried_by_afloat_carer": 12
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 609,
+   "counts": {
+    "person_weeks": 21235,
+    "afloat": 38,
+    "carried_by_afloat_carer": 1
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 700,
+   "counts": {
+    "person_weeks": 28454,
+    "afloat": 62,
+    "carried_by_afloat_carer": 1,
+    "stranded": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     723,
+     "p00005",
+     32.4
+    ]
+   ]
+  },
+  {
+   "seed": 701,
+   "counts": {
+    "person_weeks": 54301,
+    "afloat": 76,
+    "carried_by_afloat_carer": 9
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 702,
+   "counts": {
+    "person_weeks": 30355,
+    "afloat": 52,
+    "carried_by_afloat_carer": 12
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 703,
+   "counts": {
+    "person_weeks": 37211,
+    "afloat": 57,
+    "stranded": 3,
+    "stranded_adult": 1,
+    "stranded_child": 2
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     1038,
+     "p00008",
+     39.9
+    ],
+    [
+     1038,
+     "p00035",
+     10.5
+    ],
+    [
+     1038,
+     "p00043",
+     3.1
+    ]
+   ]
+  },
+  {
+   "seed": 704,
+   "counts": {
+    "person_weeks": 22369,
+    "afloat": 101,
+    "carried_by_afloat_carer": 10
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 705,
+   "counts": {
+    "person_weeks": 43717,
+    "afloat": 282,
+    "carried_by_afloat_carer": 39,
+    "stranded": 2,
+    "stranded_child": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     257,
+     "p00034",
+     0.3
+    ],
+    [
+     1196,
+     "p00021",
+     22.2
+    ]
+   ]
+  },
+  {
+   "seed": 706,
+   "counts": {
+    "person_weeks": 41758,
+    "afloat": 71,
+    "carried_by_afloat_carer": 31,
+    "stranded": 3,
+    "stranded_adult": 1,
+    "stranded_child": 2
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     459,
+     "p00019",
+     25.2
+    ],
+    [
+     459,
+     "p00031",
+     4.3
+    ],
+    [
+     459,
+     "p00036",
+     2.0
+    ]
+   ]
+  },
+  {
+   "seed": 707,
+   "counts": {
+    "person_weeks": 25706,
+    "afloat": 75,
+    "carried_by_afloat_carer": 19,
+    "stranded": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     1142,
+     "p00034",
+     15.8
+    ]
+   ]
+  },
+  {
+   "seed": 708,
+   "counts": {
+    "person_weeks": 36243,
+    "afloat": 99,
+    "carried_by_afloat_carer": 7
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 709,
+   "counts": {
+    "person_weeks": 21346,
+    "afloat": 46
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 800,
+   "counts": {
+    "person_weeks": 34527,
+    "afloat": 72,
+    "stranded": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     355,
+     "p00019",
+     32.6
+    ]
+   ]
+  },
+  {
+   "seed": 801,
+   "counts": {
+    "person_weeks": 29521,
+    "afloat": 46,
+    "carried_by_afloat_carer": 2,
+    "stranded": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     781,
+     "p00024",
+     14.0
+    ]
+   ]
+  },
+  {
+   "seed": 802,
+   "counts": {
+    "person_weeks": 39450,
+    "afloat": 87
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 803,
+   "counts": {
+    "person_weeks": 37082,
+    "afloat": 124,
+    "stranded": 3,
+    "stranded_adult": 2,
+    "stranded_child": 1,
+    "carried_by_afloat_carer": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     50,
+     "p00002",
+     17.1
+    ],
+    [
+     707,
+     "p00005",
+     33.9
+    ],
+    [
+     707,
+     "p00036",
+     1.7
+    ]
+   ]
+  },
+  {
+   "seed": 804,
+   "counts": {
+    "person_weeks": 21670,
+    "afloat": 72
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 805,
+   "counts": {
+    "person_weeks": 35189,
+    "afloat": 100,
+    "carried_by_afloat_carer": 2,
+    "stranded": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     863,
+     "p00029",
+     12.7
+    ]
+   ]
+  },
+  {
+   "seed": 806,
+   "counts": {
+    "person_weeks": 44682,
+    "afloat": 63,
+    "carried_by_afloat_carer": 13
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 807,
+   "counts": {
+    "person_weeks": 30227,
+    "afloat": 89,
+    "stranded": 1,
+    "stranded_adult": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     206,
+     "p00006",
+     31.7
+    ]
+   ]
+  },
+  {
+   "seed": 808,
+   "counts": {
+    "person_weeks": 18582,
+    "afloat": 48
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 809,
+   "counts": {
+    "person_weeks": 27700,
+    "afloat": 65,
+    "carried_by_afloat_carer": 1,
+    "stranded": 2,
+    "stranded_adult": 2
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     444,
+     "p00003",
+     26.5
+    ],
+    [
+     674,
+     "p00003",
+     31.0
+    ]
+   ]
+  },
+  {
+   "seed": 900,
+   "counts": {
+    "person_weeks": 50982,
+    "afloat": 18
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 901,
+   "counts": {
+    "person_weeks": 25495,
+    "afloat": 41
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 902,
+   "counts": {
+    "person_weeks": 40042,
+    "afloat": 16,
+    "carried_by_afloat_carer": 2
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 903,
+   "counts": {
+    "person_weeks": 12968,
+    "afloat": 13
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 904,
+   "counts": {
+    "person_weeks": 19329,
+    "afloat": 59,
+    "carried_by_afloat_carer": 3,
+    "stranded": 2,
+    "stranded_adult": 1,
+    "stranded_child": 1
+   },
+   "longest_run_weeks": 1,
+   "cases": [
+    [
+     150,
+     "p00011",
+     29.9
+    ],
+    [
+     150,
+     "p00026",
+     1.9
+    ]
+   ]
+  },
+  {
+   "seed": 905,
+   "counts": {
+    "person_weeks": 28795,
+    "afloat": 9,
+    "carried_by_afloat_carer": 1
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 906,
+   "counts": {
+    "person_weeks": 12849,
+    "afloat": 36
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 907,
+   "counts": {
+    "person_weeks": 59354,
+    "afloat": 65,
+    "carried_by_afloat_carer": 12
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 908,
+   "counts": {
+    "person_weeks": 30780,
+    "afloat": 87
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  },
+  {
+   "seed": 909,
+   "counts": {
+    "person_weeks": 38958,
+    "afloat": 150,
+    "carried_by_afloat_carer": 7
+   },
+   "longest_run_weeks": 0,
+   "cases": []
+  }
+ ]
+}
