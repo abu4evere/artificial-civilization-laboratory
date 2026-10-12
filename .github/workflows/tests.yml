@@ -7,9 +7,14 @@
 # between systems, which could change a rare choice and fail the replay check for no real reason.
 name: tests
 
+# Only when code changes: book, roadmap and results commits do not use the private repo's Actions minutes
+# (Windows minutes count double on GitHub's free plan).
 on:
   push:
+    paths: ["acl/**", "tests/**", "experiments/**/code_*/**", ".github/workflows/**", "pyproject.toml"]
   pull_request:
+    paths: ["acl/**", "tests/**", "experiments/**/code_*/**", ".github/workflows/**", "pyproject.toml"]
+  workflow_dispatch:   # can also be started by hand from the Actions tab
 
 jobs:
   test:
