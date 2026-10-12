@@ -1,4 +1,8 @@
-# MB1 — Many bands, one people: do ACL's bands meet, and does how a people is divided matter? (DRAFT for the creator's sign-off; nothing frozen or run)
+# MB1 — Many bands, one people: do ACL's bands meet, and does how a people is divided matter? (Stage A SIGNED OFF and frozen as `MB1a-frozen`; Stage B remains a draft)
+
+**Signed off by the creator (October 2026):** Stage A first, read-only; after AA1; including WS1's 80-founder worlds; reading
+thresholds as drafted (0.05 and 0.005 per adult pair-year). Stage B is not designed or frozen; it is decided only after
+Stage A is reported. Nothing has been run.
 
 **Asked by the creator (October 2026),** after the research report *Research to strengthen ACL* (`reports/`), whose
 first conclusion was that ACL's three bottlenecks share a root: each world is one closed band of 20–40 people, while
@@ -76,7 +80,7 @@ been used; each learner's effective learning pool per skill).
 What the right number or size of bands is for real people; ACL's tiles have no kilometre scale (N10). It shows whether,
 in ACL, bands meet, and whether dividing the same people differently changes their fate.
 
-## Decisions for the creator
+## Decisions (taken by the creator at sign-off: Stage A first; after AA1; include WS1's worlds; thresholds as drafted)
 
 1. Stage A first, read-only (recommended), or go straight to Stage B?
 2. Stage A's reading thresholds (0.05 and 0.005 per adult pair-year, from Hill et al.'s range), or others.
@@ -90,3 +94,27 @@ first generation), and only "rarely" meet in 80-founder worlds; cross-lineage co
 structure ACL already has does nothing, and the open question becomes what lets real bands meet: daily forays and camp
 moves (Wood et al. 2021; Lewis et al. 2014), visiting, and Lévy-like search, each needing its own evidence review.
 Held loosely.
+
+## Stage A operational details (fixed at freezing, before any run)
+
+- **Worlds.** Control: F1's 64 seeds, control code, 120 years; discovery 501–516 and 601–616, holdout 811–818 and
+  1101–1124. WS1's 80-founder arms, replayed with WS1's code copy and settings (`code_p2`, every setting off; P = 40 × 40,
+  LP = 80 × 80): discovery seeds 3001–3032, holdout 3033–3064 (a subset of WS1's 256, because an 80-founder world takes
+  10–20 minutes; the subset is fixed now). Every replay must reproduce its saved WS1 or F1 populations exactly; one that
+  does not is a hard stop.
+- **Lineage.** Each founder's founding band is read at week one (the founders who start with ties to each other, as in
+  WS1's manipulation check). Everyone born later takes their mother's lineage.
+- **Meeting.** Each week, for every pair of living adults (16+) of different lineages, whether they are within
+  `perception` (4 tiles) of each other. Per pair-year: the probability that a pair meets at least once in a year,
+  averaged over all such pairs and years in a world. **Interacting:** the same, counting weeks in which one chose to
+  talk to, give to or court the other (from the world's events).
+- **Pairing.** Couples formed during the run whose partners are of different lineages, as a share of all couples formed.
+- **Learning.** Recipes learned (taught, or learned by watching) from someone of another lineage, as a share of all
+  recipes learned from others (from the world's teaching and learning events; if the events do not name the source,
+  this measure is reported as not measurable, not estimated).
+- **Reading (frozen):** per arm, the median across worlds of the between-lineage meeting rate per adult pair-year:
+  ≥ 0.05 = "bands meet like forager bands"; < 0.005 = "bands are effectively closed"; otherwise "rarely". A reading
+  stands only if discovery and holdout agree. Worlds in which only one lineage is left are reported separately (no
+  between-lineage pairs exist there).
+- **Observer:** read-only, verified by state hash (with and without it) on two seeds per code copy before any run.
+- **Order of work:** WS1 (running) → AA1 → MB1a → ID1.
