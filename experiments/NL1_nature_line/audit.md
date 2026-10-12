@@ -169,3 +169,25 @@ including inherited (N1), carer-absorbed (N5) and imitated (N7) values. A saved 
 learned from their own life. This is exactly what BL0's Q2 (frozen) measures. That record's field is named
 `habits_learned_of_608`; both the word "learned" and the 608 are wrong (the table is 544). The record is kept as it was.
 
+## Open question recorded: is there a ledger for knowledge, as BL0 is for habits? (12 October 2026; nothing built)
+
+Asked by the reviewer after BL0's habit split was found to miss a writer.
+
+**What exists.**
+- **Stored knowledge partly carries its source.** Memories record who told them, and the viewer now marks every memory
+  *told by*, *lived it* or *saw it*. Hearsay about game and water (`heard`), known springs, places and the record of
+  whose word has held up are kept per person. Law 47 asks to "track provenance when practical".
+- **There is no single ledger** that every piece of knowledge passes through, and no check that it does.
+
+**Why a ledger of stored knowledge would not have caught the shortcuts AA1 found.** A5, A6a, A6c and A6d are not stored
+knowledge at all. They are **reads of the world's truth at the moment of deciding**: another person's current tile, their
+exact food, a single beyond sight, water beyond sight. Nothing is written down, so nothing would appear in a ledger.
+
+**What would catch them is a read audit, not a ledger.** It would list every place where decision code reads another
+person's state, or a tile beyond the decider's sight. AA1 did this once, by hand (its code review for A6). A routine
+form could be a test that runs decisions while recording every read of another person or of a far tile, and flags any
+read that sight, memory or hearsay does not cover. Law 126 asks for such checks to be routine.
+
+**Status: named, not built.** It is a candidate for the next round of the check, after LK1 and BL0. Labelled **K1** here so
+it is not lost.
+
