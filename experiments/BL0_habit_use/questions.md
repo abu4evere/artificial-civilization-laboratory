@@ -1,10 +1,11 @@
-# BL0 — Does ACL's brain meaningfully learn? (APPROVED to run after the existing queue; thresholds await sign-off; not frozen; nothing run)
+# BL0 — Does ACL's brain meaningfully learn? (SIGNED OFF and frozen as `BL0-frozen`; runs after the existing queue; nothing run)
 
 **Creator's decision (12 October 2026):** BL0 is approved, to run **after the existing queue (WS1 → AA1 → MB1a → ID1)**,
 without changing the frozen order. Before it runs, its analysis must (a) separate habit effects on **scores** from
 effects on **actual choices**, and (b) separate **individual learning** from **inherited** and **caregiver-shaped**
 habits. It must also ask whether habits persist into later life and reach descendants. The design below does all of
-these. It is frozen only after the creator signs off the reading thresholds (marked **[sign-off]**).
+these. The creator signed off the thresholds on the same day, on one condition, written into the Reading section:
+they are decision rules, not scientific truths.
 
 **Why first.** The fly-brain review (`reports/ACL audit and next phase October 2026.md`, section 7) suggests mechanisms
 ACL lacks: forgetting, need-gated use, generalisation. Each only matters if the habits ACL already has change what people
@@ -83,7 +84,13 @@ last changed when it is used.
 - **Worlds:** F1's 64 seeds and 120 years. Discovery: 501–516 and 601–616. Holdout: 811–818 and 1101–1124.
 - **Reported** per world, then the median across worlds with a bootstrap interval (`random.Random(2026)`, as before).
 
-## Reading (operational thresholds, **[sign-off]**)
+## Reading: decision rules, not scientific truths (signed off 12 October 2026)
+
+**These thresholds are decision rules.** They fix in advance which next step each result leads to, so the choice cannot
+be bent after the data are seen. They are **not** claims about what counts as "real" learning, and no biological or
+psychological boundary is implied: 0.10 and 0.02, 50% and 25% are round numbers chosen by judgement, with no source
+behind them. A result just either side of a line is reported as close to it, with its interval, and the measured values
+are always reported in full whatever label they fall under.
 
 On Q1's choice effect, the mean over adult decisions, read only where discovery and holdout agree:
 
@@ -100,7 +107,7 @@ On Q2, among adults, by each source's share of the habit term:
 On Q3, for descendants, parents-versus-sham similarity at 20 is reported with its interval; it is described, not
 thresholded.
 
-## What it would decide
+## What it would decide (the rules above applied)
 
 - **Habits steer, and are mostly learned:** a controlled test of one mechanism (forgetting, need-gating or
   generalisation; report section 7), designed and frozen separately.
