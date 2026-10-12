@@ -1,0 +1,23 @@
+# Started by hand only (Actions tab, or gh workflow run diagnose.yml): replays the frozen control world, seed 11,
+# printing a state hash after every week, so a difference from a local replay can be traced to its first week.
+name: diagnose
+on:
+  workflow_dispatch:
+jobs:
+  trace:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.7"
+      - name: Trace
+        shell: bash
+        run: |
+          python -VV
+          python tools/ci/replay_trace.py experiments/E13R_replication/code_e13r 11 260 1.0 | tee trace.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trace
+          path: trace.txt
