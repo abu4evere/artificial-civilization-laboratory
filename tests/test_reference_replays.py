@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REF = Path(__file__).with_name("reference_hashes.json")
 CODES = {"acl": ROOT, "control": ROOT / "experiments" / "E13R_replication" / "code_e13r"}
-CASES = [(11, 5), (501, 5)]          # (seed, years)
+CASES = [(11, 5), (501, 5), (503, 5)]   # (seed, years); 503 crosses water at a corner in year 4 under nature-v1 (AA1, A1)
 
 
 def _hash(code: str, seed: int, years: int) -> str:
