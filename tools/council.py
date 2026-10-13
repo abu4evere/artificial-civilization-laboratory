@@ -17,6 +17,8 @@ import json
 import os
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -42,11 +44,23 @@ def ask(model: dict, question: str, timeout: int = 600) -> str:
         url, headers = "https://integrate.api.nvidia.com/v1/chat/completions", {"Authorization": f"Bearer {key}"}
     else:
         raise RuntimeError(f"unknown provider {model['provider']}")
-    body = json.dumps({"model": model["model"], "temperature": 0.7, "max_tokens": 1200,
+    # thinking models (GLM, Kimi) spend tokens on hidden reasoning first, so the limit must leave room for the answer
+    body = json.dumps({"model": model["model"], "temperature": 0.7, "max_tokens": 4000,
                        "messages": [{"role": "user", "content": FRAME + question}]}).encode()
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", **headers})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read())["choices"][0]["message"]["content"].strip()
+    for attempt in (1, 2):   # one retry: NVIDIA's free endpoints sometimes answer 502/503/504 when busy
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                choice = json.loads(r.read())["choices"][0]
+            break
+        except urllib.error.HTTPError as e:
+            if attempt == 2 or e.code not in (502, 503, 504):
+                raise
+            time.sleep(20)
+    content = choice["message"].get("content")
+    if not content:
+        raise RuntimeError(f"empty answer (finish_reason: {choice.get('finish_reason')})")
+    return content.strip()
 
 
 def main() -> None:
