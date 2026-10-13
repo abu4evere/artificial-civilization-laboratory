@@ -1,4 +1,4 @@
-# SA1 — How much do ACL's findings rest on numbers nobody anchored? (DRAFT for sign-off; not frozen; nothing run)
+# SA1 — How much do ACL's findings rest on numbers nobody anchored? (SIGNED OFF and frozen as `SA1-frozen`; nothing run)
 
 **Why.** Law 126 (World Bible v8.2) requires every unanchored number a finding rests on to be **tested for sensitivity**,
 and defines how: one value at a time, × 0.5 and × 2, on F1's 64 control seeds, 120 years; flag a value **sensitive** if
@@ -87,3 +87,29 @@ Half of F2's effect on F1's seeds is **0.117** (F1: 22 of 64 died out; F2: 7).
 - `mortality_base` moves survival in the obvious direction.
 - `forage_base`: halving it raises extinction. Doubling it changes little, since food is already abundant (E8.2).
 - `reach`: unclear, because it acts in 29 places at once.
+
+## Sign-off (12 October 2026)
+
+The creator: **"freeze SA1"**, after recommendations that matched the draft on every decision:
+
+1. All six settings as listed.
+2. **64 seeds as a screen**; a 256-seed follow-up only for settings that turn out sensitive or near the line.
+3. **Run after LK1, before BL0.**
+4. Thresholds as drafted (decision rules).
+
+## Operational details (fixed at freezing, before any code)
+
+- **Control re-run.** F1's saved outputs lack the E8.2 tool measure, so the control is **re-run**, not read: arm
+  **C** = control settings, F1's 64 seeds, with the same observers as every arm. **Hard stop:** C's population at every
+  decade mark must equal F1's saved `pops`, seed for seed. Arms: C, 12 sweep arms, S (sham): 14 × 64 = 896 worlds, about
+  12 hours.
+- **Observers (read-only):**
+  - F1's probe (`F1_baseline_fragility/run_f1.py`, `Probe`): populations, births, rates, decisions blocked.
+  - E8.2's probe, **loaded unchanged from `E8_crucible/run_e82.py`** (the `recipe_material_units` helper and the
+    `Probe` class, executed against the control code's `acl.matter`). It cannot simply be imported, because that file
+    binds E7's code copy when imported.
+- **Zero check (hard stop):** on seeds 501 and 601, 20 years, the control code's state hash with both observers attached
+  equals its hash without them.
+- **Analysis script** written and smoke-tested before any main-run data.
+- **Start:** automatically after LK1's 768 worlds are saved (a waiter, as AA1 waited for WS1).
+
