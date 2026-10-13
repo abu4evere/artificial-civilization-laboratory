@@ -344,6 +344,8 @@ the receiver's exact food (A6a, ~13% of wild food), dryness is judged from water
 none shown to have changed a finding (every arm of every study has them equally). **Next: the creator decides** which
 are flaws, and whether A5/A6c are tested as their own controlled comparison before any new version of nature.
 
+**LK1 done** (`experiments/LK1_location_knowledge/findings.md`; frozen; 256 new seeds; valid, sham quiet). A5 (walking toward where an absent loved one is *now*) was replaced by walking to where they were **last seen**. Baseline C died out in **90 of 256** worlds; M in **87** (p = 0.822; effect +0.012, interval [−0.059, +0.082]). **Frozen rule: no meaningful effect on survival.** Families spend more time apart (partner-weeks out of sight 21% → 28%), but partner finding, births and A6c did not move. A5 acts on existing ties; worlds die for want of new ones. Prediction "partner finding falls" was wrong. **Next: the creator decides** whether last-seen memory goes into nature v2 (with A1); SA1 runs now.
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).
@@ -485,7 +487,7 @@ failure, stop, confound or correction:
 
 ## Next-phase plan (written after WS1, 12 October 2026; FOR THE CREATOR'S SIGN-OFF, nothing decided)
 
-**Frozen queue (unchanged):** AA1 (done) → MB1a (do bands meet?) → ID1 (what makes a person) → BL0 (do habits steer?).
+**Frozen queue (unchanged):** AA1 (done) → LK1 (done) → SA1 (running) → MB1a (do bands meet?) → ID1 (what makes a person) → BL0 (do habits steer?).
 
 **Decisions proposed** (each still goes through its own questions, freeze and sign-off):
 
@@ -512,7 +514,7 @@ belonging and ownership, evolved instincts (below).
 
 Each starts, as always, with frozen questions and an evidence review; none is designed yet.
 
-- **Survival first:** WS1 done (more founders cut extinction; land alone did not); AA1 done (one unintended shortcut, four information shortcuts; decisions to the creator); MB1a, ID1 and BL0 follow.
+- **Survival first:** WS1 done (more founders cut extinction; land alone did not); AA1 done (one unintended shortcut, four information shortcuts; decisions to the creator); LK1 done (A5 does not hold worlds together); SA1, MB1a, ID1 and BL0 follow.
 - **Lévy-like search.** ACL's exploratory step is always 3 tiles in a random direction. Hadza foragers make Lévy walks
   (many short moves, rare long ones) in nearly half of foraging bouts (Raichlen et al., PNAS); flies search similarly.
   Rare long trips could connect bands (F1, P2, GF1). Evidence first: whether it describes moves between camps, not only

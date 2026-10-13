@@ -48,6 +48,10 @@ again: the stopped run should now say OK.
 | LK1 | `python experiments/LK1_location_knowledge/analyse_lk1.py` |
 | SA1 | `python experiments/SA1_sensitivity/analyse_sa1.py` |
 
+First run `$env:PYTHONIOENCODING = "utf-8"` in the same PowerShell window: without it the script writes `results.md`
+and then stops with a `UnicodeEncodeError` while printing (seen with LK1, 13 October 2026). That error is harmless,
+but write it in `WORKLOG.md` if it appears.
+
 Do not change the scripts. Do not open or summarise `results.md` for the creator as if it were a finding. Claude reads
 it against the frozen plan first: a run can be **not valid**, and then nothing in it counts.
 

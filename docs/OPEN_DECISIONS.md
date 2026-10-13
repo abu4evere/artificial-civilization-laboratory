@@ -8,6 +8,7 @@ the file named.
 - [ ] Law 126 open point 4: kin and ownership knowledge case by case, or a general rule (same file)
 - [ ] Book pilot (movement VII): approve its tone, so the other movements can be rewritten (`book/pilot/movement_VII.md`)
 - [ ] The Creator's Note (the book's Chapter 0), in the creator's own words (`drafts/creators_note.md` when started)
+- [ ] Last-seen memory instead of A5 (LK1: no meaningful effect on survival): adopt into nature v2 with A1, or not (`experiments/LK1_location_knowledge/findings.md`)
 - [ ] A1 fix, on branch nature-v2-a1: adopt into a new version of nature only after LK1 and BL0 are reviewed
 - [ ] New baseline world (80 founders, 80 × 80): decide after MB1a (`ROADMAP.md`, next-phase plan)
 - [ ] Viewer fixes 6 and 7 (habit sources, situations used): after BL0, for fresh worlds
