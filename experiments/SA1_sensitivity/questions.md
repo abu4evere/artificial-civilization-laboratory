@@ -46,8 +46,11 @@ reported, whatever it shows.
   - population at year 119;
   - births per woman-year;
   - share of decisions blocked for want of a partner (F1's measure);
-  - for `forage_base` only: **tools' share of foraged food**, by E8.2's measure, if E8.2's probe runs read-only on the
-    control code (checked before freezing; otherwise reported as not measurable).
+  - for `forage_base` only: **tools' share of foraged food**, by E8.2's measure (`E8_crucible/run_e82.py`, `Probe`: an
+    upper bound, food foraged × (1 − 1 ÷ the best foraging tool's factor), adults only). **Checked 12 October 2026:**
+    the probe reads only the world's `forage` events and each person's items through `matter.best_item`, both present
+    unchanged in the control code, so it can run there. Its read-only status is confirmed in SA1's zero check (state
+    hash identical with and without it) before any run.
 
 ## Reading (decision rules, as BL0's: they fix what each result leads to, and claim no truth)
 
