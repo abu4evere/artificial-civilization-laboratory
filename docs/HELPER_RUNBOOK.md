@@ -63,6 +63,14 @@ Runs stop whenever the PC sleeps. Keep it plugged in with the lid open (or set "
 plugged in, in Control Panel → Power Options). Do not run a large Ollama model while experiments run: this PC has 7.6 GB
 of memory, and the runs need most of it. Close Ollama when you are done asking it things.
 
+## Other read-only tools (safe to run any time)
+
+- `python tools/project_status.py`: the whole project in about 30 lines (runs, work log, commits, drafts, open decisions).
+- `python tools/council.py "question in words"`: asks several models for **ideas**; answers go to `drafts/council/`.
+  Ideas only. Describe ACL in words, never paste code (the tool refuses code or file paths).
+- `python tools/ask_local.py FILE "question"`: the local model answers with quoted lines; only lines marked VERIFIED
+  are real.
+
 ## Things the helper can usefully help with (drafts only, in `drafts/`)
 
 These never touch the record. Claude reviews them before anything is used.
