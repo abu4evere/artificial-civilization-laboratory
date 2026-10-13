@@ -45,3 +45,5 @@ tools/mind_views/out/
 experiments/WS1_world_size/run_detached*
 experiments/AA1_artifact_audit/after_ws1.log
 experiments/LK1_location_knowledge/run_detached*
+experiments/SA1_sensitivity/after_lk1.log
+experiments/SA1_sensitivity/run_detached*
