@@ -113,3 +113,14 @@ The creator: **"freeze SA1"**, after recommendations that matched the draft on e
 - **Analysis script** written and smoke-tested before any main-run data.
 - **Start:** automatically after LK1's 768 worlds are saved (a waiter, as AA1 waited for WS1).
 
+## Note added before any main-run data (12 October 2026; rule 19): where the sham runs
+
+The frozen text puts every arm in the control code (`code_e13r`), with "a sham (one extra random draw, as in every
+study)". The control code has **no** sham setting: `sham_draw` was added in a later copy (HB1, carried in
+`P2_outward_search/code_p2`), and WS1's sham ran there too. Found by the analysis smoke test, before any main-run data.
+
+**So the sham arm runs in `code_p2` with every other setting off**, exactly as WS1's did. That copy equals the control
+code when its settings are off: P2's and WS1's zero checks showed it, and **SA1's own zero check now shows it again** on
+seeds 501 and 601 (`output/zero.txt`). Every other arm runs in the control code, as frozen. The analysis checks one
+fingerprint per code copy. Nothing else changes.
+
