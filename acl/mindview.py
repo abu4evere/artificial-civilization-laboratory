@@ -158,8 +158,8 @@ def mind(world, p) -> dict:
         means = meaning(p, shape)
         if means:
             top = sorted(means.items(), key=lambda kv: -kv[1])[:2]
-            words = ", ".join(_name(world, k[2:]) if k.startswith("p:") else k for k, _ in top)
-            known.append({"shape": shape, "seen": seen, "goes_with": words})
+            goes_with = ", ".join(_name(world, k[2:]) if k.startswith("p:") else k for k, _ in top)
+            known.append({"shape": shape, "seen": seen, "goes_with": goes_with})
         else:
             known.append({"shape": shape, "seen": seen, "goes_with": ""})
     return {
