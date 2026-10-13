@@ -81,3 +81,11 @@ and spells apart are longer. Nothing else moved: not partner finding, not births
   is the one already queued: do separate bands ever meet (MB1a)?
 
 **Next:** SA1 (sensitivity audit; starts by itself after LK1), then MB1a, ID1, BL0.
+
+## The creator's decision (13 October 2026, appended)
+
+"**Approve last-seen + A1 for nature v2, after BL0.**" Last-seen memory replaces A5, and the A1 fix (branch
+`nature-v2-a1`) goes in with it, as one change and one record. It is built only after BL0, with zero checks, new
+reference fingerprints and a comparison of the combined version against `nature-v1` on fresh seeds: LK1 tested
+last-seen memory alone, never the two together. `nature-v1` is kept, and every past result stays on it. Nothing in
+the world changes while SA1, MB1a, ID1 and BL0 run.
