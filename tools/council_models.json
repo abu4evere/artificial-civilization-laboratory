@@ -3,8 +3,8 @@
   "models": [
     {"provider": "ollama", "model": "qwen2.5:3b", "enabled": true, "where": "this PC (free, unlimited, small)"},
     {"provider": "ollama", "model": "gpt-oss:120b-cloud", "enabled": false, "where": "Ollama Cloud (free monthly allowance; needs sign-in)"},
-    {"provider": "nvidia", "model": "deepseek-ai/deepseek-v4.1-flash", "enabled": true, "where": "NVIDIA Build: DeepSeek"},
-    {"provider": "nvidia", "model": "z-ai/glm-5.3", "enabled": true, "where": "NVIDIA Build: Z.ai"},
+    {"provider": "nvidia", "model": "deepseek-ai/deepseek-v4.1-flash", "enabled": false, "where": "NVIDIA Build: DeepSeek"},
+    {"provider": "nvidia", "model": "z-ai/glm-5.3", "enabled": false, "where": "NVIDIA Build: Z.ai"},
     {"provider": "nvidia", "model": "moonshotai/kimi-k3", "enabled": true, "where": "NVIDIA Build: Moonshot (slow, deep reasoning)"},
     {"provider": "nvidia", "model": "google/gemma-4-31b-it", "enabled": true, "where": "NVIDIA Build: Google"},
     {"provider": "nvidia", "model": "z-ai/glm-5.3-flash", "enabled": false, "where": "NVIDIA Build: Z.ai, faster"},
