@@ -12,3 +12,4 @@ the file named.
 - [ ] New baseline world (80 founders, 80 × 80): decide after MB1a (`ROADMAP.md`, next-phase plan)
 - [ ] Viewer fixes 6 and 7 (habit sources, situations used): after BL0, for fresh worlds
 - [ ] K1, a read audit for knowledge: after LK1 and BL0 (`experiments/NL1_nature_line/audit.md`)
+- [ ] Talk as direct copying (knowledge passes mind to mind, already understood): a known compromise to review under Law 126; a learned-signal study after BL0 (`drafts/council/2026-10-13_0109_an_agent_based_simulation_of_hunter_gatherers_no_l.md`)
