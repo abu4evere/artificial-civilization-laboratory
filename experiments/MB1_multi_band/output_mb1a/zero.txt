@@ -1,0 +1,5 @@
+c (e13r), seed 501, 20 years: world unchanged by the observer: yes
+c (e13r), seed 601, 20 years: world unchanged by the observer: yes
+p (p2), seed 3001, 20 years: world unchanged by the observer: yes
+p (p2), seed 3002, 20 years: world unchanged by the observer: yes
+All: PASS
