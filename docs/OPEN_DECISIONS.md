@@ -11,5 +11,6 @@ the file named.
 - [x] Last-seen memory instead of A5, and the A1 fix: **approved by the creator, 13 October 2026**, for nature v2, built after BL0 as one change (zero checks, new reference fingerprints, comparison on fresh seeds; `nature-v1` kept for every past result) (`experiments/LK1_location_knowledge/findings.md`)
 - [ ] New baseline world (80 founders, 80 × 80): decide after MB1a (`ROADMAP.md`, next-phase plan)
 - [ ] Viewer fixes 6 and 7 (habit sources, situations used): after BL0, for fresh worlds
+- [ ] SA1 follow-up: 256 seeds for the sensitive and near-the-line settings, and evidence reviews for perception, reach and mortality_base (`experiments/SA1_sensitivity/findings.md`)
 - [ ] K1, a read audit for knowledge: after LK1 and BL0 (`experiments/NL1_nature_line/audit.md`)
 - [ ] Talk as direct copying (knowledge passes mind to mind, already understood): a known compromise to review under Law 126; a learned-signal study after BL0 (`drafts/council/2026-10-13_0109_an_agent_based_simulation_of_hunter_gatherers_no_l.md`)
