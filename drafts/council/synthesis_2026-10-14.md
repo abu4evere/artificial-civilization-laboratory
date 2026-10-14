@@ -39,3 +39,27 @@ candidates; Law 126 open point 4: "kin and ownership knowledge case by case, or 
 
 The council's other suggestions (a "metabolic threshold", kin-weighted trust, plastic discounting) are tuning or new
 psychology without an evidence anchor named; set aside under Law 126 unless evidence is brought.
+
+## 4. Afternoon question: what BL0's talk result means (answers beside this file, 15:19)
+
+Asked with BL0's discovery numbers (habits steer 1 adult choice in 7; 57% of the habit term copied in talk; a stranger's
+habits correlate 0.92 with one's own). Both models agree, independently:
+
+- **Whole-table copying is a shortcut, not a model of human social learning.** People copy *specific* behaviours in
+  specific situations (prestige and payoff biases are domain-specific; Henrich & Gil-White 2001 and later reviews), not a
+  whole disposition. Moving all 544 values toward a speaker averages personalities and **erases the variation cumulative
+  culture needs** (Gemma: "a single, homogeneous blob").
+- **Smallest honest change, both proposals the same:** copy only the situation (Gemma) or the situation and action (Kimi)
+  being talked about or seen, and let the listener's own experience decide whether it stays. Predictions both give:
+  copied share falls, own experience rises, strangers' habits less alike than parents', longer persistence across
+  generations, swaps of habit tables start to matter.
+- **Kimi's caution, the most useful line:** the sameness may come mostly from everyone facing **the same rewards in the
+  same world**, not from the copying rule. A test needs a no-copying control beside situation-specific copying, or it
+  cannot tell the two apart. Kimi also proposes seeding two equally good practices in two bands and seeing whether both
+  survive (local traditions) or merge.
+
+**Sorted against ACL:** this is the open decision "talk as direct copying" (listed 13 October), now with numbers. Under
+Law 126, copying a seen behaviour in its situation is a capacity, human-universal, naming no outcome, through the
+listener's own senses (T1–T4 look passable; the evidence review still has to be done). A design would come after BL0's
+holdout confirms the numbers, as a frozen study with three arms (today's rule, situation-specific copying, no copying
+in talk) and a sham. Nothing started.
