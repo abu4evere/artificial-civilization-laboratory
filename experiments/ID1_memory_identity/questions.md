@@ -187,3 +187,6 @@ creator can weigh it. The holdout (811–818, 1101–1124) has not been run.
 
 **If approved:** the discovery reading is written, then the holdout runs. **If not:** ID1 is reported as stopped by
 its hard stop, with this explanation.
+
+**Approved by the creator, 14 October 2026:** "approve ID1 amendment 1". Frozen as `ID1-amend1`. The analysis applies
+it in its validity check (exempt swaps are listed in the results).

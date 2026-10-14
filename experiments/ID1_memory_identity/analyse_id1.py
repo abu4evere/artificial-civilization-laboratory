@@ -151,11 +151,19 @@ def report(which, rows, P, dropped, R, smoke):
     fps = {r["code_hash"] for r in rows} | {r["code_hash_after"] for r in rows}
     done = [r for r in rows if "original" in r]
     rep = all(r["original_reproduces"] for r in done)
-    dif = all(r["all_differ"] for r in done)
+    # Amendment 1 (approved 14 October 2026): the "every swap differs" stop does not apply to a focal person who dies
+    # before week 13 (alive fewer than 13 weeks in the original copy), whom the 13-week rule already drops.
+    def early_death(r, f):
+        return sum(x is not None for x in r["original"]["acts"][f][:13]) < 13
+    exempt = [(r["seed"], k) for r in done for k, v in r["swaps"].items()
+              if v["hash"] == r["original"]["hash"] and early_death(r, k.split(":")[0])]
+    dif = all(r["sham"]["hash"] != r["original"]["hash"] for r in done) and all(
+        v["hash"] != r["original"]["hash"] or (r["seed"], k) in exempt for r in done for k, v in r["swaps"].items())
     ok = len(fps) == 1 and rep and (dif or smoke)
     L += [f"- One code fingerprint (`code_e13r`): **{'yes' if len(fps) == 1 else 'NO'}**",
           f"- The original copy reproduces the uncopied world in every world: **{'yes' if rep else 'NO'}**",
           f"- The sham and every swap differ from the original: **{'yes' if dif else 'NO'}**"
+          + (f" (Amendment 1: exempt, focal person died before week 13: {exempt})" if exempt else "")
           + (" (not required in the smoke test: 4-week window)" if smoke else ""),
           f"- Worlds: {len(rows)}; skipped: {len(rows) - len(done)}"
           + "".join(f" (seed {r['seed']}: {r['skipped']})" for r in rows if "skipped" in r),
