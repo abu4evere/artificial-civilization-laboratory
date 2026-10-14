@@ -155,3 +155,23 @@ Nothing else changes: not the worlds, questions, measures, nor the thresholds (d
 **Approval (12 October 2026).** Approved on the standard conditions: dated and visible; reason recorded beside it; the
 frozen design above left as written; the check that the parts add up kept (now I + C + E + T). The gap was found by
 reading the design against BL0's own consistency check before any code: the check would have stopped the run.
+
+## Scripts and operational notes (appended 14 October 2026, before any BL0 data; rule 19)
+
+`code_bl0` (a copy of `code_e13r` with seven hooks that only hand values to a log outside the world's state: the
+decision, own experience, upbringing, birth, death, the gift nudge, imitation), `run_bl0.py` and `analyse_bl0.py`
+written and tested before any data. Nothing in the frozen design or Amendment 1 changes.
+
+- **Zero check: PASS** (`output/zero.txt`): on seeds 501 and 601 over 20 years, `code_bl0` reproduces the control world
+  exactly without the log and with the log and observer on; I + C + E + T = habit, and the origin split = habit, for
+  every person every week, to within 9 × 10⁻¹⁶ (required 10⁻⁹). Fingerprint `3caa6107a54e…`.
+- **Smoke test** on a throwaway seed (9501, 15 years; `output_smoke/`, not data): every measure computes; all six habit
+  writers are seen.
+- **Details the frozen text left open**, each written in the runner's header before any data. The main ones:
+  - **Q2's attribution** of the choice effect to parts uses absolute values of each part's learned term in each
+    decision, weighted by that decision's choice effect (and unweighted beside it), because parts can cancel.
+  - **Score medians** come from log-spaced histograms, approximate to one bin.
+  - **Stopped habits** are those chosen before and not chosen for 52+ weeks.
+  - **The descendants' sham** is an unrelated adult drawn by the observer's own generator, never the world's.
+  - **The lineage share** counts origin generations at least two above the person's own.
+- **Cost:** about F1's (3 minutes a world) plus logging. Runs after ID1.

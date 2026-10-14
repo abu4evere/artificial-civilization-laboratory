@@ -1,0 +1,4 @@
+seed 501, 20 years: code_bl0 without the log = control: yes; with the log and observer = control: yes; largest split error 8.88e-16 (must be <= 1e-9)
+seed 601, 20 years: code_bl0 without the log = control: yes; with the log and observer = control: yes; largest split error 7.77e-16 (must be <= 1e-9)
+code_bl0 fingerprint: 3caa6107a54e5603ae2540541a5d7f9234a5cfa8e6441cd9dbef8daa1bf322d4
+All: PASS
