@@ -11,7 +11,7 @@ the file named.
 - [x] Last-seen memory instead of A5, and the A1 fix: **approved by the creator, 13 October 2026**, for nature v2, built after BL0 as one change (zero checks, new reference fingerprints, comparison on fresh seeds; `nature-v1` kept for every past result) (`experiments/LK1_location_knowledge/findings.md`)
 - [ ] New baseline world (80 founders, 80 × 80): decide after MB1a, **now reported**: LP survives best but its bands are effectively closed; P meets rarely at 4 × the crowding (`experiments/MB1_multi_band/findings_mb1a.md`)
 - [ ] MB1b (Stage B): as drafted it runs in LP, where bands never meet; run anyway, move to P's density, or set aside (same file)
-- [ ] Viewer fixes 6 and 7 (habit sources, situations used): after BL0, for fresh worlds
+- [ ] Viewer fixes 6 and 7 (habit sources, situations used): after BL0, for fresh worlds; **BL0 done**, its split gives the habit sources
 - [ ] SA1 follow-up: 256 seeds for the sensitive and near-the-line settings, and evidence reviews for perception, reach and mortality_base (`experiments/SA1_sensitivity/findings.md`)
 - [ ] Ageing: ACL's illness risk is 5.4 × the forager average at every age (Gurven & Kaplan 2007; rate anchored, scale not): measure ACL's total adult mortality first, then decide on anchoring `mortality_base` for nature v2 (`experiments/SA1_sensitivity/evidence_mortality.md`)
 - [ ] Knowledge-record quirk (found by ID1): the record of a first-baked clay kind follows that one item instead of copying its properties; no behaviour reads it, but save-and-load is not bit-exact. Fix in nature v2? (`experiments/ID1_memory_identity/questions.md`, note of 14 October)

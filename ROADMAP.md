@@ -350,6 +350,10 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **MB1a done** (`experiments/MB1_multi_band/findings_mb1a.md`; read-only; frozen; discovery and holdout, 192 replays exact). Do bands meet? **Today's world: at the line** (0.050 / 0.049 per adult pair-year; no reading). **80 founders on today's land: rarely. 80 founders on four times the land: effectively closed** (0.0007), yet that world survives best: its bands are big enough to carry themselves. Interaction is a quarter of meeting or less. **Next: the creator decides** MB1b (as drafted it runs in the closed world) and the new baseline; ID1 runs now.
 
+**BL0 done** (`experiments/BL0_habit_use/findings.md`; read-only logging copy, exact; discovery and holdout agree). **Habits steer** one adult choice in seven (0.140 / 0.139), **but more than half of what they hold is copied in talk** (57% / 56%); own experience 37%, caregivers 6%, birth nothing. Everyone's habits end up alike (a stranger's correlate 0.92 with one's own, the parents' 0.96). **Next: the creator decides** the talk-copying question (today's rule, situation-specific copying, no copying), nature v2 (last-seen + A1, now unlocked) and viewer fixes 6 and 7.
+
+**ID1** (what makes a person): discovery and holdout run, replays exact; paused at Amendment 2 (its hard stop fires on swaps that applied but left no trace), for the creator.
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).
@@ -491,7 +495,7 @@ failure, stop, confound or correction:
 
 ## Next-phase plan (written after WS1, 12 October 2026; FOR THE CREATOR'S SIGN-OFF, nothing decided)
 
-**Frozen queue (unchanged):** AA1 (done) → LK1 (done) → SA1 (done) → MB1a (done) (do bands meet?) → ID1 (what makes a person) → BL0 (do habits steer?).
+**Frozen queue (unchanged):** AA1 (done) → LK1 (done) → SA1 (done) → MB1a (done) (do bands meet?) → ID1 (paused at Amendment 2) → BL0 (done) (do habits steer?).
 
 **Decisions proposed** (each still goes through its own questions, freeze and sign-off):
 
