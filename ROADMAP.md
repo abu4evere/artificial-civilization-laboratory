@@ -348,6 +348,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **SA1 done** (`experiments/SA1_sensitivity/findings.md`; frozen; F1's 64 seeds; valid, sham quiet). Six unanchored settings, each halved and doubled. **How far people see decides survival:** sight 2 tiles → 49 of 64 worlds died out, 8 tiles → 8 (control 22). Doubling range (`reach` 6) and the mortality scale also raised extinction; halving food did, but not after the correction for twelve tests. Conception and camp radius showed no sign at 64 worlds (not proof of robustness). Every extinction finding now carries "rests on an unanchored value that moves survival strongly". Nothing adopted. **Next: the creator decides** the 256-seed follow-up and the evidence reviews (sight, range, mortality); MB1a runs now.
 
+**MB1a done** (`experiments/MB1_multi_band/findings_mb1a.md`; read-only; frozen; discovery and holdout, 192 replays exact). Do bands meet? **Today's world: at the line** (0.050 / 0.049 per adult pair-year; no reading). **80 founders on today's land: rarely. 80 founders on four times the land: effectively closed** (0.0007), yet that world survives best: its bands are big enough to carry themselves. Interaction is a quarter of meeting or less. **Next: the creator decides** MB1b (as drafted it runs in the closed world) and the new baseline; ID1 runs now.
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).
@@ -489,7 +491,7 @@ failure, stop, confound or correction:
 
 ## Next-phase plan (written after WS1, 12 October 2026; FOR THE CREATOR'S SIGN-OFF, nothing decided)
 
-**Frozen queue (unchanged):** AA1 (done) → LK1 (done) → SA1 (done) → MB1a (do bands meet?) → ID1 (what makes a person) → BL0 (do habits steer?).
+**Frozen queue (unchanged):** AA1 (done) → LK1 (done) → SA1 (done) → MB1a (done) (do bands meet?) → ID1 (what makes a person) → BL0 (do habits steer?).
 
 **Decisions proposed** (each still goes through its own questions, freeze and sign-off):
 
@@ -516,7 +518,7 @@ belonging and ownership, evolved instincts (below).
 
 Each starts, as always, with frozen questions and an evidence review; none is designed yet.
 
-- **Survival first:** WS1 done (more founders cut extinction; land alone did not); AA1 done (one unintended shortcut, four information shortcuts; decisions to the creator); LK1 done (A5 does not hold worlds together); SA1 done (sight decides survival); MB1a, ID1 and BL0 follow.
+- **Survival first:** WS1 done (more founders cut extinction; land alone did not); AA1 done (one unintended shortcut, four information shortcuts; decisions to the creator); LK1 done (A5 does not hold worlds together); SA1 done (sight decides survival); MB1a done (large worlds' bands closed); ID1 ID1 and BL0 follow.
 - **Lévy-like search.** ACL's exploratory step is always 3 tiles in a random direction. Hadza foragers make Lévy walks
   (many short moves, rare long ones) in nearly half of foraging bouts (Raichlen et al., PNAS); flies search similarly.
   Rare long trips could connect bands (F1, P2, GF1). Evidence first: whether it describes moves between camps, not only
