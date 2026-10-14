@@ -3,6 +3,7 @@
   python tools/council.py "Your question in plain words"          # every enabled model in tools/council_models.json
   python tools/council.py --file drafts/question.md               # the question from a file
   python tools/council.py --list                                   # show the models and whether each can be reached
+  python tools/council.py --cloud-only "question"                  # skip models on this PC (saves memory while runs go)
 
 Rules (docs/HELPER_RUNBOOK.md and Law 126 apply to everything that comes back):
 - Ideas only. Nothing a model says is a decision; Claude sorts the answers against ACL's rules, and the creator decides.
@@ -85,7 +86,7 @@ def main() -> None:
     lines = [f"# Council: {question[:120]}", "", f"Asked {datetime.now():%Y-%m-%d %H:%M}. **Ideas only; not decisions.** "
              "Claude sorts these against ACL's rules before anything is used.", "", "## The question", "", question, ""]
     for m in models:
-        if not m.get("enabled"):
+        if not m.get("enabled") or ("--cloud-only" in sys.argv and m["provider"] == "ollama"):
             continue
         print(f"asking {m['provider']} {m['model']} ...", flush=True)
         try:
