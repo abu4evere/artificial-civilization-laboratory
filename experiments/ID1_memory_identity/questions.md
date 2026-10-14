@@ -117,3 +117,25 @@ explore, give, care, talk, court, steal, attack, flee, join. So **Habits** is th
 608), and the behaviour measure is the share of each of the **17** actions. The figure 19 came from the brain-scan page,
 whose labels were wrong in the same way (corrected on the same day). Nothing else in the frozen design changes: the
 measures are defined over whatever actions the code has, and the swaps, sham, people, worlds and tests are unchanged.
+
+## Scripts and operational notes (appended 14 October 2026, before any ID1 data; rule 19)
+
+`run_id1.py` and `analyse_id1.py` written and smoke-tested on a throwaway seed (9401: snapshot at year 2, 8 weeks,
+restore at week 4; output kept in `output_smoke/`, not data). Nothing in the frozen design changes. Details the frozen
+text left open, written in the runner's header before any data:
+
+- **The original and the sham are run once per world** and serve both focal people: neither depends on who is focal, so
+  a second run would be the identical world.
+- **Parts** follow the frozen table exactly; fields outside it (puzzles, marks, placements, voyage, the week's thoughts
+  and feelings, body, family) stay the focal person's own.
+- **Swap and restore** use deep copies; checked directly on the smoke world: after the swap the focal person holds
+  independent copies of the donor's values, and after restoring, the person is identical to their own copy. If the
+  focal person has died by week 26, nothing is restored.
+- **Focal people** are chosen in a fixed, seeded order (the header gives it). A world with only one possible focal
+  person keeps its one.
+- **Behaviour** is read from the world's read-only record of decisions (the same record MB1a uses).
+- **Smoke note:** over the smoke test's 4-week swap one swap (one person's temperament) left the world identical, because
+  no choice in those weeks turned on it; over 26 weeks the same swap changed 13 of her 26 actions. In the main run the
+  frozen hard stop stands as written: if any swap leaves the world identical after 52 weeks, the run is reported, not
+  adjusted.
+- **Cost:** about a minute a world; each set (32 worlds) about 10 minutes on four workers. Runs after MB1a.
