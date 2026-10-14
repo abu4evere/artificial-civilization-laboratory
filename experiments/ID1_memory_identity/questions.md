@@ -162,3 +162,28 @@ passes. The whole discovery set is re-run with the fixed runner; the hard stop s
 follows one particular item. It changes no person's behaviour (no decision reads it; only measurements and the viewer
 do), but a world saved to a file and loaded again is not bit-identical to the one that kept running. Listed for nature
 v2, beside ST1, last-seen memory and A1; a fix needs the creator's sign-off and a new version.
+
+## Proposed Amendment 1 (14 October 2026; FOR THE CREATOR'S SIGN-OFF; the holdout does not run until then)
+
+**What stopped the run.** The re-run discovery set (deep-copy snapshots) reproduces the uncopied world in all 31 worlds
+with focal people (seed 513 had none and is skipped, as frozen). But the frozen hard stop "the sham and every swap
+differ from the original" fails in one place: **seed 511, focal person p00005, the beliefs and places swaps** end in a
+world identical to the original.
+
+**Why.** p00005 (aged 40.6) **died in week 3** in the original and in every swap. In the two weeks alive their choices
+("care", "care") did not turn on beliefs or places, and death clears both parts (`biology.die`), so the worlds
+converge exactly. The swap was applied (checked: the donor's values differ from the focal person's in all eight
+fields). This is a real event, not a failed swap, which is what the hard stop was written to catch. The frozen
+13-week rule already drops this person from every test (the analysis reports 1 dropped in weeks 1–26).
+
+**Proposed change:** the hard stop "every swap differs from the original" does **not** apply to a focal person who dies
+before week 13 (whom the frozen rule already drops from the tests). Every other part of the hard stop stays. Nothing
+else changes: not the people, worlds, arms, measures, tests or thresholds.
+
+**Disclosure.** The analysis script prints its tables even when the run is not valid, so the discovery outcome tables
+were displayed before this proposal. The proposal does not depend on them: the person it concerns is already excluded
+from every test, so **no number in any table changes** under it; only the validity label does. Recorded so the
+creator can weigh it. The holdout (811–818, 1101–1124) has not been run.
+
+**If approved:** the discovery reading is written, then the holdout runs. **If not:** ID1 is reported as stopped by
+its hard stop, with this explanation.

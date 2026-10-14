@@ -15,5 +15,6 @@ the file named.
 - [ ] SA1 follow-up: 256 seeds for the sensitive and near-the-line settings, and evidence reviews for perception, reach and mortality_base (`experiments/SA1_sensitivity/findings.md`)
 - [ ] Ageing: ACL's illness risk is 5.4 × the forager average at every age (Gurven & Kaplan 2007; rate anchored, scale not): measure ACL's total adult mortality first, then decide on anchoring `mortality_base` for nature v2 (`experiments/SA1_sensitivity/evidence_mortality.md`)
 - [ ] Knowledge-record quirk (found by ID1): the record of a first-baked clay kind follows that one item instead of copying its properties; no behaviour reads it, but save-and-load is not bit-exact. Fix in nature v2? (`experiments/ID1_memory_identity/questions.md`, note of 14 October)
+- [ ] **ID1 Amendment 1** (paused until decided): exempt from the "every swap differs" hard stop a focal person who dies before week 13 (one person, seed 511, died in week 3); approve or not (`experiments/ID1_memory_identity/questions.md`)
 - [ ] K1, a read audit for knowledge: after LK1 and BL0 (`experiments/NL1_nature_line/audit.md`)
 - [ ] Talk as direct copying (knowledge passes mind to mind, already understood): a known compromise to review under Law 126; a learned-signal study after BL0 (`drafts/council/2026-10-13_0109_an_agent_based_simulation_of_hunter_gatherers_no_l.md`)
