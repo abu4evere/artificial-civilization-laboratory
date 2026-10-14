@@ -139,3 +139,26 @@ text left open, written in the runner's header before any data:
   frozen hard stop stands as written: if any swap leaves the world identical after 52 weeks, the run is reported, not
   adjusted.
 - **Cost:** about a minute a world; each set (32 worlds) about 10 minutes on four workers. Runs after MB1a.
+
+## Hard stop on the first discovery run, and the fix (appended 14 October 2026, before any ID1 outcome was read; rule 19)
+
+**What happened.** The first discovery run stopped at seed 504: the original copy did not reproduce the uncopied world
+at week 52 (the frozen hard stop). Seeds 501–503 had reproduced. No outcome of any seed was read. The outputs of that
+attempt are kept unchanged in `output_firstattempt/`.
+
+**Cause: a shared reference in ACL's own code, lost by the copy.** When a person first bakes a kind of clay, the world's
+record of that kind of thing (`world.knowledge[sig]["props"]`) is given **the baked item itself**, not a copy of its
+properties (`acl/biology.py`, `_baked`, `props=out`). So the record changes whenever that item dries or is filled. The
+runner copied worlds through the world's own `to_dict` and JSON, which breaks the shared reference: in the copy the
+record stops following the item. On seed 504 the two worlds differed **only in that record** (two kinds of fired clay,
+"wet" 1 against 5); people, events and every other part of the world were identical in all 52 weeks (checked week by
+week).
+
+**Fix (implementation only; the design is unchanged).** Snapshots are now exact in-memory deep copies, which keep the
+shared reference. On seed 504 the original copy then reproduces the uncopied world exactly; the smoke test again
+passes. The whole discovery set is re-run with the fixed runner; the hard stop stays as frozen.
+
+**The quirk itself** (not part of ID1): a record that should hold a kind of thing's properties when first made instead
+follows one particular item. It changes no person's behaviour (no decision reads it; only measurements and the viewer
+do), but a world saved to a file and loaded again is not bit-identical to the one that kept running. Listed for nature
+v2, beside ST1, last-seen memory and A1; a fix needs the creator's sign-off and a new version.

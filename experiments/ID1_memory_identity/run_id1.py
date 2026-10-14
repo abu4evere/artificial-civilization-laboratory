@@ -5,8 +5,8 @@ Works on copies of control worlds, never on ACL's own worlds; the copies are dis
   python experiments/ID1_memory_identity/run_id1.py holdout     # worlds 811-818, 1101-1124 (after the discovery reading)
   python experiments/ID1_memory_identity/run_id1.py smoke       # throwaway: seed 9401, snapshot at year 2, 8 weeks (code check only)
 
-Per world: run the control world to the start of year 20 (week 1040) and take a snapshot (the world's own to_dict, through
-JSON, as a saved world). From it, run 52 weeks each: the **original** (nothing touched); the **sham** (one extra random
+Per world: run the control world to the start of year 20 (week 1040) and take a snapshot (an exact in-memory deep copy;
+see the note of 14 October in questions.md: a copy through the world's to_dict and JSON loses one shared reference). From it, run 52 weeks each: the **original** (nothing touched); the **sham** (one extra random
 draw at the moment of the swap); and, for each of the two focal people, the **eight swap arms**. The uncopied world is
 also run on for 52 weeks: the original copy must reproduce it exactly (hard stop).
 
@@ -98,8 +98,7 @@ def choose(w, seed):
 def run_copy(snap, weeks, watch, sham=False, swap=None, restore_at=RESTORE):
     """Run a copy of the snapshot. watch: ids whose chosen actions are recorded each week.
     swap: (focal, donor, part). Returns {id: [action or None per week]}, the final hash, and the population at the end."""
-    from acl.world import World
-    w = World.from_dict(json.loads(snap))
+    w = copy.deepcopy(snap)
     if sham:
         w.rng.random()
     back = None
@@ -141,7 +140,7 @@ def run_world(seed, snap_week=SNAP_YEAR * WPY, weeks=WEEKS, restore_at=RESTORE, 
     if not pairs:
         res["skipped"] = "no eligible focal person" if w.living() else "world died out before the snapshot"
     else:
-        snap = json.dumps(w.to_dict(), separators=(",", ":"))
+        snap = copy.deepcopy(w)
         for _ in range(weeks):                            # the uncopied world, run on: the reference
             w.step()
             if not w.living():
