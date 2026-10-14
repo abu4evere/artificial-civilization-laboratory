@@ -140,3 +140,21 @@ above says:
 registered, labelled as operational cut-offs informed by this range, not as validated biological boundaries. Stage A
 will also report the rate restricted to same-sex adult pairs, the subset Hill et al. sampled, as a description beside the
 frozen measure, not in place of it.
+
+## Scripts and operational notes (appended 14 October 2026, before any MB1a data; rule 19)
+
+`run_mb1a.py` and `analyse_mb1a.py` written and smoke-tested on a throwaway seed (9301, 5 years; output kept in
+`output_mb1a_smoke/`, not data). Nothing in the frozen design changes. Where the frozen text left a detail open, the
+most literal reading was taken, written in the runner's header before any data:
+
+- **Lineage** is read from the world as built, before its first week: founders joined by the ties the world gives each
+  founding band form one lineage (smoke test: 4 bands of 5, 150 between-lineage adult pairs at the start, as expected).
+- **Interacting** ("chose to talk to, give to or court") is read from the world's own read-only record of decisions
+  (`week_decisions`), not from events alone, because a courtship that fails leaves no event. Talks and gifts that
+  actually happened (events) are reported beside it as a description.
+- **Learning** counts `learn` events of kind "taught" and "copied" (watching), which name their source; learning from
+  marks ("read") is not learning from a person and is left out. So the measure is measurable, not estimated.
+- **Replay check:** decade populations must equal the saved world's (the frozen check, a hard stop); the final week and
+  state hash are also compared and reported.
+- **Order of running:** after SA1 (the processors are busy until then). First `zero`, then `discovery`; the holdout
+  only after the discovery reading is written (`findings_mb1a_discovery.md`).
