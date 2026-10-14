@@ -190,3 +190,32 @@ its hard stop, with this explanation.
 
 **Approved by the creator, 14 October 2026:** "approve ID1 amendment 1". Frozen as `ID1-amend1`. The analysis applies
 it in its validity check (exempt swaps are listed in the results).
+
+## Proposed Amendment 2 (14 October 2026; FOR THE CREATOR'S SIGN-OFF; ID1 paused until decided)
+
+**What stopped the holdout.** All 31 worlds with focal people reproduce exactly (seed 1101 had none). The amended hard
+stop still fails once: **seed 1105, focal person p00018, the memories swap** ends in a world identical to the original.
+p00018 was alive 40 weeks (died in week 41), so Amendment 1 (deaths before week 13) does not cover it.
+
+**Why.** In the 26 swapped weeks the donor's memories never changed one of p00018's choices (memories rarely steer
+choices in ACL; the discovery set found memories move people *less* than chance alone), the restore at week 26 put back
+their own, and death in week 41 clears memories (`biology.die`). The worlds converge exactly. The swap was applied.
+
+**The check is aimed at the wrong thing.** "Every swap differs from the original at week 52" was written to catch a swap
+that was **not applied** (a bug). Twice now it has fired on swaps that were applied but happened to leave no trace,
+because a part that steers little was swapped and then wiped by death. That is a real outcome (it is what Q1 measures),
+not a fault.
+
+**Proposed change:** replace that hard stop with a **direct** one: for every swap, immediately after it is made, the
+focal person's swapped fields must equal the donor's and differ from their own at least once (checked and recorded by
+the runner), and every restore must return them exactly. A swap that leaves the final world unchanged is then reported
+as an outcome (a swap with no detectable effect), not a stop. Amendment 1 becomes unnecessary and is absorbed. The
+runner is re-run on both sets (about 30 minutes) so the direct check is recorded for every swap; worlds, people, arms,
+measures, tests and thresholds are unchanged, and the re-run worlds are identical (same seeds, same code, exact copies).
+
+**Disclosure.** As in discovery, the analysis printed the holdout's tables though the run was not valid; they have been
+seen. Under the proposal no number in any table changes (the swap concerned is in the tests already: the person was
+alive 40 weeks). The agreement table shows Q1 "only everything but temperament moves a person" agreeing in both sets,
+and Q2, Q3 and Q4 not agreeing. Recorded so the creator can weigh the proposal knowing this.
+
+**If not approved:** ID1 is reported as stopped by its hard stop, with both explanations.
