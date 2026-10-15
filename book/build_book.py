@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import re
 import struct
+import sys
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -33,6 +34,9 @@ HERE = Path(__file__).parent
 SOURCE = HERE / "source" / "the_world_that_nobody_wrote.md"
 COVER = HERE / "cover" / "cover.png"
 BOOK = HERE / "The_World_That_Nobody_Wrote_v1.docx"
+if "--src" in sys.argv:                           # an edition: python book/build_book.py --src X.md --out Y.docx
+    SOURCE = Path(sys.argv[sys.argv.index("--src") + 1]).resolve()
+    BOOK = Path(sys.argv[sys.argv.index("--out") + 1]).resolve()
 
 # --- page geometry (twentieths of a point; 1440 = 1 inch) -----------------------------------------------
 PAGE_W, PAGE_H = 8640, 12960                      # 6 x 9 in

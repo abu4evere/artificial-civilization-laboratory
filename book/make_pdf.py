@@ -13,6 +13,10 @@ import win32com.client
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "book" / "The_World_That_Nobody_Wrote_v1.docx"
 DST = ROOT / "release" / "The_World_That_Nobody_Wrote_v1.pdf"
+import sys                                 # an edition: python book/make_pdf.py --src X.docx --dst Y.pdf
+if "--src" in sys.argv:
+    SRC = Path(sys.argv[sys.argv.index("--src") + 1]).resolve()
+    DST = Path(sys.argv[sys.argv.index("--dst") + 1]).resolve()
 PDF = 17                                   # wdExportFormatPDF
 
 
