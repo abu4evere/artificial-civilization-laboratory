@@ -2,6 +2,24 @@
 %% Part One: how we tried to build a civilization instead of simulating one
 %% Part One · the experiments to October 2026 · the project continues
 
+# Prologue — The Vessel
+
+In the twelfth year of one world, a person named Reibik sat playing with what lay to hand: a piece of hide, a piece of bone, some fibre. Reibik bound them together. What came out could hold water, enough for about five weeks. Nobody had shown Reibik how. Nobody in that world had ever made such a thing before, and in all the worlds run alongside it, nobody else ever would.
+
+Reibik liked it, and carried it everywhere: a hundred and four times it was used, and each time it seemed a little more worth keeping. Reibik made a second one, and showed the children how, and they showed others, and the way of making it passed from hand to hand for more than fifty years after Reibik died, changing a little in each telling, as stories do.
+
+For a hundred and two weeks of that life, Reibik stood within reach of fresh water, holding a thing that could carry it.
+
+Reibik never once filled it.
+
+It was not that Reibik could not. It was that nothing inside ever asked. Reibik had lived beside water and had almost never been thirsty, and someone who has never been thirsty does not wonder what a hollow thing might be for. Out on the dry land, meanwhile, other people went thirsty. They had never seen a vessel. Reibik had never known thirst.
+
+The person holding the vessel was never thirsty. The thirsty people had no vessel.
+
+Reibik never existed. Reibik lived inside a computer, in a world built to answer one question: if nobody writes civilization into a world, will it ever appear on its own? Every word above is taken from the record that world kept, week by week.
+
+This book is about that question, and about the people who lived inside it. It is also about something harder to see: how easy it is, when you build a world, to put the answer in without noticing, and how much work it takes to keep your own hands out of it.
+
 # About Part One
 
 The Artificial Civilization Laboratory is still running. Its worlds are still being built, measured and argued over, and every new experiment adds to this story. This edition stops on 15 October 2026, after the chapters on location memory, sensitivity, meeting bands, habits and identity. Part Two will begin where it ends.
@@ -1678,21 +1696,25 @@ ACL may not need Earth. It may need only the minimum conditions that make cumula
 
 There is a trap on the way, and it was named at the same time. Better minds are allowed; minds that already know are not. A newborn has human capacities and no human knowledge. A language model trained on human writing has the knowledge. Put it in a world and it may rebuild pottery quickly, but no one could ever tell whether civilization emerged or was remembered.
 
-## Chapter 119 — How This Book Is Kept
+# Epilogue — The End of the Beginning
 
-This is a living book, meant to be updated after every major experiment, in the same spirit it was written.
+Here is where things stood when this part of the story closed.
 
-After each experiment:
+A world had been built in which nothing was written but nature. Twenty people at a time had woken in it, knowing nothing, and lived, and loved, and died, and left their children what they could. They had made a raft in their first weeks and forgotten it. One of them had made a vessel and never filled it. They had told each other stories of hard winters, and the stories grew in the telling and changed nothing about the next winter. Again and again, a third of their worlds had simply ended: not in war, but in quiet, because too few of the people alive could find someone to make a family with.
 
-- Add a chapter to Part III: what was hoped, what was predicted, what happened, what surprised, what changed. Copy the scorecard honestly.
-- If an argument shaped the experiment, add it to Part IV, with what each side believed before the evidence.
-- If a new idea came out of it, add it to Part V, stated no more strongly than the evidence allows.
-- If a world produced a life worth telling, add it to Part VI, from the replay and the chronicle, not from imagination.
-- If the method changed, say why in Part VII.
-- Move questions out of Part VIII only when evidence has answered them, and name the experiment that did.
-- Never edit an earlier chapter to make the project look wiser than it was. If a chapter turns out to be wrong, leave it, and add a correction saying when and how it was found to be wrong.
+Every one of those failures had been measured, and every measurement had made the question sharper. By the autumn of 2026, the picture was this. Their worlds did not die because the people were foolish. They died because they were few, and alone. How far they could see decided, as much as anything ever measured, whether they lived. Bands set down apart almost never met; the large worlds that survived did so because each band was big enough to carry itself, not because anyone found anyone. And when the people's habits were finally opened up and counted, most of what each person did by habit turned out not to be their own. It had been poured into them in conversation, whole, by whoever they looked up to, until everyone was nearly the same.
 
-The code shows what ACL is. This book is meant to show how ACL became what it is.
+So the second question, the old one called Bob, got its first answer too. When pieces of one person were given to another, no single piece made anyone who they were: not their memories, not their habits, not even their temperament. Only together did the pieces add up to someone. A person in this world was spread thin across many small things, and most of those things were shared.
+
+And all of it had happened in a world that was quietly helping them. The audit found knowledge nobody had given them: they always knew where an absent loved one was standing, at that very moment. A gap at the corner of two islands let them walk across water without anything that floats. Their talk was not talk at all: it was one mind poured into another, already understood, with no word ever spoken or invented.
+
+Part One ends at a turning point. For the first time since the world began, its nature is being changed. A second version of it has been built, and is about to be tested against the first: one in which a person walks to where they last saw the one they miss, not to where that person is; in which water at a corner is water; in which a raft that breaks at sea leaves its owner struggling for the shore. Beside it, another test is running: what the people become when their habits must be their own, learned from their own lives, and not borrowed whole from someone else's.
+
+Nobody knows yet what those worlds will do. That is the point of running them.
+
+And underneath both is a question this book has circled from the start without being able to ask it. These people have never spoken. They have never had a single word. They do have marks: shapes they make and see, which mean nothing at first, and which come, for some of them, to go with a person, or a place, or a thing worth making. If they are ever to speak, it will have to begin there, with a mark that one person makes and another understands, and that nobody wrote.
+
+That is where Part Two begins.
 
 # Appendix A — Timeline
 
@@ -1829,3 +1851,19 @@ Hunger, foresight and the body (checked for N1; abstracts via PubMed where marke
 - Mischel, W., Shoda, Y. and Rodriguez, M. L. (1989). Delay of gratification in children. Science. doi:10.1126/science.2658056.
 - Wells, J. C. K. (2006). The evolution of human fatness and susceptibility to obesity: an ethological approach. Biological Reviews 81(2): 183–205. doi:10.1017/S1464793105006974 (PubMed).
 - Simondon, K. B. and others (2004). Season of birth is not associated with risk of early adult death in rural Senegal. International Journal of Epidemiology 33(1): 130–136. doi:10.1093/ije/dyg279 (PubMed).
+
+# Appendix D — How This Book Is Kept
+
+This is a living book, meant to be updated after every major experiment, in the same spirit it was written.
+
+After each experiment:
+
+- Add a chapter to Part III: what was hoped, what was predicted, what happened, what surprised, what changed. Copy the scorecard honestly.
+- If an argument shaped the experiment, add it to Part IV, with what each side believed before the evidence.
+- If a new idea came out of it, add it to Part V, stated no more strongly than the evidence allows.
+- If a world produced a life worth telling, add it to Part VI, from the replay and the chronicle, not from imagination.
+- If the method changed, say why in Part VII.
+- Move questions out of Part VIII only when evidence has answered them, and name the experiment that did.
+- Never edit an earlier chapter to make the project look wiser than it was. If a chapter turns out to be wrong, leave it, and add a correction saying when and how it was found to be wrong.
+
+The code shows what ACL is. This book is meant to show how ACL became what it is.
