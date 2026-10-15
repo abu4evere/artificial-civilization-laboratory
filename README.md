@@ -2,6 +2,39 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen)](pyproject.toml)
+[![tests](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml/badge.svg)](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml)
+
+![The viewer: a live world of 33 people in five named bands on a set of islands, with population, ages and group stability](docs/img/viewer.png)
+
+## At a glance
+
+- **What it is:** an agent-based simulation in pure Python. Each person has drives, feelings, memory and a table of
+  544 reinforcement-learned habits; culture (tools, traditions, trust, symbols) is never scripted, only measured.
+- **How it is tested:** about 60 studies, recorded in [`experiments/INDEX.md`](experiments/INDEX.md). Experiments are
+  frozen and tagged before they run, use a discovery set and a held-out replication, and compare every change with a
+  sham arm (one extra random draw) to show what chance alone does. Every number traces to a committed script.
+- **How it stays honest:** worlds replay bit for bit; [tests](tests/) (including property-based ones) run on every
+  push; wrong predictions are kept, and corrections are appended, never rewritten.
+
+### Some results
+
+| question | result | details |
+|---|---|---|
+| What decides whether a small world survives? | **How far people can see.** Halving sight: 49 of 64 worlds died out; doubling it: 8 (normally 22). | [SA1](experiments/SA1_sensitivity/findings.md) |
+| Do separate bands ever meet? | In large worlds, **almost never**, yet those worlds survive best: each band is big enough to carry itself. | [MB1a](experiments/MB1_multi_band/findings_mb1a.md) |
+| Do learned habits matter, and whose are they? | They change **1 adult choice in 7**, but **57%** of what they hold is copied from others in conversation; everyone ends up alike. | [BL0](experiments/BL0_habit_use/findings.md) |
+| Does a hidden shortcut (knowing where absent family is) keep worlds alive? | **No.** Replacing it with "where I last saw them" changed survival by nothing measurable. | [LK1](experiments/LK1_location_knowledge/findings.md) |
+
+### Check one experiment end to end
+
+LK1, in order: the frozen plan, with its predictions written before any run
+([`questions.md`](experiments/LK1_location_knowledge/questions.md), git tag `LK1-frozen`) → the runner and analysis
+([`run_lk1.py`](experiments/LK1_location_knowledge/run_lk1.py), [`analyse_lk1.py`](experiments/LK1_location_knowledge/analyse_lk1.py))
+→ the raw outputs ([`output/`](experiments/LK1_location_knowledge/output/)) → the tables
+([`results.md`](experiments/LK1_location_knowledge/results.md)) → the reading, including the predictions that were
+wrong ([`findings.md`](experiments/LK1_location_knowledge/findings.md)).
+
+---
 
 **Human nature built in, culture left to emerge.** An agent-based simulation
 of a small prehistoric people on a set of islands. Bodies, feelings, memory,
