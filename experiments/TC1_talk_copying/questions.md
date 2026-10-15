@@ -122,3 +122,13 @@ before S could ever enter nature, not before this test.
 - **Rule 15:** discovery 501–516 + 601–616, reading written; then holdout 811–818 + 1101–1124. A reading stands only if
   both agree.
 - **Analysis script** written and smoke-tested before any data; it shows no outcome when a run is not valid.
+
+## Scripts (appended 14 October 2026, before any TC1 data; rule 19)
+
+`code_tc1`, `run_tc1.py` and `analyse_tc1.py` written and smoke-tested on a throwaway seed (9601, 10 years, all four
+arms; `output_smoke/`, not data): parts add up in every arm (largest error 4 × 10⁻¹⁶); N's copied share is 0 and S's
+small, as designed. **One fault found and fixed before any data:** the check "W reproduces BL0" first compared numbers
+held in memory with numbers read back from BL0's file, where numeric keys become text and sort differently, so it
+reported a difference that did not exist. It now compares both as saved; on seed 501, W then equals BL0 in every
+recorded number. The two seed-501 outputs made while checking this (before the zero check) are kept in
+`output_precheck/`, not used.
