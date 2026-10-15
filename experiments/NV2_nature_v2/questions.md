@@ -126,3 +126,8 @@ With it, the five worlds have **no strandings** in 30 years. v2's reference fing
 there by construction (the lesson of ID1). Replace it, for ST1 only, with: **in the five control worlds where v1 strands
 someone, ST1 alone leaves no stranding** (shown above). Every other zero check stands as frozen. The comparison does not
 start until the creator decides.
+
+**Amendment 1 approved by the creator, 14 October 2026** ("approve NV2 amendment 1"). Frozen as `NV2-amend1`. The zero
+check now verifies ST1 on seeds 809, 816, 824, 827 and 834 (no stranding with ST1 alone, where v1 strands someone); on
+seeds 501 and 601 its final state is reported, not required to differ. Every other zero check is unchanged. The zero
+checks are re-run in full with the corrected ST1 code before the comparison.

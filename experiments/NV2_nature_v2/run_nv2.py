@@ -23,6 +23,7 @@ SEEDS = tuple(range(4601, 4857))
 SMOKE_SEED = 9701
 V2 = {"loved_location": "last_seen", "corner_block": 1, "ashore_if_float_breaks": 1, "knowledge_copy": 1}
 ARMS = {"v1": {}, "v2": V2, "sham": {"sham_draw": 1}}
+ST1_SEEDS = (809, 816, 824, 827, 834)        # the control worlds where v1 strands someone (st1_probe.log)
 ALONE = {"last_seen": {"loved_location": "last_seen"}, "corner": {"corner_block": 1},
          "ashore": {"ashore_if_float_breaks": 1}, "knowledge": {"knowledge_copy": 1}}
 
@@ -92,10 +93,22 @@ def zero():
                 t = wk == base_weekly
                 lines.append(f"  knowledge_copy alone: every person and event identical to v1 every week (only the record "
                              f"may differ): {'yes' if t else 'NO'}; final state {'differs' if h != off else 'identical'}")
+            elif name == "ashore":       # Amendment 1: checked below, on the worlds where v1 strands someone
+                t = True
+                lines.append(f"  ashore alone: final state {'differs' if h != off else 'identical'} (no stranding needed here; "
+                             f"Amendment 1 checks it where strandings happen)")
             else:
                 t = h != off
                 lines.append(f"  {name} alone: the world differs from v1 (the change acts): {'yes' if t else 'NO'}")
             ok &= t
+    # Amendment 1 (approved 14 October 2026): ST1 alone must leave no stranding in the control worlds where v1 strands someone.
+    out = subprocess.run([sys.executable, str(HERE / "st1_probe.py"), *map(str, ST1_SEEDS)], capture_output=True,
+                         text=True).stdout.strip().splitlines()
+    t = len(out) == len(ST1_SEEDS) and all("strandings none" in x for x in out)
+    ok &= t
+    lines.append(f"ST1 (Amendment 1), seeds {', '.join(map(str, ST1_SEEDS))}, 30 years: v1 strands someone in each; with ST1 "
+                 f"alone nobody is stranded: {'yes' if t else 'NO'}")
+    lines += ["  " + x for x in out]
     setup("v2")
     lines.append(f"code_v2 fingerprint: {fingerprint()}")
     lines.append("Reference fingerprints for v2: tests/reference_hashes.json (\"v2\"), test_nature_v2_replays.")
