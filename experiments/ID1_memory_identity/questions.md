@@ -219,3 +219,12 @@ alive 40 weeks). The agreement table shows Q1 "only everything but temperament m
 and Q2, Q3 and Q4 not agreeing. Recorded so the creator can weigh the proposal knowing this.
 
 **If not approved:** ID1 is reported as stopped by its hard stop, with both explanations.
+
+**Amendment 2 approved by the creator, 14 October 2026** ("yes, go with this plan", on the condition that the new check
+verifies each swap actually occurred, without requiring every swap to change the world). Frozen as `ID1-amend2`;
+Amendment 1 is absorbed. Implemented: the runner records, for every swap, whether it was applied (the focal person's
+fields equal the donor's, serialised as the world saves them, and differ from their own) and whether the restore at
+week 26 returned them exactly; the analysis stops on those, and reports swaps that left the final world unchanged as an
+outcome. Also from 14 October: the analysis no longer shows outcome tables for a run that is not valid. Smoke test
+passed. Both sets are re-run with the amended runner (same seeds and code; the worlds are identical); the second
+attempt's outputs are kept in `output_secondattempt/`.

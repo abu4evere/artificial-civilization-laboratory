@@ -97,29 +97,41 @@ def choose(w, seed):
 
 def run_copy(snap, weeks, watch, sham=False, swap=None, restore_at=RESTORE):
     """Run a copy of the snapshot. watch: ids whose chosen actions are recorded each week.
-    swap: (focal, donor, part). Returns {id: [action or None per week]}, the final hash, and the population at the end."""
+    swap: (focal, donor, part). Returns {id: [action or None per week]}, the final hash, the population at the end, and
+    Amendment 2's direct check: was the swap applied (the focal person's fields equal the donor's, and differ from their
+    own in at least one), and did the restore return them exactly (None if the person died before week 26)."""
     w = copy.deepcopy(snap)
     if sham:
         w.rng.random()
-    back = None
+    back, check = None, {}
     if swap:
         f, d, part = swap
         fp, dp = w.people[f], w.people[d]
         back = {k: copy.deepcopy(getattr(fp, k)) for k in PARTS[part]}
+        own = fields(fp, PARTS[part])
         for k in PARTS[part]:
             setattr(fp, k, copy.deepcopy(getattr(dp, k)))
+        now = fields(fp, PARTS[part])
+        check = {"applied": now == fields(dp, PARTS[part]) and now != own, "restored": None}
     acts = {pid: [] for pid in watch}
     for wk in range(weeks):
         if swap and wk == restore_at and w.people[swap[0]].alive:
             for k, v in back.items():
                 setattr(w.people[swap[0]], k, copy.deepcopy(v))
+            check["restored"] = fields(w.people[swap[0]], PARTS[swap[2]]) == own
         w.step()
         chosen = {d.agent_id: d.chosen[0] for d in w.week_decisions if d.agent_id in acts and d.chosen}
         for pid in acts:
             acts[pid].append(chosen.get(pid) if w.people[pid].alive else None)
         if not w.living():
             break
-    return acts, world_hash(w), len(w.living())
+    return acts, world_hash(w), len(w.living()), check
+
+
+def fields(p, names):
+    """The named fields of a person, serialised exactly as the world saves them (for Amendment 2's check)."""
+    d = p.to_dict()
+    return json.dumps({k: d[k] for k in names}, sort_keys=True)
 
 
 def run_world(seed, snap_week=SNAP_YEAR * WPY, weeks=WEEKS, restore_at=RESTORE, out=None):
@@ -147,16 +159,17 @@ def run_world(seed, snap_week=SNAP_YEAR * WPY, weeks=WEEKS, restore_at=RESTORE, 
                 break
         res["reference_hash"] = world_hash(w)
         watch = sorted({x for fd in pairs for x in fd})
-        o_acts, o_hash, o_pop = run_copy(snap, weeks, watch, restore_at=restore_at)
-        s_acts, s_hash, s_pop = run_copy(snap, weeks, watch, sham=True, restore_at=restore_at)
+        o_acts, o_hash, o_pop, _ = run_copy(snap, weeks, watch, restore_at=restore_at)
+        s_acts, s_hash, s_pop, _ = run_copy(snap, weeks, watch, sham=True, restore_at=restore_at)
         res["original"] = {"acts": o_acts, "hash": o_hash, "pop_end": o_pop}
         res["sham"] = {"acts": s_acts, "hash": s_hash, "pop_end": s_pop}
         res["swaps"] = {}
         for f, d in pairs:
             for part in PARTS:
-                acts, h, pop = run_copy(snap, weeks, [f], swap=(f, d, part), restore_at=restore_at)
-                res["swaps"][f"{f}:{part}"] = {"acts": acts[f], "hash": h, "pop_end": pop}
+                acts, h, pop, chk = run_copy(snap, weeks, [f], swap=(f, d, part), restore_at=restore_at)
+                res["swaps"][f"{f}:{part}"] = {"acts": acts[f], "hash": h, "pop_end": pop, **chk}
         res["original_reproduces"] = o_hash == res["reference_hash"]
+        res["swaps_applied"] = all(v["applied"] and v["restored"] is not False for v in res["swaps"].values())
         res["all_differ"] = s_hash != o_hash and all(v["hash"] != o_hash for v in res["swaps"].values())
     res["code_hash_after"] = fingerprint()
     out = out or OUT

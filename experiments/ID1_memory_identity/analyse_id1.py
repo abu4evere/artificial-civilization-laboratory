@@ -151,20 +151,18 @@ def report(which, rows, P, dropped, R, smoke):
     fps = {r["code_hash"] for r in rows} | {r["code_hash_after"] for r in rows}
     done = [r for r in rows if "original" in r]
     rep = all(r["original_reproduces"] for r in done)
-    # Amendment 1 (approved 14 October 2026): the "every swap differs" stop does not apply to a focal person who dies
-    # before week 13 (alive fewer than 13 weeks in the original copy), whom the 13-week rule already drops.
-    def early_death(r, f):
-        return sum(x is not None for x in r["original"]["acts"][f][:13]) < 13
-    exempt = [(r["seed"], k) for r in done for k, v in r["swaps"].items()
-              if v["hash"] == r["original"]["hash"] and early_death(r, k.split(":")[0])]
+    # Amendment 2 (approved 14 October 2026; absorbs Amendment 1): the stop is now direct. The sham must differ from the
+    # original; every swap must have been applied (the focal person held the donor's values and not their own) and, where
+    # the person lived to week 26, restored exactly. A swap that leaves the final world unchanged is an outcome, reported.
     dif = all(r["sham"]["hash"] != r["original"]["hash"] for r in done) and all(
-        v["hash"] != r["original"]["hash"] or (r["seed"], k) in exempt for r in done for k, v in r["swaps"].items())
+        v.get("applied") is True and v.get("restored") is not False for r in done for v in r["swaps"].values())
+    no_trace = [(r["seed"], k) for r in done for k, v in r["swaps"].items() if v["hash"] == r["original"]["hash"]]
+
     ok = len(fps) == 1 and rep and (dif or smoke)
     L += [f"- One code fingerprint (`code_e13r`): **{'yes' if len(fps) == 1 else 'NO'}**",
           f"- The original copy reproduces the uncopied world in every world: **{'yes' if rep else 'NO'}**",
-          f"- The sham and every swap differ from the original: **{'yes' if dif else 'NO'}**"
-          + (f" (Amendment 1: exempt, focal person died before week 13: {exempt})" if exempt else "")
-          + (" (not required in the smoke test: 4-week window)" if smoke else ""),
+          f"- The sham differs from the original, and every swap was applied and restored (Amendment 2): **{'yes' if dif else 'NO'}**",
+          f"- Swaps that left the final world unchanged (an outcome, not a stop): {len(no_trace)}" + (f" {no_trace}" if no_trace else ""),
           f"- Worlds: {len(rows)}; skipped: {len(rows) - len(done)}"
           + "".join(f" (seed {r['seed']}: {r['skipped']})" for r in rows if "skipped" in r),
           f"- Focal people: {len(P)}; dropped (alive fewer than 13 weeks, or 2 in the smoke test): weeks 1–26 "
@@ -216,7 +214,9 @@ def main(which, smoke=False):
     P, dropped = people(rows, half, minw)
     R = tests(P)
     L = report(which, rows, P, dropped, R, smoke)
-    if which == "holdout" and not smoke:
+    if not smoke and any("NOT VALID" in x for x in L):     # an invalid run's outcomes are not shown (lesson of 14 October)
+        L = L[:next(i for i, x in enumerate(L) if "NOT VALID" in x) + 1]
+    if which == "holdout" and not smoke and not any("NOT VALID" in x for x in L):
         drows = [json.loads((OUT / f"seed_{s}.json").read_text(encoding="utf-8")) for s in DISCOVERY]
         D = tests(people(drows, half, minw)[0])
         a, b = sig(D), sig(R)
