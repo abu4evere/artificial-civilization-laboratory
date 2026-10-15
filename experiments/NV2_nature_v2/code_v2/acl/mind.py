@@ -107,6 +107,8 @@ def decide(world, p: Person) -> tuple:
     st = p.stage(tick)
     season = world.season
     w, h = c.width, c.height
+    if c.loved_location == "last_seen":
+        remember_loved(world, p)       # NV2 (LK1): before deciding, note where loved ones in sight are
 
     deps = world.dependents(p.id)
     dep_need = sum(d.need(c, tick) for d in deps)
@@ -465,10 +467,10 @@ def decide(world, p: Person) -> tuple:
                         break
 
         # Go back to family and friends when they are out of reach.
-        for q, aff, kin in _far_people(world, p):
+        for q, aff, kin, spot, src in _far_people(world, p):
             u = (0.2 + 0.6 * p.loneliness * g["sociability"] + 0.5 * kin
                  + (0.6 if p.partner == q.id else 0.0)) * max(aff, 0.2) * (1.0 - 0.5 * hunger)
-            add("join", world.step_toward_land(p.loc, q.loc, c.reach, p), u, c.reach)
+            add("join", world.step_toward_land(p.loc, spot, c.reach, p), u, c.reach)
 
         # Go back to the place where life has been best.
         if home and distance(p.loc, home, w, h) > 0:
@@ -756,24 +758,51 @@ def _nearest_spring(world, p: Person):
     return best
 
 
-def _far_people(world, p: Person) -> list:
-    """Loved ones beyond reach that p might travel toward: partner, parents, children, best friend."""
-    c = world.cfg
-    out = []
+def _loved_ids(p: Person) -> list:
     seen = []
     for pid in (p.partner, p.mother, p.father, *p.children):
         if pid and pid not in seen:
             seen.append(pid)
     if p.friend and p.friend not in seen:
         seen.append(p.friend)
-    for pid in seen:
+    return seen
+
+
+def remember_loved(world, p: Person) -> None:
+    """LK1, last_seen only: note where each loved one in sight is this week. Draws nothing at random."""
+    c = world.cfg
+    for pid in _loved_ids(p):
+        q = world.people[pid]
+        if q.alive and distance(p.loc, q.loc, c.width, c.height) <= c.perception:
+            p.seen_at[pid] = [q.loc[0], q.loc[1], world.tick]
+
+
+def _far_people(world, p: Person) -> list:
+    """Loved ones beyond reach that p might travel toward: partner, parents, children, best friend.
+    Returns (person, affection, kinship, where to go, "now" or "memory"). Today ("current") that is where they are now (AA1's A5); with
+    loved_location "last_seen" (LK1) it is where they are if in sight, or else where they were last seen, a memory spent
+    once that spot is in sight and they are not there."""
+    c = world.cfg
+    last_seen = c.loved_location == "last_seen"
+    out = []
+    for pid in _loved_ids(p):
         q = world.people[pid]
         if not q.alive:
             continue
-        if distance(p.loc, q.loc, c.width, c.height) <= c.reach:
+        d = distance(p.loc, q.loc, c.width, c.height)
+        if d <= c.reach:
             continue
+        spot, src = q.loc, "now"
+        if last_seen and d > c.perception:
+            mem = p.seen_at.get(pid)
+            if not mem:
+                continue
+            spot, src = (mem[0], mem[1]), "memory"
+            if distance(p.loc, spot, c.width, c.height) <= c.perception:
+                del p.seen_at[pid]       # they can see the place, and nobody is there
+                continue
         r = p.rel.get(pid)
         aff = r.affection if r else 0.0
-        out.append((q, aff, world.kinship(p, q)))
+        out.append((q, aff, world.kinship(p, q), spot, src))
     return out[:3]
 
