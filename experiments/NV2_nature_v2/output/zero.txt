@@ -2,14 +2,20 @@ seed 501, 20 years: all four off = control code: yes
   F1's probe leaves the world unchanged: yes
   last_seen alone: the world differs from v1 (the change acts): yes
   corner alone: the world differs from v1 (the change acts): yes
-  ashore alone: the world differs from v1 (the change acts): NO
+  ashore alone: final state identical (no stranding needed here; Amendment 1 checks it where strandings happen)
   knowledge_copy alone: every person and event identical to v1 every week (only the record may differ): yes; final state identical
 seed 601, 20 years: all four off = control code: yes
   F1's probe leaves the world unchanged: yes
   last_seen alone: the world differs from v1 (the change acts): yes
   corner alone: the world differs from v1 (the change acts): yes
-  ashore alone: the world differs from v1 (the change acts): NO
+  ashore alone: final state identical (no stranding needed here; Amendment 1 checks it where strandings happen)
   knowledge_copy alone: every person and event identical to v1 every week (only the record may differ): yes; final state differs
-code_v2 fingerprint: 8ba69932d970b8926d14571510a2eb7c696f38779cf583265de528468a09bf0f
+ST1 (Amendment 1), seeds 809, 816, 824, 827, 834, 30 years: v1 strands someone in each; with ST1 alone nobody is stranded: yes
+  809 v1: first stranding in week 50; ST1 alone: strandings none; world differs from v1: True
+  816 v1: first stranding in week 771; ST1 alone: strandings none; world differs from v1: True
+  824 v1: first stranding in week 515; ST1 alone: strandings none; world differs from v1: False
+  827 v1: first stranding in week 116; ST1 alone: strandings none; world differs from v1: True
+  834 v1: first stranding in week 92; ST1 alone: strandings none; world differs from v1: True
+code_v2 fingerprint: 6c72ef6464632f19780b922dfebc2c5727e8ce25191ca7d68830f9f202674185
 Reference fingerprints for v2: tests/reference_hashes.json ("v2"), test_nature_v2_replays.
-All: FAIL
+All: PASS
