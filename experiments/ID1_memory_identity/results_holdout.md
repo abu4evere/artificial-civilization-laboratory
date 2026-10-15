@@ -6,11 +6,12 @@ Frozen as `ID1-frozen` (correction of 12 October appended). run_id1.py, analyse_
 
 - One code fingerprint (`code_e13r`): **yes**
 - The original copy reproduces the uncopied world in every world: **yes**
-- The sham and every swap differ from the original: **NO**
+- The sham differs from the original, and every swap was applied and restored (Amendment 2): **yes**
+- Swaps that left the final world unchanged (an outcome, not a stop): 1 [(1105, 'p00018:memories')]
 - Worlds: 32; skipped: 1 (seed 1101: no eligible focal person)
 - Focal people: 52; dropped (alive fewer than 13 weeks, or 2 in the smoke test): weeks 1–26 0, weeks 27–52 2
 
-**NOT VALID: no outcome below may be read.**
+**Valid.**
 
 ## Who (population beside every measure, rule 18)
 

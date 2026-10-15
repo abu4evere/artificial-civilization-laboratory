@@ -352,7 +352,7 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **BL0 done** (`experiments/BL0_habit_use/findings.md`; read-only logging copy, exact; discovery and holdout agree). **Habits steer** one adult choice in seven (0.140 / 0.139), **but more than half of what they hold is copied in talk** (57% / 56%); own experience 37%, caregivers 6%, birth nothing. Everyone's habits end up alike (a stranger's correlate 0.92 with one's own, the parents' 0.96). **Next: the creator decides** the talk-copying question (today's rule, situation-specific copying, no copying), nature v2 (last-seen + A1, now unlocked) and viewer fixes 6 and 7.
 
-**ID1** (what makes a person): discovery and holdout run, replays exact; paused at Amendment 2 (its hard stop fires on swaps that applied but left no trace), for the creator.
+**ID1 done** (`experiments/ID1_memory_identity/findings.md`; Amendment 2; valid in both sets). **No single part makes an ACL person who they are; their acquired parts together do, and temperament does not hold them.** Whether they become like the donor, and whether restoring brings them back fully, the sets disagree: no reading. With BL0: identity in ACL is spread thin over weak parts, much of it shared by everyone.
 
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
@@ -495,7 +495,7 @@ failure, stop, confound or correction:
 
 ## Next-phase plan (written after WS1, 12 October 2026; FOR THE CREATOR'S SIGN-OFF, nothing decided)
 
-**Frozen queue (unchanged):** AA1 (done) → LK1 (done) → SA1 (done) → MB1a (done) (do bands meet?) → ID1 (paused at Amendment 2) → BL0 (done) (do habits steer?).
+**Frozen queue (unchanged):** AA1 (done) → LK1 (done) → SA1 (done) → MB1a (done) (do bands meet?) → ID1 (done) → BL0 (done) (do habits steer?).
 
 **Decisions proposed** (each still goes through its own questions, freeze and sign-off):
 
