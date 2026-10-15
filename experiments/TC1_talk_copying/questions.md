@@ -1,4 +1,4 @@
-# TC1 — Does copying whole habit tables in talk make everyone alike? (DRAFT for the creator's sign-off; nothing frozen, nothing run)
+# TC1 — Does copying whole habit tables in talk make everyone alike? (SIGNED OFF and frozen as `TC1-frozen`; nothing run)
 
 **Asked by the creator (14 October 2026),** after BL0 and the council: "test all three conditions: whole-habit copying,
 copying only the situation being discussed, and no copying. Keep other conditions identical so we can compare the
@@ -85,3 +85,40 @@ separate open question on talk itself). Anything about 80-founder worlds.
 3. Thresholds as above (decision rules).
 4. Order: after ID1 is reported and before nature v2 is built (recommended: TC1 needs no change to nature, only a setting
    in a copy), or after.
+
+## Sign-off (14 October 2026)
+
+The creator: "**TC1 — situation size: 17 values. Seeds: 64. Thresholds: keep the existing thresholds fixed and documented
+before running. Order: run after ID1. Conditions: whole-habit copying, situation-only copying, no copying, and sham.
+Important check: the current version must reproduce BL0's results across its 64 worlds.**" And: "don't start a run until
+its configuration and success criteria are saved. If results contradict expectations, report them rather than changing
+thresholds afterward."
+
+Every decision is frozen as recommended: S copies the 17 values of the speaker's current situation; F1's 64 seeds, as
+BL0; the thresholds above; after ID1 (done). The prior above is frozen as written.
+
+**On Law 126:** TC1 *tests* S; it does not adopt it. The evidence review of situation-specific copying (T2) is required
+before S could ever enter nature, not before this test.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code `code_tc1`:** a copy of `code_bl0` (BL0's hooks and observer unchanged), plus two settings, both defaulting to
+  today's world:
+  - `talk_copy`: `"whole"` (default; today's `_imitate`), `"situation"` (only indices of the speaker's `last_ctx`: the 17
+    values of the situation the speaker decided in this week), `"none"` (`_imitate` returns before changing anything;
+    it draws no random number, so nothing else shifts).
+  - `sham_draw`: `0` (default) or `1` (one extra draw from the world's generator in week one, exactly as in `code_p2`).
+  - The rate and the conditions for copying (respect ≥ 0.2, or a happier speaker) are unchanged in S.
+- **The split (BL0's I + C + E + T):** the hook for imitation passes the indices that moved; T is credited only there,
+  and the other parts are scaled only there. The weekly check "parts add up to the habit, to 1e-9" stays a hard stop
+  in every arm.
+- **Arms:** W (`talk_copy="whole"`), S (`"situation"`), N (`"none"`), sham (`"whole"`, `sham_draw=1`).
+- **Hard stops:** (1) zero check: `code_tc1` with defaults equals the control code and `code_bl0` (state hash, seeds 501
+  and 601, 20 years); (2) **W reproduces BL0's saved results on all 64 worlds** (final week, world hash, and the BL0
+  measures identical); (3) one fingerprint; (4) parts add up in every arm; (5) S and N differ from W.
+- **Measures, tests and reading:** as above, by BL0's own analysis functions, per arm. Primary 1 = mean (parents − unrelated)
+  correlation at age 20 per world; primary 2 = own experience's weighted share per world; paired by seed against W
+  (Wilcoxon), with bootstrap intervals. Extinction against W by the exact sign test, as every study.
+- **Rule 15:** discovery 501–516 + 601–616, reading written; then holdout 811–818 + 1101–1124. A reading stands only if
+  both agree.
+- **Analysis script** written and smoke-tested before any data; it shows no outcome when a run is not valid.
