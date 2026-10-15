@@ -16,6 +16,7 @@ Bodies need water as well as food. A week without it hurts badly.
 """
 from __future__ import annotations
 
+import copy
 import math
 
 from . import inquiry, knowhow, matter, thought, weather
@@ -307,7 +308,7 @@ def _passive_heat(world, p, tile) -> None:
 
 def _baked(world, p, part: str, out: dict, level: int) -> None:
     knowhow.remember_recipe(world, p, out["sig"], {"verb": "heat", "part": part, "level": level}, "heated",
-                            props=out)
+                            props=copy.deepcopy(out) if world.cfg.knowledge_copy else out)   # NV2: a copy, not the item itself
     world.emit("consequence", p.id, None, p.loc, what="ceramic_passive", thing=out["sig"])
 
 
