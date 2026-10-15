@@ -111,3 +111,18 @@ in one world in three; ST1 is 2 in 100,000 person-weeks; the knowledge fix chang
   data). The analysis reports births and blocked decisions with F1's own pooled-rate function, as SA1 does, and shows
   no outcome if the run is not valid.
 - The comparison run waits for the zero checks and for TC1 to finish (the creator's order).
+
+## The ST1 fix corrected, and Proposed Amendment 1 (14 October 2026, before any comparison data; FOR THE CREATOR)
+
+**The zero check caught a wrong fix.** "ST1 alone: the world differs from v1" failed on seeds 501 and 601. A search of 40
+control worlds over 30 years (`st1_probe.py`, `st1_probe.log`) found strandings under v1 in **5 of 40** (seeds 809, 816,
+824, 827, 834), and **the first fix did not remove them**: it checked at the end of a person's own action, but a trace of
+seed 809 (week 50) shows the float falls apart in the week's **bodily phase** (`biology.body_phase`), after its owner has
+gone out on it. **Corrected** (a new commit): the check now runs at the end of the week, after the bodily phase, oldest
+first (a carer reaches land before their children are checked; a child in an afloat carer's boat is left, as intended).
+With it, the five worlds have **no strandings** in 30 years. v2's reference fingerprints were regenerated; the test passes.
+
+**Proposed Amendment 1:** seeds 501 and 601 have no stranding in 20 years, so "ST1 alone changes the world" cannot hold
+there by construction (the lesson of ID1). Replace it, for ST1 only, with: **in the five control worlds where v1 strands
+someone, ST1 alone leaves no stranding** (shown above). Every other zero check stands as frozen. The comparison does not
+start until the creator decides.

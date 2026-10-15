@@ -496,6 +496,21 @@ class World:
 
         biology.body_phase(self)
 
+        # NV2 (ST1): a float can wear out after its owner has gone out on it (traced: it falls apart in the week's
+        # bodily phase). Whoever then ends the week on water with nothing that floats struggles ashore half drowned, as
+        # `actions._over_water` does when a float is missing. Oldest first, so a carer reaches land before the children
+        # in their care are checked; a child in an afloat carer's boat stays with them (intended).
+        if self.cfg.ashore_if_float_breaks:
+            for p in sorted(self.living(), key=lambda q: (q.birth, q.id)):
+                if not p.alive or not self.tile(p.loc).water or self.passable(p, p.loc):
+                    continue
+                carer = self.people.get(p.caregiver) if p.caregiver else None
+                if carer is not None and carer.alive and carer.loc == p.loc and self.passable(carer, carer.loc):
+                    continue
+                self.move(p, self.nearest_land(p.loc))
+                p.health -= 10.0
+                p.hurt_by = p.hurt_by or "drowning"
+
         line = json.dumps(self.events, sort_keys=True, separators=(",", ":"))
         self.event_chain = hashlib.sha256((self.event_chain + line).encode()).hexdigest()
         events = self.events

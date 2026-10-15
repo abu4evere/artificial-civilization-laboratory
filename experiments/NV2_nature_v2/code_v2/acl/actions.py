@@ -64,12 +64,6 @@ def perform(world, p: Person, option: tuple) -> None:
             distance(p.loc, world.people[target].loc, c.width, c.height) > 1:
         return                 # they could not get there
     HANDLERS[action](world, p, target, eff)
-    # NV2 (ST1): a float can wear out in use at sea (foraging, gathering, hunting, fighting) after the walk has already
-    # found its owner afloat. Then nothing floats under them: they struggle ashore half drowned, as `_over_water` does.
-    if c.ashore_if_float_breaks and p.alive and world.tile(p.loc).water and not world.passable(p, p.loc):
-        world.move(p, world.nearest_land(p.loc))
-        p.health -= 10.0
-        p.hurt_by = p.hurt_by or "drowning"
 
 
 def _over_water(world, p: Person, start: tuple) -> None:

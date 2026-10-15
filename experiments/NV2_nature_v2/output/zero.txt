@@ -1,0 +1,15 @@
+seed 501, 20 years: all four off = control code: yes
+  F1's probe leaves the world unchanged: yes
+  last_seen alone: the world differs from v1 (the change acts): yes
+  corner alone: the world differs from v1 (the change acts): yes
+  ashore alone: the world differs from v1 (the change acts): NO
+  knowledge_copy alone: every person and event identical to v1 every week (only the record may differ): yes; final state identical
+seed 601, 20 years: all four off = control code: yes
+  F1's probe leaves the world unchanged: yes
+  last_seen alone: the world differs from v1 (the change acts): yes
+  corner alone: the world differs from v1 (the change acts): yes
+  ashore alone: the world differs from v1 (the change acts): NO
+  knowledge_copy alone: every person and event identical to v1 every week (only the record may differ): yes; final state differs
+code_v2 fingerprint: 8ba69932d970b8926d14571510a2eb7c696f38779cf583265de528468a09bf0f
+Reference fingerprints for v2: tests/reference_hashes.json ("v2"), test_nature_v2_replays.
+All: FAIL
