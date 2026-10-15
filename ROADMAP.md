@@ -354,6 +354,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **ID1 done** (`experiments/ID1_memory_identity/findings.md`; Amendment 2; valid in both sets). **No single part makes an ACL person who they are; their acquired parts together do, and temperament does not hold them.** Whether they become like the donor, and whether restoring brings them back fully, the sets disagree: no reading. With BL0: identity in ACL is spread thin over weak parts, much of it shared by everyone.
 
+**TC1 done** (`experiments/TC1_talk_copying/findings.md`; frozen; W reproduces BL0 exactly). Three ways of learning from talk: today's whole-table copying, copying only what the speaker is living now, and none. **Frozen reading: unresolved** (both sets): removing copying makes families' habits only a fifth to a third more distinct from strangers'; most of the sameness stays. **But whose habits they are flips:** own experience 37% → 65% / 75%, with habits steering exactly as much and no change in survival. **Next: the creator decides** whether situation-specific copying goes to an evidence review as a nature candidate; the nature v2 comparison runs now.
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).
