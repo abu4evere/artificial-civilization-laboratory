@@ -13,6 +13,8 @@
 - **How it is tested:** about 60 studies, recorded in [`experiments/INDEX.md`](experiments/INDEX.md). Experiments are
   frozen and tagged before they run, use a discovery set and a held-out replication, and compare every change with a
   sham arm (one extra random draw) to show what chance alone does. Every number traces to a committed script.
+- **The book:** [*The World That Nobody Wrote, Part One*](https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)
+  (PDF, 213 pages), the project's story told from its experiment records, wrong predictions included.
 - **How it stays honest:** worlds replay bit for bit; [tests](tests/) (including property-based ones) run on every
   push; wrong predictions are kept, and corrections are appended, never rewritten.
 
