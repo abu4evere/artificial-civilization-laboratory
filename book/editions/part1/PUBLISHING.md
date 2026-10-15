@@ -3,7 +3,7 @@
 Files (this folder):
 - `The_World_That_Nobody_Wrote_Part_One.pdf`: 213 pages, 6 × 9 in, the print and Zenodo file
 - `The_World_That_Nobody_Wrote_Part_One.docx`: the Kindle ebook file
-- Cover: `book/cover/cover.png` (1600 × 2400 px)
+- Cover: `cover_part1.png` (1600 × 2400 px; the book's cover with "PART ONE" under the subtitle)
 - Already public: GitHub release `book-part-one` (https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)
 
 ## The same text everywhere
@@ -44,9 +44,10 @@ You need: a KDP account (kdp.amazon.com), your tax interview and bank details (o
 1. **Create → Kindle eBook.** Title, subtitle, author, description and keywords as above.
 2. **Categories** (pick up to 3): Science → Social Sciences / Anthropology; Computers → Artificial Intelligence;
    Science → Life Sciences / Evolution (choose the closest Amazon offers).
-3. **AI-generated content: answer Yes** for text (the chapters were drafted with Claude from the records and checked).
-   Amazon requires this disclosure; the book says so on its "About Part One" page.
-4. **Manuscript:** upload the **.docx**. **Cover:** upload `cover.png`. Preview the result in Kindle Previewer before
+3. **AI-generated content: answer Yes** for **text** (the chapters were drafted with Claude from the records and
+   checked) and **Yes** for **images** (the cover picture comes from an AI-generated image). Amazon requires this
+   disclosure; the book says so on its "About Part One" page.
+4. **Manuscript:** upload the **.docx**. **Cover:** upload `cover_part1.png`. Preview the result in Kindle Previewer before
    publishing.
 5. Price: your choice (KDP's 70% royalty applies from $2.99 to $9.99).
 
@@ -54,11 +55,10 @@ You need: a KDP account (kdp.amazon.com), your tax interview and bank details (o
 1. **Create → Paperback**, same details.
 2. **Print options:** black ink on white paper · trim size **6 × 9 in** · no bleed · matte cover.
 3. **Manuscript:** upload the **PDF** (margins already meet KDP's rules for 213 pages).
-4. **Cover:** use **Cover Creator** with `cover.png` as the front; it builds the spine and back to the right width.
+4. **Cover:** use **Cover Creator** with `cover_part1.png` as the front; it builds the spine and back to the right width.
 5. Order a **proof copy** before publishing, to check it in your hands.
 6. ISBN: KDP gives one free (Amazon becomes the listed publisher), or buy your own from Bowker.
 
 ## Things to decide yourself
 - The licence on Zenodo (all rights reserved, or Creative Commons).
 - The price on Amazon.
-- Whether the cover should say "Part One" (it does not yet; I can make a version that does).
