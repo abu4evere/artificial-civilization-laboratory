@@ -19,13 +19,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REF = Path(__file__).with_name("reference_hashes.json")
-CODES = {"acl": ROOT, "control": ROOT / "experiments" / "E13R_replication" / "code_e13r"}
+CODES = {"acl": ROOT, "control": ROOT / "experiments" / "E13R_replication" / "code_e13r",
+         "v2": ROOT / "experiments" / "NV2_nature_v2" / "code_v2"}
+# Each code's settings: ACL's own code has none; the control copy runs as the experiments do; v2 is the control code with
+# NV2's four changes on (experiments/NV2_nature_v2/questions.md). Like the control hashes, v2's should never change.
+EXTRA = {"acl": "", "control": ", anticipation_weight=1.0",
+         "v2": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1"}
 CASES = [(11, 5), (501, 5)]          # (seed, years)
 
 
 def _hash(code: str, seed: int, years: int) -> str:
     """Run in a fresh process, so the two packages named `acl` never meet."""
-    extra = ", anticipation_weight=1.0" if code == "control" else ""   # the experiments' setting; ACL's own code has none
+    extra = EXTRA[code]
     prog = ("import sys; sys.path.insert(0, sys.argv[1]); from acl import Config, World;"
             f"w = World(Config(seed=int(sys.argv[2]){extra}));"
             "[w.step() for _ in range(int(sys.argv[3]) * 52)]; print(w.state_hash())")
@@ -46,6 +51,10 @@ def test_acl_reference_worlds_replay():
 
 def test_frozen_control_code_replays():
     _check("control")
+
+
+def test_nature_v2_replays():
+    _check("v2")
 
 
 if __name__ == "__main__" and sys.argv[1:2] == ["--update"]:

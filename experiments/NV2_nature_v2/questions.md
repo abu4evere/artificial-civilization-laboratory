@@ -99,3 +99,15 @@ each**, each defaulting to v1's behaviour, so that all four off is exactly v1:
 **The assistant's prior (frozen; held loosely):** no meaningful effect on survival (LK1 found none for last-seen; A1 acts
 in one world in three; ST1 is 2 in 100,000 person-weeks; the knowledge fix changes no behaviour). Births a little lower
 (families apart more, LK1).
+
+## Build record (appended 14 October 2026, before any comparison data; rule 19)
+
+- `code_v2` built from `code_p2` in five commits: the base copy, then one per change (last-seen `d47598c`, A1 `634f101`,
+  ST1 `9e73671`, knowledge copy `4bcd3e0`). Last-seen is LK1's code without its logging (diffed line by line); A1 is the
+  lines of `nature-v2-a1`.
+- Reference fingerprints for v2 (all four on, seeds 11 and 501, 5 years) added to `tests/reference_hashes.json` with
+  `test_nature_v2_replays`; all three reference tests pass locally.
+- `run_nv2.py` and `analyse_nv2.py` written and smoke-tested on a throwaway seed (9701, 10 years; `output_smoke/`, not
+  data). The analysis reports births and blocked decisions with F1's own pooled-rate function, as SA1 does, and shows
+  no outcome if the run is not valid.
+- The comparison run waits for the zero checks and for TC1 to finish (the creator's order).
