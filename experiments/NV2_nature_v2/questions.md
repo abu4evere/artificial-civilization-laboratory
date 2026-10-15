@@ -1,4 +1,4 @@
-# NV2 — Nature version 2: what goes in, and how it is checked (DRAFT for the creator's sign-off; nothing built or run)
+# NV2 — Nature version 2: what goes in, and how it is checked (SIGNED OFF and frozen as `NV2-frozen`; nothing built or run)
 
 **The creator's decisions so far:**
 - 13 October: "approve last-seen + A1 for nature v2, after BL0" (one change, one record).
@@ -47,3 +47,55 @@ fixing them):
 1. Include **ST1** (recommended) and the **knowledge-record fix** (recommended)?
 2. The comparison as described (256 new seeds; v1, v2, sham), or smaller?
 3. Order: build v2 now, while TC1 is decided (TC1 runs on v1 and does not depend on v2), or after TC1.
+
+## Sign-off (14 October 2026)
+
+The creator: "**Nature v2 — include both fixes: the raft fix and the knowledge-record fix. Keep mortality paused. Make
+each change in a separate commit. Run zero checks and verify the new reference fingerprints. Compare v1 and v2 on 256
+new seeds before moving any study to v2. Keep all historical results tied to v1.**" Order: after TC1 ("Nature v2
+validation second"). And: "don't start a run until its configuration and success criteria are saved; if results
+contradict expectations, report them rather than changing thresholds afterward."
+
+## Operational details (fixed at freezing, before any code)
+
+**What "v1" is, precisely.** Every result so far ran on the **control code** (`code_e13r`, `anticipation_weight = 1.0`)
+and code copies proven equal to it. The live package `acl/` (tag `nature-v1`) has its own reference fingerprints, which
+differ from the control code's (`tests/reference_hashes.json`: "acl" against "control"). So v2 is built **from the
+control code**, the version every finding stands on.
+
+**Code `code_v2`:** a copy of `code_p2`'s acl package with every P2/MC1/HB1 setting off (it equals the control code
+then, as P2's, WS1's and SA1's zero checks showed, and it already holds `sham_draw`). Four new settings, **one commit
+each**, each defaulting to v1's behaviour, so that all four off is exactly v1:
+
+| setting | v1 (default) | v2 | the change |
+|---|---|---|---|
+| `loved_location` | `"current"` | `"last_seen"` | LK1's code, copied unchanged (without AA1's logging) |
+| `corner_block` | `0` | `1` | the A1 fix, the same lines as branch `nature-v2-a1` (`5c612d1`) |
+| `ashore_if_float_breaks` | `0` | `1` | ST1: at the end of a person's action, if they stand on water with nothing that floats, they struggle ashore half-drowned, exactly as `_over_water` already does when a float is missing |
+| `knowledge_copy` | `0` | `1` | the record of a first-baked thing gets a deep copy of the item at that moment, not the item itself |
+
+**Zero checks (hard stops), before any comparison run:**
+1. All four off: state hash equals the control code (seeds 501 and 601, 20 years).
+2. Each change alone on: the world differs from v1 (it acts), except `knowledge_copy`, which must leave every person and
+   event identical to v1 over 20 years (only the knowledge record may differ), checked week by week on the same seeds.
+3. **New reference fingerprints** for v2 (all four on) on seeds 11 and 501 (5 years, as the existing references), added to
+   `tests/reference_hashes.json` as "v2" beside "acl" and "control", with a test; CI green on windows-2022.
+
+**The comparison (v1 against v2):**
+- **256 new seeds, 4601–4856**, 20 founders, 40 × 40, 120 years. Arms: **v1** (all off), **v2** (all on), **sham** (v1 with
+  `sham_draw = 1`). 768 worlds, about 10 hours.
+- **Observer:** F1's probe (populations, births, deaths, decisions blocked for want of a partner), read-only (zero check
+  with and without it).
+- **Primary: extinction**, v2 against v1, paired by seed (exact sign test; effect with a 95% bootstrap interval, 10,000
+  resamples, `random.Random(2026)`), half of F2's effect (0.117) as the yardstick, as LK1 and WS1:
+  - p < 0.05: "**v2 changes survival**" (its direction and size reported).
+  - p ≥ 0.05 and the interval excludes ±0.117: "**no meaningful effect on survival**".
+  - otherwise: "**unresolved at this sample**".
+- **Described:** median population at years 60 and 119; births per woman-year; decisions blocked; the sham against v1 (must
+  be quiet; if not, every reading carries the caveat).
+- **What it decides:** nothing automatically. The creator reads it and signs off v2 (or not) before any study moves to it.
+  The live package is updated to v2 only after that sign-off.
+
+**The assistant's prior (frozen; held loosely):** no meaningful effect on survival (LK1 found none for last-seen; A1 acts
+in one world in three; ST1 is 2 in 100,000 person-weeks; the knowledge fix changes no behaviour). Births a little lower
+(families apart more, LK1).
