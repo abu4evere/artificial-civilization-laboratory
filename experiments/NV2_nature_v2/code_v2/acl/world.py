@@ -274,6 +274,12 @@ class World:
             if here == dst:
                 break
             nxt = step_toward(here, dst, 1, c.width, c.height)
+            # NV2 (A1, branch nature-v2-a1): a diagonal step squeezes between two side tiles. If both are water the
+            # walker cannot stand on, the step crosses water at a corner, which Rule 3 forbids as surely as wading in.
+            if c.corner_block and nxt[0] != here[0] and nxt[1] != here[1]:
+                if (not self._standable(p, (nxt[0], here[1]))
+                        and not self._standable(p, (here[0], nxt[1]))):
+                    break
             if self.tile(nxt).water:
                 if not self._standable(p, nxt):
                     break
