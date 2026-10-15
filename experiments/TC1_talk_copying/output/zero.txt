@@ -1,0 +1,8 @@
+seed 501, 20 years: code_tc1 defaults = control code = code_bl0 (without and with the log): yes
+  arm s: differs from W: yes; parts add up (largest error 6.11e-16): yes
+  arm n: differs from W: yes; parts add up (largest error 5e-16): yes
+seed 601, 20 years: code_tc1 defaults = control code = code_bl0 (without and with the log): yes
+  arm s: differs from W: yes; parts add up (largest error 6.11e-16): yes
+  arm n: differs from W: yes; parts add up (largest error 7.77e-16): yes
+code_tc1 fingerprint: bc215674c899d479d75c29fc93e8b2f9d3ec75300b47a53bf78e1f583a68565d
+All: PASS
