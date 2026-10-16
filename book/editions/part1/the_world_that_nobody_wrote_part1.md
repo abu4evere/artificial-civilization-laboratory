@@ -1584,6 +1584,8 @@ Why? Filling something with water pulls on a person only as something untried, a
 
 The person holding the vessel was never thirsty. The thirsty people had no vessel.
 
+**Correction, added on 16 October 2026:** "never thirsty" is too strong. The record says Reibik had known almost no thirst, not none; read "almost never thirsty". Nor does it show that the small urge is the whole reason the vessel was never filled. It shows the choices Reibik made instead, and how small the urge was.
+
 Reibik died of illness in year 17, about forty-four years old. Nobody ever held one of the vessels again. The recipe lived on in Reibik's children and their learners for another fifty-five years. In the world's 3,743rd week, Baigi, Reibik's child, starved to death. The next week, the world recorded that the knowledge was gone.
 
 **Why it mattered.** What spread through seed 304 for sixty years was a carrier. The thing that could have made dry land livable was in people's hands the whole time, and nobody ever saw what it was. Reibik is the clearest single case of the interaction bottleneck, and the reason E7 exists.
