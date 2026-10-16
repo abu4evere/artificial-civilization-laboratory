@@ -47,3 +47,6 @@ experiments/AA1_artifact_audit/after_ws1.log
 experiments/LK1_location_knowledge/run_detached*
 experiments/SA1_sensitivity/after_lk1.log
 experiments/SA1_sensitivity/run_detached*
+
+# full-text paper downloads (copyrighted; kept locally, not published)
+research_notes/papers/
