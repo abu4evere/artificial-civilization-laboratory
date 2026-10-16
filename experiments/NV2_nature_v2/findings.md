@@ -54,3 +54,10 @@ demography. Measuring this, not improving the world, was the purpose; v2 was not
 **What it decides (the creator decides):** whether to sign off nature v2. If signed off: the live package `acl/` moves to
 v2, future studies start from `code_v2` with all four on, and every past result stays on v1 (tagged `nature-v1`). Not
 in v2: the mortality scale (paused), situation-specific copying (TC1; needs its evidence review).
+
+## Sign-off (16 October 2026)
+
+The creator, after reading this comparison: "**approve nature v2**". Nature v2 is `code_v2` with all four changes on
+(`loved_location = "last_seen"`, `corner_block = 1`, `ashore_if_float_breaks = 1`, `knowledge_copy = 1`) on the control
+code's settings (`anticipation_weight = 1.0`), tagged `nature-v2`. Every past result stays on v1 (`nature-v1`, the control
+code). New studies start from v2. The live package `acl/` is moved to v2 next (its own commit, with tests; recorded below).
