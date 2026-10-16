@@ -6,7 +6,7 @@ the file named.
 - [ ] Nature candidates N1–N7 under Law 126: what to do with each (`experiments/NL1_nature_line/audit.md`)
 - [ ] Law 126 open point 3: classify all ~1,340 formula constants, or the outcome-related ones first (`experiments/NL1_nature_line/rule20_draft.md`)
 - [ ] Law 126 open point 4: kin and ownership knowledge case by case, or a general rule (same file)
-- [ ] **Book voice** (16 October): direction accepted (the creator's plain voice; first person only from the creator's words, every sentence labelled); Chapter 11 is the pilot, not approved for publication (`drafts/voice_pilot_ch11.md`)
+- [ ] **Book voice** (16 October): **paused by the creator until they have read the whole book**; direction accepted (the creator's plain voice; first person only from the creator's words, every sentence labelled); Chapter 11 is the pilot, not approved for publication (`drafts/voice_pilot_ch11.md`)
 - [ ] Book pilot (movement VII): approve its tone, so the other movements can be rewritten (`book/pilot/movement_VII.md`)
 - [ ] The Creator's Note (the book's Chapter 0), in the creator's own words (`drafts/creators_note.md` when started)
 - [x] Last-seen memory instead of A5, and the A1 fix: **approved by the creator, 13 October 2026**, for nature v2, built after BL0 as one change (zero checks, new reference fingerprints, comparison on fresh seeds; `nature-v1` kept for every past result) (`experiments/LK1_location_knowledge/findings.md`)
