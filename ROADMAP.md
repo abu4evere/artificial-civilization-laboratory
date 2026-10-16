@@ -356,6 +356,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **TC1 done** (`experiments/TC1_talk_copying/findings.md`; frozen; W reproduces BL0 exactly). Three ways of learning from talk: today's whole-table copying, copying only what the speaker is living now, and none. **Frozen reading: unresolved** (both sets): removing copying makes families' habits only a fifth to a third more distinct from strangers'; most of the sameness stays. **But whose habits they are flips:** own experience 37% → 65% / 75%, with habits steering exactly as much and no change in survival. **Next: the creator decides** whether situation-specific copying goes to an evidence review as a nature candidate; the nature v2 comparison runs now.
 
+**NV2 done** (`experiments/NV2_nature_v2/findings.md`; frozen; Amendment 1; zero checks pass). Nature v2 (last-seen memory, the A1 corner fix, the ST1 raft fix and the knowledge-record copy) against v1 on 256 new worlds: **no meaningful effect on survival** (94 against 97 died out; interval inside the yardstick), births and partner finding unchanged. Three unintended channels and one bookkeeping flaw removed at no measurable cost. The sham came close to the yardstick by chance alone. **Next: the creator signs off v2 (or not)**; then the SA1 follow-up (256 seeds), then MB1b.
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).
