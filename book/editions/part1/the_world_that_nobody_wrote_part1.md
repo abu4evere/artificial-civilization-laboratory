@@ -12,9 +12,11 @@ For a hundred and two weeks of that life, Reibik stood within reach of fresh wat
 
 Reibik never once filled it.
 
-It was not that Reibik could not. It was that nothing inside ever asked. Reibik had lived beside water and had almost never been thirsty, and someone who has never been thirsty does not wonder what a hollow thing might be for. Out on the dry land, meanwhile, other people went thirsty. They had never seen a vessel. Reibik had never known thirst.
+It was not that Reibik could not. The record shows what Reibik weighed instead: foraging, giving food, talking, going to find people. Filling the vessel never came near the top. In that world, the urge to fill a thing grows with how much thirst a person has known, and Reibik had lived beside water and had known almost none; the urge was a small fraction of an ordinary one. Out on the dry land, meanwhile, other people went thirsty. They had never seen a vessel.
 
 The person holding the vessel was never thirsty. The thirsty people had no vessel.
+
+Whether that small urge is the whole reason, the record cannot say. It gives the puzzle, not the answer.
 
 Reibik never existed. Reibik lived inside a computer, in a world built to answer one question: if nobody writes civilization into a world, will it ever appear on its own? Every word above is taken from the record that world kept, week by week.
 
@@ -1993,3 +1995,7 @@ After each experiment:
 - Never edit an earlier chapter to make the project look wiser than it was. If a chapter turns out to be wrong, leave it, and add a correction saying when and how it was found to be wrong.
 
 The code shows what ACL is. This book is meant to show how ACL became what it is.
+
+## Corrections to this edition
+
+**16 October 2026 — the Prologue.** The first release of Part One (15 October) said of Reibik: "It was not that Reibik could not. It was that nothing inside ever asked. Reibik had lived beside water and had almost never been thirsty, and someone who has never been thirsty does not wonder what a hollow thing might be for. Out on the dry land, meanwhile, other people went thirsty. They had never seen a vessel. Reibik had never known thirst." That stated a cause more firmly than the record does: it claimed to know what Reibik wondered, made a general law of it, and said "never" where the record says "almost none". The record (the E6 autopsy) shows that filling the vessel never came among Reibik's top four options, and that the urge to fill it, which grows with thirst known, was about 0.04 against 0.3 to 1 for ordinary choices; it does not show that this is the whole reason. The paragraph was rewritten to say only that, with the creator's approval, and the old wording is kept here.

@@ -1,7 +1,7 @@
 # Publishing Part One: Zenodo and Amazon KDP (the creator uploads; everything below is ready to copy)
 
 Files (this folder):
-- `The_World_That_Nobody_Wrote_Part_One.pdf`: 225 pages, 6 × 9 in, the print and Zenodo file
+- `The_World_That_Nobody_Wrote_Part_One.pdf`: 226 pages, 6 × 9 in, the print and Zenodo file
 - `The_World_That_Nobody_Wrote_Part_One.docx`: the Kindle ebook file
 - Cover: `cover_part1.png` (1600 × 2400 px; the book's cover with "PART ONE" under the subtitle)
 - Already public: GitHub release `book-part-one` (https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)
@@ -54,7 +54,7 @@ You need: a KDP account (kdp.amazon.com), your tax interview and bank details (o
 **Paperback**
 1. **Create → Paperback**, same details.
 2. **Print options:** black ink on white paper · trim size **6 × 9 in** · no bleed · matte cover.
-3. **Manuscript:** upload the **PDF** (margins already meet KDP's rules for 225 pages).
+3. **Manuscript:** upload the **PDF** (margins already meet KDP's rules for 226 pages).
 4. **Cover:** use **Cover Creator** with `cover_part1.png` as the front; it builds the spine and back to the right width.
 5. Order a **proof copy** before publishing, to check it in your hands.
 6. ISBN: KDP gives one free (Amazon becomes the listed publisher), or buy your own from Bowker.
