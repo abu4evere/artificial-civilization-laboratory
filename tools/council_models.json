@@ -1,13 +1,77 @@
 {
-  "_note": "Models the council asks. Turn one on with \"enabled\": true. Ollama models must be downloaded first (ollama pull NAME); cloud models need an Ollama sign-in. NVIDIA models need ONE key in the NVIDIA_API_KEY environment variable (set by the creator with setx; never written in any file). Names from build.nvidia.com, October 2026.",
-  "models": [
-    {"provider": "ollama", "model": "qwen2.5:3b", "enabled": true, "where": "this PC (free, unlimited, small)"},
-    {"provider": "ollama", "model": "gpt-oss:120b-cloud", "enabled": false, "where": "Ollama Cloud (free monthly allowance; needs sign-in)"},
-    {"provider": "nvidia", "model": "deepseek-ai/deepseek-v4.1-flash", "enabled": false, "where": "NVIDIA Build: DeepSeek"},
-    {"provider": "nvidia", "model": "z-ai/glm-5.3", "enabled": false, "where": "NVIDIA Build: Z.ai"},
-    {"provider": "nvidia", "model": "moonshotai/kimi-k3", "enabled": true, "where": "NVIDIA Build: Moonshot (slow, deep reasoning)"},
-    {"provider": "nvidia", "model": "google/gemma-4-31b-it", "enabled": true, "where": "NVIDIA Build: Google"},
-    {"provider": "nvidia", "model": "z-ai/glm-5.3-flash", "enabled": false, "where": "NVIDIA Build: Z.ai, faster"},
-    {"provider": "nvidia", "model": "meta/muse-glimmer-30b", "enabled": false, "where": "NVIDIA Build: Meta"}
-  ]
+ "_note": "Models the council asks. Turn one on with \"enabled\": true. Ollama models must be downloaded first (ollama pull NAME); cloud models need an Ollama sign-in. NVIDIA models need ONE key in the NVIDIA_API_KEY environment variable (set by the creator with setx; never written in any file). Names from build.nvidia.com, October 2026.",
+ "models": [
+  {
+   "provider": "ollama",
+   "model": "qwen2.5:3b",
+   "enabled": true,
+   "where": "this PC (free, unlimited, small)"
+  },
+  {
+   "provider": "ollama",
+   "model": "gpt-oss:120b-cloud",
+   "enabled": false,
+   "where": "Ollama Cloud (free monthly allowance; needs sign-in)"
+  },
+  {
+   "provider": "nvidia",
+   "model": "deepseek-ai/deepseek-v4.1-flash",
+   "enabled": false,
+   "where": "NVIDIA Build: DeepSeek"
+  },
+  {
+   "provider": "nvidia",
+   "model": "z-ai/glm-5.3",
+   "enabled": false,
+   "where": "NVIDIA Build: Z.ai"
+  },
+  {
+   "provider": "nvidia",
+   "model": "moonshotai/kimi-k3",
+   "enabled": false,
+   "where": "NVIDIA Build: Moonshot (retired by NVIDIA, HTTP 410, 16 October 2026)"
+  },
+  {
+   "provider": "nvidia",
+   "model": "moonshotai/kimi-k2.6",
+   "enabled": false,
+   "where": "NVIDIA Build: Moonshot (replaces kimi-k3) — listed by NVIDIA but answers 404 (16 October 2026)"
+  },
+  {
+   "provider": "nvidia",
+   "model": "google/gemma-4-31b-it",
+   "enabled": true,
+   "where": "NVIDIA Build: Google"
+  },
+  {
+   "provider": "nvidia",
+   "model": "z-ai/glm-5.3-flash",
+   "enabled": false,
+   "where": "NVIDIA Build: Z.ai, faster"
+  },
+  {
+   "provider": "nvidia",
+   "model": "meta/muse-glimmer-30b",
+   "enabled": false,
+   "where": "NVIDIA Build: Meta"
+  },
+  {
+   "provider": "nvidia",
+   "model": "nvidia/nemotron-3-ultra-550b-a55b",
+   "enabled": false,
+   "where": "NVIDIA Build: NVIDIA — listed by NVIDIA but answers 404 (16 October 2026)"
+  },
+  {
+   "provider": "nvidia",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "enabled": true,
+   "where": "NVIDIA Build: NVIDIA (answers, 16 October 2026)"
+  },
+  {
+   "provider": "nvidia",
+   "model": "openai/gpt-oss-20b",
+   "enabled": true,
+   "where": "NVIDIA Build: OpenAI open-weights, small (answers, 16 October 2026)"
+  }
+ ]
 }

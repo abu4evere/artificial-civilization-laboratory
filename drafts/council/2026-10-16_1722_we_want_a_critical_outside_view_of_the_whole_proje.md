@@ -1,0 +1,55 @@
+# Council: We want a critical outside view of the whole project so far, and three concrete next steps.
+
+THE PROJECT. A world of sma
+
+Asked 2026-10-16 17:22. **Ideas only; not decisions.** Claude sorts these against ACL's rules before anything is used.
+
+## The question
+
+We want a critical outside view of the whole project so far, and three concrete next steps.
+
+THE PROJECT. A world of small islands on a 40 by 40 grid. Twenty founders, no tools, no knowledge. People have programmed bodies (hunger, thirst, cold, illness, ageing, pregnancy), drives and temperament, and learn habits by simple reinforcement learning (a table of 32 situations by 17 actions). Materials have physical properties; anything tied, struck, shaped or heated becomes a new object whose uses are never named in the rules. People talk (gossip, stories, where water is, how to make things), give gifts, store food, mark things, pair up, raise children. A historian outside the world names things after the fact and never changes anything. Runs are exactly replayable. Every study is frozen in writing before it runs (predictions, thresholds, a sham arm that changes nothing but one random draw), uses fresh seeds, and wrong predictions are kept on record.
+
+WHAT WE FOUND (October 2026):
+1. Culture appears and then freezes. Over 1,000 simulated years, every kind of tool ever made first appeared within the first 11 years; nothing new for 990 years. Inventions are lost when their only holders die (one child fired the only clay pot in a thousand years and starved 14 weeks later). A vessel was invented and used 104 times as a carrier but never filled with water by its maker, who lived beside water and was rarely thirsty; the thirsty people never saw it. Tools add little to food (a few percent), so the world gives little reason to keep or improve them. Watching others led to copying only 7 times in 1,770 observations.
+2. Worlds die out, mostly because people cannot find partners. About a third of 20-founder worlds die within 120 years. Giving people perfect partner search removes about half of that. Bands rarely meet: between-lineage meeting is about 0.05 per adult pair-year in today's world, and almost zero in a larger world with 80 founders, even though that larger world survives best because its bands are big enough on their own.
+3. Sensitivity: survival depends strongly on unanchored numbers, above all how far people can see (halve it: 49 of 64 worlds die; double it: 8 die; normal: 22). A tile has no measured size, so sight cannot be anchored in metres. Forager data (Binford's 175 fully mobile societies) give: camps move every 4.3 weeks, about 28 km each move; dispersed camps of about 16 people, aggregated about 37. In our world, people move every week, up to 3 tiles, and see 4.
+4. Habits: learned habits steer about one adult choice in seven. More than half of an adult's habit table was copied wholesale from others in conversation; own experience 37%. Copying only the habits for the speaker's current situation makes habits mostly one's own (65%) with no change in survival. Everyone's habits end up very alike, and most of that sameness remains even with no copying at all (we suspect the shared environment, unproven).
+5. Identity: swapping one part of a person (memories, habits, relationships, skills, temperament) on a copy of the world never changes them beyond chance; swapping everything except temperament does.
+6. We just fixed four unintended shortcuts (people walking toward absent loved ones they could not know the location of; a hidden land bridge at diagonal corners of water; people left standing on open water when a raft broke; a record-keeping flaw). 256 new worlds: no change in survival (94 vs 97 died out).
+
+QUESTIONS (answer each briefly and concretely; say what test would show you right or wrong; say when unsure):
+A. What is the single biggest threat to the validity of what we have concluded so far, that we may not be seeing?
+B. Cumulative culture freezes. Without adding any rule that names an invention or rewards progress, which conditions in the world (not in the minds) would most plausibly let knowledge accumulate, and what is the cheapest experiment to test one?
+C. Our time step is a week, and people relocate every week, while real foragers move camp every month or so and forage out daily. Is that a problem for partner finding and for meeting other bands? How would you test whether it drives our extinction results?
+D. What should we stop doing, or do less of?
+E. If you could run only three more studies, which, in what order, and why?
+
+## nvidia: moonshotai/kimi-k3
+
+(no answer: HTTPError: HTTP Error 410: Gone)
+
+## nvidia: google/gemma-4-31b-it
+
+**A. Biggest Threat to Validity**
+The "Environment-Driven Homogeneity" trap. You conclude that habits are similar because of the shared environment, but you may be seeing a "narrow corridor" effect: your current environment is so restrictive (high death rates, low resource margins) that only one specific set of behaviors allows survival. You aren't seeing "culture" or "shared environment" so much as a strict biological filter.
+*   **Test:** Run a set of worlds with "Luxury" settings (abundant food/water, no cold). If habits still converge to the same patterns as the "Survival" worlds, the environment is the driver. If habits diverge wildly, your previous conclusions about habit-sharing were artifacts of a survival bottleneck.
+
+**B. Cumulative Culture**
+The lack of "Environmental Pressure Gradients." Currently, tools add only a few percent to food, meaning there is no selection pressure to maintain them. For knowledge to accumulate, the environment must have "locked" resources—items that are impossible to acquire without a tool (e.g., calories trapped in a hard shell or high-altitude tubers).
+*   **Cheapest Experiment:** Introduce one resource (e.g., "Hard Nut") that provides high calories but cannot be eaten unless "Struck" by a "Stone" object.
+*   **Success Metric:** The "Hard Nut" tool persists across generations and its usage frequency increases over 1,000 years.
+
+**C. Time Step and Movement**
+Yes, it is a problem. By moving every week, you have created a "jittery" population. Real foragers have high *local* density (daily foraging) and low *regional* density (monthly camp moves). Your agents are essentially "brownian motion" particles. This likely artificially lowers the probability of meaningful social interaction (partner finding) while increasing random encounters.
+*   **Test:** Change the movement rule to "Stay in 1 tile for 4 weeks, then move 1–3 tiles." Keep the total distance moved per month identical to the current setup.
+*   **Prediction:** If extinction rates drop, the "jitter" was the problem.
+
+**D. Stop/Do Less**
+Stop the "Part-Swapping" identity experiments (Finding 5). You have already found that temperament is the only stable anchor; further permutations of memories/habits are unlikely to yield new insights into the nature of the agent.
+
+**E. Three Final Studies (In Order)**
+1.  **The "Locked Resource" Study:** (As described in B). *Why:* To see if the "Culture Freeze" is a failure of the agent's learning or a failure of the environment to reward innovation.
+2.  **The "Residence Time" Study:** (As described in C). *Why:* To determine if your extinction crisis is a biological/demographic reality or a mathematical artifact of the 1-week time step.
+3.  **The "Sight-Anchor" Study:** Redefine "Sight" not as tiles, but as a distance based on the Binford data (e.g., if a camp moves 28km/month, how many tiles is that?). *Why:* To remove the "unanchored number" sensitivity and ground the simulation in real-world spatial ecology.
+
