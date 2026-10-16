@@ -1,0 +1,6 @@
+control code, seed 501, 20 years: identical with and without both observers: yes
+code_p2 with every setting off, seed 501, 20 years: identical to the control code: yes
+control code, seed 601, 20 years: identical with and without both observers: yes
+code_p2 with every setting off, seed 601, 20 years: identical to the control code: yes
+code_e13r fingerprint: 604870638baf6f53ad3a28ff3d5b9461439544c819086700d849faea7b8e622a
+All: PASS
