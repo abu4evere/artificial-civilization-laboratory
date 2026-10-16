@@ -6,7 +6,7 @@ import json
 import time
 from pathlib import Path
 
-from .config import WEEKS_PER_YEAR, Config
+from .config import VERSIONS, WEEKS_PER_YEAR, Config
 from .historian import Historian
 from .world import World
 
@@ -26,7 +26,7 @@ class EventLog:
 
 
 def save_snapshot(world: World, historian: Historian, path: Path) -> None:
-    blob = {"world": world.to_dict(), "historian": historian.to_dict()}
+    blob = {"world": world.to_dict(), "historian": historian.to_dict(), "versions": VERSIONS}
     with gzip.open(path, "wt", encoding="utf-8") as f:
         json.dump(blob, f, separators=(",", ":"))   # key order matters: it is the order people think in
 
@@ -34,6 +34,14 @@ def save_snapshot(world: World, historian: Historian, path: Path) -> None:
 def load_snapshot(path: Path) -> tuple[World, Historian]:
     with gzip.open(path, "rt", encoding="utf-8") as f:
         blob = json.load(f)
+    # A world saved under other laws of nature cannot be continued under these: its things and records are on another
+    # scale. Saves without a version come from before nature v2 (world bible 7.1). Nothing is deleted; run such a world
+    # from the `nature-v1` tag, or begin a new one (`python -m acl live --new` sets the old one aside).
+    saved = blob.get("versions", {"world_bible": "7.1 or earlier"})
+    if saved != VERSIONS:
+        raise ValueError(f"{path} was saved under world bible {saved.get('world_bible')}, but this code is world bible "
+                         f"{VERSIONS['world_bible']} (nature v2). Continue it from the `nature-v1` tag, or begin a new "
+                         f"world; the saved one is left as it is.")
     return World.from_dict(blob["world"]), Historian.from_dict(blob["historian"])
 
 

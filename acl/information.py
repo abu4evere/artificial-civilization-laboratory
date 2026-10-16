@@ -32,7 +32,7 @@ from __future__ import annotations
 
 from . import thought
 from .config import CHILD_END
-from .matter import FLEXIBLE, MATERIALS
+from .matter import FLEXIBLE, FORMS, MATERIALS
 from .person import PLACEABLE
 from .social import HARM, bump, react, remember, salience_for
 from .util import clamp
@@ -293,6 +293,13 @@ def _recipe_as_shown(world, teacher, learner, recipe: dict) -> dict:
         out["parts"] = list(out["parts"])
     if rng.random() >= max(0.04, err):
         return out
+    if out["verb"] == "shape":
+        out["form"] = rng.choice([f for f in FORMS if f != out["form"]])
+        return out
+    if out["verb"] == "heat":
+        if out["part"] in MATERIALS:
+            out["part"] = rng.choice([m for m in MATERIALS if m != out["part"]])
+        return out
     if out["verb"] == "strike":
         roll = rng.random()
         if roll < 0.4:
@@ -324,8 +331,15 @@ def _belief_as_told(world, key: str) -> str:
 
 
 def _sig_of(recipe: dict) -> str:
-    if recipe["verb"] == "strike":
+    v = recipe["verb"]
+    if v == "strike":
         return f"{recipe['target']}/{recipe['tool']}"
+    if v == "shape":
+        return f"{recipe['material']}~{recipe['form']}"
+    if v == "heat":
+        return f"{recipe['part']}^{recipe.get('level', 0)}"
+    if v == "fill":
+        return f"try:fill:{recipe['substance']}"
     return f"({recipe['parts'][0]}+{recipe['parts'][1]})#{recipe['binder']}"
 
 

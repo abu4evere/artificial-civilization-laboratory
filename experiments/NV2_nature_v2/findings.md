@@ -61,3 +61,14 @@ The creator, after reading this comparison: "**approve nature v2**". Nature v2 i
 (`loved_location = "last_seen"`, `corner_block = 1`, `ashore_if_float_breaks = 1`, `knowledge_copy = 1`) on the control
 code's settings (`anticipation_weight = 1.0`), tagged `nature-v2`. Every past result stays on v1 (`nature-v1`, the control
 code). New studies start from v2. The live package `acl/` is moved to v2 next (its own commit, with tests; recorded below).
+
+## The live package moved to v2 (16 October 2026)
+
+`acl/` now holds `code_v2`'s rules (world bible 8.1) with nature v2 as its defaults (`anticipation_weight = 1.0` and the
+four changes on); its own viewer files (`viewer.py`, `viewer.html`, `viewer_pixel.html`, `mindview.py`, with v2's two new
+action names) are kept. **Check:** with no settings given, the live package reproduces v2's signed-off reference
+fingerprints exactly (seeds 11 and 501), so `tests/reference_hashes.json`'s "acl" entry now equals "v2". Tests adapted
+and recorded: two matter tests read v2's 0–100 property scale; the ST1 stranding test lost its `xfail` mark, as it was
+written to (world 803 is no longer stranded); saves now record their laws' version, and a save from before v2 is refused
+with a message (not loaded into the wrong laws, not deleted). All tests pass. Before this, the live package was the
+older world bible 7.1, which no study has used since E8; it stays at the tag `nature-v1`.

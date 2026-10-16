@@ -36,7 +36,7 @@ STAGE_ACTIONS = {
 
 # Frozen version labels, recorded with every experiment run so results are
 # reproducible and comparable across future revisions.
-VERSIONS = {"world_bible": "7.1", "world": "0.3", "agent": "0.3"}
+VERSIONS = {"world_bible": "8.1", "world": "0.4", "agent": "0.4"}
 
 
 @dataclass
@@ -62,6 +62,10 @@ class Config:
     wood_regrow: float = 0.3
     stone_cap: float = 15.0
     stone_regrow: float = 0.05
+    clay_cap: float = 6.0              # soft wet earth, only by rivers and lakes
+    clay_regrow: float = 0.02
+    char_cap: float = 5.0              # what a fire that burned for a while leaves
+    char_per_week: float = 0.15
     flint_cap: float = 4.0             # only on some rocky tiles
     flint_regrow: float = 0.02
     fiber_cap: float = 12.0
@@ -79,7 +83,8 @@ class Config:
     wood_burn: float = 1.0             # fuel a fire uses per week
     wood_fuel: float = 1.5             # fuel one unit of wood adds
     fire_warmth: float = 0.6           # share of cold a fire keeps off
-    cooking_saving: float = 0.15       # cooked food goes further
+    heated_food_saving: float = 0.15       # food that has been in a fire goes further
+    kept_keep: float = 0.25            # food that has been in a fire rots this much as fast
     smoke_keep: float = 0.25           # food near smoke rots this much as fast
 
     # --- piles of things on the ground ------------------------------------
@@ -117,6 +122,16 @@ class Config:
     birth_death_chance: float = 0.01
     mutation: float = 0.08             # how far a child's temperament drifts from its parents'
     camp_radius: int = 2               # partners this close count as living together
+    moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+    home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
+    sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+    loved_location: str = "last_seen"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                       # "last_seen" = toward where the person last had them in sight
+    corner_block: int = 1              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+    ashore_if_float_breaks: int = 1    # NV2 (ST1): 1 = a float that breaks at sea puts its owner ashore half drowned
+    knowledge_copy: int = 1            # NV2: 1 = the record of a first-baked thing holds a copy of it, not the item itself
+    outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
+                                       # their remembered places instead of in a random direction
 
     # --- work -------------------------------------------------------------
     reach: int = 3                     # tiles a person can travel and still act that week
@@ -130,6 +145,11 @@ class Config:
     gather_base: float = 3.0
     gather_skill: float = 4.0
     skill_gain: float = 0.012
+    anticipation_weight: float = 1.0   # E9 (A2): how strongly next season's expected shortage is felt now
+    b2_mode: int = 0                   # E13 (B2): 0 off; 1 follow the best-fed visible adult; 2 the same, among those whose children all live
+                                       # E13R: 3 only models holding under b2_planner_food; 4 only models holding at least that
+    b2_planner_food: float = 80.0      # E13R: E9.3's planner threshold, applied to food a neighbour holds in hand
+    b2_write: bool = True              # E13R sham: False runs the copying step to the point of writing, then returns
 
     # --- minds ------------------------------------------------------------
     choice_temperature: float = 0.2    # how much chance there is in a decision

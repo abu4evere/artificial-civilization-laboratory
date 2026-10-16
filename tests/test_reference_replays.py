@@ -21,7 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REF = Path(__file__).with_name("reference_hashes.json")
 CODES = {"acl": ROOT, "control": ROOT / "experiments" / "E13R_replication" / "code_e13r",
          "v2": ROOT / "experiments" / "NV2_nature_v2" / "code_v2"}
-# Each code's settings: ACL's own code has none; the control copy runs as the experiments do; v2 is the control code with
+# Each code's settings: ACL's own code has none (since 16 October 2026 its defaults are nature v2, so its hashes equal
+# v2's); the control copy runs as the experiments do; v2 is the control code with
 # NV2's four changes on (experiments/NV2_nature_v2/questions.md). Like the control hashes, v2's should never change.
 EXTRA = {"acl": "", "control": ", anticipation_weight=1.0",
          "v2": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1"}

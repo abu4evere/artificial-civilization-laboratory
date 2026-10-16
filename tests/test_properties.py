@@ -72,9 +72,8 @@ def test_laws_hold_every_week(seed, n, f):
         _check_laws(w)
 
 
-@pytest.mark.xfail(reason="known breach of Rule 3: a float that breaks at sea strands its owner for a week "
-                          "(experiments/ST1_stranded_at_sea/finding.md); rare, so random worlds may not hit it",
-                   strict=False)
+# Rule 3 holds since nature v2 (16 October 2026): ST1's fix puts the owner of a float that breaks at sea ashore
+# (experiments/ST1_stranded_at_sea/finding.md; experiments/NV2_nature_v2/questions.md). The xfail mark came off then.
 @settings(**SETTINGS)
 @given(seed=seeds, n=weeks, f=founders)
 def test_nobody_is_stranded_at_sea(seed, n, f):
@@ -94,9 +93,9 @@ def test_world_601_carried_child_is_not_stranded():
     _check_laws(w, stranding=True)
 
 
-@pytest.mark.xfail(reason="ST1: in world 803, week 50, p00002's raft breaks at sea after a theft", strict=True)
-def test_world_803_stranding_is_still_there():
-    """Pins the known breach: when it is fixed, this test fails as 'unexpectedly passing' and the mark comes off."""
+def test_world_803_is_no_longer_stranded():
+    """ST1's case (world 803, week 50: p00002's raft broke at sea after a theft). Under nature v1 this was a pinned
+    breach (strict xfail); nature v2's fix puts the owner ashore, so the test now passes and the mark came off."""
     w = World(Config(seed=803, founders=20))
     while w.tick < 50:
         w.step()

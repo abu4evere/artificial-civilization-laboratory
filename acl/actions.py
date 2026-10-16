@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from . import biology, fauna, information, inquiry, knowhow, marks, matter, social, thought
 from .matter import MATERIALS, best_item, carry_capacity, pile_warmth
-from .mind import COST, MOVE_COST, can_make, forage_rate, hunger_of, hunt_chance, recipe_materials, strength
+from .mind import COST, MOVE_COST, can_fill, can_make, forage_rate, hunger_of, hunt_chance, recipe_materials, strength
 from .person import A, N_ACTIONS, Person
 from .social import bump, remember, witness
 from .util import clamp, distance
@@ -219,6 +219,9 @@ def _gather(world, p, target, eff):
     rate = (c.gather_base + c.gather_skill * p.skills["crafting"]) * eff * f
     got = min(tile.material(kind), rate, max(0.0, c.material_limit - p.mat_total()))
     setattr(tile, kind, tile.material(kind) - got)
+    if matter.RAW[kind][7] >= 50:          # soft earth comes up wet
+        have = p.mats[kind]
+        p.damp[kind] = (p.damp.get(kind, 0) * int(have) + 8 * int(got + 0.5)) // max(1, int(have) + int(got + 0.5))
     p.mats[kind] += got
     p.expect[f"handled:{kind}"] = 1.0
     _judge_use(world, p, idx, kind)
@@ -245,6 +248,8 @@ def _put(world, p, thing, eff):
     _, cover = matter.pile_shape(tile.pile)
     where = ""
     if thing == "food" or (thing == "seeds" and cover >= 0.3):
+        kept = min(p.kept, p.food) * amount / p.food if thing == "food" and p.food > 0 else 0.0
+        p.kept = max(0.0, p.kept - kept)
         p.food -= amount if thing == "food" else 0.0
         p.seeds -= amount if thing == "seeds" else 0.0
         for st in tile.stash:
@@ -252,10 +257,14 @@ def _put(world, p, thing, eff):
                 st[1] += amount if thing == "food" else 0.0
                 st[2] += amount if thing == "seeds" else 0.0
                 st[4] += amount
+                if len(st) > 5:
+                    st[5] += kept
+                else:
+                    st.append(kept)
                 break
         else:
             tile.stash.append([p.id, amount if thing == "food" else 0.0, amount if thing == "seeds" else 0.0,
-                               world.tick, amount])
+                               world.tick, amount, kept])
         where = "stash"
     elif thing == "seeds":
         p.seeds -= amount
@@ -265,8 +274,11 @@ def _put(world, p, thing, eff):
         where = "ground"
     else:
         p.mats[thing] -= amount
-        if tile.fire > 0 and thing in ("wood", "fiber"):
-            tile.fire += amount * (c.wood_fuel if thing == "wood" else 0.5)
+        if tile.fire > 0 and matter.RAW[thing][8] >= 40:
+            wet = p.damp.get(thing, 0)
+            tile.fire += amount * matter.fuel_of(thing) * (1.0 - wet / 12)
+            if wet <= 3:
+                tile.fire_heat = max(tile.fire_heat, matter.fire_heat(thing))
             where = "fire"
         else:
             tile.pile[thing] = tile.pile.get(thing, 0.0) + amount
@@ -300,6 +312,10 @@ def _take(world, p, target, eff):
     room = max(0.0, carry_capacity(world, p) - p.edible())
     food = min(entry[1], room)
     seeds = min(entry[2], max(0.0, room - food))
+    if len(entry) > 5 and entry[1] > 0:
+        kept = min(entry[5], entry[1]) * food / entry[1]
+        entry[5] -= kept
+        p.kept += kept
     entry[1] -= food
     entry[2] -= seeds
     p.food += food
@@ -346,7 +362,15 @@ def _craft(world, p: Person, recipe: dict):
         return None
     rng = world.rng
     _gain_skill(world, p, "crafting")
-    if recipe["verb"] == "strike":
+    if recipe["verb"] == "shape":
+        m = recipe["material"]
+        item = matter.shape(m, recipe["form"], p.damp.get(m, 0))
+        if item is None:
+            return None
+        p.mats[m] -= 1.0
+    elif recipe["verb"] == "heat":
+        return _hold_in_fire(world, p, recipe["part"])
+    elif recipe["verb"] == "strike":
         p.mats[recipe["target"]] -= 1.0
         item = matter.strike(recipe["target"], recipe["tool"], p.skills["crafting"], rng)
         sig = f"{recipe['target']}/{recipe['tool']}"
@@ -377,6 +401,42 @@ def _craft(world, p: Person, recipe: dict):
     return item
 
 
+def _hold_in_fire(world, p: Person, part: str):
+    """Hold a material or a made thing in the fire here. What comes out changed is a new thing; what
+    burns feeds the fire; what was only wet comes out dry."""
+    tile = world.tile(p.loc)
+    if tile.fire <= 0:
+        return None
+    level = tile.fire_heat
+    if part in MATERIALS:
+        thing = matter.raw_props(part)
+        thing["wet"] = p.damp.get(part, 0)
+        p.mats[part] -= 1.0
+        index = None
+    else:
+        index = next((i for i, it in enumerate(p.items) if it["sig"] == part), None)
+        if index is None:
+            return None
+        thing = p.items.pop(index)
+    out, burned = matter.heat(thing, level)
+    if burned:
+        tile.fire += thing["fuel"] * 0.025
+        return None
+    if out is None:
+        leave_trace(tile, "shards", world.tick, 0.5)        # it cracked
+        return None
+    if out["sig"] == thing["sig"]:
+        # Nothing lasting changed: it is only drier.
+        if index is None:
+            p.mats[part] += 1.0
+            p.damp.pop(part, None)
+        else:
+            p.items.insert(index, out)
+        return None
+    _keep(p, out, world.cfg.item_limit)
+    return out
+
+
 def _keep(p: Person, item: dict, limit: int) -> None:
     p.items.append(item)
     while len(p.items) > limit:
@@ -400,9 +460,11 @@ def _spark(world, p: Person) -> None:
         tile.pile["wood"] = tile.pile.get("wood", 0.0) - burned
         tile.pile.pop("fiber", None)
         tile.fire = 1.0 + burned * c.wood_fuel
-    elif p.mats["fiber"] >= 1.0:
+        tile.fire_heat = matter.fire_heat("wood" if burned > 0 else "fiber")
+    elif p.mats["fiber"] >= 1.0 and p.damp.get("fiber", 0) <= 5:      # damp catches; soaked does not
         p.mats["fiber"] -= 1.0
         tile.fire = 1.0
+        tile.fire_heat = matter.fire_heat("fiber")
     else:
         return False
     world.emit("fire", p.id, None, p.loc, how="sparks")
@@ -428,6 +490,16 @@ def _play(world, p, target, eff):
             for h in HARD:
                 if p.mats[h] >= (2.0 if h == t else 1.0):
                     choices.append({"verb": "strike", "target": t, "tool": h})
+    for m in have:
+        if matter.RAW[m][7] >= 50 and p.damp.get(m, 0) >= matter.SOFT_WHEN_WET:
+            for form in matter.FORMS:
+                choices.append({"verb": "shape", "material": m, "form": form})
+    if tile.fire > 0:
+        for part in have + [it["sig"] for it in p.items]:
+            choices.append({"verb": "heat", "part": part, "level": tile.fire_heat})
+    for substance in ("water", "embers", "pour"):
+        if _can_fill(world, p, substance):
+            choices.append({"verb": "fill", "substance": substance})
     binders = [b for b in matter.FLEXIBLE if p.mats[b] >= 1.0]
     if binders:
         parts = [m for m in MATERIALS] + [it["sig"] for it in p.items]
@@ -452,6 +524,9 @@ def _play(world, p, target, eff):
                 pool = near
     recipe = pool[rng.randrange(len(pool))]
     p.expect[_sig_of(recipe)] = 0.0
+    if recipe["verb"] == "fill":
+        _fill(world, p, recipe["substance"], 1.0)
+        return
     item = _craft(world, p, recipe)
     if item is None:
         world.emit("play", p.id, None, p.loc, thing=None)
@@ -462,9 +537,64 @@ def _play(world, p, target, eff):
 
 
 def _sig_of(recipe: dict) -> str:
-    if recipe["verb"] == "strike":
-        return f"{recipe['target']}/{recipe['tool']}"
-    return f"({recipe['parts'][0]}+{recipe['parts'][1]})#{recipe['binder']}"
+    from .information import _sig_of as sig_of
+    return sig_of(recipe)
+
+
+def _heat_food(world, p, target, eff):
+    """Hold food in the fire here. It will keep longer and go further."""
+    tile = world.tile(p.loc)
+    p.expect["tried:heat:food"] = 1.0
+    if tile.fire <= 0:
+        return
+    amount = min(p.food - min(p.kept, p.food), 15.0 * eff)
+    if amount < 1.0:
+        return
+    p.kept += amount
+    p.reward += 0.02
+    p.doing = "heat food"
+    world.emit("heat", p.id, None, p.loc, thing="food", amount=round(amount, 2))
+
+
+def _can_fill(world, p, substance: str) -> bool:
+    return can_fill(world, p, substance)
+
+
+def _fill(world, p, substance, eff):
+    """Fill something carried with water or embers, or tip embers out onto dry fuel."""
+    p.expect["tried:fill:" + substance] = 1.0
+    if not _can_fill(world, p, substance):
+        return
+    tile = world.tile(p.loc)
+    if substance in ("water", "embers"):
+        it = p.items[matter.best_holder(p, substance)]
+        it["holds"] = [substance, matter.can_hold(it, substance)]
+        if substance == "embers":
+            tile.fire = max(0.0, tile.fire - 0.5)
+        p.doing = f"fill with {substance}"
+        world.emit("fill", p.id, None, p.loc, substance=substance, **{"with": it["sig"]})
+        return
+    # Tip the embers out onto something dry that burns.
+    it = p.items[matter.holding(p, "embers")]
+    it["holds"] = None
+    kind = next(k for k in ("char", "wood", "fiber") if p.mats.get(k, 0.0) >= 1.0 and p.damp.get(k, 0) <= 5)
+    p.mats[kind] -= 1.0
+    tile.fire = 1.0 + matter.fuel_of(kind)
+    tile.fire_heat = matter.fire_heat(kind)
+    cold = weather_cold(world, p)
+    got = 1.0 if cold > 0.3 else 0.5
+    before = p.expect.get("fire:embers", 0.0)
+    p.expect["fire:embers"] = round(before + 0.3 * (got - before), 3)
+    inquiry.surprised(world, p, "f:embers", before, got)
+    knowhow.judge_item(world, p, it["sig"], 0.3 * got)
+    p.doing = "light a fire"
+    world.emit("fire", p.id, None, p.loc, how="embers", **{"with": it["sig"]})
+    world.emit("consequence", p.id, None, p.loc, what="fire_carried")
+
+
+def weather_cold(world, p) -> float:
+    from .weather import coldness
+    return coldness(world, p.loc)
 
 
 def _explore(world, p, target, eff):
@@ -660,6 +790,7 @@ def _join(world, p, target, eff):
 HANDLERS = {
     "rest": _rest, "forage": _forage, "hunt": _hunt, "gather": _gather, "put": _put,
     "take": _take, "make": _make, "play": _play, "explore": _explore, "give": _give,
+    "heat": _heat_food, "fill": _fill,
     "care": _care, "talk": _talk, "court": _court, "steal": _steal, "attack": _attack,
     "flee": _flee, "join": _join,
 }

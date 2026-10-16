@@ -139,6 +139,20 @@ def drink(world, p) -> float:
             walk = 6.0 * (best - c.water_reach) * (1.0 - 0.6 * min(1.0, f - 1.0))
             p.energy = max(0.0, p.energy - walk)
         return 0.0
+    from .matter import holding
+    idx = holding(p, "water")
+    if idx >= 0:
+        # Water carried from somewhere else: drunk where there is none to be had.
+        from .knowhow import judge_item
+        it = p.items[idx]
+        it["holds"][1] -= 1
+        if it["holds"][1] <= 0:
+            it["holds"] = None
+        before = p.expect.get("fill:water", 0.0)
+        p.expect["fill:water"] = round(before + 0.3 * (1.0 - before), 3)
+        judge_item(world, p, it["sig"], 0.5)
+        world.emit("consequence", p.id, None, p.loc, what="water_carried", thing=it["sig"])
+        return 0.0
     if salt_near(world, p.loc):
         # Water is water, as far as anyone knows, until they drink the sea. It does not help.
         expected = p.expect.get("salt", 1.0)

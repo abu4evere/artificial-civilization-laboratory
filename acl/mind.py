@@ -22,17 +22,18 @@ from __future__ import annotations
 from . import fauna, inquiry, thought, weather
 from .knowhow import belief
 from .config import WEEKS_PER_YEAR
-from .matter import MATERIALS, best_item
+from .matter import MATERIALS, SOFT_WHEN_WET, best_holder, best_item, holding
 from .person import A, N_ACTIONS, PLACEABLE, Person
 from .util import clamp, distance, softmax_pick
+import math
 
 COST = {
     "rest": 0, "forage": 25, "hunt": 40, "gather": 25, "put": 10, "take": 10, "make": 25,
     "play": 15, "explore": 30, "give": 5, "care": 15, "talk": 10, "court": 10,
-    "steal": 15, "attack": 35, "flee": 25, "join": 20,
+    "steal": 15, "attack": 35, "flee": 25, "join": 20, "heat": 10, "fill": 10,
 }
 MOVE_COST = 4
-GATHERABLE = ("stone", "flint", "wood", "fiber")
+GATHERABLE = ("stone", "flint", "wood", "fiber", "clay", "char")
 
 
 def own_stash(world, p: Person, radius: int | None = None) -> list:
@@ -106,11 +107,16 @@ def decide(world, p: Person) -> tuple:
     st = p.stage(tick)
     season = world.season
     w, h = c.width, c.height
+    if c.loved_location == "last_seen":
+        remember_loved(world, p)       # NV2 (LK1): before deciding, note where loved ones in sight are
 
     deps = world.dependents(p.id)
     dep_need = sum(d.need(c, tick) for d in deps)
     need = p.need(c, tick)
     hunger = hunger_of(world, p, dep_need)
+    # E9 (A2): a season in which they have gone short is felt a season early, only in the pull to get food.
+    ahead = c.anticipation_weight * p.expect.get(f"short@{(world.season + 1) % 4}", 0.0)
+    food_hunger = max(hunger, ahead)
     fatigue = 1.0 - p.energy / 100.0
     maxh = p.max_health(tick)
     water_here = weather.reachable_fresh(world, p, p.loc, c.water_reach) is not None
@@ -118,7 +124,7 @@ def decide(world, p: Person) -> tuple:
                      or world.island_of(p.loc) == world.island_of((p.voyage[0], p.voyage[1]))):
         p.voyage = None
     _look_for_water(world, p)
-    thought.attend(world, p, hunger, fatigue)
+    thought.attend(world, p, hunger, fatigue, food_hunger)
 
     near = world.people_near(p.loc, c.reach, exclude=p.id)
     near.sort(key=lambda q: (distance(p.loc, q.loc, w, h), q.id))
@@ -130,6 +136,7 @@ def decide(world, p: Person) -> tuple:
     lw = c.learned_weight
 
     options: list = []   # (score, action, target)
+    p2 = None            # P2 logging: (kind, destination) when the seeker branch with no one in sight fired
 
     # Places with no water in sight are where thirst comes. The more it has hurt, the more that weighs.
     dry_cost = 0.0 if world.sky.get("rain") else 0.1 + 0.8 * p.thirst + 0.3 * p.expect.get("dry", 0.0)
@@ -189,7 +196,7 @@ def decide(world, p: Person) -> tuple:
             d = distance(p.loc, t, w, h)
             tile = world.tile(t)
             got = min(tile.plants + tile.crop, rate) * (1.0 - 0.1 * d)
-            u = (0.25 + 1.6 * hunger) * min(1.0, got / (need * 1.5)) + 0.08 * g["diligence"]
+            u = (0.25 + 1.6 * food_hunger) * min(1.0, got / (need * 1.5)) + 0.08 * g["diligence"]
             if u > best_u:
                 best, best_u, best_d = t, u, d
         add("forage", best, best_u, best_d)
@@ -210,7 +217,7 @@ def decide(world, p: Person) -> tuple:
             chance = hunt_chance(world, n, p.skills["hunting"], tool)
             share = (c.hunt_prey_base + c.hunt_prey_per_hunter * min(n, 5)) / n
             ev = chance * share * (1.0 - 0.1 * d)
-            u = (0.25 + 1.6 * hunger) * min(1.0, ev / (need * 1.5)) * (0.7 + 0.6 * g["boldness"]) + 0.05
+            u = (0.25 + 1.6 * food_hunger) * min(1.0, ev / (need * 1.5)) * (0.7 + 0.6 * g["boldness"]) + 0.05
             # What they have learned to fear holds them back.
             dread = max((fauna.fear_of(p, h["sp"]) for h in fauna.near(world, t, 0)), default=0.0)
             u -= 0.5 * dread * (1.0 - 0.5 * g["boldness"])
@@ -248,9 +255,14 @@ def decide(world, p: Person) -> tuple:
     if grown:
         # Make again something that has proved its worth.
         best, best_u = None, 0.05
+        fire_here = world.tile(p.loc).fire > 0
+        part_of = _wanted_parts(p)
         for sig, recipe in p.recipes.items():
-            # Valued for what the thing does, or for what happened last time it was made here.
-            v = p.itemval.get(sig, 0.0)
+            if recipe["verb"] == "heat" and not fire_here:
+                continue
+            # Valued for what the thing does, for what it goes into, or for what happened last time
+            # it was made here.
+            v = max(p.itemval.get(sig, 0.0), part_of.get(sig, 0.0))
             if recipe["verb"] == "strike":
                 v = max(v, belief(p, f"{recipe['target']}/{recipe['tool']}@{season}") or 0.0)
             # Something about it surprised them: they want to try it again and see.
@@ -267,6 +279,19 @@ def decide(world, p: Person) -> tuple:
         put = _best_put(world, p, need + dep_need, hunger, season, c)
         if put is not None:
             add("put", put[0], put[1])
+
+        # Hold food in the fire here; fill something carried with water or embers; tip embers out.
+        if world.tile(p.loc).fire > 0 and p.food - min(p.kept, p.food) >= 2.0:
+            add("heat", "food", _worth_trying(p, "heat:food", c) * (1.0 - 0.5 * hunger))
+        for substance in ("water", "embers", "pour"):
+            if can_fill(world, p, substance):
+                if substance == "water":
+                    u = _worth_trying(p, "fill:water", c) * (0.5 + p.expect.get("dry", 0.0) + p.thirst)
+                elif substance == "embers":
+                    u = _worth_trying(p, "fill:embers", c, "fire:embers")
+                else:
+                    u = _worth_trying(p, "fill:pour", c, "fire:embers") * (0.3 + weather.coldness(world, p.loc))
+                add("fill", substance, u)
 
     # Take back food you left, or someone else's if hunger outweighs scruples.
     if not small:
@@ -299,6 +324,7 @@ def decide(world, p: Person) -> tuple:
 
     if grown:
         # Explore: curiosity, or hunger when nothing nearby is worth eating.
+        dest_random = False
         explore_u = 0.04 + 0.25 * g["curiosity"] * (1.0 - hunger)
         if best_forage < 0.5 * (0.25 + 1.6 * hunger):
             explore_u += 0.6 * hunger
@@ -322,6 +348,7 @@ def decide(world, p: Person) -> tuple:
             else:
                 dest = world.nearest_land(p.loc, p)
         else:
+            dest_random = True
             dest = world.nearest_land(((p.loc[0] + rng.choice((-c.reach, 0, c.reach))) % w,
                                        (p.loc[1] + rng.choice((-c.reach, c.reach))) % h), p)
         add("explore", dest, explore_u, c.reach)
@@ -418,7 +445,16 @@ def decide(world, p: Person) -> tuple:
                     add("join", world.step_toward_land(p.loc, q.loc, c.reach, p), 0.3 + 0.3 * g["sociability"], c.reach)
                     break
             else:
-                add("explore", dest, 0.15 + 0.25 * g["sociability"] + 0.15 * g["boldness"], c.reach)
+                # P2: with no one in sight, the step goes outward, away from the places they have known.
+                sdest, kind = dest, "off"
+                if c.outward_search:
+                    centre = _places_centre(p, w, h) if dest_random else None
+                    if centre is not None and centre != p.loc:
+                        sdest, kind = world.step_away_land(p.loc, centre, c.reach, p), "outward"
+                    else:
+                        kind = "fallback"
+                p2 = (kind, sdest)
+                add("explore", sdest, 0.15 + 0.25 * g["sociability"] + 0.15 * g["boldness"], c.reach)
 
         # Animals someone said they saw further off: worth the walk when hungry.
         if hunger > 0.3:
@@ -431,10 +467,10 @@ def decide(world, p: Person) -> tuple:
                         break
 
         # Go back to family and friends when they are out of reach.
-        for q, aff, kin in _far_people(world, p):
+        for q, aff, kin, spot, src in _far_people(world, p):
             u = (0.2 + 0.6 * p.loneliness * g["sociability"] + 0.5 * kin
                  + (0.6 if p.partner == q.id else 0.0)) * max(aff, 0.2) * (1.0 - 0.5 * hunger)
-            add("join", world.step_toward_land(p.loc, q.loc, c.reach, p), u, c.reach)
+            add("join", world.step_toward_land(p.loc, spot, c.reach, p), u, c.reach)
 
         # Go back to the place where life has been best.
         if home and distance(p.loc, home, w, h) > 0:
@@ -466,6 +502,7 @@ def decide(world, p: Person) -> tuple:
         options = [o for o in options if o[1] in allowed]
     if not options:
         p.considered = []
+        _p2_log(world, p2, ("rest", None))
         return ("rest", None)
     options = thought.steer(p, options)
     i = softmax_pick(rng, [o[0] for o in options], c.choice_temperature)
@@ -473,7 +510,65 @@ def decide(world, p: Person) -> tuple:
     p.considered = [[options[k][1], _aim(options[k][2]), round(options[k][0], 2), 1 if k == i else 0] for k in ranked]
     if i not in ranked:
         p.considered.append([options[i][1], _aim(options[i][2]), round(options[i][0], 2), 1])
+    _p2_log(world, p2, (options[i][1], options[i][2]))
     return (options[i][1], options[i][2])
+
+
+def _p2_log(world, p2, chosen) -> None:
+    """P2 logging copy: a log outside the world's state (set by the runner); nothing reads it."""
+    log = getattr(world, "p2log", None)
+    if log is not None and p2 is not None:
+        log.append((p2[0], chosen[0] == "explore" and chosen[1] == p2[1]))
+
+
+def _places_centre(p, w: int, h: int):
+    """P2: the centre of the places p remembers, as a mean position on the wrapping map, per axis; no weights.
+    None when there are no places or an axis has no defined mean."""
+    if not p.places:
+        return None
+    out = []
+    for axis, size in ((0, w), (1, h)):
+        s = co = 0.0
+        for key in sorted(p.places):
+            a = 2.0 * math.pi * int(key.split(",")[axis]) / size
+            s += math.sin(a)
+            co += math.cos(a)
+        if abs(s) < 1e-9 and abs(co) < 1e-9:
+            return None
+        out.append(int(round(math.atan2(s, co) * size / (2.0 * math.pi))) % size)
+    return tuple(out)
+
+def _worth_trying(p: Person, key: str, c, learned: str | None = None) -> float:
+    """What doing this has been worth to them, or, if they have never tried it, the pull of the new."""
+    if "tried:" + key not in p.expect:
+        return 0.02 + c.novelty * p.genes["curiosity"]
+    return c.worth_weight * p.expect.get(learned or key, 0.0) * (0.5 + 0.5 * p.genes["diligence"])
+
+
+def _wanted_parts(p: Person) -> dict:
+    """Made things that go into something they value and do not have: worth making for that."""
+    out: dict = {}
+    for sig, recipe in p.recipes.items():
+        v = p.itemval.get(sig, 0.0)
+        if v <= 0 or _holding(p, sig):
+            continue
+        parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe["verb"] == "heat" else [])
+        for part in parts:
+            if part not in MATERIALS and not _holding(p, part, worn_ok=True):
+                out[part] = max(out.get(part, 0.0), 0.8 * v)
+    return out
+
+
+def can_fill(world, p: Person, substance: str) -> bool:
+    """Can p fill something with water or embers here, or tip embers out onto something dry that burns?"""
+    tile = world.tile(p.loc)
+    if substance == "water":
+        return best_holder(p, "water") >= 0 and \
+            weather.reachable_fresh(world, p, p.loc, world.cfg.water_reach) is not None
+    if substance == "embers":
+        return tile.fire > 0 and best_holder(p, "embers") >= 0
+    return (holding(p, "embers") >= 0 and tile.fire <= 0 and not tile.water
+            and any(p.mats.get(k, 0.0) >= 1.0 and p.damp.get(k, 0) <= 5 for k in ("fiber", "wood", "char")))
 
 
 def _aim(target) -> str:
@@ -545,6 +640,12 @@ def _best_put(world, p: Person, total_need: float, hunger: float, season: int, c
 def recipe_materials(recipe: dict) -> list:
     if recipe["verb"] == "strike":
         return [recipe["target"], recipe["tool"]]
+    if recipe["verb"] == "shape":
+        return [recipe["material"]]
+    if recipe["verb"] == "heat":
+        return [recipe["part"]] if recipe["part"] in MATERIALS else []
+    if recipe["verb"] == "fill":
+        return []
     out = [part for part in recipe["parts"] if part in MATERIALS]
     out.append(recipe["binder"])
     return out
@@ -552,6 +653,16 @@ def recipe_materials(recipe: dict) -> list:
 
 def can_make(p: Person, recipe: dict) -> bool:
     """Are the materials and parts for this recipe in hand?"""
+    if recipe["verb"] == "shape":
+        m = recipe["material"]
+        return p.mats.get(m, 0.0) >= 1.0 and p.damp.get(m, 0) >= SOFT_WHEN_WET
+    if recipe["verb"] == "heat":
+        part = recipe["part"]
+        if part in MATERIALS:
+            return p.mats.get(part, 0.0) >= 1.0
+        return any(it["sig"] == part for it in p.items)
+    if recipe["verb"] == "fill":
+        return False
     need: dict = {}
     if recipe["verb"] == "strike":
         need[recipe["target"]] = 1
@@ -647,24 +758,51 @@ def _nearest_spring(world, p: Person):
     return best
 
 
-def _far_people(world, p: Person) -> list:
-    """Loved ones beyond reach that p might travel toward: partner, parents, children, best friend."""
-    c = world.cfg
-    out = []
+def _loved_ids(p: Person) -> list:
     seen = []
     for pid in (p.partner, p.mother, p.father, *p.children):
         if pid and pid not in seen:
             seen.append(pid)
     if p.friend and p.friend not in seen:
         seen.append(p.friend)
-    for pid in seen:
+    return seen
+
+
+def remember_loved(world, p: Person) -> None:
+    """LK1, last_seen only: note where each loved one in sight is this week. Draws nothing at random."""
+    c = world.cfg
+    for pid in _loved_ids(p):
+        q = world.people[pid]
+        if q.alive and distance(p.loc, q.loc, c.width, c.height) <= c.perception:
+            p.seen_at[pid] = [q.loc[0], q.loc[1], world.tick]
+
+
+def _far_people(world, p: Person) -> list:
+    """Loved ones beyond reach that p might travel toward: partner, parents, children, best friend.
+    Returns (person, affection, kinship, where to go, "now" or "memory"). Today ("current") that is where they are now (AA1's A5); with
+    loved_location "last_seen" (LK1) it is where they are if in sight, or else where they were last seen, a memory spent
+    once that spot is in sight and they are not there."""
+    c = world.cfg
+    last_seen = c.loved_location == "last_seen"
+    out = []
+    for pid in _loved_ids(p):
         q = world.people[pid]
         if not q.alive:
             continue
-        if distance(p.loc, q.loc, c.width, c.height) <= c.reach:
+        d = distance(p.loc, q.loc, c.width, c.height)
+        if d <= c.reach:
             continue
+        spot, src = q.loc, "now"
+        if last_seen and d > c.perception:
+            mem = p.seen_at.get(pid)
+            if not mem:
+                continue
+            spot, src = (mem[0], mem[1]), "memory"
+            if distance(p.loc, spot, c.width, c.height) <= c.perception:
+                del p.seen_at[pid]       # they can see the place, and nobody is there
+                continue
         r = p.rel.get(pid)
         aff = r.affection if r else 0.0
-        out.append((q, aff, world.kinship(p, q)))
+        out.append((q, aff, world.kinship(p, q), spot, src))
     return out[:3]
 

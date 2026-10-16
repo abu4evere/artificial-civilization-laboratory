@@ -218,10 +218,11 @@ def teach(world, teacher, learner, parent: bool = False) -> bool:
 
 def can_follow(learner, recipe: dict) -> bool:
     """A recipe that needs a made part can only be followed by someone who knows how to make that part."""
-    for part in recipe.get("parts", ()):
-        if part.startswith("(") or "/" in part:
-            if part not in learner.recipes:
-                return False
+    from .matter import MATERIALS
+    parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe.get("verb") == "heat" else [])
+    for part in parts:
+        if part not in MATERIALS and part not in learner.recipes:
+            return False
     return True
 
 

@@ -43,6 +43,23 @@ def test_snapshot_resume_matches_straight_run(tmp_path):
     assert straight["metrics"] == resumed["metrics"]
 
 
+def test_a_world_saved_under_other_laws_is_not_continued(tmp_path):
+    """A save from before nature v2 has no version; it is refused, not loaded into the wrong laws, and left on disk."""
+    import gzip
+    import json
+    import pytest
+    w, h = new_world(11)
+    save_snapshot(w, h, tmp_path / "snap.json.gz")
+    with gzip.open(tmp_path / "snap.json.gz", "rt", encoding="utf-8") as f:
+        blob = json.load(f)
+    del blob["versions"]
+    with gzip.open(tmp_path / "old.json.gz", "wt", encoding="utf-8") as f:
+        json.dump(blob, f)
+    with pytest.raises(ValueError, match="nature-v1"):
+        load_snapshot(tmp_path / "old.json.gz")
+    assert (tmp_path / "old.json.gz").exists()
+
+
 def test_serialisation_round_trip():
     w, _ = new_world(3)
     w.run(52 * 2)
@@ -216,23 +233,27 @@ def test_teaching_passes_knowledge_on():
 # --- physics of things ---------------------------------------------------------
 
 class _Fixed:
+    """The luckiest strike: the highest roll (nature v2 draws whole numbers, and keeps properties on a 0-100 scale)."""
     def random(self):
         return 1.0
+
+    def randrange(self, lo, hi):
+        return hi - 1
 
 
 def test_struck_flint_takes_an_edge():
     flake = matter.strike("flint", "stone", skill=0.5, rng=_Fixed())
-    assert flake["edge"] > 0.55
+    assert flake["edge"] > 55
     assert classify(flake) == ["blade"]
     stick = matter.strike("wood", "wood", skill=0.5, rng=_Fixed())
-    assert stick is None or stick["edge"] < 0.15
+    assert stick is None or stick["edge"] < 15
 
 
 def test_a_blade_on_a_shaft_reaches_and_cuts():
     flake = matter.strike("flint", "stone", skill=0.5, rng=_Fixed())
     spear = matter.bind(flake, matter.raw_props("wood"), "fiber")
     assert "spear" in classify(spear)
-    assert spear["warm"] < 0.3
+    assert spear["warm"] < 30
     assert matter.factor(spear, "hunt") > 1.5
 
 

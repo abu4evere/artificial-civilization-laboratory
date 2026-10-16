@@ -11,7 +11,7 @@ import hashlib
 import json
 import random
 
-from . import actions, biology, decision, fauna, geo, marks, weather
+from . import actions, biology, decision, fauna, geo, marks, matter, weather
 from .config import CHILD_END, INFANT_END, SEASONS, WEEKS_PER_SEASON, WEEKS_PER_YEAR, Config
 from .matter import best_float, pile_shape
 from .person import GENES, SKILLS, Person, Relation
@@ -22,7 +22,8 @@ class Tile:
     __slots__ = ("x", "y", "biome", "water", "temp", "height", "cost",
                  "fertility", "rock", "forest", "wildness", "flinty",
                  "plants", "wood", "stone", "flint", "fiber",
-                 "sown", "crop", "fire", "pile", "builders", "stash", "marks", "traces")
+                 "sown", "crop", "fire", "pile", "builders", "stash", "marks", "traces",
+                 "clay", "char", "fire_heat")
 
     def __init__(self, x, y, biome, water, temp, height, cost,
                  fertility, rock, forest, wildness, flinty):
@@ -46,6 +47,9 @@ class Tile:
         self.sown = 0.0        # seed lying in the ground
         self.crop = 0.0        # food growing from it
         self.fire = 0.0        # fuel left in a fire burning here
+        self.fire_heat = 0     # how hot it burns, 0 .. 10: as hot as the best fuel in it
+        self.clay = 0.0        # soft wet earth
+        self.char = 0.0        # what burnt-out fires left
         self.pile: dict[str, float] = {}       # materials people have set down here
         self.builders: dict[str, float] = {}   # who set them down, and how much
         self.stash: list[list] = []            # [owner, food, seeds, tick] food people have set down here
@@ -57,7 +61,7 @@ class Tile:
     _SAVED = ("biome", "water", "temp", "height", "cost",
               "fertility", "rock", "forest", "wildness", "flinty",
               "plants", "wood", "stone", "flint", "fiber", "sown", "crop", "fire",
-              "pile", "builders", "stash", "marks", "traces")
+              "pile", "builders", "stash", "marks", "traces", "clay", "char", "fire_heat")
 
     def to_list(self) -> list:
         return [getattr(self, k) for k in self._SAVED]
@@ -70,7 +74,7 @@ class Tile:
         return t
 
     def material(self, kind: str) -> float:
-        return getattr(self, kind) if kind in ("wood", "stone", "flint", "fiber") else 0.0
+        return getattr(self, kind) if kind in ("wood", "stone", "flint", "fiber", "clay", "char") else 0.0
 
 
 # How much of each kind of trace is still plain to see after a week.
@@ -155,6 +159,28 @@ class World:
                 t.fiber = c.fiber_cap * t.fertility * 0.6
                 row.append(t)
             self.tiles.append(row)
+        for x, y in sorted(self.banks()):
+            self.tiles[y][x].clay = c.clay_cap * 0.6
+
+    def banks(self) -> set:
+        """Land by rivers and lakes, where the ground is soft and wet. The map never changes."""
+        if getattr(self, "_banks", None) is None:
+            c = self.cfg
+            out = set()
+            for row in self.tiles:
+                for t in row:
+                    if t.water:
+                        continue
+                    if t.biome == "river":
+                        out.add((t.x, t.y))
+                        continue
+                    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                        n = self.tiles[(t.y + dy) % c.height][(t.x + dx) % c.width]
+                        if n.biome in ("lake", "river"):
+                            out.add((t.x, t.y))
+                            break
+            self._banks = out
+        return self._banks
 
     def _make_founders(self) -> None:
         c = self.cfg
@@ -248,6 +274,12 @@ class World:
             if here == dst:
                 break
             nxt = step_toward(here, dst, 1, c.width, c.height)
+            # NV2 (A1, branch nature-v2-a1): a diagonal step squeezes between two side tiles. If both are water the
+            # walker cannot stand on, the step crosses water at a corner, which Rule 3 forbids as surely as wading in.
+            if c.corner_block and nxt[0] != here[0] and nxt[1] != here[1]:
+                if (not self._standable(p, (nxt[0], here[1]))
+                        and not self._standable(p, (here[0], nxt[1]))):
+                    break
             if self.tile(nxt).water:
                 if not self._standable(p, nxt):
                     break
@@ -427,6 +459,8 @@ class World:
         self.plan = {}
         self.week_decisions = []
         self._living = None
+        if self.cfg.sham_draw and self.tick == 0:
+            self.rng.random()                 # HB1 sham: perturbs the world's history, changes no rule
         self._grow_land()
         weather.new_week(self)
         self.reindex()
@@ -448,6 +482,10 @@ class World:
             option = decision.decide(self, p).chosen
             actions.perform(self, p, option)
         actions.resolve_hunts(self)
+        if self.cfg.home_base:
+            self._return_home()
+        if self.cfg.moving_camp:
+            self._meet_partners()
 
         # Infants and children go where their caregiver goes.
         for p in self.living():
@@ -458,6 +496,21 @@ class World:
 
         biology.body_phase(self)
 
+        # NV2 (ST1): a float can wear out after its owner has gone out on it (traced: it falls apart in the week's
+        # bodily phase). Whoever then ends the week on water with nothing that floats struggles ashore half drowned, as
+        # `actions._over_water` does when a float is missing. Oldest first, so a carer reaches land before the children
+        # in their care are checked; a child in an afloat carer's boat stays with them (intended).
+        if self.cfg.ashore_if_float_breaks:
+            for p in sorted(self.living(), key=lambda q: (q.birth, q.id)):
+                if not p.alive or not self.tile(p.loc).water or self.passable(p, p.loc):
+                    continue
+                carer = self.people.get(p.caregiver) if p.caregiver else None
+                if carer is not None and carer.alive and carer.loc == p.loc and self.passable(carer, carer.loc):
+                    continue
+                self.move(p, self.nearest_land(p.loc))
+                p.health -= 10.0
+                p.hurt_by = p.hurt_by or "drowning"
+
         line = json.dumps(self.events, sort_keys=True, separators=(",", ":"))
         self.event_chain = hashlib.sha256((self.event_chain + line).encode()).hexdigest()
         events = self.events
@@ -466,6 +519,52 @@ class World:
         for obs in self.observers:
             obs(self, events)
         return events
+
+    def couple_home(self, a, b):
+        """HB1: the place either partner remembers with the highest combined value (zero for a place one of them does
+        not remember); None if neither remembers anywhere. Ties go to the lower key, so it draws no random numbers."""
+        keys = set(a.places) | set(b.places)
+        if not keys:
+            return None
+        best = max(sorted(keys), key=lambda k: a.places.get(k, 0.0) + b.places.get(k, 0.0))
+        x, y = best.split(",")
+        return (int(x), int(y))
+
+    def _return_home(self) -> None:
+        """HB1: after the week's actions, partnered adults within reach of their couple's home go back to it."""
+        c = self.cfg
+        done = set()
+        for p in self.living():
+            if p.id in done or not p.partner or p.age(self.tick) < 16 * WEEKS_PER_YEAR:
+                continue
+            q = self.people[p.partner]
+            if not q.alive:
+                continue
+            done.update((p.id, q.id))
+            home = self.couple_home(p, q)
+            if home is None:
+                continue
+            for r in (p, q):
+                if r.age(self.tick) >= 16 * WEEKS_PER_YEAR and distance(r.loc, home, c.width, c.height) <= c.reach:
+                    self.move(r, home)
+
+    def _meet_partners(self) -> None:
+        """MC1: after the week's actions, partners within reach of each other end the week together, on whichever of
+        their two tiles holds more wild plant food (ties to the lower coordinates). No fixed home; no random draw."""
+        c = self.cfg
+        done = set()
+        for p in self.living():
+            if p.id in done or not p.partner or p.age(self.tick) < 16 * WEEKS_PER_YEAR:
+                continue
+            q = self.people[p.partner]
+            if not q.alive or q.age(self.tick) < 16 * WEEKS_PER_YEAR:
+                continue
+            done.update((p.id, q.id))
+            if distance(p.loc, q.loc, c.width, c.height) > c.reach:
+                continue
+            best = max(sorted((p.loc, q.loc)), key=lambda loc: self.tile(loc).plants)
+            for r in (p, q):
+                self.move(r, best)
 
     def run(self, weeks: int) -> None:
         for _ in range(weeks):
@@ -488,6 +587,7 @@ class World:
         winter = s == 3
         dieback = c.winter_dieback * (1.0 + 2.0 * max(0.0, self.sky["hard"]))
         decay = dict(c.pile_decay)
+        banks = self.banks()
         for row in self.tiles:
             for t in row:
                 cap = c.plant_cap * t.fertility
@@ -498,6 +598,8 @@ class World:
                 t.stone = min(c.stone_cap * t.rock, t.stone + c.stone_regrow * t.rock)
                 if t.flinty:
                     t.flint = min(c.flint_cap, t.flint + c.flint_regrow)
+                if (t.x, t.y) in banks:
+                    t.clay = min(c.clay_cap, t.clay + c.clay_regrow)
                 if s != 3:
                     t.fiber = min(c.fiber_cap * t.fertility, t.fiber + c.fiber_regrow * t.fertility * g)
 
@@ -519,8 +621,11 @@ class World:
 
                 # Fire burns its fuel down; set-down things slowly rot.
                 if t.fire > 0:
+                    if t.fire_heat >= 5:
+                        t.char = min(c.char_cap, t.char + c.char_per_week)
                     t.fire = max(0.0, t.fire - c.wood_burn)
                     if t.fire == 0:
+                        t.fire_heat = 0
                         self.emit("fire_out", None, None, (t.x, t.y))
                 if t.pile:
                     for kind in list(t.pile):
@@ -533,7 +638,10 @@ class World:
                     _, cover = pile_shape(t.pile)
                     rate = c.spoil_rate * (1.0 - 0.6 * cover) * (c.smoke_keep if t.fire > 0 else 1.0)
                     for st in t.stash:
-                        st[1] *= 1.0 - rate
+                        kept = min(st[5], st[1]) if len(st) > 5 else 0.0
+                        st[1] = (st[1] - kept) * (1.0 - rate) + kept * (1.0 - rate * c.kept_keep)
+                        if len(st) > 5:
+                            st[5] = kept * (1.0 - rate * c.kept_keep)
                         st[2] *= 1.0 - c.seed_spoil
                     t.stash = [st for st in t.stash if st[1] + st[2] >= 0.2]
                 if t.marks:
@@ -549,6 +657,7 @@ class World:
             t = self.tiles[y][x]
             if t.forest > 0.4 and t.fire <= 0:
                 t.fire = 3.0
+                t.fire_heat = matter.fire_heat("wood")
                 t.wood *= 0.7
                 t.plants *= 0.5
                 self.emit("fire", None, None, (x, y), how="lightning")

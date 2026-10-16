@@ -17,7 +17,7 @@ ACTION_WORDS = {
     "put": "set down", "take": "fetch food left earlier", "make": "make", "play": "fiddle with things",
     "explore": "wander off and look around", "give": "give food to", "care": "look after", "talk": "talk with",
     "court": "court", "steal": "steal from", "attack": "attack", "flee": "get away from danger",
-    "join": "go to",
+    "join": "go to", "heat": "hold food in the fire", "fill": "fill something they carry",
 }
 
 

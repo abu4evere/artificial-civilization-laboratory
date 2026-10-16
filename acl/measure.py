@@ -131,7 +131,7 @@ class Lab:
         p = world.people.get(e.get("a"))
         if rec is None:
             puzzled = bool(p and p.thoughts and p.thoughts[0][0] == "puzzle")
-            props = {k: e[k] for k in ("edge", "reach", "hard", "contain", "warm", "float") if k in e}
+            props = {k: e[k] for k in ("edge", "reach", "hard", "contain", "warm", "float") if k in e} or None
             self.techniques[sig] = {
                 "first": tick, "inventor": e.get("a"), "gen": p.generation if p else 0,
                 "classes": classify(props), "puzzled": puzzled, "lost": [], "found_again": [],
@@ -345,8 +345,8 @@ class Lab:
                 "accuracy_vs_trust_r": _pearson(xs, ys), "sources_measured": len(xs),
                 "accuracy_vs_record_r": _pearson(rx, ry), "record_measured": len(rx), "experts": experts,
                 "rafts_known": sum(1 for q in living if any(
-                    (world.knowledge.get(sig, {}).get("props") or {}).get("float", 0.0) >= 0.65 for sig in q.recipes)),
-                "rafts_carried": sum(1 for q in living if any(it.get("float", 0.0) >= 0.65 for it in q.items))}
+                    (world.knowledge.get(sig, {}).get("props") or {}).get("float", 0) >= 65 for sig in q.recipes)),
+                "rafts_carried": sum(1 for q in living if any(it.get("float", 0) >= 65 for it in q.items))}
 
     def _surprise(self, living: list) -> dict:
         open_now = sum(len(q.puzzles) for q in living)

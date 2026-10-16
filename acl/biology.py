@@ -16,11 +16,12 @@ Bodies need water as well as food. A week without it hurts badly.
 """
 from __future__ import annotations
 
+import copy
 import math
 
-from . import inquiry, knowhow, thought, weather
+from . import inquiry, knowhow, matter, thought, weather
 from .config import CHILD_END, INFANT_END, WEEKS_PER_YEAR
-from .matter import best_item, pile_room, pile_warmth, worn_warmth
+from .matter import best_item, pile_room, pile_shape, pile_warmth, worn_warmth
 from .mind import context_index
 from .person import A, GENES, N_ACTIONS, Person, Relation
 from .social import remember, react
@@ -37,12 +38,18 @@ def body_phase(world) -> None:
         if p.loc not in cold_at:
             cold_at[p.loc] = weather.coldness(world, p.loc)
 
-    # Loose food rots, slower in smoke; seeds keep.
+    # Loose food rots, slower in smoke, and slower if it has been in a fire; seeds keep.
     for p in living:
         rate = c.spoil_rate * (c.smoke_keep if world.tile(p.loc).fire > 0 else 1.0)
-        p.food -= p.food * rate
+        kept = min(p.kept, p.food)
+        p.food = (p.food - kept) * (1.0 - rate) + kept * (1.0 - rate * c.kept_keep)
+        p.kept = kept * (1.0 - rate * c.kept_keep)
         p.seeds -= p.seeds * c.seed_spoil
+        _wet_and_dry(world, p)
 
+    # HF4 logging copy: a ledger outside the world's state (set by the runner); nothing below reads it.
+    ledger = getattr(world, "ledger", None)
+    fed_out = {}
     # Parents feed the young first, as far as their nature takes them.
     for p in living:
         deps = world.dependents(p.id)
@@ -64,6 +71,7 @@ def body_phase(world) -> None:
             p.food -= from_food
             p.seeds -= amount - from_food
             d.food += amount
+            fed_out[p.id] = fed_out.get(p.id, 0.0) + amount
         p.contact = True
         for d in deps:
             d.contact = True
@@ -78,12 +86,25 @@ def body_phase(world) -> None:
         st = p.stage(tick)
         tile = world.tile(p.loc)
         fire = tile.fire > 0
-        need = p.need(c, tick) * (1.0 - c.cooking_saving if fire else 1.0)
-        eat_food = min(p.food, need)
+        need = p.need(c, tick) * (1.0 - c.heated_food_saving if fire else 1.0)
+        held_before = p.food + p.seeds
+        p.kept = min(p.kept, p.food)
+        # Food that has been in a fire goes further, wherever it is eaten.
+        from_kept = 0.0 if fire else min(p.kept, need * (1.0 - c.heated_food_saving))
+        covered = from_kept / (1.0 - c.heated_food_saving)
+        eat_food = from_kept + min(p.food - from_kept, need - covered)
         p.food -= eat_food
-        eat_seeds = min(p.seeds, need - eat_food)
+        p.kept = min(p.kept - from_kept, p.food)
+        eat_seeds = min(p.seeds, need - covered - (eat_food - from_kept))
         p.seeds -= eat_seeds
-        deficit = 1.0 - (eat_food + eat_seeds) / need
+        deficit = 1.0 - (covered + eat_food - from_kept + eat_seeds) / need
+        if ledger is not None:
+            ledger.append((p.id, p.age(tick) >= 16 * WEEKS_PER_YEAR, need, held_before, deficit, fed_out.get(p.id, 0.0)))
+        if from_kept > 0 and st != "infant":
+            # It filled them more than raw food would have: that is something they can feel.
+            felt = min(1.0, (covered - from_kept) / (0.15 * need))
+            before = p.expect.get("heat:food", 0.0)
+            p.expect["heat:food"] = round(before + 0.2 * (felt - before), 3)
         if deficit > 0.05:
             p.health -= c.starvation_damage * deficit
             p.starving += 1
@@ -97,6 +118,10 @@ def body_phase(world) -> None:
         if st != "infant":
             p.thirst = weather.drink(world, p)
             p.expect["dry"] = round(p.expect.get("dry", 0.0) + 0.1 * (p.thirst - p.expect.get("dry", 0.0)), 3)
+            # E9 (A2): what going short of food in this season has been like, learned the way thirst is.
+            short_key = f"short@{world.season}"
+            p.expect[short_key] = round(p.expect.get(short_key, 0.0)
+                                        + 0.1 * ((1.0 if p.starving else 0.0) - p.expect.get(short_key, 0.0)), 3)
             if p.thirst > 0.05:
                 p.health -= c.thirst_damage * p.thirst
                 p.hurt_by = "thirst"
@@ -189,6 +214,8 @@ def body_phase(world) -> None:
         if p.age(tick) >= INFANT_END:
             knowhow.feel_place(p, p.loc, p.wellbeing)
             _learn(world, p)
+            if world.cfg.b2_mode and p.age(tick) >= 16 * WEEKS_PER_YEAR:
+                _follow(world, p)
 
     if tick % 4 == 0:
         for p in world.living():
@@ -200,6 +227,89 @@ def body_phase(world) -> None:
             knowhow.prune_placements(world, p)
             knowhow.forget_useless(p)
         knowhow.check_lost(world)
+
+
+def _wet_and_dry(world, p) -> None:
+    """A week of weather on what p carries. Rain soaks what is in the open (to 5 of 10); going into
+    water soaks everything through (10); a dry week dries things out (by 4, by 6 in summer), and a fire
+    dries them completely. Embers carried in something die down, and go out if it is soaked."""
+    tile = world.tile(p.loc)
+    if tile.water:
+        soak, dry = 10, 0
+    elif weather.raining(world, p.loc) and pile_shape(tile.pile)[1] < 0.3:
+        soak, dry = 5, 0
+    else:
+        soak, dry = 0, 10 if tile.fire > 0 else (6 if world.season == 1 else 4)
+    for k, v in p.mats.items():
+        if v < 0.5:
+            p.damp.pop(k, None)
+            continue
+        w = max(p.damp.get(k, 0), soak) - dry
+        if w > 0:
+            p.damp[k] = min(10, w)
+        else:
+            p.damp.pop(k, None)
+    for it in p.items:
+        it["wet"] = max(0, min(10, max(it.get("wet", 0), soak) - dry))
+        h = it.get("holds")
+        if h and h[0] == "embers":
+            h[1] -= 1
+            if h[1] <= 0 or it["wet"] >= 8:
+                it["holds"] = None
+
+    _passive_water(world, p, tile)
+    _passive_heat(world, p, tile)
+
+
+def _passive_water(world, p, tile) -> None:
+    """E7 (spec 3.1). Rain falls into any open watertight hollow thing carried outside a covered heap,
+    and going into a river or lake fills it. A week of rain is the only measure of rain there is, so
+    it fills the thing."""
+    submerged = tile.water or tile.biome == "river"
+    if not (submerged or (weather.raining(world, p.loc) and pile_shape(tile.pile)[1] <= 0.5)):
+        return
+    for it in p.items:
+        cap = matter.can_hold(it, "water")
+        h = it.get("holds")
+        if cap > 0 and (h is None or h[0] == "water") and (h[1] if h else 0) < cap:
+            it["holds"] = ["water", cap]
+            world.emit("consequence", p.id, None, p.loc, what="water_passive", thing=it["sig"],
+                       how="submerged" if submerged else "rain")
+
+
+def _passive_heat(world, p, tile) -> None:
+    """E7 (spec 3.2). A fire hot enough (6+) sets whatever dry plastic stuff is carried by it, a
+    shaped thing or a lump of raw clay, the same way holding it in the fire would. Food by a fire
+    already rots slower in the smoke; that is only counted here."""
+    if tile.fire <= 0:
+        return
+    if p.food > 0:
+        world.emit("consequence", p.id, None, p.loc, what="food_by_fire")
+    level = tile.fire_heat
+    if level < 6:
+        return
+    for i, it in enumerate(list(p.items)):
+        if it.get("plastic", 0) >= 50 and it.get("wet", 0) <= matter.DRY:
+            out, _ = matter.heat(it, level)
+            if out is not None and out["sig"] != it["sig"]:
+                p.items[i] = out
+                _baked(world, p, it["sig"], out, level)
+    for m in matter.MATERIALS:
+        if matter.RAW[m][7] >= 50 and p.mats.get(m, 0.0) >= 1.0 and p.damp.get(m, 0) <= matter.DRY:
+            thing = matter.raw_props(m)
+            thing["wet"] = 0
+            out, _ = matter.heat(thing, level)
+            if out is not None and out["sig"] != thing["sig"]:
+                from .actions import _keep
+                p.mats[m] -= 1.0
+                _keep(p, out, world.cfg.item_limit)
+                _baked(world, p, m, out, level)
+
+
+def _baked(world, p, part: str, out: dict, level: int) -> None:
+    knowhow.remember_recipe(world, p, out["sig"], {"verb": "heat", "part": part, "level": level}, "heated",
+                            props=copy.deepcopy(out) if world.cfg.knowledge_copy else out)   # NV2: a copy, not the item itself
+    world.emit("consequence", p.id, None, p.loc, what="ceramic_passive", thing=out["sig"])
 
 
 def _who_is_inside(world, living: list) -> dict:
@@ -280,6 +390,37 @@ def _learn(world, p: Person) -> None:
     r = p.reward + 2.0 * (p.mood - p.mood_before)
     i = p.last_ctx * N_ACTIONS + A[p.last_action]
     p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
+
+
+def _follow(world, p: Person) -> None:
+    """E13 (B2): seeing someone who visibly does better forage, and what they got, teaches p what foraging in their
+    situation would be worth to p. Only what is seen is used: the model's action, situation and harvest."""
+    c = world.cfg
+    cands = [q for q in world.people_near(p.loc, c.perception, exclude=p.id)
+             if q.alive and q.age(world.tick) >= 16 * WEEKS_PER_YEAR and q.edible() > p.edible()]
+    if c.b2_mode == 2:
+        cands = [q for q in cands if q.children and all(world.people[k].alive for k in q.children)]
+    elif c.b2_mode == 3:
+        cands = [q for q in cands if q.edible() < c.b2_planner_food]
+    elif c.b2_mode == 4:
+        cands = [q for q in cands if q.edible() >= c.b2_planner_food]
+    if not cands:
+        return
+    m = min(cands, key=lambda q: (-q.edible(), q.id))
+    if m.last_action != "forage":
+        return
+    got = next((e.get("got", 0.0) for e in world.events if e["k"] == "forage" and e.get("a") == m.id), None)
+    if got is None:
+        return
+    from .mind import hunger_of
+    r = 0.3 * min(1.0, got / p.need(c, world.tick)) * (0.3 + 0.7 * hunger_of(world, p))
+    ctx = m.last_ctx
+    future = max(p.q[ctx * N_ACTIONS:(ctx + 1) * N_ACTIONS])
+    i = ctx * N_ACTIONS + A["forage"]
+    new = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
+    if not c.b2_write:
+        return
+    p.q[i] = new
 
 
 def _upbringing(world, p: Person) -> None:

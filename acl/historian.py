@@ -49,7 +49,8 @@ PRACTICES = {
 def classify(props: dict | None) -> list[str]:
     if not props:
         return []
-    e, r, h, c, w = props["edge"], props["reach"], props["hard"], props["contain"], props["warm"]
+    e, r, h, c, w = (props["edge"] / 100, props["reach"] / 100, props["hard"] / 100, props["contain"] / 100,
+                     props["warm"] / 100)
     out = []
     if e >= 0.5 and r >= 0.6:
         out.append("spear")
@@ -61,7 +62,7 @@ def classify(props: dict | None) -> list[str]:
         out.append("carrier")
     if w >= 0.6:
         out.append("wrap")
-    if props.get("float", 0.0) >= 0.65:
+    if props.get("float", 0) / 100 >= 0.65:
         out.append("boat")
     return out
 
@@ -69,6 +70,14 @@ def classify(props: dict | None) -> list[str]:
 def describe(recipe: dict, world) -> str:
     if recipe["verb"] == "strike":
         return f"struck {recipe['target']} with {recipe['tool']}"
+    if recipe["verb"] == "shape":
+        return f"pressed soft {recipe['material']} into a {recipe['form']} shape"
+    if recipe["verb"] == "heat":
+        part = recipe["part"]
+        if part in MATERIALS:
+            return f"held {part} in a fire"
+        rec = world.knowledge.get(part, {}).get("recipe")
+        return "held in a fire the thing they had " + (describe(rec, world) if rec else "made")
     parts = []
     for part in recipe["parts"]:
         if part in MATERIALS:
@@ -153,6 +162,8 @@ class Historian:
 
     def _new_thing(self, world, e):
         props = {k: e[k] for k in ("edge", "reach", "hard", "contain", "warm", "float") if k in e}
+        if len(props) < 6:
+            return
         rec = world.knowledge.get(e["thing"])
         for cls in classify(props):
             name, phrase = CLASSES[cls]

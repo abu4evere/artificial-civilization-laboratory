@@ -1,105 +1,203 @@
 """The physics of things: what materials are like, and what happens when you
-strike one against another, tie them together, set them down or burn them.
+strike one against another, tie them together, press them into a shape, hold
+them in a fire, wet them, set them down or burn them.
 
-Every raw material has five physical properties:
+Every material and every made thing has ten lasting properties, each a whole
+number from 0 to 100 (World Bible v8.1, first-stage rule: discrete core state;
+0-100 keeps the fine differences the older physics depends on, such as a stick
+barely sharpened on a stone):
 
     edge     how well it cuts
     reach    how long it is
     hard     how hard and heavy it is
     contain  how well it holds other things
     warm     how well it keeps cold out
+    float    how well it floats
+    tight    how well it keeps liquid in
+    plastic  how readily it takes and keeps a shape when wet
+    fuel     how well it burns, and how hot
+    flex     how well it bends
+
+and passing states on a 0-10 scale: how wet a thing is, and how hot a fire
+burns; and, for something that holds things, what it holds.
 
 Striking a brittle material with a harder one can flake it to an edge.
 Binding two things with something flexible joins them: the longer reach adds
 up, the sharper edge and harder body carry over. Flexible things joined to
 flexible things cover more, so they hold and wrap better, though each extra
-layer adds less than the one before. Nobody in the world knows any of this. They find
-it out by trying, and they judge what they make by what it does for them.
+layer adds less than the one before. Where two coverings meet, the seam keeps
+liquid in only as well as the binding does.
 
-How useful something is comes only from its properties. There is no list of
-tools anywhere in the code.
+Heat follows the same few rules for everything: it dries what is wet; what
+burns well catches and burns away; what was shaped while soft sets hard and
+tight, harder and tighter the hotter the fire. Food is changed by heat too
+(biology): it keeps longer and goes further.
+
+Nobody in the world knows any of this. They find it out by trying, and they
+judge what they make by what it does for them. How useful something is comes
+only from its properties. There is no list of tools anywhere in the code, and
+no step is named after anything people would later call it.
 """
 from __future__ import annotations
 
 from .util import clamp
 
-MATERIALS = ("stone", "flint", "bone", "wood", "fiber", "hide")
-PROPS = ("edge", "reach", "hard", "contain", "warm", "float")
+MATERIALS = ("stone", "flint", "bone", "wood", "fiber", "hide", "clay", "char")
+PROPS = ("edge", "reach", "hard", "contain", "warm", "float", "tight", "plastic", "fuel", "flex")
 
 RAW = {
-    #         edge   reach  hard  contain warm  float
-    "stone": (0.10, 0.10, 0.80, 0.00, 0.00, 0.00),
-    "flint": (0.25, 0.10, 0.70, 0.00, 0.00, 0.00),
-    "bone":  (0.20, 0.30, 0.50, 0.00, 0.00, 0.03),
-    "wood":  (0.05, 0.60, 0.35, 0.00, 0.00, 0.50),
-    "fiber": (0.00, 0.10, 0.00, 0.25, 0.15, 0.15),
-    "hide":  (0.00, 0.10, 0.00, 0.30, 0.45, 0.25),
+    #        edge reach hard contain warm float tight plastic fuel flex
+    "stone": (10,  10,   80,  0,      0,   0,    0,    0,      0,   0),
+    "flint": (25,  10,   70,  0,      0,   0,    0,    0,      0,   0),
+    "bone":  (20,  30,   50,  0,      0,   3,    0,    0,      10,  10),
+    "wood":  (5,   60,   35,  0,      0,   50,   40,   0,      60,  20),
+    "fiber": (0,   10,   0,   25,     15,  15,   0,    0,      50,  90),
+    "hide":  (0,   10,   0,   30,     45,  25,   60,   0,      20,  60),
+    "clay":  (0,   10,   10,  0,      0,   0,    30,   80,     0,   30),   # wet ground by rivers and lakes
+    "char":  (0,   10,   10,  0,      0,   0,    0,    0,      80,  0),    # what a burnt-out fire leaves
 }
-BRITTLE = {"stone": 0.35, "flint": 0.9, "bone": 0.55, "wood": 0.15, "fiber": 0.0, "hide": 0.0}
-SHARPEST = {"stone": 0.45, "flint": 0.95, "bone": 0.7, "wood": 0.3, "fiber": 0.0, "hide": 0.0}
-FLEXIBLE = ("fiber", "hide")
+BRITTLE = {"stone": 35, "flint": 90, "bone": 55, "wood": 15, "fiber": 0, "hide": 0, "clay": 0, "char": 10}
+SHARPEST = {"stone": 45, "flint": 95, "bone": 70, "wood": 30, "fiber": 0, "hide": 0, "clay": 0, "char": 0}
+FLEXIBLE = tuple(m for m in MATERIALS if RAW[m][9] >= 50)      # what can tie things together
+FORMS = ("hollow", "long", "point")                             # what soft stuff can be pressed into
+SOFT_WHEN_WET = 4        # wetness at which plastic stuff can be shaped
+DRY = 2                  # wetness at or below which a thing counts as dry
 
 
-def item_from(sig: str, edge, reach, hard, contain, warm, float_) -> dict:
-    uses = int(15 + 30 * hard + 25 * warm + 20 * contain)
-    return {"sig": sig, "edge": round(edge, 3), "reach": round(reach, 3), "hard": round(hard, 3),
-            "contain": round(contain, 3), "warm": round(warm, 3), "float": round(float_, 3), "uses": uses}
+def item_from(sig: str, props: dict, wet: int = 0) -> dict:
+    p = {k: int(max(0, min(100, props[k]))) for k in PROPS}
+    uses = 15 + (30 * p["hard"] + 25 * p["warm"] + 20 * p["contain"]) // 100
+    return {"sig": sig, **p, "uses": uses, "wet": wet, "holds": None}
 
 
 def raw_props(kind: str) -> dict:
-    e, r, h, c, w, fl = RAW[kind]
-    return {"sig": kind, "edge": e, "reach": r, "hard": h, "contain": c, "warm": w, "float": fl,
-            "flex": kind in FLEXIBLE}
+    d = dict(zip(PROPS, RAW[kind]))
+    d["sig"] = kind
+    return d
 
 
 def strike(target: str, hammer: str, skill: float, rng) -> dict | None:
     """Hit a raw material with another. Brittle things flake to an edge if the hammer is hard enough."""
-    t, hm = RAW[target], RAW[hammer]
-    force = clamp(hm[2] / max(t[2], 0.1))
-    quality = BRITTLE[target] * force * (0.55 + 0.45 * skill) * (0.8 + 0.2 * rng.random())
-    edge = t[0] + (SHARPEST[target] - t[0]) * clamp(quality)
-    if edge <= t[0] + 0.02:
+    t, hm = raw_props(target), raw_props(hammer)
+    force = min(100, (hm["hard"] * 100) // max(t["hard"], 1))
+    skill100 = int(skill * 100)
+    roll = rng.randrange(80, 101)
+    quality = min(1000, BRITTLE[target] * force * (55 + (45 * skill100) // 100) * roll // 100_000)
+    edge = t["edge"] + ((SHARPEST[target] - t["edge"]) * quality + 500) // 1000      # to the nearest step
+    if edge <= t["edge"] + 2:
         return None
-    return item_from(f"{target}/{hammer}", edge, t[1], t[2] * 0.95, t[3], t[4], t[5])
+    t["edge"] = edge
+    return item_from(f"{target}/{hammer}", t)
 
 
 def sparks(target: str, hammer: str) -> bool:
     """Flint struck against something hard throws sparks."""
-    return "flint" in (target, hammer) and min(RAW[target][2], RAW[hammer][2]) >= 0.5
+    return "flint" in (target, hammer) and min(RAW[target][2], RAW[hammer][2]) >= 50
+
+
+def _layer(x: int, y: int, binder: int) -> int:
+    """Joining coverings: the bigger counts fully, the smaller half, the binding a little."""
+    return max(x, y) + min(x, y) // 2 + (15 * binder) // 100
 
 
 def bind(a: dict, b: dict, binder: str) -> dict:
     """Tie two things together with something flexible."""
     bd = raw_props(binder)
-    flex = int(a.get("flex", False)) + int(b.get("flex", False)) + 1
-    edge = max(a["edge"], b["edge"])
-    reach = clamp(a["reach"] + b["reach"])
-    hard = max(a["hard"], b["hard"])
-    contain = clamp(_layer(a["contain"], b["contain"], bd["contain"]) + 0.1 * flex)
-    warm = clamp(_layer(a["warm"], b["warm"], bd["warm"]))
-    fa, fb = a.get("float", 0.0), b.get("float", 0.0)
-    float_ = clamp(max(fa, fb) + 0.5 * min(fa, fb))   # two buoyant parts together float far better
+    flexible = int(a["flex"] >= 50) + int(b["flex"] >= 50) + 1
+    p = {
+        "edge": max(a["edge"], b["edge"]),
+        "reach": min(100, a["reach"] + b["reach"]),
+        "hard": max(a["hard"], b["hard"]),
+        "contain": min(100, _layer(a["contain"], b["contain"], bd["contain"]) + 10 * flexible),
+        "warm": min(100, _layer(a["warm"], b["warm"], bd["warm"])),
+        "float": min(100, max(a["float"], b["float"]) + min(a["float"], b["float"]) // 2),
+        "plastic": 0,
+        "fuel": max(a["fuel"], b["fuel"], bd["fuel"]),
+        "flex": (a["flex"] + b["flex"]) // 2,
+    }
+    # What holds liquid is whichever part holds things; where two holding parts meet, the seam is only
+    # as tight as what binds them.
+    holder = a if a["contain"] >= b["contain"] else b
+    p["tight"] = holder["tight"]
+    if a["contain"] > 0 and b["contain"] > 0:
+        p["tight"] = min(max(a["tight"], b["tight"]), bd["tight"])
     parts = sorted((a["sig"], b["sig"]))
-    return item_from(f"({parts[0]}+{parts[1]})#{binder}", edge, reach, hard, contain, warm, float_)
+    return item_from(f"({parts[0]}+{parts[1]})#{binder}", p)
 
 
-def _layer(x: float, y: float, binder: float) -> float:
-    """Joining coverings: the bigger counts fully, the smaller half, the binding a little."""
-    return max(x, y) + 0.5 * min(x, y) + 0.15 * binder
+def shape(material: str, form: str, wet: int) -> dict | None:
+    """Press a soft lump into a form. Only what is plastic, and wet enough, takes a shape."""
+    p = raw_props(material)
+    if p["plastic"] < 50 or wet < SOFT_WHEN_WET:
+        return None
+    if form == "hollow":
+        p["contain"] = p["plastic"] - 20
+    elif form == "long":
+        p["reach"] = 20 + p["plastic"] // 2
+    else:
+        p["edge"] = 20
+    return item_from(f"{material}~{form}", p, wet=wet)
+
+
+def heat(thing: dict, level: int) -> tuple[dict | None, bool]:
+    """Hold a thing in a fire of the given heat (0-10). Returns (what is left, whether it burned).
+
+    The same rules for everything: heat dries; what burns well and is dry enough catches and is gone;
+    what is plastic and dry sets hard and tight, the more so the hotter the fire, but if it goes into a
+    hot fire still wet it cracks apart. A thing whose lasting properties changed gets a new name for
+    what it now is (the old name, marked as heated)."""
+    t = dict(thing)
+    wet = t.get("wet", 0)
+    if level >= 2:
+        t["wet"] = 0
+    if t["fuel"] >= 40 and level >= 4 and wet <= 3:
+        return None, True
+    if t["plastic"] >= 50 and level >= 5:
+        if wet > DRY:
+            return None, False           # cracked
+        t["plastic"] = 0
+        t["hard"] = max(t["hard"], 40 + 5 * level)
+        t["tight"] = max(t["tight"], min(90, 10 * level))
+        out = item_from(f"{thing['sig']}^{level}", t)
+        out["uses"] += 10
+        return out, False
+    return t, False
+
+
+def can_hold(item: dict, substance: str) -> int:
+    """How much of a substance a thing can hold (0 if none): water needs it tight; embers need it
+    not to burn, and hard enough to take the heat."""
+    if substance == "water":
+        return item["contain"] // 10 if item["contain"] >= 40 and item["tight"] >= 50 else 0
+    if substance == "embers":
+        return 6 if item["contain"] >= 30 and item["fuel"] <= 20 and item["hard"] >= 40 else 0
+    return 0
+
+
+def fire_heat(kind: str) -> int:
+    """How hot a fire burns on this fuel, 0-10."""
+    return RAW[kind][8] // 10
+
+
+def fuel_of(kind: str) -> float:
+    """How long a unit of this keeps a fire going, in weeks."""
+    return RAW[kind][8] * 0.025
 
 
 # --- what a thing does for you ------------------------------------------------
 
 def factor(item: dict, use: str) -> float:
-    """How much an item multiplies an effort. 1.0 means no help."""
-    e, r, h, c, w = item["edge"], item["reach"], item["hard"], item["contain"], item["warm"]
+    """How much an item multiplies an effort. 1.0 means no help. (Properties on the 0-100 scale are
+    read as fractions here, where they meet the efforts of the body.)"""
+    e, r, h, c, w = (item["edge"] / 100, item["reach"] / 100, item["hard"] / 100, item["contain"] / 100,
+                     item["warm"] / 100)
     if use == "forage":
         return 1.0 + 0.25 * e + 0.3 * c
     if use == "hunt":
         return 1.0 + 1.5 * e * r + 0.3 * h * r
     if use == "wood":
         return 1.0 + 1.2 * e * h
-    if use in ("stone", "flint"):
+    if use in ("stone", "flint", "clay", "char"):
         return 1.0 + 0.5 * h
     if use == "fiber":
         return 1.0 + 0.6 * e
@@ -108,7 +206,7 @@ def factor(item: dict, use: str) -> float:
     if use == "carry":
         return 1.0 + c
     if use == "cold":
-        return 1.0 + w
+        return 1.0 + w * (1.0 - item.get("wet", 0) / 20)      # wet things keep out less cold
     return 1.0
 
 
@@ -123,13 +221,32 @@ def best_item(p, use: str) -> tuple[int, float]:
 
 
 def best_float(p) -> tuple[int, float]:
-    """The item p would use to cross water, and how well it floats. (-1, 0) if none."""
+    """The item p would use to cross water, and how well it floats (as a fraction). (-1, 0) if none."""
     best, best_f = -1, 0.0
     for i, it in enumerate(p.items):
-        f = it.get("float", 0.0)
+        f = it.get("float", 0) / 100
         if f > best_f:
             best, best_f = i, f
     return best, best_f
+
+
+def best_holder(p, substance: str) -> int:
+    """The thing p would put a substance in: empty, and holding the most. -1 if none."""
+    best, best_n = -1, 0
+    for i, it in enumerate(p.items):
+        n = can_hold(it, substance)
+        if n > best_n and not it.get("holds"):
+            best, best_n = i, n
+    return best
+
+
+def holding(p, substance: str) -> int:
+    """Index of a thing p carries that holds some of this substance, or -1."""
+    for i, it in enumerate(p.items):
+        h = it.get("holds")
+        if h and h[0] == substance and h[1] > 0:
+            return i
+    return -1
 
 
 def wear(p, index: int) -> None:

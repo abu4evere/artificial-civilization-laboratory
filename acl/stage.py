@@ -154,7 +154,7 @@ def _told(world, kind, of, to, speaker, listener) -> str:
 
 
 def _imperative(text: str) -> str:
-    for past, now in (("struck", "strike"), ("tied", "tie")):
+    for past, now in (("struck", "strike"), ("tied", "tie"), ("pressed", "press"), ("held", "hold")):
         if text.startswith(past):
             return now + text[len(past):]
     return text

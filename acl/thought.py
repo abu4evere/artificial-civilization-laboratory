@@ -61,7 +61,7 @@ PULLS = {
 }
 
 
-def candidates(world, p, hunger: float, fatigue: float) -> list:
+def candidates(world, p, hunger: float, fatigue: float, food_hunger: float | None = None) -> list:
     """Everything pulling at p's attention this week: [(key, kind, about, strength)]."""
     c = world.cfg
     tick = world.tick
@@ -72,7 +72,7 @@ def candidates(world, p, hunger: float, fatigue: float) -> list:
         if strength > 0.05:
             out.append((f"{kind}:{about or ''}", kind, about, strength))
 
-    add("hunger", None, 1.1 * hunger)
+    add("hunger", None, 1.1 * (hunger if food_hunger is None else food_hunger))   # E9 (A2): food pull only
     add("thirst", None, 1.2 * p.thirst)
     cold = weather.coldness(world, p.loc)
     if cold > 0.1:
@@ -161,11 +161,11 @@ def candidates(world, p, hunger: float, fatigue: float) -> list:
     return out
 
 
-def attend(world, p, hunger: float, fatigue: float) -> list:
+def attend(world, p, hunger: float, fatigue: float, food_hunger: float | None = None) -> list:
     """Choose what holds p's attention this week. Returns the leading thoughts, strongest first."""
     g = p.genes
     pulls = []
-    for key, kind, about, strength in candidates(world, p, hunger, fatigue):
+    for key, kind, about, strength in candidates(world, p, hunger, fatigue, food_hunger):
         if key == p.focus:
             # Whatever held the mind last week holds on: diligence keeps a task, anxiety keeps a worry.
             strength += 0.12 + (0.25 * g["anxiety"] if kind in NEGATIVE else 0.3 * g["diligence"])
