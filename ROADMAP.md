@@ -358,6 +358,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **NV2 done** (`experiments/NV2_nature_v2/findings.md`; frozen; Amendment 1; zero checks pass). Nature v2 (last-seen memory, the A1 corner fix, the ST1 raft fix and the knowledge-record copy) against v1 on 256 new worlds: **no meaningful effect on survival** (94 against 97 died out; interval inside the yardstick), births and partner finding unchanged. Three unintended channels and one bookkeeping flaw removed at no measurable cost. The sham came close to the yardstick by chance alone. **The creator signed off v2 (16 October 2026; tag `nature-v2`)**: new studies start from it; every past result stays on v1. The SA1 follow-up (on v1, as SA1) runs now; then MB1b.
 
+**HS1 done** (`experiments/HS1_habit_sameness/findings.md`; frozen; read-only). Why is everyone's habit table alike? With no copying, **a stranger from a different world is exactly as like a child as a stranger from their own world** (0.838 against 0.839): sharing this world's map, neighbours and history adds nothing; the sameness comes from the nature every world shares. Families still add their own (0.92). It sharpens TC1: copying is not why people are alike. **Also drafted and frozen:** RT1, residence time (ACL's people change place 2.5 times as often as forager camps; SA1-F's evidence review), Amendment 1 approved; it runs after SA1-F.
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).

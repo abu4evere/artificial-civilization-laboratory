@@ -1,0 +1,5 @@
+arm w, seed 501, 20 years: identical with and without the observer: yes
+arm w, seed 601, 20 years: identical with and without the observer: yes
+arm n, seed 501, 20 years: identical with and without the observer: yes
+arm n, seed 601, 20 years: identical with and without the observer: yes 
+All: PASS
