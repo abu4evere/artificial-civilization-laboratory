@@ -147,3 +147,7 @@ every earlier zero check has done), on seeds 11 and 501 (5 years) and 501 and 60
 shows `code_rt1` identical to `code_v2`.
 
 Nothing runs until the creator decides.
+
+**Amendment 1 approved by the creator, 16 October 2026** ("approve RT1 amendment 1"). Frozen as `RT1-amend1`. In
+`code_rt1`: an adult whose move week has come and who ends the week on their base keeps the move week (and its travel
+allowance) into the next week, until they end a week elsewhere. Everything else stands as frozen.

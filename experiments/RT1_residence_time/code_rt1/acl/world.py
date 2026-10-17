@@ -572,6 +572,8 @@ class World:
                 continue
             b = self.bases.get(p.id)
             here_ok = not self.tile(p.loc).water
+            if b is not None and b[2] + 1 >= c.residence_weeks and (p.loc[0], p.loc[1]) == (b[0], b[1]):
+                continue                              # Amendment 1: the move week lasts until they actually move
             if b is None or b[2] + 1 >= c.residence_weeks:
                 if here_ok:
                     self.bases[p.id] = [p.loc[0], p.loc[1], 0]
