@@ -14,9 +14,8 @@ Nemotron: every 2 and 4 weeks).
 
 **Sorted.** The most useful idea of the session, and it meets today's evidence: Binford's 175 mobile societies move camp
 every 4.3 weeks (median; `experiments/SA1_sensitivity/evidence_ratios.py`). **But it is not yet known how often ACL's
-people actually move**: "may move every week" is the rule, not the behaviour. That is being measured now
-(`acl_ratios.py`, read-only). If ACL's people already stay put most weeks, the idea falls away; if they move most weeks,
-it becomes a candidate study. Also: "stay put for n weeks" would be a rule about nature and needs Law 126 (evidence:
+people actually move**: "may move every week" is the rule, not the behaviour. **Measured since** (`acl_ratios.py`, read-only, 16 October): they change place in **59% of weeks**, about 2.5 times as
+often as forager camps, so the idea stands as a candidate study. Also: "stay put for n weeks" would be a rule about nature and needs Law 126 (evidence:
 Binford's data, now in hand), and it must not be tuned toward survival.
 
 ## Worth keeping
