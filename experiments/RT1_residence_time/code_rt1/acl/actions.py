@@ -31,8 +31,8 @@ def perform(world, p: Person, option: tuple) -> None:
             return
         dest = q.loc
     d = distance(p.loc, dest, c.width, c.height)
-    if d > c.reach:
-        dest = world.step_toward_land(p.loc, dest, c.reach, p)
+    if d > world.travel(p):
+        dest = world.step_toward_land(p.loc, dest, world.travel(p), p)
     # Walk there a tile at a time: water stops anyone with nothing that floats (Rule 3).
     start = p.loc
     dest, crossed = world.walk(p, p.loc, dest)

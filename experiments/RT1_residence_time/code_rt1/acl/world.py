@@ -106,6 +106,7 @@ class World:
         # The sky: this year's wetness and winter, and this week's rain, storm and flood.
         self.sky: dict = {"wet": 1.0, "hard": 0.0, "rain": 0, "rained": 0, "roll": 1.0, "storm": None, "flood": 0}
         self.graves: dict[str, int] = {}      # "x,y" -> the week someone last died there
+        self.bases: dict[str, list] = {}      # RT1: person id -> [x, y, weeks since set]; only with residence_weeks
         self.events: list[dict] = []          # this week's events
         self.observers: list = []             # called with (world, events) after each week
         self.hunts: dict[tuple, list] = {}
@@ -484,6 +485,8 @@ class World:
         actions.resolve_hunts(self)
         if self.cfg.home_base:
             self._return_home()
+        if self.cfg.residence_weeks:
+            self._keep_bases()
         if self.cfg.moving_camp:
             self._meet_partners()
 
@@ -547,6 +550,42 @@ class World:
             for r in (p, q):
                 if r.age(self.tick) >= 16 * WEEKS_PER_YEAR and distance(r.loc, home, c.width, c.height) <= c.reach:
                     self.move(r, home)
+
+    def travel(self, p) -> int:
+        """How far a person can travel this week: `reach`, or `residence_weeks` x `reach` in the week their base moves
+        (RT1). Only travel uses this; who counts as near, care and one's own store keep `reach`."""
+        c = self.cfg
+        if c.residence_weeks:
+            b = self.bases.get(p.id)
+            if b is not None and b[2] + 1 >= c.residence_weeks:
+                return c.reach * c.residence_weeks
+        return c.reach
+
+    def _keep_bases(self) -> None:
+        """RT1: after the week's actions, each adult goes back to their base if it is within reach; every
+        `residence_weeks` weeks, or whenever they end beyond reach, where they are becomes the base. No random draw."""
+        c = self.cfg
+        for pid in [k for k in self.bases if not self.people[k].alive]:
+            del self.bases[pid]
+        for p in sorted(self.living(), key=lambda q: q.id):
+            if p.age(self.tick) < 16 * WEEKS_PER_YEAR:
+                continue
+            b = self.bases.get(p.id)
+            here_ok = not self.tile(p.loc).water
+            if b is None or b[2] + 1 >= c.residence_weeks:
+                if here_ok:
+                    self.bases[p.id] = [p.loc[0], p.loc[1], 0]
+                else:
+                    self.bases.pop(p.id, None)        # afloat: the base is set on the next week ended on land
+                continue
+            base = (b[0], b[1])
+            if distance(p.loc, base, c.width, c.height) <= c.reach and self.passable(p, base):
+                self.move(p, base)
+                b[2] += 1
+            elif here_ok:
+                self.bases[p.id] = [p.loc[0], p.loc[1], 0]
+            else:
+                self.bases.pop(p.id, None)
 
     def _meet_partners(self) -> None:
         """MC1: after the week's actions, partners within reach of each other end the week together, on whichever of
@@ -681,6 +720,7 @@ class World:
             "weather": self.weather,
             "sky": self.sky,
             "graves": self.graves,
+            **({"bases": self.bases} if self.cfg.residence_weeks else {}),
         }
 
     @classmethod
@@ -702,6 +742,7 @@ class World:
         w.weather = d["weather"]
         w.sky = d.get("sky", w.sky)
         w.graves = d.get("graves", {})
+        w.bases = {k: list(v) for k, v in d.get("bases", {}).items()}
         w.reindex()
         fauna.index(w)
         return w

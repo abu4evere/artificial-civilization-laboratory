@@ -1,0 +1,10 @@
+Pilot, 16 October 2026, before any study data. Seeds 9801 and 9802 (outside the study's 5001-5256), 15 years.
+"frozen" = code_rt1 as built from the frozen rule; "amended" = the same with the move week lasting until the person
+moves (pilot/world_amended.py). Measures as in the frozen manipulation check. Outcomes (population) are not read.
+
+rw=0 seed=9801: moved share 0.506; distance a month mean 2.38 tiles (n=3020)
+rw=4 seed=9801 frozen: moved share 0.125; distance a month mean 1.31 tiles (n=2482)
+rw=4 seed=9801 amended: moved share 0.201; distance a month mean 1.95 tiles (n=2167)
+rw=0 seed=9802: moved share 0.534; distance a month mean 2.34 tiles (n=2904)
+rw=4 seed=9802 frozen: moved share 0.119; distance a month mean 1.17 tiles (n=2156)
+rw=4 seed=9802 amended: moved share 0.200; distance a month mean 1.97 tiles (n=2182)

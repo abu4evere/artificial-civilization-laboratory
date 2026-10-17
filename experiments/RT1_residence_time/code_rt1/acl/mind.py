@@ -147,6 +147,7 @@ def decide(world, p: Person) -> tuple:
             dry_seen[t] = weather.fresh_near(world, t, c.perception) is None
         return dry_seen[t]
 
+    R = world.travel(p)                  # RT1: how far they can travel this week (reach, unless their base moves)
     def add(action: str, target, u: float, dist: int = 0) -> None:
         if p.energy < COST[action] + MOVE_COST * dist:
             return
@@ -349,13 +350,13 @@ def decide(world, p: Person) -> tuple:
                 dest = world.nearest_land(p.loc, p)
         else:
             dest_random = True
-            dest = world.nearest_land(((p.loc[0] + rng.choice((-c.reach, 0, c.reach))) % w,
-                                       (p.loc[1] + rng.choice((-c.reach, c.reach))) % h), p)
-        add("explore", dest, explore_u, c.reach)
+            dest = world.nearest_land(((p.loc[0] + rng.choice((-R, 0, R))) % w,
+                                       (p.loc[1] + rng.choice((-R, R))) % h), p)
+        add("explore", dest, explore_u, R)
         if world.tile(p.loc).water:
             # Out on the water: getting to land comes before anything else.
             ashore = (p.voyage[0], p.voyage[1]) if p.voyage else world.nearest_land(p.loc)
-            add("explore", ashore, 1.5, c.reach)
+            add("explore", ashore, 1.5, R)
 
     # People within reach.
     my_str = strength(world, p)
@@ -434,7 +435,7 @@ def decide(world, p: Person) -> tuple:
     # Flee someone you fear.
     if threat is not None and st != "child":
         u = fear_total * (0.5 + g["anxiety"]) * (1.0 - g["boldness"]) * 0.9
-        add("flee", world.step_away_land(p.loc, threat.loc, c.reach, p), u, c.reach)
+        add("flee", world.step_away_land(p.loc, threat.loc, R, p), u, R)
 
     if grown:
         # Single adults with no one to court nearby go looking, beyond their own band if need be.
@@ -442,7 +443,7 @@ def decide(world, p: Person) -> tuple:
             for q in world.people_near(p.loc, c.perception + 2, exclude=p.id):
                 if (q.stage(tick) == "adult" and q.sex != p.sex and q.partner is None
                         and world.kinship(p, q) == 0 and abs(p.birth - q.birth) <= 15 * WEEKS_PER_YEAR):
-                    add("join", world.step_toward_land(p.loc, q.loc, c.reach, p), 0.3 + 0.3 * g["sociability"], c.reach)
+                    add("join", world.step_toward_land(p.loc, q.loc, R, p), 0.3 + 0.3 * g["sociability"], R)
                     break
             else:
                 # P2: with no one in sight, the step goes outward, away from the places they have known.
@@ -450,11 +451,11 @@ def decide(world, p: Person) -> tuple:
                 if c.outward_search:
                     centre = _places_centre(p, w, h) if dest_random else None
                     if centre is not None and centre != p.loc:
-                        sdest, kind = world.step_away_land(p.loc, centre, c.reach, p), "outward"
+                        sdest, kind = world.step_away_land(p.loc, centre, R, p), "outward"
                     else:
                         kind = "fallback"
                 p2 = (kind, sdest)
-                add("explore", sdest, 0.15 + 0.25 * g["sociability"] + 0.15 * g["boldness"], c.reach)
+                add("explore", sdest, 0.15 + 0.25 * g["sociability"] + 0.15 * g["boldness"], R)
 
         # Animals someone said they saw further off: worth the walk when hungry.
         if hunger > 0.3:
@@ -463,21 +464,21 @@ def decide(world, p: Person) -> tuple:
                     spot = tuple(int(v) for v in key[2:].split(","))
                     d = distance(p.loc, spot, w, h)
                     if c.reach < d <= 3 * c.reach:
-                        add("join", world.step_toward_land(p.loc, spot, c.reach, p), 0.1 + 0.9 * hunger * hv[0], c.reach)
+                        add("join", world.step_toward_land(p.loc, spot, R, p), 0.1 + 0.9 * hunger * hv[0], R)
                         break
 
         # Go back to family and friends when they are out of reach.
         for q, aff, kin, spot, src in _far_people(world, p):
             u = (0.2 + 0.6 * p.loneliness * g["sociability"] + 0.5 * kin
                  + (0.6 if p.partner == q.id else 0.0)) * max(aff, 0.2) * (1.0 - 0.5 * hunger)
-            add("join", world.step_toward_land(p.loc, spot, c.reach, p), u, c.reach)
+            add("join", world.step_toward_land(p.loc, spot, R, p), u, R)
 
         # Go back to the place where life has been best.
         if home and distance(p.loc, home, w, h) > 0:
             here_v = p.places.get(f"{p.loc[0]},{p.loc[1]}", 0.0)
             home_v = p.places.get(f"{home[0]},{home[1]}", 0.0)
             u = 0.05 + 1.5 * max(0.0, home_v - here_v)
-            add("join", world.step_toward_land(p.loc, home, c.reach, p), u, min(c.reach, distance(p.loc, home, w, h)))
+            add("join", world.step_toward_land(p.loc, home, R, p), u, min(R, distance(p.loc, home, w, h)))
 
         # Thirst pulls toward water they know of; with none known, they go looking.
         if not water_here:
@@ -485,17 +486,17 @@ def decide(world, p: Person) -> tuple:
             pull = 0.3 + 2.5 * p.thirst + (0.0 if world.sky.get("rain") else 0.2)
             spring = _nearest_spring(world, p)
             if spring is not None:
-                add("join", world.step_toward_land(p.loc, spring, c.reach, p), pull,
-                    min(c.reach, distance(p.loc, spring, w, h)))
+                add("join", world.step_toward_land(p.loc, spring, R, p), pull,
+                    min(R, distance(p.loc, spring, w, h)))
             else:
-                add("explore", dest, 0.1 + 0.8 * p.thirst, c.reach)
+                add("explore", dest, 0.1 + 0.8 * p.thirst, R)
 
         # The cold pulls people toward any fire they can see.
         if weather.coldness(world, p.loc) > 0.3:
             fire = _nearest_fire(world, p)
             if fire is not None and fire != p.loc:
-                add("join", world.step_toward_land(p.loc, fire, c.reach, p), 0.5 + 0.3 * (1.0 - p.health / 100.0),
-                    min(c.reach, distance(p.loc, fire, w, h)))
+                add("join", world.step_toward_land(p.loc, fire, R, p), 0.5 + 0.3 * (1.0 - p.health / 100.0),
+                    min(R, distance(p.loc, fire, w, h)))
 
     allowed = c.allowed_actions()
     if allowed is not None:

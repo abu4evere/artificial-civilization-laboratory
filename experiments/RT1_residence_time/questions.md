@@ -125,3 +125,25 @@ adult's own base**; (4) **after SA1-F, before MB1b**. The prior above is frozen 
 - **Seeds** 5001–5256; arms `c`, `r4`, `sham` (C with `sham_draw = 1`); 120 years; 4 workers.
 - **The analysis shows no outcome if the run is not valid** (zero checks, manipulation check, all 768 worlds present,
   one code fingerprint).
+
+## Proposed Amendment 1 (16 October 2026, before any study data; FOR THE CREATOR)
+
+**What the pilot found** (`pilot/pilot.log`; two throwaway worlds outside the study's seeds, 15 years; only the frozen
+manipulation measures were read). Built exactly as frozen, R4 would **fail its own manipulation check**: adults changed
+the place they slept in **12–13% of weeks** (needed 15–35%) and travelled **45% less a month** than C (needed within ±25%).
+The cause: in a move week about half of people choose not to go anywhere, so their base stays put for another four
+weeks. Run as frozen, the main run would most likely be declared "not testing what it meant to", with no reading.
+
+**Proposed change** (one line): **the move week lasts until the person actually moves.** After four weeks at a base, a
+person keeps the move week's travel allowance and does not go back to the base, until a week in which they end somewhere
+else; that place becomes the new base. (A camp stays about a month, then moves the next time people choose to go.)
+In the pilot: **20% of weeks** (forager camps: about 23%) and **17% less distance a month** than C: both inside the frozen
+bands.
+
+**Everything else stands as frozen**: the bands themselves, the readings, the seeds, the arms, the prior. Also recorded
+(a clarification, not a change): v2's reference fingerprints include the world's whole settings list, so with a new
+setting they cannot match byte for byte; the zero check compares `code_rt1` with `code_v2` with the settings left out (as
+every earlier zero check has done), on seeds 11 and 501 (5 years) and 501 and 601 (20 years). Off, the pilot already
+shows `code_rt1` identical to `code_v2`.
+
+Nothing runs until the creator decides.
