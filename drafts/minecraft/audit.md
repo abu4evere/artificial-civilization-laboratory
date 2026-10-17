@@ -95,3 +95,17 @@ adapter and time.
 **Suggested first milestone (when unparked):** the adapter plus one person, no edits beyond the server settings, on a
 flat test map, living one Minecraft day per ACL week: does the mind act sensibly through the bridge (forage, hunt, rest,
 put, flee)? That checks problem 1 before any world-editing is built.
+
+## Added 17 October 2026, after GPT's review (agreed)
+
+1. **Building must stay a physical action, never a translated outcome.** `put` places one block where the person
+   chooses; warmth is then measured from the real blocks around them (enclosure, cover overhead). The bridge never builds
+   a structure or decides that something is a shelter. Whether this behaves like ACL's pile physics is **tested, not
+   assumed**, in the first milestone (one block, a wall, a roof: warmth against ACL's rule for the same materials).
+2. **An approximation ledger**, written before any run: every place the bridge stands in for a rule Minecraft lacks
+   (thirst, cold, birth, ageing, seasons, fire from flint, stealing, care), with ACL's rule, what the bridge does, and how
+   it could bias results.
+3. **The first milestone is behavioural fidelity, not civilization:** one person through the adapter, ACL's decision rules
+   unchanged; check that what it perceives and what its actions do are faithful (forage, hunt, rest, put, flee), and
+   measure the real speed (ACL weeks per hour) before planning any long run. Later: compare habits with frozen ACL worlds
+   by HS1's measure.
