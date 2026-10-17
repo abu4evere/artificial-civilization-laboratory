@@ -1,4 +1,4 @@
-# RT1 — Do people who move as often as real camps find partners and survive better? (DRAFT for the creator's sign-off; nothing built or run)
+# RT1 — Do people who move as often as real camps find partners and survive better? (SIGNED OFF 16 October 2026; frozen as `RT1-frozen` before any code or data)
 
 **Why.** SA1-F's evidence review (`experiments/SA1_sensitivity/evidence_sight_range.md`, 16 October 2026) measured that
 ACL's adults change the place they sleep in **59% of weeks**, while forager camps move every **4.3 weeks** (median of
@@ -89,3 +89,39 @@ found.
 2. How often: **4 weeks only** (recommended), or also 2.
 3. Whose base: **each adult's own** (recommended), or shared by couples or families.
 4. When: after SA1-F (recommended), before or after MB1b.
+
+## Sign-off (16 October 2026)
+
+The creator: "**approve all four recommendations, freeze it**". So: (1) **a camp move is a journey** (up to
+`residence_weeks × reach` tiles in a move week, the same distance a month); (2) **`residence_weeks = 4` only**; (3) **each
+adult's own base**; (4) **after SA1-F, before MB1b**. The prior above is frozen as written.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code `code_rt1`:** a copy of `code_v2` (nature v2 is its defaults: `anticipation_weight = 1.0`, last-seen, corner
+  block, ashore if a float breaks, knowledge copy), then **one commit** adding `residence_weeks` (default 0 = v2 exactly).
+- **Base.** A person gets a base the first week they end as an adult (16 or older): the tile they end that week on, and
+  `weeks since set` = 0. The base and its count are part of the world's saved state (so saved worlds stay exact), and only
+  exist when `residence_weeks` > 0.
+- **The week, for an adult with a base** (after everyone's action and the hunts, before children join their carers, as
+  HB1's step):
+  - if `weeks since set` + 1 = `residence_weeks` (a **move week**): the base becomes where they ended the week; count 0;
+  - otherwise, if they ended the week within `reach` of their base: they go back to it; count + 1;
+  - otherwise (beyond reach, by any route): the base becomes where they are; count 0.
+- **In a move week**, every distance a person can *travel* that week is `residence_weeks × reach` (12): the cap on the
+  week's move and the destinations offered for exploring, joining people, fleeing and going to water, fire or home. Every
+  other use of `reach` (who counts as near, care of children, one's own store, company) is unchanged. Sight is unchanged.
+- **Zero checks (hard stops):** with `residence_weeks = 0`, the state hash equals `code_v2`'s (seeds 501 and 601, 20 years)
+  and v2's reference fingerprints (seeds 11 and 501, 5 years); observers leave the world unchanged (with and without them,
+  seed 501, 20 years, both arms); with `residence_weeks = 4` the world differs (it acts); and a saved and reloaded R4
+  world continues exactly (base state kept).
+- **Manipulation check (measured on the main run; no reading if it fails):** per adult person-week, whether the tile
+  slept on changed from the week before; R4's share must be **15–35%**. **Distance a month:** per adult, the Chebyshev
+  distance between where they slept at the start and the end of each run of 4 weeks (weeks 0–3, 4–7, … of their life as
+  an adult), mean over all such months; R4's must be **within ±25% of C's**.
+- **Observers:** F1's probe (populations, births, deaths by cause, blocked decisions) and MB1a's lineage observer
+  (between-lineage meeting per adult pair-year), loaded unchanged; RT1's own read-only observer for the manipulation
+  check and hunting (successful hunts per adult-year).
+- **Seeds** 5001–5256; arms `c`, `r4`, `sham` (C with `sham_draw = 1`); 120 years; 4 workers.
+- **The analysis shows no outcome if the run is not valid** (zero checks, manipulation check, all 768 worlds present,
+  one code fingerprint).
