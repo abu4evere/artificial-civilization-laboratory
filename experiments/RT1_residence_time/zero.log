@@ -1,0 +1,11 @@
+seed 11, 5 years: residence_weeks 0 = code_v2 (settings left out): yes
+seed 501, 5 years: residence_weeks 0 = code_v2 (settings left out): yes
+seed 501, 20 years: residence_weeks 0 = code_v2 (settings left out): yes
+seed 601, 20 years: residence_weeks 0 = code_v2 (settings left out): yes
+arm c, seed 501, 20 years: identical with and without the three observers: yes
+arm r4, seed 501, 20 years: identical with and without the three observers: yes
+seed 501, 20 years: residence_weeks 4 changes the world (it acts): yes
+R4, seed 501: saved at year 10 and reloaded, continues exactly to year 15 (bases kept): yes
+code_rt1 fingerprint: 59e5b9471955a6b14d0f354888ca8bf9a13d231d45a2c507b575f1bcd6345fb7
+All: PASS
+
