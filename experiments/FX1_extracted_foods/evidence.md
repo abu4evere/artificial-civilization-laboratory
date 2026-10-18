@@ -65,3 +65,21 @@ the relevant passages read; "record only" = reported in a search result or anoth
      the chance of success, the meat per kill, or the cost of a hunt.
 4. **What this does not show:** that changing the diet would let culture accumulate. That would be a frozen experiment,
    with this note as its evidence.
+
+## Where ACL's low hunting returns come from (read from the code, 18 October 2026; nothing changed)
+
+`acl/mind.py` (`hunt_chance`), `acl/actions.py` (`resolve_hunts`), `acl/fauna.py` (`SPECIES`, `take_prey`):
+
+1. **The chance of success** is `hunt_base_chance` (0.10) × party size^1.5 × (0.5 + hunting skill) × tool, capped at 0.92.
+   A lone hunter of middling skill (0.3) with no tool: 0.10 × 1 × 0.8 = **8%**, as measured. `hunt_base_chance` is an
+   unanchored setting.
+2. **No prey on the tile, no chance:** the chance is 0 unless an animal of a prey species stands on the hunter's tile
+   that week, and the week is spent either way. Many of the 1,521 failed hunts may be of this kind (not counted
+   separately by `acl_diet.py`).
+3. **Small game dominates:** a success takes one deer (22 units of meat) or bison (55), but small game in bundles worth
+   about 10 (rabbits, 3 each; fish, 1.5 each); in the measured worlds fish and rabbit gave 85% of all meat.
+4. **Meat beyond what a hunter can carry is lost:** each hunter keeps `min(share, carrying room)`. A large kill cannot
+   feed a camp unless it is carried and given away the same way any food is.
+
+Each is a candidate place for a Law 126 review, not a fix: the evidence above is about what real hunting returns, not
+about which ACL rule should change. Any change would be one rule at a time, frozen, with this note as its evidence.
