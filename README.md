@@ -9,7 +9,7 @@
 ## At a glance
 
 - **What it is:** an agent-based simulation in pure Python. Each person has drives, feelings, memory and a table of
-  544 reinforcement-learned habits; culture (tools, traditions, trust, symbols) is never scripted, only measured.
+  608 reinforcement-learned habits (32 situations × 19 actions); culture (tools, traditions, trust, symbols) is never scripted, only measured.
 - **How it is tested:** about 60 studies, recorded in [`experiments/INDEX.md`](experiments/INDEX.md). Experiments are
   frozen and tagged before they run, use a discovery set and a held-out replication, and compare every change with a
   sham arm (one extra random draw) to show what chance alone does. Every number traces to a committed script.

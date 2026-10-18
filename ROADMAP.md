@@ -364,7 +364,7 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
-(544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).
+(544), not 608 (labels corrected). **Correction (18 October 2026):** that described the older live package (17 actions); every research copy since E8, and the live package since nature v2, has 32 × 19 = 608. Exact replays depend on Windows' maths library (CI on Windows Server 2022).
 
 | E13R result | what it means | next step |
 |---|---|---|

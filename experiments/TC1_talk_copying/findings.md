@@ -62,3 +62,5 @@ all, which points (unproven) at the world everyone shares.
 Law 126 it still needs its evidence review (T2) before it could be adopted; TC1 shows it is safe for survival and changes
 whose habits people have. Also open: the deeper question of talk itself (a learned signal instead of direct copying).
 Nothing in nature changes.
+
+**Correction (18 October 2026):** the habit table in this study's code is **32 × 19 = 608** values (actions include "heat" and "fill", added in E8). "544" (32 × 17) was the size of the older live package, not of this code; the analysis used the whole table either way, so no result changes.

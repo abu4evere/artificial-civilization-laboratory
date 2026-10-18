@@ -71,3 +71,5 @@ The creator decides. Nothing in nature changes.
 - **Nature v2** (last-seen memory + the A1 fix; approved 13 October "after BL0"): can now be built, with a frozen
   comparison plan for sign-off.
 - **Viewer fixes 6 and 7** (habit sources, situations used): BL0's split gives the habit sources directly.
+
+**Correction (18 October 2026):** the habit table in this study's code is **32 × 19 = 608** values (actions include "heat" and "fill", added in E8). "544" (32 × 17) was the size of the older live package, not of this code; the analysis used the whole table either way, so no result changes.

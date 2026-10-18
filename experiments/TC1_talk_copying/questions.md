@@ -132,3 +132,6 @@ held in memory with numbers read back from BL0's file, where numeric keys become
 reported a difference that did not exist. It now compares both as saved; on seed 501, W then equals BL0 in every
 recorded number. The two seed-501 outputs made while checking this (before the zero check) are kept in
 `output_precheck/`, not used.
+
+
+**Correction (18 October 2026, appended; nothing above rewritten):** "all 544" should read **all 608**: this study's code has 32 situations × 19 actions. 544 was the older live package. The design and analysis used the whole table, so nothing changes.
