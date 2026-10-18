@@ -1,0 +1,39 @@
+{
+ "seeds": [
+  501,
+  502,
+  503,
+  504,
+  505,
+  506,
+  507,
+  508,
+  509,
+  510,
+  511,
+  512,
+  513,
+  514,
+  515,
+  516
+ ],
+ "years": 60,
+ "code": "acl (nature v2)",
+ "observer_read_only": true,
+ "units": {
+  "forage_total": 8972097.419999966,
+  "hunts_lost": 1521,
+  "crop": 94788.67000000007,
+  "meat": 1447.0,
+  "meat_fish": 633.0,
+  "hunts_won": 138,
+  "meat_rabbit": 594.0,
+  "meat_deer": 110.0,
+  "meat_bison": 110.0
+ },
+ "share": {
+  "wild_plants": 0.9893,
+  "crop": 0.0106,
+  "meat": 0.0002
+ }
+}
