@@ -9,3 +9,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. Claude reads this first when it is back.
 - 2026-10-18 03:38 Claude: FX1 done — ACL diet 98.9% collected / 1.1% crop / 0.02% meat vs foragers 8/32/60 (evidence.md, INDEX, decisions).
 - 2026-10-18 03:40 Claude: FX1 extended — Aché return rates (Hill et al. 1987, full text): hunting ≈ gathering per hour (1,339 vs 1,221 cal/hr); ACL hunting ≈ 4% of foraging.
 - 2026-10-18 03:40 Claude: FX1 — located the four code causes of low hunting returns (chance 0.10 base; zero chance without prey on tile; small game; meat beyond carrying lost). Note only, nothing changed.
+- 2026-10-18 03:41 Claude: living-book Chapter 84 'What They Ate' (FX1).
