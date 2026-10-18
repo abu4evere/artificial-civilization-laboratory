@@ -360,6 +360,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **HS1 done** (`experiments/HS1_habit_sameness/findings.md`; frozen; read-only). Why is everyone's habit table alike? With no copying, **a stranger from a different world is exactly as like a child as a stranger from their own world** (0.838 against 0.839): sharing this world's map, neighbours and history adds nothing; the sameness comes from the nature every world shares. Families still add their own (0.92). It sharpens TC1: copying is not why people are alike. **Also drafted and frozen:** RT1, residence time (ACL's people change place 2.5 times as often as forager camps; SA1-F's evidence review), Amendment 1 approved; it runs after SA1-F.
 
+**SA1-F done** (`experiments/SA1_sensitivity/findings_f.md`; frozen; 2,304 worlds). At proper power **all seven settings move survival**, six beyond the yardstick: sight above all (halved, 168 of 256 worlds die; doubled, 31; control 82). The three near-the-line settings (foraging, conception, short reach) were real effects. ACL sits near a demographic edge on several unanchored numbers: extinction findings stay relative. Its evidence review found that ACL's people move 2.5 times as often as forager camps, which became **RT1 (residence time), running now**. **Next: MB1b's setup, documented before any run.**
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). Exact replays depend on Windows' maths library (CI on Windows Server 2022).

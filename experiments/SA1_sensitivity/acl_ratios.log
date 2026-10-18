@@ -1,0 +1,61 @@
+seed 502 done
+seed 503 done
+seed 504 done
+seed 505 done
+seed 506 done
+seed 507 done
+seed 508 done
+seed 509 done
+seed 510 done
+seed 511 done
+seed 512 done
+seed 513 done
+seed 514 done
+seed 515 done
+seed 516 done
+{
+ "seeds": [
+  501,
+  502,
+  503,
+  504,
+  505,
+  506,
+  507,
+  508,
+  509,
+  510,
+  511,
+  512,
+  513,
+  514,
+  515,
+  516
+ ],
+ "years": 60,
+ "code": "code_e13r (control, anticipation_weight 1.0)",
+ "observer_read_only": true,
+ "weekly_move_tiles": {
+  "mean": 1.31,
+  "median": 1,
+  "q1": 0.0,
+  "q3": 3.0,
+  "n": 778945
+ },
+ "share_weeks_not_moved": 0.413,
+ "share_weeks_moved_full_reach": 0.274,
+ "others_within_sight": {
+  "mean": 10.175,
+  "median": 9.0,
+  "q1": 4.0,
+  "q3": 15.0,
+  "n": 779786
+ },
+ "others_within_reach": {
+  "mean": 8.258,
+  "median": 7.0,
+  "q1": 3.0,
+  "q3": 12.0,
+  "n": 779786
+ }
+}
