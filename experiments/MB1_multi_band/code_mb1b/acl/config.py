@@ -130,6 +130,8 @@ class Config:
     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
     ashore_if_float_breaks: int = 0    # NV2 (ST1): 1 = a float that breaks at sea puts its owner ashore half drowned
     knowledge_copy: int = 0            # NV2: 1 = the record of a first-baked thing holds a copy of it, not the item itself
+    founding_bands: int = 0            # MB1b: n > 0 = the founders form n bands, spread over the islands in turn
+                                       # (0 = today's rule: min(4, founders // 4) bands, extras on the largest island)
     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
                                        # their remembered places instead of in a random direction
 

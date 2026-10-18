@@ -187,14 +187,17 @@ class World:
         rng = self.rng
         sexes = ["F", "M"] * (c.founders // 2) + (["F"] if c.founders % 2 else [])
         rng.shuffle(sexes)
-        n_groups = max(1, min(4, c.founders // 4))
+        n_groups = c.founding_bands if c.founding_bands > 0 else max(1, min(4, c.founders // 4))
         # Each band starts on its own island, so they cannot meet until someone
         # works out how to cross the water. If there are not enough islands,
         # later bands settle far apart on the largest one.
         masses = self.landmasses()
         centres = []
         for k in range(n_groups):
-            mass = masses[k] if k < len(masses) else masses[0]
+            if c.founding_bands > 0:            # MB1b: spread bands over the islands in turn
+                mass = masses[k % len(masses)]
+            else:
+                mass = masses[k] if k < len(masses) else masses[0]
             # People come from somewhere livable: fertile ground, near fresh water if the island has any.
             fertile = [t for t in mass if self.tile(t).fertility > 0.4] or mass
             pool = [t for t in fertile if weather.fresh_near(self, t, 3)] or fertile
