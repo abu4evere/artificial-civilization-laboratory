@@ -175,3 +175,6 @@ written and tested before any data. Nothing in the frozen design or Amendment 1 
   - **The descendants' sham** is an unrelated adult drawn by the observer's own generator, never the world's.
   - **The lineage share** counts origin generations at least two above the person's own.
 - **Cost:** about F1's (3 minutes a world) plus logging. Runs after ID1.
+
+
+**Correction (18 October 2026, appended; nothing above rewritten):** where this plan says 544 habit values, read **608**: `code_bl0` has 32 situations × 19 actions. 544 was the older live package. Every measure used the whole table, so no result changes.
