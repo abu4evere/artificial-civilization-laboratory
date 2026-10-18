@@ -44,7 +44,7 @@ the relevant passages read; "record only" = reported in a search result or anoth
 - **Returns to hunting against foraging, per unit of time** (a ratio, so no tile or calorie scale is needed): an ACL
   week spent hunting yields on average 8% × 10.5 ≈ **0.9 food units**, a week spent foraging about **20**: hunting returns
   **about 4%** of foraging. Among the Aché, hunting (men's returns, 1,339 cal/hr) and gathering (women's, 1,221) pay
-  **about the same (×1.1)**. ACL's hunting is about 25 times less rewarding, relative to plants, than real hunting.
+  **about the same (×1.1)**. ACL's hunting is about 20–25 times less rewarding, relative to plants, than real hunting.
   (ACL's figure is per hunt, not divided among the party, so it overstates each hunter's return.)
 
 ## Reading (for the creator; nothing adopted)
