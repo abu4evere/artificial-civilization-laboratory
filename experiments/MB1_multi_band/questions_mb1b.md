@@ -1,4 +1,4 @@
-# MB1b — Same 80 people, divided differently: does band size change survival and meeting? (DRAFT for the creator's sign-off; nothing built or run)
+# MB1b — Same 80 people, divided differently: does band size change survival and meeting? (SIGNED OFF 18 October 2026; frozen as `MB1b-frozen` before any code or data)
 
 **The creator's decision (14 October 2026):** "MB1b: move to 40×40 with 80 founders (P), documented as a different
 setting, with the original baseline kept." Stage B of `questions.md` was drafted in LP (80 × 80), where MB1a found bands
@@ -75,3 +75,31 @@ band size matters more than contact.
 3. Placement: **spread bands over the islands in turn** (recommended), or keep today's rule (extra bands on the largest
    island).
 4. Order: **right after RT1** (recommended; nothing else is queued), or later.
+
+## Sign-off (18 October 2026)
+
+The creator: "**approve all MB1b recommendations**". So: (1) arms **P4, B8, B16 and sham**; (2) **256 seeds**; (3) bands
+**spread over the islands in turn**; (4) **right after RT1** (now). The prior above is frozen as written.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code `code_mb1b`:** a copy of `code_v2` (nature v2 as its defaults) in one commit, then **one commit** adding
+  `founding_bands` (default 0 = today's rule). When it is set to n > 0: the founders are split into n bands (founder i
+  joins band i mod n, as today), and band k is placed on island **k mod (number of islands)**, with today's search for a
+  spot more than 6 tiles from earlier centres (200 tries; the last try is kept if none succeeds, as today).
+- **World:** 40 × 40, **80 founders**, 120 years, nature v2. **Arms:** `p4` (`founding_bands` 0: 4 bands of 20), `b8`
+  (8 of 10), `b16` (16 of 5), `sham` (`p4` with `sham_draw` 1). **Seeds 5301–5556** (the island count of 5301–5330 was read
+  on 18 October from the generated land only, before any run: no outcome was seen). 1,024 worlds; 4 workers.
+- **Observers** (read-only; checked): F1's probe and MB1a's lineage observer, both loaded unchanged; plus, at week one,
+  the **placement**: each founding band's island and centre (mean founder position), giving bands per island and the
+  smallest distance between band centres.
+- **Hard stops:** zero check (`founding_bands` 0 = `code_v2`, settings left out of the hash, seeds 11 and 501 for 5 years
+  and 501 and 601 for 20, at 20 founders and at 80); b8 and b16 change the world; observers leave it unchanged; **the
+  manipulation check**: in every world, MB1a's observer finds as many founding bands as the arm says (4, 8, 16), each of
+  the stated size (20, 10, 5); one code fingerprint; all 1,024 worlds present. No outcome is shown if any fails.
+- **Primary:** extinction (not reaching year 120 with someone alive), b8 and b16 each against p4, paired by seed: exact
+  sign test; effect = p4's extinction share − the arm's; 95% bootstrap (10,000 resamples, `random.Random(2026)`); **Holm
+  over the two**; yardstick ±0.117. Readings: p < 0.05 (after Holm) "**dividing changes survival**"; p ≥ 0.05 and the
+  interval inside ±0.117 "**no meaningful effect**"; otherwise "**unresolved**". Sham against p4 must be quiet.
+- **Described:** as listed above (population, births, blocked decisions, between-lineage meeting and cross-lineage
+  couples by MB1a's measures, lineages alive at the end, placement).
