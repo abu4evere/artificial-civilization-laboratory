@@ -19,6 +19,12 @@ the relevant passages read; "record only" = reported in a search result or anoth
   **collected resources about 8%** (fruits, leaves, "simply gathered and consumed"). Chimpanzees: collected 95%,
   extracted 3%, hunted about 2%. Extraction skill rises slowly with age: Hiwi root-digging rates peak at 35–45; Hambukushu
   nut-cracking peaks about 35; 10-year-olds extract at 10–15% of adult rates.
+- **Hill, K., Kaplan, H., Hawkes, K. and Hurtado, A. M. (1987).** Foraging decisions among Aché hunter-gatherers: new data
+  and implications for optimal foraging models. *Ethology and Sociobiology* 8: 1–36
+  ([PDF](https://content.csbs.utah.edu/~hawkes/Hill_al87ForagingAcheOFT.pdf)); **full text read** (results, Tables 1–2).
+  Overall foraging returns, search included: **men 1,339 calories per hour** (mostly hunting), **women 1,221** (mostly
+  plant foods). After encounter (Table 2): deer 15,398 cal/hr, collared peccary 6,120, paca 4,705; honey 8,666–22,411;
+  palm fiber starch 2,246–3,219; fruits 2,549–10,078. A peccary hunt averages 316 man-minutes and 29,040 calories.
 - **Koster, J., McElreath, R., Hill, K. et al. (2020).** The life history of human foraging: cross-cultural and individual
   variation. *Science Advances* 6: eaax9070 ([doi](https://doi.org/10.1126/sciadv.aax9070)); **record only** (search
   summary of the abstract): hunting records from 40 locations; average age of **peak productivity 30–35**.
@@ -35,6 +41,11 @@ the relevant passages read; "record only" = reported in a search result or anoth
   **20 units** from an average week of foraging (E8.2's measure in SA1-F's control worlds). A successful hunt is worth
   half a week of picking plants.
 - Shares are of ACL's food units (what its bodies eat), not calories; the comparison is of shares.
+- **Returns to hunting against foraging, per unit of time** (a ratio, so no tile or calorie scale is needed): an ACL
+  week spent hunting yields on average 8% × 10.5 ≈ **0.9 food units**, a week spent foraging about **20**: hunting returns
+  **about 4%** of foraging. Among the Aché, hunting (men's returns, 1,339 cal/hr) and gathering (women's, 1,221) pay
+  **about the same (×1.1)**. ACL's hunting is about 25 times less rewarding, relative to plants, than real hunting.
+  (ACL's figure is per hunt, not divided among the party, so it overstates each hunter's return.)
 
 ## Reading (for the creator; nothing adopted)
 
@@ -48,8 +59,9 @@ the relevant passages read; "record only" = reported in a search result or anoth
    - **Embedded plant food:** some plant food is protected (underground, in hard shells), so that it yields far more
      when dug or struck with something hard, by the physics of properties ACL already has. Anchor: extracted foods are
      about a third of forager calories.
-   - **Meat worth hunting:** the value of a kill, against a week of foraging, is far below real forager returns; this
-     needs its own evidence review (return rates per hour for large game against plant foods: optimal-foraging studies
-     of the Hadza, Ache, Hiwi), before any number is touched.
+   - **Meat worth hunting:** in ACL, hunting returns about 4% of what foraging does; among the Aché, the two pay about
+     the same (Hill et al. 1987, above). The anchor is a ratio of returns per unit of time. Before any number is touched,
+     the evidence should be widened beyond one people (Hadza and Hiwi return rates), and the cause found in ACL's code:
+     the chance of success, the meat per kill, or the cost of a hunt.
 4. **What this does not show:** that changing the diet would let culture accumulate. That would be a frozen experiment,
    with this note as its evidence.
