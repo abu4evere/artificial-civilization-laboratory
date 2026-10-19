@@ -1256,11 +1256,23 @@ The reason was in the rule, not in the people. In ACL, a person drinks if fresh 
 
 Real camps are pitched near water, and a walk to the spring and back is just part of a day. The rule had no way to say that. So the experiment had measured something true, but not what it set out to measure: not how often to move, but what happens when a home is not chosen for its water.
 
+## Chapter 86 — The First Hand-Over
+
+For culture to build on itself, a chain has to hold. Someone invents a thing. It is useful. Someone else learns it. It outlives the one who first made it. Someone makes something better with it as a part. And that better thing is passed on in its turn. Break any link and the chain stops.
+
+So every link was counted, in thirty-two worlds and then in four that ran for three hundred years, nothing changed in them, only watched. The guess, written down first, was that the chain broke where things are built on: inventions rarely becoming parts of better ones.
+
+The guess was wrong. Nearly everything people made was useful for something. But only about one useful invention in ten was ever learned by anyone except the person who made it. Of those that were passed on, nearly nine in ten outlived their maker, and eight in ten went into something better. A quarter of those better things were passed on again. The chain does hold, here and there, for a step or two, and at the very most for seven.
+
+It breaks at the first hand-over. And almost every hand-over that did happen was a lesson: someone shown how. Watching someone else work passed on almost nothing, a handful of times in thirty-two worlds.
+
+One caution stays beside the finding. The count of things built on does not say who built on them; much of it may be inventors improving their own work. That is the next thing to check, before anything in the world is changed.
+
 # Part IV — The Great Debates
 
 Some of the most important turns in ACL's thinking came from arguments, not experiments: two serious positions, held before the evidence, and settled, or not settled, by what the worlds did. This part records them as they appear in the record. Where the record shows who held which view, it says so. Where it does not, the positions are described without names.
 
-## Chapter 86 — Isolation or Distraction?
+## Chapter 87 — Isolation or Distraction?
 
 **The question.** Why did E2's population fall?
 
@@ -1272,7 +1284,7 @@ Some of the most important turns in ACL's thinking came from arguments, not expe
 
 **What changed.** Two things. A respect for the simplest physical explanation, and a rule of thumb that survives in every later experiment: eight worlds can mislead; when they disagree with intuition, run more before believing either.
 
-## Chapter 87 — Richer Matter or Richer Discovery?
+## Chapter 88 — Richer Matter or Richer Discovery?
 
 **The question.** After the E5 freeze: why does novelty stop?
 
@@ -1282,7 +1294,7 @@ Some of the most important turns in ACL's thinking came from arguments, not expe
 
 **What changed.** The project's model of the problem. Richness of the world is necessary but not enough. What matters is whether anything leads a person from what is possible to what is done.
 
-## Chapter 88 — Opportunity or Interaction?
+## Chapter 89 — Opportunity or Interaction?
 
 **The question.** After E6: where exactly does the chain of discovery break?
 
@@ -1294,7 +1306,7 @@ The fourth was the intuitive favourite. Knowledge loss had been everywhere in E1
 
 **What changed.** The name of the problem. It became the interaction bottleneck.
 
-## Chapter 89 — The Reward Horizon
+## Chapter 90 — The Reward Horizon
 
 **The question.** If people never fill a vessel because the payoff comes weeks later and far away, is the real problem that they cannot learn from delayed rewards at all?
 
@@ -1304,7 +1316,7 @@ The fourth was the intuitive favourite. Knowledge loss had been everywhere in E1
 
 **What changed.** The suspicion was dropped. The problem is not learning from delay. It is the first step, which no delay can teach because it never happens.
 
-## Chapter 90 — Fix the World or Fix the People?
+## Chapter 91 — Fix the World or Fix the People?
 
 **The question.** Once the interaction bottleneck was named, which side should be mended?
 
@@ -1338,7 +1350,7 @@ I want to avoid confusing a designed outcome with an emergent one.
 
 **My default is to investigate the world before rewriting the people. But the goal isn't to preserve the original agents forever. It's to understand which conditions produce which outcomes, without pretending we discovered something we actually programmed.**
 
-## Chapter 91 — Topology or Multipliers?
+## Chapter 92 — Topology or Multipliers?
 
 **The question.** Are all inventions alike, or do some matter differently?
 
@@ -1348,7 +1360,7 @@ I want to avoid confusing a designed outcome with an emergent one.
 
 **What changed.** The project began to ask of every new piece of physics: does this add a multiplier, or does it add a new connection to the map?
 
-## Chapter 92 — Physics or Cognition?
+## Chapter 93 — Physics or Cognition?
 
 **The question.** Under all the others: is the freeze a property of the world, or of the minds in it?
 
@@ -1358,7 +1370,7 @@ I want to avoid confusing a designed outcome with an emergent one.
 
 **Added in edition 6.** E8.1 and E8.2 moved it again, toward the world. People in ACL know how to make things and have the materials, but making is almost never worth more to them than eating and company, and measurement of what tools actually do shows why: they add almost nothing to how much anyone eats. That is a fact about the world's economy before it is a fact about anyone's mind.
 
-## Chapter 93 — Population or Transmission?
+## Chapter 94 — Population or Transmission?
 
 **The question.** If the worlds are losing what they know, is it because there are too few people, or because what one person knows cannot pass to another?
 
@@ -1378,7 +1390,7 @@ Population was not refuted. The long-lived worlds only varied between 36 and 54 
 
 **Correction, added in edition 6.** The paragraph above names "an inventory check that suppresses making what one already holds" as part of why people stopped making. E8 Arm 1 removed that check, and making collapsed just the same. E8.1 then found that making was never competitive with daily life, even for the founders, and E8.2 found why: in this world, tools add almost nothing to how much anyone eats. The paragraph is left as it was written, because it is what the project believed at the time.
 
-## Chapter 94 — Irrational People or an Unrewarding World?
+## Chapter 95 — Irrational People or an Unrewarding World?
 
 **The question.** When the people of ACL stopped making things, were they failing to see what tools could do for them, or were they right that tools did little?
 
@@ -1396,7 +1408,7 @@ Population was not refuted. The long-lived worlds only varied between 36 and 54 
 
 These are ideas the project did not have when it began. Each came from evidence and is stated as strongly as the evidence allows, and no more.
 
-## Chapter 95 — Civilization Is a Chain
+## Chapter 96 — Civilization Is a Chain
 
 The autopsies produced the framework that now organises almost all of ACL's thinking. For a discovery to become part of a culture, it has to pass through six links:
 
@@ -1413,7 +1425,7 @@ A discovery must survive every link. The record shows breaks at every one. Many 
 
 Seen this way, civilization looks less like a single event and more like a fragile chain, made over and over, in which every link must hold.
 
-## Chapter 96 — Topology Changes History
+## Chapter 97 — Topology Changes History
 
 Most inventions are multipliers. A sharper blade cuts a little faster. A better carrier carries a little more. Life gets easier, but it does not change shape.
 
@@ -1423,7 +1435,7 @@ The phrase inside the project became: **topology changes history**.
 
 The evidence is still mostly the shape of what did not happen. Once the raft's use could be felt, islands connected: open-water crossings went from almost none in E1 to between 7 and 167 per world in E2. The watertight vessel could have changed the map and never did, because it was never filled. Everything else ACL's people made was a multiplier, and the list of kinds was complete in eleven years. The working idea is that open-ended history needs a steady supply of map-changing inventions, and that a world whose physics offers only multipliers will freeze. It is a hypothesis, not a result.
 
-## Chapter 97 — Why Delayed Utility Is Hard
+## Chapter 98 — Why Delayed Utility Is Hard
 
 Many of the most important inventions in human history pay off later and somewhere else. Stored grain feeds you in winter. Carried water saves you in the desert. A sown field feeds you next year.
 
@@ -1431,7 +1443,7 @@ ACL's people can learn from delays. E6.6 showed it. What they cannot do is begin
 
 There is a cost hidden in one of the long-delay channels, and it belongs here. Beliefs about leaving things at places credit everything left at a spot in the past year, whether or not it caused what followed. They learn long delays, but without discrimination. Superstition is built into them on purpose (Law 71).
 
-## Chapter 98 — Why Transmission Alone Is Not Enough
+## Chapter 99 — Why Transmission Alone Is Not Enough
 
 The water vessel in seed 304 was taught by its maker to three people, and passed on to four more, and survived sixty years. Transmission worked.
 
@@ -1439,19 +1451,19 @@ What was transmitted was a carrier. The vessel's one world-changing property, th
 
 Transmission multiplies observation. It cannot create it.
 
-## Chapter 99 — Why Opportunity Alone Is Not Enough
+## Chapter 100 — Why Opportunity Alone Is Not Enough
 
 E6 was built on the belief that richer opportunities would make richer history. The autopsy counted the opportunities, and the count ended that belief. A watertight vessel at fresh water, 102 weeks, never filled. Raw food at a fire, dozens of adult-weeks in two worlds, never once held in the flame.
 
 An opportunity nobody acts on is invisible. A world can be full of possibilities and still have no history.
 
-## Chapter 100 — Isolation Kills Small Peoples
+## Chapter 101 — Isolation Kills Small Peoples
 
 This was found while looking for something else. A band of five alone on an island almost always dies out. Within a few generations everyone is related, and nobody is left to pair with. Only 17% of bands that never mixed had a living line at year 100.
 
 Every barrier in the physics, a wider channel or a removed jump, is therefore also a decision about who will have descendants. In most of E5's long-lived worlds, everyone alive descended from a single band of five.
 
-## Chapter 101 — Belief Is Not Practice
+## Chapter 102 — Belief Is Not Practice
 
 Several findings warn against treating what people believe, what they do, and what is true as one thing.
 
@@ -1462,7 +1474,7 @@ Several findings warn against treating what people believe, what they do, and wh
 
 A world where people always believe what is true, always do what they believe, and always value what is useful would be simpler to build and would teach nothing.
 
-## Chapter 102 — The Degenerative Loop
+## Chapter 103 — The Degenerative Loop
 
 Until E7.6, the project assumed that ACL's worlds reached a plateau: that novelty stopped after year twenty, but that what had been discovered remained part of life.
 
@@ -1486,7 +1498,7 @@ If this loop is real, it means culture in ACL did not stall because possibilitie
 
 **Added in edition 6.** E8 tested the first link of this loop by freeing people to remake what they held, and found no evidence that it mattered. E8.1 and E8.2 found the loop's real starting point earlier and outside the mind: making was never competitive, because tools add almost nothing to how much anyone eats. The loop of falling skill is real; what starts it is the world's economy.
 
-## Chapter 103 — The Memory Ceiling on Composites
+## Chapter 104 — The Memory Ceiling on Composites
 
 In E7.7, simple things made in play were kept in memory 96% of the time (3,984 kept, 162 forgotten). Composite things were forgotten at the moment they were made 21% of the time (7,982 kept, 2,160 forgotten): a five-fold penalty.
 
@@ -1500,7 +1512,7 @@ So when a crafter whose memory is already full invents a composite tool in play,
 
 This is an accident of tie-breaking, not nature. It belongs to the book's Known Compromises, and E8 is designed to remove it.
 
-## Chapter 104 — A World That Does Not Need Tools
+## Chapter 105 — A World That Does Not Need Tools
 
 This is stated as narrowly as the evidence allows: in ACL as it is now, measured over 120 years in four worlds, tools barely matter to how people live.
 
@@ -1514,7 +1526,7 @@ None of this has yet been tested by changing the world. It is a measured descrip
 
 The creator put it this way, and E8.3 added its last sentence: the surprising discovery was not that the people failed to invent civilization. It was that, in the world they were given, technology had almost nothing to offer them. Food was usually plentiful, water was near, and simple foraging met most needs. When hunger came, in winter, as it did every year, no one had laid anything by.
 
-## Chapter 105 — A Lesson That Undoes Itself
+## Chapter 106 — A Lesson That Undoes Itself
 
 This began as an interpretation of E9.3. At the creator's insistence it was then tested before anything was built on it (E9.4, below), and the test confirmed it.
 
@@ -1534,7 +1546,7 @@ What this does and does not rule out should be said precisely. Tested and failed
 
 The creator also marked the limit of the conclusion itself: it shows that individual learning from experience is not enough. It does not show that stories, or any other form of shared memory, are what is missing. That is the next hypothesis, not a finding.
 
-## Chapter 106 — Reach or Strength
+## Chapter 107 — Reach or Strength
 
 Three experiments, read together, show a pattern. It is stated as a pattern in what was tried, not as a law.
 
@@ -1548,7 +1560,7 @@ Human societies seem to bridge this in ways ACL's people do not have yet: a less
 
 These are stories from real worlds, told as closely to the record as possible. Every person here lived in a seeded world, and every event is in a replay, a chronicle or an autopsy. Where the record is silent, so is the story.
 
-## Chapter 107 — The Raft
+## Chapter 108 — The Raft
 
 The islands were meant to keep peoples apart. Each founding band started on its own island, and without something that floats, nobody could cross.
 
@@ -1574,7 +1586,7 @@ There was a price, and it took two experiments to see. Removing the jump also st
 
 The raft story wrote Law 124: uses must be experienced. An invention does not matter when it is made. It matters when someone lives through its use.
 
-## Chapter 108 — Beimak
+## Chapter 109 — Beimak
 
 Beimak was born in seed 302 in the eighth year of the world, to Thikor and Reloulour, both founders. There were older siblings, Baiyugos, born in the world's first years, and Keikenem, and a younger one, Thadim, who in year 13 was not yet three.
 
@@ -1604,7 +1616,7 @@ That is the whole history of pottery in seed 302: one child, one lump, sixteen w
 
 **Why it mattered.** Beimak's lump proved that the physics worked: heat did exactly what it was meant to do. It showed how rare the chance was: across the first century of that world, adults stood at a fire holding a dry, fireable shaped piece of clay in only three weeks. And it showed something harder to see in the tables. In ACL, the people most likely to try something new are the ones who play, and the ones who play are children, who are also the ones most likely to die.
 
-## Chapter 109 — Reibik
+## Chapter 110 — Reibik
 
 Reibik was one of the founders of seed 304, already about twenty-six when the world began. Reibik was very sociable (0.83), calm (temper 0.13), not especially bold (0.13) and not especially curious (0.35). Reibik had a partner, Vothi, and over the world's first fourteen years six children: Riyaishin, Mathis, Baigi, Noshe, Shabai and Houhaineil.
 
@@ -1654,7 +1666,7 @@ If I want ACL to develop a civilization, I cannot count an invention as the end 
 
 The vessel existed. The missing part was everything that should have followed.
 
-## Chapter 110 — The Autopsy
+## Chapter 111 — The Autopsy
 
 The autopsy deserves its own chapter for how it was done, not only for what it found.
 
@@ -1668,7 +1680,7 @@ The autopsy ended with options, not a decision. Mend the chain from the world's 
 
 Every fix proposed before the autopsy would have targeted the wrong link.
 
-## Chapter 111 — Two Peoples Who Never Met
+## Chapter 112 — Two Peoples Who Never Met
 
 In E5, the frozen prediction said there would be no distinct peoples. Seed 301 proved it wrong.
 
@@ -1682,7 +1694,7 @@ They were two peoples, with two histories, across a stretch of sea, and neither 
 
 **Why it mattered.** It showed that distinct cultures can form and hold for a millennium without being written. It also showed the limit of that result. The prediction about rival identities scored "confirmed", but only because the two peoples never met. Rivalry needs contact. It was not tested, and it was not refuted.
 
-## Chapter 112 — The Killing of Ludol
+## Chapter 113 — The Killing of Ludol
 
 Seed 104, E1. In year 14, a person named Roukarail attacked a person named Kaileir. It was the first violence anyone in that world had done. The same year was a hungry one; three people starved after a poor growing season.
 
@@ -1696,7 +1708,7 @@ None of them had been there. And the memory itself held. One hundred and eighty 
 
 **Why it mattered.** It was the first clear evidence that ACL's people could carry history beyond living memory, which is the beginning of what a culture is. And in the same breath it showed that what a people carries is not the same as what happened. A people's past is something they make out of retellings. ACL does not correct them, and should not.
 
-## Chapter 113 — Mouthir and the Duller Flake
+## Chapter 114 — Mouthir and the Duller Flake
 
 Seed 301, under the E7 code. Daiyei was born in the world's first year. At four, playing, Daiyei struck flint against flint and was left with a sharp flake. Over a long life Daiyei's crafting skill rose to 0.82, the hand of a practised maker. Daiyei died of old age in year 62.
 
@@ -1714,7 +1726,7 @@ Mouthir starved in year 130.
 
 The method was not designed at the start. It grew out of mistakes, and by version 8 of the World Bible it had been written down as nine rules, M1 to M9. This part explains why each part of it exists.
 
-## Chapter 114 — Why Predictions Are Frozen
+## Chapter 115 — Why Predictions Are Frozen
 
 Before every experiment, the predictions are written down and frozen. Afterwards each is scored: confirmed, wrong, or unclear. Nothing is edited once the results are in.
 
@@ -1724,7 +1736,7 @@ Freezing also forces precision. "Rafts will matter" cannot be scored. "Every sur
 
 With the predictions comes a kill criterion: a result, stated in advance, that would show the idea failed. E2 came within five people of its own. A mechanism survives by evidence, not by enthusiasm.
 
-## Chapter 115 — Why Autopsies Come Before Interventions
+## Chapter 116 — Why Autopsies Come Before Interventions
 
 When something does not emerge, the temptation is to add it, or to add whatever seems to be missing. ACL has learned to replay the world and find the broken link first.
 
@@ -1732,13 +1744,13 @@ The cost of skipping that step is in the record. E6 was an intervention made bef
 
 An autopsy is cheap compared with an experiment built on the wrong diagnosis.
 
-## Chapter 116 — Why Experiments Need Controls and Many Worlds
+## Chapter 117 — Why Experiments Need Controls and Many Worlds
 
 One seed shows one history. Histories in ACL diverge from the first week, and a single world can do almost anything. Seed 105 under E2 dwindled away because almost nobody had a mate on their island. Seed 107 alone held 20 of E2's 53 starved infants. Neither says what the E2 code does in general.
 
 So every comparison runs the same seeds under both codes, and a difference has to hold across many worlds. When eight were not enough, E4 ran twenty-four, with a threshold fixed in advance and an interval around the gap. Any change to the code changes the random history of every world, so only patterns across worlds can be trusted.
 
-## Chapter 117 — Why Failures Are Worth More Than Assumptions
+## Chapter 118 — Why Failures Are Worth More Than Assumptions
 
 Almost everything ACL knows that it did not know at the start came from a failure.
 
@@ -1750,7 +1762,7 @@ Almost everything ACL knows that it did not know at the start came from a failur
 
 An assumption that is never tested teaches nothing. A failure that is honestly recorded teaches something every time it is reread.
 
-## Chapter 118 — Why Measurement Must Not Touch the World
+## Chapter 119 — Why Measurement Must Not Touch the World
 
 Observers, the historian and every experiment's recorder must never change the world they watch (M4). This is checked, not assumed. Before an experiment's runs, a world is run for twenty years with the recorder and without it, and the two final states must be identical, down to a fingerprint of every value.
 
@@ -1758,7 +1770,7 @@ A recorder that so much as drew a random number would change the history it was 
 
 The same principle is why the code is frozen during experiments (M3). In E7, each run records a fingerprint of its code at the start and at the end, and a run whose fingerprint changed is thrown out.
 
-## Chapter 119 — Why the Experimenter Is the Most Likely Cheater
+## Chapter 120 — Why the Experimenter Is the Most Likely Cheater
 
 Every time a problem appears in ACL, the easiest solution is to put the answer straight into the simulation. Add a reward for filling vessels. Give people a little knowledge about fire. Let the historian's names leak into the people's minds.
 
@@ -1768,7 +1780,7 @@ The project's defence is to assume that cheating, when it happens, will come fro
 
 The challenge was never making civilization happen. It was learning whether it would happen without help.
 
-## Chapter 120 — Rules Bought by Failures
+## Chapter 121 — Rules Bought by Failures
 
 For most of its life ACL ran on eleven rules, set down early: nature programmed and culture written by nobody, predictions frozen before code, pilots first, measurement that never touches the world, failures published as failures, and the creator's signature on every design. In October 2026, in the middle of an investigation into why a third of the control worlds died out, eight more were added. None of them changed what the project was looking for. Each was paid for by something that had gone wrong.
 
@@ -1778,7 +1790,7 @@ The seventeenth looks forward. The fragility study pointed at nature itself, at 
 
 The creator's view was that good method grows this way. Rules invented in advance guard against imagined errors. These guard against errors that happened.
 
-## Chapter 121 — Relatives and Ancestors
+## Chapter 122 — Relatives and Ancestors
 
 ACL was not built from a reading list. Most of what it found, it found by running worlds and looking. But it is not alone, and several of its discoveries were known, in other forms, long before it began. This chapter places it among its relatives, and says plainly where it rediscovered what others knew. Sources are listed in Appendix C.
 
@@ -1786,7 +1798,7 @@ ACL was not built from a reading list. Most of what it found, it found by runnin
 
 Both aim where ACL aims. Both get there mainly by evolution: agents whose networks work better leave more offspring, and pass those networks on. In ACL nothing is inherited but the body. Whatever a person comes to know, they learned in their own lifetime and must pass on by being watched, by raising children, or by telling, or it is lost. Human culture grew far faster than human genes changed, which is why ACL chose the harder road. Its price is scale: JaxLife's worlds dwarf ACL's, and the question of what a hundred connected people achieve against thirty is still open here. Two of Werld's ideas, that complexity should cost energy and that hidden senses could be discovered, are recorded for later.
 
-**Worlds run by minds that already know.** SimWorld builds realistic cities for testing agents driven by language models. Generative agents in a small town, and Project Sid's many-agent societies in Minecraft, show such agents forming routines, relationships, roles, rules, and even religions. These are valuable for building and testing agents. They cannot answer ACL's question. A language model trained on human writing already knows what a village, a trade and a law are, and when its agents build one, no one can tell whether civilization emerged or was remembered. This is the trap named in Chapter 124, and the reason for ACL's founding rule.
+**Worlds run by minds that already know.** SimWorld builds realistic cities for testing agents driven by language models. Generative agents in a small town, and Project Sid's many-agent societies in Minecraft, show such agents forming routines, relationships, roles, rules, and even religions. These are valuable for building and testing agents. They cannot answer ACL's question. A language model trained on human writing already knows what a village, a trade and a law are, and when its agents build one, no one can tell whether civilization emerged or was remembered. This is the trap named in Chapter 125, and the reason for ACL's founding rule.
 
 **Worlds with written rules.** Sugarscape grew trade, migration, inequality and conflict from simple agents on a grid, and showed how much social pattern can come from very little. But its behaviours, trade included, were rules its designers wrote. ACL forbids writing any behaviour it hopes to see.
 
@@ -1804,7 +1816,7 @@ None of this makes ACL's findings less its own. Its people were never told any o
 
 # Part VIII — The Future
 
-## Chapter 122 — The Road Ahead
+## Chapter 123 — The Road Ahead
 
 In October 2026, in the middle of E13R, the creator said the project felt as if it might lose its way. So the way was written down: nine stages from a world worth living in to a society, where the project stood among them, and how each next step would be decided.
 
@@ -1816,7 +1828,7 @@ The most important part of the map is the fork beside that stage. What would fol
 
 The roadmap is kept in the repository beside the code, and redrawn after every experiment. The chapters of this book are how the project got here; the roadmap is where it means to go next, and it is allowed to be wrong.
 
-## Chapter 123 — Open Questions
+## Chapter 124 — Open Questions
 
 This chapter records questions. It does not answer them.
 
@@ -1858,7 +1870,7 @@ About ACL's own findings:
 - Is the interaction bottleneck in the world, or in the people?
 - And the oldest question, from before the record began: is anyone in there? Can a person born in ACL be someone?
 
-## Chapter 124 — The Minimum Conditions
+## Chapter 125 — The Minimum Conditions
 
 An idea took shape in October 2026, in conversation rather than in an experiment, and it is recorded here as an idea.
 
@@ -1868,7 +1880,7 @@ ACL may not need Earth. It may need only the minimum conditions that make cumula
 
 There is a trap on the way, and it was named at the same time. Better minds are allowed; minds that already know are not. A newborn has human capacities and no human knowledge. A language model trained on human writing has the knowledge. Put it in a world and it may rebuild pottery quickly, but no one could ever tell whether civilization emerged or was remembered.
 
-## Chapter 125 — How This Book Is Kept
+## Chapter 126 — How This Book Is Kept
 
 This is a living book, meant to be updated after every major experiment, in the same spirit it was written.
 
@@ -1970,6 +1982,7 @@ Dates are as recorded in the repository. World Bible versions 1 to 6 are not pre
 - **October 2026 — SA1-F.** The unmeasured settings, asked again of 2,304 worlds: all seven change whether worlds survive, six strongly, sight above all. The worlds live close to an edge; extinction findings stay relative. ACL's people move camp 2.5 times as often as real foragers, which became the next experiment.
 - **October 2026 — FX1.** What they ate: 99% plants simply picked up and almost no meat, where real foragers eat 8% picked-up food, a third dug or cracked, and over half hunted. A week of hunting in ACL returns about a twentieth of a week of foraging; among the Ache, about the same. Nothing changed; the evidence goes to the creator.
 - **October 2026 — RT1.** Keeping a base and moving it monthly, as forager camps do: 164 against 93 worlds died out, through thirst. People walked to water and were sent back to a dry base; the rule, not the residence, was at fault.
+- **October 2026 — CA1.** The chain of cumulative culture, counted link by link: it breaks at the first hand-over. About nine in ten useful inventions are never learned by anyone else; what is passed on mostly lasts and is built on.
 
 # Appendix B — Words Used in This Book
 

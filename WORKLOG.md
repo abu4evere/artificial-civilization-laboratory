@@ -16,3 +16,6 @@ Rules: `docs/HELPER_RUNBOOK.md`. Claude reads this first when it is back.
 - 2026-10-18 21:03 Creator confirmed MB1b Amendment 1; run continues (23/1024).
 - 2026-10-18 21:32 RT1b signed off and frozen by the creator (RT1b-frozen); runner + analysis smoke-tested (4fee841); watcher after_mb1b.sh will start RT1b when MB1b says ALL DONE (if the session restarts, start it by hand: python experiments/RT1_residence_time/run_rt1b.py run).
 - 2026-10-18 22:16 FX2 signed off and frozen by the creator (FX2-frozen, with notes; seeds 6001-6256). Observer extended (hard thing actually used); zero re-run PASS; runner + analysis smoke-tested. Watcher after_rt1b.sh starts FX2 when RT1b says ALL DONE (if the session restarts: python experiments/FX2_embedded_food/run_fx2.py run).
+- 2026-10-18 23:46 CA1 chain audit signed off and frozen (CA1-frozen); zero PASS; run started on 2 extra workers (36 worlds).
+- 2026-10-19 00:18 Claude, sleep mode: CA1 at 12/36, MB1b at 127/1024. Plan: when CA1 ends, analyse, findings, upkeep, book chapter.
+- 2026-10-19 01:19 CA1 done: bottleneck = transmission (11%/10% of useful inventions ever learned by another), prior wrong; findings, INDEX, ROADMAP, decisions, book Ch 86 'The First Hand-Over', book rebuilt.
