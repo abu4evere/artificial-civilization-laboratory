@@ -1,4 +1,4 @@
-# RT1b — Residence time with the walk to water counted (DRAFT, 18 October 2026; not frozen, nothing run)
+# RT1b — Residence time with the walk to water counted (SIGNED OFF 18 October 2026; frozen as `RT1b-frozen`, no study run before it)
 
 **Why.** RT1 (`findings.md`, `RT1-done`) found that keeping a base for 4 weeks (R4) killed far more worlds than today's
 rule (164 of 256 against 93), through thirst (2,864 deaths against 1,740, years 0–39). The check showed why: ACL counts
@@ -123,3 +123,11 @@ water in sight still went short of water. The hard check is that share in R4w, b
   and was sent back to base; **none** of them went short of water (R4 does not record that place, so it reads 0 there).
   Of thirsty adult-weeks, the share that followed a chosen trip to water: **R4 0.462** (RT1's check: 0.52), **R4w
   0.018**, under the 5% the plan requires. The fix does what it says.
+
+## Sign-off (18 October 2026)
+
+The creator: "**approve RT1b as is, freeze it**". So: arms **C, R4, R4w** (no sham); **256 new seeds, 5701–5956**; the
+fix **counts the week's trip to water**; **after MB1b**. Primary, checks, described outcomes (thirst deaths and
+successful water access included) and the prior stand as written above. The code, zero checks and mechanism pilot were
+prepared before this sign-off (recorded above); they are kept as they are, fingerprint `5e25a4c6…`. The study runner and
+analysis are written next, before any study data.
