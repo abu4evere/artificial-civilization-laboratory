@@ -1,0 +1,9 @@
+sham seed 9701: bands 4x[20], alive 42, pops []
+p4 seed 9701: bands 4x[20], alive 50, pops []
+b16 seed 9701: bands 16x[5], alive 75, pops []
+b8 seed 9701: bands 8x[10], alive 69, pops []
+p4 seed 9702: bands 4x[20], alive 71, pops []
+b8 seed 9702: bands 8x[10], alive 71, pops []
+sham seed 9702: bands 4x[20], alive 76, pops []
+b16 seed 9702: bands 16x[5], alive 76, pops []
+ALL DONE

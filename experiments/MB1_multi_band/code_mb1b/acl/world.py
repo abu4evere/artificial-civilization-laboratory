@@ -201,6 +201,15 @@ class World:
             # People come from somewhere livable: fertile ground, near fresh water if the island has any.
             fertile = [t for t in mass if self.tile(t).fertility > 0.4] or mass
             pool = [t for t in fertile if weather.fresh_near(self, t, 3)] or fertile
+            if c.founding_bands > 0 and centres:    # MB1b Amendment 1: the farthest of 200 tries from the bands placed
+                best, gap = None, -1
+                for _ in range(200):
+                    cx, cy = pool[rng.randrange(len(pool))]
+                    d = min(distance((cx, cy), q, c.width, c.height) for q in centres)   # on the torus, as people walk
+                    if d > gap:
+                        best, gap = (cx, cy), d
+                centres.append(best)
+                continue
             for _ in range(200):
                 cx, cy = pool[rng.randrange(len(pool))]
                 apart = all(max(abs(cx - x), abs(cy - y)) > 6 for x, y in centres)

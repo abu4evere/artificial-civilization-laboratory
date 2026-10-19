@@ -1,0 +1,14 @@
+20 founders, seed 11, 5 years: founding_bands 0 = code_v2: yes
+20 founders, seed 501, 5 years: founding_bands 0 = code_v2: yes
+20 founders, seed 501, 20 years: founding_bands 0 = code_v2: yes
+20 founders, seed 601, 20 years: founding_bands 0 = code_v2: yes
+80 founders, seed 11, 5 years: founding_bands 0 = code_v2: yes
+80 founders, seed 501, 5 years: founding_bands 0 = code_v2: yes
+80 founders, seed 501, 20 years: founding_bands 0 = code_v2: yes
+80 founders, seed 601, 20 years: founding_bands 0 = code_v2: yes
+arm b8, seed 501, 20 years: the setting changes the world (it acts): yes
+arm b16, seed 501, 20 years: the setting changes the world (it acts): yes
+arm p4, seed 501, 20 years: identical with and without the observers: yes
+arm b16, seed 501, 20 years: identical with and without the observers: yes
+code_mb1b fingerprint: 32b6f38a28250a955ba52f1d13276e82b30fb860a7ef11afd1a536ad961771dc
+All: PASS

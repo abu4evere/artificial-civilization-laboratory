@@ -103,3 +103,49 @@ The creator: "**approve all MB1b recommendations**". So: (1) arms **P4, B8, B16 
   interval inside ±0.117 "**no meaningful effect**"; otherwise "**unresolved**". Sham against p4 must be quiet.
 - **Described:** as listed above (population, births, blocked decisions, between-lineage meeting and cross-lineage
   couples by MB1a's measures, lineages alive at the end, placement).
+
+## Amendment 1 (18 October 2026, before any data): placement
+
+**Why.** The smoke test (throwaway seeds 9701–9702, 8 years; code check only, no outcome read) showed that with 8 or
+16 bands several bands share an island, the frozen search (a spot more than 6 tiles from earlier centres, 200 tries,
+the last try kept if none succeeds) often fails on small islands, and some band centres ended **0–2 tiles apart**.
+That would mix "smaller bands" with "bands starting merged".
+
+**Change.** When `founding_bands` > 0, each band after the first takes, of 200 tries on its island, **the spot
+farthest from the band centres already placed** (largest of the smallest Chebyshev distances, as the frozen rule
+measures it), instead of the first try more than 6 tiles away or else the last. `founding_bands` 0 (P4, sham) is
+unchanged. Nothing else changes. Zero checks and the smoke test are re-run; the pre-amendment logs are kept
+(`zero_mb1b_pre_amendment.log`, `output_mb1b/zero_pre_amendment.txt`, `output_mb1b_smoke_pre_amendment/`). The actual
+starting gaps are still reported; the amendment is not assumed to remove every placement problem.
+
+**Approval.** Approved via GPT (creator's delegation, 18 Oct 2026). The assistant asked: "A) Run as frozen, and report
+the placement ... B) Amendment 1, before any data: place each band at the spot on its island that is as far as possible
+from the bands already placed (best of the 200 tries, instead of the last try)." GPT's reply, verbatim:
+
+> 1. MB1b placement: B — Amendment 1.
+>
+> Apply the best-of-200 placement rule before examining any experimental outcomes. Keep everything else unchanged and
+> rerun all zero checks. Record the amendment and its rationale. This reduces the risk of confounding band size with
+> bands starting nearly merged. Also report actual starting gaps; don't assume the amendment eliminates all placement
+> problems.
+>
+> Important: Keep MB1b frozen after Amendment 1. Don't make further changes once its data collection starts without a
+> separately documented amendment.
+
+### Amendment 1, correction (18 October 2026, still before any data): distance on the torus
+
+The re-run smoke test of Amendment 1 as first written still showed a gap of 1 between two band centres (b8, seed 9702).
+Tracing it (throwaway seed; placement only, no outcome read) found two errors of the assistant's, both about the world
+wrapping at its edges:
+
+1. Amendment 1 measured distance on the flat map ("as the frozen rule measures it"), but the world is a torus and people
+   walk across its edges, so a band at x = 39 was counted 29 tiles from one at x = 10 that is really 11 away. The
+   amended rule now uses the world's own distance (`util.distance`, Chebyshev on the torus). The frozen rule for
+   `founding_bands` 0 (P4, sham) is untouched.
+2. The read-only placement observer took a plain mean of founder positions, so a band straddling an edge (founders at
+   x = 39 and x = 0) was reported in the middle of the map. It now takes the mean on the torus (offsets from the first
+   founder). This changes only what is reported, not the world.
+
+The intent approved via GPT ("as far as possible from the bands already placed") is unchanged; this makes the code do
+it. Zero checks and the smoke test are re-run again; the first amended run's logs are kept with the suffix
+`_amendment1_flat`. GPT is told of this correction.
