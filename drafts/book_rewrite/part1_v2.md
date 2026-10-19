@@ -175,3 +175,57 @@ The fifth is how narrow watching is. In real life, a child learns most things by
 The last two are about habits. My people learn their habits for a fixed set of situations; they can't invent a new kind of situation to have a habit about. And not all of their habits are learned from their own lives. Some are inherited at birth, as a softened copy of their parents'. Some are soaked up from whoever raises them. Some are picked up in conversation. Only part comes from their own experience. For a while the screen that shows a person's mind said how many of their habits they had "learned", as if every habit came from experience. That was wrong, and in October 2026 I changed it to show only what a habit is, not where it came from.
 
 A history that records its principles but not its failures is just an advertisement. I'd rather you know where the cracks are.
+
+# Part III — What Happened
+
+From here on, this is the story of what my worlds actually did, in the order it happened. Before every experiment I wrote down what I expected, and locked it away where I couldn't change it. Many of those guesses were wrong. I've kept every one.
+
+## Chapter 7 — The First Worlds Come Alive
+
+The very first experiment was small and careful: ten people in two bands of five, living for a little over a year. I wanted to know one thing. Would my people do anything you couldn't explain as a simple reflex, like a thermostat switching on when it gets cold? I wrote down my guesses: that survival would come before everything else, that people would get good at predicting what foraging and resting would bring but bad at predicting each other, that friendships would feed themselves, and that the two bands would never meet.
+
+I don't have the scored results of that first run. The guesses survived; the report didn't. I've left that gap as a gap, rather than fill it in from memory. What the first run did leave was a habit I have kept ever since: write the predictions down first, lock them away, and only then press "start".
+
+The second experiment was the first time I let worlds run long enough to have a history. Eight worlds, up to two hundred years each. Twenty founders in every world, split into four bands of five, each band on its own island.
+
+The worlds came alive almost at once.
+
+In one of them, in the very first year, a person named Ruleidon went back to the place where they had left something, for the third time, to see if it would happen again. It was the first deliberate test of anything in that world: someone checking whether the world behaves the same way twice. In year four, a person named Tairo struck flint where dry things lay, and they caught. It was the first fire ever made by people in that world. Nobody had told Tairo that sparks make fire. Tairo had puzzled over sparks, and tried.
+
+In year fourteen, in the same world, a person named Roukarail attacked a person named Kaileir. It was the first violence anyone there had done. It was a hungry year; three people starved after a poor growing season. Six years later, a person named Ludol attacked Kaileir. Kaileir fought back and killed Ludol. Revenge answered revenge, and a feud began between Kaileir's family and Ludol's.
+
+Then the story of that killing began to travel. It went the only way anything travels in my worlds: parents telling children, neighbours passing on news, each person telling it as they remembered it. Eleven years after the killing, three people said it was someone called Rukeimei who had killed Ludol. Eighty years after, sixteen people believed it was Naikoubo. A hundred and eighty years after, fifty-one people believed it was Midigain. None of them had been there.
+
+And yet the memory itself held. A hundred and eighty years after the killing, sixty-two people across five generations still remembered that Ludol had been killed. It was the longest-lived memory in all eight worlds. They had simply lost who did it.
+
+That was the first time I saw my people carry history beyond living memory, which is the beginning of what a culture is. And in the very same story, I saw that what a people remembers is not the same as what happened. Think of a game of telephone, played across five generations. A people's past is something they make out of retellings. My world doesn't correct them, and shouldn't.
+
+More of what I had hoped for showed up in those first eight worlds. Six of the eight survived. Every one of them developed shared marks, scratched into rock and bark, that came to mean water, shelter or a grave, more than seven hundred of them in all, and about a third of those marks reached people born after they were made. Myths, stories that weren't true but were told by several living people, appeared about twice a century in every world. In every surviving world, someone struck fire after puzzling over sparks. And every world had invented every kind of thing it was possible to make within a hundred years.
+
+Some of my guesses were badly wrong, and those were the most interesting. Stories went wrong far more often than I expected: in one world, three quarters of what people believed about the past was false. And trust had nothing to do with truth. Whether a person was usually right made no difference to how much others trusted them. People trusted whoever fed them. It is not hard to think of human examples.
+
+Then there was the raft, invented almost at once and almost never used, the story I told in Chapter 5.
+
+So I made four changes, all at once. People would now earn their reputation by being right when it was checked, not just by being generous. They would have many more chances to check what they were told. The traces and marks left behind would be able to teach. And floating would become something felt, with the narrow channels between islands no longer jumpable.
+
+Every change worked. People checked what they were told more than fifteen times as often. Reputation began to follow truth. People crossed open water in every world. In every surviving world, someone learned a technique from a mark another person had left, and in three worlds, a skill that nobody alive still knew came back because somebody read it from a mark.
+
+And people started dying.
+
+After a hundred years, my worlds held about forty percent fewer people than before. I had written down, in advance, that I would call the changes a failure if the population fell below half. It came within five people of that line. Half my predictions were wrong. The causes of death looked the same as before; births had simply fallen by a third. Nobody could say why.
+
+So I stopped building and started digging. I replayed the first century of all sixteen worlds, the eight before the changes and the eight after, and checked that each replay matched the original exactly, the way you might watch a recording of a game frame by frame. Then I followed the path from a woman able to have children to a birth, step by step.
+
+Before looking, I wrote down my guesses with odds. My money, at sixty percent, was on the islands: with the narrow channels closed, fewer people could reach a partner. The other main guess was that people were simply busier, with all the new things to check.
+
+Almost every explanation failed. Women had children at almost exactly the same rate as before. People spent their time almost exactly as before. Babies went hungry about as often as before. One world showed my island explanation perfectly. There, almost nobody had a possible partner on their own island; the share of women with a partner halved, births fell to about a quarter, and the world dwindled away. But in the overall numbers, that one world was hidden among the others.
+
+The honest answer was an uncomfortable one: eight worlds were not enough to tell a real effect from bad luck. It's like tossing a coin eight times and getting six heads. It might be a bent coin. It might just be chance.
+
+So the next experiment was built to settle it, with twenty-four worlds, each run twice: once under the old rules and once under the new. I decided in advance that I would only believe the new rules lowered the population if they did so in at least seventeen of the twenty-four. They did in eighteen. The effect was real.
+
+The cause was my island guess, but it worked in a way I hadn't pictured. Every world starts with four bands of five. Under the old rules, seven bands in ten eventually had a child with another band. Under the new rules, only four in ten did. And a band of five that never mixes with anyone almost always dies, under either set of rules. Within a few generations everyone on the island is related, and no one is left to pair with. Fewer than one isolated band in five still had a living descendant after a hundred years. The new rules hadn't made isolation deadlier. They had made it far more common: twice as many bands never met another band at all.
+
+It cost more than lives. With fewer people mixing, fewer techniques were tried, and the ones that were tried were forgotten sooner. Fewer people keep fewer things alive.
+
+I kept the four changes. Their good effects held in every world that lived. But I had learned two lessons I would meet again and again. A wall of water is a death sentence for a small people. And any change to the physics of a world can reach all the way into who gets born.
