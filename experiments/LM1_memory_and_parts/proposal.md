@@ -107,3 +107,23 @@ GPT: "I approve the direction, not the freeze yet", with these points, all taken
 
 GPT's principle, kept as the proposal's own: "We should change the rules that prevent knowledge from accumulating—not
 give agents the ability to accumulate knowledge by assumption."
+
+## GPT's final review (19 October 2026): "Send LM1 to Abdurashid for sign-off"
+
+"The remaining checks are implementation and preregistration checks, not reasons to redesign the study." Added:
+
+- **M1 log checks:** only tied candidates considered; the longest-held dropped; equal holding times by earlier
+  learning, then name; **no other recipe, value or random-number draw changes** (M1 draws no random numbers; a check
+  compares the random state with and without M1 at every tie).
+- **L1 is one lesson:** the failed composite lesson and the part shown instead are the same lesson in the same talk,
+  at the same cost, enforced in the code and in a test. Choosing the first known part in recipe order is a stated
+  implementation choice, not a claim about how real teachers choose; the share of part lessons by recipe shape is
+  reported.
+- **Reported together, identically defined in all four arms:** useful kinds created; useful kinds passed on; the link-3
+  proportion; knowledge survival and each transmission stage.
+- **The interaction test, fixed now:** per world, (ML − L) − (M − C) on the link-3 proportion; Wilcoxon signed-rank
+  test; 95% bootstrap interval (10,000 resamples, `random.Random(2026)`). Support for an interaction: p < 0.05 and an
+  interval excluding zero. **A non-significant result is reported as "not shown", never as "no interaction".**
+
+GPT: "I especially like one thing about this design: L1 can fail ... That's exactly what makes it a scientific test
+rather than a scripted success. No run until the required sign-off and frozen protocol are recorded."
