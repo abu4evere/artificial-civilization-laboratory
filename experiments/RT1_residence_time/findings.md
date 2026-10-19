@@ -62,3 +62,13 @@ person drinks from water within sight of anywhere they went that week (the trip 
 walk to water does), or a base can only be set within reach of water. Either is a design choice under Law 126. Also
 noted: HB1's unexplained hunger (couples returned to a fixed home) may share a mechanism; its causes of death could be
 read the same way (a read-only check).
+
+## Note (18 October 2026, appended; rule 19): the HB1 lead above does not hold
+
+The line above suggested HB1's unexplained hunger "may share a mechanism" with RT1's. HB1's own record already answers
+it, with no new run: in years 0–39, HB1's home-base arm had **fewer** adult thirst deaths than its control (**249 against
+326**; `../HB1_home_base/explore.md`, "Deaths by stage and cause"), while starvation rose (714 against 412). HB1 returned
+couples to a home they had *chosen* as the place that felt best, not to wherever they stopped, and its extra deaths were
+hunger, not thirst. So RT1's water mechanism does not explain HB1. The HB1 question was also closed by the creator after
+HF4 (`../HF4_hunger_ledger/findings.md`). Checked from saved tables only; GPT (under the creator's
+delegation) had approved a read-only check, which this makes unnecessary.
