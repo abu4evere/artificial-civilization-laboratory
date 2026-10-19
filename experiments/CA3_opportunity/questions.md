@@ -1,4 +1,4 @@
-# CA3 — Opportunity or availability: why most inventions never reach a lesson (DRAFT, 19 October 2026; not frozen, nothing run)
+# CA3 — Opportunity or availability: why most inventions never reach a lesson (SIGNED OFF 19 October 2026; frozen as `CA3-frozen` before any code or data)
 
 **Why.** CA2 (`../CA2_teaching_gates/findings.md`, `CA2-done`) found that for **46%** of useful inventions never passed
 on, the inventor never once took part in a talk where teaching could happen while knowing it (G1), and for another
@@ -55,3 +55,31 @@ GPT's warning, kept: "The danger is building a teaching system that secretly man
 2. The availability line: **13 weeks** (recommended), or 52.
 3. Order: **now, on two spare workers** (recommended), or later.
 4. Then the evidence review (b): **yes, after CA3** (recommended), or not yet.
+
+## Sign-off (19 October 2026)
+
+Asked whether to start CA3 (with its four recommended decisions), the creator answered: "**Yea go ahead**". Read as
+approving all four recommendations: (1) **CA1's seeds**, discovery 6301–6316 and holdout 6317–6332, 120 years;
+(2) the availability line at **13 weeks**; (3) **now, on two spare workers**; (4) the evidence review **after CA3**. The
+prior above is frozen as written.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code `code_ca3`:** a copy of `code_ca2` with one more logged field: in each teaching-possible `talk`, the learner's
+  recipes at that moment. Logging only. **Hard stops:** state hash with logging equals `code_v2` (seeds 501 and 601,
+  20 years); every replay ends in CA1's saved `world_hash`; one fingerprint; 0 unmatched log records expected (any are
+  counted and shown).
+- **Useful inventions, never passed on, and "stopped at G1":** exactly as CA1 and CA2 (CA1's observer loaded unchanged;
+  CA2's gate levels recomputed from the same log by the same rule).
+- **Holding time:** weeks from the kind's first appearance (`first_tick`) to the first of: the first knower's recipe
+  dropped (pushed out by the 12-recipe limit, or forgotten as useless, from the log), the first knower's death, or the
+  world's end. **How it was lost:** whichever came first; "held to the end" if none.
+- **Question 1 reading:** among useful never-passed inventions that stopped at G1, **availability-limited** if held under
+  13 weeks, else **opportunity-limited**. The reading is the larger share, counted only if the same in discovery and
+  holdout; otherwise "both". Kinds whose first knower was not a person with a recorded birth are counted and shown.
+- **Question 2 (composites, described):** for useful never-passed kinds with at least one made part, over the first
+  knower's teaching-possible talks while holding it, the share of talks whose learner knew every made part.
+- **Question 3 (described):** for useful inventions passed on against never passed on: the inventor's age at
+  invention (children under 16, adults), median holding time, teaching-possible talks and distinct learners met while
+  holding it, and the share ever valued above 0.15 at an offer.
+- Discovery and holdout reported apart; recorded causes kept apart from inferred explanations; population beside.
