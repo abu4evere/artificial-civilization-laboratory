@@ -289,3 +289,49 @@ Before looking, the favourite explanation had been that knowledge was simply los
 One more suspicion had to be checked. Maybe my people never filled a vessel because the reward comes weeks later and far away, and they simply couldn't learn from delayed rewards. The habit part of their minds does forget fast: a reward five weeks after an act counts only a third as much. But I found two other ways they learn that reach much further back. Beliefs about leaving things at places learn from outcomes up to a year later. And how much a person values a thing they made learns with no time limit at all, as long as they still hold it: things first used more than a year after they were made were made again three times as often as things used at once. If Reibik had ever filled the vessel and drunk from it later, the lesson would have reached Reibik.
 
 So the problem wasn't learning from delay. It was the first step itself, which no delay can teach, because it never happens.
+
+## Chapter 9 — Slowly Forgetting
+
+Once I knew the problem was the first step, I had to decide which side to mend: the world, or the people.
+
+I could change my people: make them more curious, better at planning, more eager to invent. Or I could change the world: let nature take the first step by itself, the way crossing water once showed the raft its worth. I chose the world. I wanted to understand what could grow from the people I had already made. If they weren't inventing, I wanted to know why. Maybe their world gave them no reason to. Maybe useful knowledge couldn't spread. Maybe their groups were too small. Making them want to invent more might fix what I could see without answering what I wanted to know.
+
+That isn't an absolute rule for me. Changing how my people think can be a fair experiment too, as long as I'm honest about what I changed. If I give them a new ability and their civilization blossoms, that doesn't prove they would have grown that ability themselves. It only shows what becomes possible under the new conditions. My default is to look at the world before rewriting the people. The point is never to protect my original people forever. It's to know which conditions lead to which outcomes, without pretending I discovered something I actually programmed.
+
+So I let nature take the first step. Rain would fill any open watertight thing. Wading into a river or lake would fill it too. A fire hot enough would harden dry clay lying beside it. My people's minds stayed exactly as they were, not one line changed. Then, before any world ran, I went through the new code line by line against what I had promised to test.
+
+I found six problems. One of them would have killed the experiment by itself. When a fire hardened clay, the recipe was stored under the wrong label, and the next time that person made a decision, the whole world would crash. Every test had passed, because none of them let a world keep running after a firing. The very first piece of fire-hardened clay in any world would have stopped everything, and I would have recorded the experiment as a failure for a reason that had nothing to do with the question. The other five were quieter, but each would have meant testing something other than what I had promised: rivers in my world can be waded, so they never counted as water and never filled anything; everyone standing near a fire had all their food treated as cooked; and so on. I fixed all six, wrote them down separately, and locked the fixes away before the first world ran. An experiment can be lost before it starts, quietly, inside one wrong label.
+
+Then sixteen worlds ran for a thousand years each.
+
+Half of the idea worked. Fires hardened clay in front of people more than six hundred times, where before it had never happened. People kept what the fire made. Twenty-five fired objects outlived the people who first carried them, and some were still being carried fifty years later.
+
+The other half never had a chance. In eight worlds over up to a thousand years, rain or a river filled a vessel three times, and nobody ever drank water they had carried. The world can't fill vessels nobody makes.
+
+And novelty still stopped. Across the eight worlds, more than six hundred lasting new things appeared in the first century, and exactly one after it.
+
+That one late novelty excited me for a while. It appeared in year one hundred and fifteen, in the world where the two peoples never met, and it looked like a world that had almost found something new. Before building anything on it, I took it apart.
+
+It wasn't new. It was a flint flake. The flake had first been made by a person named Daiyei, born in the world's first year. At four, playing, Daiyei struck flint against flint and was left holding a sharp edge. Over a long life Daiyei became a practised maker, with real skill in their hands, and died of old age in year sixty-two. The flake didn't die with Daiyei. It was taught at least twenty-four times, by several teachers, and read from marks on rock by people who had never met the one who made them.
+
+Four generations later, a person named Mouthir, caring, fairly bold, and with almost no practice at making anything, took flint and struck a flake from a remembered recipe. Soon after, a curious forty-four-year-old named Vetibin did the same, and so did a child of eight named Sosei. All three were clumsy compared with Daiyei, and their flakes came out duller. The instrument I used to spot new things sorted things by how sharp they were, so it saw three people making a kind of flake nobody had made on purpose before, and called it the first lasting novelty after year one hundred in the history of my worlds.
+
+It was the same flake, made worse. Mouthir starved fifteen years later.
+
+The most hopeful number that experiment produced turned out to be a measure of loss. It's in this book because I almost believed it. And it taught me to check every "new" thing for this trap before reporting it: a decline can look like a discovery.
+
+That raised a frightening suspicion. Maybe my worlds weren't frozen at all. Maybe they were slowly forgetting. So I went back through all sixteen thousand-year worlds and measured, every twenty-five years, how skilled their best makers were, how much the living still knew, and how often anyone made anything at all.
+
+The worlds weren't frozen on a plateau. They were slowly unlearning.
+
+Skill comes only from practice in my world. It's never taught, never inherited, and it dies with the person. The founders started with some skill and quickly got better: by year twenty-five, the best maker in each world was close to a master. After that, expertise fell in every single world. By year one thousand, the best maker alive was barely better than a beginner, about a tenth of what the founders had reached. The number of things the living knew how to make fell four- to eight-fold. And people stopped making things at all. In the first twenty years, each person made something on purpose two or three times a decade. By year five hundred, that had fallen forty- to sixty-fold. Even play-making by children fell about fifty-fold. In the later centuries, people almost never made anything.
+
+Imagine a village of potters whose great-grandchildren still own a few pots but no longer remember how they were made, and whose children no longer play with clay. That was my worlds.
+
+I then asked a sharper question: when someone carries, inherits or lives beside a useful thing, how often do they learn to make it, and how often do they actually make one? Teaching worked: recipes passed from teacher to learner well over a thousand times, and a couple of hundred more were read from marks on stone. But watching almost never worked. People watched others make or use things nearly as often as they were taught, and that produced exactly seven copies, all of them boats, because, as I said in Chapter 6, watching only counted at a raft landing or a shared hunt. For blades, spears, clubs, carriers and wraps, watching taught nothing at all.
+
+Fired clay showed that knowing isn't doing. More than a thousand people carried or lived beside fired clay. A few hundred learned how to make it. And of the people who knew the recipe, nearly four in five never once made it on purpose. Knowing how was not enough when the thing solved no problem anyone had.
+
+And the memory accident from Chapter 6 showed up in the numbers. When people made simple things in play, they almost always remembered how. When they made things built from other made things, they forgot one time in five, the moment they made it, five times as often. The parts a longer chain of invention would need were thrown away before anyone could build on them. That was a bookkeeping accident, not human nature, and I planned to remove it.
+
+So the picture had changed. My worlds weren't stuck. They were falling slowly backwards, losing skill, losing knowledge and, most of all, losing the habit of making anything. The question became: why does nobody bother?
