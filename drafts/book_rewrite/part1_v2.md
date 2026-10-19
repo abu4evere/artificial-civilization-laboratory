@@ -229,3 +229,63 @@ The cause was my island guess, but it worked in a way I hadn't pictured. Every w
 It cost more than lives. With fewer people mixing, fewer techniques were tried, and the ones that were tried were forgotten sooner. Fewer people keep fewer things alive.
 
 I kept the four changes. Their good effects held in every world that lived. But I had learned two lessons I would meet again and again. A wall of water is a death sentence for a small people. And any change to the physics of a world can reach all the way into who gets born.
+
+## Chapter 8 — A Thousand Years, and the Freeze
+
+The experiment I had been waiting for was the long one. Eight new worlds, every rule locked, a thousand years each. I expected time to give culture room to grow. If a people had a thousand years, surely they would build something on top of what they started with.
+
+My written predictions were cautious, and most of them came true. Three worlds died: two within their first fifty-five years, from hunger, thirst and children left uncared for, and one slowly, after four centuries, mostly from illness. Five reached year one thousand alive, each with somewhere between thirty-six and eighty-six people. For nine centuries their populations held almost flat, births matching deaths, like a village that never grows and never empties.
+
+In almost every world, one people remained, and usually not a mixed one. In four worlds, everyone alive at year one hundred descended from a single founding band of five. The other three bands had left no one. The usual path to one people was not merging. It was one band outliving the rest.
+
+One world proved me wrong in the most beautiful way. I had predicted there would be no separate peoples. In that world, two islands lay side by side for nine hundred and ninety years, each with between fifteen and fifty-three people. In a thousand years, not one person on either island formed a relationship of any kind with anyone on the other. They never met.
+
+Their temperaments drifted apart early and stayed apart, while the way they differed kept changing: at first they differed most in how hard they worked, centuries later in how anxious they were and how much they cared for others. Their cultures grew apart in ways nobody designed. One island kept beliefs about leaving fibre, stone and wood at certain places in certain seasons, an old building practice. The other island never held any of those beliefs, in any year I checked, for a thousand years. The second island bound things with hide and worked bone; the first did neither. Their marks shared nothing: each island had made its own shapes for rabbits, for graves and for water. They were two peoples with two histories, across a stretch of sea, and neither ever knew the other existed. Think of two valleys in the mountains that grew their own dialects and customs for centuries without ever crossing the ridge between them.
+
+Some things lasted the whole thousand years. The simplest carrier, fibre tied to fibre, was held in five worlds from year ten to year one thousand. About three in four of the people who came to hold it had been taught by someone. The rest found it again by themselves, because it is the easiest thing in the world to make.
+
+But my predictions hadn't asked the question that mattered most, and the results answered it anyway.
+
+Every kind of tool any of those worlds ever had, whether carrier, boat, club, blade, spear or warm wrap, first appeared within the first eleven years. After that, for nine hundred and ninety years, nothing new appeared. Not one new kind of thing.
+
+Worse, the worlds slowly forgot. The number of ways of making things that people knew peaked somewhere around year fifty to a hundred, and by year one thousand it had fallen to about a tenth. Much of what was lost was the clutter of play. But not all of it. Spears were lost in every long-lived world, sometime between the second and fifth centuries, and never came back. Warm wraps were lost in all of them.
+
+A world at year one thousand looked much like the same world at year thirty, and sometimes poorer.
+
+It wasn't a bug. The experiment had worked exactly as designed, and that made it impossible to wave away. These worlds had history. What they didn't have was history that kept going.
+
+The worlds went on. People lived their lives. Generations passed. But culturally, something had stopped moving. I had to face a hard possibility: building a world where people survive, talk and have children does not automatically build a world where culture keeps growing. Maybe my people lacked something they needed to invent. Maybe new ideas appeared and failed to spread. Maybe the groups were too small or too cut off to keep and build on what they learned. Or maybe the world rewarded staying alive without ever rewarding discovery.
+
+I couldn't simply make my people invent more often and call the problem solved. That would be writing the answer in instead of understanding why culture had frozen. So the freeze became something to investigate, not something to hide. My question changed. I was no longer asking only whether a civilization could last a long time. I was asking what lets a civilization keep creating something new.
+
+My first answer was the obvious one: maybe the world was too poor. With six materials and two ways of changing them, perhaps there simply wasn't enough to discover. So I made matter richer. Things now had weight, warmth, wetness, softness. Soft wet clay lay by rivers and lakes. People could hold something in a fire, fill something, and press soft stuff into a shape. I ran eight worlds, each for a thousand years, and predicted that in at least half of them, something new would still be appearing after year three hundred.
+
+It didn't happen. In every world that lived three centuries, the last new thing appeared by year sixty-six. My people did take up the new physics, but only the shallow end of it. They shaped clay constantly, dozens of shapes in every world. And then they stopped. In all eight worlds, over up to a thousand years each, exactly one thing was ever changed by being held in a fire. Nobody ever filled a vessel. No water and no fire was ever carried anywhere. The richer worlds were also harsher, and I never found out why: four of the eight died out.
+
+There was one small hopeful sign. In two of the surviving richer worlds, new traditions began after year one hundred and lasted a century or more; in one, a belief about leaving fibre at certain places in summer and autumn began around year three hundred and forty and lasted to the end of the millennium. No world under the old rules ever had a tradition that began that late. Two worlds against none is a hint at most, but I wrote it down, because it may matter later.
+
+So I stopped building new worlds and started taking old ones apart. I replayed two of the richer worlds from their first week, with instruments that only read and never touch, and recorded every choice every person made, and every option they had weighed before making it. Before trusting a single number, I checked that the replays matched the saved worlds exactly. They did.
+
+That is how I found the two people at the heart of this book.
+
+The first was a child named Beimak, born in the world's eighth year to two of the founders. Beimak was curious, more than most, not very hard-working, not very sociable, quick-tempered and a little anxious. At about four years old, playing at a fire, Beimak held a dry lump of clay in the flames. The clay set hard. It was the first fired clay in that world, and as it turned out, the only fired clay that world would make in a thousand years: the whole history of pottery in that world.
+
+Beimak remembered having made it, but valued it at nothing. Beimak never used it, never made it again, and never showed anyone. In the weeks that followed, Beimak's choices were ordinary ones: rest, gather stone, play, talk with an older sibling. Nine weeks after the firing, Beimak's mother starved to death. Three weeks later, Beimak's youngest sibling, not yet three, died of thirst. Two weeks after that, Beimak starved too. In five weeks the family had lost a mother and two children. Two weeks later, the world recorded that nobody alive knew how clay could be made hard in a fire. The knowledge had lasted sixteen weeks.
+
+Beimak showed me that the physics worked: heat did exactly what it should. It showed how rare the chance was: in a whole century, adults stood at a fire holding a piece of clay that could be fired in only three weeks. And it showed something harder to see in tables. In my world, the people most likely to try something new are the ones who play, and the ones who play are children, who are also the ones most likely to die.
+
+The second was Reibik, the person from the beginning of this book. Reibik was one of the founders of another world, very sociable, calm, not especially bold or curious, with a partner and six children. In the world's twelfth year, playing with materials, Reibik bound hide to bone with fibre and made the only watertight thing ever made in any of those eight worlds.
+
+Reibik liked it and used it as a carrier the very next week, and again, and again, a hundred and four times, valuing it a little more each time. Reibik made a second one, and taught it: to one child, then another, then a third. The children carried the recipe on after their parent was gone. One of them taught it to a ten-year-old outside the family, who later taught it to their own child, and to a half-sibling. By then the recipe had changed in the telling: the later learners believed it was tied with hide, not fibre. The knowledge lived on for sixty years, until Reibik's child Baigi starved, and the next week nobody alive knew it anymore.
+
+And for two years, Reibik stood within reach of fresh water, holding a vessel that could hold water, and never once filled it.
+
+When I look at those two years, I see a question bigger than the vessel. The invention happened. The ability existed. But the act that would have made the invention matter never followed. Reibik forces me to separate things that look like one thing. Making a vessel is not the same as understanding what it can do. Understanding is not the same as remembering to use it. And remembering is not the same as choosing to act. Reibik's story alone doesn't tell me which of those failed. The record gives me the puzzle, not the explanation. But it showed me that I can't count an invention as the end of the story. I have to follow what happens next: whether it is used, whether someone else learns it, whether it survives, and whether it becomes part of life. **Reibik created the possibility, but the possibility never became a practice.**
+
+The replays let me score every link in that chain, separately for fire and for water. Was there an opportunity? For fire, rarely, because fires are rare and brief. For water, constantly. Did anyone take the first step on purpose? Never, for either; the one fired lump came from a child's play. Did the material change as it should? Every time. Did anyone notice what it meant? Barely. Did it spread? The clay vanished in sixteen weeks; the vessel was taught for sixty years, but only ever as a carrier.
+
+Before looking, the favourite explanation had been that knowledge was simply lost, that someone discovers a thing and it dies with them. Knowledge loss was everywhere in my worlds, after all. But that wasn't the main problem here: Reibik's vessel was taught to seven people and outlived its maker by decades. The problem was earlier. People met the opportunity and never took the first step. I gave that place a name: **the first-try bottleneck**.
+
+One more suspicion had to be checked. Maybe my people never filled a vessel because the reward comes weeks later and far away, and they simply couldn't learn from delayed rewards. The habit part of their minds does forget fast: a reward five weeks after an act counts only a third as much. But I found two other ways they learn that reach much further back. Beliefs about leaving things at places learn from outcomes up to a year later. And how much a person values a thing they made learns with no time limit at all, as long as they still hold it: things first used more than a year after they were made were made again three times as often as things used at once. If Reibik had ever filled the vessel and drunk from it later, the lesson would have reached Reibik.
+
+So the problem wasn't learning from delay. It was the first step itself, which no delay can teach, because it never happens.
