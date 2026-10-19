@@ -61,3 +61,31 @@ inventor's own work. (My last prior, on CA1, was wrong.)
 2. Worlds: **CA1's seeds, discovery then holdout** (recommended), or new seeds.
 3. Include question 2 (**yes**, recommended) or leave it.
 4. Order: **now, on two spare workers** (recommended), or after FX2.
+
+## GPT's science review (19 October 2026, under the creator's delegation; a review, not a sign-off)
+
+GPT: "Recommend CA2 for Abdurashid's review, with these refinements. Do not freeze it on my authority." Its points, in
+short (full wording in the AI World chat), and how the draft now takes them:
+
+1. **"Define the denominator for every gate"**: entering, passing, pass rate with its base, and how many were finally
+   passed on. → Adopted: the table reports all four for each gate.
+2. **"Separate the first failure from the biggest loss"**: a gate with a low pass rate may touch few inventions. →
+   Adopted as **Decision 5**: the reading is either (a) the lowest pass rate (as drafted) or (b) **the gate where the
+   most useful inventions stopped for good** (each never-passed invention assigned to the furthest gate it ever reached).
+   Recommended: **(b) as the reading, (a) beside it**, both required to agree across discovery and holdout for "one
+   bottleneck"; otherwise "no single bottleneck".
+3. **Who built on what**: "Original inventor. Someone who learned the invention. Unclear or unrecorded", and whether the
+   improved version was passed on. → Adopted for question 2.
+4. **"Report teaching and watching separately through the gates."** → Adopted: watching has its own gates (W1 a learner
+   sees the thing made and it worked; W2 the 4% × curiosity draw; W3 the copy is new and followable), reported beside
+   teaching's.
+5. **Integrity:** CA1's exact seeds (replays checked against CA1's saved state hashes), discovery and holdout kept
+   separate, missing or ambiguous gate records counted and shown, no threshold changed after results. → Adopted.
+6. **"Track the 12-recipe limit explicitly at G8"**: a learner who drops it because the limit pushed it out, forgot it
+   as useless, or died, reported apart, "otherwise, label the reason unknown". → Adopted.
+
+GPT's boundary, kept: "identifying a gate associated with failure does not prove that changing it would increase
+cumulative culture. That would require a separate, preregistered intervention."
+
+**Decision 5 for the creator:** the reading: **the gate where most stopped, lowest pass rate beside** (recommended), or
+the lowest pass rate alone.

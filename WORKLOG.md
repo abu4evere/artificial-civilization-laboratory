@@ -20,3 +20,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. Claude reads this first when it is back.
 - 2026-10-19 00:18 Claude, sleep mode: CA1 at 12/36, MB1b at 127/1024. Plan: when CA1 ends, analyse, findings, upkeep, book chapter.
 - 2026-10-19 01:19 CA1 done: bottleneck = transmission (11%/10% of useful inventions ever learned by another), prior wrong; findings, INDEX, ROADMAP, decisions, book Ch 86 'The First Hand-Over', book rebuilt.
 - 2026-10-19 01:19 Drafted CA2 (teaching gates + CA1's 'who built on' caveat) for sign-off; not frozen. MB1b at 148/1024.
+- 2026-10-19 01:21 GPT reviewed CA2 (six refinements, all adopted into the draft; decision 5 added). Still a draft.
