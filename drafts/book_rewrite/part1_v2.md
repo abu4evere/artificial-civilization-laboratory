@@ -545,3 +545,75 @@ The survival trial came first, and it was brutal. The ordinary worlds lost half 
 What I learned was about the land. In my world as it stood, no weather could give people a grassland's uncertainty, and the weather that came closest killed them. The idea itself was untouched, neither supported nor refuted. My world couldn't yet ask the question.
 
 And then something else caught my eye, something I had been walking past for months. Half of the ordinary worlds in that trial had died, with nothing changed at all. Before testing anything else, I needed to know why.
+
+# Part IV — Finding Each Other
+
+## Chapter 15 — The Worlds That Grew Old
+
+When half the ordinary worlds in my weather trial died, I didn't reach for another theory about storing food. Something more basic was wrong, and understanding it mattered more than any experiment built on top of it. No fixes, no tuning, no code changes: first find the cause.
+
+The first finding was a smaller number. Across all forty ordinary worlds I had already run with the same rules, a third had died, not half. I replayed every one of them with a silent observer, and every replay matched its record exactly.
+
+The worlds didn't starve. People in dying worlds went hungry no more often than people in living ones. Their land held as much food or more. Their small children always had someone caring for them. What the dying worlds shared was quieter, and sadder. Their last child was born forty to sixty-five years before their last death. For decades nobody was born, and the people who were left grew old together, until old age and illness took them one by one. Women who could have had children lived on in those worlds, sometimes for thirty years, and in every one of those years they had no partner.
+
+The reason was in nature, not culture. The founders paired up in their first decade. After that, pairing nearly stopped, in dying and living worlds alike. A person looking for a partner in my world could only court someone they could see, a few steps away, or walk toward someone a little further, or else wander at random, in a world sixteen hundred tiles big. In a small, scattered people, a single woman almost never had an eligible man in sight, even though one was usually alive somewhere. Imagine trying to find a husband in a huge empty valley where you can only ever see a few hundred metres, and the other few dozen people are spread across it. Bigger worlds kept enough people near one another for chance to do the rest. Smaller ones didn't. And by year twenty, you could already tell the worlds that would die from the ones that would live, by their size alone, decades before the end.
+
+For many experiments I had asked why my people didn't prepare for winter. Meanwhile, a third of my worlds had been ageing out the whole time, not for want of food but for want of meeting.
+
+So I went back to the foundation and asked: how do real people find partners?
+
+Real foragers never do it the way mine did. Nobody finds a spouse among a handful of people by bumping into them. A forager meets hundreds of adults in a lifetime. A people needs something like seventy-five to a hundred and fifty members to be safe from the accidents of births and deaths, and more when it's spread over land. Spouses usually come from outside the local group. Camps are fluid, joined and left many times a year. Bands gather at good places in good seasons, and marriages are arranged there. Above all, most marriages are arranged by parents and relatives, with gifts or work exchanged between families, knitting groups together across the land.
+
+My worlds began with twenty people, fewer than any estimate of a people that can last, and those people looked for partners only within sight. But I had to keep my line: arranged marriage, gatherings and their customs are culture, and I couldn't write them in. I could only watch to see whether my people ever found them. What belonged to nature was smaller: the wish to find a partner, the memory of people met and where they lived, the legs to go there, and how many people a world begins with.
+
+So I asked the cleanest possible question first: what if everyone could find everyone? I made a copy of my world with one switch that was never meant to become nature: once a week, every single woman was instantly paired with an eligible man from anywhere in the world, and he came to her. Then I ran it on the same sixty-four worlds and compared each with itself. I fixed the thresholds in advance: if almost no worlds died, the problem was finding; if many still died, the problem was size.
+
+Seven worlds died, instead of twenty-two. Perfect finding saved seventeen of them, and populations that had stood still for a century began to grow. The verdict was both: finding was most of the problem, and size was the rest.
+
+The seven that still died told the rest of the story. In every year a woman was single in those worlds, there was no man anywhere who wasn't her relative and close to her age. The pool wasn't hidden; it was empty. Those worlds had been tiny from their first decade. Perfect finding put off their end by a few decades, and couldn't prevent it.
+
+And once people could pair, something else came into view. Couples brought together didn't stay together. In the ordinary course of gathering food, they drifted apart. So I watched couples, week by week, changing nothing. Partners were apart in about half of all their weeks. Most separations began with gathering: each partner went to whatever nearby patch looked best, and nothing in either of them weighed being near the other. When a partner had wandered off, the wish to go back was there, among their top choices three weeks in four, and it lost to food five times in six. Love wasn't the problem; the affection between partners was high. Hunger simply outbid it.
+
+Reading the code had also turned up a strange gap. A child could only be conceived when partners were within two steps of each other, but a person only felt drawn back toward a partner when they were more than three steps away. At exactly three, a couple could neither have a child nor feel any reason to close the gap. Two in five of their apart weeks were spent right there.
+
+What does living together mean for real foragers? Husband and wife often go out separately by day, after different foods, and share what they bring back. But at night they come back to the same place. A camp is the centre of a forager's life: people go out from it and return to it, and the camp itself moves every few weeks to fresh ground. Measured in weeks, a real couple would be together almost every week. My couples had no camp. Each person remembered a place that felt best, but partners didn't share it, and their two "homes" agreed only about half the time and drifted, changing every five or six weeks.
+
+I tested the smallest fix first: close the gap, so a partner more than two steps away became someone to be drawn toward. It did nothing. Couples spent as many weeks at three steps apart as before. When I replayed a few worlds, the new pull was there, among each partner's leading choices four weeks in five, and was chosen one week in five. Food outbid it, exactly as before.
+
+That small failure taught me something important about my worlds. A change that barely moved anyone's behaviour still altered the fate of nineteen of sixty-four worlds, seven saved and twelve lost, because any change, however tiny, sends each world down a different road from its first week. Like a butterfly flapping its wings. From then on, every experiment had to measure that noise before claiming to see past it.
+
+What was missing wasn't a pull toward wherever a partner happened to be. It was a place that both of them came home to.
+
+## Chapter 16 — A Place to Come Home To
+
+So I gave couples a home. Each couple's home was chosen from the places both of them remembered as best. Each week, wherever they had gone, partners within a day's walk came back to it. Nothing said who moved to whom, or who gathered what. And this time, after what the butterfly had taught me, I measured the noise: a third set of worlds, identical to the ordinary ones except for one extra roll of the dice in the first week, would show how many worlds change their fate by chance alone.
+
+The change did exactly what it was meant to. Couples who had been apart more than half their weeks were now apart almost never. Women with partners had children more often. In the first decade, more children were born.
+
+Then the worlds began to die. Thirty-three of sixty-four died out, against twenty-two in the ordinary worlds, and the tests said this was not chance. The dice-roll worlds lost twenty-four, which is what chance looked like.
+
+It wasn't crowding: illness took a smaller share of the dead. It was hunger. Adults starved about three quarters more often in the first forty years; teenagers, too old to follow a parent and too young to gather well, died almost three times as often. Women were widowed, pairing slowed, and populations that had held steady shrank.
+
+My first explanation was neat: families tied to one place had eaten the land around it bare. Real foragers return to camp each night, but they also move the camp when the land around it is spent, and I had given my couples a centre without that movement. It fitted so well that I almost built the obvious fix, a home that moves with the food. But the explanation had only been inferred from deaths. So I measured the land itself, around every couple's home, with a rule fixed in advance.
+
+The land wasn't bare. Around shared homes it was only about three percent emptier than around the same couples' homes in the ordinary worlds; a short walk further out it was, if anything, fuller. The hunger was real, again, on new worlds as on the old. But not because the land was empty. My explanation was wrong, and I wrote a correction beside it.
+
+So I went looking. Maybe couples with a home had too many children to feed. They had a few more each, about one in ten, but the hunger fell on everyone, parents, childless couples and people living alone alike. Maybe they hunted less. But meat turned out to be almost nothing in my worlds, two hundredths of one percent of what people ate; nothing about hunting could starve anyone. Wrong again.
+
+Something else showed in the accounts. With a shared home, people gave each other about two fifths less food. Remember that in my worlds, food is kept in other people's stomachs and debts. Maybe a shared home ended the meetings by which food found its way to those who needed it. So I checked that too. When an adult was starving, someone with food to spare was within reach just as often as before. Help wasn't further away. It just came less often, and protected less. My prediction, that people met each other less, was wrong for the third time in a row.
+
+Three checks, three wrong guesses. The land wasn't empty; there weren't too many children; meat was nothing; the gifts, though fewer, weren't what starved people. What all the checks had in common was a set of small shifts: a little less food coming in, a fifth fewer people with food to spare, fewer gifts, poorer gathering near home. Many of my people live just above the line of hunger. Small shifts, each too small alone, might tip many of them over.
+
+The last check looked at the one moment that decides it: when each person eats, and how much food they hold against what they need. Under a shared home, the food people held when they ate had fallen by about a fifteenth, across everyone. Shifting the ordinary worlds down by that much predicted most of the hunger. But I had written my rule badly, and noticed it before checking the new worlds: it compared the prediction against all the hunger, not against the extra hunger the home had caused. Against the extra, it explained about half. I kept the verdict as the rule gave it, and wrote the limit beside it. Half an answer.
+
+With that, I closed the question of the fixed home, as I had decided I would. A home built that way made people hungrier, through a broad and modest fall in the food they held, about half of which I could account for. The home that moves with the food was never built; the explanation behind it hadn't survived.
+
+But the evidence still pointed somewhere. Foragers go out from a camp by day and come back to it, and they move the camp itself, many times a year, when the land around it gives less. Among the Batek people of Malaysia, how long a camp stayed in one place fitted well with what a forager weighing falling returns against the cost of moving would choose. That was the half of the evidence my fixed home had left out.
+
+So I built a camp that moves. Partners who had gathered within a day's walk of each other ended each week together, on whichever of their two places held more food, and the next week they went out from there. There was no home to stay at, and nothing to eat bare.
+
+It did what it was meant to. Couples who had been apart more than half their weeks were now apart less than one week in five. About an eighth more children were born to each woman. And this time the hunger didn't come: the food people held when they ate was the same, almost to the last crumb, as in the ordinary worlds.
+
+The worlds didn't live longer for it. Twenty-six died against twenty-two, a difference I couldn't tell from chance. More of the extra children died, and hunger took a larger share of the dead.
+
+So the long thread that began with worlds growing old ended here. Worlds died mainly because people couldn't find partners. Couples, once found, spent half their time apart. Keeping them together, without harm, gave more children. And more children, at least by this measure, didn't save the worlds. The lever that really mattered was finding a partner at all, and it was still untouched.
