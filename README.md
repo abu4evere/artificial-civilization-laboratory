@@ -1,40 +1,69 @@
 # Artificial Civilization Laboratory
 
+**Twenty people wake up on a set of islands knowing nothing. No tools, no fire, no language, no rules. Nobody writes
+their history. What do they build?**
+
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen)](pyproject.toml)
 [![tests](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml/badge.svg)](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml)
+[![Book: The World That Nobody Wrote](https://img.shields.io/badge/book-The%20World%20That%20Nobody%20Wrote-8a5a44)](https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)
 
-![The viewer: a live world of 33 people in five named bands on a set of islands, with population, ages and group stability](docs/img/viewer.png)
+![A live ACL world: 33 people in five bands on a set of islands, with population, ages and group stability](docs/img/viewer.png)
 
-## At a glance
+ACL is a simulated world of hunter-gatherers where **nature is programmed and culture is not**. People have bodies,
+hunger, cold, fear, love, grief, curiosity and memory. Stone can be struck, wood floats, seeds grow. That is all. No
+list of inventions, no reward for being clever, no script. Whatever they come to make, believe or pass on, they find for
+themselves, or it never exists.
 
-- **What it is:** an agent-based simulation in pure Python. Each person has drives, feelings, memory and a table of
-  608 reinforcement-learned habits (32 situations × 19 actions); culture (tools, traditions, trust, symbols) is never scripted, only measured.
-- **How it is tested:** about 60 studies, recorded in [`experiments/INDEX.md`](experiments/INDEX.md). Experiments are
-  frozen and tagged before they run, use a discovery set and a held-out replication, and compare every change with a
-  sham arm (one extra random draw) to show what chance alone does. Every number traces to a committed script.
-- **The book:** [*The World That Nobody Wrote, Part One*](https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)
-  (PDF, 226 pages), the project's story told from its experiment records, wrong predictions included.
-- **How it stays honest:** worlds replay bit for bit; [tests](tests/) (including property-based ones) run on every
-  push; wrong predictions are kept, and corrections are appended, never rewritten.
+Then I measure what happens, with the rigour of a lab: every experiment's predictions are written down and locked
+before it runs, every world replays bit for bit, and every wrong guess stays in the record.
 
-### Some results
+## What happened in their worlds
 
-| question | result | details |
+- **They invented a raft in their first weeks, and never used it.** Nothing ever showed them what floating was for.
+- **One person made the only water vessel in their world, and carried it beside fresh water for two years without
+  once filling it.** The thirsty people never had one.
+- **A killing was remembered for 180 years, across five generations, and blamed on the wrong person.**
+- **Two peoples lived side by side for a thousand years and never met.** Each grew its own marks, crafts and beliefs.
+- **Food flows to family:** 72% of gifts go to relatives, and a third of all gifts to brothers and sisters. Nobody wrote that.
+- **And culture keeps stalling.** Nine in ten useful inventions are never passed on, and 99% of those are forgotten
+  within a season, pushed out of memory before anyone could learn them. Finding out why is what this project does.
+
+| question | answer | record |
 |---|---|---|
-| What decides whether a small world survives? | **How far people can see.** Halving sight: 49 of 64 worlds died out; doubling it: 8 (normally 22). | [SA1](experiments/SA1_sensitivity/findings.md) |
-| Do separate bands ever meet? | In large worlds, **almost never**, yet those worlds survive best: each band is big enough to carry itself. | [MB1a](experiments/MB1_multi_band/findings_mb1a.md) |
-| Do learned habits matter, and whose are they? | They change **1 adult choice in 7**, but **57%** of what they hold is copied from others in conversation; everyone ends up alike. | [BL0](experiments/BL0_habit_use/findings.md) |
-| Does a hidden shortcut (knowing where absent family is) keep worlds alive? | **No.** Replacing it with "where I last saw them" changed survival by nothing measurable. | [LK1](experiments/LK1_location_knowledge/findings.md) |
+| Why do a third of small worlds die out? | Not hunger: **people can't find partners.** With perfect partner-finding, 17 of 22 doomed worlds survive. | [F1](experiments/F1_baseline_fragility/findings.md), [F2](experiments/F2_perfect_search/findings.md) |
+| Does more land help, or more people? | **People.** 80 founders instead of 20: extinction falls from 2 worlds in 5 to under 1 in 100. | [WS1](experiments/WS1_world_size/findings.md) |
+| What decides whether a small world survives? | **How far people can see.** Halve sight: 49 of 64 worlds die; double it: 8. | [SA1](experiments/SA1_sensitivity/findings.md) |
+| Where does cumulative culture break? | **At the first hand-over.** About 1 useful invention in 10 is ever learned by anyone else. | [CA1](experiments/CA1_chain_audit/findings.md), [CA2](experiments/CA2_teaching_gates/findings.md), [CA3](experiments/CA3_opportunity/findings.md) |
 
-### Check one experiment end to end
+All 76 studies, with their predictions and results: [`experiments/INDEX.md`](experiments/INDEX.md).
 
-LK1, in order: the frozen plan, with its predictions written before any run
-([`questions.md`](experiments/LK1_location_knowledge/questions.md), git tag `LK1-frozen`) → the runner and analysis
-([`run_lk1.py`](experiments/LK1_location_knowledge/run_lk1.py), [`analyse_lk1.py`](experiments/LK1_location_knowledge/analyse_lk1.py))
-→ the raw outputs ([`output/`](experiments/LK1_location_knowledge/output/)) → the tables
-([`results.md`](experiments/LK1_location_knowledge/results.md)) → the reading, including the predictions that were
-wrong ([`findings.md`](experiments/LK1_location_knowledge/findings.md)).
+## Read the story
+
+**[*The World That Nobody Wrote, Part One*](https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)**
+(free PDF): how the worlds were built, what their people did, and every mistake along the way.
+
+## Run a world yourself
+
+```bash
+git clone https://github.com/abu4evere/simulated-world.git
+cd simulated-world
+python -m acl watch
+```
+
+Pure Python, no dependencies. A world opens in your browser: click anyone to follow them and see what is on their mind.
+
+## How it stays honest
+
+- **Predictions first.** Each experiment's plan and guesses are committed and git-tagged before any code or data.
+- **Controls and replication.** Changes are compared on identical worlds, with "sham" worlds to show what chance alone
+  does, and findings are re-checked on worlds nobody has looked at.
+- **Measurement never touches the world.** Every observer is proven read-only: the world ends identical with and without it.
+- **No hidden answers.** A test fails if invention names appear in the code people think with.
+- **Failures are kept.** Wrong predictions are printed as wrong; corrections are added beside the original, never over it.
+- **Check one end to end:** [LK1](experiments/LK1_location_knowledge/): frozen plan
+  ([`questions.md`](experiments/LK1_location_knowledge/questions.md), tag `LK1-frozen`) → runner → raw outputs →
+  [`results.md`](experiments/LK1_location_knowledge/results.md) → [`findings.md`](experiments/LK1_location_knowledge/findings.md).
 
 ---
 
