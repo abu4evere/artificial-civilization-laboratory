@@ -4,7 +4,7 @@
 
 In the twelfth year of one world, a person named Reibik sat playing with whatever lay nearby: a piece of hide, a piece of bone, some fibre. Reibik tied them together, and what came out could hold water. Nobody had shown Reibik how. Nobody in that world had ever made such a thing, and in all the other worlds running beside it, nobody else ever would.
 
-![Illustration, not from the simulation: Reibik beside fresh water, holding the vessel.](../drafts/book_rewrite/images/01_vessel_web.png)
+![Reibik beside fresh water, holding the vessel.](../drafts/book_rewrite/images/01_vessel_web.png)
 
 Reibik liked it and carried it everywhere. Reibik made a second one and showed the children how, and they showed others, and the way of making it passed from hand to hand for more than fifty years after Reibik died, changing a little each time, the way stories do.
 
@@ -28,7 +28,7 @@ This is a living book. My worlds are still running, and every new experiment add
 
 Everything in these pages happened in the record. Every name belongs to someone who lived in one of my worlds. Every failure is kept, because the failures taught me the most.
 
-I wrote this book with AI as a tool, the same way I built the worlds.
+I wrote this book with AI as a tool, the same way I built the worlds. The paintings are imagined illustrations of the moments the record describes.
 
 # Part I — The Dream
 
@@ -150,7 +150,7 @@ Nobody listed the raft. The raft exists because wood floats a little, tying two 
 
 That is exactly what happened, and it taught me one of my most important lessons. My worlds start as islands, one founding band on each, so the peoples stay apart unless someone works out how to cross the water. The first question anyone asked of my first long run was: when will they invent the raft? The answer was almost embarrassing. Immediately. Wood is the commonest thing near any camp, and in every world someone tied two sticks together within the first three years, often within weeks, usually while playing. They had made a boat. Nobody knew.
 
-![Illustration, not from the simulation: the raft nobody used.](../drafts/book_rewrite/images/02_raft_web.png)
+![The raft nobody used.](../drafts/book_rewrite/images/02_raft_web.png)
 
 And nobody used it. Almost every crossing between islands in that run happened without anything that floats, over narrow channels that my movement rules had quietly let people jump. Across open water, there were three crossings in nearly fifteen hundred years of world-time. In each world, dozens of people knew how to make a raft, and almost no one carried one. When we looked for the reason, we found three: nothing in the world ever showed anyone what floating was for; people carry only the few things they value most, and a raft was valued like a slightly awkward club; and the rare person who did set out to sea with one picked a random far shore, a different one every week.
 
@@ -200,7 +200,7 @@ In year fourteen, in the same world, a person named Roukarail attacked a person 
 
 Then the story of that killing began to travel. It went the only way anything travels in my worlds: parents telling children, neighbours passing on news, each person telling it as they remembered it. Eleven years after the killing, three people said it was someone called Rukeimei who had killed Ludol. Eighty years after, sixteen people believed it was Naikoubo. A hundred and eighty years after, fifty-one people believed it was Midigain. None of them had been there.
 
-![Illustration, not from the simulation: a memory passed on by the fire.](../drafts/book_rewrite/images/03_story_fire_web.png)
+![A memory passed on by the fire.](../drafts/book_rewrite/images/03_story_fire_web.png)
 
 And yet the memory itself held. A hundred and eighty years after the killing, sixty-two people across five generations still remembered that Ludol had been killed. It was the longest-lived memory in all eight worlds. They had simply lost who did it.
 
@@ -248,7 +248,7 @@ One world proved me wrong in the most beautiful way. I had predicted there would
 
 Their temperaments drifted apart early and stayed apart, while the way they differed kept changing: at first they differed most in how hard they worked, centuries later in how anxious they were and how much they cared for others. Their cultures grew apart in ways nobody designed. One island kept beliefs about leaving fibre, stone and wood at certain places in certain seasons, an old building practice. The other island never held any of those beliefs, in any year I checked, for a thousand years. The second island bound things with hide and worked bone; the first did neither. Their marks shared nothing: each island had made its own shapes for rabbits, for graves and for water. They were two peoples with two histories, across a stretch of sea, and neither ever knew the other existed. Think of two valleys in the mountains that grew their own dialects and customs for centuries without ever crossing the ridge between them.
 
-![Illustration, not from the simulation: two peoples, a strait apart, who never met.](../drafts/book_rewrite/images/04_two_islands_web.png)
+![two peoples, a strait apart, who never met.](../drafts/book_rewrite/images/04_two_islands_web.png)
 
 Some things lasted the whole thousand years. The simplest carrier, fibre tied to fibre, was held in five worlds from year ten to year one thousand. About three in four of the people who came to hold it had been taught by someone. The rest found it again by themselves, because it is the easiest thing in the world to make.
 
@@ -278,7 +278,7 @@ That is how I found the two people at the heart of this book.
 
 The first was a child named Beimak, born in the world's eighth year to two of the founders. Beimak was curious, more than most, not very hard-working, not very sociable, quick-tempered and a little anxious. At about four years old, playing at a fire, Beimak held a dry lump of clay in the flames. The clay set hard. It was the first fired clay in that world, and as it turned out, the only fired clay that world would make in a thousand years: the whole history of pottery in that world.
 
-![Illustration, not from the simulation: the only fired clay that world ever made.](../drafts/book_rewrite/images/05_clay_child_web.png)
+![The only fired clay that world ever made.](../drafts/book_rewrite/images/05_clay_child_web.png)
 
 Beimak remembered having made it, but valued it at nothing. Beimak never used it, never made it again, and never showed anyone. In the weeks that followed, Beimak's choices were ordinary ones: rest, gather stone, play, talk with an older sibling. Nine weeks after the firing, Beimak's mother starved to death. Three weeks later, Beimak's youngest sibling, not yet three, died of thirst. Two weeks after that, Beimak starved too. In five weeks the family had lost a mother and two children. Two weeks later, the world recorded that nobody alive knew how clay could be made hard in a fire. The knowledge had lasted sixteen weeks.
 
@@ -384,7 +384,7 @@ The answer was the oldest one in the world: winter. I followed every one of the 
 
 Babies starved at seven times their share of the population. Of the children and babies who starved, almost every one still had a living carer. The carers were hungry too.
 
-![Illustration, not from the simulation: a winter with nothing laid by.](../drafts/book_rewrite/images/06_winter_web.png)
+![A winter with nothing laid by.](../drafts/book_rewrite/images/06_winter_web.png)
 
 Two months before they died, in late autumn, the typical person who starved had no food on hand at all, and no food stored anywhere nearby. Not one of them was carrying anything that holds food.
 
@@ -570,7 +570,7 @@ The worlds didn't starve. People in dying worlds went hungry no more often than 
 
 The reason was in nature, not culture. The founders paired up in their first decade. After that, pairing nearly stopped, in dying and living worlds alike. A person looking for a partner in my world could only court someone they could see, a few steps away, or walk toward someone a little further, or else wander at random, in a world sixteen hundred tiles big. In a small, scattered people, a single woman almost never had an eligible man in sight, even though one was usually alive somewhere. Imagine trying to find a husband in a huge empty valley where you can only ever see a few hundred metres, and the other few dozen people are spread across it. Bigger worlds kept enough people near one another for chance to do the rest. Smaller ones didn't. And by year twenty, you could already tell the worlds that would die from the ones that would live, by their size alone, decades before the end.
 
-![Illustration, not from the simulation: looking for someone in an empty land.](../drafts/book_rewrite/images/07_valley_web.png)
+![looking for someone in an empty land.](../drafts/book_rewrite/images/07_valley_web.png)
 
 For many experiments I had asked why my people didn't prepare for winter. Meanwhile, a third of my worlds had been ageing out the whole time, not for want of food but for want of meeting.
 
@@ -650,7 +650,7 @@ Then I looked at my world and felt it was too small, forty tiles by forty, a cra
 
 My worlds began with twenty. My whole world was one band, with no other bands to marry into, visit, or move to. It wasn't that the land was too small; most of it was empty. There were too few people on it for a people to exist at all.
 
-![Illustration, not from the simulation: small bands, far apart.](../drafts/book_rewrite/images/08_from_above_web.png)
+![small bands, far apart.](../drafts/book_rewrite/images/08_from_above_web.png)
 
 So I tested both, kept apart, on two hundred and fifty-six new worlds: my world as it was; the same twenty founders on four times the land; eighty founders on four times the land, the same crowding as today; and eighty founders on today's land, four times as crowded.
 
