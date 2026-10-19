@@ -1,4 +1,4 @@
-# FX2 — Food that must be opened: do tools start to matter? (DRAFT, 18 October 2026; not frozen, nothing run)
+# FX2 — Food that must be opened: do tools start to matter? (SIGNED OFF 18 October 2026; frozen as `FX2-frozen`, no study run before it)
 
 **Why.** FX1 (`../FX1_extracted_foods/evidence.md`) measured that ACL's people get **98.9%** of their food by simply
 picking wild plants, against about **8%** "collected" food among ten forager societies, where about **32%** is
@@ -128,3 +128,29 @@ Choices the plan above did not spell out, made by the assistant in `code_fx2` an
 - **Mechanism** (`mech_fx2.log`; throwaway seeds 9901–9904, years 0–10; only the mechanism was read, no survival,
   population, deaths or tool use): embedded food was **0.357** (E) and **0.316** (E0) of adults' foraged food (check ≥
   0.25); bare hands got **0.200** per unit wanted in both (check 0.20 ± 0.05).
+
+## Sign-off (18 October 2026)
+
+The creator: "**approve FX2 as is, freeze it**", with these notes (pasted by the creator, verbatim):
+
+> Make sure the tool-use measure is interpreted carefully:
+>
+> * E vs E0: Does making hard things useful increase tool use?
+> * E vs C: What happens to survival when food becomes harder to access but tools can help?
+> * E vs E0: Does enabling the tool benefit change survival under the embedded-food condition?
+>
+> Also, tool use alone doesn't prove that agents discovered the food-opening mechanism. If the existing logs allow it,
+> report whether hard things are actually used on embedded food, not merely held during foraging.
+> Keep the 0.5 and 0.2 settings labelled as operational assumptions. Don't add another arm right now.
+
+So: arms **C, E, E0**; `embedded_share` 0.5 and `embedded_bare` 0.2, **operational assumptions**; primary as written
+(tool use E vs E0; extinction E vs C and E vs E0; Holm over the three), each read only as the question above beside it.
+**Seeds: 6001–6256** (256 new, unused by any study; fixed now), 20 founders, 40 × 40, 120 years; after RT1b.
+
+**Added, described (not primary; the logs allow it):** the code records each opening of embedded food with the hardness
+of the thing used (`open_food` events). Reported per arm: the share of embedded food opened with a hard thing (hardness
+> 0, and ≥ 0.4), and the share of adult forage-weeks in which a hard thing was actually used on embedded food, beside
+the primary measure (held while foraging). Holding is not taken as proof of discovery.
+
+The code and zero checks were prepared before this sign-off (recorded above; fingerprint `a1780037…`). The study runner
+and analysis are written next, before any study data.
