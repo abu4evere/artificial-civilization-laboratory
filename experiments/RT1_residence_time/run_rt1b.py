@@ -1,10 +1,11 @@
-"""RT1b — residence time with the walk to water counted (questions_rt1b.md; a DRAFT, not frozen). `code_rt1b` = `code_rt1`
-+ `water_trip`. Prepared before freezing on GPT's direction under the creator's delegation (18 October 2026): the zero
-checks and a mechanism-only pilot may run; the study may not until the creator signs the plan off.
+"""RT1b — residence time with the walk to water counted (questions_rt1b.md, frozen as `RT1b-frozen`). `code_rt1b` = `code_rt1`
++ `water_trip`. The code, zero checks and mechanism pilot were prepared before freezing (GPT's direction under the
+creator's delegation); the creator signed the plan off on 18 October 2026 ("approve RT1b as is, freeze it").
 
   python experiments/RT1_residence_time/run_rt1b.py zero     # hard stops: water_trip 0 = code_rt1; without a base it does nothing; it acts; read-only; reload
   python experiments/RT1_residence_time/run_rt1b.py pilot    # throwaway seeds 9801-9804, 15 years, r4 and r4w: the water mechanism only
-  python experiments/RT1_residence_time/run_rt1b.py run      # c, r4, r4w on seeds 5701-5956, 120 years (refuses until signed off)
+  python experiments/RT1_residence_time/run_rt1b.py run      # c, r4, r4w on seeds 5701-5956, 120 years (skips saved worlds)
+  python experiments/RT1_residence_time/run_rt1b.py smoke    # throwaway: seeds 9811-9812, 8 years, every arm (code check only)
 """
 from __future__ import annotations
 
@@ -24,6 +25,7 @@ OUT = HERE / "output_rt1b"
 WPY, YEARS = 52, 120
 SEEDS = tuple(range(5701, 5957))
 PILOT_SEEDS = (9801, 9802, 9803, 9804)
+SMOKE_SEEDS = (9811, 9812)
 ARMS = {"c": {}, "r4": {"residence_weeks": 4}, "r4w": {"residence_weeks": 4, "water_trip": 1}}
 
 
@@ -140,14 +142,37 @@ def pilot_one(arm):
           f"of the thirsty, had chosen a destination by water: {went:.3f}", flush=True)
 
 
-def batch():
+def run_one(arm, seed, years=YEARS, out=None):
+    R.setup("rt1b")
+    f0 = fingerprint()
+    w = R.make_world(seed, ARMS[arm])
+    probe, lin, mv = R.observers(w)
+    wa = Water()
+    w.observers += [probe, lin, mv, wa]
+    for _ in range(years * WPY):
+        w.step()
+        if not w.living():
+            break
+    res = {"arm": arm, "seed": seed, "code_hash": f0, "code_hash_after": fingerprint(), "final_tick": w.tick,
+           "world_hash": R.world_hash(w), **probe.results(), "mb1a": lin.results(), **mv.results(), "water": dict(wa.c)}
+    out = out or OUT
+    out.mkdir(parents=True, exist_ok=True)
+    (out / f"{arm}_seed_{seed}.json").write_text(json.dumps(res), encoding="utf-8")
+    print(f"{arm} seed {seed}: done, tick {w.tick}", flush=True)
+
+
+def batch(seeds=SEEDS, years=YEARS, out=OUT):
     q = (HERE / "questions_rt1b.md").read_text(encoding="utf-8")
     if "SIGNED OFF" not in q.splitlines()[0]:
         sys.exit("ABORT: RT1b is a draft; the creator has not signed it off")
     v = OUT / "zero.txt"
     if not v.exists() or "All: PASS" not in v.read_text(encoding="utf-8"):
         sys.exit("ABORT: the zero checks have not passed (run 'zero')")
-    sys.exit("ABORT: the study runner is written after sign-off")
+    me = [sys.executable, str(Path(__file__).resolve())]
+    todo = [(a, s) for s in seeds for a in ARMS if not (out / f"{a}_seed_{s}.json").exists()]
+    with ThreadPoolExecutor(4) as pool:
+        list(pool.map(lambda j: subprocess.call(me + ["one", j[0], str(j[1]), str(years), str(out)]), todo))
+    print("ALL DONE", flush=True)
 
 
 if __name__ == "__main__":
@@ -161,5 +186,9 @@ if __name__ == "__main__":
     elif cmd == "pilot":
         for a in ("r4", "r4w"):
             pilot_one(a)
+    elif cmd == "one":
+        run_one(sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), Path(sys.argv[5]))
     elif cmd == "run":
         batch()
+    elif cmd == "smoke":
+        batch(SMOKE_SEEDS, years=8, out=HERE / "output_rt1b_smoke")
