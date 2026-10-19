@@ -1,4 +1,4 @@
-# The World That Nobody Wrote — Part One (rewrite, in progress)
+# The World That Nobody Wrote — Part One (rewrite draft, for the author's review)
 
 # Prologue — The Vessel
 
@@ -646,7 +646,7 @@ The people made all the difference. Eighty founders on the large land died out i
 
 What the twenty lacked wasn't room. It was each other. With eighty, a single adult looking for someone had an eligible person in sight six weeks in ten; with twenty, three.
 
-One thing I couldn't tell apart: my world splits founders into four bands, so the eighty began as four bands of twenty, not of five. Was it the bigger people or the bigger bands that saved them? This test couldn't say. That is the question my next experiment is asking, as I write.
+One thing I couldn't tell apart: my world splits founders into four bands, so the eighty began as four bands of twenty, not of five. Was it the bigger people or the bigger bands that saved them? This test couldn't say. That became the next question.
 
 And it isn't a law of nature. It's what these worlds did, under these rules: more land alone didn't save them; more people did.
 
@@ -681,3 +681,71 @@ I did it only with copies. I stopped a world in its twentieth year and copied it
 No single piece made a person. Given someone else's habits, or memories, or beliefs, or even temperament, people went on much as they would have, no further from themselves than chance alone would carry them. But given everything except their temperament, they clearly became someone else. Whether they became the other person, the two sets of worlds disagreed. Whether, given their own pieces back, they came all the way home, they disagreed too. I've left those answers unwritten until I know.
 
 A person in my world wasn't one thing that could be lifted out. They were spread across many small parts, each weak on its own, and most of them shared with everyone around them. When I think about Bob, I think about that.
+
+# Part V — What My Worlds Taught Me
+
+## Chapter 19 — A Chain, Not a Spark
+
+When I began, I imagined invention as a spark: someone has an idea, and from then on the world is different. My worlds taught me it's nothing like that. For a discovery to become part of a people's life, it has to pass through a chain, and every link has to hold.
+
+First, **the chance**: the right things in the right place at the right time. Then **the first try**: someone actually does something with them. Then **the change**: the world responds. Then **noticing**: someone feels a consequence that matters to them. Then **doing it again**. And finally **passing it on**: others learn it, and it outlives the one who found it.
+
+My worlds broke at every link. Many changes happened with nobody noticing. Many things noticed were never done again. Many techniques died with the only person who knew them. Fired clay passed the first three links and stopped. Reibik's vessel passed almost all of them, as a carrier, and never once as a vessel. The thing that lasted longest in my worlds, the simple fibre carrier held for a thousand years, is the one whose chain is shortest and strongest: easy to stumble on, useful at once, easy to teach, and easy to find again if it's lost.
+
+Seen this way, civilization looks less like a single bright moment and more like a fragile chain, made over and over, in which every link has to hold.
+
+I also learned that not all inventions are equal. Most make life a little easier: a sharper blade cuts a little faster, a better carrier carries a little more. But a few change the map of what's possible. A raft reaches land that could never be reached before. A vessel lets people live where there's no water. Every map-changing invention in my worlds stalled until its use could be felt. Everything else my people made was a little-better version of something, and the list of kinds was complete within eleven years. My working idea is that a history that keeps going needs a steady supply of map-changing inventions. That's still a hypothesis, not a result.
+
+And I learned to keep apart three things that are easy to blur together: what people believe, what they do, and what is true. My people went on believing in sowing long after it stopped paying them. They trusted whoever fed them before they trusted whoever was right. They remembered a killing for a hundred and eighty years and blamed the wrong person. Dozens knew how to make a raft, and almost no one carried one. A world where people always believe what's true, always do what they believe and always value what's useful would be easy to build, and it would teach nothing.
+
+## Chapter 20 — How I Keep Myself Honest
+
+None of my methods were designed at the start. Every one grew out of a mistake.
+
+**I write my predictions down before I look.** After an experiment, every result looks as if you expected it. Without a locked record, I would remember having predicted whatever happened. The long list of my wrong predictions in this book is the proof that the rule works; it wouldn't exist without it. Writing them down first also forces me to be precise. "Rafts will matter" can't be checked. "Every surviving world will have at least twenty open-water crossings in two hundred years" can, and when three worlds fell short, the record said so. And with every set of predictions comes a line in the sand: the result that would mean I was wrong.
+
+**I take things apart before I add anything.** When something doesn't appear, the temptation is to add it, or to add whatever seems to be missing. My richer-matter worlds were exactly that mistake: I assumed the world lacked possibilities, added many, and found that possibilities weren't what was missing. A careful look at what is already happening costs far less than an experiment built on the wrong diagnosis.
+
+**I run many worlds, side by side.** One world shows one history, and a single world can do almost anything. Every comparison runs the same starting worlds under both sets of rules, and a difference has to hold across many of them. When eight weren't enough, I ran twenty-four. Later, when sixty-four couldn't see a modest effect, I ran two hundred and fifty-six. Any change to my code sends every world down a different road, so only patterns across many worlds can be trusted.
+
+**My measuring must never touch the world.** Every instrument that watches my worlds is checked, not assumed, to change nothing: a world is run with it and without it, and the two must end identical, down to the last detail. An instrument that so much as rolled one extra die would change the history it was recording.
+
+**I assume the cheater is me.** Every time a problem appears, the easiest fix is to put the answer straight into the world: reward filling vessels, give people a little knowledge about fire, let the historian's names leak into their minds. Each shortcut would make my worlds look better and the experiment worthless. So I assume that cheating, when it happens, will come from inside, from the person who most wants the experiment to succeed. That's why a test reads my code for forbidden words, why the historian is tested for silence, why predictions are locked, and why my wrong answers are published. It's also why I keep a list of where I've fallen short, including a floating instinct I wrote myself and found later.
+
+**My rules were bought with failures.** In the middle of one investigation I added eight new rules to my own, each paid for by something that had gone wrong. Before designing an experiment around a condition, check that the world can produce it at all. Don't redefine success when a change falls short. Say in advance how many worlds you expect to survive. Treat anything found just by looking as a guess until it holds on worlds nobody has seen. Every number must come from a script, and no claim may reach beyond what was measured. Anchor nature to evidence about the real world, and never tune it toward an answer. Show population beside every measure. And correct mistakes in the open, beside the original, never over it. Rules invented in advance guard against imagined errors. These guard against errors that actually happened.
+
+**I am not alone.** My worlds weren't built from a reading list, and most of what I found, I found by running worlds and looking. But other people have walked nearby paths, and I'd rather say so than let a rediscovery look like an invention. Artificial-life projects like Tierra and Avida showed that evolution inside a computer can produce real novelty, and newer projects try to grow whole societies of evolving agents; they get there mainly by inheritance, while in my world nothing is inherited but the body, and everything a person knows must be learned in their own lifetime and passed on, or lost. Projects built on large language models show agents forming routines, roles, rules and even religions, but a language model already knows what a village, a trade and a law are, and when its agents build one, nobody can tell whether civilization emerged or was remembered. Sugarscape grew trade, migration and inequality from simple rules, but its behaviours were written by its designers. Researchers who study cultural evolution have argued for decades that small, isolated peoples lose skills, that people learn from those who visibly do well, and that storing food is not universal among foragers. My worlds kept arriving at their ideas from the other side, without ever being told.
+
+My worlds are small and slow beside some of these projects, and plain beside others. What I can offer instead is a method: predictions locked in advance, identical worlds compared side by side, instruments that never touch what they measure, and failures published as failures. Most simulations can tell you what happened. I'm trying to say what caused it.
+
+# Part VI — The Road Ahead
+
+## Chapter 21 — The Minimum Conditions
+
+At one point, in the middle of an experiment, I felt as if the project might lose its way. So I wrote the way down: nine stages, from a world worth living in to a society. A world. Culture appearing. Finding where it stops. Passing practices from person to person. Practices that outlive the people who taught them. A people's own way of doing things. Enough people. Tools that build on tools. And finally a society: trade, roles, their own rules. Every time I reach a fork, I write down what each possible result will mean before I see the result, so that my path doesn't bend to fit whatever comes out. The map is allowed to be wrong. It just isn't allowed to change in secret.
+
+There are questions I can't answer yet, and I want to name them. Can rules emerge that outlive the people who follow them? Can trade emerge, beyond the give-and-repay I've already seen in families? Can property emerge, as more than who left food where? Can religion, or language, or cities? Can there be a point where each invention makes the next more likely? Would a bigger, connected people keep more of what it finds? When two peoples finally meet, will they become rivals, or friends? Why does novelty stop: the world, the minds, or something I haven't suspected yet? And the oldest question of all, from before I wrote a single line of code: is anyone in there? Can a person born in my world be someone?
+
+For a while the whole project felt impossible, because Earth is impossibly rich, and no simulation will ever have its physics. Then I realised it might not need to. Aeroplanes don't copy birds. They found the principle that makes flight possible, lift, and built that. Maybe my world doesn't need Earth. Maybe it only needs the minimum conditions that make cumulative culture possible: a world where things can be combined into things that make other things, problems worth solving, enough people that knowledge outlives any one of them, and minds that can pass on what they learn. If I can ever show that a short list like that is enough, civilization would turn out to be a consequence of conditions, not a miracle of one planet.
+
+There's a trap on that road, and I named it at the same time. Better minds are allowed; minds that already know are not. A newborn has human abilities and no human knowledge. A language model trained on human writing has the knowledge. Put it in a world and it might rebuild pottery quickly, but no one could ever tell whether civilization grew or was simply remembered.
+
+# Epilogue — The End of the Beginning
+
+Here is where things stood when this part of the story closed.
+
+I had built a world in which nothing was written but nature. Twenty people at a time had woken in it, knowing nothing, and lived, and loved, and died, and left their children what they could. They made a raft in their first weeks and forgot it. One of them made a vessel and never filled it. They told each other stories of hard winters, and the stories grew in the telling and changed nothing about the next winter. Again and again, a third of their worlds simply ended: not in war, but in quiet, because too few of the people alive could find someone to make a family with.
+
+Every one of those failures was measured, and every measurement made the question sharper. Their worlds didn't die because the people were foolish. They died because they were few, and alone. How far they could see decided, as much as anything I ever measured, whether they lived. Bands set down apart almost never met; the big worlds that survived did so because each band was large enough to carry itself, not because anyone found anyone. And when I finally opened up their habits and counted, most of what each person did by habit turned out not to be their own. It had been poured into them in conversation, whole, by whoever they looked up to, until everyone was nearly the same.
+
+So the second question, the one I call Bob, got its first answer too. When pieces of one person were given to another, no single piece made anyone who they were: not their memories, not their habits, not even their temperament. Only together did the pieces add up to someone.
+
+And all of it happened in a world that was quietly helping them. They always knew where an absent loved one was standing, at that very moment, though nobody had told them. A gap at the corner of two islands let them walk across water. Their talk wasn't talk at all: it was one mind poured into another, already understood, with no word ever spoken or invented.
+
+Part One ends at a turning point. For the first time since the world began, I am changing its nature. A second version of it has been built, and is about to be tested against the first: one in which a person walks to where they last saw the one they miss, not to where that person is; in which water at a corner is water; in which a raft that breaks at sea leaves its owner struggling for the shore. Beside it, another test is running: what my people become when their habits must be their own, learned from their own lives, and not borrowed whole from someone else's.
+
+Nobody knows yet what those worlds will do. That's the point of running them.
+
+And underneath all of it is a question this book has circled from the start without being able to ask. My people have never spoken. They've never had a single word. They do have marks: shapes they make and see, which mean nothing at first, and which come, for some of them, to go with a person, or a place, or a thing worth making. If they are ever to speak, it will have to begin there, with a mark that one person makes and another understands, and that nobody wrote.
+
+That is where Part Two begins.
