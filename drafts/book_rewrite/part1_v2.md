@@ -248,7 +248,7 @@ One world proved me wrong in the most beautiful way. I had predicted there would
 
 Their temperaments drifted apart early and stayed apart, while the way they differed kept changing: at first they differed most in how hard they worked, centuries later in how anxious they were and how much they cared for others. Their cultures grew apart in ways nobody designed. One island kept beliefs about leaving fibre, stone and wood at certain places in certain seasons, an old building practice. The other island never held any of those beliefs, in any year I checked, for a thousand years. The second island bound things with hide and worked bone; the first did neither. Their marks shared nothing: each island had made its own shapes for rabbits, for graves and for water. They were two peoples with two histories, across a stretch of sea, and neither ever knew the other existed. Think of two valleys in the mountains that grew their own dialects and customs for centuries without ever crossing the ridge between them.
 
-![two peoples, a strait apart, who never met.](../drafts/book_rewrite/images/04_two_islands_web.png)
+![Two peoples, a strait apart, who never met.](../drafts/book_rewrite/images/04_two_islands_web.png)
 
 Some things lasted the whole thousand years. The simplest carrier, fibre tied to fibre, was held in five worlds from year ten to year one thousand. About three in four of the people who came to hold it had been taught by someone. The rest found it again by themselves, because it is the easiest thing in the world to make.
 
@@ -570,7 +570,7 @@ The worlds didn't starve. People in dying worlds went hungry no more often than 
 
 The reason was in nature, not culture. The founders paired up in their first decade. After that, pairing nearly stopped, in dying and living worlds alike. A person looking for a partner in my world could only court someone they could see, a few steps away, or walk toward someone a little further, or else wander at random, in a world sixteen hundred tiles big. In a small, scattered people, a single woman almost never had an eligible man in sight, even though one was usually alive somewhere. Imagine trying to find a husband in a huge empty valley where you can only ever see a few hundred metres, and the other few dozen people are spread across it. Bigger worlds kept enough people near one another for chance to do the rest. Smaller ones didn't. And by year twenty, you could already tell the worlds that would die from the ones that would live, by their size alone, decades before the end.
 
-![looking for someone in an empty land.](../drafts/book_rewrite/images/07_valley_web.png)
+![Looking for someone in an empty land.](../drafts/book_rewrite/images/07_valley_web.png)
 
 For many experiments I had asked why my people didn't prepare for winter. Meanwhile, a third of my worlds had been ageing out the whole time, not for want of food but for want of meeting.
 
@@ -650,7 +650,7 @@ Then I looked at my world and felt it was too small, forty tiles by forty, a cra
 
 My worlds began with twenty. My whole world was one band, with no other bands to marry into, visit, or move to. It wasn't that the land was too small; most of it was empty. There were too few people on it for a people to exist at all.
 
-![small bands, far apart.](../drafts/book_rewrite/images/08_from_above_web.png)
+![Small bands, far apart.](../drafts/book_rewrite/images/08_from_above_web.png)
 
 So I tested both, kept apart, on two hundred and fifty-six new worlds: my world as it was; the same twenty founders on four times the land; eighty founders on four times the land, the same crowding as today; and eighty founders on today's land, four times as crowded.
 
