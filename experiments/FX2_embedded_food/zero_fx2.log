@@ -1,0 +1,14 @@
+seed 11, 5 years: embedded_share 0 = code_v2 (settings left out): yes
+seed 501, 5 years: embedded_share 0 = code_v2 (settings left out): yes
+seed 501, 20 years: embedded_share 0 = code_v2 (settings left out): yes
+seed 601, 20 years: embedded_share 0 = code_v2 (settings left out): yes
+arm e, seed 501, 20 years: the setting changes the world (it acts): yes
+arm e0, seed 501, 20 years: the setting changes the world (it acts): yes
+seed 501, 20 years: e differs from e0 (the tool route acts): yes
+arm c, seed 501, 20 years: identical with and without the observers: yes
+arm e, seed 501, 20 years: identical with and without the observers: yes
+arm e, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_fx2 fingerprint: a178003797d9658d9bf2a9ff2db7577622d9e1a25f2acfd7212608cb8188346a
+All: PASS
+
+zero exit 0

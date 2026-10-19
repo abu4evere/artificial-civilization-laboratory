@@ -83,3 +83,48 @@ extinction**, only if tool use spreads.
 2. Order: **after MB1b and RT1b** (recommended).
 3. Numbers: **s 0.5, b 0.2, labelled operational** (recommended), or two levels of s (0.5 and 0.8; 256 more worlds).
 4. Primary: **tool use (E vs E0) and extinction** (recommended), or extinction only.
+
+## GPT's review under the creator's delegation (18 October 2026) — choices recorded, **not a sign-off**
+
+GPT chose every recommended option. Its reply, verbatim (FX2 part):
+
+> Arms: C, E, E0. Keep the control with equal harshness but no benefit from hard things.
+>
+> Order: After MB1b and RT1b.
+>
+> Numbers: Use 0.5 embedded food and 0.2 bare-hand opening rate, explicitly labelled operational assumptions. Don't add
+> the 0.8 arm yet.
+>
+> Primary outcomes: Tool use (E vs E0) and extinction (E vs C; E vs E0), with Holm correction.
+>
+> Keep the interpretations narrow. FX2 tests whether processing costs can create pressure for tool use under these
+> rules. It does not establish that this is how real human tool use evolved.
+
+On sign-off GPT replied: "Keep both plans as drafts until Abdurashid reads them himself." It allowed writing the code and
+running zero checks, with no freezing, tagging or study runs until the creator approves. **The plan stays a draft.**
+
+## Details fixed while writing the code (before any run; for the creator to check at sign-off)
+
+Choices the plan above did not spell out, made by the assistant in `code_fx2` and listed so none is hidden:
+
+- **What people see:** their choice of where to forage, and the "richer than around it" judgement, count all plant food,
+  open and embedded, as today's code counts all plants. They are not told embedded food is slow; they find out by what
+  they get.
+- **Which thing opens it:** the hardest thing in hand (hardness 0–100 read as 0–1); bare hands 0. Opening rate =
+  `b + (1 − b) × hardness`. A thing that helped is felt as worth `rate − b` (the existing item judgement); it wears by one
+  use, like the forage item.
+- **Animals:** see and graze all plant food, taking from both stands in proportion, so hunting is left as it is.
+- **Fire, flood and winter:** harm both stands alike. Dead people's food goes back to the open stand, as today.
+- **Seeds:** embedded food yields seed like any wild food.
+- **Saving:** the embedded stand is saved only when `embedded_share` > 0, so a share of 0 saves exactly what `code_v2`
+  does.
+
+## Prepared before sign-off (18 October 2026; GPT's direction; nothing frozen)
+
+- **Code:** `code_fx2` = `code_v2` + `embedded_share`, `embedded_bare`, `embedded_tool` (details above); runner
+  `run_fx2.py` (its `run` refuses while this plan is a draft).
+- **Zero checks: all PASS** (`zero_fx2.log`; `output/zero.txt`): share 0 = `code_v2` (seeds 11, 501, 601); E and E0
+  act; E differs from E0; observers read-only; a saved and reloaded E world continues exactly. Fingerprint `a1780037…`.
+- **Mechanism** (`mech_fx2.log`; throwaway seeds 9901–9904, years 0–10; only the mechanism was read, no survival,
+  population, deaths or tool use): embedded food was **0.357** (E) and **0.316** (E0) of adults' foraged food (check ≥
+  0.25); bare hands got **0.200** per unit wanted in both (check 0.20 ± 0.05).

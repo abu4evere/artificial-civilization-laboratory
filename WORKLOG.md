@@ -10,3 +10,5 @@ Rules: `docs/HELPER_RUNBOOK.md`. Claude reads this first when it is back.
 - 2026-10-18 03:40 Claude: FX1 extended — Aché return rates (Hill et al. 1987, full text): hunting ≈ gathering per hour (1,339 vs 1,221 cal/hr); ACL hunting ≈ 4% of foraging.
 - 2026-10-18 03:40 Claude: FX1 — located the four code causes of low hunting returns (chance 0.10 base; zero chance without prey on tile; small game; meat beyond carrying lost). Note only, nothing changed.
 - 2026-10-18 03:41 Claude: living-book Chapter 84 'What They Ate' (FX1).
+- 2026-10-18 20:11 Claude (creator away, GPT delegation): MB1b Amendment 1 approved via GPT; torus-distance correction found and fixed before data; zero PASS, smoke placement ok; committed 1913393, tag MB1b-amend1; MB1b run started (1,024 worlds, ~40 h). Drafted RT1b and FX2 for sign-off.
+- 2026-10-18 20:28 Claude: GPT chose all RT1b/FX2 recommendations but kept both as drafts until the creator reads them; code + zero checks (PASS both) + mechanism-only pilots done (RT1b fix works: 46% -> 1.8%). Nothing frozen.

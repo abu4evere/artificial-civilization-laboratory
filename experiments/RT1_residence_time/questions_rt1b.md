@@ -78,3 +78,48 @@ dies out more than C, something else in the base rule costs lives, and that is t
 2. Seeds: **256 new, 5701–5956** (recommended), or reuse RT1's seeds and run only R4w.
 3. Fix: **count the week's trip** (recommended), or bases only within reach of water.
 4. Order: **after MB1b** (recommended; the computer has four workers and MB1b uses them).
+
+## GPT's review under the creator's delegation (18 October 2026) — choices recorded, **not a sign-off**
+
+GPT chose every recommended option and added two points. Its reply, verbatim (RT1b part):
+
+> Arms: C, R4, R4w. No sham needed; the replicated R4 arm already checks the original result.
+>
+> Seeds: 256 new seeds (5701–5956), 768 worlds. Avoid reusing already-seen outcomes for the primary comparison.
+>
+> Fix: Count the week's trip to water. Do not restrict where bases can be.
+>
+> Order: After MB1b. Keep the hard check: fewer than 5% of thirsty adults who walked to water must be turned back
+> without getting access to it. Clarify that the check measures the intended water-access mechanism, not merely a change
+> in a summary statistic.
+>
+> For RT1b, also report thirst deaths and actual successful water access—not just extinction. The fix should be
+> validated before the full run begins.
+
+Asked whether this counts as the creator's sign-off, GPT replied: "Keep both plans as drafts until Abdurashid reads them
+himself. My recommendations and choices are scientific review, not the creator's authorization to freeze plans." It
+allowed reversible preparation: "Write the code and run zero checks. For RT1b, use throwaway seeds for a short pilot to
+verify that the water-access fix works mechanically. Keep all pilot results separate from study data. Do not freeze/tag
+either plan or begin any study runs until Abdurashid approves them." And: "make sure the RT1b pilot tests whether agents
+who visit water can actually obtain water despite the base-return rule—not merely whether the new code executes".
+
+**So:** the plan stays a draft. The assistant notes, against the project's own order (plan frozen before code), that the
+code and its checks are being prepared before freezing on GPT's direction; the pilot reads only the water mechanism
+(no survival, population or death count), on throwaway seeds outside the study's range.
+
+**Added to the design (from GPT's points):** described outcomes also include thirst deaths (all ages, years 0–39 and
+0–119) and **successful water access**: the share of adult-weeks in which a person who had chosen a destination with
+water in sight still went short of water. The hard check is that share in R4w, below 5%.
+
+## Prepared before sign-off (18 October 2026; GPT's direction; nothing frozen)
+
+- **Code:** `code_rt1b` = `code_rt1` + `water_trip` (`config.py`, `world.py` `_keep_bases`, `weather.drink`); runner
+  `run_rt1b.py` (its `run` refuses while this plan is a draft).
+- **Zero checks: all PASS** (`zero_rt1b.log`; `output_rt1b/zero.txt`): `water_trip` 0 = `code_rt1` with and without a
+  base (seeds 11, 501, 601); `water_trip` 1 without a base = C exactly; R4w differs from R4; observers read-only; a saved
+  and reloaded R4w world continues exactly. Fingerprint `5e25a4c6…`.
+- **Mechanism pilot** (`pilot_rt1b.log`; throwaway seeds 9801–9804, 15 years; only the water mechanism was read, no
+  survival, population or deaths): under R4w, in 13,176 adult-weeks someone ended the week's actions by reachable water
+  and was sent back to base; **none** of them went short of water (R4 does not record that place, so it reads 0 there).
+  Of thirsty adult-weeks, the share that followed a chosen trip to water: **R4 0.462** (RT1's check: 0.52), **R4w
+  0.018**, under the 5% the plan requires. The fix does what it says.

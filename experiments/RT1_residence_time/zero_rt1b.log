@@ -1,0 +1,16 @@
+C, seed 11, 5 years: water_trip 0 = code_rt1: yes
+C, seed 501, 5 years: water_trip 0 = code_rt1: yes
+C, seed 501, 20 years: water_trip 0 = code_rt1: yes
+C, seed 601, 20 years: water_trip 0 = code_rt1: yes
+{'residence_weeks': 4}, seed 11, 5 years: water_trip 0 = code_rt1: yes
+{'residence_weeks': 4}, seed 501, 5 years: water_trip 0 = code_rt1: yes
+{'residence_weeks': 4}, seed 501, 20 years: water_trip 0 = code_rt1: yes
+{'residence_weeks': 4}, seed 601, 20 years: water_trip 0 = code_rt1: yes
+seed 501, 20 years: water_trip 1 without a base = C exactly (it does nothing): yes
+seed 501, 20 years: r4w differs from r4 (it acts): yes
+r4w, seed 501, 20 years: identical with and without the observers: yes
+r4w, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_rt1b fingerprint: 5e25a4c6d51f76001997a4309eb879a99777bbf64da99ff0b72f913daf1f802e
+All: PASS
+
+zero exit 0
