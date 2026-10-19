@@ -1,0 +1,4 @@
+seed 501, 20 years: code_ca3 with logging on = code_v2: yes
+seed 601, 20 years: code_ca3 with logging on = code_v2: yes
+code_ca3 fingerprint: c2343f7f48567aab1caee9c2b251278aa260f8dc81e5b76b6345d11ed5d80c85
+All: PASS
