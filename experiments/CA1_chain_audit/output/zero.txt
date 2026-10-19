@@ -1,0 +1,4 @@
+seed 501, 20 years: identical with and without the chain observer: yes
+seed 601, 20 years: identical with and without the chain observer: yes
+code_v2 fingerprint: 6c72ef6464632f19780b922dfebc2c5727e8ce25191ca7d68830f9f202674185
+All: PASS

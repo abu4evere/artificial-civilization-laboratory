@@ -105,3 +105,12 @@ same link in both sets**. The prior above is frozen as written.
 - **Also reported:** the route of each first transmission (taught, copied, read, heated); the longest chain of better
   kinds (part → better → better); the most generations a recipe passed through (first knower 0, each learner one more
   than whoever it learned from); and living people at each decade (rule 18).
+
+## Recorded after freezing, before any data (18 October 2026; rule 19)
+
+- The pilot (seed 9921, 10 years; throwaway) took 11 seconds and the observer followed 128 kinds of thing. **4 of 128
+  had no recorded properties** (neither in `world.knowledge` nor in a `make` event), so their usefulness cannot be
+  computed. They are **counted as not shown useful** at link 2, and their number is reported. Kinds whose first knower
+  first got them by a route other than making or heating (a changed copy, or a recipe taught in a changed form) are
+  counted as kinds of their own and reported, as frozen.
+- The analysis was tested end to end on two throwaway worlds (seeds 9921–9922, 12 years; `output_pilot/`).
