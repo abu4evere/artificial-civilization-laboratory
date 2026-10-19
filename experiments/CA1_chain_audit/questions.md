@@ -1,4 +1,4 @@
-# CA1 — The chain audit: where do ACL's inventions stop accumulating? (DRAFT, 18 October 2026; not frozen, nothing run)
+# CA1 — The chain audit: where do ACL's inventions stop accumulating? (SIGNED OFF 18 October 2026; frozen as `CA1-frozen` before any code or data)
 
 **Why.** ACL's people invent, but culture does not build on itself: no new kind of thing appears after year 11 in a
 1,000-year world (E5's "freeze"); teaching spreads recipes but watching almost never does, and composite things are
@@ -74,3 +74,34 @@ worlds lose what their makers knew.
 2. Long worlds: **add 4 of 300 years** (recommended), or not.
 3. Computer: **run now on two extra workers** (recommended; a few hours, measured in a pilot), or wait until FX2 ends.
 4. The reading: **the lowest pass rate, same in both sets** (recommended), or descriptive only.
+
+## Sign-off (18 October 2026)
+
+The creator: "**approve all CA1 recommendations, freeze it**". So: (1) **16 discovery + 16 holdout worlds, 120 years**;
+(2) **plus 4 worlds of 300 years**; (3) **run now on two extra workers**; (4) the reading: **the lowest pass rate, the
+same link in both sets**. The prior above is frozen as written.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code:** `code_v2` with nature v2's four settings (as MB1b, RT1b and FX2 use), unchanged; one read-only observer.
+  **Zero check (hard stop):** the state hash with the observer equals without it (seeds 501 and 601, 20 years); one code
+  fingerprint across all worlds.
+- **Seeds:** discovery **6301–6316**, holdout **6317–6332**, long worlds **6401–6404** (unused by any study). 20 founders,
+  40 × 40; 120 years (300 for the long worlds). A pilot first (seed 9921, 10 years; throwaway) to time the runs and check
+  the observer; only timing and the observer's working are read from it.
+- **A kind of thing** = a `sig` in `world.knowledge`. **Invented** = it enters `world.knowledge` (its first knower and
+  how they came to know it are recorded). **Useful** = the largest `matter.factor` over the uses forage, hunt, wood,
+  stone, fiber, fight, carry and cold is ≥ 1.05, computed from the properties recorded with it (or, if none, from the
+  first `make` event of it).
+- **Transmitted** = a `learn` event for that `sig` by someone other than its first knower. A copy that came out different
+  (`meant` ≠ `thing`) counts for the kind it actually is, not the one meant; such copies are counted as inventions of
+  their own and flagged.
+- **Retained** = in some week after its first knower died, someone alive held the recipe. Kinds whose first knower is
+  still alive at the end are left out of links 4–6 and counted separately ("not yet testable").
+- **Built on** = some later kind's recipe takes it as a part (`parts`, or the `part` heated), and that later kind's largest
+  factor is **greater** than this one's. **Retransmitted** = such a better kind itself passed links 3 and 4.
+- **Pass rate** of link k = kinds reaching link k ÷ kinds reaching link k − 1 (link 4's base is the kinds testable for
+  it), pooled over the worlds of a set. Long worlds are reported beside, not in the reading.
+- **Also reported:** the route of each first transmission (taught, copied, read, heated); the longest chain of better
+  kinds (part → better → better); the most generations a recipe passed through (first knower 0, each learner one more
+  than whoever it learned from); and living people at each decade (rule 18).
