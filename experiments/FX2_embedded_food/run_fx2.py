@@ -1,10 +1,11 @@
-"""FX2 — food that must be opened (questions.md; a DRAFT, not frozen). `code_fx2` = `code_v2` + `embedded_share`,
-`embedded_bare`, `embedded_tool`. Prepared before freezing on GPT's direction under the creator's delegation (18 October
-2026): the zero checks may run; the study may not until the creator signs the plan off.
+"""FX2 — food that must be opened (questions.md, frozen as `FX2-frozen`). `code_fx2` = `code_v2` + `embedded_share`,
+`embedded_bare`, `embedded_tool`. The code and zero checks were prepared before freezing (GPT's direction under the
+creator's delegation); the creator signed the plan off on 18 October 2026 ("approve FX2 as is, freeze it").
 
   python experiments/FX2_embedded_food/run_fx2.py zero    # hard stops: share 0 = code_v2; E and E0 act; read-only; reload
   python experiments/FX2_embedded_food/run_fx2.py mech    # throwaway seeds 9901-9904, 10 years, E and E0: the mechanism only
-  python experiments/FX2_embedded_food/run_fx2.py run     # refuses until the creator signs the plan off
+  python experiments/FX2_embedded_food/run_fx2.py run     # c, e, e0 on seeds 6001-6256, 120 years (skips saved worlds)
+  python experiments/FX2_embedded_food/run_fx2.py smoke   # throwaway: seeds 9911-9912, 8 years, every arm (code check only)
 """
 from __future__ import annotations
 
@@ -13,13 +14,16 @@ import json
 import subprocess
 import sys
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 HERE = Path(__file__).parent
 EXP = HERE.parent
 CODES = {"fx2": HERE / "code_fx2", "v2": EXP / "NV2_nature_v2" / "code_v2"}
 OUT = HERE / "output"
-WPY = 52
+WPY, YEARS = 52, 120
+SEEDS = tuple(range(6001, 6257))
+SMOKE_SEEDS = (9911, 9912)
 MECH_SEEDS = (9901, 9902, 9903, 9904)
 V2 = {"loved_location": "last_seen", "corner_block": 1, "ashore_if_float_breaks": 1, "knowledge_copy": 1}
 ARMS = {"c": {}, "e": {"embedded_share": 0.5, "embedded_bare": 0.2, "embedded_tool": 1},
@@ -68,6 +72,11 @@ class Tools:
                 self.c["food_got"] += e.get("got", 0)
             elif e["k"] == "open_food" and e.get("a") in adult:
                 self.c["opened"] += e["got"]
+                if e["hard"] > 0:                       # FX2 sign-off: a hard thing actually used on embedded food
+                    self.c["opened_with_hard"] += e["got"]
+                    self.c["weeks_used_hard"] += 1
+                if e["hard"] >= 0.4:
+                    self.c["opened_with_hard_40"] += e["got"]
                 if e["hard"] == 0 and e["left"] > 0:
                     self.c["bare_got"] += e["got"]
                     self.c["bare_left"] += e["left"]
@@ -168,6 +177,38 @@ def mech(arm):
           flush=True)
 
 
+def run_one(arm, seed, years=YEARS, out=None):
+    setup("fx2")
+    f0 = fingerprint()
+    w = make_world(seed, ARMS[arm])
+    probe, lin, tools = observers(w)
+    w.observers += [probe, lin, tools]
+    for _ in range(years * WPY):
+        w.step()
+        if not w.living():
+            break
+    res = {"arm": arm, "seed": seed, "code_hash": f0, "code_hash_after": fingerprint(), "final_tick": w.tick,
+           "world_hash": world_hash(w), **probe.results(), "mb1a": lin.results(), **tools.results()}
+    out = out or OUT
+    out.mkdir(parents=True, exist_ok=True)
+    (out / f"{arm}_seed_{seed}.json").write_text(json.dumps(res), encoding="utf-8")
+    print(f"{arm} seed {seed}: done, tick {w.tick}", flush=True)
+
+
+def batch(seeds=SEEDS, years=YEARS, out=OUT):
+    q = (HERE / "questions.md").read_text(encoding="utf-8")
+    if "SIGNED OFF" not in q.splitlines()[0]:
+        sys.exit("ABORT: FX2 is a draft; the creator has not signed it off")
+    v = OUT / "zero.txt"
+    if not v.exists() or "All: PASS" not in v.read_text(encoding="utf-8"):
+        sys.exit("ABORT: the zero checks have not passed (run 'zero')")
+    me = [sys.executable, str(Path(__file__).resolve())]
+    todo = [(a, s) for s in seeds for a in ARMS if not (out / f"{a}_seed_{s}.json").exists()]
+    with ThreadPoolExecutor(4) as pool:
+        list(pool.map(lambda j: subprocess.call(me + ["one", j[0], str(j[1]), str(years), str(out)]), todo))
+    print("ALL DONE", flush=True)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "zero":
@@ -179,5 +220,9 @@ if __name__ == "__main__":
     elif cmd == "mech":
         for a in ("e", "e0"):
             mech(a)
+    elif cmd == "one":
+        run_one(sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), Path(sys.argv[5]))
     elif cmd == "run":
-        sys.exit("ABORT: FX2 is a draft; the creator has not signed it off")
+        batch()
+    elif cmd == "smoke":
+        batch(SMOKE_SEEDS, years=8, out=HERE / "output_smoke")
