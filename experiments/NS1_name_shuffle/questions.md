@@ -1,4 +1,4 @@
-# NS1 — The name shuffle: do the names in ACL's code carry any hidden meaning? (DRAFT, 20 October 2026; not frozen, nothing built or run)
+# NS1 — The name shuffle: do the names in ACL's code carry any hidden meaning? (PARKED, 20 October 2026: the creator: "we do not have to prove if its scripted or not to anybody rn"; draft kept, nothing built or run)
 
 **Why.** ACL's founding claim is that nothing cultural is written in: no recipe, no list of inventions, no reward for
 being useful. Several tests already guard it (no invention names where people think; a read-only historian; rewards
