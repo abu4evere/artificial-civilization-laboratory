@@ -24,3 +24,5 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - 2026-10-19 01:36 CA2 signed off and frozen (CA2-frozen); logging copy zero PASS; run started on 2 workers (32 replays of CA1's worlds). Sleep mode.
 - 2026-10-19 03:05 CA2 done: most losses before any lesson (G1 46%, G2 36-39%); narrowest gate G7 followable (1.2%/0.5%); building on others' taught parts 4%. Priors wrong. Findings, INDEX, ROADMAP, decisions, book Ch 87.
 - 2026-10-19 03:07 GPT reviewed CA2's result: (a) read-only audit first, then (b) evidence review; drafted CA3 (opportunity vs availability) for sign-off. Not frozen.
+- 2026-10-19 13:29 Creator away 4-5 h (work with GPT). CA3 signed off/frozen, zero PASS, run started (32 replays, 2 workers). Creator added becominghuman.org (ASU IHO) as a source; to use in CA3 step (b) evidence review. MB1b at 517/1024.
+- 2026-10-19 14:54 CA3 done: availability 99% (12-recipe limit), composites followable 7.6/8.4%; prior right. Findings, INDEX, ROADMAP, decisions, book Ch 88 'Twelve Places'.
