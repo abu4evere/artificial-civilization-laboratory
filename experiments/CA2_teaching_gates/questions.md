@@ -1,4 +1,4 @@
-# CA2 — Why does teaching pass on so little? (DRAFT, 19 October 2026; not frozen, nothing run)
+# CA2 — Why does teaching pass on so little? (SIGNED OFF 19 October 2026; frozen as `CA2-frozen` before any code or data)
 
 **Why.** CA1 (`../CA1_chain_audit/findings.md`, `CA1-done`) found that the chain of cumulative culture breaks at the
 first hand-over: only **11% (discovery) and 10% (holdout)** of useful inventions are ever learned by anyone but their
@@ -89,3 +89,41 @@ cumulative culture. That would require a separate, preregistered intervention."
 
 **Decision 5 for the creator:** the reading: **the gate where most stopped, lowest pass rate beside** (recommended), or
 the lowest pass rate alone.
+
+## Sign-off (19 October 2026)
+
+The creator: "**approve all CA2 recommendations, freeze it**". So: (1) **a logging copy shown to change nothing**;
+(2) **CA1's seeds, discovery 6301–6316 then holdout 6317–6332**, 120 years; (3) **question 2 included**; (4) **now, on
+two spare workers**; (5) the reading: **the gate where most stopped, lowest pass rate beside**. GPT's six refinements
+(above) are part of the design. The prior above is frozen as written.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code `code_ca2`:** a copy of `code_v2` plus logging lines only, writing to a list the runner sets on the world
+  (`world.ca2log`, not saved, read by nothing in the world; HF4's pattern). Logged: every `talk` in which teaching is
+  possible (teacher, learner, the teacher's recipes at that moment); every `show_how` (the recipes valued above 0.15,
+  the top three offers, the one chosen); every `hear_how` (its outcome: already known, refused as tried and no good,
+  not believed, not followable, taken; and the kind taken); every `watch` (its outcome: already known or not the
+  maker's, outcome not good, the draw failed, copy not new or not followable, taken); every recipe dropped (pushed out
+  by the 12-recipe limit, or forgotten as useless).
+- **Hard stops:** state hash of `code_ca2` with logging on equals `code_v2`'s (seeds 501 and 601, 20 years); every
+  replayed world's final state hash equals CA1's saved `world_hash` for that seed; one fingerprint. No outcome is shown
+  if any fails. Missing or unmatched log records are counted and reported.
+- **Useful inventions** and their links: exactly as CA1 (CA1's observer, loaded unchanged), now also saving each kind's
+  first knower.
+- **Gates, per useful invention never passed on** (no one but its first knower ever learned it), over its first
+  knower's teaching attempts: G1 reached if the first knower ever took part, as teacher, in a teaching-possible talk
+  while knowing it; G2 if it was ever among their recipes valued above 0.15 at a `show_how`; G3 if ever in the top
+  three; G4 if ever chosen; G5–G7 by `hear_how`'s outcome when it was chosen (G5 passed if not already known; G6 if
+  not refused and believed; G7 if followable). **Where it stopped** = the furthest gate it ever reached and did not pass
+  (or "never reached G1"). Entering gate g = inventions that reached g; passing = those that got beyond g; pass rate =
+  passing ÷ entering.
+- **Reading:** (b) the gate where the most never-passed useful inventions stopped, and (a) the gate with the lowest
+  pass rate. **"One bottleneck: gate X"** only if (b) is X in both discovery and holdout and (a) is also X in both.
+  If (b) agrees across the sets but (a) does not: "most stopped at X; lowest pass rate elsewhere", both reported. If (b)
+  differs between the sets: "no single bottleneck".
+- **G8 (kept a year), described:** for each learner who took a useful invention by teaching or watching, whether they
+  still held it 52 weeks later, else why: pushed out by the limit, forgotten as useless, died, or unknown.
+- **Watching, described beside:** for useful never-passed inventions, the watch outcomes, as counts.
+- **Question 2, described:** for each CA1 link-5 pair (part X, better kind Y): Y's first knower is X's first knower
+  ("the inventor"), or someone who had learned X ("a learner"), or neither ("unclear"); and whether Y was passed on.
