@@ -386,6 +386,8 @@ The answer was the oldest one in the world: winter. I followed every one of the 
 
 Babies starved at seven times their share of the population. Of the children and babies who starved, almost every one still had a living carer. The carers were hungry too.
 
+![Illustration, not from the simulation: a winter with nothing laid by.](../drafts/book_rewrite/images/06_winter_web.png)
+
 Two months before they died, in late autumn, the typical person who starved had no food on hand at all, and no food stored anywhere nearby. Not one of them was carrying anything that holds food.
 
 It didn't have to be that way. In my world, loose food slowly rots, but food laid by in autumn still keeps more than half of itself through a winter. Seeds barely rot at all. A person can carry a winter's worth of food with a carrier, and most of it with bare hands. Storing food was possible, and it was exactly what carriers and heaps were for. But nobody ever filled even their bare hands. The one thing a carrier is really for, holding a winter's food, was never lived through, and so, as with the raft long before, it was never valued.
@@ -570,6 +572,8 @@ The worlds didn't starve. People in dying worlds went hungry no more often than 
 
 The reason was in nature, not culture. The founders paired up in their first decade. After that, pairing nearly stopped, in dying and living worlds alike. A person looking for a partner in my world could only court someone they could see, a few steps away, or walk toward someone a little further, or else wander at random, in a world sixteen hundred tiles big. In a small, scattered people, a single woman almost never had an eligible man in sight, even though one was usually alive somewhere. Imagine trying to find a husband in a huge empty valley where you can only ever see a few hundred metres, and the other few dozen people are spread across it. Bigger worlds kept enough people near one another for chance to do the rest. Smaller ones didn't. And by year twenty, you could already tell the worlds that would die from the ones that would live, by their size alone, decades before the end.
 
+![Illustration, not from the simulation: looking for someone in an empty land.](../drafts/book_rewrite/images/07_valley_web.png)
+
 For many experiments I had asked why my people didn't prepare for winter. Meanwhile, a third of my worlds had been ageing out the whole time, not for want of food but for want of meeting.
 
 So I went back to the foundation and asked: how do real people find partners?
@@ -647,6 +651,8 @@ What I could measure without changing anything was whether my groups mixed like 
 Then I looked at my world and felt it was too small, forty tiles by forty, a cramped place to build anything. Before changing it, I asked the evidence. The answer came back in people, not land. Across three hundred and thirty-nine foraging societies, the same ladder appears again and again: a family of four or five, a band of about sixteen, a bigger band of about fifty, a seasonal gathering of about a hundred and sixty, and a whole people of about eight hundred and forty, each step about four times the one below. And a people needs about a hundred and fifty, perhaps seventy-five at the least, not to die out from bad luck alone.
 
 My worlds began with twenty. My whole world was one band, with no other bands to marry into, visit, or move to. It wasn't that the land was too small; most of it was empty. There were too few people on it for a people to exist at all.
+
+![Illustration, not from the simulation: small bands, far apart.](../drafts/book_rewrite/images/08_from_above_web.png)
 
 So I tested both, kept apart, on two hundred and fifty-six new worlds: my world as it was; the same twenty founders on four times the land; eighty founders on four times the land, the same crowding as today; and eighty founders on today's land, four times as crowded.
 

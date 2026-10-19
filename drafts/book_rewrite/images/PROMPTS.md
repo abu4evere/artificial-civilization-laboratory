@@ -11,7 +11,7 @@ Made 19 October 2026 (ChatGPT free tier; it allows about five a day):
 4. 04_two_islands: dusk from above, two islands across a narrow strait, one campfire on each (Ch 8).
 5. 05_clay_child: a child of about four by a low fire holding a lump of fire-hardened clay, unnoticed (Ch 8).
 
-Still to make (next day's allowance):
+Made 19 October 2026 with Google Gemini, given 01 and 04 as style references ("match the attached two images exactly in style"):
 6. 06_winter: a family in deep snow at the mouth of a hide shelter, an empty woven basket beside them, thin smoke (Ch 11).
 7. 07_valley: one small figure on a ridge looking over a huge empty valley, nobody else in sight (Ch 15).
 8. 08_from_above: many tiny figures in small separate groups on islands, seen from high above, far apart (Ch 17).
