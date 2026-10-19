@@ -28,3 +28,5 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - 2026-10-19 14:54 CA3 done: availability 99% (12-recipe limit), composites followable 7.6/8.4%; prior right. Findings, INDEX, ROADMAP, decisions, book Ch 88 'Twelve Places'.
 - 2026-10-19 14:57 GPT approved as drafts: memory evidence review (written) and Law 126 proposal LM1 (written: M1 tie-break by age, L1 parts-first lessons, 2x2). Nothing frozen. MB1b at 546/1024.
 - 2026-10-19 15:00 LM1 reviewed twice by GPT: revision 1 (L1 now acts only on a visible failed lesson) and final checks added; GPT: send to the creator for sign-off. Not frozen.
+- 2026-10-20 17:23 Restart had stopped all runs (MB1b at 607/1024, files intact). MB1b resumed (skips saved worlds; first log kept as run_mb1b_part1.log); RT1b and FX2 auto-start watchers restarted.
+- 2026-10-20 17:42 LM1 signed off and frozen (LM1-frozen); code built; zero PASS (incl. M1 leaves the random state unchanged at 354 drops); smoke + analysis tested. Smoke showed the frozen M manipulation check is wrong (oldest-drop is not random); Amendment 1 proposed, awaiting the creator. LM1 queued after FX2, gated on Amendment 1 approval.

@@ -1,0 +1,14 @@
+seed 11, 5 years: both settings 0 = code_v2: yes
+seed 501, 5 years: both settings 0 = code_v2: yes
+seed 501, 20 years: both settings 0 = code_v2: yes
+seed 601, 20 years: both settings 0 = code_v2: yes
+arm m, seed 501, 20 years: the setting changes the world (it acts): yes
+arm l, seed 501, 20 years: the setting changes the world (it acts): yes
+arm ml, seed 501, 20 years: the setting changes the world (it acts): yes
+arm c, seed 501, 20 years: identical with and without observers and logging: yes
+arm ml, seed 501, 20 years: identical with and without observers and logging: yes
+arm ml, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+arm m, seed 501, 20 years: M1 leaves the random state unchanged at every full-memory drop: yes (True {'drops': 354, 'changed': 0})
+code_lm1 fingerprint: 51e799e1729830bfaf73327a4a7463ddbd7222e9c870dc8f6cb67181e2041ce7
+All: PASS
+

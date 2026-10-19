@@ -174,3 +174,23 @@ would be a separate Law 126 decision. The prior below is frozen.
 M alone: small rise in link 3 (the accident it removes falls on composites, a minority of kinds). L alone: small rise.
 ML: larger than either, but the interaction "not shown". Improvement by a learner stays rare (under 10% of link-5
 pairs) in every arm.
+
+## Amendment 1 (proposed 20 October 2026, before any data; NEEDS THE CREATOR'S APPROVAL)
+
+**What the smoke test showed** (throwaway seeds 9951–9952, 10 years; code check only): M1 does exactly what it says:
+in M and ML worlds the longest-held recipe was dropped in **100%** of ties (C: about 6%), and composites fell from
+96–100% of tie drops (C) to about 64%. But the frozen manipulation check, "composites' share of tie drops within 5
+points of their share of tied recipes", came out **64% against 73%: NO**. The check was wrong, not the rule: dropping
+the oldest recipe is not dropping at random, and recipes learned earliest are less often composites, so their share
+among drops need not match their share among ties. Under the frozen check, LM1 would be declared invalid though M1
+worked.
+
+**Proposed change (the M manipulation check only):** M1 passes if, pooled over M and ML worlds, **the longest-held
+recipe is dropped in at least 99% of ties**, and composites' share of tie drops is **lower than in C** (it was the
+naming accident that made them go first). Their share of tie drops against their share of ties is reported, not a hard
+stop. Nothing else changes: arms, seeds, primary, interaction and readings stand as frozen.
+
+The run will not start until the creator approves this amendment (the queue checks for the word "APPROVED" in the
+line below).
+
+Amendment 1 status: awaiting the creator.
