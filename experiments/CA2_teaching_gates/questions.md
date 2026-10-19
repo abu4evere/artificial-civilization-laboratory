@@ -1,0 +1,63 @@
+# CA2 — Why does teaching pass on so little? (DRAFT, 19 October 2026; not frozen, nothing run)
+
+**Why.** CA1 (`../CA1_chain_audit/findings.md`, `CA1-done`) found that the chain of cumulative culture breaks at the
+first hand-over: only **11% (discovery) and 10% (holdout)** of useful inventions are ever learned by anyone but their
+inventor, and about nine in ten first hand-overs are teaching. Before anything in nature is changed, the rule (Rule 12)
+is to find where teaching itself loses them. CA1 also left one caveat open: "built on" may be one person improving their
+own work. **Read-only: nothing in ACL changes.**
+
+## Questions
+
+1. Of the useful inventions never passed on, at which gate of teaching did they stop?
+2. (CA1's caveat) Of the kinds built on, how many were built on by someone other than their first knower?
+
+## How teaching works today (read from `code_v2`, 19 October 2026)
+
+A person can teach only during a `talk` with someone aged 4 or more (`actions._talk` → `knowhow.teach` →
+`information.show_how` → `hear_how`). In order, the gates are:
+
+| gate | rule in the code |
+|---|---|
+| G1 **meets** | the inventor talks with anyone at all while they know the recipe |
+| G2 **valued** | the inventor's own value of the recipe (`itemval`) is above 0.15 |
+| G3 **offered** | it is among the inventor's top three offers, which recipes **share with beliefs** about where to leave things |
+| G4 **chosen** | one of the (up to) three is picked at random |
+| G5 **new to the learner** | the learner does not already know it (as they understood it) |
+| G6 **believed** | not refused because the learner already tried it and found it no good; then a draw against the learner's credence in the teacher × openness (0.35 × (0.5 + curiosity), doubled from a parent) |
+| G7 **followable** | the learner can make any made part it needs (`can_follow`) |
+| G8 **kept** | the learner holds it for at least a year: a person keeps at most **12 recipes**, the least valued dropped first (`MAX_RECIPES`), and useless ones are forgotten |
+
+A recipe can also change as it is shown (`_recipe_as_shown`): the learner may take away a different kind. CA1 counted
+that as a new kind; CA2 reports how often it happens.
+
+## Design (the assistant's recommendation; decisions marked)
+
+- **Instrument (Decision 1):** a logging copy of `code_v2` that writes, at each gate above, what happened, and nothing
+  else, as HF4 did; **shown to change nothing** (state hash equal to `code_v2` with and without logging, seeds 501 and
+  601, 20 years). Alternative: an outside observer only, which cannot see gates G3–G6 (they happen inside one week).
+- **Worlds (Decision 2):** **CA1's discovery seeds 6301–6316** replayed exactly (each replay's final state hash must
+  equal CA1's saved one), so the two audits describe the same worlds; then **holdout on CA1's holdout seeds 6317–6332**.
+- **Also saved (question 2):** who first knew each kind and who first made each better kind built on it.
+- **Computer:** two spare workers, as CA1 (about 1.5 hours).
+
+## The frozen reading (proposed)
+
+- For useful inventions never passed on, each gate's **pass rate** (attempts passing ÷ attempts reaching it), pooled.
+  **The blocking gate** is the one with the lowest pass rate; it counts only if it is the same gate in discovery and
+  holdout. Also the share of useful inventions whose inventor **never reached G1** (never talked with anyone while
+  knowing it).
+- Question 2 is described: of CA1's link-5 kinds, the share built on by someone other than the first knower.
+- Population is shown beside (rule 18). It locates the gate; it does not show that opening it would build culture.
+
+## The assistant's prior (to be frozen at sign-off; held loosely)
+
+Blocking gate **G3, offered**: an inventor's many recipes and beliefs compete for three places, so most useful
+inventions are never even offered. Second guess: G6, believed. Question 2: most building on (over half) is the
+inventor's own work. (My last prior, on CA1, was wrong.)
+
+## Decisions for the creator
+
+1. Instrument: **a logging copy shown to change nothing** (recommended), or an outside observer only.
+2. Worlds: **CA1's seeds, discovery then holdout** (recommended), or new seeds.
+3. Include question 2 (**yes**, recommended) or leave it.
+4. Order: **now, on two spare workers** (recommended), or after FX2.
