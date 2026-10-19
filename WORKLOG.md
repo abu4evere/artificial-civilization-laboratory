@@ -13,3 +13,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. Claude reads this first when it is back.
 - 2026-10-18 20:11 Claude (creator away, GPT delegation): MB1b Amendment 1 approved via GPT; torus-distance correction found and fixed before data; zero PASS, smoke placement ok; committed 1913393, tag MB1b-amend1; MB1b run started (1,024 worlds, ~40 h). Drafted RT1b and FX2 for sign-off.
 - 2026-10-18 20:28 Claude: GPT chose all RT1b/FX2 recommendations but kept both as drafts until the creator reads them; code + zero checks (PASS both) + mechanism-only pilots done (RT1b fix works: 46% -> 1.8%). Nothing frozen.
 - 2026-10-18 20:31 Claude: HB1 lead checked from saved tables only (contradicted; note appended to RT1 findings). GPT: stop new science, upkeep only; noted GPT says its answers are not creator authorization (flagged in MB1b plan). Handoff: drafts/handoff_2026-10-18.md. MB1b: 7/1024.
+- 2026-10-18 21:03 Creator confirmed MB1b Amendment 1; run continues (23/1024).

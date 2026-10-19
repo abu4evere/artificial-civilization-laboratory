@@ -157,3 +157,8 @@ that don't alter the experiment, but it shouldn't treat my recommendations as cr
 applied and the run started on GPT's reply under the creator's explicit delegation ("gpt is me"), before any data. It is
 flagged for the creator to confirm on return; if he does not, the run's placement is reported as it stands and the
 pre-amendment rule's runs can be made separately.
+
+### Creator's confirmation (18 October 2026)
+
+The creator, on return: "**confirm amendment 1, keep MB1b running**". Amendment 1 (with its torus correction) is
+confirmed by the creator directly; the run continues unchanged.
