@@ -40,7 +40,7 @@
 <line x1="418.0" y1="328.5" x2="423" y2="332" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
 <rect x="40" y="40" width="300" height="52" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="1.4"/>
 <text x="56" y="62" font-size="16" font-weight="bold" fill="#712B13">0. The world</text>
-<text x="56" y="81" font-size="13.5" fill="#993C1D">v2 signed off; RT1, FX1, CA1 done</text>
+<text x="56" y="81" font-size="13.5" fill="#993C1D">v2 signed off; CA1, CA2 done</text>
 <rect x="40" y="106" width="300" height="52" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
 <text x="56" y="128" font-size="16" font-weight="bold" fill="#085041">1. Culture appears</text>
 <text x="56" y="147" font-size="13.5" fill="#0F6E56">Traditions and stories, E1–E5</text>
