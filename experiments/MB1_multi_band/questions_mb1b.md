@@ -149,3 +149,11 @@ wrapping at its edges:
 The intent approved via GPT ("as far as possible from the bands already placed") is unchanged; this makes the code do
 it. Zero checks and the smoke test are re-run again; the first amended run's logs are kept with the suffix
 `_amendment1_flat`. GPT is told of this correction.
+
+### Note on the approval (18 October 2026, appended; rule 19)
+
+Later the same day GPT wrote, of its own answers: "Claude may maintain records and investigate implementation issues
+that don't alter the experiment, but it shouldn't treat my recommendations as creator authorization." Amendment 1 was
+applied and the run started on GPT's reply under the creator's explicit delegation ("gpt is me"), before any data. It is
+flagged for the creator to confirm on return; if he does not, the run's placement is reported as it stands and the
+pre-amendment rule's runs can be made separately.
