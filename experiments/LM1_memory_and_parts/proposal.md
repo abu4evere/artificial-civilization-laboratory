@@ -1,4 +1,4 @@
-# LM1 — Memory or parts? A Law 126 proposal (DRAFT, 19 October 2026; not frozen, nothing built, nothing run)
+# LM1 — Memory or parts? A Law 126 study (SIGNED OFF 20 October 2026; frozen as `LM1-frozen` before any code or data)
 
 **Why.** Three read-only audits traced where ACL's chain of cumulative culture breaks. CA1: about nine in ten useful
 inventions are never learned by anyone but their inventor. CA2: most are lost before any lesson (G1–G2), and the few
@@ -127,3 +127,50 @@ give agents the ability to accumulate knowledge by assumption."
 
 GPT: "I especially like one thing about this design: L1 can fail ... That's exactly what makes it a scientific test
 rather than a scripted success. No run until the required sign-off and frozen protocol are recorded."
+
+## Sign-off (20 October 2026)
+
+Asked about LM1, the creator answered: "**go ahead**". Read as approving every recommendation: (1) memory change **M1,
+ties by age**; (2) learning change **L1, parts first**; (4) primary: **share of useful inventions passed on, with the
+interaction**; (5) **freeze, to run after MB1b, RT1b and FX2**. Decision 3 (sham) had no recommendation; the assistant
+set **no sham** (the four arms are paired by seed, and chance is measured by the paired tests), recorded here so the
+creator can add one before any data. This is a study of rule changes, not their adoption into nature: adopting either
+would be a separate Law 126 decision. The prior below is frozen.
+
+## Operational details (fixed at freezing, before any code)
+
+- **Code `code_lm1`:** a copy of `code_v2` plus two settings, both default 0 (= `code_v2` exactly): `memory_ties_by_age`
+  (M1) and `parts_first` (L1).
+  - **M1:** in `knowhow.remember_recipe`, when the 13th recipe arrives, the least-valued recipe is dropped as today;
+    among recipes tied at that least value, the one **held longest** (earliest in the person's own recipe order, which is
+    the order they were learned or made) is dropped, instead of the one whose name sorts first. No random number is
+    drawn.
+  - **L1:** in `information.hear_how`, when a lesson fails only because the learner cannot follow it (a made part they
+    cannot make), the teacher shows instead, in the same lesson, the **first made part of that recipe, in the recipe's
+    own order, that the teacher knows how to make**, through the same `hear_how` with the same claim, so it passes the same
+    checks (new to the learner, not refused, believed, followable) and may fail. At most one substitution per lesson; a
+    part lesson that fails at its own followability check is not substituted again. If the teacher knows no made part of
+    it, nothing more happens.
+- **World and seeds:** nature v2, 20 founders, 40 × 40, 120 years; arms `c`, `m`, `l`, `ml`; **seeds 7001–7256**
+  (unused by any study); 1,024 worlds, after FX2.
+- **Observers (read-only):** CA1's chain observer (unchanged), extended as CA3 to save each kind's first knower and its
+  learners; plus a count of `make` events by people other than the first knower, per kind.
+- **Primary:** per world, link-3 proportion = useful kinds (largest factor ≥ 1.05) passed on to anyone other than the
+  first knower ÷ all useful kinds first appearing in that world. M, L and ML each against C, paired by seed: Wilcoxon
+  signed-rank; effect = mean paired difference with a 95% bootstrap interval (10,000 resamples, `random.Random(2026)`);
+  Holm over the three. **Interaction** as fixed above: (ML − L) − (M − C), its own test, not in the Holm family.
+  Reading: an arm "changes transmission" if Holm p < 0.05; "not shown" otherwise (never "no effect" without an interval
+  inside ±0.02 of the control's proportion, which is then called "no meaningful effect").
+- **Reported beside (identical definitions in all arms):** useful kinds created; passed on; knowledge survival time;
+  the five achievements (holds, knows, makes, improves as a learner, passes the improvement on); extinction and median
+  population by decade.
+- **Hard stops:** zero checks (both settings 0 = `code_v2`; each setting acts; observers read-only; save and reload
+  exact); M1 log check (ties only; longest-held dropped; random state unchanged by M1); manipulation checks (M: the
+  share of composites among recipes dropped from ties falls to their share of tied recipes, ± 0.05; L: part lessons
+  occur in every L and ML world that lives 10 years, and some succeed); all 1,024 worlds; one fingerprint.
+
+## The assistant's prior (frozen; held loosely)
+
+M alone: small rise in link 3 (the accident it removes falls on composites, a minority of kinds). L alone: small rise.
+ML: larger than either, but the interaction "not shown". Improvement by a learner stays rare (under 10% of link-5
+pairs) in every arm.
