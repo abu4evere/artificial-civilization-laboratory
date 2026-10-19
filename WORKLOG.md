@@ -23,3 +23,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. Claude reads this first when it is back.
 - 2026-10-19 01:21 GPT reviewed CA2 (six refinements, all adopted into the draft; decision 5 added). Still a draft.
 - 2026-10-19 01:36 CA2 signed off and frozen (CA2-frozen); logging copy zero PASS; run started on 2 workers (32 replays of CA1's worlds). Sleep mode.
 - 2026-10-19 03:05 CA2 done: most losses before any lesson (G1 46%, G2 36-39%); narrowest gate G7 followable (1.2%/0.5%); building on others' taught parts 4%. Priors wrong. Findings, INDEX, ROADMAP, decisions, book Ch 87.
+- 2026-10-19 03:07 GPT reviewed CA2's result: (a) read-only audit first, then (b) evidence review; drafted CA3 (opportunity vs availability) for sign-off. Not frozen.
