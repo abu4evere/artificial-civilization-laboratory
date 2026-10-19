@@ -51,3 +51,4 @@ experiments/SA1_sensitivity/run_detached*
 # full-text paper downloads (copyrighted; kept locally, not published)
 research_notes/papers/
 drafts/book_rewrite/images/*.png
+!drafts/book_rewrite/images/*_web.png
