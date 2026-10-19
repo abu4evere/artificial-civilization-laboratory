@@ -1,6 +1,6 @@
 # Open decisions (for the creator)
 
-Kept short and current by Claude. `tools/project_status.py` prints the list below. One line each; the details live in
+Kept short and current by the assistant. `tools/project_status.py` prints the list below. One line each; the details live in
 the file named.
 
 - [ ] Nature candidates N1–N7 under Law 126: what to do with each (`experiments/NL1_nature_line/audit.md`)

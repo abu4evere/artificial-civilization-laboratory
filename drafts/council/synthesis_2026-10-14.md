@@ -1,7 +1,7 @@
 # Council, night of 13–14 October 2026: what is new, sorted against ACL's record
 
 Two words-only questions to Kimi K3 and Gemma 4 (answers beside this file, 03:36 and 03:37): why culture freezes, and
-when storage appears. Ideas only; sorted by Claude against what ACL has already measured. Nothing here is decided or
+when storage appears. Ideas only; sorted by the assistant against what ACL has already measured. Nothing here is decided or
 changed.
 
 ## 1. Why culture freezes: the council's three causes are ACL's own findings
@@ -33,7 +33,7 @@ candidates; Law 126 open point 4: "kin and ownership knowledge case by case, or 
 
 1. **An evidence review, rule 17 first:** among foragers and early cultivators, who may harvest a planted or tended
    patch, and how is that known (kin, the planter's presence, marks)? This decides whether any ownership rule for crops
-   can be anchored, before any design. A natural question for Perplexity (sources with links), checked by Claude.
+   can be anchored, before any design. A natural question for Perplexity (sources with links), checked by the assistant.
 2. **Law 126 open point 4** can be answered with that review in hand, case by case.
 3. Only then, if anchored: a frozen, controlled test of crop capture (the D2 lever), on the new baseline world.
 

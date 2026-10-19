@@ -1,6 +1,6 @@
 # Council: An agent-based simulation of small hunter-gatherer bands (no language models; agents learn habits by reinforcement, have
 
-Asked 2026-10-14 03:36. **Ideas only; not decisions.** Claude sorts these against ACL's rules before anything is used.
+Asked 2026-10-14 03:36. **Ideas only; not decisions.** the assistant sorts these against ACL's rules before anything is used.
 
 ## The question
 

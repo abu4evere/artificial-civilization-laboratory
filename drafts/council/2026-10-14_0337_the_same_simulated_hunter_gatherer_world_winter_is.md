@@ -1,6 +1,6 @@
 # Council: The same simulated hunter-gatherer world: winter is when people starve, autumn offers enough food to store, but nobody s
 
-Asked 2026-10-14 03:37. **Ideas only; not decisions.** Claude sorts these against ACL's rules before anything is used.
+Asked 2026-10-14 03:37. **Ideas only; not decisions.** the assistant sorts these against ACL's rules before anything is used.
 
 ## The question
 

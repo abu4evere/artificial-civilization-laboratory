@@ -2,7 +2,7 @@
 
 THE PROJECT. A world of sma
 
-Asked 2026-10-16 17:22. **Ideas only; not decisions.** Claude sorts these against ACL's rules before anything is used.
+Asked 2026-10-16 17:22. **Ideas only; not decisions.** the assistant sorts these against ACL's rules before anything is used.
 
 ## The question
 

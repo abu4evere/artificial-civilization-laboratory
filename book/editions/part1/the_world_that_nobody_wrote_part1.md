@@ -28,7 +28,7 @@ The Artificial Civilization Laboratory is still running. Its worlds are still be
 
 Nothing in it is final except the record. Each result here was frozen before it ran and is kept in the open, with every prediction that turned out wrong: github.com/abu4evere/simulated-world. Later work may change how a result is read; when it does, the change will be written down beside it, never over it.
 
-Written with AI assistance: the chapters were drafted with Claude from the project's records and checked against them. The questions, the decisions and the project are the creator's.
+Written with AI assistance: the chapters were drafted with an AI assistant from the project's records and checked against them. The questions, the decisions and the project are the creator's.
 
 # A Note Before Reading
 

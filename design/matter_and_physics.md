@@ -190,7 +190,7 @@ it gives the novelty curve of today's world without changing anything.
 **Design.** E6 uses the same 8 seeds (301–308; the same maps and founders) under the new physics, for 1000 years,
 compared pair by pair.
 
-**Claude's draft predictions** (the creator adds theirs before freezing):
+**The assistant's draft predictions** (the creator adds theirs before freezing):
 1. Baseline: fewer than 10% of all novelty events in E5 happen after year 100.
 2. E6: at least 25% of new kinds and new behaviours appear after year 100, in at least 5 of 8 worlds.
 3. E6: at least one new tradition that began after year 100, in at least half of the surviving worlds.

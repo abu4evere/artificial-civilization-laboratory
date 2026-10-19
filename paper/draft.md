@@ -294,8 +294,7 @@ be added). All numbers in this paper are produced by `paper/paper_numbers.py`.
 ## Use of AI tools
 
 [AUTHOR: wording to be decided; most journals require a statement.] Suggested: "Analysis scripts, experiment
-infrastructure and the drafting of this manuscript were carried out with the assistance of an AI system (Claude,
-Anthropic). The author designed and approved every experiment, reviewed all results, and takes responsibility for the
+infrastructure and the drafting of this manuscript were carried out with the assistance of an AI system. The author designed and approved every experiment, reviewed all results, and takes responsibility for the
 content."
 
 ## References

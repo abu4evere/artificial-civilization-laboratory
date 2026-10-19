@@ -1,6 +1,6 @@
 # Council: In an agent-based simulation of small hunter-gatherer bands (about 20 founders), people rarely meet anyone outside their
 
-Asked 2026-10-13 00:29. **Ideas only; not decisions.** Claude sorts these against ACL's rules before anything is used.
+Asked 2026-10-13 00:29. **Ideas only; not decisions.** the assistant sorts these against ACL's rules before anything is used.
 
 ## The question
 

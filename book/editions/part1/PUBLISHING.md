@@ -44,7 +44,7 @@ You need: a KDP account (kdp.amazon.com), your tax interview and bank details (o
 1. **Create → Kindle eBook.** Title, subtitle, author, description and keywords as above.
 2. **Categories** (pick up to 3): Science → Social Sciences / Anthropology; Computers → Artificial Intelligence;
    Science → Life Sciences / Evolution (choose the closest Amazon offers).
-3. **AI-generated content: answer Yes** for **text** (the chapters were drafted with Claude from the records and
+3. **AI-generated content: answer Yes** for **text** (the chapters were drafted with an AI assistant from the records and
    checked) and **Yes** for **images** (the cover picture comes from an AI-generated image). Amazon requires this
    disclosure; the book says so on its "About Part One" page.
 4. **Manuscript:** upload the **.docx**. **Cover:** upload `cover_part1.png`. Preview the result in Kindle Previewer before

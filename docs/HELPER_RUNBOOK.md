@@ -1,8 +1,8 @@
-# Helper runbook: what a local helper (Ollama) may do while Claude is unavailable
+# Helper runbook: what a local helper (Ollama) may do while the assistant is unavailable
 
-Written by Claude, 12 October 2026, for the creator. When Claude's usage limit is reached, a local model in Ollama can
+Written by the assistant, 12 October 2026, for the creator. When the assistant's usage limit is reached, a local model in Ollama can
 help the creator keep ACL's background runs going. The helper **follows these steps exactly and changes nothing
-else**. Claude checks everything in `WORKLOG.md` when it is back.
+else**. The assistant checks everything in `WORKLOG.md` when it is back.
 
 **Why the limits are strict.** ACL's science depends on frozen plans and on nobody adjusting anything after results
 exist. A helper that "fixes" something could make months of results unusable. So the helper may only **run the commands
@@ -16,8 +16,8 @@ below, read their output, and write in `WORKLOG.md`**.
 4. Never run `git` (no commit, no push, no reset, no checkout).
 5. Never start an experiment other than with `python tools/acl_resume.py`.
 6. Never interpret results or decide what they mean. Running a frozen analysis script is allowed (step 3); reading it is
-   Claude's job.
-7. If anything is unclear or unexpected: **stop**, write it in `WORKLOG.md`, and wait for Claude.
+   the assistant's job.
+7. If anything is unclear or unexpected: **stop**, write it in `WORKLOG.md`, and wait for the assistant.
 
 ## Every session: three steps
 
@@ -52,7 +52,7 @@ First run `$env:PYTHONIOENCODING = "utf-8"` in the same PowerShell window: witho
 and then stops with a `UnicodeEncodeError` while printing (seen with LK1, 13 October 2026). That error is harmless,
 but write it in `WORKLOG.md` if it appears.
 
-Do not change the scripts. Do not open or summarise `results.md` for the creator as if it were a finding. Claude reads
+Do not change the scripts. Do not open or summarise `results.md` for the creator as if it were a finding. The assistant reads
 it against the frozen plan first: a run can be **not valid**, and then nothing in it counts.
 
 **Step 4: write in `WORKLOG.md`.** One line per action, at the bottom:
@@ -77,11 +77,11 @@ of memory, and the runs need most of it. Close Ollama when you are done asking i
 
 ## Things the helper can usefully help with (drafts only, in `drafts/`)
 
-These never touch the record. Claude reviews them before anything is used.
+These never touch the record. The assistant reviews them before anything is used.
 
 - **The Creator's Note** (the book's missing Chapter 0, in the creator's own voice). The helper can ask the creator
   questions and write the creator's answers into `drafts/creators_note.md`. The words must be the creator's.
-- **Questions for Claude.** Anything the creator wants to ask or decide next, collected in `drafts/questions_for_claude.md`.
+- **Questions for the assistant.** Anything the creator wants to ask or decide next, collected in `drafts/questions_for_the_assistant.md`.
 
 ## What is running now (12 October 2026, 23:36)
 
@@ -89,7 +89,7 @@ These never touch the record. Claude reviews them before anything is used.
 - **SA1** (sensitivity audit): starts by itself when LK1 is done; 896 worlds, about 12 hours.
 - Both are frozen. Their analysis scripts were written before any data. Nothing about them may change.
 
-## For Claude, on return
+## For the assistant, on return
 
 1. Read `WORKLOG.md`.
 2. Run `python tools/acl_status.py`.

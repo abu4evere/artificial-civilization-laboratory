@@ -43,7 +43,7 @@ def unreadable(folder: Path) -> list:
 def main() -> None:
     bad = unreadable(LK1 / "output") + unreadable(SA1 / "output")
     if bad:
-        print(f"STOP: unreadable output files {bad}. Started nothing. Write this in WORKLOG.md; Claude decides.")
+        print(f"STOP: unreadable output files {bad}. Started nothing. Write this in WORKLOG.md; the assistant decides.")
         return
     p = procs()
     lk1_done = len(list((LK1 / "output").glob("*_seed_4*.json"))) >= 768

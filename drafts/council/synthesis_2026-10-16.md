@@ -1,4 +1,4 @@
-# Council, 16 October 2026: the whole project so far — sorted by Claude
+# Council, 16 October 2026: the whole project so far — sorted by the assistant
 
 Question: `drafts/council_q_2026-10-16_whole_project.md` (words only, no code or data). Answers:
 `2026-10-16_1722_…` (Gemma 4 31B) and `2026-10-16_1723_…` (NVIDIA Nemotron 3 Super 120B; OpenAI gpt-oss-20b).

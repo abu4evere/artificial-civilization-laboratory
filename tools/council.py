@@ -6,7 +6,7 @@
   python tools/council.py --cloud-only "question"                  # skip models on this PC (saves memory while runs go)
 
 Rules (docs/HELPER_RUNBOOK.md and Law 126 apply to everything that comes back):
-- Ideas only. Nothing a model says is a decision; Claude sorts the answers against ACL's rules, and the creator decides.
+- Ideas only. Nothing a model says is a decision; the assistant sorts the answers against ACL's rules, and the creator decides.
 - No private code or data leaves this PC: the question must describe ACL in words. The tool refuses text that looks
   like code or file paths.
 - Keys are never written in any file: NVIDIA's key is read from the environment variable NVIDIA_API_KEY, which the
@@ -84,7 +84,7 @@ def main() -> None:
     slug = re.sub(r"[^a-z0-9]+", "_", question.lower())[:50].strip("_")
     path = OUT / f"{datetime.now():%Y-%m-%d_%H%M}_{slug}.md"
     lines = [f"# Council: {question[:120]}", "", f"Asked {datetime.now():%Y-%m-%d %H:%M}. **Ideas only; not decisions.** "
-             "Claude sorts these against ACL's rules before anything is used.", "", "## The question", "", question, ""]
+             "the assistant sorts these against ACL's rules before anything is used.", "", "## The question", "", question, ""]
     for m in models:
         if not m.get("enabled") or ("--cloud-only" in sys.argv and m["provider"] == "ollama"):
             continue
