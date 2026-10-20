@@ -692,12 +692,17 @@ def _court(world, p, target, eff):
         world.courting.append((p.id, q.id))
         p.reward += 0.2
         return
+    log = getattr(world, "pf1log", None)          # PF1: logging only (not saved, read by nothing in the world)
     if p.partner is not None or q.partner is not None:
+        if log is not None:
+            log.append((world.tick, p.id, q.id, "taken"))
         return
     r = q.rel.get(p.id)
     attraction = (0.25 + 0.2 * q.genes["sociability"] + (r.affection if r else 0.0)
                   + 0.2 * (r.respect if r else 0.0) + 0.1 * min(p.health, 100.0) / 100.0)
     if attraction > 0.55 and world.rng.random() < 0.6:
+        if log is not None:
+            log.append((world.tick, p.id, q.id, "paired"))
         p.partner, q.partner = q.id, p.id
         bump(p, q.id, world.tick, affection=0.2, trust=0.1)
         bump(q, p.id, world.tick, affection=0.2, trust=0.1)
@@ -706,6 +711,8 @@ def _court(world, p, target, eff):
         remember(world, q, eid, "paired", p.id, q.id, p.loc, 0.7, 0.9)
         p.reward += 0.5
     else:
+        if log is not None:
+            log.append((world.tick, p.id, q.id, "refused"))
         bump(q, p.id, world.tick, affection=0.04 * q.genes["sociability"], familiarity=0.03)
         bump(p, q.id, world.tick, affection=0.03, familiarity=0.03)
         p.reward += 0.03
