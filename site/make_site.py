@@ -15,12 +15,13 @@ REPO = sys.argv[1] if len(sys.argv) > 1 else "artificial-civilization-laboratory
 BASE = f"https://abu4evere.github.io/{REPO}/"
 GITHUB = f"https://github.com/abu4evere/{REPO}"
 AMAZON = "https://www.amazon.com/s?k=The+World+That+Nobody+Wrote+Khudoyberdiev"
+AMAZON_LIVE = False                 # True once the Kindle and paperback are live (then set AMAZON to the store page)
 NAME = "Artificial Civilization Laboratory (ACL)"
 AUTHOR = "Abdurashid Khudoyberdiev"
 TODAY = date.today().isoformat()
 
 NAV = [("index.html", "ACL"), ("findings/why-inventions-disappear.html", "Why inventions disappear"),
-       ("findings/why-small-worlds-die-out.html", "Why small worlds die out"), ("method.html", "How it is tested"),
+       ("findings/why-small-worlds-die-out.html", "Why small worlds die out"), ("method.html", "How it is tested"), ("book.html", "The book"),
        ("about.html", "About")]
 
 
@@ -59,7 +60,7 @@ def page(path, title, description, body, extra_ld=None):
 {body}
 </main>
 <footer><div>Artificial Civilization Laboratory (ACL), by {AUTHOR}. Code and every experiment record:
-<a href="{GITHUB}">GitHub</a>. The book: <a href="{AMAZON}"><em>The World That Nobody Wrote</em> on Amazon</a>.</div></footer>
+<a href="{GITHUB}">GitHub</a>. The book: <a href="{up}book.html"><em>The World That Nobody Wrote</em></a>.</div></footer>
 </body>
 </html>
 """
@@ -71,7 +72,7 @@ def page(path, title, description, body, extra_ld=None):
 
 BOOK_LD = {"@context": "https://schema.org", "@type": "Book", "name": "The World That Nobody Wrote, Part One",
            "alternativeHeadline": "How I Tried to Build a Civilization Instead of Simulating One",
-           "author": {"@type": "Person", "name": AUTHOR}, "isbn": "9798163874385", "url": AMAZON,
+           "author": {"@type": "Person", "name": AUTHOR}, "isbn": "9798163874385", "url": BASE + "book.html", "numberOfPages": 87,
            "about": "Artificial Civilization Laboratory"}
 
 INDEX = f"""<section class="hero">
@@ -79,7 +80,7 @@ INDEX = f"""<section class="hero">
 <p class="lead">Twenty people wake up on a set of islands knowing nothing. No tools, no fire, no language, no rules.
 Nobody writes their history. What do they build?</p>
 <div class="btns"><a class="btn primary" href="{GITHUB}">See the code and records</a>
-<a class="btn" href="{AMAZON}">Read the book</a></div>
+<a class="btn" href="book.html">The book</a></div>
 </section>
 
 <figure><img src="img/viewer.png" alt="A live ACL world: 33 people in five bands on a set of islands, with population, ages and group stability" width="1382" height="724">
@@ -114,8 +115,8 @@ stops it? ACL answers that one step at a time, with controlled experiments on hu
 <h2>The book</h2>
 <p><em>The World That Nobody Wrote, Part One: How I Tried to Build a Civilization Instead of Simulating One</em> tells
 the story of the project: how the worlds were built, what their people did, and what was predicted wrong.
-Available on Amazon as a Kindle ebook and a paperback.</p>
-<div class="btns"><a class="btn primary" href="{AMAZON}">The book on Amazon</a></div>
+As a Kindle ebook and a paperback on Amazon.</p>
+<div class="btns"><a class="btn primary" href="book.html">About the book</a></div>
 
 <h2>Run a world yourself</h2>
 <p>ACL is open source, in Python with no dependencies. The code, every frozen plan, every result and every correction
@@ -208,8 +209,67 @@ ABOUT = f"""<h1>About ACL</h1>
 <p>The Artificial Civilization Laboratory is built by {AUTHOR}. It began as an idea for a personal AI companion and
 turned into a bigger question: what would it take for a civilization to start by itself?</p>
 <p>The project is open source. Its code, plans, results and corrections are public on
-<a href="{GITHUB}">GitHub</a>. Its story is told in the book <em>The World That Nobody Wrote</em>, on
-<a href="{AMAZON}">Amazon</a>.</p>
+<a href="{GITHUB}">GitHub</a>. Its story is told in the book <a href="book.html"><em>The World That Nobody Wrote</em></a>.</p>
+"""
+
+
+CONTENTS = ["Prologue — The Vessel", "Before You Begin",
+            ("Part I — The Dream", ["Why I Built a World", "Games That Already Know the Answer", "What Would Count as Success"]),
+            ("Part II — The Rules I Gave Myself", ["Nature, Not History", "A World That Doesn't Care", "Where I Fell Short"]),
+            ("Part III — What Happened", ["The First Worlds Come Alive", "A Thousand Years, and the Freeze", "Slowly Forgetting",
+                                         "Why Nobody Bothers", "Winter, and the Planners", "Where the Food Goes"]),
+            ("Part IV — Finding Each Other", ["The Worlds That Grew Old", "A Place to Come Home To", "One Band Alone",
+                                              "What They Know, and Who They Are"]),
+            ("Part V — What My Worlds Taught Me", ["A Chain, Not a Spark", "How I Keep Myself Honest",
+                                                   "Questions Bigger Than My World"]),
+            ("Part VI — The Road Ahead", ["The Minimum Conditions"]), "Epilogue — The End of the Beginning"]
+
+
+def contents_html():
+    out, n = ["<ul>"], 0
+    for item in CONTENTS:
+        if isinstance(item, str):
+            out.append(f"<li>{item}</li>")
+            continue
+        part, chs = item
+        items = []
+        for ch in chs:
+            n += 1
+            items.append(f"<li>{n}. {ch}</li>")
+        out.append(f"<li>{part}<ul>{''.join(items)}</ul></li>")
+    return "".join(out) + "</ul>"
+
+
+BUY = (f'<div class="btns"><a class="btn primary" href="{AMAZON}">Buy on Amazon</a></div>' if AMAZON_LIVE else
+       '<p class="note">In review at Amazon (Kindle and paperback); the store link appears here as soon as it is live.</p>')
+
+BOOK = f"""<h1>The World That Nobody Wrote</h1>
+<p class="lead">Part One: How I Tried to Build a Civilization Instead of Simulating One</p>
+<div class="bookrow">
+<img class="cover" src="img/book_cover.jpg" alt="Cover of The World That Nobody Wrote, Part One" width="600" height="900">
+<div>
+<p>Twenty people wake up in a world knowing nothing. No language, no tools, no idea how to survive. Nobody tells them
+what to do. All they have is nature: hunger, cold, seasons, plants, water, and each other.</p>
+<p><em>The World That Nobody Wrote</em> is the story of the Artificial Civilization Laboratory, a simulated world built
+to ask one question: can a civilization start by itself, from nothing?</p>
+<p>In its worlds, people tied a raft in their first weeks and almost never used it. Someone named Reibik made a vessel
+that could hold water and never once filled it. Whole worlds ended, not in war but in quiet, because too few people could
+find each other.</p>
+<p>Part One tells what happened, what was predicted wrong, and the questions it raised: about memory, about who a
+person is, and about what it means for a world to have a creator.</p>
+{BUY}
+</div></div>
+<h2>Details</h2>
+<div class="scroll"><table>
+<tr><th>Author</th><td>{AUTHOR}</td></tr>
+<tr><th>Formats</th><td>Kindle ebook, paperback (6 × 9 in, 87 pages)</td></tr>
+<tr><th>Paperback ISBN</th><td>979-8-16-387438-5</td></tr>
+<tr><th>Chapters</th><td>20, with a prologue, an epilogue and eight illustrations</td></tr>
+</table></div>
+<h2>Contents</h2>
+{contents_html()}
+<p class="note">Every number in the book comes from the project's experiment records, which are public on
+<a href="{GITHUB}">GitHub</a>. Cover and illustrations are AI-generated images made for the book.</p>
 """
 
 pages = [
@@ -225,6 +285,9 @@ pages = [
     page("method.html", "How ACL tests itself — Artificial Civilization Laboratory",
          "Frozen predictions, many worlds side by side, exact replay and corrections in the open: the method of the "
          "Artificial Civilization Laboratory.", METHOD),
+    page("book.html", "The World That Nobody Wrote — the book of the Artificial Civilization Laboratory",
+         "The World That Nobody Wrote, Part One, by Abdurashid Khudoyberdiev: the story of the Artificial Civilization "
+         "Laboratory (ACL), a simulated world where civilization has to emerge on its own.", BOOK, BOOK_LD),
     page("about.html", "About — Artificial Civilization Laboratory (ACL)",
          f"The Artificial Civilization Laboratory (ACL), built by {AUTHOR}.", ABOUT),
 ]
