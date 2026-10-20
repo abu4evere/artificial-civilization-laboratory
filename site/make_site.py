@@ -200,7 +200,7 @@ world are checked to change nothing in it.</p>
 the real world. Nothing is rewarded for being cultural, and no agent is told what to invent.</p>
 <h3>Corrections in the open</h3>
 <p>Mistakes are corrected beside the original, never over it, and every number traces to a committed script.</p>
-<p class="note">The full list of studies, with predictions and results: <a href="{GITHUB}/blob/main/experiments/INDEX.md">experiments/INDEX.md</a>.</p>
+<p class="note">The full list of studies, with predictions and results: <a href="{GITHUB}/blob/master/experiments/INDEX.md">experiments/INDEX.md</a>.</p>
 """
 
 ABOUT = f"""<h1>About ACL</h1>
