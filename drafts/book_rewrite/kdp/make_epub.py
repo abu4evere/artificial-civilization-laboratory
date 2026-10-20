@@ -50,14 +50,14 @@ def page(title, body):
 
 CSS = """body{font-family:serif;line-height:1.45;margin:0 1em}
 p{margin:0;text-indent:1.4em;text-align:justify}
-p.first,h1+p,h2+p,figure+p,ul+p{text-indent:0}
+p.first,h1+p,h2+p,div.fig+p,ul+p{text-indent:0}
 p.intro{font-style:italic;text-indent:0;margin:1em 2em;text-align:center}
 h1{font-weight:normal;text-align:center;margin:3em 0 1.5em;font-size:1.6em}
 h2{font-weight:normal;text-align:center;margin:1em 0 1.5em;font-size:1.4em}
 .label{text-align:center;text-indent:0;letter-spacing:.2em;font-size:.8em;margin-top:3em;color:#7a6a50}
-figure{margin:1.2em 0;text-align:center}
-figure img{max-width:100%}
-figcaption{font-style:italic;font-size:.85em;margin-top:.4em}
+div.fig{margin:1.2em 0;text-align:center;page-break-inside:avoid;break-inside:avoid}
+div.fig img{max-width:100%;max-height:60vh;width:auto;height:auto}
+p.cap{font-style:italic;font-size:.85em;margin-top:.4em;text-indent:0;text-align:center;page-break-before:avoid;break-before:avoid}
 ul{margin:.8em 0 .8em 1.2em;padding:0}
 li{margin:.3em 0}
 .title{text-align:center;text-indent:0;font-size:2em;margin-top:30%}
@@ -98,8 +98,8 @@ def build():
         if m:
             images.append(jpeg((BOOK / m.group(2)).resolve()))
             n = len(images)
-            cur["html"].append(f'<figure><img src="images/fig{n}.jpg" alt="{escape(m.group(1))}"/>'
-                               f'<figcaption>{inline(m.group(1))}</figcaption></figure>')
+            cur["html"].append(f'<div class="fig"><img src="images/fig{n}.jpg" alt="{escape(m.group(1))}"/>'
+                               f'<p class="cap">{inline(m.group(1))}</p></div>')
             continue
         if line.startswith("- "):
             if cur["html"] and cur["html"][-1].endswith("</ul>"):
