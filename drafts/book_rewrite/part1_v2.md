@@ -640,9 +640,23 @@ None of my methods were designed at the start. Every one grew out of a mistake.
 
 My worlds are small and slow beside some of these projects, and plain beside others. What I can offer instead is a method: predictions locked in advance, identical worlds compared side by side, instruments that never touch what they measure, and failures published as failures. Most simulations can tell you what happened. I'm trying to say what caused it.
 
+## Chapter 19 — Questions Bigger Than My World
+
+Build a world, and sooner or later you start asking the oldest questions about your own. I did. I want to put them here, marked honestly for what they are: not results, but what I believe and what I wonder. The last chapter was about keeping what I know apart from what I want. This one is about keeping what I know apart from what I believe.
+
+**Are we living inside one too?** My people live by rules they didn't make and can't see. They get hungry and cold, they find each other, they grow old and die, and nothing in their world tells them that a computer is running it. If one of them could study their world, they would find patterns: seasons that always come back, food that grows again where it was picked, winters that are hardest on whoever stored too little. They would never find me. Looking at that, I think our world might be the same. We might be living inside a simulation, and nobody could prove it. The philosopher Nick Bostrom made a famous argument along these lines. But I have to be honest about what my world shows. It shows that a world like that can be built. It doesn't show that ours was. And if ours were, would our lives be any less real to us? My people's hunger is real inside their world, even though I wrote the rule that makes it.
+
+**Does a world need a creator?** Mine has one. I chose the rules: what people can see, what grows where, how memory fades, how hard the winter is. But I never chose who would tie the first raft, who would love whom, or which world would end. I set the conditions, and the history wrote itself. When I look at our world, I can't believe something this ordered, with rules this exact, came from one cosmic explosion and nothing more. I believe our world has a creator too, who gave it rules good enough for us to live, and that we became what we are by living, through civilization, the way my people become what they are by living. Shoutout to that creator. But here, too, I have to say what science says. The Big Bang, as scientists describe it, wasn't an explosion into empty space. It is the universe expanding from a very hot, very dense beginning, and it explains a great deal about how everything developed, but not why there is anything at all. Science hasn't proved a creator, and it hasn't proved there isn't one. My world can't settle it either. What it gave me is a picture: a creator who writes the laws of a world, and not its story.
+
+**Are there other versions of us?** I never run just one world. I run dozens, sometimes hundreds, side by side, under the same rules, and they don't turn out the same. In one, a raft is tied in the first weeks; in another, nobody ever floats. In one, families fill the land; in another, the last few people grow old alone. Every world's people know only their own history. None of them can see the others. So I wonder whether there are parallel worlds beside ours, other versions of us living other lives, in other worlds or other dimensions, run to see different results. Physicists have ideas that sound like this: one way of reading quantum physics in which every outcome happens in a branch of its own, and the idea that our universe is one of many. They aren't the same idea, and none of them has shown that there is another me somewhere. What my worlds show is narrower, but it's real: the same rules can allow many different histories.
+
+So I keep three lists, and I try never to let one stand in for another. What my worlds have shown: that rules can shape a history without writing it, and that the same rules, run again, give a different past. What science is still asking: how the universe began, whether there are others, what it would take to tell a simulated world from one that isn't. And what I believe: that ours might be a world like mine, made by someone, and maybe not the only one. The lists talk to each other. That's why I built the world. But a belief doesn't become a result because I built something that looks like it.
+
+There's one question my world can't help me with at all. If our world does have a creator, is that creator anything like me, someone at a keyboard who wrote the rules and pressed start? Or something deeper, a source of everything that doesn't resemble a person at all? My people will never be able to ask that about me.
+
 # Part VI — The Road Ahead
 
-## Chapter 19 — The Minimum Conditions
+## Chapter 20 — The Minimum Conditions
 
 At one point, in the middle of an experiment, I felt as if the project might lose its way. So I wrote the way down: nine stages, from a world worth living in to a society. A world. Culture appearing. Finding where it stops. Passing practices from person to person. Practices that outlive the people who taught them. A people's own way of doing things. Enough people. Tools that build on tools. And finally a society: trade, roles, their own rules. Every time I reach a fork, I write down what each possible result will mean before I see the result, so that my path doesn't bend to fit whatever comes out. The map is allowed to be wrong. It just isn't allowed to change in secret.
 
@@ -719,3 +733,8 @@ project's records, which are public at github.com/abu4evere/simulated-world.
 - Wells, J. C. K. (2006). The evolution of human fatness and susceptibility to obesity: an ethological approach. *Biological Reviews* 81(2).
 - Simondon, K. B. and others (2004). Season of birth is not associated with risk of early adult death in rural Senegal. *International Journal of Epidemiology* 33(1).
 - Townsend, R. M. (1994). Risk and insurance in village India. *Econometrica* 62(3).
+
+**The bigger questions**
+
+- Bostrom, N. (2003). Are you living in a computer simulation? *Philosophical Quarterly* 53(211).
+- Everett, H. (1957). "Relative state" formulation of quantum mechanics. *Reviews of Modern Physics* 29(3).
