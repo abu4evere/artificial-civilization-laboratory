@@ -3,7 +3,7 @@
   python experiments/LM1_memory_and_parts/analyse_lm1.py            # writes results.md
   python experiments/LM1_memory_and_parts/analyse_lm1.py --smoke    # throwaway smoke outputs; writes nothing
 
-Validity (no outcome shown otherwise): zero checks pass; all 1,024 worlds present; one fingerprint; manipulation checks
+Validity (no outcome shown otherwise): zero checks pass; all 1,024 worlds present; one fingerprint; manipulation checks (M as amended by Amendment 1)
 (M: among tie drops in M and ML, composites' share within 0.05 of their share of tied recipes, pooled; L: part lessons
 in every L and ML world that lived 10 years, and some taken).
 Primary: per world, link-3 proportion; M, L, ML each against C, paired: Wilcoxon signed-rank; mean paired difference,
@@ -74,9 +74,14 @@ def main(smoke=False):
         dc = sum(r["tie_drop_composite"] * r["ties"] for r in mt) / n if n else None
         tc = sum(r["tie_composite_share"] * r["ties"] for r in mt) / n if n else None
         old = sum(r["tie_drop_oldest"] * r["ties"] for r in mt) / n if n else None
-        t = dc is not None and abs(dc - tc) <= 0.05
-        L.append(f"- Manipulation check, M: composites are {dc:.1%} of tie drops against {tc:.1%} of tied recipes "
-                 f"(needed within 5 points): **{'yes' if t else 'NO'}**; longest-held dropped in {old:.1%} of ties")
+        ct = [r for r in rows["c"].values() if r["ties"]]          # Amendment 1: oldest dropped, composites less than C
+        cn = sum(r["ties"] for r in ct)
+        cdc = sum(r["tie_drop_composite"] * r["ties"] for r in ct) / cn if cn else None
+        t = old is not None and old >= 0.99 and dc is not None and cdc is not None and dc < cdc
+        L.append(f"- Manipulation check, M (Amendment 1): longest-held dropped in {old:.1%} of ties (needed at least "
+                 f"99%); composites {dc:.1%} of tie drops against {cdc:.1%} in C (needed lower): "
+                 f"**{'yes' if t else 'NO'}**. Reported, not a stop: composites {dc:.1%} of tie drops against "
+                 f"{tc:.1%} of tied recipes")
         ok &= t
         lt = [r for a in ("l", "ml") for r in rows[a].values() if r["final_tick"] >= 10 * 52]
         every = all(r["part_lessons"] > 0 for r in lt)

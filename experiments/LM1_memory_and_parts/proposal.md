@@ -175,7 +175,7 @@ M alone: small rise in link 3 (the accident it removes falls on composites, a mi
 ML: larger than either, but the interaction "not shown". Improvement by a learner stays rare (under 10% of link-5
 pairs) in every arm.
 
-## Amendment 1 (proposed 20 October 2026, before any data; NEEDS THE CREATOR'S APPROVAL)
+## Amendment 1 (proposed 20 October 2026, before any data; approved by the creator 20 October 2026)
 
 **What the smoke test showed** (throwaway seeds 9951–9952, 10 years; code check only): M1 does exactly what it says:
 in M and ML worlds the longest-held recipe was dropped in **100%** of ties (C: about 6%), and composites fell from
@@ -193,4 +193,4 @@ stop. Nothing else changes: arms, seeds, primary, interaction and readings stand
 The run will not start until the creator approves this amendment (the queue checks for the word "APPROVED" in the
 line below).
 
-Amendment 1 status: awaiting the creator.
+Amendment 1 status: APPROVED by the creator, 20 October 2026 ("approve LM1 amendment 1"), before any LM1 data.
