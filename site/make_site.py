@@ -102,7 +102,7 @@ stops it? ACL answers that one step at a time, with controlled experiments on hu
 <h2>What it has found so far</h2>
 <div class="cards">
 <div class="card"><span class="num">9 in 10</span><h3>Inventions die with their inventor</h3>
-<p>About nine in ten useful inventions are never learned by anyone else. Most are forgotten within a season.</p>
+<p>About nine in ten useful inventions are never learned by anyone else. Many are forgotten within a season.</p>
 <p><a href="findings/why-inventions-disappear.html">Why inventions disappear</a></p></div>
 <div class="card"><span class="num">1 in 3</span><h3>Small worlds die out quietly</h3>
 <p>Not from hunger or war: births stop decades earlier, because too few people can find a partner.</p>
