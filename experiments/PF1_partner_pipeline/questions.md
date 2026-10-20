@@ -1,4 +1,4 @@
-# PF1 — Why doesn't more contact help people find partners? (DRAFT, 20 October 2026; for the creator's sign-off)
+# PF1 — Why doesn't more contact help people find partners? (SIGNED OFF 20 October 2026; frozen as `PF1-frozen` before any code or data)
 
 **Why.** MB1b (`../MB1_multi_band/findings_mb1b.md`, `MB1b-done`): splitting the same 80 founders into smaller bands made
 lineages meet about four times as often and cross-lineage couples about eight times as common, yet the share of
@@ -66,3 +66,9 @@ unchanged. Second guess: S5, courting not tried, for women past their mid-thirti
    (sham too; about 10 hours).
 3. The prior above, frozen as written.
 4. When: **now, on two spare workers beside RT1b** (recommended), or after FX2.
+
+## Sign-off (20 October 2026)
+
+The creator: "approve all recommendations, freeze it". So: (1) a logging copy shown to change nothing, plus a
+read-only observer; (2) MB1b's P4, B8, B16 worlds, seeds 5301–5316 (discovery) then 5317–5332 (holdout), replayed
+exactly; (3) the prior above, frozen as written; (4) now, on two spare workers beside RT1b.
