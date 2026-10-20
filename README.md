@@ -6,7 +6,7 @@ their history. What do they build?**
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen)](pyproject.toml)
 [![tests](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml/badge.svg)](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml)
-[![Book: The World That Nobody Wrote](https://img.shields.io/badge/book-The%20World%20That%20Nobody%20Wrote-8a5a44)](https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)
+[![Book: The World That Nobody Wrote](https://img.shields.io/badge/book-The%20World%20That%20Nobody%20Wrote-8a5a44)](https://www.amazon.com/s?k=The+World+That+Nobody+Wrote+Khudoyberdiev)
 
 ![A live ACL world: 33 people in five bands on a set of islands, with population, ages and group stability](docs/img/viewer.png)
 
@@ -40,8 +40,8 @@ All 76 studies, with their predictions and results: [`experiments/INDEX.md`](exp
 
 ## Read the story
 
-**[*The World That Nobody Wrote, Part One*](https://github.com/abu4evere/simulated-world/releases/tag/book-part-one)**
-(free PDF): how the worlds were built, what their people did, and every mistake along the way.
+**[*The World That Nobody Wrote, Part One*](https://www.amazon.com/s?k=The+World+That+Nobody+Wrote+Khudoyberdiev)** (Kindle and paperback, on Amazon): how the worlds
+were built, what their people did, and every mistake along the way.
 
 ## Run a world yourself
 
