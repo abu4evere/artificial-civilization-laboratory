@@ -1,6 +1,7 @@
 % The World That Nobody Wrote
 %% Part One: how I tried to build a civilization instead of simulating one
 %% Part One · the experiments to October 2026 · the project continues
+%%% Written from the experiment records of the Artificial Civilization Laboratory, to October 2026. Every number in this book comes from a record in the project's repository, and every person named in my worlds lived in a seeded world.
 
 # Prologue — The Vessel
 

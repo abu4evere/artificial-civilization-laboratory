@@ -1,4 +1,5 @@
 # The World That Nobody Wrote — Part One (rewrite draft, for the author's review)
+%%% Written from the experiment records of the Artificial Civilization Laboratory, to October 2026. Every number in this book comes from a record in the project's repository, and every person named in my worlds lived in a seeded world.
 
 # Prologue — The Vessel
 

@@ -173,13 +173,22 @@ PART_RE = re.compile(r"^(Part [IVXLC]+|Appendix [A-Z])\s+—\s+(.+)$")
 CHAP_RE = re.compile(r"^Chapter (\d+)\s+—\s+(.+)$")
 
 
+RECORDS = ("Written from the experiment records of the Artificial Civilization Laboratory, E0 to E7.7. "
+           "Every number in this book comes from a record in the project's repository; every name is a "
+           "person who lived in a seeded world.")
+records = [RECORDS]
+
+
 def parse(lines):
     title, subtitles, blocks = "", [], []
+    records[0] = RECORDS
     for raw in lines:
         line = raw.rstrip()
         if not line or line.startswith("//"):
             continue
-        if line.startswith("%% "):
+        if line.startswith("%%% "):                # an edition's own records line for the edition page
+            records[0] = line[4:]
+        elif line.startswith("%% "):
             subtitles.append(line[3:])
         elif line.startswith("% "):
             title = line[2:]
@@ -213,9 +222,7 @@ def front_matter(title, subtitles) -> str:
     # edition page
     out.append(spacer(5000))
     for line in (title, edition,
-                 "Written from the experiment records of the Artificial Civilization Laboratory, E0 to E7.7. "
-                 "Every number in this book comes from a record in the project's repository; every name is a "
-                 "person who lived in a seeded world.",
+                 records[0],
                  "This is a living book. It is meant to be revised after every major experiment, and earlier "
                  "chapters are corrected in the open, never quietly rewritten.",
                  "Cover: an archipelago at dusk, drawn for this edition.",
