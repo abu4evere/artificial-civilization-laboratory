@@ -5,7 +5,7 @@ their history. What do they build?**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen)](pyproject.toml)
-[![tests](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml/badge.svg)](https://github.com/abu4evere/simulated-world/actions/workflows/tests.yml)
+[![tests](https://github.com/abu4evere/artificial-civilization-laboratory/actions/workflows/tests.yml/badge.svg)](https://github.com/abu4evere/artificial-civilization-laboratory/actions/workflows/tests.yml)
 [![Book: The World That Nobody Wrote](https://img.shields.io/badge/book-The%20World%20That%20Nobody%20Wrote-8a5a44)](https://www.amazon.com/s?k=The+World+That+Nobody+Wrote+Khudoyberdiev)
 
 ![A live ACL world: 33 people in five bands on a set of islands, with population, ages and group stability](docs/img/viewer.png)
@@ -36,7 +36,7 @@ before it runs, every world replays bit for bit, and every wrong guess stays in 
 | What decides whether a small world survives? | **How far people can see.** Halve sight: 49 of 64 worlds die; double it: 8. | [SA1](experiments/SA1_sensitivity/findings.md) |
 | Where does cumulative culture break? | **At the first hand-over.** About 1 useful invention in 10 is ever learned by anyone else. | [CA1](experiments/CA1_chain_audit/findings.md), [CA2](experiments/CA2_teaching_gates/findings.md), [CA3](experiments/CA3_opportunity/findings.md) |
 
-Website: **[abu4evere.github.io/simulated-world](https://abu4evere.github.io/simulated-world/)**. All 76 studies, with their predictions and results: [`experiments/INDEX.md`](experiments/INDEX.md).
+Website: **[abu4evere.github.io/artificial-civilization-laboratory](https://abu4evere.github.io/artificial-civilization-laboratory/)**. All 76 studies, with their predictions and results: [`experiments/INDEX.md`](experiments/INDEX.md).
 
 ## Read the story
 
