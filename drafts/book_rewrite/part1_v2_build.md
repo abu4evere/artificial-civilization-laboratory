@@ -666,11 +666,23 @@ So the second question, the one I call Bob, got its first answer too. When piece
 
 And all of it happened in a world that was quietly helping them. They always knew where an absent loved one was standing, at that very moment, though nobody had told them. A gap at the corner of two islands let them walk across water. Their talk wasn't talk at all: it was one mind poured into another, already understood, with no word ever spoken or invented.
 
-Part One ends at a turning point. For the first time since the world began, I am changing its nature. A second version of it has been built, and is about to be tested against the first: one in which a person walks to where they last saw the one they miss, not to where that person is; in which water at a corner is water; in which a raft that breaks at sea leaves its owner struggling for the shore. Beside it, another test is running: what my people become when their habits must be their own, learned from their own lives, and not borrowed whole from someone else's.
+Part One ends at a turning point. For the first time since the world began, I am changing its nature: a second version has been built, in which a person walks to where they last saw the one they miss, not to where that person is, and water at a corner is water. Nobody knows yet what those worlds will do. That is the point of running them.
 
-Nobody knows yet what those worlds will do. That's the point of running them.
+But there is one world I haven't told you about.
 
-And underneath all of it is a question this book has circled from the start without being able to ask. My people have never spoken. They've never had a single word. They do have marks: shapes they make and see, which mean nothing at first, and which come, for some of them, to go with a person, or a place, or a thing worth making. If they are ever to speak, it will have to begin there, with a mark that one person makes and another understands, and that nobody wrote.
+It isn't an experiment. It runs on my computer all the time, day and night, whether I'm watching or not. Fifteen minutes of my time is one day of theirs. I never stop it, never change it, never help. Twenty people woke up in it in October 2026, knowing nothing, like all the others.
+
+In their very first year, a person named Madei walked up to a rock and scratched a mark into it. It looked a little like this: **<^.^>**
+
+Nobody told Madei to. Nothing in Madei's world rewards a mark. It doesn't feed anyone, warm anyone, or carry anything. Madei just made it, and walked away.
+
+The same year, someone named Miyomis tied two pieces of wood together, and within a year people were floating across open water to land nobody could walk to. A year later, someone named Tabek buried seed on purpose, after seeing seed come back as food. And by the second year, two people named Dures and Niyadi, who were not related in any way, had been passing food back and forth for years, and kept on doing it. In the worlds in this book, food mostly stayed inside families. Within four years, there were four partnerships like that one, between strangers.
+
+I don't know what any of it will become. Maybe the partnerships will fade, the way the planners' lessons did. Maybe the buried seed will be forgotten, like the raft and the fired clay. Maybe one of those strangers will teach a child to do the same.
+
+And the mark may still be there, on the rock. People walk past it. Every week, someone might look at it and, for the first time, think it means something: a place, a person, a warning, a name. If that ever happens, it will be the first word in that world, and nobody will have written it.
+
+I'll be watching when it does.
 
 That is where Part Two begins.
 
