@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abu4evere.github.io/simulated-world/sitemap.xml
