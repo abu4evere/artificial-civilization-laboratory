@@ -68,7 +68,10 @@ def covers(pages):
         "-W", str(w), "-H", str(h))
     im = Image.open(HERE / "paperback_cover.png").convert("RGB")
     assert im.size == (w, h), im.size
-    im.save(COVER_PDF, "PDF", resolution=300.0)
+    doc = pymupdf.open()                      # the picture, lossless, on a page of the exact cover size
+    pg = doc.new_page(width=w_in * 72, height=h_in * 72)
+    pg.insert_image(pg.rect, filename=str(HERE / "paperback_cover.png"))
+    doc.save(COVER_PDF, deflate=True)
     print(f"paperback cover: {w_in:.4f} x {h_in} in ({w} x {h} px)")
 
 

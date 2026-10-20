@@ -105,6 +105,13 @@ def paperback():
     return round(W * DPI), round(H * DPI), W, H
 
 
+def front_2x3():
+    """The front alone at 2:3 (1600 x 2400), for the Word/PDF edition's first page."""
+    o = ['<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+         'viewBox="0 0 1600 2400" width="1600" height="2400">', inner, "</svg>"]
+    (HERE / "front_cover.svg").write_text("\n".join(o), encoding="utf-8")
+
+
 def kindle():
     o = ['<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
          'viewBox="0 0 1600 2560" width="1600" height="2560">', front(0, 0, 1600, 2560), "</svg>"]
@@ -114,5 +121,6 @@ def kindle():
 if __name__ == "__main__":
     w, h, W, H = paperback()
     kindle()
+    front_2x3()
     print(f"paperback: {PAGES} pages, spine {SPINE:.4f} in, full cover {W:.4f} x {H:.4f} in = {w} x {h} px")
     print("kindle: 1600 x 2560 px")

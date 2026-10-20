@@ -33,6 +33,8 @@ from xml.sax.saxutils import escape
 HERE = Path(__file__).parent
 SOURCE = HERE / "source" / "the_world_that_nobody_wrote.md"
 COVER = HERE / "cover" / "cover.png"
+if "--cover" in sys.argv:                         # an edition's own cover (2:3 PNG)
+    COVER = Path(sys.argv[sys.argv.index("--cover") + 1]).resolve()
 PRINT = "--print" in sys.argv                    # a print interior: no cover page, full-size pictures
 BOOK = HERE / "The_World_That_Nobody_Wrote_v1.docx"
 if "--src" in sys.argv:                           # an edition: python book/build_book.py --src X.md --out Y.docx
