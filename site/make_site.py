@@ -41,6 +41,7 @@ def page(path, title, description, body, extra_ld=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="A2cUnqQfhJHbxhupCtxqF2Zxo8TpFhgormO1F3wDHWM">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{BASE}{'' if path == 'index.html' else path}">
