@@ -370,6 +370,9 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **CA3 done** (`experiments/CA3_opportunity/findings.md`; frozen; read-only). Why do most inventions never reach a lesson? **Memory**: 99% were pushed out of the inventor's 12-recipe memory within a season, before any teaching talk. And when a composite could have been taught, the learner knew its parts about one time in twelve. An evidence review (notes only) found that real learners meet the parts of a craft first. **Next: the creator decides whether to review evidence on the memory limit and on learning parts before wholes, toward a Law 126 proposal that can tell the explanations apart.**
 
+**MB1b done** (`experiments/MB1_multi_band/findings_mb1b.md`; frozen; 1,024 worlds). Same 80 founders, divided into 4, 8 or 16 bands: **no meaningful effect on survival** (13, 8 and 7 of 256 died out), with survival near its floor at 80 founders. Smaller bands **mix far more** (couples across lineages 6% → 54%), but partner blocking and births do not move. Band size and crowding are confounded. **Next: RT1b (running), then FX2, then LM1 (waits on its Amendment 1).**
+
+
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
 (544), not 608 (labels corrected). **Correction (18 October 2026):** that described the older live package (17 actions); every research copy since E8, and the live package since nature v2, has 32 × 19 = 608. Exact replays depend on Windows' maths library (CI on Windows Server 2022).
