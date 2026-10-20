@@ -32,7 +32,8 @@ def main():
                 toc.Update()
             doc.Fields.Update()
             doc.ExportAsFixedFormat(str(DST), PDF, OpenAfterExport=False, OptimizeFor=0, CreateBookmarks=1,
-                                    DocStructureTags=True)
+                                    DocStructureTags=True,
+                                    UseISO19005_1="--print" in sys.argv)   # print: PDF/A, so every font is embedded
             pages = doc.ComputeStatistics(2)           # wdStatisticPages
         finally:
             doc.Close(SaveChanges=0)

@@ -53,3 +53,8 @@ research_notes/papers/
 drafts/book_rewrite/images/*.png
 !drafts/book_rewrite/images/*_web.png
 drafts/book_rewrite/people_*.json
+
+# KDP build scratch
+drafts/book_rewrite/kdp/_epub_check/
+drafts/book_rewrite/kdp/_render.html
+drafts/book_rewrite/kdp/interior_6x9.docx

@@ -33,6 +33,7 @@ from xml.sax.saxutils import escape
 HERE = Path(__file__).parent
 SOURCE = HERE / "source" / "the_world_that_nobody_wrote.md"
 COVER = HERE / "cover" / "cover.png"
+PRINT = "--print" in sys.argv                    # a print interior: no cover page, full-size pictures
 BOOK = HERE / "The_World_That_Nobody_Wrote_v1.docx"
 if "--src" in sys.argv:                           # an edition: python book/build_book.py --src X.md --out Y.docx
     SOURCE = Path(sys.argv[sys.argv.index("--src") + 1]).resolve()
@@ -209,7 +210,7 @@ def front_matter(title, subtitles) -> str:
     sub, edition = subtitles[0], (subtitles[1] if len(subtitles) > 1 else "")
     words = title.split()
     half = len(words) // 2 + len(words) % 2
-    out = [cover_image(), section_break("cover")]
+    out = [] if PRINT else [cover_image(), section_break("cover")]
     # title page
     out.append(spacer(2600))
     out.append(para(" ".join(words[:half]), "BookTitle"))
@@ -225,7 +226,7 @@ def front_matter(title, subtitles) -> str:
                  records[0],
                  "This is a living book. It is meant to be revised after every major experiment, and earlier "
                  "chapters are corrected in the open, never quietly rewritten.",
-                 "Cover: an archipelago at dusk, drawn for this edition.",
+                 "Cover and illustrations: AI-generated images, made for this edition.",
                  "© 2026 Abdurashid Khudoyberdiev. All rights reserved. No part of this book may be copied, "
                  "reproduced, adapted or distributed, or presented as anyone else's work, without written permission "
                  "from the author.",
@@ -287,7 +288,9 @@ def body(blocks) -> str:
             continue
         if kind == "image":
             m = IMAGE_RE.match(text)
-            out.append(figure(m.group(1), (HERE / m.group(2)).resolve()))
+            path = (HERE / m.group(2)).resolve()
+            full = path.with_name(path.name.replace("_web.png", ".png"))
+            out.append(figure(m.group(1), full if PRINT and full.exists() else path))
             after_heading = True
             continue
         if kind == "bullet":
@@ -394,11 +397,12 @@ FOOTER = (f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:ftr {W_NS}
           '<w:r><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:t>1</w:t></w:r>'
           '<w:r><w:fldChar w:fldCharType="end"/></w:r></w:p></w:ftr>')
 
-SETTINGS = (f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:settings {W_NS}>'
+SETTINGS_ = (f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:settings {W_NS}>'
             '<w:updateFields w:val="true"/><w:mirrorMargins/><w:defaultTabStop w:val="360"/>'
             '<w:characterSpacingControl w:val="doNotCompress"/>'
             '<w:compat><w:compatSetting w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word" w:val="15"/></w:compat>'
-            '</w:settings>')
+            '{nocompress}</w:settings>')
+SETTINGS = SETTINGS_.replace("{nocompress}", "<w:doNotAutoCompressPictures/>" if PRINT else "")
 
 CONTENT_TYPES = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
                  '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
