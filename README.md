@@ -36,7 +36,7 @@ before it runs, every world replays bit for bit, and every wrong guess stays in 
 | What decides whether a small world survives? | **How far people can see.** Halve sight: 49 of 64 worlds die; double it: 8. | [SA1](experiments/SA1_sensitivity/findings.md) |
 | Where does cumulative culture break? | **At the first hand-over.** About 1 useful invention in 10 is ever learned by anyone else. | [CA1](experiments/CA1_chain_audit/findings.md), [CA2](experiments/CA2_teaching_gates/findings.md), [CA3](experiments/CA3_opportunity/findings.md) |
 
-All 76 studies, with their predictions and results: [`experiments/INDEX.md`](experiments/INDEX.md).
+Website: **[abu4evere.github.io/simulated-world](https://abu4evere.github.io/simulated-world/)**. All 76 studies, with their predictions and results: [`experiments/INDEX.md`](experiments/INDEX.md).
 
 ## Read the story
 
