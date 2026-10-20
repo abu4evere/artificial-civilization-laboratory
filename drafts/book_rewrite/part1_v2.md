@@ -656,6 +656,8 @@ So I keep three lists, and I try never to let one stand in for another. What my 
 
 There's one place where my world and Islam part ways. In my world, the creator is someone like the people inside: someone at a keyboard, who wrote the rules and pressed start, and who could one day stop. Islam says the opposite of its Creator. In Ash-Shura, the Qur'an says there is nothing like Him. My people will never be able to ask about me. I can ask about mine, and Islam's answer is that the comparison only goes so far. I'm the creator of a small world. I'm nothing like the Creator of this one.
 
+There's one more thing my world taught me about that. My people can never learn about me from their world. However carefully they studied it, they would find its rules, never the one who wrote them. If I ever wanted them to know me, there would be only one way: to send someone into their world, carrying word of who made it. I've never done that. I never step in, and the historian who watches them is checked to make sure it says nothing. But I believe that is what happened in ours. In Islam, that is what the prophets were: messengers sent by the Creator, so that the people inside could know what the world alone could never tell them.
+
 # Part VI — The Road Ahead
 
 ## Chapter 20 — The Minimum Conditions
