@@ -366,6 +366,8 @@ I looked at every adult, every fourth week, for a hundred and twenty years, in f
 
 One number didn't fall. The best thing each person knew how to make stayed just as valuable to them, generation after generation. They knew how. They had the materials nine weeks in ten. They simply never had a reason.
 
+In one world, a woman named Humouzei lived sixty-seven years and died of old age. Over her life she learned how to make a hundred and seventy-four things, so many that her memory was always full, holding twelve at a time. In sixty-seven years, she never once made anything on purpose. She raised a daughter, Rishei, gathered food, talked and shared, and lived a long life without it.
+
 Then I asked whether that reason existed in their world at all: not what my people thought their tools were worth, but what the tools actually did for them.
 
 The answer embarrassed me. In my world, a week of gathering brings an adult nearly three times the food they need. The best tool adds about a fifth to a harvest that was never short. Across four worlds and more than five million units of food gathered, tools accounted for at most two percent of it. Most made things never paid back the food it cost to make them. Hunting, where a tool helps most, took up less than one adult-week in a thousand.
@@ -378,191 +380,93 @@ The surprising discovery wasn't that my people failed to invent civilization. It
 
 Most of the time. Because there was one season when it didn't.
 
-## Chapter 11 — Winter
+## Chapter 11 — Winter, and the Planners
 
 One fact refused to fit. If food was so plentiful, why was hunger the biggest single cause of death in my long-lived worlds?
 
-The answer was the oldest one in the world: winter. I followed every one of the nearly two hundred people who starved in four worlds back through the last two months of their lives. Seven in ten died in winter, and almost nine in ten in winter or the first weeks of spring, before the plants came back. In winter, one person-week in nine was spent starving; in summer, one in a hundred. Food is plentiful three seasons out of four, and the average hides the fourth.
+The answer was the oldest one there is: winter. I followed every one of the nearly two hundred people who starved in four worlds back through the last two months of their lives. Seven in ten died in winter, almost nine in ten in winter or the first weeks of spring, before the plants came back. Food is plentiful three seasons out of four, and the average hides the fourth.
 
-Babies starved at seven times their share of the population. Of the children and babies who starved, almost every one still had a living carer. The carers were hungry too.
+Babies starved at seven times their share of the population. Of the children who starved, almost every one still had a living carer. The carers were hungry too.
 
 ![A winter with nothing laid by.](../drafts/book_rewrite/images/06_winter_web.png)
 
-Two months before they died, in late autumn, the typical person who starved had no food on hand at all, and no food stored anywhere nearby. Not one of them was carrying anything that holds food.
+In one world, a woman named Shizaima went into the winter of the world's fifty-third year holding about two and a half weeks of food. She had four children. Her daughter Barail had already starved five years before, as a baby, in an early spring. That winter, her youngest son, Dusom, not yet a year old, starved. A week later her son Thuleishem, three, starved too. A week after that, Shizaima starved, at thirty. Beyond those two and a half weeks, she had laid nothing by. Nobody had ever shown her that you could.
 
-It didn't have to be that way. In my world, loose food slowly rots, but food laid by in autumn still keeps more than half of itself through a winter. Seeds barely rot at all. A person can carry a winter's worth of food with a carrier, and most of it with bare hands. Storing food was possible, and it was exactly what carriers and heaps were for. But nobody ever filled even their bare hands. The one thing a carrier is really for, holding a winter's food, was never lived through, and so, as with the raft long before, it was never valued.
+It didn't have to be that way. In my world, food laid by in autumn keeps more than half of itself through a winter, and seeds barely rot at all. A person can carry most of a winter's food with bare hands, and all of it with a carrier. Storing was possible, and it was exactly what carriers were for. But nobody ever filled even their hands. As with the raft long before, the one thing a carrier is really for was never lived through, so it was never valued.
 
-It was the raft again. The tool existed. Its use existed. Nobody ever felt it.
+So I asked: did my people fail to survive winter because they couldn't prepare, or because they didn't? I measured every adult, in every autumn, in four worlds: nearly twelve thousand autumns. Autumn gave plenty: an adult who gathered every autumn week could have laid by more than a whole winter's food. Almost none of it was kept. Adults gathered in fewer than half their autumn weeks, because in my world the pull to gather grows with hunger, and in autumn they weren't hungry. Nobody, in nearly twelve thousand autumns, entered winter with what a winter takes.
 
-That left one question, and I could put it in a sentence: did my people fail to survive winter because they couldn't prepare, or because they didn't?
+The world allowed it, and the people didn't do it. Nothing in them looked ahead to a hunger that hadn't happened yet. And civilization is largely the doing of costly things now for problems that haven't happened yet: granaries, fields, bridges, savings. My people felt today's hunger, not next season's.
 
-The difference mattered enormously. If autumn gave too little to spare, winter was just a fact of the land, and I would need to change the world. If autumn gave plenty and nobody kept any, the problem was in the people, in something they lacked that every farming people has.
+So I gave them the smallest version of foresight I could defend: a person who had gone short in a season would feel that season coming, one season early, but only in the pull to get food. Nothing said "store food". Nothing mentioned winter. And I set one absolute safeguard: anyone who had never gone short had to behave exactly as before. The safeguard held.
 
-I measured every adult, in every autumn, in four worlds: nearly twelve thousand autumns. All five of my predictions came true. Autumn gave plenty. An adult who gathered every autumn week could have laid by more than a whole winter's food. Ninety-eight autumns in a hundred offered plenty to spare.
+And it barely worked. People who had gone short gathered in autumn hardly more than before. Winter deaths didn't fall. But for the first time ever, in about one autumn in a hundred, someone filled their hands before winter, and walked in with six times what everyone else carried. For the few it moved, foresight did exactly what I'd hoped. It moved too few, because for most people the lesson was faint.
 
-Almost none of it was kept. Adults gathered in fewer than half their autumn weeks, because in my world the pull to gather grows with hunger, and in autumn they weren't hungry. The other weeks went to talking, sharing food and being with people. Nobody, in nearly twelve thousand autumns, entered winter with what a winter takes.
+Then I learned whose life a store saves. A single winter rarely kills an adult. But when a carer like Shizaima started winter with very little, about one child in ninety starved before spring; with a few weeks more, one in five hundred. The reward for laying food by is real and large. It just doesn't fall on the person who does the work, and a lesson learned only from your own hunger will rarely teach it.
 
-So the world allowed it, and the people didn't do it. Nothing in them looked ahead to a hunger that hadn't happened yet.
+So I tried the strongest lesson a carer could learn, losing a child to hunger, and a weaker one that reaches more people, seeing someone starve. The grieving gathered a little more. Witnesses barely changed. Nobody walked into winter with more food. In one version a third fewer children starved, in another a fifth more, with nothing upstream to explain either. Read first, the good version would have looked like a breakthrough. Read in order, it was noise.
 
-That mattered more than anything I had found before. Civilization is largely the doing of costly things now, because of problems that haven't happened yet. Granaries, fields, roads, bridges, reservoirs, savings accounts: all of them are of that kind. My people felt today's hunger, and not next season's.
+The hundred-odd planners my worlds did produce taught me the most. There was nothing special about them, except that they had gone short in a winter hard enough to leave a strong memory. They laid by a real store, gave almost a third of it away during the winter, and not one child in their care starved. And then they stopped. Of a hundred and thirteen autumns in which someone planned, only one was followed by a second.
 
-For the first time, the evidence pointed at one specific thing my people lacked: the ability to feel, before it comes, a hardship they had lived through before. I was careful about how to build it. It must not say "store food". It must not mention carriers or heaps. It must not switch on because it is autumn. It must not tell anyone that winter comes. It could only take what a person had actually lived through and let it reach a little ahead. My people already had something like it for thirst: people who had been thirsty carried an expectation of thirst, learned from their own lives. So hunger got the same treatment. Each person learned, season by season, how often they had actually gone short, and the season they had gone short in was felt one season early, only in the pull to get food.
+Because the planners stored food because they had gone short, and having stored, they didn't go short, the lesson faded, and the next autumn there was nothing left to anticipate. **A lesson learned only from suffering is erased by its own success.**
 
-And I set one absolute safeguard: if anyone who had never gone short in a winter changed what they did in autumn, the experiment would be declared a failure, whatever else it showed. The safeguard held.
+Human societies answer this with things that outlast experience: a story about a winter no one alive remembers, a custom of filling the store whether or not anyone is hungry, a granary that stays full because emptying it is forbidden. My people already told stories, so I let a story of a death carry one more thing: that it was hunger, and in which season. Forty thousand times someone heard such a story and believed it, and each time they were moved a very little. The number who filled their hands before winter rose from none to fifty-three. Real, and faint.
 
-And the experiment failed its central test. Adults who had gone short the winter before gathered in autumn barely more than before. The typical person still walked into winter with almost nothing. Winter deaths didn't fall.
+In nothing I tried was a lesson both widespread and strong. The people who would prepare are not the people who hear; the people who hear are not moved enough to prepare.
 
-But something happened that had never happened in my worlds. In about one autumn in a hundred, a person filled their hands: a big store of food, where before there had never been one. Every one of them had gone short the winter before. They gathered in three autumn weeks of four, and walked into winter with six times what everyone else carried.
+The planners had shown that preparing was possible. So I wanted to know what happened around them. As I put it at the time: "The planners are the closest thing ACL has produced to proto-civilization so far. That's where I'd dig next."
 
-For the people it moved, the ability did exactly what I hoped. It moved too few of them. Nearly everyone had learned to expect a hungry winter, but for most people the lesson was faint: an average, the share of winter weeks they'd gone short, too weak to beat a week's ordinary business. Real people don't remember a hard season as an average. They remember its worst week.
+They weren't hidden. More adults could see them through autumn than most people. Through the winter they fed others: three times as much food, to three times as many people. Respect and trust toward them grew faster than toward anyone else. And nothing around them changed. Their neighbours gathered the next autumn exactly as everyone else's did. The children they fed grew up to plan no more often than anyone's.
 
-Then I found out whose life a store actually saves. For any one adult, a single winter rarely kills. But I followed thirteen thousand child-winters, each beside the food their carer held when the winter began. When a carer started winter with very little, about one child in ninety starved before spring. When the carer held a few weeks' more, one in five hundred. A few weeks of food in a carer's hands made a child's winter five times safer.
+Picture a village where one family always has a full storeroom. Everyone admires them and eats at their table in a hard winter, and nobody thinks to fill their own. My people could copy a way of making something by watching, but only at a raft landing or a shared hunt, and a planner's preparation came from what they expected of winter, which nothing carried from one mind to another.
 
-That was the missing piece. The reward for laying food by is real and large. It just doesn't fall on the person who does the work. An adult who gathers through autumn mostly saves a child, not themselves, and a lesson learned only from one's own hunger will rarely teach that.
+So I built the smallest bridge I would allow: copy what you can see, never what anyone expects. An adult who saw someone better fed than themselves gathering food would learn from it as if they had gathered themselves. Nothing about winter passed between them.
 
-So I tried the strongest lesson a carer could learn: a child of theirs dying of hunger. And beside it a weaker one that could reach far more people: seeing someone die of hunger. The grieving did gather more the next autumn. Witnesses barely changed. And in no version did anyone walk into winter with more food than before. Then I read the deaths, last, as I had insisted. In one version, a third fewer children starved than usual. In another, a fifth more. Nothing upstream had changed to explain either; the carers held the same food. It was just worlds doing what worlds do. If I had read the deaths first, the version with fewer deaths would have looked like the breakthrough I'd been waiting for. Read in order, it was noise.
+The worlds did something nothing had done before: planning rose more than fourfold, and more carers went into winter with enough for their children. And none of it could be claimed. My safeguard needed a group of people who had never once seen a better-fed neighbour gather, and over a hundred and twenty years, almost everyone sees that at least once. The group was empty. A test with nobody in it can't find a leak, so by the rule I had written in advance, the experiment failed.
 
-Before moving on, I wanted one more look back, at the hundred-odd autumns when someone, for the first time in the history of my worlds, filled their hands before winter. To me these were the first natural winter planners my worlds had ever produced, and I wanted to know everything about them.
+I ran it again on sixteen new worlds with a safeguard that couldn't come out empty: "sham" worlds that ran the copying right up to the moment of learning and then wrote nothing down. They had to end identical to the untouched worlds, and they did, in all sixteen.
 
-There was nothing special about them. Their kindness, their hard work, their anxiety, their curiosity: all the same as everyone else's. What set them apart was only the lesson. They had gone short in a winter hard enough that the memory was more than twice as strong as most people's. They laid by a real store. Through the winter they gave almost a third of it away and ate the rest. Not one child in their care starved.
+The headline failed: planners didn't plan again much more often. But the rest held. And when I asked what was being copied, the answer was humbling: ninety-eight percent of all copying came from ordinary, moderately fed neighbours, not from planners at all. What passed between adults was a habit, keep gathering while you still have some food. It left more people stocked at the end of autumn, in every one of sixteen worlds. By the end of winter the advantage was gone, and children didn't die less. For the first time in my worlds, behaviour moved from one adult to another. It was a way of gathering, not a plan.
 
-And then they stopped. Of the hundred and thirteen autumns in which someone planned for winter, only one was followed by a second.
+After thirteen experiments asking how to get people to gather for winter, I began to suspect that gathering had never been the whole problem.
 
-Here is why, and it is one of the most important things my worlds have taught me. The planners stored food because they had gone short. Having stored, they didn't go short. And the lesson they acted on was learned from going short, so after a well-fed winter, it faded. The next autumn there was nothing left to anticipate, nobody laid anything by, and the hunger that had taught them came back. **A lesson learned only from suffering is erased by its own success.** I tested this before building anything on it, and it held: people who prepared went hungry far less, and afterwards their lesson fell to a quarter of its strength, far below the point where anyone prepares.
+## Chapter 12 — Where the Food Goes
 
-Human societies seem to have answered this with things that outlast experience. A story about a winter no one alive remembers. A custom of filling the store whether or not anyone is hungry. A granary that stays full because emptying it is forbidden. All of them keep the lesson when the suffering that taught it is gone.
+So I taught a copy of my world to count every crumb: every unit of food that rotted, was eaten, was fed to a child, given, stolen or stored. Food didn't fail to last; almost none was ever held to last. What people held at the start of winter covered only a seventh of what they ate through it. The rest was gathered week by week, in the snow. The one thing that could have held a family's winter, a stash on the ground, was almost never used. And an adult can carry about a hundred units of food, while a carer with two children needs nearly two hundred to get through winter: a family's winter could only ever have been kept on the ground.
 
-So I asked whether stories could carry it. My people already told stories; that's how Ludol's killing survived a hundred and eighty years. Almost every death from hunger became a story, heard by dozens of people and still told decades later. But a death was remembered by who died and where, never by what of, or when. All that telling taught nothing about winter. So I made the smallest change I could: a story of a death would now carry that it was hunger, and in which season. Nothing about storing, nothing about what to do. Stories carry experiences, never instructions.
+Why did nobody store? I recorded every option every adult weighed, and found three gates. Most of the time storing wasn't possible at all: my people could put food away only when they held more than two weeks' worth for their household, which happened in one adult-week in eight, and in autumn fewer than three in a hundred. When the gate opened, the one chance that week to set something down often went to stone or wood instead. And when storing was offered, it lost nineteen times in twenty. What beat it was rarely gathering more. It was giving food to others, talking, joining people nearby. The strongest rival to a winter store wasn't this week's hunger. It was this week's neighbours.
 
-Forty thousand times, someone heard and believed a story of a death from hunger, with its season. Each time, they were moved a very little. People who had heard such stories gathered in autumn a few percent more. The number of people who filled their hands before winter rose from none to fifty-three. The effect was real. It was faint. A story teaches only as strongly as it is believed and as clearly as it is remembered, and almost nobody prepares until the lesson is strong.
+So where did all those gifts go? To family. Nearly three quarters of all food given went to relatives, and the largest share of all, a third, to brothers and sisters. Nearly two thirds went to people with less than half a week's food. More than half of everything given was a gift being repaid.
 
-Put together, these experiments showed a pattern. A lesson from one's own hunger, or from losing one's own child, is strong enough to make some people prepare, but it reaches only the few who suffered, and it fades as soon as preparing works. A lesson from seeing someone starve, or hearing that someone did, reaches far more people and outlasts any one person's suffering, but it is too faint to move anyone. In nothing I tried was a lesson both widespread and strong. The people who would prepare are not the people who hear; the people who hear are not moved enough to prepare.
+In one world, a brother and sister named Zuthik and Zathei passed food to each other four hundred and forty-five times over fifty-nine years, from when Zuthik was a small boy until they were both old. By the end, each had given the other about the same: more than two thousand units of food each way. Neither ever had children. They died of old age, about a year apart. Their younger sister Denekos was fed the same way. I didn't write any of that. Nobody told my people to feed their brothers and sisters first, or to pay back a kindness. It grew out of whom they spent their lives with and whom they cared about.
 
-Real peoples bridge this somehow: a lesson that grows stronger the more people hold it, a practice copied from those who prepare rather than a warning heard from those who suffered, a custom kept because it is the custom. My planners had shown that preparing was possible in my world. The next question was the obvious one. Did anybody notice them?
+So a family's surplus was kept, if anywhere, in its members' stomachs and in what they owed each other. That protects people, but shallowly. A person with almost nothing, in a family with almost nothing, starved about one winter in thirty; with the same nothing of their own but a well-stocked family, about one in eight hundred. But the pool held almost nothing when winter came. Family sharing insured against one member's bad week, never against a winter that emptied everyone, and the one way to make the pool bigger, the store, was exactly what sharing outcompeted.
 
-## Chapter 12 — Seen, and Not Followed
+One last question. Autumn left extra food on the land, so why did nobody take it? The food was there: nearly three times what people gathered lay within reach. They didn't wander far or run out of carrying room. They stopped when they were full. And the reason was a single line of my own code, written long before: at two weeks of food in hand, a person feels no hunger at all, and the pull to gather falls almost to nothing. Two weeks was exactly the line above which storing became possible. My people stopped gathering at the very point where storing could have begun.
 
-I wouldn't let the next step be another new ability. The planners had shown that preparing was possible. The question was what had happened around them. As I put it at the time: "The planners are the closest thing ACL has produced to proto-civilization so far. That's where I'd dig next."
+That line is nature, not culture, so I wouldn't change it by instinct. I listed every reasonable reading of what a satisfied person should feel, and checked each against real research. The first honest admission was that I had never chosen the line from human evidence at all. And one source changed the whole question. The anthropologist James Woodburn described two kinds of hunter-gatherer society. In "immediate-return" societies, food is eaten soon after it's found and shared widely, and little is stored. In "delayed-return" societies there are stores, and obligations built around them. The first kind have the same bodies, appetites and foresight as anyone. They don't store because of how they live together.
 
-There were three possibilities. Nobody noticed them. People noticed and didn't copy them. Or people already copy the successful, and something else stopped it.
+That was a description of my people. Maybe they weren't missing a piece of their nature at all. Maybe they were missing a different way of living together, the kind of thing that can't be written in.
 
-The code answered part of it before any world ran. My people could copy a way of making something by watching, but only at a raft landing or a shared hunt. And children slowly take on the habits of whoever raises them. A planner's preparation lived in neither. It came from what they expected of winter, and nothing carried an expectation from one person to another.
+Before changing my people, I asked whether living week to week was simply right for my world. I wrote down a rule first: if the world gave no real reason to store, changing their minds would be premature.
 
-So I looked at everything else. The planners weren't hidden. More adults could see them through autumn than could see most people. Through the winter they fed others: three times as much food, to three times as many people. Respect and trust toward them grew faster than toward anyone else who had gone hungry.
+The world answered clearly. Food was predictable and could be kept as seed, but it lay thinly everywhere, and winter took almost nothing away: in midwinter the land still held seven-eighths of its autumn food. The hungry season that makes a store worth the trouble barely existed.
 
-And nothing around them changed. Their neighbours gathered the next autumn exactly as everyone else's neighbours did, and planned exactly as rarely. The children they fed and raised grew up to plan no more often than anyone's children.
+My people had also discovered sowing on their own. Seed put in the ground grew into more than twice its weight in food, and most sowers sowed again the next year. The problem was who got the harvest: the sower's family took back about what they had sown, and everyone else ate the rest. Picture a man who plants a field in a village where anyone may pick from any field. He'll keep planting, and the village will eat, but he himself will never be richer for it. A new question waited behind that: what would it take for anything to belong to anyone?
 
-People saw them, were fed by them, thought better of them, and didn't do what they did. It's like a village where one family always has a full storeroom, everyone admires them and eats at their table in a hard winter, and nobody thinks to fill their own. The bridge between one family that fills its store and a whole people that fills its stores was missing, and for the first time I could see exactly where.
+So I made winter real: no plant growth in winter, as real temperate plants rest. Before it ran, I wrote down a sentence to stop myself overreading a failure: "Failure to create delayed-return behaviour is not evidence that lean seasons are irrelevant. It is evidence only that removing winter growth alone is insufficient."
 
-So I built the smallest bridge I would allow, with one rule: copy what people can see, never what they expect. An adult who saw someone better fed than themselves gathering food that week would learn from it as if they had gathered themselves: from the food they saw the other person get, weighed by their own hunger. Nothing about winter passed between them, and nothing about why. Models were chosen by visible success, not by standing, because the planners were usually the best-fed person in sight and almost never the most respected.
+My worlds answered a harsher winter not by storing, not by sharing, not by any new way of life, but with numbers. They shrank, a typical six people against thirty, until everyone left had as plentiful a winter as before. That is what human evidence says too: a lean season sets how many people a land can carry. I had measured food per person, and with fewer people each had as much as ever, so my test never saw a leaner winter at all. I wrote that flaw beside the result.
 
-The worlds did something nothing before had done. Planning before winter rose more than fourfold. Planners planned again the next year far more often than before. Carers entering winter with enough for their children rose by eight points.
+That night I wrote down a new idea: **people store because this winter might be worse than usual, not because every winter is hard.** Economists who study villages have shown that sharing protects a family from its own bad luck but not from a disaster that strikes everyone at once. In southern India, villages helped each other through one family's misfortune well, and were left exposed when the rains failed for everyone. My own worlds showed the same shape. So storing should answer bad years that strike everyone together. And real grassland harvests swing from year to year by about a third, while my world's swung by about a fourteenth.
 
-And none of it could be claimed. I had built in a safeguard against cheating: people who never once saw a better-fed neighbour gathering had to behave exactly as in the untouched worlds, so that any change could be traced to watching and not to some leak in my code. But over a hundred and twenty years, almost everyone sees that at least once. The group I needed for the check was empty. A test with nobody in it can't find a leak, and can't rule one out either. By the rule I had written before the run, the experiment failed.
+I tried to make my world swing like a grassland, measuring only the land. It never got there: the plants smoothed most of the weather away. And the weather that came closest killed people: where bad years struck everywhere at once, seven worlds in eight died out. The main experiment never ran. My world couldn't yet ask the question.
 
-The verdict stands as written. What it left me was the clearest signal I'd ever had, and no right to it.
-
-So I ran it again on sixteen new worlds, with a safeguard that couldn't come out empty. A "sham" version of the worlds ran the copying step right up to the point of learning, and then wrote nothing down; those worlds had to end identical, down to the last detail, to the untouched ones. A second check followed every single act of copying and allowed it to change only one thing: the watcher's own habit for gathering. And I ordered things so that if either check failed, everything would stop before I could look at any result. Neither failed. In all sixteen worlds the sham was identical to the untouched world, and nearly seven thousand checked copies touched nothing but the watcher's habit.
-
-Then the results, in the order I had fixed in advance. The headline failed: planners in the copying worlds planned again only slightly more often than in the untouched worlds, nowhere near what I had set as the bar. On these new worlds, the untouched ones repeated much more than before, and much of the first experiment's big contrast had come from an unusually low comparison.
-
-But the rest held again. Habits for gathering while already stocked were higher in fourteen worlds of sixteen. There were nearly three times as many planners. Eight points more carers went into winter with enough for their children. And two things didn't move, again: the neighbours of planners gathered no more than anyone else's, and children didn't starve less.
-
-I also asked what was being copied. In one version, people could learn only from neighbours holding less than a planner's store; in another, only from those holding more. The first reproduced everything the full copying did. The second reproduced nothing. Ninety-eight percent of all copying came from ordinary, moderately fed neighbours, not from planners at all.
-
-So what passed from adult to adult was real, and it wasn't what I had hoped. It was a habit: keep gathering while you still have some food, learned from whoever around you is doing a little better. That habit left more people well stocked at the end of autumn. It didn't teach anyone to prepare for winter, it didn't spread from the planners to the people beside them, and it didn't save children. For the first time in my worlds, behaviour moved between adults. What moved was a way of gathering, not a plan.
-
-One puzzle remained, and I wouldn't build past it: more carers had enough food, so why didn't fewer children die? Before anything else, I took it apart.
-
-Protection still worked. In every world, a child whose carer started winter well stocked was five to ten times safer. But at every level of food, children in the copying worlds died more often. The children who starved were mostly babies, dying late, about two weeks before spring, with a carer who was still alive and had nothing left. In the copying worlds, more carers had already died, they had more children depending on them, and the well-stocked ones gave more food away, more than half of them feeding someone outside their own family.
-
-And the copied habit wasn't preparation at all. People simply gathered a little more in every season alike, spring as much as autumn. They did go into winter with more, in every one of the sixteen worlds. By the end of winter the advantage was gone. The copied habit gave more food going in. Nothing gave a way to make it last until spring.
-
-For thirteen experiments I had asked how to get people to gather for winter. Now I began to suspect that gathering had never been the whole problem.
-
-## Chapter 13 — Where the Food Goes
-
-So I changed course. The plan I'd written before said to test whether the copied habit would last. But it wasn't preparation and didn't help winter, so I wouldn't spend the next experiment making it last. I told myself: change the branch, find out why food doesn't last. I wrote that into the plan as exactly what it was: a decision made after a result, with the reason beside it.
-
-Some of the answer was in the rules before any world ran. An adult eats about seven units of food a week, and winter is thirteen weeks long. A person can carry about a hundred. A carer with two children needs nearly two hundred to get through winter, twice what anyone can carry. A family's winter could only ever be kept on the ground, in a stash.
-
-To see the rest, I taught a copy of my world to count every crumb, without changing anything: every unit of food that rotted, was eaten, was fed to a child, given, stolen, stashed or taken back. Then I checked that its worlds were identical to the originals.
-
-The ledger turned the question upside down. Food didn't fail to last; almost none was ever held to last. Food in hand at the start of winter covered only a seventh of what was eaten through it. The rest was gathered week by week, in the snow, and it very nearly sufficed. The typical family went into winter with a ninth of what it would need. Rot took little. And the stash, the one thing that could have held a family's winter, was almost never used. People gathered about what they ate, every season, and the extra food that autumn offered stayed on the land. About half of all adults went short at some point every winter, and those who started with a store went short too, only later.
-
-So I stopped and asked: the means to hold a winter existed in the world. Why did no one use it?
-
-I didn't want new rules yet. I wanted to see every choice my people weighed, so I taught another copy of the world to record every option every adult considered, and every choice they made. The choices showed three gates, one after another.
-
-Most of the time, storing wasn't even possible. My people could only put food away when they held more than two weeks' worth for themselves and those they fed, and only one adult-week in eight held that much. In autumn, when it would have mattered, fewer than three in a hundred. When the gate did open, more than a quarter of the time the one chance that week to set something down went to stone or wood instead. And when storing was offered, it nearly always lost, about nineteen times in twenty. What beat it was rarely gathering more. It was giving food to others, talking, joining people nearby. Being present for others outscored keeping something for later.
-
-The few who did stash mostly learned it paid: the food kept better than it would have in hand. That belief spread; most adults came to hold it, and it was told thousands of times. But a belief couldn't open the gates. The strongest rival to a winter store wasn't this week's hunger. It was this week's neighbours.
-
-So the next question was obvious: where did all those gifts go?
-
-Every gift in my worlds was already written down, giver, receiver and amount. The answer was family. Nearly three quarters of all food given went to relatives, and the largest share of all, a third, went to brothers and sisters. In every single world, siblings received at least a fifth of everything given. Friends received a tenth, acquaintances a sixth, strangers almost nothing. Nearly two thirds of all gifts went to people holding less than half a week's food, and in winter more than two thirds. And more than half of everything given was a gift being repaid.
-
-I didn't write any of that. Nobody told my people to feed their brothers and sisters first, or to pay back a kindness. It grew out of who they spent their lives with and whom they cared about. It looks a lot like the way food moves inside families in real villages.
-
-So the food that might have become a store didn't vanish. It moved inside families, to whoever was hungriest that week, and came back later as a debt repaid. A family's surplus was kept, if it was kept anywhere, in its members' stomachs and in what they owed each other. That was why a stash and a gift competed for the same food, and why the gift so often won: it fed someone now, it pleased the giver now, and it often came back.
-
-The picture I could now see wasn't selfish individuals failing to cooperate. It was cooperative families solving tomorrow's hunger over and over, while never building a surplus for next season. So I asked: does the family network really protect people, or does it only spread the same shortage around?
-
-It protects, but shallowly. A person who started winter with almost nothing, in a family that also had almost nothing, starved about one time in thirty. With the same nothing of their own, but a family holding a couple of weeks' food each, about one time in eight hundred. People seldom starved while a close relative nearby held plenty. Giving didn't leave the giver hungry. But the pool held almost nothing. Only one hungry week in ten was followed by a gift. When people died, it was mostly because everyone around them was nearly empty too. The family network insured a family against one member's bad week, and couldn't insure it against a winter that emptied everyone. And the one way to make the pool bigger, the store, was the very thing that sharing outcompeted.
-
-One question was left, and it was an old one: autumn left extra food on the land, and nobody took it. Was the food really there? Were people busy with other things? Did they hit the limit of what they could carry, or wander too far, or just stop once they were no longer hungry?
-
-The food was there: within reach of each adult lay nearly three times what they gathered over the whole season. People didn't spend autumn differently from any other season. They almost never came close to the limit of what they could carry. They didn't wander far.
-
-They stopped when they were full. With less than a week's food in hand, people gathered in more than four autumn weeks of five. With two to four weeks' food, in one week of seventeen. The reason was a single line of my own code, written long before: at two weeks of food in hand, a person feels no hunger at all, and the pull to gather falls almost to nothing. And two weeks of food was exactly the line above which storing became possible. My people stopped gathering at the very point where storing could have begun.
-
-A search that started with "why does nobody prepare for winter?" had come back, through ledgers, choices, gifts and families, to the simplest thing in a person's nature: when they stop feeling hungry.
-
-That line was not culture. It was nature, the kind of creature I had made, and I wouldn't change it by instinct. So I asked for a list of every reasonable reading of what a satisfied person should feel, and judged each one against my founding rule: is this nature, is this culture, is this scripting, is this a real human ability? The first honest admission was that the line had never been chosen from human evidence at all. I had written it when my people were first given bodies, to make the early worlds work. And it mixed two different things: the hunger a body feels after a day without food, and the worry a person feels about whether there will be food next month. Nobody's stomach growls with three weeks of food in the store.
-
-Thirteen readings went on the list. Some changed the feeling: hunger that ends later; two separate drives, one for the body and one for security; a worry learned only by people who have lived through shortage. One changed the body, so food eaten in plenty is kept as fat and burned in want. One left the feeling alone and lengthened the mind, so a person could connect what they did in autumn with what happened to them in winter. Two I rejected outright: an inborn sense that winter is coming would write in exactly what I hoped to see grow, and the idea that holding food brings respect is culture, not nature, and has to be left to appear.
-
-Then I checked every claim about real humans against real research. The body as a store held up best: in one farming community in West Africa, women weighed three to four kilograms less at the end of the hungry season than in the dry season, every year, a store kept in the body, filled and drained with the seasons. And one source changed the whole question. The anthropologist James Woodburn described two kinds of hunter-gatherer society. In "immediate-return" societies, food is eaten soon after it's found and shared widely, and little is stored. In "delayed-return" societies there are stores, and lasting obligations built around them. The people of the first kind have the same bodies, the same appetites and the same foresight as anyone else. They don't store because of how their life together is arranged.
-
-That was a description of my people. Winter lived week to week; food shared inside families with whoever was hungry; a pool with almost nothing in it. Maybe my people weren't missing a piece of their nature at all. Maybe what they were missing was the kind of thing that can't be written into nature: a different way of living together. The question shifted from "what should a full person feel?" to "under what conditions do people start to store at all?"
-
-## Chapter 14 — Is the World Too Kind?
-
-Before changing anything in my people, I turned the question around once more. Maybe living week to week was simply the right way to live in my world. If food lay everywhere, thinly, all year, then storing would be pointless, and changing my people would be solving the wrong problem. I wrote down a rule before looking: if the world gave no real reason to store, changing my people's minds would be premature.
-
-The world answered clearly. Food was predictable: land that was rich one autumn was rich the next. It could be stored, as seed, which keeps for months. But it wasn't concentrated: the richest tenth of the land held only about a quarter of the food, the rest spread thin and even. And winter took almost nothing away. In midwinter, the land still held seven-eighths of the food it held in mid-autumn. The hungry season that makes a store worth the trouble for real foragers barely existed. My people could gather what they needed week by week, all year round, and most did.
-
-My people had also discovered sowing, on their own. Seed put in the ground grew into more than twice its weight in food, weeks or months later. Dozens of people in every world sowed, and most sowed again the next year. At first it even looked as if sowers learned that sowing didn't work, and I nearly built a theory on that. Then I found my own mistake: every belief in my world fades a little each season, whatever happens, and I had counted ordinary forgetting as a lesson of failure. When I separated the two, the truth was the opposite: what sowers lived through mostly taught them that sowing paid.
-
-The real problem was who got the harvest. Of everything that grew where a person had sown, the sower and their close family harvested only about as much as they had sown; other people harvested the rest. Sowing fed the community, not the sower. An investment that pays everyone except the investor is just a gift by another name. Picture a man who plants a field in a village where anyone may pick from any field. He'll keep planting, and the village will eat, but he himself will never be richer for it. And in a world whose winter barely bit, even a sower who kept every grain would hardly have needed it. A new question was waiting behind that one: what would it take for anything to belong to anyone?
-
-So the leading idea became the winter itself. In my world, plants kept growing through winter, slowly, and that growth almost cancelled the winter's losses. Real temperate plants don't do that; they go dormant and wait for spring. So the first test of a leaner world was the smallest the evidence supported: no plant growth in winter, and nothing else changed. Before it ran, I wrote down what would count against my idea, and a sentence to stop myself overreading the opposite: "Failure to create delayed-return behaviour is not evidence that lean seasons are irrelevant. It is evidence only that removing winter growth alone is insufficient."
-
-A small trial came first, read only for whether people survived. Its rule: if two of four worlds died out, stop. Two did. The experiment didn't run.
-
-Only afterwards did I see the trial's weakness: it hadn't watched the same worlds without the change, and some of my worlds die anyway. A limited check showed both answers were partly true: one of the two worlds died even with ordinary winters; the other died only without winter growth. And in every surviving world, the people of the leaner winter were fewer, by a third in one world and two thirds in another. Nobody quietly restarted the experiment. I redesigned the trial so every world was watched both ways, and that one passed.
-
-The answer came in the order I had fixed, and the very first check decided the rest. Had winter actually grown leaner for the people living through it? It hadn't. Food on the land for each person in midwinter was higher in the leaner worlds than in the ordinary ones, because the leaner worlds had far fewer people: a typical six against thirty. Fewer people meant each person had as much as before. My check had measured food per person, and should have measured the land itself as well. I wrote that flaw into the record beside the result.
-
-What the worlds had done was striking, even though it wasn't what the experiment was built to test. They answered a harsher winter not by storing, not by sharing more, not by any new way of life, but with numbers. They shrank until everyone who remained had as plentiful a winter as before. That is what human evidence says too: a lean season sets how many people a land can carry. A predictable hardship can be met by being fewer.
-
-That night I wrote down a new idea before going to sleep: **people store because this winter might be worse than usual, not because every winter is hard.** Storing is an answer to uncertainty, not to average scarcity.
-
-The evidence sharpened it. Economists who study villages have shown that sharing within a group can protect each family from its own bad luck, but not from a disaster that strikes everyone at once. In villages in southern India, families helped each other through one family's misfortune well, and were left exposed when the rains failed for everyone. My own worlds had shown the same shape: family sharing covered one member's bad week, never a winter that emptied everyone. So storing should be the answer to bad years that strike everyone together, and sharing and moving the answer to bad years that strike some places but not others. And real grassland harvests vary from year to year by about a third. My world's varied by about a fourteenth.
-
-So I designed three kinds of world from the same seeds: my world as it was; a world whose growing years swung much wider, everywhere at once; and one whose years swung just as wide, but separately in each quarter of the map.
-
-Then I tried to make my world vary like a real grassland, measuring only the land, never the people. It never got there. Even with weather allowed to run from nothing at all to nearly double, the harvest varied by only about a ninth. The plants grew back toward their limits and smoothed away most of the weather's swings before autumn came. I took the widest weather and wrote down plainly how far short it fell.
-
-The survival trial came first, and it was brutal. The ordinary worlds lost half their worlds, as my worlds often do. The worlds where bad years struck everywhere at once lost seven of eight, three of them in the first decade or two: a single year in which almost nothing grew anywhere was enough. The worlds with patchy bad years lost six of eight, more slowly; a bad quarter left three others. My stop rules fired. The main experiment never ran.
-
-What I learned was about the land. In my world as it stood, no weather could give people a grassland's uncertainty, and the weather that came closest killed them. The idea itself was untouched, neither supported nor refuted. My world couldn't yet ask the question.
-
-And then something else caught my eye, something I had been walking past for months. Half of the ordinary worlds in that trial had died, with nothing changed at all. Before testing anything else, I needed to know why.
+And something caught my eye that I had been walking past for months. In that trial, half of the ordinary worlds had died too, with nothing changed at all. Before testing anything else, I needed to know why.
 
 # Part IV — Finding Each Other
 
-## Chapter 15 — The Worlds That Grew Old
+## Chapter 13 — The Worlds That Grew Old
 
 When half the ordinary worlds in my weather trial died, I didn't reach for another theory about storing food. Something more basic was wrong, and understanding it mattered more than any experiment built on top of it. No fixes, no tuning, no code changes: first find the cause.
 
@@ -573,6 +477,8 @@ The worlds didn't starve. People in dying worlds went hungry no more often than 
 The reason was in nature, not culture. The founders paired up in their first decade. After that, pairing nearly stopped, in dying and living worlds alike. A person looking for a partner in my world could only court someone they could see, a few steps away, or walk toward someone a little further, or else wander at random, in a world sixteen hundred tiles big. In a small, scattered people, a single woman almost never had an eligible man in sight, even though one was usually alive somewhere. Imagine trying to find a husband in a huge empty valley where you can only ever see a few hundred metres, and the other few dozen people are spread across it. Bigger worlds kept enough people near one another for chance to do the rest. Smaller ones didn't. And by year twenty, you could already tell the worlds that would die from the ones that would live, by their size alone, decades before the end.
 
 ![Looking for someone in an empty land.](../drafts/book_rewrite/images/07_valley_web.png)
+
+Humouzei's older sister Mouro lived in that same world, one that survived. From sixteen to forty, every year a woman can have children, Mouro never had a partner, not once. She had no children. She died of illness at forty-one. Her world did not end; it simply went on without her line.
 
 For many experiments I had asked why my people didn't prepare for winter. Meanwhile, a third of my worlds had been ageing out the whole time, not for want of food but for want of meeting.
 
@@ -600,7 +506,7 @@ That small failure taught me something important about my worlds. A change that 
 
 What was missing wasn't a pull toward wherever a partner happened to be. It was a place that both of them came home to.
 
-## Chapter 16 — A Place to Come Home To
+## Chapter 14 — A Place to Come Home To
 
 So I gave couples a home. Each couple's home was chosen from the places both of them remembered as best. Each week, wherever they had gone, partners within a day's walk came back to it. Nothing said who moved to whom, or who gathered what. And this time, after what the butterfly had taught me, I measured the noise: a third set of worlds, identical to the ordinary ones except for one extra roll of the dice in the first week, would show how many worlds change their fate by chance alone.
 
@@ -634,7 +540,7 @@ The worlds didn't live longer for it. Twenty-six died against twenty-two, a diff
 
 So the long thread that began with worlds growing old ended here. Worlds died mainly because people couldn't find partners. Couples, once found, spent half their time apart. Keeping them together, without harm, gave more children. And more children, at least by this measure, didn't save the worlds. The lever that really mattered was finding a partner at all, and it was still untouched.
 
-## Chapter 17 — One Band Alone
+## Chapter 15 — One Band Alone
 
 Before trying anything new, I asked a question about my own method: how big an effect could sixty-four worlds even see? The dice-roll worlds answered it. Changing a world's history for no reason at all changed the fate of eighteen worlds in sixty-four. Against that much chance, a real change had to be large to show. If a new way of finding partners did half as much good as perfect finding had, sixty-four worlds would notice it only one time in three. Two hundred and fifty-six worlds would notice it nine times in ten. And the moving camp, which seemed to do nothing, might have done some good without my test noticing.
 
@@ -668,7 +574,7 @@ One thing I couldn't tell apart: my world splits founders into four bands, so th
 
 And it isn't a law of nature. It's what these worlds did, under these rules: more land alone didn't save them; more people did.
 
-## Chapter 18 — What They Know, and Who They Are
+## Chapter 16 — What They Know, and Who They Are
 
 Early in the story, my people had learned to jump narrow channels between islands, a gap in the rules nobody had meant. I began to wonder: was anything like that still hidden? Not whether my people could find out they were simulated; they can't. But whether, without knowing it, they leaned on shortcuts that real nature doesn't offer.
 
@@ -702,7 +608,7 @@ A person in my world wasn't one thing that could be lifted out. They were spread
 
 # Part V — What My Worlds Taught Me
 
-## Chapter 19 — A Chain, Not a Spark
+## Chapter 17 — A Chain, Not a Spark
 
 When I began, I imagined invention as a spark: someone has an idea, and from then on the world is different. My worlds taught me it's nothing like that. For a discovery to become part of a people's life, it has to pass through a chain, and every link has to hold.
 
@@ -716,7 +622,7 @@ I also learned that not all inventions are equal. Most make life a little easier
 
 And I learned to keep apart three things that are easy to blur together: what people believe, what they do, and what is true. My people went on believing in sowing long after it stopped paying them. They trusted whoever fed them before they trusted whoever was right. They remembered a killing for a hundred and eighty years and blamed the wrong person. Dozens knew how to make a raft, and almost no one carried one. A world where people always believe what's true, always do what they believe and always value what's useful would be easy to build, and it would teach nothing.
 
-## Chapter 20 — How I Keep Myself Honest
+## Chapter 18 — How I Keep Myself Honest
 
 None of my methods were designed at the start. Every one grew out of a mistake.
 
@@ -738,7 +644,7 @@ My worlds are small and slow beside some of these projects, and plain beside oth
 
 # Part VI — The Road Ahead
 
-## Chapter 21 — The Minimum Conditions
+## Chapter 19 — The Minimum Conditions
 
 At one point, in the middle of an experiment, I felt as if the project might lose its way. So I wrote the way down: nine stages, from a world worth living in to a society. A world. Culture appearing. Finding where it stops. Passing practices from person to person. Practices that outlive the people who taught them. A people's own way of doing things. Enough people. Tools that build on tools. And finally a society: trade, roles, their own rules. Every time I reach a fork, I write down what each possible result will mean before I see the result, so that my path doesn't bend to fit whatever comes out. The map is allowed to be wrong. It just isn't allowed to change in secret.
 

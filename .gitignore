@@ -52,3 +52,4 @@ experiments/SA1_sensitivity/run_detached*
 research_notes/papers/
 drafts/book_rewrite/images/*.png
 !drafts/book_rewrite/images/*_web.png
+drafts/book_rewrite/people_*.json
