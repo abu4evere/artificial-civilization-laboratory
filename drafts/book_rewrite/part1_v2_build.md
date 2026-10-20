@@ -673,3 +673,43 @@ Nobody knows yet what those worlds will do. That's the point of running them.
 And underneath all of it is a question this book has circled from the start without being able to ask. My people have never spoken. They've never had a single word. They do have marks: shapes they make and see, which mean nothing at first, and which come, for some of them, to go with a person, or a place, or a thing worth making. If they are ever to speak, it will have to begin there, with a mark that one person makes and another understands, and that nobody wrote.
 
 That is where Part Two begins.
+
+# Sources
+
+The research this book mentions, for anyone who wants to read further. Every result about my own worlds comes from the
+project's records, which are public at github.com/abu4evere/simulated-world.
+
+**Artificial worlds and agents**
+
+- Ray, T. S. (1991). An approach to the synthesis of life. In *Artificial Life II*. Addison-Wesley. (Tierra.)
+- Ofria, C. and Wilke, C. O. (2004). Avida: a software platform for research in computational evolutionary biology. *Artificial Life* 10(2).
+- Epstein, J. M. and Axtell, R. (1996). *Growing Artificial Societies: Social Science from the Bottom Up.* MIT Press. (Sugarscape.)
+- Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R. and others (2023). Generative agents: interactive simulacra of human behavior. arXiv:2304.03442.
+- Altera.AL and others (2024). Project Sid: many-agent simulations toward AI civilization. arXiv:2411.00114.
+
+**How culture grows and is lost**
+
+- Henrich, J. (2004). Demography and cultural evolution: how adaptive cultural processes can produce maladaptive losses. The Tasmanian case. *American Antiquity* 69(2).
+- Henrich, J. and Gil-White, F. J. (2001). The evolution of prestige. *Evolution and Human Behavior* 22(3).
+- Kline, M. A. and Boyd, R. (2010). Population size predicts technological complexity in Oceania. *Proceedings of the Royal Society B* 277.
+- Derex, M., Beugin, M.-P., Godelle, B. and Raymond, M. (2013). Experimental evidence for the influence of group size on cultural complexity. *Nature* 503.
+
+**How foragers live, move and store**
+
+- Woodburn, J. (1982). Egalitarian societies. *Man* 17.
+- Binford, L. R. (1980). Willow smoke and dogs' tails: hunter-gatherer settlement systems and archaeological site formation. *American Antiquity* 45(1).
+- Testart, A. (1982). The significance of food storage among hunter-gatherers. *Current Anthropology* 23(5).
+- Kelly, R. L. (2013). *The Lifeways of Hunter-Gatherers: The Foraging Spectrum.* Cambridge University Press.
+- Hamilton, M. J., Milne, B. T., Walker, R. S., Burger, O. and Brown, J. H. (2007). The complex structure of hunter-gatherer social networks. *Proceedings of the Royal Society B*.
+- White, A. (2017). A model-based analysis of the minimum size of demographically-viable hunter-gatherer populations. *Journal of Artificial Societies and Social Simulation* 20(4).
+- Hill, K. R., Wood, B. M., Baggio, J., Hurtado, A. M. and Boyd, R. T. (2014). Hunter-gatherer inter-band interaction rates. *PLOS ONE* 9(7).
+- Dyble, M., Migliano, A. B., Page, A. E. and Smith, D. (2021). Relatedness within and between Agta residential groups. *Evolutionary Human Sciences*.
+- Marlowe, F. W. (2010). *The Hadza: Hunter-Gatherers of Tanzania.* University of California Press.
+- Padilla-Iglesias, C. and others (2025). Sexual division of labour shapes hunter-gatherer spatial ranges. bioRxiv (preprint).
+- Venkataraman, V. V., Kraft, T. S., Dominy, N. J. and Endicott, K. M. (2017). Hunter-gatherer residential mobility and the marginal value of rainforest patches. *PNAS* 114.
+
+**Hunger, the body and hard years**
+
+- Wells, J. C. K. (2006). The evolution of human fatness and susceptibility to obesity: an ethological approach. *Biological Reviews* 81(2).
+- Simondon, K. B. and others (2004). Season of birth is not associated with risk of early adult death in rural Senegal. *International Journal of Epidemiology* 33(1).
+- Townsend, R. M. (1994). Risk and insurance in village India. *Econometrica* 62(3).
