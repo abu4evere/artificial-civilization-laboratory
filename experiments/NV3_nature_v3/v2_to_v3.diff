@@ -1,0 +1,18 @@
+diff -r -x __pycache__ NV2_nature_v2/code_v2/acl/config.py NV3_nature_v3/code_v3/acl/config.py
+132a133,134
+>     parts_first: int = 0               # NV3 (LM1's L1): 1 = a lesson that fails because the learner cannot make a part shows,
+>                                        # in the same lesson, the first made part the teacher knows (0 = nature v2 exactly)
+diff -r -x __pycache__ NV2_nature_v2/code_v2/acl/information.py NV3_nature_v3/code_v3/acl/information.py
+350c350,351
+< def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, parent: bool) -> bool:
+---
+> def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, parent: bool,
+>              part_lesson: bool = False) -> bool:
+364a366,372
+>         if world.cfg.parts_first and not part_lesson:    # NV3 (LM1's L1): seeing the lesson fail, show a part instead
+>             from .matter import MATERIALS
+>             parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe.get("verb") == "heat" else [])
+>             for part in parts:
+>                 if part not in MATERIALS and part in teacher.recipes:
+>                     shown = _recipe_as_shown(world, teacher, learner, teacher.recipes[part])
+>                     return hear_how(world, learner, teacher, part, shown, claim, parent, part_lesson=True)

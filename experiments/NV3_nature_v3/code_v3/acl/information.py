@@ -347,7 +347,8 @@ def _openness(learner, parent: bool) -> float:
     return 0.35 * (0.5 + learner.genes["curiosity"]) * (2.0 if parent else 1.0)
 
 
-def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, parent: bool) -> bool:
+def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, parent: bool,
+             part_lesson: bool = False) -> bool:
     """The learner decides whether to take up a way of making something, as they understood it."""
     from .knowhow import can_follow, remember_recipe
     sig = _sig_of(recipe)
@@ -362,6 +363,13 @@ def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, pa
     if world.rng.random() >= c * _openness(learner, parent):
         return False
     if not can_follow(learner, recipe):
+        if world.cfg.parts_first and not part_lesson:    # NV3 (LM1's L1): seeing the lesson fail, show a part instead
+            from .matter import MATERIALS
+            parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe.get("verb") == "heat" else [])
+            for part in parts:
+                if part not in MATERIALS and part in teacher.recipes:
+                    shown = _recipe_as_shown(world, teacher, learner, teacher.recipes[part])
+                    return hear_how(world, learner, teacher, part, shown, claim, parent, part_lesson=True)
         return False                                        # it needs a part they cannot make
     remember_recipe(world, learner, sig, recipe, "taught", teacher.id, meant=meant)
     learner.itemval[sig] = max(learner.itemval.get(sig, 0.0), 0.5 * claim * c)
