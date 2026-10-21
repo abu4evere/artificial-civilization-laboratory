@@ -1,0 +1,112 @@
+# Runs a frozen study's worlds on GitHub's machines, so a study keeps going when the creator's computer is off.
+# Started by hand (Actions tab, or `gh workflow run cloud-run -f runner=... `). Same system as the tests: Windows Server
+# 2022 and Python 3.14.7, where ACL's worlds replay exactly as on the creator's computer (see tests.yml).
+#
+#   1. zero:   the study's own zero checks, on this system; nothing else starts unless they pass
+#   2. chunk:  the worlds, split into up to 20 chunks run at once; each world runs through the study's own runner
+#   3. gather: every world's file in one artifact, `results`, fetched with tools/ci/fetch_cloud.py
+#
+# Results stay in the run's artifacts (kept 30 days), not in the repository's history.
+name: cloud-run
+
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: "the study's runner, e.g. experiments/LM1_memory_and_parts/run_lm1.py"
+        required: true
+      chunks:
+        description: "how many chunks to run at once (at most 20)"
+        default: "20"
+      years:
+        description: "years per world (leave as 'study' to use the runner's YEARS)"
+        default: "study"
+      smoke:
+        description: "'smoke' to run the runner's SMOKE_SEEDS instead (a check, not data)"
+        default: "no"
+      skip_zero:
+        description: "'yes' only for a replay check of an already-validated study"
+        default: "no"
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: windows-2022
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      years: ${{ steps.plan.outputs.years }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.7"
+      - id: plan
+        shell: bash
+        run: |
+          python -VV
+          M=$(python tools/ci/cloud_plan.py "${{ inputs.runner }}" "${{ inputs.chunks }}" "${{ inputs.smoke }}")
+          echo "matrix=$M" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.years }}" = "study" ]; then
+            Y=$(python -c "import sys; sys.path.insert(0, 'tools/ci'); from cloud_plan import load; print(load(sys.argv[1]).YEARS)" "${{ inputs.runner }}")
+          else
+            Y="${{ inputs.years }}"
+          fi
+          echo "years=$Y" >> "$GITHUB_OUTPUT"
+          echo "years: $Y"
+
+  zero:
+    needs: plan
+    runs-on: windows-2022
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.7"
+      - name: Zero checks on this system
+        if: ${{ inputs.skip_zero != 'yes' }}
+        shell: bash
+        run: python "${{ inputs.runner }}" zero
+
+  chunk:
+    needs: [plan, zero]
+    runs-on: windows-2022
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.7"
+      - name: Run this chunk's worlds
+        shell: bash
+        run: python tools/ci/cloud_chunk.py "${{ inputs.runner }}" "${{ needs.plan.outputs.years }}" cloud_out "${{ matrix.jobs }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chunk-${{ matrix.chunk }}
+          path: cloud_out/
+          retention-days: 30
+
+  gather:
+    needs: chunk
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          path: all
+          merge-multiple: true
+      - name: Count
+        run: ls all | wc -l
+      - uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: all/
+          retention-days: 30
