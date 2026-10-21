@@ -386,6 +386,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **TP1 done** (`experiments/TP1_tipping_point/findings.md`; frozen; read-only, 768 saved worlds). **No sharp tipping point except zero:** a world with no fertile woman almost always dies out, but above that each extra woman cuts the risk by about 10–20 points; at three, about half die (prior W* = 3 wrong). Confirmed on the holdout. **Correction after GPT's review:** among worlds of the same size, the number of women adds little; small total size carries the risk. **Next: LX1 and TU1 (on GitHub).**
 
+**TU1 done** (`experiments/TU1_tool_use_spread/findings.md`; frozen; read-only replay, 512 worlds, run on GitHub). **Tool use is universal but not cultural:** 98% of first uses are people finding it themselves; being told is under 2%; every adult uses tools by year 20, each rediscovering it. **Next: LX1 (on GitHub); the routes that would make tools a tradition (handing over, children's access) are Law 126 questions.**
+
 
 
 
