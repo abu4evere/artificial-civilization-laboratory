@@ -55,8 +55,7 @@ Each week (`World.step`), in this order:
   experience counts.
 - **Objectives.** Agents have no global goal; each week's reward comes from the body (food, warmth, health) and
   feelings (company, care).
-- **Learning.** A per-person habit table updated by temporal-difference learning (learning rate and discount 0.8 in
-  `config`); people also imitate those they respect or who seem to do well; recipes are learned by trying, by being
+- **Learning.** A per-person habit table updated by temporal-difference learning (learning rate 0.05, discount 0.8); people also imitate those they respect or who seem to do well; recipes are learned by trying, by being
   taught in conversation, and in a few cases by watching.
 - **Prediction.** A weak anticipation of next season's shortage (`anticipation_weight`).
 - **Sensing.** Only what is within perception: people, food, water, animals, fire; plus memories of places and people.
