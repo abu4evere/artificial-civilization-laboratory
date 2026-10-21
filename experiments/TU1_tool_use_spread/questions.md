@@ -56,3 +56,10 @@ because people forage near kin. Use, once started, lasts while the person keeps 
 ## Sign-off (21 October 2026)
 
 The creator: "approve all recommendations, freeze both". All recommended options and the prior stand as written.
+
+## Operational note (21 October 2026, while building, before any data; rule 19)
+
+Reading the code (`code_fx2`: `actions._keep`, `biology.py` inheritance) showed that items are never handed from one
+person to another except by **inheritance** at death; founders start with none. So the route "after receiving the item"
+means **inherited**; "own discovery" covers items a person made or that hardened in their fire. The observer tracks each
+item kind's origin from the week it first appears in a person's hands. Nothing else changes.
