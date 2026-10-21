@@ -130,6 +130,8 @@ class Config:
     corner_block: int = 1              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
     ashore_if_float_breaks: int = 1    # NV2 (ST1): 1 = a float that breaks at sea puts its owner ashore half drowned
     knowledge_copy: int = 1            # NV2: 1 = the record of a first-baked thing holds a copy of it, not the item itself
+    parts_first: int = 1               # NV3 (LM1's L1): 1 = a lesson that fails because the learner cannot make a part shows,
+                                       # in the same lesson, the first made part the teacher knows (0 = nature v2 exactly)
     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
                                        # their remembered places instead of in a random direction
 

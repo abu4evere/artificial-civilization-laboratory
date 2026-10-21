@@ -390,6 +390,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **LX1 done** (`experiments/LX1_parts_first_survival/findings.md`; frozen; Law 126 check; run on GitHub, 1,024 worlds). **Parts-first teaching does not cost survival** (181 against 177 of 512) and raises passing on again (+2.0 points). **By the rule fixed before data, it enters nature: v3 = v2 + parts_first.** **Next: a frozen plan for the switch to v3 (zero checks, a new v3 baseline).**
 
+**Nature v3 done** (`experiments/NV3_nature_v3/findings.md`; frozen; tag `nature-v3`). **v3 = v2 + parts-first teaching**, the first change tested, checked and kept by a rule fixed before data. Zero checks pass; the live package is v3; v2 and every earlier result stay as they were. **Next: future studies run on v3 (LX1's L worlds are its first control set).**
+
 
 
 

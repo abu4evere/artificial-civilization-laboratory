@@ -1,0 +1,9 @@
+seed 11, 5 years: code_v3 with parts_first 0 = code_v2: yes
+seed 501, 5 years: code_v3 with parts_first 0 = code_v2: yes
+seed 501, 20 years: code_v3 with parts_first 0 = code_v2: yes
+seed 601, 20 years: code_v3 with parts_first 0 = code_v2: yes
+seed 501, 20 years: v3 = code_lm1's L arm: yes
+seed 601, 20 years: v3 = code_lm1's L arm: yes
+seed 501, 20 years: parts_first changes the world (it acts): yes
+v3, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

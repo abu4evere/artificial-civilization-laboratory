@@ -20,12 +20,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REF = Path(__file__).with_name("reference_hashes.json")
 CODES = {"acl": ROOT, "control": ROOT / "experiments" / "E13R_replication" / "code_e13r",
-         "v2": ROOT / "experiments" / "NV2_nature_v2" / "code_v2"}
-# Each code's settings: ACL's own code has none (since 16 October 2026 its defaults are nature v2, so its hashes equal
-# v2's); the control copy runs as the experiments do; v2 is the control code with
+         "v2": ROOT / "experiments" / "NV2_nature_v2" / "code_v2",
+         "v3": ROOT / "experiments" / "NV3_nature_v3" / "code_v3"}
+# Each code's settings: ACL's own code has none (since 16 October 2026 its defaults were nature v2; since 21 October 2026 nature v3, so its hashes equal
+# v3's); the control copy runs as the experiments do; v2 is the control code with
 # NV2's four changes on (experiments/NV2_nature_v2/questions.md). Like the control hashes, v2's should never change.
 EXTRA = {"acl": "", "control": ", anticipation_weight=1.0",
-         "v2": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1"}
+         "v2": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1",
+         "v3": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1, parts_first=1"}
 CASES = [(11, 5), (501, 5)]          # (seed, years)
 
 
@@ -56,6 +58,10 @@ def test_frozen_control_code_replays():
 
 def test_nature_v2_replays():
     _check("v2")
+
+
+def test_nature_v3_replays():
+    _check("v3")
 
 
 if __name__ == "__main__" and sys.argv[1:2] == ["--update"]:
