@@ -376,6 +376,9 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **PF1 done** (`experiments/PF1_partner_pipeline/findings.md`; frozen; read-only; 96 replays exact). Where partner finding stops in MB1b's worlds: in about half of a single woman's weeks a suitable man is within reach and **neither courts**; the pool is almost never empty (1–3%). Smaller bands made courting more frequent but couples no more common: the extra courting was of near-strangers, who can almost never accept. **Next: the creator decides on a read-only look at what is chosen instead of courting, and on RT1b's audit; FX2 running, then LM1.**
 
+**FX2 done** (`experiments/FX2_embedded_food/findings.md`; frozen; 768 worlds). With half of plant food embedded and a hard thing able to open it, **people took up tools** (carried 40% vs 24% of forage-weeks, used on embedded food in 39%): the clearest case yet of a tool coming into use because it pays. **But every such world died out** (256 of 256, median year 40), so the tool benefit could not show in survival. The setting was operational and too harsh. **Next: LM1 (running in the cloud), PF2 (cloud); a gentler FX follow-up is the creator's call.**
+
+
 
 
 
