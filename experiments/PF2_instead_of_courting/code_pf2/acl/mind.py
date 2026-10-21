@@ -128,7 +128,9 @@ def decide(world, p: Person) -> tuple:
 
     near = world.people_near(p.loc, c.reach, exclude=p.id)
     near.sort(key=lambda q: (distance(p.loc, q.loc, w, h), q.id))
+    pf2_n = len(near)                             # PF2 logging only
     near = near[:12]
+    pf2_near = [q.id for q in near]               # PF2 logging only
     company = bool(near)
     ctx = context_index(world, p, company)
     p.last_ctx = ctx
@@ -503,6 +505,7 @@ def decide(world, p: Person) -> tuple:
     if not options:
         p.considered = []
         _p2_log(world, p2, ("rest", None))
+        _pf2_log(world, p, [], None, pf2_near, pf2_n)
         return ("rest", None)
     options = thought.steer(p, options)
     i = softmax_pick(rng, [o[0] for o in options], c.choice_temperature)
@@ -511,7 +514,27 @@ def decide(world, p: Person) -> tuple:
     if i not in ranked:
         p.considered.append([options[i][1], _aim(options[i][2]), round(options[i][0], 2), 1])
     _p2_log(world, p2, (options[i][1], options[i][2]))
+    _pf2_log(world, p, options, i, pf2_near, pf2_n)
     return (options[i][1], options[i][2])
+
+
+def _pf2_log(world, p, options, i, near_ids, n_in_reach) -> None:
+    """PF2 logging copy: each single adult's full option list, reduced to courting's share of the choice and what was
+    chosen, into a log outside the world's state (set by the runner); nothing in the world reads it. No random draws."""
+    log = getattr(world, "pf2log", None)
+    if log is None or p.partner is not None or p.stage(world.tick) != "adult":
+        return
+    court = {}
+    if options:
+        temp = world.cfg.choice_temperature
+        top = max(o[0] for o in options)
+        ws = [math.exp((o[0] - top) / temp) for o in options]
+        tot = sum(ws)
+        for o, wt in zip(options, ws):
+            if o[1] == "court" and isinstance(o[2], str):
+                court[o[2]] = court.get(o[2], 0.0) + wt / tot
+    chosen = (options[i][1], _aim(options[i][2])) if options else ("rest", "")
+    log.append((world.tick, p.id, chosen[0], chosen[1], court, near_ids, n_in_reach))
 
 
 def _p2_log(world, p2, chosen) -> None:

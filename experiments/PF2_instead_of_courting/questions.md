@@ -71,3 +71,11 @@ of deciding (positions at the end of the week overstate nearness).
 The creator: "approve all recommendations, freeze it". So: (1) a logging copy of the full option list, shown to change
 nothing; (2) MB1b's P4 and B16, seeds 5301–5316 (discovery) then 5317–5332 (holdout), replayed exactly; (3) the prior
 above, frozen as written; (4) now, on two spare workers beside FX2 and LM1.
+
+## Operational note (21 October 2026, while building, before any data; rule 19)
+
+The plan's groups named some actions loosely (eat, drink, fish, store, sow, dig, teach, travel). The code has 19
+actions (`person.ACTIONS`): rest, forage, hunt, gather, put, take, make, play, explore, give, care, talk, court, steal,
+attack, flee, join, heat, fill. They are grouped, as the plan intends: **subsistence** = forage, hunt, gather, put,
+take, fill (eating, drinking, storing and sowing happen through these); **rest** = rest; **other social** = talk, give,
+care, play; **movement** = explore, join, flee; **other** = make, heat, steal, attack. Nothing else changes.
