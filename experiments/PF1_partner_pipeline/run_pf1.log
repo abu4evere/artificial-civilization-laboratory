@@ -1,0 +1,98 @@
+p4 seed 5301: reproduces True, woman-weeks 42040, steps {'S6_refused': 112, 'S5_not_tried': 11568, 'S3_none_in_reach': 7848, 'S2_none_in_sight': 22504, 'S4_disliked': 8}
+b8 seed 5301: reproduces True, woman-weeks 40220, steps {'S6_refused': 136, 'S5_not_tried': 15957, 'S2_none_in_sight': 17237, 'S3_none_in_reach': 6890}
+b16 seed 5301: reproduces True, woman-weeks 41169, steps {'S6_refused': 202, 'S5_not_tried': 21082, 'S3_none_in_reach': 7085, 'S2_none_in_sight': 12800}
+p4 seed 5302: reproduces True, woman-weeks 43829, steps {'S5_not_tried': 24049, 'S6_refused': 166, 'S3_none_in_reach': 9949, 'S2_none_in_sight': 9560, 'S1_no_match_alive': 18, 'S4_disliked': 87}
+b16 seed 5302: reproduces True, woman-weeks 44725, steps {'S5_not_tried': 15659, 'S6_refused': 170, 'S3_none_in_reach': 9787, 'S2_none_in_sight': 17743, 'S4_disliked': 63, 'S1_no_match_alive': 1303}
+b8 seed 5302: reproduces True, woman-weeks 45158, steps {'S5_not_tried': 28371, 'S6_refused': 181, 'S2_none_in_sight': 7488, 'S3_none_in_reach': 8956, 'S4_disliked': 117, 'S1_no_match_alive': 45}
+b8 seed 5303: reproduces True, woman-weeks 18856, steps {'S5_not_tried': 11668, 'S6_refused': 130, 'S3_none_in_reach': 3161, 'S2_none_in_sight': 3821, 'S4_disliked': 76}
+p4 seed 5303: reproduces True, woman-weeks 13589, steps {'S6_refused': 99, 'S5_not_tried': 8006, 'S3_none_in_reach': 2598, 'S2_none_in_sight': 1876, 'S4_disliked': 72, 'S1_no_match_alive': 938}
+b16 seed 5303: reproduces True, woman-weeks 17223, steps {'S5_not_tried': 9361, 'S6_refused': 137, 'S3_none_in_reach': 2481, 'S2_none_in_sight': 3464, 'S1_no_match_alive': 1776, 'S4_disliked': 4}
+p4 seed 5304: reproduces True, woman-weeks 72847, steps {'S5_not_tried': 46878, 'S6_refused': 322, 'S2_none_in_sight': 9675, 'S3_none_in_reach': 15894, 'S4_disliked': 78}
+b8 seed 5304: reproduces True, woman-weeks 55271, steps {'S5_not_tried': 32228, 'S6_refused': 198, 'S2_none_in_sight': 11333, 'S3_none_in_reach': 11508, 'S4_disliked': 4}
+p4 seed 5305: reproduces True, woman-weeks 9054, steps {'S6_refused': 34, 'S5_not_tried': 746, 'S3_none_in_reach': 384, 'S2_none_in_sight': 3300, 'S1_no_match_alive': 4590}
+b8 seed 5305: reproduces True, woman-weeks 27062, steps {'S6_refused': 79, 'S5_not_tried': 9420, 'S3_none_in_reach': 2480, 'S2_none_in_sight': 14186, 'S4_disliked': 9, 'S1_no_match_alive': 888}
+b16 seed 5304: reproduces True, woman-weeks 62321, steps {'S5_not_tried': 39910, 'S6_refused': 284, 'S3_none_in_reach': 13014, 'S2_none_in_sight': 9096, 'S4_disliked': 17}
+b16 seed 5305: reproduces True, woman-weeks 19840, steps {'S5_not_tried': 10859, 'S3_none_in_reach': 3467, 'S6_refused': 178, 'S2_none_in_sight': 4294, 'S4_disliked': 94, 'S1_no_match_alive': 948}
+p4 seed 5306: reproduces True, woman-weeks 48980, steps {'S5_not_tried': 24694, 'S6_refused': 165, 'S3_none_in_reach': 9458, 'S2_none_in_sight': 14611, 'S4_disliked': 52}
+b8 seed 5306: reproduces True, woman-weeks 34322, steps {'S5_not_tried': 16606, 'S6_refused': 130, 'S3_none_in_reach': 7113, 'S2_none_in_sight': 10468, 'S4_disliked': 5}
+p4 seed 5307: reproduces True, woman-weeks 21019, steps {'S5_not_tried': 5868, 'S6_refused': 67, 'S2_none_in_sight': 9904, 'S3_none_in_reach': 2960, 'S4_disliked': 18, 'S1_no_match_alive': 2202}
+b16 seed 5306: reproduces True, woman-weeks 41106, steps {'S6_refused': 145, 'S3_none_in_reach': 5029, 'S5_not_tried': 9672, 'S2_none_in_sight': 26219, 'S1_no_match_alive': 27, 'S4_disliked': 14}
+b8 seed 5307: reproduces True, woman-weeks 34689, steps {'S6_refused': 188, 'S5_not_tried': 18094, 'S3_none_in_reach': 6827, 'S2_none_in_sight': 9480, 'S4_disliked': 100}
+b16 seed 5307: reproduces True, woman-weeks 28246, steps {'S6_refused': 210, 'S5_not_tried': 13381, 'S3_none_in_reach': 4658, 'S2_none_in_sight': 8797, 'S4_disliked': 20, 'S1_no_match_alive': 1180}
+b8 seed 5308: reproduces True, woman-weeks 33863, steps {'S6_refused': 104, 'S5_not_tried': 6730, 'S2_none_in_sight': 24422, 'S3_none_in_reach': 2467, 'S4_disliked': 13, 'S1_no_match_alive': 127}
+p4 seed 5308: reproduces True, woman-weeks 29354, steps {'S5_not_tried': 13558, 'S6_refused': 116, 'S2_none_in_sight': 8876, 'S3_none_in_reach': 6711, 'S1_no_match_alive': 93}
+p4 seed 5309: reproduces True, woman-weeks 32220, steps {'S6_refused': 109, 'S5_not_tried': 15344, 'S3_none_in_reach': 6539, 'S2_none_in_sight': 7459, 'S1_no_match_alive': 2762, 'S4_disliked': 7}
+b16 seed 5308: reproduces True, woman-weeks 34141, steps {'S5_not_tried': 14912, 'S6_refused': 151, 'S2_none_in_sight': 12538, 'S3_none_in_reach': 6495, 'S4_disliked': 42, 'S1_no_match_alive': 3}
+b8 seed 5309: reproduces True, woman-weeks 51408, steps {'S2_none_in_sight': 13221, 'S5_not_tried': 28001, 'S6_refused': 266, 'S3_none_in_reach': 9865, 'S1_no_match_alive': 10, 'S4_disliked': 45}
+b16 seed 5309: reproduces True, woman-weeks 39417, steps {'S5_not_tried': 29308, 'S6_refused': 317, 'S3_none_in_reach': 6823, 'S2_none_in_sight': 2924, 'S1_no_match_alive': 2, 'S4_disliked': 43}
+p4 seed 5310: reproduces True, woman-weeks 25908, steps {'S6_refused': 70, 'S5_not_tried': 4781, 'S3_none_in_reach': 2221, 'S2_none_in_sight': 18358, 'S1_no_match_alive': 478}
+b16 seed 5310: reproduces True, woman-weeks 57168, steps {'S2_none_in_sight': 22350, 'S5_not_tried': 26048, 'S6_refused': 275, 'S3_none_in_reach': 8199, 'S4_disliked': 62, 'S1_no_match_alive': 234}
+b8 seed 5310: reproduces True, woman-weeks 53477, steps {'S5_not_tried': 22216, 'S6_refused': 213, 'S2_none_in_sight': 24576, 'S3_none_in_reach': 6471, 'S1_no_match_alive': 1}
+p4 seed 5311: reproduces True, woman-weeks 49430, steps {'S6_refused': 201, 'S3_none_in_reach': 9452, 'S5_not_tried': 27121, 'S2_none_in_sight': 12656}
+b8 seed 5311: reproduces True, woman-weeks 47034, steps {'S5_not_tried': 33957, 'S6_refused': 314, 'S2_none_in_sight': 4918, 'S3_none_in_reach': 7704, 'S1_no_match_alive': 131, 'S4_disliked': 10}
+p4 seed 5312: reproduces True, woman-weeks 4927, steps {'S5_not_tried': 393, 'S6_refused': 18, 'S3_none_in_reach': 200, 'S2_none_in_sight': 2185, 'S1_no_match_alive': 2131}
+b16 seed 5311: reproduces True, woman-weeks 41567, steps {'S3_none_in_reach': 7374, 'S5_not_tried': 19199, 'S6_refused': 183, 'S2_none_in_sight': 14780, 'S1_no_match_alive': 2, 'S4_disliked': 29}
+b8 seed 5312: reproduces True, woman-weeks 33361, steps {'S2_none_in_sight': 3052, 'S6_refused': 207, 'S5_not_tried': 17472, 'S3_none_in_reach': 3938, 'S1_no_match_alive': 8692}
+b16 seed 5312: reproduces True, woman-weeks 38384, steps {'S6_refused': 308, 'S5_not_tried': 27075, 'S2_none_in_sight': 3307, 'S3_none_in_reach': 7096, 'S1_no_match_alive': 591, 'S4_disliked': 7}
+p4 seed 5313: reproduces True, woman-weeks 51551, steps {'S5_not_tried': 18599, 'S6_refused': 119, 'S3_none_in_reach': 9311, 'S2_none_in_sight': 23468, 'S1_no_match_alive': 7, 'S4_disliked': 47}
+b8 seed 5313: reproduces True, woman-weeks 50320, steps {'S6_refused': 189, 'S5_not_tried': 26356, 'S2_none_in_sight': 10377, 'S3_none_in_reach': 13369, 'S4_disliked': 29}
+b16 seed 5313: reproduces True, woman-weeks 48074, steps {'S6_refused': 151, 'S5_not_tried': 12860, 'S3_none_in_reach': 9565, 'S2_none_in_sight': 25496, 'S1_no_match_alive': 2}
+p4 seed 5314: reproduces True, woman-weeks 26422, steps {'S5_not_tried': 12039, 'S6_refused': 98, 'S3_none_in_reach': 4016, 'S2_none_in_sight': 9828, 'S1_no_match_alive': 441}
+b8 seed 5314: reproduces True, woman-weeks 24497, steps {'S5_not_tried': 11639, 'S6_refused': 154, 'S3_none_in_reach': 3588, 'S2_none_in_sight': 9087, 'S4_disliked': 29}
+b16 seed 5314: reproduces True, woman-weeks 26651, steps {'S6_refused': 175, 'S5_not_tried': 12494, 'S2_none_in_sight': 9272, 'S3_none_in_reach': 4525, 'S4_disliked': 77, 'S1_no_match_alive': 108}
+p4 seed 5315: reproduces True, woman-weeks 42836, steps {'S5_not_tried': 20731, 'S6_refused': 158, 'S2_none_in_sight': 8096, 'S3_none_in_reach': 9237, 'S1_no_match_alive': 4608, 'S4_disliked': 6}
+b8 seed 5315: reproduces True, woman-weeks 33417, steps {'S5_not_tried': 21686, 'S6_refused': 161, 'S3_none_in_reach': 5170, 'S2_none_in_sight': 5495, 'S1_no_match_alive': 827, 'S4_disliked': 78}
+b16 seed 5315: reproduces True, woman-weeks 39352, steps {'S6_refused': 263, 'S5_not_tried': 25419, 'S3_none_in_reach': 7638, 'S2_none_in_sight': 5853, 'S4_disliked': 5, 'S1_no_match_alive': 174}
+b8 seed 5316: reproduces True, woman-weeks 31392, steps {'S6_refused': 70, 'S5_not_tried': 2630, 'S2_none_in_sight': 24069, 'S3_none_in_reach': 1883, 'S4_disliked': 166, 'S1_no_match_alive': 2574}
+p4 seed 5316: reproduces True, woman-weeks 45084, steps {'S6_refused': 176, 'S5_not_tried': 28990, 'S3_none_in_reach': 8204, 'S2_none_in_sight': 6794, 'S4_disliked': 386, 'S1_no_match_alive': 534}
+b16 seed 5316: reproduces True, woman-weeks 48590, steps {'S5_not_tried': 27346, 'S6_refused': 290, 'S2_none_in_sight': 11017, 'S3_none_in_reach': 8969, 'S4_disliked': 96, 'S1_no_match_alive': 872}
+DISCOVERY DONE
+p4 seed 5317: reproduces True, woman-weeks 63821, steps {'S5_not_tried': 41977, 'S6_refused': 259, 'S2_none_in_sight': 11206, 'S3_none_in_reach': 10343, 'S4_disliked': 36}
+b8 seed 5317: reproduces True, woman-weeks 46247, steps {'S6_refused': 272, 'S5_not_tried': 32249, 'S2_none_in_sight': 6810, 'S3_none_in_reach': 6668, 'S4_disliked': 79, 'S1_no_match_alive': 169}
+p4 seed 5318: reproduces True, woman-weeks 26403, steps {'S5_not_tried': 5639, 'S6_refused': 41, 'S3_none_in_reach': 3529, 'S2_none_in_sight': 17112, 'S1_no_match_alive': 82}
+b16 seed 5317: reproduces True, woman-weeks 53418, steps {'S6_refused': 297, 'S3_none_in_reach': 9813, 'S5_not_tried': 32138, 'S2_none_in_sight': 11124, 'S4_disliked': 39, 'S1_no_match_alive': 7}
+b8 seed 5318: reproduces True, woman-weeks 35386, steps {'S5_not_tried': 16540, 'S2_none_in_sight': 13497, 'S6_refused': 154, 'S3_none_in_reach': 5184, 'S4_disliked': 11}
+p4 seed 5319: reproduces True, woman-weeks 25342, steps {'S6_refused': 123, 'S5_not_tried': 11591, 'S3_none_in_reach': 3194, 'S2_none_in_sight': 10178, 'S1_no_match_alive': 256}
+b16 seed 5318: reproduces True, woman-weeks 41498, steps {'S6_refused': 202, 'S5_not_tried': 23148, 'S3_none_in_reach': 7507, 'S2_none_in_sight': 10433, 'S1_no_match_alive': 181, 'S4_disliked': 27}
+b16 seed 5319: reproduces True, woman-weeks 58531, steps {'S6_refused': 203, 'S3_none_in_reach': 7737, 'S5_not_tried': 19350, 'S2_none_in_sight': 30556, 'S4_disliked': 363, 'S1_no_match_alive': 322}
+b8 seed 5319: reproduces True, woman-weeks 46062, steps {'S5_not_tried': 29046, 'S6_refused': 194, 'S3_none_in_reach': 7962, 'S2_none_in_sight': 8287, 'S4_disliked': 3, 'S1_no_match_alive': 570}
+b8 seed 5320: reproduces True, woman-weeks 41379, steps {'S5_not_tried': 18469, 'S6_refused': 96, 'S2_none_in_sight': 15308, 'S3_none_in_reach': 7205, 'S1_no_match_alive': 297, 'S4_disliked': 4}
+p4 seed 5320: reproduces True, woman-weeks 43547, steps {'S5_not_tried': 20827, 'S6_refused': 135, 'S2_none_in_sight': 15793, 'S3_none_in_reach': 6785, 'S1_no_match_alive': 5, 'S4_disliked': 2}
+b16 seed 5320: reproduces True, woman-weeks 32155, steps {'S5_not_tried': 14729, 'S3_none_in_reach': 4397, 'S6_refused': 187, 'S2_none_in_sight': 12825, 'S1_no_match_alive': 17}
+p4 seed 5321: reproduces True, woman-weeks 51565, steps {'S5_not_tried': 28768, 'S6_refused': 193, 'S3_none_in_reach': 10625, 'S2_none_in_sight': 11972, 'S1_no_match_alive': 2, 'S4_disliked': 5}
+b8 seed 5321: reproduces True, woman-weeks 37530, steps {'S5_not_tried': 24552, 'S6_refused': 214, 'S2_none_in_sight': 5904, 'S3_none_in_reach': 6835, 'S1_no_match_alive': 9, 'S4_disliked': 16}
+b16 seed 5321: reproduces True, woman-weeks 46161, steps {'S6_refused': 234, 'S5_not_tried': 29437, 'S2_none_in_sight': 9290, 'S3_none_in_reach': 7191, 'S4_disliked': 9}
+p4 seed 5322: reproduces True, woman-weeks 26086, steps {'S6_refused': 127, 'S5_not_tried': 13235, 'S3_none_in_reach': 5448, 'S2_none_in_sight': 7224, 'S1_no_match_alive': 52}
+b16 seed 5322: reproduces True, woman-weeks 26735, steps {'S5_not_tried': 8881, 'S6_refused': 205, 'S3_none_in_reach': 3530, 'S2_none_in_sight': 13952, 'S4_disliked': 48, 'S1_no_match_alive': 119}
+b8 seed 5322: reproduces True, woman-weeks 47613, steps {'S6_refused': 171, 'S5_not_tried': 22675, 'S3_none_in_reach': 12650, 'S2_none_in_sight': 11897, 'S4_disliked': 13, 'S1_no_match_alive': 207}
+b8 seed 5323: reproduces True, woman-weeks 8088, steps {'S3_none_in_reach': 911, 'S6_refused': 73, 'S5_not_tried': 1480, 'S2_none_in_sight': 2737, 'S4_disliked': 19, 'S1_no_match_alive': 2868}
+p4 seed 5323: reproduces True, woman-weeks 43033, steps {'S5_not_tried': 6401, 'S6_refused': 58, 'S2_none_in_sight': 25447, 'S3_none_in_reach': 4529, 'S1_no_match_alive': 6598}
+b16 seed 5323: reproduces True, woman-weeks 33981, steps {'S3_none_in_reach': 5667, 'S5_not_tried': 8445, 'S2_none_in_sight': 18924, 'S6_refused': 134, 'S1_no_match_alive': 811}
+p4 seed 5324: reproduces True, woman-weeks 30576, steps {'S6_refused': 94, 'S5_not_tried': 14202, 'S2_none_in_sight': 8291, 'S3_none_in_reach': 7678, 'S1_no_match_alive': 311}
+b8 seed 5324: reproduces True, woman-weeks 59277, steps {'S2_none_in_sight': 36183, 'S5_not_tried': 15157, 'S3_none_in_reach': 7349, 'S6_refused': 103, 'S4_disliked': 15, 'S1_no_match_alive': 470}
+b16 seed 5324: reproduces True, woman-weeks 65771, steps {'S5_not_tried': 25093, 'S2_none_in_sight': 29563, 'S3_none_in_reach': 10341, 'S6_refused': 319, 'S4_disliked': 233, 'S1_no_match_alive': 222}
+p4 seed 5325: reproduces True, woman-weeks 12529, steps {'S5_not_tried': 7854, 'S6_refused': 81, 'S2_none_in_sight': 2487, 'S3_none_in_reach': 1559, 'S1_no_match_alive': 548}
+b8 seed 5325: reproduces True, woman-weeks 17009, steps {'S5_not_tried': 9990, 'S6_refused': 94, 'S2_none_in_sight': 3149, 'S3_none_in_reach': 2372, 'S4_disliked': 55, 'S1_no_match_alive': 1349}
+b16 seed 5325: reproduces True, woman-weeks 19776, steps {'S6_refused': 183, 'S5_not_tried': 13974, 'S2_none_in_sight': 1900, 'S3_none_in_reach': 2732, 'S4_disliked': 70, 'S1_no_match_alive': 917}
+p4 seed 5326: reproduces True, woman-weeks 36397, steps {'S6_refused': 71, 'S5_not_tried': 12426, 'S2_none_in_sight': 20263, 'S3_none_in_reach': 3425, 'S1_no_match_alive': 212}
+b8 seed 5326: reproduces True, woman-weeks 42049, steps {'S5_not_tried': 22032, 'S2_none_in_sight': 13539, 'S6_refused': 93, 'S3_none_in_reach': 6384, 'S1_no_match_alive': 1}
+b16 seed 5326: reproduces True, woman-weeks 45396, steps {'S6_refused': 169, 'S5_not_tried': 23920, 'S3_none_in_reach': 6642, 'S2_none_in_sight': 13175, 'S4_disliked': 145, 'S1_no_match_alive': 1345}
+p4 seed 5327: reproduces True, woman-weeks 33546, steps {'S5_not_tried': 24449, 'S6_refused': 187, 'S3_none_in_reach': 5631, 'S2_none_in_sight': 3197, 'S4_disliked': 82}
+b8 seed 5327: reproduces True, woman-weeks 38176, steps {'S6_refused': 188, 'S5_not_tried': 22957, 'S2_none_in_sight': 7465, 'S3_none_in_reach': 7518, 'S4_disliked': 27, 'S1_no_match_alive': 21}
+b16 seed 5327: reproduces True, woman-weeks 48811, steps {'S5_not_tried': 28692, 'S6_refused': 214, 'S3_none_in_reach': 10077, 'S2_none_in_sight': 9211, 'S4_disliked': 26, 'S1_no_match_alive': 591}
+p4 seed 5328: reproduces True, woman-weeks 22673, steps {'S6_refused': 80, 'S5_not_tried': 12870, 'S3_none_in_reach': 5055, 'S2_none_in_sight': 3692, 'S1_no_match_alive': 976}
+b8 seed 5328: reproduces True, woman-weeks 29392, steps {'S5_not_tried': 8637, 'S6_refused': 108, 'S2_none_in_sight': 15782, 'S3_none_in_reach': 4707, 'S1_no_match_alive': 45, 'S4_disliked': 113}
+p4 seed 5329: reproduces True, woman-weeks 19400, steps {'S5_not_tried': 6134, 'S6_refused': 39, 'S3_none_in_reach': 4634, 'S2_none_in_sight': 7782, 'S1_no_match_alive': 811}
+b16 seed 5328: reproduces True, woman-weeks 46497, steps {'S5_not_tried': 17993, 'S2_none_in_sight': 19502, 'S6_refused': 249, 'S3_none_in_reach': 8371, 'S1_no_match_alive': 378, 'S4_disliked': 4}
+b8 seed 5329: reproduces True, woman-weeks 18423, steps {'S5_not_tried': 4002, 'S6_refused': 103, 'S3_none_in_reach': 3207, 'S2_none_in_sight': 9452, 'S4_disliked': 7, 'S1_no_match_alive': 1652}
+b16 seed 5329: reproduces True, woman-weeks 35105, steps {'S5_not_tried': 6801, 'S3_none_in_reach': 6380, 'S6_refused': 177, 'S2_none_in_sight': 20956, 'S1_no_match_alive': 791}
+b8 seed 5330: reproduces True, woman-weeks 54579, steps {'S2_none_in_sight': 14901, 'S5_not_tried': 27013, 'S6_refused': 208, 'S3_none_in_reach': 12429, 'S4_disliked': 28}
+p4 seed 5330: reproduces True, woman-weeks 71082, steps {'S5_not_tried': 35289, 'S6_refused': 158, 'S2_none_in_sight': 21161, 'S3_none_in_reach': 14436, 'S4_disliked': 38}
+p4 seed 5331: reproduces True, woman-weeks 25186, steps {'S5_not_tried': 6936, 'S6_refused': 70, 'S3_none_in_reach': 2677, 'S2_none_in_sight': 15152, 'S1_no_match_alive': 351}
+b8 seed 5331: reproduces True, woman-weeks 17384, steps {'S6_refused': 105, 'S5_not_tried': 5040, 'S3_none_in_reach': 3316, 'S2_none_in_sight': 7992, 'S4_disliked': 166, 'S1_no_match_alive': 765}
+b16 seed 5330: reproduces True, woman-weeks 47029, steps {'S3_none_in_reach': 9400, 'S5_not_tried': 28563, 'S6_refused': 253, 'S2_none_in_sight': 8809, 'S4_disliked': 4}
+p4 seed 5332: reproduces True, woman-weeks 35186, steps {'S5_not_tried': 10491, 'S6_refused': 86, 'S2_none_in_sight': 18629, 'S3_none_in_reach': 4951, 'S4_disliked': 2, 'S1_no_match_alive': 1027}
+b16 seed 5331: reproduces True, woman-weeks 53375, steps {'S6_refused': 284, 'S5_not_tried': 28533, 'S2_none_in_sight': 13455, 'S3_none_in_reach': 10982, 'S4_disliked': 121}
+b8 seed 5332: reproduces True, woman-weeks 29467, steps {'S5_not_tried': 15251, 'S6_refused': 201, 'S3_none_in_reach': 5907, 'S2_none_in_sight': 7875, 'S1_no_match_alive': 224, 'S4_disliked': 9}
+b16 seed 5332: reproduces True, woman-weeks 32248, steps {'S6_refused': 157, 'S2_none_in_sight': 16009, 'S5_not_tried': 11028, 'S3_none_in_reach': 5048, 'S4_disliked': 2, 'S1_no_match_alive': 4}
+ALL DONE

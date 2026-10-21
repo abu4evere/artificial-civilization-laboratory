@@ -374,6 +374,9 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **RT1b done** (`experiments/RT1_residence_time/findings_rt1b.md`; frozen; 768 worlds). Counting the week's walk to water fixed RT1's flaw (thirst after a chosen trip 50% → 1%) but **did not save the worlds**: R4w died out as often as R4 (143 vs 148 of 256) and far more than C (91). Thirst deaths stay about 50% higher; births and partner finding do not differ. **Next: FX2 (running), PF1 (running), then LM1; a read-only look at R4w's thirsty weeks is the creator's call.**
 
+**PF1 done** (`experiments/PF1_partner_pipeline/findings.md`; frozen; read-only; 96 replays exact). Where partner finding stops in MB1b's worlds: in about half of a single woman's weeks a suitable man is within reach and **neither courts**; the pool is almost never empty (1–3%). Smaller bands made courting more frequent but couples no more common: the extra courting was of near-strangers, who can almost never accept. **Next: the creator decides on a read-only look at what is chosen instead of courting, and on RT1b's audit; FX2 running, then LM1.**
+
+
 
 
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
