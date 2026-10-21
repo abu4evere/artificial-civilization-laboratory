@@ -35,8 +35,9 @@ TU1's result against, written before its data. **Notes only.** Each source says 
 
 - Real tool skill grows from **access plus self-directed play**: children handle adults' tools and miniatures, mostly
   without being taught (Riede et al. 2023), alongside watching and, later, teaching. So "own discovery" in ACL is not
-  unlike real early learning; what ACL lacks is the **access** (children handling others' tools, toy versions). TU1's prior is the opposite for ACL (mostly own discovery), because ACL has no toy versions, no
-  playgroups that share tools, no handing over of items, and opinions of items pass only in some talks.
+  unlike real early learning; what ACL lacks is the **access** (children handling others' tools, toy versions). TU1's prior (mostly own discovery, spread mostly within families) follows from what
+  ACL lacks: no toy versions, no playgroups sharing tools, no handing over of items, and opinions of items pass only
+  in some talks.
 - If TU1 finds first uses mostly own discovery and little spread, that would be **consistent with** those missing
   routes, not proof that they caused it (GPT): low spread could also come from weak incentives, memory limits, few
   chances to observe, or the cost of using the tool. And low spread does not mean tools are useless.
