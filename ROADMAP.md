@@ -388,6 +388,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **TU1 done** (`experiments/TU1_tool_use_spread/findings.md`; frozen; read-only replay, 512 worlds, run on GitHub). **Tool use is universal but not cultural:** 98% of first uses are people finding it themselves; being told is under 2%; every adult uses tools by year 20, each rediscovering it. **Next: LX1 (on GitHub); the routes that would make tools a tradition (handing over, children's access) are Law 126 questions.**
 
+**LX1 done** (`experiments/LX1_parts_first_survival/findings.md`; frozen; Law 126 check; run on GitHub, 1,024 worlds). **Parts-first teaching does not cost survival** (181 against 177 of 512) and raises passing on again (+2.0 points). **By the rule fixed before data, it enters nature: v3 = v2 + parts_first.** **Next: a frozen plan for the switch to v3 (zero checks, a new v3 baseline).**
+
 
 
 
