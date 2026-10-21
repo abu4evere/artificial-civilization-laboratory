@@ -43,19 +43,35 @@ sits between S25 and B50.
   (p < 0.05 after Holm), "no meaningful effect" (p ≥ 0.05 and the interval inside ±0.117), otherwise "unresolved".
 - **Primary 2 (tool use):** share of adult forage-weeks with a hard thing (hardness ≥ 40) in hand, **S25 against
   S25-0** and **B50 against B50-0**, Wilcoxon signed-rank, bootstrap interval as above; Holm over the two.
-- **Room check (stated in advance):** if a level's tool-free arm dies out in more than 90% of worlds, its survival
-  reading is reported as **"no room"** rather than read (FX2's failure, named before the data).
+- **Survival is always read**, whatever the extinction level (GPT's review: a rule that set aside a level whose tool-free
+  arm dies out heavily could hide exactly a rescue by tools, e.g. 95% against 70%).
+- **Limits on the mechanism measures only (stated in advance):** a tool-use comparison is labelled **"limited"**, and
+  described rather than tested, if fewer than 64 seeds give adult forage-weeks in both arms of the pair. Survival is
+  never labelled this way.
+- **What the words mean:** "no meaningful effect" means p ≥ 0.05 after Holm **and** the 95% interval inside ±0.117
+  (the yardstick every recent study uses); "changes survival" means p < 0.05 after Holm; anything else is
+  "unresolved". The prior's "barely changes survival" means "no meaningful effect" in this sense.
+- **Paired seeds:** the same 256 seeds in all five arms; every comparison is paired by seed.
 - **Described** (population first): each arm against C (extinction, median population at years 60 and 119); births;
   partner blocking; embedded share of adults' food; how much embedded food was opened with a hard thing; forage-weeks a
-  hard thing was used on embedded food (FX2's measures, the creator's note on "carried" versus "used").
+  hard thing was used on embedded food (FX2's measures, the creator's note on "carried" versus "used"). Carrying a
+  hard thing (primary 2) and using one on embedded food (described) are reported separately: the mechanism is use,
+  not carrying.
 
 ## The assistant's prior (to be frozen at sign-off; held loosely)
 
-Both levels leave room (tool-free arms die out in under 90% of worlds). S25 against S25-0: **no meaningful effect** on
+S25 against S25-0: **no meaningful effect** on
 survival (a quarter embedded is mild; the tool route matters little). B50 against B50-0: **the tool route changes
 survival** (fewer worlds die with it), because half the food is embedded and a tool can double what bare hands get. Tool use
 rises in both tool arms, **more in S25** (where bare hands get only a fifth, a tool helps more per use: up to five
 times, against twice in B50). Each tool-free arm dies out more than C.
+
+## Revision 1 (21 October 2026, before freezing; GPT's review, `gpt_review_fx3.md`)
+
+The "no room" rule is removed: survival is always read. Limits apply only to the tool-use measures, defined above.
+"No meaningful effect" and "changes survival" are defined in words; seeds are paired across all five arms; carrying and
+using a hard thing are reported separately. The code fingerprint of `code_fx2` is recorded by the zero checks before any
+world runs.
 
 ## Decisions for the creator
 
