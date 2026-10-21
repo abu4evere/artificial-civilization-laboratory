@@ -85,3 +85,4 @@ experiments/E13R_replication/l2_timing/add_pf1.py
 experiments/E13R_replication/l2_timing/add_fx2.py
 experiments/E13R_replication/l2_timing/add_pf2.py
 experiments/E13R_replication/l2_timing/add_lm1.py
+experiments/E13R_replication/l2_timing/add_fx3.py

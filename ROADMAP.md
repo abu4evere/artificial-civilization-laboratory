@@ -382,6 +382,9 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **LM1 done** (`experiments/LM1_memory_and_parts/findings.md`; frozen; Law 126 study; run on GitHub, 1,024 worlds). **Teaching a missing part after a failed lesson raises transmission** (+2.2 points on a median 9%), the first change to move CA1's bottleneck; **fixing the memory tie-break alone does not**. **Next: the creator decides whether to adopt parts-first teaching into nature (Law 126), with LM1 and CA3's evidence as the case; FX3 running on GitHub.**
 
+**FX3 done** (`experiments/FX3_gentler_embedded/findings.md`; frozen; run on GitHub, 1,280 worlds). At gentler settings, worlds survive often enough to ask the question: **tools come into use but do not save worlds** (no meaningful effect on survival at either level); embedded food itself is what kills. **Next: the creator decides on parts-first teaching (LM1) and what, if anything, to do with embedded food.**
+
+
 
 
 
