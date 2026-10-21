@@ -1,4 +1,4 @@
-# TU1 — How is tool use learned, and does it spread? (DRAFT, 21 October 2026; for the creator's sign-off)
+# TU1 — How is tool use learned, and does it spread? (SIGNED OFF 21 October 2026; frozen as `TU1-frozen` before any code or data)
 
 **Why.** FX2 and FX3 (`../FX3_gentler_embedded/findings.md`, `FX3-done`): when a hard thing helps open embedded food,
 people carry and use hard things more, but survival does not change. The decision of 21 October 2026
@@ -52,3 +52,7 @@ because people forage near kin. Use, once started, lasts while the person keeps 
 1. Worlds: **FX3's S25 and B50, replayed exactly, 512 worlds on GitHub** (recommended), or one arm only (256).
 2. The prior, frozen as written.
 3. Order: **after LX1** (recommended; both can run on GitHub at once if you prefer).
+
+## Sign-off (21 October 2026)
+
+The creator: "approve all recommendations, freeze both". All recommended options and the prior stand as written.

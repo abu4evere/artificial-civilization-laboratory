@@ -1,4 +1,4 @@
-# LX1 — Does parts-first teaching cost survival? The check before adopting it (DRAFT, 21 October 2026; for the creator's sign-off)
+# LX1 — Does parts-first teaching cost survival? The check before adopting it (SIGNED OFF 21 October 2026; frozen as `LX1-frozen` before any code or data)
 
 **Why.** LM1 (`../LM1_memory_and_parts/findings.md`, `LM1-done`): showing a missing part after a failed lesson (L1,
 `parts_first`) raised the share of useful inventions passed on by 2.2 points, the first change to move CA1's
@@ -44,3 +44,7 @@ replication holds (L raises transmission by about 2 points). So L1 would be adop
 1. Seeds: **512 new, 7601–8112** (recommended), or 256 (7601–7856; less precise).
 2. The adoption rule above, fixed as written.
 3. The prior, frozen as written.
+
+## Sign-off (21 October 2026)
+
+The creator: "approve all recommendations, freeze both". All recommended options and the prior stand as written.
