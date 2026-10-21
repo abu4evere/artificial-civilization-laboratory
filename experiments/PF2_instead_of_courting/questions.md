@@ -1,4 +1,4 @@
-# PF2 — What do people do instead of courting? (DRAFT, 21 October 2026; for the creator's sign-off)
+# PF2 — What do people do instead of courting? (SIGNED OFF 21 October 2026; frozen as `PF2-frozen` before any code or data)
 
 **Why.** PF1 (`../PF1_partner_pipeline/findings.md`, `PF1-done`): in about half of the weeks a fertile woman is single, a
 suitable man is within reach and neither of them courts (S5, "not tried"), in every arm and both sets. PF1 could see
@@ -65,3 +65,9 @@ of deciding (positions at the end of the week overstate nearness).
 2. Worlds: **MB1b's P4 and B16, seeds 5301–5316 then 5317–5332, replayed exactly** (recommended), or add B8 (96 worlds).
 3. The prior above, frozen as written.
 4. When: **now, on two spare workers beside FX2 and LM1** (recommended), or after LM1.
+
+## Sign-off (21 October 2026)
+
+The creator: "approve all recommendations, freeze it". So: (1) a logging copy of the full option list, shown to change
+nothing; (2) MB1b's P4 and B16, seeds 5301–5316 (discovery) then 5317–5332 (holdout), replayed exactly; (3) the prior
+above, frozen as written; (4) now, on two spare workers beside FX2 and LM1.
