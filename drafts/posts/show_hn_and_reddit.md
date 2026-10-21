@@ -31,7 +31,10 @@ Some things it has shown so far:
 - About a third of small worlds (20 founders) die out, not from famine or war: births stop decades earlier because too
   few people can find a partner. Giving the same worlds perfect partner search cut extinctions from 22 to 7 of 64.
 - Splitting 80 founders into smaller bands made families mix far more (couples across lineages went from 6% to 54%),
-  but the time women spent without a partner didn't change at all. An audit of why is running now.
+  but the time women spent without a partner didn't change at all. Two audits found why: in about half of a single
+  woman's weeks a suitable man is within reach and neither courts. Courting is on the menu about 9 times in 10, but
+  gets roughly 1 chance in 1,000 against looking for food; and when someone courts a near-stranger, the answer is
+  almost always no, because acceptance depends on already liking the person.
 
 What I'd love feedback on: the method, the "nature, not history" line (where would you draw it?), and anything that
 looks like I've accidentally scripted the answer.
@@ -59,7 +62,9 @@ The question: can civilization start by itself? So far the answer is "not yet", 
   inventions are never learned by anyone else. Many are forgotten within a season, pushed out of a 12-item memory.
 - **Worlds die quietly.** About a third of small worlds die out, not from hunger or war, but because births stop
   decades before the end: too few people can find a partner.
-- **Meeting more isn't finding someone.** Splitting the same 80 founders into smaller bands made couples across families about 9× more common, but the time women spent without a partner didn't move.
+- **A partner is usually right there.** In about half the weeks a woman spends single, a suitable man is within reach
+  and neither courts. Courting is almost always an option, but it gets about 1 chance in 1,000 against looking for
+  food. Smaller bands made strangers meet far more, but strangers almost always say no.
 
 Every experiment has its prediction written down and frozen before it runs, and the wrong ones stay in the record.
 It's open source (Python, no dependencies, exact replay).

@@ -110,10 +110,13 @@ precise enough to test.
 
 ## What's next
 
-The memory-and-parts experiment runs after the current ones finish. I'm also auditing a second puzzle: when I split the
-same 80 founders into smaller bands, families mixed far more (couples across families went from 6% to 54%), but the
-time women spent without a partner didn't change at all. Meeting more people, it turns out, isn't the same as finding
-someone. I'm tracing why.
+The memory-and-parts experiment is running now. A second puzzle has already given up part of its answer. When I split
+the same 80 founders into smaller bands, families mixed far more (couples across families went from 6% to 54%), but the
+time women spent without a partner didn't change at all. So I replayed those worlds and traced every single woman's
+week. In about half of them, a suitable man was right there, within reach, and neither of them courted. Courting was
+on their list of options about nine times in ten, but it had roughly one chance in a thousand against looking for food.
+And when someone did court a near-stranger, the answer was almost always no: in ACL, accepting depends on already
+liking the person. Meeting more people, it turns out, isn't the same as finding someone.
 
 If you build simulations, study cultural evolution, or just like a good puzzle, I'd love your criticism, especially
 anywhere it looks like I've scripted the answer without noticing.
