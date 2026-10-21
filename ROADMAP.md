@@ -384,7 +384,7 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **FX3 done** (`experiments/FX3_gentler_embedded/findings.md`; frozen; run on GitHub, 1,280 worlds). At gentler settings, worlds survive often enough to ask the question: **tools come into use but do not save worlds** (no meaningful effect on survival at either level); embedded food itself is what kills. **Next: the creator decides on parts-first teaching (LM1) and what, if anything, to do with embedded food.**
 
-**TP1 done** (`experiments/TP1_tipping_point/findings.md`; frozen; read-only, 768 saved worlds). **No sharp tipping point except zero:** a world with no fertile woman almost always dies out, but above that each extra woman cuts the risk by about 10–20 points; at three, about half die (prior W* = 3 wrong). Confirmed on the holdout. **Next: LX1 and TU1 (on GitHub).**
+**TP1 done** (`experiments/TP1_tipping_point/findings.md`; frozen; read-only, 768 saved worlds). **No sharp tipping point except zero:** a world with no fertile woman almost always dies out, but above that each extra woman cuts the risk by about 10–20 points; at three, about half die (prior W* = 3 wrong). Confirmed on the holdout. **Correction after GPT's review:** among worlds of the same size, the number of women adds little; small total size carries the risk. **Next: LX1 and TU1 (on GitHub).**
 
 
 

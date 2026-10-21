@@ -42,3 +42,22 @@ the reading).
 F1's warning sign ("at most three fertile women at year 30") marks a world at **high risk**: about half die. It
 is not a world past saving. There is no sharp tipping point to aim at. Any help for small worlds would work along
 the whole slope, and the partner pipeline (PF1, PF2) stays the place to look. TP1 proposes no change.
+
+## Correction after GPT's review (21 October 2026; appended, the text above is kept)
+
+GPT (`gpt_review_tp1.md`) called the reading "mostly fair" but raised three points: (1) W* = 0 is what the frozen
+rule selects, not a shown biological threshold; (2) world-years are not independent (a world counts up to five
+times, and later check years hold only survivors); (3) W is tangled with total population, so the slope is an
+association, not the effect of adding a woman. A described audit followed (`results_audit.md`, `analyse_tp1.py
+audit`; added after the frozen reading and holdout were committed; not part of the reading):
+
+- **One row per world, each check year separately:** the same shape holds at every check year in both sets (for
+  example, year 30 in discovery: W 0–1 died out 41 of 43, W 2–3 62 of 101, W 4–6 66 of 193, W 7+ 16 of 173).
+- **Within bands of total population, W adds little.** Under 10 people, 96–100% died out whatever W was. At
+  20–34 people, 9–19% died out, roughly flat across W. Only at 10–19 people is there a modest fall in discovery
+  (87% at W 0 to 52% at W 7+). In the holdout that band is nearly flat (57–75%).
+
+**So the sentence above "each extra fertile woman helps" is corrected:** the slope in W mostly tracks how many people
+are left. Among worlds of the same size, the number of fertile women says little more. What carries the risk in
+these worlds is small total size. TP1 shows an association in ACL's worlds, not a cause, and not a minimum viable
+population for real people.

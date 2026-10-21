@@ -124,5 +124,53 @@ def main(name):
     print(text)
 
 
+def audit():
+    """Described checks added after GPT's review (not part of the frozen reading): one row per world at each check
+    year separately, and W within bands of total population (pooled world-years)."""
+    def cell(k, n):
+        return f"{k}/{n} ({k / n:.0%})" if n else "–"
+    L = ["# TP1 — audit after GPT's review (described; not the frozen reading)", "",
+         "Added after the frozen reading and the holdout were committed. analyse_tp1.py audit.", ""]
+    wb = [(0, 0), (1, 1), (2, 3), (4, 6), (7, 99)]
+    wl = ["0", "1", "2–3", "4–6", "7+"]
+    for name in ("discovery", "holdout"):
+        rows = load(name)
+        L += [f"## {name.capitalize()}: one row per world, each check year separately (died out / worlds alive)", "",
+              "| year | " + " | ".join(f"W {x}" for x in wl) + " |", "|---" * (len(wl) + 1) + "|"]
+        for t in YEARS:
+            c = [[0, 0] for _ in wb]
+            for r in rows:
+                s = r.get("years", {}).get(str(t))
+                if not s or not s.get("n"):
+                    continue
+                w = int(s["women"])
+                i = next(j for j, (lo, hi) in enumerate(wb) if lo <= w <= hi)
+                c[i][0] += 1
+                c[i][1] += died(r)
+            L.append(f"| {t} | " + " | ".join(cell(k, n) for n, k in c) + " |")
+        pb = [(0, 9), (10, 19), (20, 34), (35, 999)]
+        pl = ["under 10", "10–19", "20–34", "35+"]
+        g = {(i, j): [0, 0] for i in range(len(pb)) for j in range(len(wb))}
+        for r in rows:
+            d = died(r)
+            for t in YEARS:
+                s = r.get("years", {}).get(str(t))
+                if not s or not s.get("n"):
+                    continue
+                i = next(a for a, (lo, hi) in enumerate(pb) if lo <= int(s["n"]) <= hi)
+                j = next(a for a, (lo, hi) in enumerate(wb) if lo <= int(s["women"]) <= hi)
+                g[(i, j)][0] += 1
+                g[(i, j)][1] += d
+        L += ["", f"## {name.capitalize()}: W within bands of total population (pooled world-years; died out / world-years)",
+              "", "| population | " + " | ".join(f"W {x}" for x in wl) + " |", "|---" * (len(wl) + 1) + "|"]
+        for i, lab in enumerate(pl):
+            L.append(f"| {lab} | " + " | ".join(cell(g[(i, j)][1], g[(i, j)][0]) for j in range(len(wb))) + " |")
+        L.append("")
+    text = "\n".join(L) + "\n"
+    (HERE / "results_audit.md").write_text(text, encoding="utf-8")
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    print(text)
+
+
 if __name__ == "__main__":
-    main(sys.argv[1])
+    audit() if sys.argv[1] == "audit" else main(sys.argv[1])
