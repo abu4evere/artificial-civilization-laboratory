@@ -46,11 +46,15 @@ sits between S25 and B50.
 - **Survival is always read**, whatever the extinction level (GPT's review: a rule that set aside a level whose tool-free
   arm dies out heavily could hide exactly a rescue by tools, e.g. 95% against 70%).
 - **Limits on the mechanism measures only (stated in advance):** a tool-use comparison is labelled **"limited"**, and
-  described rather than tested, if fewer than 64 seeds give adult forage-weeks in both arms of the pair. Survival is
-  never labelled this way.
+  described rather than tested, if fewer than 64 seeds give adult forage-weeks in both arms of the pair. 64 is a
+  practical minimum (a quarter of the seeds), not a calculated sample size; it applies the same way to both pairs and
+  is fixed here. Survival is never labelled this way.
 - **What the words mean:** "no meaningful effect" means p ≥ 0.05 after Holm **and** the 95% interval inside ±0.117
   (the yardstick every recent study uses); "changes survival" means p < 0.05 after Holm; anything else is
-  "unresolved". The prior's "barely changes survival" means "no meaningful effect" in this sense.
+  "unresolved". The prior's "barely changes survival" means "no meaningful effect" in this sense. Every "changes
+  survival" reading also carries a size label, **"beyond the yardstick"** (the estimate outside ±0.117) or **"within
+  the yardstick"**, so a difference that is real but small is not read as a large one. The reading rules themselves
+  stay the ones every recent study used, so FX3 can be compared with them.
 - **Paired seeds:** the same 256 seeds in all five arms; every comparison is paired by seed.
 - **Described** (population first): each arm against C (extinction, median population at years 60 and 119); births;
   partner blocking; embedded share of adults' food; how much embedded food was opened with a hard thing; forage-weeks a
@@ -72,6 +76,11 @@ The "no room" rule is removed: survival is always read. Limits apply only to the
 "No meaningful effect" and "changes survival" are defined in words; seeds are paired across all five arms; carrying and
 using a hard thing are reported separately. The code fingerprint of `code_fx2` is recorded by the zero checks before any
 world runs.
+
+## Revision 2 (21 October 2026, before freezing; GPT's second review, `gpt_review_fx3.md`)
+
+Size labels added to "changes survival" (beyond or within the ±0.117 yardstick), keeping the standard reading rules
+for comparability with earlier studies; the 64-seed minimum is stated as practical, not calculated.
 
 ## Decisions for the creator
 

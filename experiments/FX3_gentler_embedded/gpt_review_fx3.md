@@ -113,3 +113,69 @@ Before freezing FX3, I'd require these changes:
 One final project-steward note: these are recommendations, not creator approval. **I recommend FX3 with those amendments, but the decision to freeze it remains yours.**
 
 Bro, the strongest part of this plan is that you're not simply making the world easier until tools work. You're separating two possible explanations for a null result: perhaps too little food requires tools, or perhaps bare hands are already effective enough. That's a real research question—and it deserves a design that can report an unexpected rescue effect rather than accidentally hiding it.
+
+
+---
+
+# GPT's second review (21 October 2026, verbatim; pasted by the creator)
+
+Adopted as Revision 2, with one difference stated there: the reading rules stay the standard ones (comparability with
+earlier studies), and the size label carries GPT's point about practical importance.
+
+Bro, this is much stronger. You caught the biggest problem, corrected it, and preserved the possibility that the experiment could surprise you. That's exactly how ACL's research process should work.
+
+**My verdict: approve FX3 in principle, but I recommend one final clarification before freezing the plan.** Most of the design looks ready; the survival decision rules need to be mathematically unambiguous.
+
+## What I approve
+
+1. **Survival is always analyzed.** Even 95% extinction versus 70% extinction remains visible. Good.
+2. **The five arms and paired seeds stay fixed.** This gives you two controlled comparisons against the same underlying worlds.
+3. **Both survival comparisons are preregistered**, with correction for testing twice.
+4. **Carrying a tool and using it on food are separate measurements.** This is essential for interpreting the mechanism.
+5. **The code fingerprint is recorded before the runs.** That protects the frozen experiment from silent changes.
+6. **The tool-use limitation is separate from survival.** A lack of usable tool-use observations must not erase valid survival evidence.
+
+## One final issue: define the three survival outcomes precisely
+
+Your current wording says:
+
+- No meaningful effect: the difference is within chance and inside the usual ±11.7-percentage-point range.
+- Changes survival: the difference is beyond chance.
+- Anything else: unresolved.
+
+The problem is that **statistical significance and practical importance are not the same thing**. A small difference can be statistically significant without being large enough to count as meaningful.
+
+I'd define the outcomes using the paired effect estimate and its multiplicity-adjusted confidence interval:
+
+| Classification | Recommended rule |
+|---|---|
+| **Meaningful survival change** | The adjusted interval excludes zero, and the estimated effect is outside the ±11.7-percentage-point practical-equivalence range. |
+| **No meaningful effect** | The entire adjusted interval lies inside ±11.7 percentage points. |
+| **Unresolved** | Neither condition is met. |
+
+This is a proposed clarification, not a claim about what your current plan already implements. Have the analysis check that the confidence intervals and multiplicity correction match your intended statistical procedure.
+
+One more detail: keep the ±11.7-point margin fixed because it comes from the existing ACL decision framework—not because it makes FX3's results easier to interpret.
+
+## One small check on the 64-seed rule
+
+Before freezing, document why **64 usable seeds** is the minimum for describing tool-use comparisons inferentially versus descriptively. Make sure the rule applies consistently to both comparisons and cannot be changed after seeing which arm produces the more interesting result.
+
+If 64 is a pragmatic minimum rather than a formally powered sample size, say so explicitly.
+
+## Final decision
+
+**I recommend freezing FX3 after these clarifications are written into the plan.** No more design changes are needed unless the review reveals a specific validity issue.
+
+Once frozen:
+
+- Record the final plan and code fingerprint.
+- Keep the seed allocation fixed.
+- Run all five arms.
+- Report survival regardless of extinction severity.
+- Report tool-use results according to the preregistered data-availability rule.
+- Preserve surprising and null results equally.
+
+And bro, remember what makes this experiment interesting: you're not trying to make stone tools succeed. You're testing whether their effect depends on *how much food is embedded* or *how difficult it is to obtain that food without tools*.
+
+**Freeze the question and the rules—not the answer.**
