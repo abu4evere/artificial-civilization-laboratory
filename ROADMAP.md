@@ -372,6 +372,9 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **MB1b done** (`experiments/MB1_multi_band/findings_mb1b.md`; frozen; 1,024 worlds). Same 80 founders, divided into 4, 8 or 16 bands: **no meaningful effect on survival** (13, 8 and 7 of 256 died out), with survival near its floor at 80 founders. Smaller bands **mix far more** (couples across lineages 6% → 54%), but partner blocking and births do not move. Band size and crowding are confounded. **Next: RT1b (running), then FX2, then LM1 (waits on its Amendment 1).**
 
+**RT1b done** (`experiments/RT1_residence_time/findings_rt1b.md`; frozen; 768 worlds). Counting the week's walk to water fixed RT1's flaw (thirst after a chosen trip 50% → 1%) but **did not save the worlds**: R4w died out as often as R4 (143 vs 148 of 256) and far more than C (91). Thirst deaths stay about 50% higher; births and partner finding do not differ. **Next: FX2 (running), PF1 (running), then LM1; a read-only look at R4w's thirsty weeks is the creator's call.**
+
+
 
 **Also found (October 2026):** ST1, a small breach of Rule 3 (a raft that wears out at sea strands its owner for a
 week; 22 of 1.29 million person-weeks), found by the new property tests; nature not changed. The habit table is 32 × 17
