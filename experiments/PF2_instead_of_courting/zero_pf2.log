@@ -1,0 +1,19 @@
+20 founders, seed 501, 20 years, p4, logging+observer off: = code_mb1b: yes
+20 founders, seed 501, 20 years, p4, logging+observer on: = code_mb1b: yes
+20 founders, seed 501, 20 years, {'founding_bands': 16}, logging+observer off: = code_mb1b: yes
+20 founders, seed 501, 20 years, {'founding_bands': 16}, logging+observer on: = code_mb1b: yes
+20 founders, seed 601, 20 years, p4, logging+observer off: = code_mb1b: yes
+20 founders, seed 601, 20 years, p4, logging+observer on: = code_mb1b: yes
+20 founders, seed 601, 20 years, {'founding_bands': 16}, logging+observer off: = code_mb1b: yes
+20 founders, seed 601, 20 years, {'founding_bands': 16}, logging+observer on: = code_mb1b: yes
+80 founders, seed 501, 20 years, p4, logging+observer off: = code_mb1b: yes
+80 founders, seed 501, 20 years, p4, logging+observer on: = code_mb1b: yes
+80 founders, seed 501, 20 years, {'founding_bands': 16}, logging+observer off: = code_mb1b: yes
+80 founders, seed 501, 20 years, {'founding_bands': 16}, logging+observer on: = code_mb1b: yes
+80 founders, seed 601, 20 years, p4, logging+observer off: = code_mb1b: yes
+80 founders, seed 601, 20 years, p4, logging+observer on: = code_mb1b: yes
+80 founders, seed 601, 20 years, {'founding_bands': 16}, logging+observer off: = code_mb1b: yes
+80 founders, seed 601, 20 years, {'founding_bands': 16}, logging+observer on: = code_mb1b: yes
+code_pf2 fingerprint: 82e03b2ce4431b095aa6cba414e4ffc9f9dfe6f1c37ccb1aebad3305e7adf690
+All: PASS
+
