@@ -1,0 +1,4 @@
+p4 seed 5301: reproduces True, S5 weeks 11568
+b16 seed 5301: reproduces True, S5 weeks 21082
+b16 seed 5302: reproduces True, S5 weeks 15660
+p4 seed 5302: reproduces True, S5 weeks 24049

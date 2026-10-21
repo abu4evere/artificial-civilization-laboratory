@@ -378,6 +378,9 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **FX2 done** (`experiments/FX2_embedded_food/findings.md`; frozen; 768 worlds). With half of plant food embedded and a hard thing able to open it, **people took up tools** (carried 40% vs 24% of forage-weeks, used on embedded food in 39%): the clearest case yet of a tool coming into use because it pays. **But every such world died out** (256 of 256, median year 40), so the tool benefit could not show in survival. The setting was operational and too harsh. **Next: LM1 (running in the cloud), PF2 (cloud); a gentler FX follow-up is the creator's call.**
 
+**PF2 done** (`experiments/PF2_instead_of_courting/findings.md`; frozen; read-only; run on GitHub, 64 replays exact). In the weeks a suitable man is right there and nobody courts, courting **is** an option about nine times in ten, but has about **one chance in a thousand**: food wins three times in four. When not an option, he is usually outside the 12 people she considers. **Next: LM1 and FX3 (running on GitHub); any change to courting would be a nature change needing evidence first.**
+
+
 
 
 
