@@ -53,8 +53,12 @@ Each week (`World.step`), in this order:
   outcomes; materials have properties, and combinations are discovered.
 - **Adaptation.** Choices combine instinct-like scores with learned values: `learned_weight` (0.6) sets how much
   experience counts.
-- **Objectives.** Agents have no global goal; each week's reward comes from the body (food, warmth, health) and
-  feelings (company, care).
+- **Objectives.** Agents have no global goal. Each week's learning signal is the reward the week's action earned plus
+  twice the change in mood (`biology._learn`). Action rewards are small and bodily or social (`actions.py`): getting
+  food scales with how much of the week's need it met and with hunger (about +0.3 at most); giving +0.1 plus kindness
+  and kinship; caring +0.1 plus care for kin; talking +0.1 plus sociability; pairing +0.5; play and exploring a few
+  hundredths, more for the curious. Mood follows wellbeing (fed, warm, healthy, not lonely). **No reward exists for
+  inventing, teaching, storing, sowing or any cultural outcome.**
 - **Learning.** A per-person habit table updated by temporal-difference learning (learning rate 0.05, discount 0.8); people also imitate those they respect or who seem to do well; recipes are learned by trying, by being
   taught in conversation, and in a few cases by watching.
 - **Prediction.** A weak anticipation of next season's shortage (`anticipation_weight`).
@@ -93,5 +97,6 @@ None. The world is generated from the seed; no external data drive it.
 
 ---
 
-**Still to do before this is final:** exact reward terms and learning rate values; the full list of conditions for
-each action; the pattern targets with their sources. Each will be filled in from the code, not from memory.
+**Still to do before this is final:** the full list of conditions for each action; the pattern targets with their
+sources. Each will be filled in from the code, not from memory. (Reward terms and learning values: filled in 21 October
+2026 from `acl/actions.py`, `acl/biology.py` and `acl/config.py`.)
