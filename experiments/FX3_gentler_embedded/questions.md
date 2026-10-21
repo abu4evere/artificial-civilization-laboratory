@@ -1,4 +1,4 @@
-# FX3 — Food that must be opened, at gentler settings: does the tool route change survival? (DRAFT, 21 October 2026; for the creator's sign-off)
+# FX3 — Food that must be opened, at gentler settings: does the tool route change survival? (SIGNED OFF 21 October 2026; frozen as `FX3-frozen` before any code or data)
 
 **Why.** FX2 (`../FX2_embedded_food/findings.md`, `FX2-done`): with half of each tile's plant food embedded
 (`embedded_share` 0.5) and bare hands opening it at a fifth of the normal rate (`embedded_bare` 0.2), people took up
@@ -88,3 +88,9 @@ for comparability with earlier studies; the 64-seed minimum is stated as practic
 2. Seeds: **256 new, 7301–7556** (recommended).
 3. Where: **on GitHub's machines** (recommended), or on this computer (about two days).
 4. The prior above, frozen as written.
+
+## Sign-off (21 October 2026)
+
+The creator relayed GPT's verdict "freeze FX3 Revision 2 ... then run all five arms on GitHub" as the answer to
+"Freeze FX3 and run it on GitHub?". So: (1) S25 and B50, each with and without the tool route, plus C; (2) seeds
+7301–7556 in all five arms; (3) on GitHub's machines; (4) the prior as written. Revision 2 stands as frozen.
