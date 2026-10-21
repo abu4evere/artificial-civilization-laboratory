@@ -380,6 +380,9 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **PF2 done** (`experiments/PF2_instead_of_courting/findings.md`; frozen; read-only; run on GitHub, 64 replays exact). In the weeks a suitable man is right there and nobody courts, courting **is** an option about nine times in ten, but has about **one chance in a thousand**: food wins three times in four. When not an option, he is usually outside the 12 people she considers. **Next: LM1 and FX3 (running on GitHub); any change to courting would be a nature change needing evidence first.**
 
+**LM1 done** (`experiments/LM1_memory_and_parts/findings.md`; frozen; Law 126 study; run on GitHub, 1,024 worlds). **Teaching a missing part after a failed lesson raises transmission** (+2.2 points on a median 9%), the first change to move CA1's bottleneck; **fixing the memory tie-break alone does not**. **Next: the creator decides whether to adopt parts-first teaching into nature (Law 126), with LM1 and CA3's evidence as the case; FX3 running on GitHub.**
+
+
 
 
 
