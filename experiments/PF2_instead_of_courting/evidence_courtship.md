@@ -35,17 +35,30 @@ only through another source or a search summary).
 
 ## What this suggests for ACL (hypotheses, not findings)
 
-- **Pair formation in most foragers is not a weekly individual choice weighed against foraging.** In most societies
-  it runs through families: parents or kin arrange or strongly shape the match, often with exchange between families.
-  Where courtship is free (the Hadza), it is brief and leads quickly to living together. In ACL, courting is an
+- **In most forager societies, marriage is shaped by kin** (arranged, or strongly influenced, often with exchange
+  between families), with real variation: the Hadza court freely. Marriage customs and the way attraction, courtship
+  and living together develop are related but **different things** (GPT's objection, adopted): the sources classify
+  marriage customs; they do not give encounter rates or time from meeting to pairing. In ACL, courting is an
   individual option scored each week against food, and acceptance needs prior affection or respect, so strangers
   almost never pair.
 - **Real foragers have time for social life.** Subsistence takes a few hours a day; much of the rest is social. In
-  ACL, food wins about three choices in four in the weeks a partner is near, and courting almost never wins.
+  ACL, food wins about three choices in four in the weeks a partner is near, and courting almost never wins. But time
+  available is not the same as motivation or the chance of pairing (GPT), and ACL's one-in-a-thousand courting share is
+  a property of its decision system, not an estimate of human courtship.
 - **A caution about ACL's principles.** Arranged marriage, bride service and exchange between families are **culture**:
   under "nature, not history" they must not be written into ACL. What could be nature (each needing a Law 126 case):
   how strongly an unpartnered adult is drawn to court at all; how a stranger's attraction is judged; how much
   attention the nearest 12 people get; and how food and social time trade off in the choice.
+- **GPT's ideas** (recorded in `gpt_view_evidence.md`): what to measure in real foragers, in order: encounters per
+  person-year with eligible adults; how many encounters lead to courtship, co-residence and lasting partnership, and how
+  fast; how well partners knew each other before; how often kin introduce or oppose; what people do instead when
+  courting is possible; what predicts acceptance. Nature-level mechanisms it suggests (general, not customs):
+  familiarity growing with repeated contact, preferences developing through interaction, interest reciprocated or
+  rejected, time spent socializing without an immediate outcome. And first a read-only audit in ACL of the whole path
+  from eligible encounter to pairing, with familiarity recorded.
+- **Added source:** Sear, R. and Marlowe, F. W. (2009). How universal are human mate choices? Size does not matter when
+  Hadza foragers are choosing a mate. *Biology Letters* 5(5): 606–609. **Record.** 185–236 Hadza couples; mating not
+  assortative by size or strength, unlike industrial populations.
 - A next step, if the creator wants one: anchor those candidate changes to measured forager behaviour (for example,
   how many potential partners a forager meets in a year and how quickly couples form after first meeting), before any
   study is drafted.
