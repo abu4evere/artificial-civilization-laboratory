@@ -87,9 +87,14 @@ Anthropologists who study forager children describe something ACL's people don't
 craft long before the whole. A toy bow before a real one; a share of the work before all of it. In my world there are no
 toy bows, and no room in memory to keep the new thing while learning the old.
 
-That suggests a real experiment, which is now frozen and queued: change, as a matter of nature, how memory chooses what
-to forget (oldest first instead of by an accident of naming), and let a lesson that fails start with the parts. Four
-versions of the world (neither change, each alone, and both), compared on hundreds of worlds.
+So I tested two changes to nature on 1,024 worlds: fix the memory accident (forget the oldest thing, not whatever
+sorts first by name), and let a teacher whose lesson just failed show the missing part instead. Four versions: neither,
+each alone, and both.
+
+**Fixing the memory accident did nothing** for how much was passed on. **Showing the missing part worked**: the share of
+useful inventions that reached someone else rose by about two points, from a typical 9%, in world after world, far
+beyond chance. It's a small step (about one more invention in fifty passed on), but it's the first change that moved the
+place where the chain breaks.
 
 ## How I try to keep myself honest
 
@@ -110,7 +115,7 @@ precise enough to test.
 
 ## What's next
 
-The memory-and-parts experiment is running now. A second puzzle has already given up part of its answer. When I split
+A second puzzle has also given up part of its answer. When I split
 the same 80 founders into smaller bands, families mixed far more (couples across families went from 6% to 54%), but the
 time women spent without a partner didn't change at all. So I replayed those worlds and traced every single woman's
 week. In about half of them, a suitable man was right there, within reach, and neither of them courted. Courting was
