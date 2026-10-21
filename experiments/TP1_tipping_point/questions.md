@@ -1,4 +1,4 @@
-# TP1 — Is there a tipping point below which a small world cannot recover? (DRAFT, 21 October 2026; for the creator's sign-off)
+# TP1 — Is there a tipping point below which a small world cannot recover? (SIGNED OFF 21 October 2026; frozen as `TP1-frozen` before any analysis)
 
 **Why.** Complex-systems science (Santa Fe Institute; `../../docs/SFI_notes.md`) stresses thresholds: small changes
 near a tipping point have large effects. F1 (`../F1_baseline_fragility/findings.md`) found that worlds that die can be
@@ -44,3 +44,7 @@ A sharp threshold exists at **W* = 3** (F1's recurring "at most three fertile wo
 1. Worlds: **RT1b C + FX2 C (discovery), FX3 C (holdout)** (recommended).
 2. The reading and its thresholds (90% / 50%, three women), fixed as written.
 3. The prior, frozen as written.
+
+## Sign-off (21 October 2026)
+
+The creator: "approve all recommendations, freeze it". All recommended options and the prior stand as written.
