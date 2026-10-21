@@ -27,6 +27,9 @@ on:
       skip_zero:
         description: "'yes' only for a replay check of an already-validated study"
         default: "no"
+      saved:
+        description: "for replay studies: 'hashes.json:dir' to write stubs of the saved worlds first (tools/ci/saved_stubs.py)"
+        default: ""
 
 permissions:
   contents: read
@@ -83,6 +86,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14.7"
+      - name: Stubs of the saved worlds (replay studies)
+        if: ${{ inputs.saved != '' }}
+        shell: bash
+        run: |
+          IFS=':' read -r H D <<< "${{ inputs.saved }}"
+          python tools/ci/saved_stubs.py "$H" "$D"
       - name: Run this chunk's worlds
         shell: bash
         run: python tools/ci/cloud_chunk.py "${{ inputs.runner }}" "${{ needs.plan.outputs.years }}" cloud_out "${{ matrix.jobs }}"
