@@ -6,6 +6,7 @@ The site describes the project and its findings in plain words and points to the
 holds no book text. Every number on it comes from a findings file in experiments/ (named on each page).
 """
 import json
+from html import escape as html_escape
 import sys
 from datetime import date
 from pathlib import Path
@@ -21,7 +22,7 @@ AUTHOR = "Abdurashid Khudoyberdiev"
 TODAY = date.today().isoformat()
 
 NAV = [("index.html", "ACL"), ("findings/why-inventions-disappear.html", "Why inventions disappear"),
-       ("findings/why-small-worlds-die-out.html", "Why small worlds die out"), ("method.html", "How it is tested"), ("book.html", "The book"),
+       ("findings/why-small-worlds-die-out.html", "Why small worlds die out"), ("method.html", "How it is tested"), ("book.html", "The book"), ("faq.html", "FAQ"),
        ("about.html", "About")]
 
 
@@ -272,6 +273,45 @@ person is, and about what it means for a world to have a creator.</p>
 <a href="{GITHUB}">GitHub</a>. Cover and illustrations are AI-generated images made for the book.</p>
 """
 
+FAQ_ITEMS = [
+    ("What is the Artificial Civilization Laboratory (ACL)?",
+     "The Artificial Civilization Laboratory (ACL) is an agent-based simulation of hunter-gatherers in which nature is "
+     "programmed and culture is not. Simulated people have bodies, needs, kinship, feelings and materials to work with, "
+     "but no list of inventions, no reward for inventing and no language model. ACL tests whether culture and "
+     "civilization can emerge from nature alone, and what stops them when they do not."),
+    ("Who built ACL?",
+     f"ACL is built by {AUTHOR}. The code and every experiment record are on GitHub; the story of the project is told "
+     "in the book The World That Nobody Wrote."),
+    ("Does ACL use large language models?",
+     "No. A language model trained on human writing already knows what a village, a trade or a law is, so if its agents "
+     "built one it would be impossible to tell emergence from recall. ACL's people learn by trial and error and from "
+     "each other, inside the simulation."),
+    ("What has ACL found so far?",
+     "About nine in ten useful inventions are never learned by anyone except their inventor; many are "
+     "lost from a limited memory before any chance to teach. About a third of small worlds (20 founders) die out, not "
+     "from famine or war, but because too few people find a partner. Teaching a learner the missing part of a "
+     "complex invention after a failed lesson raised how much was passed on; fixing an accident in how memory chose "
+     "what to forget did not."),
+    ("How does ACL keep its results honest?",
+     "Every study's plan and prediction are written down and frozen in the repository before any code or data. Hundreds "
+     "of worlds are compared side by side, the simulation replays exactly, instruments are checked to change nothing, "
+     "and wrong predictions are kept in the record."),
+    ("Is ACL a model of real human history?",
+     "No. ACL is a model. It produces candidate explanations precise enough to test, compared with evidence about real "
+     "foragers where possible, but it does not show how real societies worked."),
+    ("Is ACL open source?",
+     "The code is public on GitHub so anyone can read it and follow every experiment. It is not under an open-source "
+     "licence: all rights are reserved by the author."),
+    ("Where can I read more?",
+     "The findings pages on this site, the experiment index in the GitHub repository, and the book The World That "
+     "Nobody Wrote, Part One (Kindle and paperback, on Amazon)."),
+]
+FAQ_LD = {"@context": "https://schema.org", "@type": "FAQPage",
+          "mainEntity": [{"@type": "Question", "name": q,
+                          "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ_ITEMS]}
+FAQ = "<h1>Questions about the Artificial Civilization Laboratory</h1>\n" + "\n".join(
+    f"<h3>{html_escape(q)}</h3>\n<p>{html_escape(a)}</p>" for q, a in FAQ_ITEMS)
+
 pages = [
     page("index.html", "Artificial Civilization Laboratory (ACL) — an artificial civilization simulation",
          "The Artificial Civilization Laboratory (ACL) is an artificial civilization simulation where nature is "
@@ -288,6 +328,9 @@ pages = [
     page("book.html", "The World That Nobody Wrote — the book of the Artificial Civilization Laboratory",
          "The World That Nobody Wrote, Part One, by Abdurashid Khudoyberdiev: the story of the Artificial Civilization "
          "Laboratory (ACL), a simulated world where civilization has to emerge on its own.", BOOK, BOOK_LD),
+    page("faq.html", "FAQ — Artificial Civilization Laboratory (ACL)",
+         "What is the Artificial Civilization Laboratory (ACL)? Answers about the artificial civilization simulation, "
+         "who built it, what it has found and how it is tested.", FAQ, FAQ_LD),
     page("about.html", "About — Artificial Civilization Laboratory (ACL)",
          f"The Artificial Civilization Laboratory (ACL), built by {AUTHOR}.", ABOUT),
 ]
@@ -297,4 +340,29 @@ pages = [
               for p in pages) + "</urlset>\n", encoding="utf-8")
 (HERE / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n", encoding="utf-8")
 (HERE / ".nojekyll").write_text("", encoding="utf-8")
+LLMS = [
+    "# Artificial Civilization Laboratory (ACL)",
+    "",
+    f"> An agent-based simulation of hunter-gatherers in which nature is programmed and culture is not, built by "
+    f"{AUTHOR}. No list of inventions, no reward for inventing, no language models. It tests whether culture and "
+    "civilization can emerge from nature alone, and what stops them.",
+    "",
+    "Key findings: about nine in ten useful inventions are never learned by anyone but their inventor; about a third of "
+    "small worlds die out because too few people find a partner; teaching the missing part after a failed lesson "
+    "raises transmission. Every study is planned and frozen before it runs; wrong predictions are kept.",
+    "",
+    "## Pages",
+    "",
+    f"- [Home]({BASE}): what ACL is and the main findings",
+    f"- [Why inventions disappear]({BASE}findings/why-inventions-disappear.html)",
+    f"- [Why small worlds die out]({BASE}findings/why-small-worlds-die-out.html)",
+    f"- [How ACL tests itself]({BASE}method.html)",
+    f"- [FAQ]({BASE}faq.html)",
+    f"- [The book: The World That Nobody Wrote]({BASE}book.html)",
+    "",
+    "## Source",
+    "",
+    f"- [Code and every experiment record]({GITHUB}) (public; all rights reserved)",
+]
+(HERE / "llms.txt").write_text(chr(10).join(LLMS) + chr(10), encoding="utf-8")
 print("built", len(pages), "pages for", BASE)
