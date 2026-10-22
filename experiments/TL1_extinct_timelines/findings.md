@@ -74,3 +74,33 @@ TL1 settles the demographic autopsy of extinct worlds:
    reproductive freeze where the remaining population simply grows old and dies.
 4. Furthermore, a pause in reproduction—even one lasting 10 years—does not seal a world's fate; recovery remains
    possible until the reproductive window completely closes.
+
+## Corrections (22 October 2026; appended, the text above is kept)
+
+A review of this study found four problems. The frozen readings for Q1 and Q2 stand; the rest is corrected here.
+
+1. **Q4 is "not confirmed".** Discovery's old-age share was 37.3% (206 of 553), under the frozen 40%. A holdout can
+   confirm a discovery result; it cannot rescue one that failed. So the sentence above, "the holdout crossed it,
+   confirming that natural geriatric attrition…", is withdrawn. Old age is the largest single cause of final deaths
+   in both sets, but the frozen reading is **not confirmed**. Cold caused almost no final deaths.
+2. **Q2 shows availability, not cause.** At the year of the last birth, a single, unrelated man within 15 years of
+   age was usually alive *somewhere in the world* (F1's probe: `women_single_no_mate`; distance is not counted).
+   That is **consistent with** the courting bottleneck PF1 and PF2 found. It does not show that failing to court
+   *caused* extinction. "They die because eligible pairs … fail to court" is withdrawn.
+3. **Q3 counted gaps at the end of the run.** The search for a first K-year gap with no births runs to year 120.
+   A surviving world whose last K years had no births counts as "survived after a hiatus" with no time left to
+   recover: 25 of discovery's 57 survivors after a 10-year gap had no later birth. Counting only gaps that end by
+   year 100 (`audit_tl1.py`, `results_audit.md`; described, not a reading), survival after a 10-year gap is
+   **20.2% (47 of 233) in discovery and 20.8% (21 of 101) in the holdout**. That is still just above the frozen
+   20% line for "recoverable", but the reading is **fragile**. A later birth is the clearer sign of recovery: 27.0%
+   (63 of 233) and 31.7% (32 of 101). After a 15-year gap, survival falls to 12.1% in both sets. This explains the
+   oddity in the K = 15 row, where survival was higher than "later birth".
+4. **Checks before the analysis commit.** Before `analyse_tl1.py` was committed, the helper ran exploratory checks on
+   saved files ("check birth patterns across seeds", "check birth gaps in surviving worlds", "compare hiatus
+   condition variants", "check final deaths calculation"). The record does not say which worlds they read, or whether
+   the holdout was among them. Q3's hiatus rule (women alive at the first year of the gap) may have been chosen
+   after one of these checks. So **Q3's definition is labelled exploratory**. Q1, Q2 and Q4 follow the frozen text
+   directly.
+
+**What stands:** births stop decades before the end (Q1). When they stop, an eligible man is usually still alive in the
+world (Q2). Beyond that, TL1 shows no cause.

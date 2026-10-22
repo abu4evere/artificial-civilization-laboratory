@@ -392,7 +392,7 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **Nature v3 done** (`experiments/NV3_nature_v3/findings.md`; frozen; tag `nature-v3`). **v3 = v2 + parts-first teaching**, the first change tested, checked and kept by a rule fixed before data. Zero checks pass; the live package is v3; v2 and every earlier result stay as they were. **Next: future studies run on v3 (LX1's L worlds are its first control set).**
 
-**TL1 done** (`experiments/TL1_extinct_timelines/findings.md`; frozen; read-only, 768 saved worlds). **Extinction is ageing out, not acute collapse:** births stop 46–49 years before the last person dies (≥ 20 years in 96–99%). At the last birth, eligible men existed for single fertile women 61–68% of the time (100% in half of worlds): failure is behavioral pairing, not mate shortage. A 10-year birth hiatus is not an absorbing state (23% survive to year 120; prior wrong). Old age is the plurality of final deaths (37–42%).
+**TL1 done** (`experiments/TL1_extinct_timelines/findings.md`; frozen; read-only, 768 saved worlds). **Extinction is ageing out, not acute collapse:** births stop 46–49 years before the last person dies (≥ 20 years in 96–99%). At the last birth, eligible men existed for single fertile women 61–68% of the time (100% in half of worlds): failure is behavioral pairing, not mate shortage. A 10-year birth hiatus is not an absorbing state (23% survive to year 120; prior wrong). Old age is the plurality of final deaths (37–42%). **Corrected 22 October:** Q4 not confirmed; eligible men being alive does not show courting failure as the cause; Q3's survival after a 10-year gap was inflated by gaps at the run's end (about 20% once those are removed; fragile).
 
 
 
