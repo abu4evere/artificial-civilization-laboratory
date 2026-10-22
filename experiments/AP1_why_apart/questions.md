@@ -72,3 +72,20 @@ The creator: "we will go with your reccomendation". That means:
 - **C and K1, 128 seeds each (256 worlds), replayed on GitHub;**
 - the reason classes and the stopping rule as written;
 - the prior as written.
+
+## Operational note (22 October 2026, while building, before any data; rule 19)
+
+- **Two actions not named in the plan are counted as subsistence:** `fill` (fetching water) and `heat` (cooking).
+  `put`, `make`, `steal` and `attack` count as "other". A person on a voyage counts as "moving".
+- **Pair reason, in this order:**
+  - either partner moving → "one moving away";
+  - else either caring → "one caring";
+  - else both subsistence → "both subsistence";
+  - else either resting → "one resting";
+  - else "other", which includes social combinations.
+- **"Who moved"**, when a couple goes from together to apart: "her" if her new place alone puts them beyond the camp
+  radius and his does not; "him" for the reverse; "both" otherwise.
+- **The CT1 world fingerprints** are committed as `saved_world_hashes.json`; GitHub writes stub copies so every replay
+  is checked there.
+- **The eligibility audit** compares the observer's apart weeks with CT1's saved F1 `apart` counts for every world, in
+  the analysis.
