@@ -1,4 +1,4 @@
-# CB1 — Why did the extra couples not bring more children? (DRAFT for the creator; nothing run, no data looked at)
+# CB1 — Why did the extra couples not bring more children? (SIGNED OFF 22 October 2026; frozen as `CB1-frozen` before any analysis)
 
 **Why.** In CT1's exploratory reading (`../CT1_courting_nature/findings.md`, Amendment 2), K1 (familiarity in
 attraction) formed about 2 more couples per world (+2.0, [+0.5, +3.5]). Yet births per woman-year did not move
@@ -43,3 +43,20 @@ K1's extra couples spend more of their weeks **apart** (the partner beyond the c
 
 1. Run CB1 (read-only, minutes), or choose CT2 instead (`../CT2_lonely_courting_confirm/questions.md`), or neither.
 2. The prior, frozen as written.
+
+## Sign-off (22 October 2026)
+
+The creator: "run acl project also from where we stoped". The open choice was CB1 or CT2, and the assistant
+recommended CB1, so this is taken as approval of CB1 and its prior, as written.
+
+## Operational definitions (fixed at freezing, before any data)
+
+- **Partnered woman-weeks:** the woman-weeks in F1's blocks `partner_dead`, `apart`, `low_health`, `starving`,
+  `partner_child`, `nursing` and `eligible`. These are the blocks the code reaches only when she has a partner.
+  `pregnant` is checked first, so pregnancy weeks are reported separately.
+- **Shares (Q1, Q2):** per world, each block's share of partnered woman-weeks; worlds with at least 52 partnered
+  woman-weeks in both arms are counted. Paired difference K1 − C, mean with a 95% bootstrap interval.
+- **Births per eligible woman-week (Q3):** per world, births ÷ eligible woman-weeks (worlds with at least 52 eligible
+  weeks in both arms); paired K1 − C. Pooled rates are also shown, with C's set against the code's 0.04 a week.
+- **Prior check:** "right" if the `apart` share is higher in K1 and its 95% interval is above 0; otherwise "not shown".
+- Exploratory throughout; the counts are reported beside every share.
