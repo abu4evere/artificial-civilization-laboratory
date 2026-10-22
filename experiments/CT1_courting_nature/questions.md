@@ -161,3 +161,15 @@ The creator: "approve all recommendations, freeze it". So:
 - both candidates (K1, K2) with their exploratory sizes;
 - 256 new seeds (8201–8456), four arms, 1,024 worlds on GitHub;
 - the adoption rule and the prior, as written.
+
+## Operational note (22 October 2026, while building, before any data; rule 19)
+
+Reading the code while building showed three things. Nothing else changes.
+- **Couples part only at death** (`biology.die` frees the survivor); nothing else ends a couple. So the harm measure
+  "couples that split" is zero by construction in every arm. It is reported as such.
+- **K2 applies to courting someone not yet a partner** (the branch PF2 measured). Courting one's own partner keeps an
+  existing couple going, not partner-finding, so it is left as in v3.
+- **The courting log** (`world.ct1log`, not saved) records each attempt on someone not yet a partner: week, suitor,
+  courted, the courted one's affection and familiarity toward the suitor, the suitor's familiarity toward them, the
+  suitor's loneliness, and attraction. An attempt counts as accepted when a "pair" event between the two follows in
+  the same week. The full code difference is `v3_to_ct1.diff`.

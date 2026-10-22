@@ -132,6 +132,8 @@ class Config:
     knowledge_copy: int = 0            # NV2: 1 = the record of a first-baked thing holds a copy of it, not the item itself
     parts_first: int = 0               # NV3 (LM1's L1): 1 = a lesson that fails because the learner cannot make a part shows,
                                        # in the same lesson, the first made part the teacher knows (0 = nature v2 exactly)
+    familiar_attraction: float = 0.0   # CT1 (K1): attraction to a suitor gains this times how well the courted one knows them
+    lonely_courting: int = 0           # CT1 (K2): 1 = courting someone not yet a partner scores (1 + loneliness) times as much
     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
                                        # their remembered places instead of in a random direction
 

@@ -412,6 +412,8 @@ def decide(world, p: Person) -> tuple:
             elif p.partner is None and q.partner is None and aff > -0.2:
                 mates_in_reach += 1
                 u = (0.35 + 0.4 * g["sociability"]) * (0.5 + 0.5 * max(aff, 0.0)) * (1.0 - 0.5 * hunger)
+                if c.lonely_courting:                     # CT1 K2: longing for company draws toward courting
+                    u *= 1.0 + p.loneliness
                 add("court", q.id, u, d)
 
         # Steal: hunger, without kindness or love to hold you back.

@@ -697,6 +697,12 @@ def _court(world, p, target, eff):
     r = q.rel.get(p.id)
     attraction = (0.25 + 0.2 * q.genes["sociability"] + (r.affection if r else 0.0)
                   + 0.2 * (r.respect if r else 0.0) + 0.1 * min(p.health, 100.0) / 100.0)
+    attraction += world.cfg.familiar_attraction * (r.familiarity if r else 0.0)   # CT1 K1: knowing someone
+    log = getattr(world, "ct1log", None)          # CT1 logging (runner sets it; not saved; read by nothing here)
+    if log is not None:
+        rp = p.rel.get(q.id)
+        log.append([world.tick, p.id, q.id, round(r.affection if r else 0.0, 4), round(r.familiarity if r else 0.0, 4),
+                    round(rp.familiarity if rp else 0.0, 4), round(p.loneliness, 4), round(attraction, 4)])
     if attraction > 0.55 and world.rng.random() < 0.6:
         p.partner, q.partner = q.id, p.id
         bump(p, q.id, world.tick, affection=0.2, trust=0.1)

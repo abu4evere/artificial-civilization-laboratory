@@ -1,0 +1,16 @@
+diff -r -x __pycache__ NV3_nature_v3/code_v3/acl/actions.py CT1_courting_nature/code_ct1/acl/actions.py
+699a700,705
+>     attraction += world.cfg.familiar_attraction * (r.familiarity if r else 0.0)   # CT1 K1: knowing someone
+>     log = getattr(world, "ct1log", None)          # CT1 logging (runner sets it; not saved; read by nothing here)
+>     if log is not None:
+>         rp = p.rel.get(q.id)
+>         log.append([world.tick, p.id, q.id, round(r.affection if r else 0.0, 4), round(r.familiarity if r else 0.0, 4),
+>                     round(rp.familiarity if rp else 0.0, 4), round(p.loneliness, 4), round(attraction, 4)])
+diff -r -x __pycache__ NV3_nature_v3/code_v3/acl/config.py CT1_courting_nature/code_ct1/acl/config.py
+134a135,136
+>     familiar_attraction: float = 0.0   # CT1 (K1): attraction to a suitor gains this times how well the courted one knows them
+>     lonely_courting: int = 0           # CT1 (K2): 1 = courting someone not yet a partner scores (1 + loneliness) times as much
+diff -r -x __pycache__ NV3_nature_v3/code_v3/acl/mind.py CT1_courting_nature/code_ct1/acl/mind.py
+414a415,416
+>                 if c.lonely_courting:                     # CT1 K2: longing for company draws toward courting
+>                     u *= 1.0 + p.loneliness
