@@ -11,7 +11,7 @@ Key findings: about nine in ten useful inventions are never learned by anyone bu
 - [Why small worlds die out](https://abu4evere.github.io/artificial-civilization-laboratory/findings/why-small-worlds-die-out.html)
 - [How ACL tests itself](https://abu4evere.github.io/artificial-civilization-laboratory/method.html)
 - [FAQ](https://abu4evere.github.io/artificial-civilization-laboratory/faq.html)
-- [The book: The World That Nobody Wrote](https://abu4evere.github.io/artificial-civilization-laboratory/book.html)
+- [The book: The World That Nobody Wrote](https://abu4evere.github.io/artificial-civilization-laboratory/book.html), on Amazon: https://www.amazon.com/dp/B0HNVKRLFL
 
 ## Source
 

@@ -15,8 +15,8 @@ HERE = Path(__file__).parent
 REPO = sys.argv[1] if len(sys.argv) > 1 else "artificial-civilization-laboratory"
 BASE = f"https://abu4evere.github.io/{REPO}/"
 GITHUB = f"https://github.com/abu4evere/{REPO}"
-AMAZON = "https://www.amazon.com/s?k=The+World+That+Nobody+Wrote+Khudoyberdiev"
-AMAZON_LIVE = False                 # True once the Kindle and paperback are live (then set AMAZON to the store page)
+AMAZON = "https://www.amazon.com/dp/B0HNVKRLFL"
+AMAZON_LIVE = True                  # live on Amazon since 22 October 2026
 NAME = "Artificial Civilization Laboratory (ACL)"
 AUTHOR = "Abdurashid Khudoyberdiev"
 TODAY = date.today().isoformat()
@@ -74,7 +74,8 @@ def page(path, title, description, body, extra_ld=None):
 BOOK_LD = {"@context": "https://schema.org", "@type": "Book", "name": "The World That Nobody Wrote, Part One",
            "alternativeHeadline": "How I Tried to Build a Civilization Instead of Simulating One",
            "author": {"@type": "Person", "name": AUTHOR}, "isbn": "9798163874385", "url": BASE + "book.html", "numberOfPages": 87,
-           "about": "Artificial Civilization Laboratory"}
+           "about": "Artificial Civilization Laboratory", "sameAs": [AMAZON],
+           "offers": {"@type": "Offer", "url": AMAZON, "availability": "https://schema.org/InStock"}}
 
 INDEX = f"""<section class="hero">
 <h1>Artificial Civilization Laboratory (ACL)</h1>
@@ -304,7 +305,7 @@ FAQ_ITEMS = [
      "licence: all rights are reserved by the author."),
     ("Where can I read more?",
      "The findings pages on this site, the experiment index in the GitHub repository, and the book The World That "
-     "Nobody Wrote, Part One (Kindle and paperback, on Amazon)."),
+     "Nobody Wrote, Part One (Kindle and paperback, on Amazon: amazon.com/dp/B0HNVKRLFL)."),
 ]
 FAQ_LD = {"@context": "https://schema.org", "@type": "FAQPage",
           "mainEntity": [{"@type": "Question", "name": q,
@@ -358,7 +359,7 @@ LLMS = [
     f"- [Why small worlds die out]({BASE}findings/why-small-worlds-die-out.html)",
     f"- [How ACL tests itself]({BASE}method.html)",
     f"- [FAQ]({BASE}faq.html)",
-    f"- [The book: The World That Nobody Wrote]({BASE}book.html)",
+    f"- [The book: The World That Nobody Wrote]({BASE}book.html), on Amazon: {AMAZON}",
     "",
     "## Source",
     "",
