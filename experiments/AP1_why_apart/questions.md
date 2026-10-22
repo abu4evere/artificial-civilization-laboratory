@@ -1,4 +1,4 @@
-# AP1 — Why are couples apart? (DRAFT for the creator; nothing built or run)
+# AP1 — Why are couples apart? (SIGNED OFF 22 October 2026; frozen as `AP1-frozen` before any code or data)
 
 **Why.** CB1 (`../CB1_couples_no_births/findings.md`): on nature v3, couples spend **61%** of their fertile partnered
 weeks apart (the partner beyond the camp radius of 2 tiles), and only 17% "eligible". This confirms F1 and HB1. Fixes
@@ -65,3 +65,10 @@ Most apart weeks (over half) are **both subsistence**: each partner forages wher
 1. The worlds (**128 seeds × C and K1, replayed exactly on GitHub**), or C only (128 worlds, cheaper).
 2. The reason classes and the stopping rule, as written.
 3. The prior, frozen as written.
+
+## Sign-off (22 October 2026)
+
+The creator: "we will go with your reccomendation". That means:
+- **C and K1, 128 seeds each (256 worlds), replayed on GitHub;**
+- the reason classes and the stopping rule as written;
+- the prior as written.
