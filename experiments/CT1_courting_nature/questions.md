@@ -173,3 +173,26 @@ Reading the code while building showed three things. Nothing else changes.
   courted, the courted one's affection and familiarity toward the suitor, the suitor's familiarity toward them, the
   suitor's loneliness, and attraction. An attempt counts as accepted when a "pair" event between the two follows in
   the same week. The full code difference is `v3_to_ct1.diff`.
+
+## Proposed Amendment 1 (22 October 2026, before any data; FOR THE CREATOR)
+
+**What the smoke test showed** (throwaway seeds 9971–9972, 8 years; a code check, not data):
+- In 20-founder worlds, every courting attempt was on someone the suitor already knew well (familiarity ≥ 0.35), and
+  none was on someone with no affection for the suitor (0 of 66 attempts).
+- Refusals came from the 40% chance of saying no even when attraction passes 0.55, not from low attraction.
+- So K1 can act only where attraction without it falls just short of 0.55. In both smoke worlds K1 changed nothing:
+  its world was identical to C. The zero check showed it does act on seed 501 over 20 years.
+
+**The problem.** The frozen K1 manipulation check, "acceptances of suitors with no prior affection rise against C",
+counts a case that does not occur here. It would fail and hide every outcome, although that failure would say
+nothing about the question.
+
+**Proposed change** (K1 and K12 only; everything else stands as frozen):
+- The K1 check becomes: **K1 acts**. Across all K1 worlds, at least one attempt is accepted that v3 would have
+  refused (attraction without K1 at most 0.55, with K1 above it).
+- Its size is reported: such acceptances per 100 attempts, and per world.
+- If K1 acts this rarely, survival will most likely read "no meaningful effect". That reading is reported as it
+  stands: it would mean familiarity already works through affection in ACL, so K1 adds little.
+- The observer gains a counter for these "flipped" acceptances (read-only; the zero checks are re-run).
+
+The study does not start until the creator decides.

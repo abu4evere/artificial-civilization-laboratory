@@ -1,0 +1,12 @@
+seed 11, 5 years: both settings 0 = code_v3: yes
+seed 501, 5 years: both settings 0 = code_v3: yes
+seed 501, 20 years: both settings 0 = code_v3: yes
+seed 601, 20 years: both settings 0 = code_v3: yes
+arm k1, seed 501, 20 years: the setting changes the world (it acts): yes
+arm k2, seed 501, 20 years: the setting changes the world (it acts): yes
+arm k12, seed 501, 20 years: the setting changes the world (it acts): yes
+arm c, seed 501, 20 years: identical with and without observers and logging: yes
+arm k12, seed 501, 20 years: identical with and without observers and logging: yes
+arm k12, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_ct1 fingerprint: 68ffc7f2c9e30ae7ad06667ebb39b40ca33a4e59ff6eec756a199474dd8a25c7
+All: PASS
