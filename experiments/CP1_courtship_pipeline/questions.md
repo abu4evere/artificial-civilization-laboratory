@@ -139,3 +139,17 @@ simulations and no changes to nature. (2) Track where potential partnerships fai
 courtship → acceptance → co-residence → birth. (3) Compare worlds that reproduce successfully with worlds that
 eventually go extinct. (4) Identify the biggest measurable bottleneck and document the results. (5) Don't design an
 intervention until CP1 is complete." All five constraints encoded above; sections 1–6 frozen as written.
+
+## Correction appended before any analysis (same day)
+
+TL1 had corrections appended after this plan was frozen (`c57fbfd`): Q2 shows availability of an eligible man
+*somewhere in the world* at the year of the last birth; it does not count distance and does not show that failing to
+court **caused** extinction. The quoted TL1 line in the "Why" ("eligible pairs that still share the world fail to
+court and co-reside") is TL1's withdrawn causal claim.
+
+CP1 is **unaffected by this correction**: its reading is descriptive. It compares pipeline-gate shares between
+extinct and surviving cohorts, and names the gate with the largest excess. CP1 does **not** claim causation. If G3
+(mate near, still single) is the biggest leak in extinct worlds, that locates where the funnel differs; what moves
+extinction remains a question for later work (an intervention after CP1, as section 5 of the creator's instruction
+requires). G1 vs G2 vs G3 are *all* under the "no partner" umbrella TL1 inspected; CP1 is exactly the distance-aware
+split TL1's Q2 could not give.
