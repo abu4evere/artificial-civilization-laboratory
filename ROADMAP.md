@@ -3,7 +3,7 @@
 Read this first when the project feels lost. It says where ACL is, what comes next, and how each next step is decided.
 It is updated after every experiment, like the book.
 
-**Last updated:** after WS1 (12 October 2026).
+**Last updated:** after CP1 (21 October 2026).
 
 ![The ACL roadmap: stages 0 to 2 done, stage 3 (transmission) now, with E13R's three outcomes fixed in advance; stages 4 to 8 ahead](docs/roadmap.png)
 
@@ -21,7 +21,7 @@ pass on and build on what they learn, until their practices outgrow any one life
 
 | stage | question | status |
 |---|---|---|
-| 0. The world | Is there a world worth living in? | **reopened (October 2026):** a third of control worlds die out of failed pairing (F1). **WS1: in these worlds, more founders (in larger bands) cut extinction; more land alone did not** (80 founders: 0.8–9% die out, against 42%); next: do bands meet (MB1a), and a new baseline (creator's decision) |
+| 0. The world | Is there a world worth living in? | **reopened (October 2026):** a third of control worlds die out of failed pairing (F1). **WS1: in these worlds, more founders (in larger bands) cut extinction; more land alone did not** (80 founders: 0.8–9% die out, against 42%); **CP1 (21 October)**: in extinct 20-founder worlds the funnel breaks at **encounter** (G2 +19 pp vs surviving; eligible men alive somewhere but out of sight), not at courting-not-tried (G3) which dominates PF1/PF2's 80-founder worlds; next: do bands meet (MB1a), and a new baseline (creator's decision) |
 | 1. Culture appears | Does anything cultural emerge unscripted? | **done** (E1–E5: traditions, trust, stories) |
 | 2. Why it stops | Where does the chain from possible to practised break? | **mostly done** (E6–E12) |
 | 3. Transmission | Can a useful practice pass between adults? | **paused until stage 0 is settled;** was in progress: a habit passes, a plan does not; now: why food does not last through winter |
@@ -393,6 +393,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 **Nature v3 done** (`experiments/NV3_nature_v3/findings.md`; frozen; tag `nature-v3`). **v3 = v2 + parts-first teaching**, the first change tested, checked and kept by a rule fixed before data. Zero checks pass; the live package is v3; v2 and every earlier result stay as they were. **Next: future studies run on v3 (LX1's L worlds are its first control set).**
 
 **TL1 done** (`experiments/TL1_extinct_timelines/findings.md`; frozen; read-only, 768 saved worlds). **Extinction is ageing out, not acute collapse:** births stop 46–49 years before the last person dies (≥ 20 years in 96–99%). At the last birth, eligible men existed for single fertile women 61–68% of the time (100% in half of worlds): failure is behavioral pairing, not mate shortage. A 10-year birth hiatus is not an absorbing state (23% survive to year 120; prior wrong). Old age is the plurality of final deaths (37–42%). **Corrected 22 October:** Q4 not confirmed; eligible men being alive does not show courting failure as the cause; Q3's survival after a 10-year gap was inflated by gaps at the run's end (about 20% once those are removed; fragile).
+
+**CP1 done** (`experiments/CP1_courtship_pipeline/findings.md`; frozen; read-only, same 768 saved worlds as TL1). **The pipeline breaks at G2, encounter:** in extinct worlds, 43% of fertile woman-weeks are spent single with an eligible man alive somewhere but **not within sight** (against 23% in surviving worlds); G1 (no eligible man alive at all) adds another 20% vs 8%. Discovery excess +19.9 pp, holdout +19.0 pp: **stands**. G3 (courting-not-tried, PF1/PF2's bottleneck in 80-founder MB1b worlds) is **smaller** in extinct 20-founder worlds (−18 pp) because the funnel breaks earlier. Births per partnered fertile woman-year are similar across cohorts (0.28–0.32); what differs is time spent single (66% vs 52%). **The prior was wrong** (expected G3 largest). **No causation claim**: CP1 locates where the funnel differs, not what would save worlds.
 
 
 
