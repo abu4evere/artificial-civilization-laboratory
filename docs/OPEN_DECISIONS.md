@@ -48,3 +48,5 @@ the file named.
 - [ ] **Decided 21 October (creator delegated to GPT's review, `docs/decision_2026-10-21_LM1_FX.md`):** parts-first teaching is adopted only after a frozen survival check (drafted: `experiments/LX1_parts_first_survival/questions.md`); embedded food is not adopted; a read-only tool-use spread study instead (drafted: `experiments/TU1_tool_use_spread/questions.md`). Both await the creator's sign-off.
 
 - [x] **Book live on Amazon (22 October 2026):** https://www.amazon.com/dp/B0HNVKRLFL; website (book page, FAQ, structured data, llms.txt) and README updated. Still the creator's: Author Central, Search Console indexing request, LinkedIn post.
+
+- [ ] **After AP1 (22 October 2026):** couples' separations are short and routine (food, moving, care, talk); no single cause; the pair line pauses (GPT's advice). **Decision for the creator: the next bottleneck: (a) cumulative culture (nine in ten useful inventions lost), or (b) delayed-return strategies (storage, sowing).** CT2 stays a draft (low value).
