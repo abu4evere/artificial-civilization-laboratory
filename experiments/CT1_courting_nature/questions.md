@@ -178,7 +178,7 @@ Reading the code while building showed three things. Nothing else changes.
 
 **What the smoke test showed** (throwaway seeds 9971–9972, 8 years; a code check, not data):
 - In 20-founder worlds, every courting attempt was on someone the suitor already knew well (familiarity ≥ 0.35), and
-  none was on someone with no affection for the suitor (0 of 66 attempts).
+  none was on someone with no affection for the suitor (0 of 132 attempts across the 8 smoke worlds).
 - Refusals came from the 40% chance of saying no even when attraction passes 0.55, not from low attraction.
 - So K1 can act only where attraction without it falls just short of 0.55. In both smoke worlds K1 changed nothing:
   its world was identical to C. The zero check showed it does act on seed 501 over 20 years.
