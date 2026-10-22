@@ -1,4 +1,4 @@
-# CT1 — Courting as nature: does knowing someone, or longing for company, help couples form? (DRAFT, Revision 1 after GPT's review; for the creator; nothing built or run)
+# CT1 — Courting as nature: does knowing someone, or longing for company, help couples form? (Revision 1 after GPT's review; SIGNED OFF 22 October 2026; frozen as `CT1-frozen` before any code or data)
 
 **Why.** Every study of partners points to the same step:
 - **PF1:** in about half of a single woman's weeks, a suitable man is within reach and **neither courts**. A stranger
@@ -154,3 +154,10 @@ affection).
    about twice the time).
 3. The adoption rule, fixed as written.
 4. The prior, frozen as written.
+
+## Sign-off (22 October 2026)
+
+The creator: "approve all recommendations, freeze it". So:
+- both candidates (K1, K2) with their exploratory sizes;
+- 256 new seeds (8201–8456), four arms, 1,024 worlds on GitHub;
+- the adoption rule and the prior, as written.
