@@ -200,3 +200,27 @@ The study does not start until the creator decides.
 **Amendment 1 approved by the creator, 22 October 2026** ("approve amendment 1, run it"). Frozen as
 `CT1-amend1-approved`. The K1 and K12 manipulation check is now "K1 acts": at least one attempt accepted that v3
 would have refused, with its rate reported. Every other check and reading stands as frozen.
+
+## Amendment 2 (22 October 2026; AFTER the manipulation checks were seen, BEFORE any outcome; a sensitivity analysis only)
+
+**What happened.**
+- The committed analysis (`analyse_ct1.py`, committed before data) applied the K1 and K2 manipulation checks to K12
+  as well. The signed plan text names checks for K1 and K2 only.
+- Under the committed analysis, K12's K2 check failed: +0.000 [−0.004, +0.005], p = 0.47. So **CT1 is NOT VALID**
+  (`results.md`), and no outcome was shown.
+- The other checks: K1 acts (513 acceptances v3 would have refused, 2.99 per 100 attempts, in 171 of 256 worlds);
+  K12's K1 part acts (534); K2 passes, but only marginally: +0.003 attempts per single adult-year,
+  [−0.001, +0.008], p = 0.0415.
+
+**The creator chose option B, after asking GPT** (`gpt_review_ct1_amend2.md`). Following GPT's safeguards:
+- **The committed result stands as the primary record: NOT VALID.** It is not overwritten or relabelled.
+- **Amendment 2 is a post-data sensitivity analysis.** It follows the signed plan text: hard-stop checks for K1 and
+  K2 only. Its outcomes are **exploratory**, not confirmatory. It was decided after the manipulation results were
+  seen, and before any survival or other outcome was looked at.
+- **K12's failed K2 check stays prominent.** K12 did not show the intended added effect of K2 on courting.
+- **K2's formal pass is kept** (the frozen p < 0.05). It is described as marginal evidence of a small increase of
+  uncertain size; it is not turned into a fail.
+- **The adoption rule is unchanged** and is shown, but applied to exploratory results. The assistant recommends that
+  **nothing enter nature on this run alone**: a candidate that looks promising needs a new, confirmatory run with
+  its own plan. The creator decides.
+- Results are written to `results_amend2.md` (`analyse_ct1.py --amend2`).

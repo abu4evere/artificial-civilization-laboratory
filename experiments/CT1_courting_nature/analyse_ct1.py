@@ -79,7 +79,7 @@ def paired(rows, a, key, seeds):
     return d
 
 
-def main(smoke=False):
+def main(smoke=False, amend2=False):
     seeds = SMOKE_SEEDS if smoke else SEEDS
     out = HERE / "output_smoke" if smoke else OUT
     rows, missing = {}, []
@@ -92,8 +92,15 @@ def main(smoke=False):
                 rows.setdefault(a, {})[s] = r
             else:
                 missing.append(f"{a} {s}")
-    L = [f"# CT1 — courting as nature: results{' (SMOKE TEST, throwaway seeds)' if smoke else ''}", "",
-         "Frozen as `CT1-frozen`. run_ct1.py, analyse_ct1.py. Nature v3.", "", "## Validity", ""]
+    L = [f"# CT1 — courting as nature: results{' (SMOKE TEST, throwaway seeds)' if smoke else ''}"
+         f"{' — Amendment 2 SENSITIVITY ANALYSIS (post-data, exploratory)' if amend2 else ''}", "",
+         "Frozen as `CT1-frozen`. run_ct1.py, analyse_ct1.py. Nature v3.", ""]
+    if amend2:
+        L += ["**Exploratory.** The primary record is `results.md`: NOT VALID under the committed analysis. This file "
+              "follows Amendment 2 (decided after the manipulation checks were seen, before any outcome): hard-stop checks "
+              "for K1 and K2 only, as the signed plan text says; K12's checks are described. Nothing here is confirmatory; "
+              "the assistant recommends no adoption into nature on this run alone.", ""]
+    L += ["## Validity", ""]
     z = OUT / "zero.txt"
     zt = z.exists() and "All: PASS" in z.read_text(encoding="utf-8")
     L.append(f"- Zero checks: **{'yes' if zt else 'NO'}**")
@@ -112,19 +119,24 @@ def main(smoke=False):
             wf = sum(1 for s in seeds if rows[a][s]["courting"].get("accepted_flipped", 0))
             t = fl >= 1
             manip[(a, "flipped")] = t
+            hard = not (amend2 and a == "k12")     # Amendment 2: K12's checks described, not hard stops
             L.append(f"- Manipulation check (Amendment 1), {a.upper()}: K1 acts, acceptances v3 would have refused: {fl} "
                      f"({100 * fl / att if att else 0:.2f} per 100 attempts; in {wf} of {len(seeds)} worlds): "
-                     f"**{'yes' if t else 'NO'}**")
-            ok &= t
+                     f"**{'yes' if t else 'NO'}**" + ("" if hard else " (described under Amendment 2)"))
+            if hard:
+                ok &= t
         for a, key, label in (("k2", "attempts_per_single_year", "K2: courting attempts per single adult-year"),
                               ("k12", "attempts_per_single_year", "K12: courting attempts per single adult-year")):
             d = paired(rows, a, key, seeds)
             p, (e, lo, hi) = wil(d), boot(d)
             t = p < 0.05 and e > 0
             manip[(a, key)] = t
+            hard = not (amend2 and a == "k12")
             L.append(f"- Manipulation check, {label} rise against C: mean difference {e:+.3f} [{lo:+.3f}, {hi:+.3f}], "
-                     f"p = {p:.3g}: **{'yes' if t else 'NO'}**")
-            ok &= t
+                     f"p = {p:.3g}: **{'yes' if t else 'NO'}**" + ("" if hard else " (described under Amendment 2; "
+                     "K12 did not show the intended added effect of K2 on courting)" if not t else " (described)"))
+            if hard:
+                ok &= t
     L += ["", f"**{'Valid.' if ok else 'NOT VALID: no outcome is shown.'}**"]
     if ok:
         dc = {s: died(rows["c"][s]) for s in seeds}
@@ -229,10 +241,10 @@ def main(smoke=False):
         L.append("- Births and couples are the mechanism's evidence, shown above; no p-value on them is a condition.")
     text = "\n".join(L) + "\n"
     if not smoke:
-        (HERE / "results.md").write_text(text, encoding="utf-8")
+        (HERE / ("results_amend2.md" if amend2 else "results.md")).write_text(text, encoding="utf-8")
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     print(text)
 
 
 if __name__ == "__main__":
-    main(smoke="--smoke" in sys.argv)
+    main(smoke="--smoke" in sys.argv, amend2="--amend2" in sys.argv)
