@@ -4,8 +4,7 @@
   python experiments/CT1_courting_nature/analyse_ct1.py --smoke    # throwaway smoke outputs; writes nothing
 
 Validity (no outcome shown otherwise): zero checks pass; all 1,024 worlds present; one fingerprint (`code_ct1`);
-manipulation checks: K1 and K12, acceptances of suitors with no prior affection (affection < 0.05) per world rise
-against C; K2 and K12, courting attempts per single adult-year rise against C (paired Wilcoxon, p < 0.05, mean > 0).
+manipulation checks: K1 and K12 (Amendment 1), K1 acts: at least one acceptance v3 would have refused; K2 and K12, courting attempts per single adult-year rise against C (paired Wilcoxon, p < 0.05, mean > 0).
 Primary: died out (final_tick < 120 years); each arm against C paired by seed: exact sign test, Holm over the three;
 effect = C's share - the arm's, 95% bootstrap (10,000, random.Random(2026)); yardstick 0.117.
 Then mechanism outcomes, harm outcomes, the interaction, and the frozen adoption rule.
@@ -107,9 +106,17 @@ def main(smoke=False):
         fps = {r["code_hash"] for r in allr} | {r["code_hash_after"] for r in allr}
         L.append(f"- One fingerprint (`code_ct1`): **{'yes' if len(fps) == 1 else 'NO'}**")
         ok &= len(fps) == 1
-        for a, key, label in (("k1", "no_aff_accepted", "K1: acceptances with no prior affection"),
-                              ("k12", "no_aff_accepted", "K12: acceptances with no prior affection"),
-                              ("k2", "attempts_per_single_year", "K2: courting attempts per single adult-year"),
+        for a in ("k1", "k12"):                     # Amendment 1: K1 acts (an acceptance v3 would have refused)
+            fl = sum(rows[a][s]["courting"].get("accepted_flipped", 0) for s in seeds)
+            att = sum(rows[a][s]["courting"].get("attempts", 0) for s in seeds)
+            wf = sum(1 for s in seeds if rows[a][s]["courting"].get("accepted_flipped", 0))
+            t = fl >= 1
+            manip[(a, "flipped")] = t
+            L.append(f"- Manipulation check (Amendment 1), {a.upper()}: K1 acts, acceptances v3 would have refused: {fl} "
+                     f"({100 * fl / att if att else 0:.2f} per 100 attempts; in {wf} of {len(seeds)} worlds): "
+                     f"**{'yes' if t else 'NO'}**")
+            ok &= t
+        for a, key, label in (("k2", "attempts_per_single_year", "K2: courting attempts per single adult-year"),
                               ("k12", "attempts_per_single_year", "K12: courting attempts per single adult-year")):
             d = paired(rows, a, key, seeds)
             p, (e, lo, hi) = wil(d), boot(d)

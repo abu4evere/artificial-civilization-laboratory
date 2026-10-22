@@ -77,6 +77,8 @@ class Courting:
             ok = (a, b) in pairs
             self.c["attempts"] += 1
             self.c["accepted"] += ok
+            if ok and attr - world.cfg.familiar_attraction * fam_q <= 0.55:   # Amendment 1: v3 would have refused
+                self.c["accepted_flipped"] += 1
             if aff < 0.05:
                 self.c["attempts_no_aff"] += 1
                 self.c["accepted_no_aff"] += ok

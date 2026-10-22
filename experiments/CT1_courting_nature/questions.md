@@ -196,3 +196,7 @@ nothing about the question.
 - The observer gains a counter for these "flipped" acceptances (read-only; the zero checks are re-run).
 
 The study does not start until the creator decides.
+
+**Amendment 1 approved by the creator, 22 October 2026** ("approve amendment 1, run it"). Frozen as
+`CT1-amend1-approved`. The K1 and K12 manipulation check is now "K1 acts": at least one attempt accepted that v3
+would have refused, with its rate reported. Every other check and reading stands as frozen.
