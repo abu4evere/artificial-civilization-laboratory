@@ -49,4 +49,6 @@ the file named.
 
 - [x] **Book live on Amazon (22 October 2026):** https://www.amazon.com/dp/B0HNVKRLFL; website (book page, FAQ, structured data, llms.txt) and README updated. Still the creator's: Author Central, Search Console indexing request, LinkedIn post.
 
-- [ ] **After AP1 (22 October 2026):** couples' separations are short and routine (food, moving, care, talk); no single cause; the pair line pauses (GPT's advice). **Decision for the creator: the next bottleneck: (a) cumulative culture (nine in ten useful inventions lost), or (b) delayed-return strategies (storage, sowing).** CT2 stays a draft (low value).
+- [x] **After AP1 (22 October 2026):** couples' separations are short and routine (food, moving, care, talk); no single cause; the pair line pauses (GPT's advice). **Decision for the creator: the next bottleneck: (a) cumulative culture (nine in ten useful inventions lost), or (b) delayed-return strategies (storage, sowing).** CT2 stays a draft (low value).
+  - Decided: (a) cumulative culture now, (b) later. MR1 ran (signed off 22 October 2026).
+- [ ] **After MR1 (22 October 2026):** memory by use lowered passing on (−3.3 points); not adopted. **Decision for the creator: (a) a plan for a first-season grace period for new inventions (keeping v3's lifelong memory), (b) move to storage and sowing, or (c) ask GPT first.** GPT's late review of MR1 is still to be recorded.

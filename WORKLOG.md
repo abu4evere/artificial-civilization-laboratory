@@ -72,3 +72,11 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - 2026-10-22 11:18 CB1 done (creator: 'run acl project also from where we stoped' -> recommended CB1): couples apart 61% of fertile partnered weeks, eligible 17%; conception when together 0.041/wk (code 0.04); K1 no different (prior wrong). Confirms F1/HB1 on v3; nothing proposed. Findings, INDEX, ROADMAP, decisions, book timeline (local), tag CB1-done.
 - 2026-10-22 12:17 AP1 (why couples are apart) signed off (creator: 'we will go with your reccomendation') and frozen; runner + read-only observer + CT1 fingerprints; zero PASS; GitHub run 39812729272 (256 replays); analysis committed before data.
 - 2026-10-22 12:45 AP1 done (run 39812729272, 256 replays exact, audit matches F1): separations short (mean 5 wk, 97% reunite), reasons spread (food 39%, moving 19%, care 15%, mixed 24%); prior wrong; pair line pauses; next bottleneck for the creator.
+
+## 2026-10-22 evening — MR1 launched
+- MR1 signed off by the creator ("yes approve all and run it on github"), frozen (`MR1-frozen`, d1f8a68). Local zero PASS.
+- Cloud run 39879935726 (512 worlds). Fetch: `python tools/ci/fetch_cloud.py 39879935726 experiments/MR1_memory_by_use/output`, then `python experiments/MR1_memory_by_use/analyse_mr1.py`.
+- GPT review not obtained before freezing (browser unresponsive); ask after launch, record as review of a frozen plan.
+- Google Play book submitted (Pending account review).
+- Video: vertical done (out/ACL_vertical1_instagram.mp4); draft3 render was in progress when the PC went off; restart `python b_render.py full`.
+- MR1 done: valid; transmission U lower (−0.033); not adopted; findings written; MR1-done.
