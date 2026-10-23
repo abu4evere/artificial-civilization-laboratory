@@ -88,3 +88,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - LT1 signed off ("Appove all"), frozen (LT1-frozen), zero PASS; cloud run 39907800636 (1,024 worlds). Fetch to experiments/LT1_teach_what_lacks/output, then analyse_lt1.py.
 - Creator raised taboo behaviours (e.g. survival cannibalism); proposed: read-only audit of stealing/attacks/killing first, then one nature candidate with research. Awaiting their answer.
 - 2026-10-23 night 2: BD1 (bodies stay) built after GPT ideas+review, signed off on the creator's "do all these things", zero PASS, cloud run 39911136459. docs/MISSING_POSSIBILITIES.md (GPT top 8 + checks). DG1 digging plan drafted (not built). Book Part 2: outline + sample chapter 8 in drafts/book_rewrite/part2 (gitignored, local only).
+- LT1 done: no meaningful effect on learning (-3%); not adopted. LT1-done.
