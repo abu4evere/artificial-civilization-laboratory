@@ -67,3 +67,6 @@ the file named.
   the rule; (b) first a confirmation with realistic, weather-dependent rot (recommended); (c) ask GPT first.** Then:
   digging (DG1 draft, GPT reviewed), water (WA1 draft), and "things on the ground" (recommended before both).
   - Decided: "Go with bodies": adopted as nature v4 (NV4). Open: a realistic-rot study on v4; then digging.
+- [ ] **After DG1 (24 October 2026):** digging is harmless and rarely used (food in a pit 204 times in 512 worlds).
+  **Decision for the creator: (a) adopt digging into nature v5 as a possibility; (b) keep it out until a study gives it
+  a use.** Next: TG1 (things on the ground, draft), BD2 (realistic rot, draft), WA1 (water, draft).
