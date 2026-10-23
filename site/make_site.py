@@ -29,8 +29,18 @@ NAV = [("index.html", "ACL"), ("findings/why-inventions-disappear.html", "Why in
 def page(path, title, description, body, extra_ld=None):
     depth = path.count("/")
     up = "../" * depth
-    nav = "".join(f'<a href="{up}{href}"{" class=home" if i == 0 else ""}>{label}</a>'
-                  for i, (href, label) in enumerate(NAV))
+    
+    nav_items = []
+    for i, (href, label) in enumerate(NAV):
+        cls = []
+        if i == 0:
+            cls.append("home")
+        if path == href:
+            cls.append("active")
+        class_attr = f' class="{" ".join(cls)}"' if cls else ""
+        nav_items.append(f'<a href="{up}{href}"{class_attr}>{label}</a>')
+    nav = "".join(nav_items)
+    
     ld = [{"@context": "https://schema.org", "@type": "ResearchProject", "name": "Artificial Civilization Laboratory",
            "alternateName": ["ACL", "Artificial Civilization Lab"], "url": BASE,
            "description": "An agent-based simulation of hunter-gatherer people in which nature is programmed and "
@@ -38,6 +48,9 @@ def page(path, title, description, body, extra_ld=None):
            "founder": {"@type": "Person", "name": AUTHOR}, "sameAs": [GITHUB]}]
     if extra_ld:
         ld.append(extra_ld)
+        
+    resolved_body = body.replace("{up}", up)
+    
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -51,17 +64,28 @@ def page(path, title, description, body, extra_ld=None):
 <meta property="og:description" content="{description}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{BASE}{'' if path == 'index.html' else path}">
-<meta property="og:image" content="{BASE}img/viewer.png">
-<link rel="stylesheet" href="{up}style.css">
+<meta property="og:image" content="{BASE}img/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{up}img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="{up}img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="{up}img/favicon-180.png">
+<meta name="theme-color" content="#030509">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{up}style.css?v=9">
 <script type="application/ld+json">{json.dumps(ld if len(ld) > 1 else ld[0])}</script>
 </head>
 <body>
 <header class="top"><nav>{nav}</nav></header>
 <main>
-{body}
+{resolved_body}
 </main>
 <footer><div>Artificial Civilization Laboratory (ACL), by {AUTHOR}. Code and every experiment record:
 <a href="{GITHUB}">GitHub</a>. The book: <a href="{up}book.html"><em>The World That Nobody Wrote</em></a>.</div></footer>
+<script src="{up}sky.js?v=7" defer></script>
 </body>
 </html>
 """
@@ -78,15 +102,21 @@ BOOK_LD = {"@context": "https://schema.org", "@type": "Book", "name": "The World
            "offers": {"@type": "Offer", "url": AMAZON, "availability": "https://schema.org/InStock"}}
 
 INDEX = f"""<section class="hero">
-<h1>Artificial Civilization Laboratory (ACL)</h1>
+<div class="scene"><canvas aria-hidden="true"></canvas></div>
+<div class="mark">ACL</div>
+<p class="sub">Artificial Civilization Laboratory</p>
+<h1>Can a civilization begin from nothing?</h1>
 <p class="lead">Twenty people wake up on a set of islands knowing nothing. No tools, no fire, no language, no rules.
 Nobody writes their history. What do they build?</p>
 <div class="btns"><a class="btn primary" href="{GITHUB}">See the code and records</a>
 <a class="btn" href="book.html">The book</a></div>
 </section>
 
-<figure><img src="img/viewer.png" alt="A live ACL world: 33 people in five bands on a set of islands, with population, ages and group stability" width="1382" height="724">
-<figcaption>A live ACL world: people in bands on a set of islands.</figcaption></figure>
+<figure class="film"><video controls preload="none" playsinline poster="{{up}}img/scene_fire.jpg" width="1280" height="720">
+<source src="{{up}}img/acl_film.mp4" type="video/mp4">
+Your browser cannot play this video.</video>
+<figcaption>The ACL film (2 min 44 s): what ACL is, and the question behind it. Sound on.</figcaption></figure>
+
 
 <h2>What ACL is</h2>
 <p>The Artificial Civilization Laboratory is an artificial civilization simulation: an agent-based world of
@@ -96,6 +126,9 @@ no reward for being clever and no script. Whatever they come to make, believe or
 they learn their habits by trial and error in their own lifetimes.</p>
 <p>ACL uses no large language models. A model trained on human writing already knows what a village, a trade and a law
 are; if its agents built one, nobody could tell whether civilization emerged or was remembered.</p>
+
+<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_link.jpg" width="1280" height="720" aria-label="Illustration: three figures joined by a dotted line of light"><source src="{{up}}img/scene_link.mp4?v=2" type="video/mp4"></video>
+<figcaption>What one person learns can pass to another, or be lost with them.</figcaption></figure>
 
 <h2>The question</h2>
 <p>Can civilization emerge from nature alone, without anyone writing its history? And if it cannot yet, what exactly
@@ -114,6 +147,15 @@ stops it? ACL answers that one step at a time, with controlled experiments on hu
 <p><a href="method.html">How it is tested</a></p></div>
 </div>
 
+<div class="card latest"><span class="tag">Latest experiment · October 2026</span>
+<h3>A kinder way to forget made things worse</h3>
+<p>People could remember how to make only 12 things, so new inventions were pushed out within a season. In MR1 they instead
+forgot only what they had not used for two years. New inventions were kept at first, but people ended up remembering
+far less, and fewer inventions were passed on: about 8 in 100 instead of 11 in 100. By the rule fixed before the
+run, the idea was rejected, and the wrong prediction stays in the record.</p>
+<p><strong>Then:</strong> GR1 protected only a new invention's first season. Slightly more inventions were passed on, though most offered lessons still were not taken up.</p>
+<p><a href="{GITHUB}/blob/master/experiments/MR1_memory_by_use/findings.md">Read the MR1 findings</a></p></div>
+
 <h2>The book</h2>
 <p><em>The World That Nobody Wrote, Part One: How I Tried to Build a Civilization Instead of Simulating One</em> tells
 the story of the project: how the worlds were built, what their people did, and what was predicted wrong.
@@ -128,6 +170,9 @@ are on <a href="{GITHUB}">GitHub</a>.</p>
 INVENT = f"""<h1>Why inventions disappear in an artificial civilization</h1>
 <p class="lead">ACL's people invent things from their first weeks: carriers, rafts, fired clay, a vessel that can hold
 water. Yet almost none of it accumulates. Three studies traced where the chain breaks.</p>
+
+<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_steps.jpg" width="1280" height="720" aria-label="Illustration: four glowing steps in a row: seeds, seasons, a village, stories"><source src="{{up}}img/scene_steps.mp4?v=2" type="video/mp4"></video>
+<figcaption>Every step has to be found, kept and passed on.</figcaption></figure>
 
 <h2>The chain</h2>
 <p>For a discovery to become part of a people's life, it has to be invented, be useful, be passed to someone else, be
@@ -158,6 +203,9 @@ Findings describe ACL's simulated worlds, not human history.</p>
 DIE = f"""<h1>Why small simulated societies die out</h1>
 <p class="lead">In ACL's standard world, twenty founders on a 40 × 40 map, about a third of worlds die out within 120
 years. Not in famine or war: in quiet.</p>
+
+<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_alone.jpg" width="1280" height="720" aria-label="Illustration: a lone figure standing on a dark horizon"><source src="{{up}}img/scene_alone.mp4?v=2" type="video/mp4"></video>
+<figcaption>A world ends when too few people can find each other.</figcaption></figure>
 
 <h2>Births stop first</h2>
 <p>In every one of the 22 worlds that died out among 64 studied, births stopped 40 to 65 years before the end and the
@@ -248,7 +296,7 @@ BUY = (f'<div class="btns"><a class="btn primary" href="{AMAZON}">Buy on Amazon<
 BOOK = f"""<h1>The World That Nobody Wrote</h1>
 <p class="lead">Part One: How I Tried to Build a Civilization Instead of Simulating One</p>
 <div class="bookrow">
-<img class="cover" src="img/book_cover.jpg" alt="Cover of The World That Nobody Wrote, Part One" width="600" height="900">
+<img class="cover" src="{{up}}img/book_cover.jpg" alt="Cover of The World That Nobody Wrote, Part One" width="600" height="900">
 <div>
 <p>Twenty people wake up in a world knowing nothing. No language, no tools, no idea how to survive. Nobody tells them
 what to do. All they have is nature: hunger, cold, seasons, plants, water, and each other.</p>
