@@ -89,3 +89,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - Creator raised taboo behaviours (e.g. survival cannibalism); proposed: read-only audit of stealing/attacks/killing first, then one nature candidate with research. Awaiting their answer.
 - 2026-10-23 night 2: BD1 (bodies stay) built after GPT ideas+review, signed off on the creator's "do all these things", zero PASS, cloud run 39911136459. docs/MISSING_POSSIBILITIES.md (GPT top 8 + checks). DG1 digging plan drafted (not built). Book Part 2: outline + sample chapter 8 in drafts/book_rewrite/part2 (gitignored, local only).
 - LT1 done: no meaningful effect on learning (-3%); not adopted. LT1-done.
+- BD1 done: B dies out less (146 vs 189), pop +19%; exploratory breakdown: disgust at rot; recommend realistic-rot confirmation. BD1-done.
