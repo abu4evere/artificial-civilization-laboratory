@@ -1,0 +1,100 @@
+diff --git a/NV3_nature_v3/code_v3/acl/config.py b/G1_first_season_grace/code_g1/acl/config.py
+index 586d3ae..709d233 100644
+--- a/NV3_nature_v3/code_v3/acl/config.py
++++ b/G1_first_season_grace/code_g1/acl/config.py
+@@ -132,6 +132,9 @@ class Config:
+     knowledge_copy: int = 0            # NV2: 1 = the record of a first-baked thing holds a copy of it, not the item itself
+     parts_first: int = 0               # NV3 (LM1's L1): 1 = a lesson that fails because the learner cannot make a part shows,
+                                        # in the same lesson, the first made part the teacher knows (0 = nature v2 exactly)
++    first_season_grace: int = 0        # G1: 1 = a recipe first held less than 13 weeks ago is not the one dropped when
++                                       # memory is full; the lowest-valued older one goes (all new: v3's rule)
++                                       # (0 = nature v3 exactly)
+     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
+                                        # their remembered places instead of in a random direction
+ 
+diff --git a/NV3_nature_v3/code_v3/acl/information.py b/G1_first_season_grace/code_g1/acl/information.py
+index 5b02712..b204d9d 100644
+--- a/NV3_nature_v3/code_v3/acl/information.py
++++ b/G1_first_season_grace/code_g1/acl/information.py
+@@ -264,6 +264,9 @@ def show_how(world, teacher, learner, parent: bool) -> bool:
+     v, kind, what = offers[rng.randrange(len(offers))]
+     claim = v * (0.85 + 0.35 * rng.random())          # people talk up what works for them
+     if kind == "m":
++        log = getattr(world, "g1log", None)    # G1 logging (runner sets it; not saved; read by nothing here)
++        if log is not None:
++            log.append(("offer", world.tick, teacher.id, what))
+         recipe = _recipe_as_shown(world, teacher, learner, teacher.recipes[what])
+         return hear_how(world, learner, teacher, what, recipe, claim, parent)
+     key = _belief_as_told(world, what)
+diff --git a/NV3_nature_v3/code_v3/acl/knowhow.py b/G1_first_season_grace/code_g1/acl/knowhow.py
+index b68f0fe..2685139 100644
+--- a/NV3_nature_v3/code_v3/acl/knowhow.py
++++ b/G1_first_season_grace/code_g1/acl/knowhow.py
+@@ -31,6 +31,7 @@ from .config import WEEKS_PER_YEAR
+ from .util import clamp
+ 
+ MAX_RECIPES = 12
++GRACE_WEEKS = 13                       # G1: a new recipe's first season (only when first_season_grace)
+ MAX_PLACES = 8
+ 
+ 
+@@ -77,9 +78,29 @@ def remember_recipe(world, p, sig: str, recipe: dict, how: str, source=None, pro
+         recipe["parts"] = list(recipe["parts"])
+     p.recipes[sig] = recipe
+     p.itemval.setdefault(sig, 0.0)
++    grace = world.cfg.first_season_grace
++    if grace:
++        for s in list(p.recipe_got):
++            if s not in p.recipes or world.tick - p.recipe_got[s] >= GRACE_WEEKS:
++                del p.recipe_got[s]
++        if fresh:
++            p.recipe_got[sig] = world.tick
+     if len(p.recipes) > MAX_RECIPES:
+         worst = min(p.recipes, key=lambda s: (p.itemval.get(s, 0.0), s))
++        kind = "v3"
++        if grace:
++            older = [s for s in p.recipes if s not in p.recipe_got]
++            if older:
++                pick = min(older, key=lambda s: (p.itemval.get(s, 0.0), s))
++                kind = "displaced" if pick != worst else "same"
++                worst = pick
++            else:
++                kind = "fallback"
++        log = getattr(world, "g1log", None)    # G1 logging (runner sets it; not saved; read by nothing here)
++        if log is not None:
++            log.append(("drop", world.tick, p.id, worst, p.itemval.get(worst, 0.0), kind))
+         del p.recipes[worst]
++        p.recipe_got.pop(worst, None)
+     rec = world.knowledge.get(sig)
+     if rec is None:
+         world.knowledge[sig] = {"first_by": p.id, "first_tick": world.tick, "recipe": recipe,
+diff --git a/NV3_nature_v3/code_v3/acl/person.py b/G1_first_season_grace/code_g1/acl/person.py
+index f75c993..bf6ccef 100644
+--- a/NV3_nature_v3/code_v3/acl/person.py
++++ b/G1_first_season_grace/code_g1/acl/person.py
+@@ -98,7 +98,7 @@ class Person:
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at",
++        "kept", "damp", "seen_at", "recipe_got",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -178,6 +178,7 @@ class Person:
+         self.voyage = None             # [x, y, tick] a far shore they have set out for over water
+         self.kept = 0.0                # of their food, how much has been held in a fire: it keeps longer
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
++        self.recipe_got = {}           # G1: recipe -> the week first held, while under 13 weeks (only with grace)
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+ 
+     # --- life stage -------------------------------------------------------
+@@ -250,6 +251,8 @@ class Person:
+                 v = {kk: r.to_list() for kk, r in v.items()}
+             elif k == "memories":
+                 v = [m.to_list() for m in v]
++            elif k == "recipe_got" and not v:
++                continue                 # G1: saved only when held, so v3's world is unchanged
+             elif k == "seen_at" and not v:
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+             elif k == "loc":
