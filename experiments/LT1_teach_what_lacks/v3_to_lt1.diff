@@ -1,0 +1,103 @@
+diff --git a/NV3_nature_v3/code_v3/acl/config.py b/LT1_teach_what_lacks/code_lt1/acl/config.py
+index 586d3ae..637ed77 100644
+--- a/NV3_nature_v3/code_v3/acl/config.py
++++ b/LT1_teach_what_lacks/code_lt1/acl/config.py
+@@ -132,6 +132,9 @@ class Config:
+     knowledge_copy: int = 0            # NV2: 1 = the record of a first-baked thing holds a copy of it, not the item itself
+     parts_first: int = 0               # NV3 (LM1's L1): 1 = a lesson that fails because the learner cannot make a part shows,
+                                        # in the same lesson, the first made part the teacher knows (0 = nature v2 exactly)
++    teach_what_lacks: int = 0          # LT1: 1 = a teacher sets aside what they can tell the learner already has (the
++                                       # learner carries one, or told this teacher so in an earlier lesson)
++                                       # (0 = nature v3 exactly)
+     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
+                                        # their remembered places instead of in a random direction
+ 
+diff --git a/NV3_nature_v3/code_v3/acl/information.py b/LT1_teach_what_lacks/code_lt1/acl/information.py
+index 5b02712..4d96a4c 100644
+--- a/NV3_nature_v3/code_v3/acl/information.py
++++ b/LT1_teach_what_lacks/code_lt1/acl/information.py
+@@ -259,6 +259,11 @@ def show_how(world, teacher, learner, parent: bool) -> bool:
+             offers.append((v, "b", key))
+     if not offers:
+         return False
++    if world.cfg.teach_what_lacks:                     # LT1: leave out what the learner visibly has, or said they knew
++        has = {it["sig"] for it in learner.items} | {k for lid, k in teacher.told_known if lid == learner.id}
++        kept = [o for o in offers if not (o[1] == "m" and o[2] in has)]
++        if kept:
++            offers = kept
+     offers.sort(key=lambda o: (-o[0], o[2]))
+     offers = offers[:3]
+     v, kind, what = offers[rng.randrange(len(offers))]
+@@ -352,15 +357,29 @@ def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, pa
+     """The learner decides whether to take up a way of making something, as they understood it."""
+     from .knowhow import can_follow, remember_recipe
+     sig = _sig_of(recipe)
++    log = getattr(world, "lu1log", None)    # LU1 logging (runner sets it; not saved; read by nothing here)
++
++    def note(outcome, c=None, o=None):
++        if log is not None:
++            log.append((world.tick, learner.id, teacher.id, meant, sig, outcome, c, o, parent, part_lesson,
++                        learner.age(world.tick), claim))
+     if sig in learner.recipes:
++        note("known")
++        if world.cfg.teach_what_lacks and [learner.id, meant] not in teacher.told_known:
++            teacher.told_known.append([learner.id, meant])     # LT1: the learner says they know it already
++            if len(teacher.told_known) > 40:
++                teacher.told_known.pop(0)
+         return False
+     holds = any(it["sig"] == meant for it in teacher.items)
+     c = credence(world, learner, teacher, evidence=0.15 if holds else 0.0)
+     own = learner.itemval.get(sig)
+     if own is not None and own < -0.1 and "m:" + sig not in learner.heard:
+         bump(learner, teacher.id, world.tick, trust=-0.03)    # they tried that and it was no good
++        note("own_bad", c)
+         return False
+-    if world.rng.random() >= c * _openness(learner, parent):
++    o = _openness(learner, parent)
++    if world.rng.random() >= c * o:
++        note("not_open", c, o)
+         return False
+     if not can_follow(learner, recipe):
+         if world.cfg.parts_first and not part_lesson:    # NV3 (LM1's L1): seeing the lesson fail, show a part instead
+@@ -369,8 +388,11 @@ def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, pa
+             for part in parts:
+                 if part not in MATERIALS and part in teacher.recipes:
+                     shown = _recipe_as_shown(world, teacher, learner, teacher.recipes[part])
++                    note("part_shown", c, o)
+                     return hear_how(world, learner, teacher, part, shown, claim, parent, part_lesson=True)
++        note("cannot_follow", c, o)
+         return False                                        # it needs a part they cannot make
++    note("taken", c, o)
+     remember_recipe(world, learner, sig, recipe, "taught", teacher.id, meant=meant)
+     learner.itemval[sig] = max(learner.itemval.get(sig, 0.0), 0.5 * claim * c)
+     learner.heard["m:" + sig] = [round(claim, 3), [teacher.id], world.tick]
+diff --git a/NV3_nature_v3/code_v3/acl/person.py b/LT1_teach_what_lacks/code_lt1/acl/person.py
+index f75c993..3cb59f9 100644
+--- a/NV3_nature_v3/code_v3/acl/person.py
++++ b/LT1_teach_what_lacks/code_lt1/acl/person.py
+@@ -98,7 +98,7 @@ class Person:
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at",
++        "kept", "damp", "seen_at", "told_known",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -178,6 +178,7 @@ class Person:
+         self.voyage = None             # [x, y, tick] a far shore they have set out for over water
+         self.kept = 0.0                # of their food, how much has been held in a fire: it keeps longer
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
++        self.told_known = []           # LT1: [learner id, kind] the learner said they already knew (at most 40)
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+ 
+     # --- life stage -------------------------------------------------------
+@@ -250,6 +251,8 @@ class Person:
+                 v = {kk: r.to_list() for kk, r in v.items()}
+             elif k == "memories":
+                 v = [m.to_list() for m in v]
++            elif k == "told_known" and not v:
++                continue                 # LT1: saved only when held, so v3's world is unchanged
+             elif k == "seen_at" and not v:
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+             elif k == "loc":
