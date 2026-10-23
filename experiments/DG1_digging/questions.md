@@ -1,4 +1,4 @@
-# DG1 — Digging: what do people do when the ground can be opened? (DRAFT for the creator and GPT; nothing built or run)
+# DG1 — Digging: what do people do when the ground can be opened? (DRAFT for the creator; reviewed by GPT, `gpt_review_dg1.md`; nothing built or run)
 
 **Why (the creator, 23 October 2026):** "make diggin possible ... make these things possible for their nature". The
 order agreed: bodies (BD1, running), then digging, then water. GPT's ideas (`../BD1_bodies_stay/gpt_ideas.md`):
@@ -43,3 +43,10 @@ only when `digging` is 1. Gathering earth on a tile deepens a pit there.
 As BD1: C (v3, or v4 if bodies are adopted) against D; 512 new paired seeds; zero checks; manipulation check (pits are
 dug); safety (survival, population); described: pits dug and their uses (food hidden, food kept, water drunk, bodies
 inside), stores lost to theft, starvation in winter (does storage help?).
+
+## After GPT's review (to apply in Revision 1)
+
+- First study: **only hiding food and slower rot** in pits; rainwater and bodies in pits later.
+- Hidden food can be found by perceivable signs (for example, freshly turned earth), not only by having watched.
+- Rates are documented assumptions, with a sensitivity check (two values).
+- Freeze DG1 only after BD1 is read, against the resulting baseline.
