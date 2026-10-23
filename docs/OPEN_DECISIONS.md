@@ -56,3 +56,8 @@ the file named.
 - [x] **After GR1 (22 October 2026):** G passes its frozen rule narrowly (+0.4 points, p = 0.037); population lower in G (exploratory). **Decision for the creator: (a) adopt first-season grace into nature v4 now, by the rule; (b) confirm first on new seeds with population as a frozen check (recommended); (c) ask GPT first.**
   - Decided: (b) confirm first (GR2, 5% margin), plus LU1 read-only. GR2: no effect, not adopted.
 - [ ] **After GR2 and LU1 (23 October 2026):** grace not adopted; lessons fail mostly at the learner's low openness. **Decision for the creator: (a) a plan for need-sensitive uptake (GPT's LA1); (b) a plan for teaching what the learner lacks; (c) move to storage and sowing; (d) ask GPT first.** Also: the website's latest-experiment box still says GR1 passed slightly more inventions on; an update is prepared locally, waiting for the creator's word to publish.
+
+- [ ] **Bodies, digging, water, taboo (23 October 2026):** BD1 (bodies stay) is running, signed off on the creator's
+  instruction. **For the creator:** the digging plan (`experiments/DG1_digging/questions.md`, digging as "gathering
+  earth", not built); which of the missing possibilities to take next (`docs/MISSING_POSSIBILITIES.md`); Part Two of the
+  book: outline and a sample chapter (`drafts/book_rewrite/part2/`, local only), and its title.
