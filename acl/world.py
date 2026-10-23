@@ -106,6 +106,7 @@ class World:
         # The sky: this year's wetness and winter, and this week's rain, storm and flood.
         self.sky: dict = {"wet": 1.0, "hard": 0.0, "rain": 0, "rained": 0, "roll": 1.0, "storm": None, "flood": 0}
         self.graves: dict[str, int] = {}      # "x,y" -> the week someone last died there
+        self.bodies: list[dict] = []          # BD1: bodies of the dead (only when bodies_stay)
         self.events: list[dict] = []          # this week's events
         self.observers: list = []             # called with (world, events) after each week
         self.hunts: dict[tuple, list] = {}
@@ -495,6 +496,8 @@ class World:
                     self.move(p, carer.loc)
 
         biology.body_phase(self)
+        if self.cfg.bodies_stay:
+            biology.bodies_week(self)
 
         # NV2 (ST1): a float can wear out after its owner has gone out on it (traced: it falls apart in the week's
         # bodily phase). Whoever then ends the week on water with nothing that floats struggles ashore half drowned, as
@@ -666,7 +669,7 @@ class World:
 
     def to_dict(self) -> dict:
         v, internal, gauss = self.rng.getstate()
-        return {
+        d = {
             "cfg": self.cfg.to_dict(),
             "tick": self.tick,
             "rng": [v, list(internal), gauss],
@@ -682,6 +685,9 @@ class World:
             "sky": self.sky,
             "graves": self.graves,
         }
+        if self.bodies:                       # BD1: saved only when held, so v3's world is unchanged
+            d["bodies"] = self.bodies
+        return d
 
     @classmethod
     def from_dict(cls, d: dict) -> "World":
@@ -702,6 +708,7 @@ class World:
         w.weather = d["weather"]
         w.sky = d.get("sky", w.sky)
         w.graves = d.get("graves", {})
+        w.bodies = d.get("bodies", [])
         w.reindex()
         fauna.index(w)
         return w

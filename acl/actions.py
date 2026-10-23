@@ -293,6 +293,23 @@ def _put(world, p, thing, eff):
                warmth=round(pile_warmth(tile.pile), 3), belief=round(belief, 2))
 
 
+def _ate_from_body(world, p, owner, food) -> None:
+    """BD1: taking food where a body lies is eating from it. Meat that has rotten can make one ill."""
+    b = next((x for x in world.bodies if x["id"] == owner and x["flesh"]), None)
+    if b is None:
+        return
+    rotten = world.tick - b["tick"] >= biology.rot_weeks(world)
+    if rotten and not p.sick and world.rng.random() < 0.3:
+        p.sick = True
+        world.emit("ill", p.id, None, p.loc)
+    log = getattr(world, "bd1log", None)
+    if log is not None:
+        dead = world.people[owner]
+        kin = world.kinship(p, dead) > 0 or p.partner == owner or dead.partner == p.id
+        log.append(("ate", world.tick, p.id, owner, round(food, 2), bool(kin), bool(rotten),
+                    round(hunger_of(world, p), 3), p.generation))
+
+
 def _take(world, p, target, eff):
     c = world.cfg
     loc, owner = target
@@ -319,6 +336,8 @@ def _take(world, p, target, eff):
     entry[1] -= food
     entry[2] -= seeds
     p.food += food
+    if c.bodies_stay and owner != p.id and food > 0:
+        _ate_from_body(world, p, owner, food)
     p.seeds += seeds
     weeks = world.tick - entry[3]
     if entry[1] + entry[2] < 0.2:

@@ -62,7 +62,8 @@ the file named.
   instruction. **For the creator:** the digging plan (`experiments/DG1_digging/questions.md`, digging as "gathering
   earth", not built); which of the missing possibilities to take next (`docs/MISSING_POSSIBILITIES.md`); Part Two of the
   book: outline and a sample chapter (`drafts/book_rewrite/part2/`, local only), and its title.
-- [ ] **After BD1 (23 October 2026):** bodies staying raised survival (146 vs 189 died out) and population (+19%);
+- [x] **After BD1 (23 October 2026):** bodies staying raised survival (146 vs 189 died out) and population (+19%);
   the gain goes with disgust at rot (exploratory). **Decision for the creator: (a) adopt bodies into nature v4 now, by
   the rule; (b) first a confirmation with realistic, weather-dependent rot (recommended); (c) ask GPT first.** Then:
   digging (DG1 draft, GPT reviewed), water (WA1 draft), and "things on the ground" (recommended before both).
+  - Decided: "Go with bodies": adopted as nature v4 (NV4). Open: a realistic-rot study on v4; then digging.

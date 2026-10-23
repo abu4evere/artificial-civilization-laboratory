@@ -132,6 +132,9 @@ class Config:
     knowledge_copy: int = 1            # NV2: 1 = the record of a first-baked thing holds a copy of it, not the item itself
     parts_first: int = 1               # NV3 (LM1's L1): 1 = a lesson that fails because the learner cannot make a part shows,
                                        # in the same lesson, the first made part the teacher knows (0 = nature v2 exactly)
+    bodies_stay: int = 1               # NV4 (BD1): 1 = the dead leave a body where they fell (meat, their food as theirs,
+                                       # their tools for kin), which rots, can be eaten by the hungry, and is felt by
+                                       # the living (0 = nature v3)
     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
                                        # their remembered places instead of in a random direction
 

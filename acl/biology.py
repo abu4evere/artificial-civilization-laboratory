@@ -569,10 +569,13 @@ def die(world, p: Person, cause: str, killer) -> None:
             heir.items.pop(0)
         world.emit("inherit", heir.id, p.id, p.loc, food=round(p.food + p.seeds, 2), things=len(p.items))
     else:
-        tile.plants += p.food + p.seeds
+        if not world.cfg.bodies_stay:
+            tile.plants += p.food + p.seeds
         for k, v in p.mats.items():
             if v > 0:
                 tile.pile[k] = tile.pile.get(k, 0.0) + v
+    if world.cfg.bodies_stay:
+        _leave_body(world, p, tile, heir, eid, kind, killer)
     p.food = p.seeds = 0.0
     p.mats = {k: 0.0 for k in p.mats}
     p.items = []
@@ -601,6 +604,83 @@ def die(world, p: Person, cause: str, killer) -> None:
     p.shores = []
     p.voyage = None
     p.rel = {k: r for k, r in p.rel.items() if k in (p.mother, p.father, p.partner)}
+
+
+BODY_MEAT = 18.0          # BD1: food in an adult body (a deer gives 22); an assumption, not a measurement
+ROT_SHARE = 0.4           # BD1: rotten once this share would have rotted at v3's rate for loose food
+
+
+def _leave_body(world, p: Person, tile, heir, eid: int, kind: str, killer) -> None:
+    """BD1: the body stays where they fell. Its meat, and the food they carried if no relative took it, lie there as
+    food that is still theirs (v3's store, owned by the dead). Their tools stay with the body for kin to take."""
+    years = p.years(world.tick)
+    meat = BODY_MEAT * (1.0 if years >= 16 else max(0.2, years / 16.0))
+    food = meat + (p.food if heir is None else 0.0)
+    seeds = p.seeds if heir is None else 0.0
+    tile.stash.append([p.id, food, seeds, world.tick])
+    world.bodies.append({"id": p.id, "x": p.loc[0], "y": p.loc[1], "tick": world.tick, "eid": eid,
+                         "kind": kind, "killer": killer, "start": food,
+                         "items": [] if heir is not None else list(p.items), "flesh": True})
+    log = getattr(world, "bd1log", None)    # BD1 logging (runner sets it; not saved; read by nothing here)
+    if log is not None:
+        log.append(("body", world.tick, p.id, round(meat, 2), round(food, 2), len(p.items) if heir is None else 0))
+
+
+def rot_weeks(world) -> int:
+    """Weeks until a body counts as rotten: when ROT_SHARE of loose food would have rotted at v3's rate."""
+    return math.ceil(math.log(1.0 - ROT_SHARE) / math.log(1.0 - world.cfg.spoil_rate))
+
+
+def bodies_week(world) -> None:
+    """BD1: each week, what the bodies of the dead do among the living. Rot follows v3's rate for loose food (it is
+    v3's store). The living near a rotten body find the place foul; those who were close to the dead and had not
+    known of the death learn it from the sight; a partner or grown child who stands there takes the tools."""
+    tick = world.tick
+    log = getattr(world, "bd1log", None)
+    rotten_after = rot_weeks(world)
+    keep = []
+    for b in world.bodies:
+        loc = (b["x"], b["y"])
+        tile = world.tile(loc)
+        if b["flesh"]:
+            entry = next((st for st in tile.stash if st[0] == b["id"]), None)
+            if entry is None:
+                b["flesh"] = False
+                from .world_traces import leave_trace
+                leave_trace(tile, "bones:person", tick)
+                if log is not None:
+                    log.append(("bones", tick, b["id"], tick - b["tick"]))
+        rotten = b["flesh"] and tick - b["tick"] >= rotten_after
+        dead = world.people[b["id"]]
+        for q in world.people_near(loc, world.cfg.perception):
+            if q.age(tick) < 52 * 3:
+                continue
+            near = distance(q.loc, loc, world.cfg.width, world.cfg.height) <= 1
+            if rotten and near:
+                knowhow.associate(world, q, q.loc, -0.3)        # the smell of rot: the place feels foul
+                if log is not None:
+                    log.append(("foul", tick, q.id, b["id"]))
+            if b["flesh"] and not any(m.eid == b["eid"] for m in q.memories):
+                close = _close(world, q, b["id"])
+                if close > 0:                                   # they see who it is
+                    sal = clamp(0.3 + 0.6 * max(close, 0.0))
+                    fresh = remember(world, q, b["eid"], b["kind"], b["killer"], b["id"], loc, sal, -0.8)
+                    react(world, q, "died" if b["killer"] is None else "killed", b["killer"], b["id"], 1.0, fresh)
+                    if log is not None:
+                        log.append(("seen", tick, q.id, b["id"]))
+            if b["items"] and q.loc == loc and (q.id == dead.partner or (q.id in dead.children
+                                                                           and q.age(tick) >= CHILD_END)):
+                for it in b["items"]:
+                    q.items.append(it)
+                while len(q.items) > world.cfg.item_limit:
+                    q.items.pop(0)
+                world.emit("inherit", q.id, b["id"], loc, food=0.0, things=len(b["items"]))
+                if log is not None:
+                    log.append(("tools", tick, q.id, b["id"], len(b["items"])))
+                b["items"] = []
+        if b["flesh"] or b["items"]:
+            keep.append(b)
+    world.bodies = keep
 
 
 def _close(world, q: Person, other: str) -> float:

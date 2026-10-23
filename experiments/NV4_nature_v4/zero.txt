@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v4 with bodies_stay 0 = code_v3: yes
+seed 501, 5 years: code_v4 with bodies_stay 0 = code_v3: yes
+seed 501, 20 years: code_v4 with bodies_stay 0 = code_v3: yes
+seed 601, 20 years: code_v4 with bodies_stay 0 = code_v3: yes
+seed 501, 20 years: v4 = code_bd1's B arm: yes
+seed 501, 20 years: the live package with its own defaults = v4: yes
+seed 601, 20 years: v4 = code_bd1's B arm: yes
+seed 601, 20 years: the live package with its own defaults = v4: yes
+seed 501, 20 years: bodies_stay changes the world (it acts): yes
+v4, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS
