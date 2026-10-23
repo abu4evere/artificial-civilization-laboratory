@@ -127,7 +127,7 @@ they learn their habits by trial and error in their own lifetimes.</p>
 <p>ACL uses no large language models. A model trained on human writing already knows what a village, a trade and a law
 are; if its agents built one, nobody could tell whether civilization emerged or was remembered.</p>
 
-<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_link.jpg" width="1280" height="720" aria-label="Illustration: three figures joined by a dotted line of light"><source src="{{up}}img/scene_link.mp4?v=2" type="video/mp4"></video>
+<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_link.jpg" width="1280" height="720" aria-label="Illustration: three figures joined by a dotted line of light"><source src="{{up}}img/scene_link.mp4?v=3" type="video/mp4"></video>
 <figcaption>What one person learns can pass to another, or be lost with them.</figcaption></figure>
 
 <h2>The question</h2>
@@ -171,7 +171,7 @@ INVENT = f"""<h1>Why inventions disappear in an artificial civilization</h1>
 <p class="lead">ACL's people invent things from their first weeks: carriers, rafts, fired clay, a vessel that can hold
 water. Yet almost none of it accumulates. Three studies traced where the chain breaks.</p>
 
-<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_steps.jpg" width="1280" height="720" aria-label="Illustration: four glowing steps in a row: seeds, seasons, a village, stories"><source src="{{up}}img/scene_steps.mp4?v=2" type="video/mp4"></video>
+<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_steps.jpg" width="1280" height="720" aria-label="Illustration: four glowing steps in a row: seeds, seasons, a village, stories"><source src="{{up}}img/scene_steps.mp4?v=3" type="video/mp4"></video>
 <figcaption>Every step has to be found, kept and passed on.</figcaption></figure>
 
 <h2>The chain</h2>
@@ -204,7 +204,7 @@ DIE = f"""<h1>Why small simulated societies die out</h1>
 <p class="lead">In ACL's standard world, twenty founders on a 40 × 40 map, about a third of worlds die out within 120
 years. Not in famine or war: in quiet.</p>
 
-<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_alone.jpg" width="1280" height="720" aria-label="Illustration: a lone figure standing on a dark horizon"><source src="{{up}}img/scene_alone.mp4?v=2" type="video/mp4"></video>
+<figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_alone.jpg" width="1280" height="720" aria-label="Illustration: a lone figure standing on a dark horizon"><source src="{{up}}img/scene_alone.mp4?v=3" type="video/mp4"></video>
 <figcaption>A world ends when too few people can find each other.</figcaption></figure>
 
 <h2>Births stop first</h2>
