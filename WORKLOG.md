@@ -84,3 +84,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - Next: restyle the website like the style B video (creator request).
 - GR1 (frozen as G1; renamed, the ID was taken) done: valid; transmission G higher +0.0043 (p=0.037), survival no effect; population lower (exploratory); may be proposed for v4; recommend confirmation. G1-done.
 - Website restyled (Gemini design + fixes; film, loops, icons, share card, latest box); not yet published (needs the creator's "publish").
+- 2026-10-23 night: GR2 done (no effect; grace not adopted; GR1 was chance) and LU1 done (main failure not_open, 55%). Website published (creator said "publish"); its latest box now outdated, fix prepared locally, not published.

@@ -74,3 +74,9 @@ This study was planned, frozen and run as **G1**, but that ID already belonged t
 roadmap, decisions and book. Nothing else changes. Its folder, code and runner keep the name `G1` (the cloud run
 used those paths). Tag `G1-frozen` and the new `GR1-frozen` both mark this study's frozen plan (232f0ed);
 `GR1-done` marks these findings. The old `G1-done` still belongs to the earlier study.
+
+## Correction after GR2 (appended 23 October 2026)
+
+GR2 tested the same change on 512 new seed pairs, as recommended above. Passing on: +0.0007 [−0.0025, +0.0040],
+p = 0.80, **no meaningful effect**; GR1's lower population did not repeat. GR1's narrow pass (+0.0043, p = 0.037)
+is now read as chance. First-season grace is **not adopted** (`../GR2_grace_confirm/findings.md`).
