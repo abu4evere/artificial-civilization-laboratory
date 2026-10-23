@@ -82,5 +82,5 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - MR1 done: valid; transmission U lower (−0.033); not adopted; findings written; MR1-done.
 - G1 signed off ("approve all and run it on github"), frozen (G1-frozen), local zero PASS; cloud run 39886787053. Fetch: python tools/ci/fetch_cloud.py 39886787053 experiments/G1_first_season_grace/output; then analyse_g1.py.
 - Next: restyle the website like the style B video (creator request).
-- G1 done: valid; transmission G higher +0.0043 (p=0.037), survival no effect; population lower (exploratory); may be proposed for v4; recommend confirmation. G1-done.
+- GR1 (frozen as G1; renamed, the ID was taken) done: valid; transmission G higher +0.0043 (p=0.037), survival no effect; population lower (exploratory); may be proposed for v4; recommend confirmation. G1-done.
 - Website restyled (Gemini design + fixes; film, loops, icons, share card, latest box); not yet published (needs the creator's "publish").

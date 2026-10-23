@@ -1,4 +1,4 @@
-# G1 — a first season of grace: findings
+# GR1 (frozen as G1) — a first season of grace: findings
 
 Frozen as `G1-frozen` before any data, after GPT's review (`gpt_review_g1.md`). A Law 126 study. Tables:
 `results.md`, from `analyse_g1.py` (written and committed before data). Code: `code_g1` = `code_v3` +
@@ -66,3 +66,11 @@ The rule allows proposing G for nature v4. Given the small effect, the interval 
 population, **the assistant recommends a confirmation before adoption** (as LX1 confirmed LM1): G against C on new
 seeds, with population as a frozen check alongside survival. The alternative is to adopt now by the rule as
 written. The creator decides.
+
+## Note on the name (appended 22 October 2026)
+
+This study was planned, frozen and run as **G1**, but that ID already belonged to an earlier study
+(`experiments/G1_who_receives`, and its tags `G1-questions` and `G1-done`). It is renamed **GR1** in the index,
+roadmap, decisions and book. Nothing else changes. Its folder, code and runner keep the name `G1` (the cloud run
+used those paths). Tag `G1-frozen` and the new `GR1-frozen` both mark this study's frozen plan (232f0ed);
+`GR1-done` marks these findings. The old `G1-done` still belongs to the earlier study.
