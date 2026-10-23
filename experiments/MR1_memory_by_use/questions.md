@@ -1,4 +1,4 @@
-# MR1 — Remembering by use, not by slots: does it let inventions survive long enough to be taught? (DRAFT for the creator; nothing built or run)
+# MR1 — Remembering by use, not by slots: does it let inventions survive long enough to be taught? (SIGNED OFF 22 October 2026; frozen as `MR1-frozen` before any data)
 
 **Why (the creator chose cumulative culture as the next bottleneck, 22 October 2026).**
 - CA1: only about **10%** of useful inventions are ever learned by anyone else.
@@ -78,3 +78,31 @@ and labelled.
 2. Arms: **C and U only** (recommended), or add a described "24 slots" arm as a dose check (768 worlds).
 3. Seeds: **256 new (9201–9456)** (recommended), or 512.
 4. The adoption rule and the prior, as written.
+
+## Sign-off (22 October 2026)
+
+The creator: "yes approve all and run it on github". So:
+- the candidate, memory by use with 2 years unused;
+- two arms, C and U (no "24 slots" arm);
+- 256 new seeds (9201–9456), 512 worlds on GitHub;
+- the adoption rule and the prior, as written.
+
+**GPT's review was not obtained before freezing.** The research rule asks for it; the browser did not respond when
+the question was sent, and the creator wanted the study started before their computer went off. GPT is to be asked
+after launch, and its answer recorded beside this plan as a review of a frozen plan: any point it raises can change
+only what is described, through an appended note, never the frozen tests.
+
+## Operational note (22 October 2026, while building, before any data; rule 19)
+
+How the plan is put into code (`v3_to_mr1.diff`). Nothing else changes.
+- **"Last used"** is kept per person (`recipe_used`, the week each recipe was last used), saved with the world only
+  when held, so v3's worlds are unchanged. A recipe counts as used when it is made from a known recipe, made new,
+  learned or re-learned (taught, copied, read, heated), taught (including a part shown by parts-first), or felt in use
+  (`judge_item`).
+- **Forgetting** runs with the existing seasonal check (every 13 weeks, after `forget_useless`): a recipe unused for
+  104 weeks or more is forgotten. It draws no random numbers.
+- **The limit** in U is the general `memory_capacity` (60) instead of 12; the drop rule at the cap is v3's.
+- **Measures:** link 3 and "built on by a learner" (CA1's link 5) come from LM1's `summarise`, unchanged. "Held 13
+  weeks later" counts useful inventions whose inventor was alive 13 weeks on; an inventor who died sooner is left out.
+  "A child's invention" is one whose inventor was under 16 when inventing it. The longest part chain counts made
+  parts below a useful kind (a kind with no made parts is 1).
