@@ -1,0 +1,43 @@
+diff --git a/NV3_nature_v3/code_v3/acl/information.py b/LU1_lesson_uptake/code_lu1/acl/information.py
+index 5b02712..b2227f2 100644
+--- a/NV3_nature_v3/code_v3/acl/information.py
++++ b/LU1_lesson_uptake/code_lu1/acl/information.py
+@@ -352,15 +352,25 @@ def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, pa
+     """The learner decides whether to take up a way of making something, as they understood it."""
+     from .knowhow import can_follow, remember_recipe
+     sig = _sig_of(recipe)
++    log = getattr(world, "lu1log", None)    # LU1 logging (runner sets it; not saved; read by nothing here)
++
++    def note(outcome, c=None, o=None):
++        if log is not None:
++            log.append((world.tick, learner.id, teacher.id, meant, sig, outcome, c, o, parent, part_lesson,
++                        learner.age(world.tick), claim))
+     if sig in learner.recipes:
++        note("known")
+         return False
+     holds = any(it["sig"] == meant for it in teacher.items)
+     c = credence(world, learner, teacher, evidence=0.15 if holds else 0.0)
+     own = learner.itemval.get(sig)
+     if own is not None and own < -0.1 and "m:" + sig not in learner.heard:
+         bump(learner, teacher.id, world.tick, trust=-0.03)    # they tried that and it was no good
++        note("own_bad", c)
+         return False
+-    if world.rng.random() >= c * _openness(learner, parent):
++    o = _openness(learner, parent)
++    if world.rng.random() >= c * o:
++        note("not_open", c, o)
+         return False
+     if not can_follow(learner, recipe):
+         if world.cfg.parts_first and not part_lesson:    # NV3 (LM1's L1): seeing the lesson fail, show a part instead
+@@ -369,8 +379,11 @@ def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, pa
+             for part in parts:
+                 if part not in MATERIALS and part in teacher.recipes:
+                     shown = _recipe_as_shown(world, teacher, learner, teacher.recipes[part])
++                    note("part_shown", c, o)
+                     return hear_how(world, learner, teacher, part, shown, claim, parent, part_lesson=True)
++        note("cannot_follow", c, o)
+         return False                                        # it needs a part they cannot make
++    note("taken", c, o)
+     remember_recipe(world, learner, sig, recipe, "taught", teacher.id, meant=meant)
+     learner.itemval[sig] = max(learner.itemval.get(sig, 0.0), 0.5 * claim * c)
+     learner.heard["m:" + sig] = [round(claim, 3), [teacher.id], world.tick]
