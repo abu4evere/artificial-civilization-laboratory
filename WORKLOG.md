@@ -80,3 +80,7 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - Google Play book submitted (Pending account review).
 - Video: vertical done (out/ACL_vertical1_instagram.mp4); draft3 render was in progress when the PC went off; restart `python b_render.py full`.
 - MR1 done: valid; transmission U lower (−0.033); not adopted; findings written; MR1-done.
+- G1 signed off ("approve all and run it on github"), frozen (G1-frozen), local zero PASS; cloud run 39886787053. Fetch: python tools/ci/fetch_cloud.py 39886787053 experiments/G1_first_season_grace/output; then analyse_g1.py.
+- Next: restyle the website like the style B video (creator request).
+- G1 done: valid; transmission G higher +0.0043 (p=0.037), survival no effect; population lower (exploratory); may be proposed for v4; recommend confirmation. G1-done.
+- Website restyled (Gemini design + fixes; film, loops, icons, share card, latest box); not yet published (needs the creator's "publish").
