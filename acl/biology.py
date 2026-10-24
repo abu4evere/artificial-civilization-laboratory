@@ -621,9 +621,42 @@ def _leave_body(world, p: Person, tile, heir, eid: int, kind: str, killer) -> No
     world.bodies.append({"id": p.id, "x": p.loc[0], "y": p.loc[1], "tick": world.tick, "eid": eid,
                          "kind": kind, "killer": killer, "start": food,
                          "items": [] if heir is not None else list(p.items), "flesh": True})
+    if world.cfg.body_rot:                  # BD2: the flesh apart from what they carried, and warmth so far
+        world.bodies[-1]["meat0"] = meat
+        world.bodies[-1]["add"] = 0.0
     log = getattr(world, "bd1log", None)    # BD1 logging (runner sets it; not saved; read by nothing here)
     if log is not None:
         log.append(("body", world.tick, p.id, round(meat, 2), round(food, 2), len(p.items) if heir is None else 0))
+
+
+BONES_ADD = 1300.0        # BD2: degree-days (deg C x days above 0) until only bones are left; an assumption anchored
+                          # to forensic work showing decay follows accumulated temperature (Megyesi et al. 2005)
+
+
+def celsius(world, loc) -> float:
+    """BD2: this week's warmth here in degrees C, from ACL's felt temperature (0.45 felt = 15 C, 0.15 = 0 C)."""
+    t = world.tile(loc)
+    felt = t.temp + weather.SEASON_TEMP[world.season]
+    if world.season == 3:
+        felt -= world.sky.get("hard", 0.0)
+    return 50.0 * felt - 7.5
+
+
+def _rot_by_warmth(world, b, tile) -> None:
+    """BD2: a week of rot. The flesh loses its share of the degree-days that passed; what they carried rots as stored
+    food does (v5's rate). Eating takes from both alike."""
+    entry = next((st for st in tile.stash if st[0] == b["id"]), None)
+    if entry is None:
+        return
+    dd = 7.0 * max(0.0, celsius(world, (b["x"], b["y"])))
+    meat_left = max(0.0, b["meat0"] * (1.0 - b["add"] / BONES_ADD))
+    carried = max(0.0, entry[1] - meat_left)
+    flesh = entry[1] - carried
+    b["add"] += dd
+    flesh = max(0.0, flesh - b["meat0"] * dd / BONES_ADD)
+    entry[1] = carried * (1.0 - world.cfg.spoil_rate) + flesh
+    if b["add"] >= BONES_ADD:
+        b["bones_now"] = True
 
 
 def rot_weeks(world) -> int:
@@ -642,15 +675,18 @@ def bodies_week(world) -> None:
     for b in world.bodies:
         loc = (b["x"], b["y"])
         tile = world.tile(loc)
+        if b["flesh"] and world.cfg.body_rot:
+            _rot_by_warmth(world, b, tile)
         if b["flesh"]:
             entry = next((st for st in tile.stash if st[0] == b["id"]), None)
-            if entry is None:
+            if entry is None or b.get("bones_now"):
                 b["flesh"] = False
                 from .world_traces import leave_trace
                 leave_trace(tile, "bones:person", tick)
                 if log is not None:
                     log.append(("bones", tick, b["id"], tick - b["tick"]))
-        rotten = b["flesh"] and tick - b["tick"] >= rotten_after
+        rotten = b["flesh"] and (b["add"] >= ROT_SHARE * BONES_ADD if world.cfg.body_rot
+                                  else tick - b["tick"] >= rotten_after)
         dead = world.people[b["id"]]
         for q in world.people_near(loc, world.cfg.perception):
             if q.age(tick) < 52 * 3:

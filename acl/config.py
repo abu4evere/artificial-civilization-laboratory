@@ -138,6 +138,8 @@ class Config:
     digging: int = 1                   # NV5 (DG1): 1 = the ground can be dug (gathering earth deepens a pit); food set
                                        # down in a pit is hidden and keeps longer (0 = nature v4)
     pit_keep: float = 0.5              # NV5 (DG1): share of the rot rate for food in a pit (an assumption)
+    body_rot: int = 1                  # NV6 (BD2): 1 = a body's flesh rots by accumulated warmth (degree-days): a
+                                       # temperature-based approximation, not full decomposition (0 = nature v5)
     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
                                        # their remembered places instead of in a random direction
 

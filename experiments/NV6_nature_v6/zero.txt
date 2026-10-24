@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v6 with body_rot 0 = code_v5: yes
+seed 501, 5 years: code_v6 with body_rot 0 = code_v5: yes
+seed 501, 20 years: code_v6 with body_rot 0 = code_v5: yes
+seed 601, 20 years: code_v6 with body_rot 0 = code_v5: yes
+seed 501, 20 years: v6 = code_bd2's R arm: yes
+seed 501, 20 years: the live package with its own defaults = v6: yes
+seed 601, 20 years: v6 = code_bd2's R arm: yes
+seed 601, 20 years: the live package with its own defaults = v6: yes
+seed 501, 20 years: body_rot changes the world (it acts): yes
+v6, seed 501 (a pit held): saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

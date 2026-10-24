@@ -655,8 +655,11 @@ class World:
                     rate = c.spoil_rate * (1.0 - 0.6 * cover) * (c.smoke_keep if t.fire > 0 else 1.0)
                     pit = c.digging and self.pit_depth((t.x, t.y)) >= PIT_DEEP
                     base = rate
+                    fleshy = {b["id"] for b in self.bodies if b["flesh"]} if c.body_rot else ()
                     for st in t.stash:
                         owner = self.people.get(st[0])
+                        if st[0] in fleshy:
+                            continue                  # BD2: a body's food rots by warmth, in biology.bodies_week
                         rate = base * (c.pit_keep if pit and owner is not None and owner.alive else 1.0)
                         kept = min(st[5], st[1]) if len(st) > 5 else 0.0
                         st[1] = (st[1] - kept) * (1.0 - rate) + kept * (1.0 - rate * c.kept_keep)

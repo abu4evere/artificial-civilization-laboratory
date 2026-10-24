@@ -71,6 +71,7 @@ the file named.
   **Decision for the creator: (a) adopt digging into nature v5 as a possibility; (b) keep it out until a study gives it
   a use.** Next: TG1 (things on the ground, draft), BD2 (realistic rot, draft), WA1 (water, draft).
   - Decided (the creator's "yes" to GPT's advice): digging adopted as nature v5; BD2 next.
-- [ ] **After BD2 (24 October 2026):** realistic rot leaves a smaller real bodies gain (+7.7% population vs no
+- [x] **After BD2 (24 October 2026):** realistic rot leaves a smaller real bodies gain (+7.7% population vs no
   bodies; survival not shown). **Decision for the creator: (a) adopt realistic rot into nature v6 (recommended: the
   truer physics); (b) keep v5's rot.** Then: TG1 (things on the ground), WA1 (water).
+  - Decided: realistic rot adopted as nature v6. Next (GPT): a breakdown of bodies' remaining gain (plan to draft).

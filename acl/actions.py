@@ -322,7 +322,8 @@ def _ate_from_body(world, p, owner, food) -> None:
     b = next((x for x in world.bodies if x["id"] == owner and x["flesh"]), None)
     if b is None:
         return
-    rotten = world.tick - b["tick"] >= biology.rot_weeks(world)
+    rotten = (b["add"] >= biology.ROT_SHARE * biology.BONES_ADD if world.cfg.body_rot
+              else world.tick - b["tick"] >= biology.rot_weeks(world))
     if rotten and not p.sick and world.rng.random() < 0.3:
         p.sick = True
         world.emit("ill", p.id, None, p.loc)
