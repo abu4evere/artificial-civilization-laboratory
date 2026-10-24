@@ -135,6 +135,9 @@ class Config:
     bodies_stay: int = 1               # NV4 (BD1): 1 = the dead leave a body where they fell (meat, their food as theirs,
                                        # their tools for kin), which rots, can be eaten by the hungry, and is felt by
                                        # the living (0 = nature v3)
+    digging: int = 1                   # NV5 (DG1): 1 = the ground can be dug (gathering earth deepens a pit); food set
+                                       # down in a pit is hidden and keeps longer (0 = nature v4)
+    pit_keep: float = 0.5              # NV5 (DG1): share of the rot rate for food in a pit (an assumption)
     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
                                        # their remembered places instead of in a random direction
 

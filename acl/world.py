@@ -17,6 +17,8 @@ from .matter import best_float, pile_shape
 from .person import GENES, SKILLS, Person, Relation
 from .util import distance, make_name, step_away, step_toward
 
+PIT_DEEP = 0.5                                # DG1: knee-deep: food set down here is in the pit
+
 
 class Tile:
     __slots__ = ("x", "y", "biome", "water", "temp", "height", "cost",
@@ -107,6 +109,7 @@ class World:
         self.sky: dict = {"wet": 1.0, "hard": 0.0, "rain": 0, "rained": 0, "roll": 1.0, "storm": None, "flood": 0}
         self.graves: dict[str, int] = {}      # "x,y" -> the week someone last died there
         self.bodies: list[dict] = []          # BD1: bodies of the dead (only when bodies_stay)
+        self.pits: dict[str, list] = {}       # DG1: "x,y" -> [depth, week last dug] (only when digging)
         self.events: list[dict] = []          # this week's events
         self.observers: list = []             # called with (world, events) after each week
         self.hunts: dict[tuple, list] = {}
@@ -238,6 +241,11 @@ class World:
         return pid
 
     # --- lookups ----------------------------------------------------------
+
+    def pit_depth(self, loc: tuple) -> float:
+        """DG1: how deep the pit here is (0 if none)."""
+        p = self.pits.get(f"{loc[0]},{loc[1]}")
+        return p[0] if p else 0.0
 
     def tile(self, loc: tuple) -> Tile:
         return self.tiles[loc[1]][loc[0]]
@@ -498,6 +506,11 @@ class World:
         biology.body_phase(self)
         if self.cfg.bodies_stay:
             biology.bodies_week(self)
+        if self.cfg.digging and self.pits:          # DG1: a pit slowly fills back in (an assumption)
+            for k in list(self.pits):
+                self.pits[k][0] = self.pits[k][0] * 0.99 - 0.005
+                if self.pits[k][0] < 0.05:
+                    del self.pits[k]
 
         # NV2 (ST1): a float can wear out after its owner has gone out on it (traced: it falls apart in the week's
         # bodily phase). Whoever then ends the week on water with nothing that floats struggles ashore half drowned, as
@@ -640,7 +653,11 @@ class World:
                 if t.stash:
                     _, cover = pile_shape(t.pile)
                     rate = c.spoil_rate * (1.0 - 0.6 * cover) * (c.smoke_keep if t.fire > 0 else 1.0)
+                    pit = c.digging and self.pit_depth((t.x, t.y)) >= PIT_DEEP
+                    base = rate
                     for st in t.stash:
+                        owner = self.people.get(st[0])
+                        rate = base * (c.pit_keep if pit and owner is not None and owner.alive else 1.0)
                         kept = min(st[5], st[1]) if len(st) > 5 else 0.0
                         st[1] = (st[1] - kept) * (1.0 - rate) + kept * (1.0 - rate * c.kept_keep)
                         if len(st) > 5:
@@ -687,6 +704,8 @@ class World:
         }
         if self.bodies:                       # BD1: saved only when held, so v3's world is unchanged
             d["bodies"] = self.bodies
+        if self.pits:                         # DG1: saved only when held
+            d["pits"] = self.pits
         return d
 
     @classmethod
@@ -709,6 +728,7 @@ class World:
         w.sky = d.get("sky", w.sky)
         w.graves = d.get("graves", {})
         w.bodies = d.get("bodies", [])
+        w.pits = d.get("pits", {})
         w.reindex()
         fauna.index(w)
         return w

@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v5 with digging 0 = code_v4: yes
+seed 501, 5 years: code_v5 with digging 0 = code_v4: yes
+seed 501, 20 years: code_v5 with digging 0 = code_v4: yes
+seed 601, 20 years: code_v5 with digging 0 = code_v4: yes
+seed 501, 20 years: v5 = code_dg1's D arm: yes
+seed 501, 20 years: the live package with its own defaults = v5: yes
+seed 601, 20 years: v5 = code_dg1's D arm: yes
+seed 601, 20 years: the live package with its own defaults = v5: yes
+seed 501, 20 years: digging changes the world (it acts): yes
+v5, seed 501 (a pit held): saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

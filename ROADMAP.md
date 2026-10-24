@@ -414,6 +414,8 @@ are flaws, and whether A5/A6c are tested as their own controlled comparison befo
 
 **DG1 done** (`experiments/DG1_digging/findings.md`; 1,536 worlds on GitHub). Digging is possible now in a test arm: nearly everyone digs once out of curiosity, almost nobody again; food went into a pit 204 times in 512 worlds. No effect on survival or population; by the rule it may enter nature (v5), the creator decides. **A possibility is not a use:** storage in the ground needs a reason to store first (bottleneck B). Next drafts: things on the ground (TG1), realistic rot (BD2), water (WA1).
 
+**Nature v5** (`experiments/NV5_nature_v5/findings.md`): digging adopted as a possibility (the creator, on GPT's advice). The live package runs v5. **Next: BD2, realistic rot for bodies, on v5** (GPT's choice; then things on the ground and water).
+
 **CP1 done** (`experiments/CP1_courtship_pipeline/findings.md`; frozen; read-only, same 768 saved worlds as TL1). **The pipeline breaks at G2, encounter:** in extinct worlds, 43% of fertile woman-weeks are spent single with an eligible man alive somewhere but **not within sight** (against 23% in surviving worlds); G1 (no eligible man alive at all) adds another 20% vs 8%. Discovery excess +19.9 pp, holdout +19.0 pp: **stands**. G3 (courting-not-tried, PF1/PF2's bottleneck in 80-founder MB1b worlds) is **smaller** in extinct 20-founder worlds (−18 pp) because the funnel breaks earlier. Births per partnered fertile woman-year are similar across cohorts (0.28–0.32); what differs is time spent single (66% vs 52%). **The prior was wrong** (expected G3 largest). **No causation claim**: CP1 locates where the funnel differs, not what would save worlds.
 
 

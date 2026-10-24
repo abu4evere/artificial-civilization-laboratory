@@ -211,9 +211,30 @@ def resolve_hunts(world) -> None:
         fauna.surprised(world, hunters[0], loc)
 
 
+def _dig(world, p, eff) -> None:
+    """DG1: taking earth out deepens a pit here. A hard thing in hand digs faster (as for stone)."""
+    idx, f = best_item(p, "stone")
+    key = f"{p.loc[0]},{p.loc[1]}"
+    pit = world.pits.setdefault(key, [0.0, world.tick])
+    pit[0] = min(2.0, pit[0] + 0.6 * eff * f)       # a week of digging: about knee-deep by hand (an assumption)
+    pit[1] = world.tick
+    p.expect["handled:earth"] = 1.0
+    _judge_use(world, p, idx, "stone")
+    matter.wear(p, idx)
+    p.reward += 0.02
+    p.doing = "dig"
+    world.emit("dig", p.id, None, p.loc, depth=round(pit[0], 2))
+    log = getattr(world, "dg1log", None)    # DG1 logging (runner sets it; not saved; read by nothing here)
+    if log is not None:
+        log.append(("dig", world.tick, p.id, p.loc[0], p.loc[1], round(pit[0], 3)))
+
+
 def _gather(world, p, target, eff):
     c = world.cfg
     loc, kind = target
+    if kind == "earth":
+        _dig(world, p, eff)
+        return
     tile = world.tile(p.loc)
     idx, f = best_item(p, kind)
     rate = (c.gather_base + c.gather_skill * p.skills["crafting"]) * eff * f
@@ -238,6 +259,9 @@ def _put(world, p, thing, eff):
     keep = 2.0 * (p.need(c, world.tick) + deps)
     if thing == "food":
         amount = min(p.food - keep, 60.0)
+        log = getattr(world, "dg1log", None)
+        if log is not None and c.digging and amount > 0 and world.pit_depth(p.loc) >= 0.5:
+            log.append(("pitfood", world.tick, p.id, p.loc[0], p.loc[1], round(amount, 2)))
     elif thing == "seeds":
         amount = min(p.seeds - max(0.0, 0.5 * keep - p.food), 40.0)
     else:

@@ -93,3 +93,4 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - Nature v4 adopted (creator: "Go with bodies"); live acl = v4; tests 59 pass; tag nature-v4. Website box fix published.
 - DG1 (digging on v4) frozen, zero PASS, cloud run 40028228227 (1,536 worlds). docs/IDEAS_FROM_GPT_CHAT_2026-10-23.md (creator chat summary; boundary: ACL stays closed, no internet-surviving agents). Website loops rebuilt (visible motion), local only, waiting for "publish".
 - DG1 done: no effect; digging tried once by nearly all, food in pits 204 times; proposed for v5, creator decides. DG1-done.
+- Nature v5 adopted (digging; creator "yes" to GPT); live acl = v5; 60 tests pass; tag nature-v5. Website animations published. Next BD2.

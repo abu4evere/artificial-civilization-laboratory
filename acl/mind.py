@@ -36,6 +36,27 @@ MOVE_COST = 4
 GATHERABLE = ("stone", "flint", "wood", "fiber", "clay", "char")
 
 
+def diggable(world, loc) -> float:
+    """DG1: earth to dig here: dry land that is not rock and not frozen hard (3.0, like a full stock), else 0."""
+    t = world.tile(loc)
+    if t.water or t.rock >= 0.6 or weather.coldness(world, loc) >= 1.0:
+        return 0.0
+    return 3.0
+
+
+def hidden_in_pit(world, p: Person, loc, owner) -> bool:
+    """DG1: another's food in a pit is hidden unless p saw it put there (p remembers a placement there) or the pit
+    is freshly dug (turned earth shows for four weeks), or its owner is dead."""
+    if world.pit_depth(loc) < 0.5:
+        return False
+    o = world.people.get(owner)
+    if o is None or not o.alive:
+        return False
+    if world.tick - world.pits[f"{loc[0]},{loc[1]}"][1] <= 4:
+        return False
+    return not any((pl[1], pl[2]) == tuple(loc) for pl in p.placements)
+
+
 def own_stash(world, p: Person, radius: int | None = None) -> list:
     """Food p remembers setting down, that is still there: [(tile, entry)]."""
     out = []
@@ -231,12 +252,12 @@ def decide(world, p: Person) -> tuple:
         if p.mat_total() < c.material_limit:
             want = _material_wants(p, season)
             best, best_u, best_d = None, 0.0, 0
-            for kind in GATHERABLE:
-                wk = c.worth_weight * want[kind] + 0.03 + 0.08 * g["curiosity"]
+            for kind in GATHERABLE + (("earth",) if c.digging else ()):
+                wk = c.worth_weight * want.get(kind, 0.0) + 0.03 + 0.08 * g["curiosity"]
                 if f"handled:{kind}" not in p.expect:
                     wk += c.novelty * g["curiosity"] * 2.0
                 for t in tiles:
-                    stock = world.tile(t).material(kind)
+                    stock = diggable(world, t) if kind == "earth" else world.tile(t).material(kind)
                     if stock < 1.0:
                         continue
                     d = distance(p.loc, t, w, h)
@@ -306,6 +327,8 @@ def decide(world, p: Person) -> tuple:
                     owner = entry[0]
                     if owner == p.id:
                         continue
+                    if c.digging and hidden_in_pit(world, p, t, owner):
+                        continue                          # DG1: food in a pit that they cannot tell is there
                     o = world.people.get(owner)
                     family = o is not None and (world.kinship(p, o) > 0 or p.partner == owner)
                     r = p.rel.get(owner)
