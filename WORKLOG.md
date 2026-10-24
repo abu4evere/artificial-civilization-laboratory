@@ -97,3 +97,19 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - BD2 (realistic rot, on v5) frozen, zero PASS, cloud run 40048036820 (1,536 worlds: C, R, N).
 - BD2 done: realistic rot; bodies gain +7.7% (was +19.9%); proposed v6. BD2-done.
 - Nature v6 adopted (realistic rot); live acl = v6; 61 tests pass; tag nature-v6.
+
+## HANDOFF (24 October 2026): for any assistant working while Claude is unavailable (~4 days)
+
+State: nature **v6** live (v3 + bodies_stay + digging + body_rot); 61 tests pass; tags nature-v4/v5/v6.
+Last studies done: BD1, DG1, BD2 (see experiments/INDEX.md, ROADMAP.md). Open decisions: docs/OPEN_DECISIONS.md.
+Drafts not built: TG1 (things on the ground), WA1 (water); GPT advised next: a frozen breakdown of what causes the
+bodies' remaining +7.7% population gain (on v6, with a no-bodies arm).
+Book: Part 2 drafts in drafts/book_rewrite/part2/ (LOCAL ONLY, never commit/upload); notes_for_book_ai_robots.md.
+Publishing: Amazon live (short title in review); Google Play pending account review (up to 30 days); Draft2Digital
+draft made but NOT submitted ($20 fee declined); plan: go direct (Kobo, then Apple, then B&N).
+
+**Rules (must follow):** freeze a plan (questions.md, tag X-frozen) and get the creator's sign-off before any code or
+data; zero checks before runs; never change nature (acl/ or code_vN) without the creator's explicit decision; append
+corrections, never rewrite findings; every number from a script; population beside every measure; book text stays
+local; no "Claude"/Co-Authored-By in commits; no API keys, passwords or payments; don't publish/post without the
+creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with tools/ci/fetch_cloud.py.
