@@ -94,3 +94,5 @@ Rules: `docs/HELPER_RUNBOOK.md`. The assistant reads this first when it is back.
 - DG1 (digging on v4) frozen, zero PASS, cloud run 40028228227 (1,536 worlds). docs/IDEAS_FROM_GPT_CHAT_2026-10-23.md (creator chat summary; boundary: ACL stays closed, no internet-surviving agents). Website loops rebuilt (visible motion), local only, waiting for "publish".
 - DG1 done: no effect; digging tried once by nearly all, food in pits 204 times; proposed for v5, creator decides. DG1-done.
 - Nature v5 adopted (digging; creator "yes" to GPT); live acl = v5; 60 tests pass; tag nature-v5. Website animations published. Next BD2.
+- BD2 (realistic rot, on v5) frozen, zero PASS, cloud run 40048036820 (1,536 worlds: C, R, N).
+- BD2 done: realistic rot; bodies gain +7.7% (was +19.9%); proposed v6. BD2-done.
