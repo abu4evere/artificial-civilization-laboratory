@@ -1,0 +1,113 @@
+diff --git a/NV5_nature_v5/code_v5/acl/actions.py b/BD2_realistic_rot/code_bd2/acl/actions.py
+index e670499..91a7ecc 100644
+--- a/NV5_nature_v5/code_v5/acl/actions.py
++++ b/BD2_realistic_rot/code_bd2/acl/actions.py
+@@ -322,7 +322,8 @@ def _ate_from_body(world, p, owner, food) -> None:
+     b = next((x for x in world.bodies if x["id"] == owner and x["flesh"]), None)
+     if b is None:
+         return
+-    rotten = world.tick - b["tick"] >= biology.rot_weeks(world)
++    rotten = (b["add"] >= biology.ROT_SHARE * biology.BONES_ADD if world.cfg.body_rot
++              else world.tick - b["tick"] >= biology.rot_weeks(world))
+     if rotten and not p.sick and world.rng.random() < 0.3:
+         p.sick = True
+         world.emit("ill", p.id, None, p.loc)
+diff --git a/NV5_nature_v5/code_v5/acl/biology.py b/BD2_realistic_rot/code_bd2/acl/biology.py
+index bcd4281..99139c7 100644
+--- a/NV5_nature_v5/code_v5/acl/biology.py
++++ b/BD2_realistic_rot/code_bd2/acl/biology.py
+@@ -621,11 +621,44 @@ def _leave_body(world, p: Person, tile, heir, eid: int, kind: str, killer) -> No
+     world.bodies.append({"id": p.id, "x": p.loc[0], "y": p.loc[1], "tick": world.tick, "eid": eid,
+                          "kind": kind, "killer": killer, "start": food,
+                          "items": [] if heir is not None else list(p.items), "flesh": True})
++    if world.cfg.body_rot:                  # BD2: the flesh apart from what they carried, and warmth so far
++        world.bodies[-1]["meat0"] = meat
++        world.bodies[-1]["add"] = 0.0
+     log = getattr(world, "bd1log", None)    # BD1 logging (runner sets it; not saved; read by nothing here)
+     if log is not None:
+         log.append(("body", world.tick, p.id, round(meat, 2), round(food, 2), len(p.items) if heir is None else 0))
+ 
+ 
++BONES_ADD = 1300.0        # BD2: degree-days (deg C x days above 0) until only bones are left; an assumption anchored
++                          # to forensic work showing decay follows accumulated temperature (Megyesi et al. 2005)
++
++
++def celsius(world, loc) -> float:
++    """BD2: this week's warmth here in degrees C, from ACL's felt temperature (0.45 felt = 15 C, 0.15 = 0 C)."""
++    t = world.tile(loc)
++    felt = t.temp + weather.SEASON_TEMP[world.season]
++    if world.season == 3:
++        felt -= world.sky.get("hard", 0.0)
++    return 50.0 * felt - 7.5
++
++
++def _rot_by_warmth(world, b, tile) -> None:
++    """BD2: a week of rot. The flesh loses its share of the degree-days that passed; what they carried rots as stored
++    food does (v5's rate). Eating takes from both alike."""
++    entry = next((st for st in tile.stash if st[0] == b["id"]), None)
++    if entry is None:
++        return
++    dd = 7.0 * max(0.0, celsius(world, (b["x"], b["y"])))
++    meat_left = max(0.0, b["meat0"] * (1.0 - b["add"] / BONES_ADD))
++    carried = max(0.0, entry[1] - meat_left)
++    flesh = entry[1] - carried
++    b["add"] += dd
++    flesh = max(0.0, flesh - b["meat0"] * dd / BONES_ADD)
++    entry[1] = carried * (1.0 - world.cfg.spoil_rate) + flesh
++    if b["add"] >= BONES_ADD:
++        b["bones_now"] = True
++
++
+ def rot_weeks(world) -> int:
+     """Weeks until a body counts as rotten: when ROT_SHARE of loose food would have rotted at v3's rate."""
+     return math.ceil(math.log(1.0 - ROT_SHARE) / math.log(1.0 - world.cfg.spoil_rate))
+@@ -642,15 +675,18 @@ def bodies_week(world) -> None:
+     for b in world.bodies:
+         loc = (b["x"], b["y"])
+         tile = world.tile(loc)
++        if b["flesh"] and world.cfg.body_rot:
++            _rot_by_warmth(world, b, tile)
+         if b["flesh"]:
+             entry = next((st for st in tile.stash if st[0] == b["id"]), None)
+-            if entry is None:
++            if entry is None or b.get("bones_now"):
+                 b["flesh"] = False
+                 from .world_traces import leave_trace
+                 leave_trace(tile, "bones:person", tick)
+                 if log is not None:
+                     log.append(("bones", tick, b["id"], tick - b["tick"]))
+-        rotten = b["flesh"] and tick - b["tick"] >= rotten_after
++        rotten = b["flesh"] and (b["add"] >= ROT_SHARE * BONES_ADD if world.cfg.body_rot
++                                  else tick - b["tick"] >= rotten_after)
+         dead = world.people[b["id"]]
+         for q in world.people_near(loc, world.cfg.perception):
+             if q.age(tick) < 52 * 3:
+diff --git a/NV5_nature_v5/code_v5/acl/config.py b/BD2_realistic_rot/code_bd2/acl/config.py
+index c66339d..475ca36 100644
+--- a/NV5_nature_v5/code_v5/acl/config.py
++++ b/BD2_realistic_rot/code_bd2/acl/config.py
+@@ -138,6 +138,8 @@ class Config:
+     digging: int = 0                   # DG1: 1 = the ground can be dug (gathering earth deepens a pit); food set down in
+                                        # a pit is hidden and keeps longer (0 = nature v4 exactly)
+     pit_keep: float = 0.5              # DG1: share of v4's rot rate for food in a pit (an assumption; 0.75 = weaker)
++    body_rot: int = 0                  # BD2: 1 = a body's flesh rots by accumulated warmth (degree-days), fast in heat,
++                                       # hardly at all in frost, instead of at the rate for stored food (0 = v5)
+     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
+                                        # their remembered places instead of in a random direction
+ 
+diff --git a/NV5_nature_v5/code_v5/acl/world.py b/BD2_realistic_rot/code_bd2/acl/world.py
+index ded4bdc..7b5bc01 100644
+--- a/NV5_nature_v5/code_v5/acl/world.py
++++ b/BD2_realistic_rot/code_bd2/acl/world.py
+@@ -655,8 +655,11 @@ class World:
+                     rate = c.spoil_rate * (1.0 - 0.6 * cover) * (c.smoke_keep if t.fire > 0 else 1.0)
+                     pit = c.digging and self.pit_depth((t.x, t.y)) >= PIT_DEEP
+                     base = rate
++                    fleshy = {b["id"] for b in self.bodies if b["flesh"]} if c.body_rot else ()
+                     for st in t.stash:
+                         owner = self.people.get(st[0])
++                        if st[0] in fleshy:
++                            continue                  # BD2: a body's food rots by warmth, in biology.bodies_week
+                         rate = base * (c.pit_keep if pit and owner is not None and owner.alive else 1.0)
+                         kept = min(st[5], st[1]) if len(st) > 5 else 0.0
+                         st[1] = (st[1] - kept) * (1.0 - rate) + kept * (1.0 - rate * c.kept_keep)
