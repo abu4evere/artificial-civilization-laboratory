@@ -1,0 +1,152 @@
+diff --git a/acl/biology.py b/acl/biology.py
+index 99139c7..95c9cce 100644
+--- a/acl/biology.py
++++ b/acl/biology.py
+@@ -293,6 +293,9 @@ def _passive_heat(world, p, tile) -> None:
+             out, _ = matter.heat(it, level)
+             if out is not None and out["sig"] != it["sig"]:
+                 p.items[i] = out
++                # CC1 Instrumentation
++                if hasattr(world, "cc1_ledger"):
++                    world.cc1_ledger.record_use(world.tick, out["sig"], p.id)
+                 _baked(world, p, it["sig"], out, level)
+     for m in matter.MATERIALS:
+         if matter.RAW[m][7] >= 50 and p.mats.get(m, 0.0) >= 1.0 and p.damp.get(m, 0) <= matter.DRY:
+@@ -303,6 +306,9 @@ def _passive_heat(world, p, tile) -> None:
+                 from .actions import _keep
+                 p.mats[m] -= 1.0
+                 _keep(p, out, world.cfg.item_limit)
++                # CC1 Instrumentation
++                if hasattr(world, "cc1_ledger"):
++                    world.cc1_ledger.record_use(world.tick, out["sig"], p.id)
+                 _baked(world, p, m, out, level)
+ 
+ 
+diff --git a/acl/information.py b/acl/information.py
+index 35b2d60..d5032b8 100644
+--- a/acl/information.py
++++ b/acl/information.py
+@@ -372,6 +372,10 @@ def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, pa
+                     return hear_how(world, learner, teacher, part, shown, claim, parent, part_lesson=True)
+         return False                                        # it needs a part they cannot make
+     remember_recipe(world, learner, sig, recipe, "taught", teacher.id, meant=meant)
++    # CC1 Instrumentation
++    if hasattr(world, "cc1_ledger"):
++        world.cc1_ledger.record(world.tick, sig, learner.id, "taught", teacher.id, learner.generation)
++
+     learner.itemval[sig] = max(learner.itemval.get(sig, 0.0), 0.5 * claim * c)
+     learner.heard["m:" + sig] = [round(claim, 3), [teacher.id], world.tick]
+     _wonder(world, learner, "m:" + sig, claim)
+diff --git a/acl/knowhow.py b/acl/knowhow.py
+index 5e77482..4785485 100644
+--- a/acl/knowhow.py
++++ b/acl/knowhow.py
+@@ -71,6 +71,10 @@ def belief(p, key: str):
+ 
+ 
+ def remember_recipe(world, p, sig: str, recipe: dict, how: str, source=None, props=None, meant=None) -> None:
++    # CC1 Instrumentation
++    if hasattr(world, "cc1_ledger"):
++        world.cc1_ledger.record(world.tick, sig, p.id, how, source, p.generation)
++
+     fresh = sig not in p.recipes
+     recipe = dict(recipe)
+     if "parts" in recipe:
+@@ -91,7 +95,13 @@ def remember_recipe(world, p, sig: str, recipe: dict, how: str, source=None, pro
+             world.emit("learn", p.id, source, p.loc, thing=sig, how=how)
+ 
+ 
+-def forget_useless(p) -> None:
++def forget_useless(world, p) -> None:
++    # CC1 Instrumentation
++    if hasattr(world, "cc1_ledger"):
++        for sig in list(p.recipes):
++            if p.itemval.get(sig, 0.0) < -0.15:
++                world.cc1_ledger.record_forget(world.tick, sig, p.id)
++
+     for sig in list(p.recipes):
+         if p.itemval.get(sig, 0.0) < -0.15:
+             del p.recipes[sig]
+diff --git a/acl/matter.py b/acl/matter.py
+index 476eb29..0441a00 100644
+--- a/acl/matter.py
++++ b/acl/matter.py
+@@ -76,8 +76,9 @@ def raw_props(kind: str) -> dict:
+     return d
+ 
+ 
+-def strike(target: str, hammer: str, skill: float, rng) -> dict | None:
++def strike(world, target: str, hammer: str, p, skill: float, rng) -> dict | None:
+     """Hit a raw material with another. Brittle things flake to an edge if the hammer is hard enough."""
++    # CC1 Instrumentation
+     t, hm = raw_props(target), raw_props(hammer)
+     force = min(100, (hm["hard"] * 100) // max(t["hard"], 1))
+     skill100 = int(skill * 100)
+@@ -87,7 +88,10 @@ def strike(target: str, hammer: str, skill: float, rng) -> dict | None:
+     if edge <= t["edge"] + 2:
+         return None
+     t["edge"] = edge
+-    return item_from(f"{target}/{hammer}", t)
++    res = item_from(f"{target}/{hammer}", t)
++    if hasattr(world, "cc1_ledger"):
++        world.cc1_ledger.record_use(world.tick, res["sig"], p.id)
++    return res
+ 
+ 
+ def sparks(target: str, hammer: str) -> bool:
+@@ -100,11 +104,11 @@ def _layer(x: int, y: int, binder: int) -> int:
+     return max(x, y) + min(x, y) // 2 + (15 * binder) // 100
+ 
+ 
+-def bind(a: dict, b: dict, binder: str) -> dict:
++def bind(world, a: dict, b: dict, binder: str, p) -> dict:
+     """Tie two things together with something flexible."""
+     bd = raw_props(binder)
+     flexible = int(a["flex"] >= 50) + int(b["flex"] >= 50) + 1
+-    p = {
++    p_out = {
+         "edge": max(a["edge"], b["edge"]),
+         "reach": min(100, a["reach"] + b["reach"]),
+         "hard": max(a["hard"], b["hard"]),
+@@ -118,25 +122,31 @@ def bind(a: dict, b: dict, binder: str) -> dict:
+     # What holds liquid is whichever part holds things; where two holding parts meet, the seam is only
+     # as tight as what binds them.
+     holder = a if a["contain"] >= b["contain"] else b
+-    p["tight"] = holder["tight"]
++    p_out["tight"] = holder["tight"]
+     if a["contain"] > 0 and b["contain"] > 0:
+-        p["tight"] = min(max(a["tight"], b["tight"]), bd["tight"])
++        p_out["tight"] = min(max(a["tight"], b["tight"]), bd["tight"])
+     parts = sorted((a["sig"], b["sig"]))
+-    return item_from(f"({parts[0]}+{parts[1]})#{binder}", p)
++    res = item_from(f"({parts[0]}+{parts[1]})#{binder}", p_out)
++    if hasattr(world, "cc1_ledger"):
++        world.cc1_ledger.record_use(world.tick, res["sig"], p.id)
++    return res
+ 
+ 
+-def shape(material: str, form: str, wet: int) -> dict | None:
++def shape(world, material: str, form: str, wet: int, p) -> dict | None:
+     """Press a soft lump into a form. Only what is plastic, and wet enough, takes a shape."""
+-    p = raw_props(material)
+-    if p["plastic"] < 50 or wet < SOFT_WHEN_WET:
++    p_props = raw_props(material)
++    if p_props["plastic"] < 50 or wet < SOFT_WHEN_WET:
+         return None
+     if form == "hollow":
+-        p["contain"] = p["plastic"] - 20
++        p_props["contain"] = p_props["plastic"] - 20
+     elif form == "long":
+-        p["reach"] = 20 + p["plastic"] // 2
++        p_props["reach"] = 20 + p_props["plastic"] // 2
+     else:
+-        p["edge"] = 20
+-    return item_from(f"{material}~{form}", p, wet=wet)
++        p_props["edge"] = 20
++    res = item_from(f"{material}~{form}", p_props, wet=wet)
++    if hasattr(world, "cc1_ledger"):
++        world.cc1_ledger.record_use(world.tick, res["sig"], p.id)
++    return res
+ 
+ 
+ def heat(thing: dict, level: int) -> tuple[dict | None, bool]:

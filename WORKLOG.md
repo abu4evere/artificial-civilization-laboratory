@@ -113,3 +113,5 @@ data; zero checks before runs; never change nature (acl/ or code_vN) without the
 corrections, never rewrite findings; every number from a script; population beside every measure; book text stays
 local; no "Claude"/Co-Authored-By in commits; no API keys, passwords or payments; don't publish/post without the
 creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with tools/ci/fetch_cloud.py.
+
+- 2026-10-24: CC1 (Qwen, never frozen) abandoned before freeze: it broke live acl/ signatures and planted a named chain; acl/ edits saved as experiments/CC1_cumulative_proof/qwen_acl_changes.patch and reverted; v6 restored, 61 tests pass. GPT handoff recorded (docs/gpt_handoff_2026-10-24.md). Bob confirmed as the creator's first priority.
