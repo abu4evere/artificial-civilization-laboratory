@@ -1,0 +1,8 @@
+arm lp, seed 501, 20 years: identical with and without observers and wrappers (state and random numbers): yes
+arm d80, seed 501, 20 years: identical with and without observers and wrappers (state and random numbers): yes
+arm c20, seed 501, 20 years: identical with and without observers and wrappers (state and random numbers): yes
+arm lp, seed 601, 100 years: identical with and without observers and wrappers: yes
+arm lp, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+arm c20, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v6 fingerprint: 424c967710e5ca9d39c50eaa7ca839ccfced37aae179b6c82b9f70e0586eb7c1
+All: PASS
