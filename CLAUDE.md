@@ -27,6 +27,10 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
 - No named inventions, recipe chains or rewards in nature (the test fails on invention names). Add conditions, not outcomes.
 - Every number from a script; population beside every measure; append corrections, never rewrite findings.
 - Judge work by diffs and executed tests, never by an assistant's own report.
+- **Independent recompute** before a study's findings are final: a fresh session (another account or a new chat) or
+  GPT recomputes the key numbers (the primary outcome and its interval, and any manipulation check) from the raw output
+  files, **without seeing the study's analysis script**. Record it as `recompute_*.md` beside the findings. If the
+  numbers disagree, the findings stay unfinished until the cause is found and appended.
 - Book drafts in `drafts/book_rewrite/part2/` stay local: never commit or upload.
 - No "Claude" or Co-Authored-By lines in commits. No API keys, passwords or payments.
 - Don't publish or post (website, social) without the creator's explicit OK. Pushing commits to GitHub is fine.
