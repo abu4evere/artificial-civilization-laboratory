@@ -133,3 +133,5 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 02:30 Sleep mode: timed 80 founders (80x80 ~4 s/yr, pop ~110 at y60; 40x40 ~2 s/yr). Checked twin and sex-ratio sources (confirm GPT). Drafted TW1 (twins + sex ratio; GPT reviewed; Revision 1) and M1 (millennium on v6; GPT reviewing). Nothing frozen. BD3 at ~60/122 jobs.
 - 2026-10-25 03:00 Sleep mode: M1 reviewed by GPT (gpt_review_m1.md); Revision 1 (A4 performance; co-primary B-retained + A4; D80 arm; zero/censoring rules; traditions defined). Not frozen.
 - 2026-10-25 03:40 Sleep mode: RH1 drafted (why a third of women have no child; read-only), GPT reviewed (gpt_review_rh1.md), Revision 1 (funnel primary; affection deadlock; men; seeds shared with M1 offered). Not frozen.
+- 2026-10-25 05:33 BD3 cloud run 40149607984 done (success). Fetching.
+- 2026-10-25 05:50 BD3 done: valid; gain NOT replicated (F/N +0.2% [-3.4,+3.8]); parts described only; avoidance none. Findings, BD2 correction appended, INDEX, ROADMAP, tag BD3-done.

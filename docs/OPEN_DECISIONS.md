@@ -85,5 +85,6 @@ the file named.
   - **RH1** — why a third of women never have a child, read-only (`experiments/RH1_reproductive_histories/questions.md`).
     Sign off, change, or drop; and **seeds: its own, or the first 120 years of M1's D80/C20 worlds** (recommended if M1
     is approved).
-  - **Order** (the assistant's suggestion): BD3's results first; then M1 (+ RH1 sharing its worlds); TW1 can run in
+  - **BD3 done (25 October): the bodies' gain did not replicate (+0.2%); nothing to decide from it.**
+  - **Order** (the assistant's suggestion): then M1 (+ RH1 sharing its worlds); TW1 can run in
     parallel (it is small).

@@ -50,3 +50,11 @@ Median population at year 60 / 120: C 29 / 33, R 26 / 28, N 23 / 18.
   rot in summer, the dead's food and tools staying where they fell, or all together. Not tested here.
 - For nature: realistic rot is the truer physics. Adopting it costs about 10% of v5's population, the part that came
   from an unrealistic number.
+
+## Correction (25 October 2026, after BD3)
+
+BD3 (frozen; 1,024 new seeds; `../BD3_bodies_breakdown/findings.md`) **did not replicate** the gain read above as
+"the gain holds": nature v6 (realistic rot) against no bodies, time-averaged population +0.2% [−3.4%, +3.8%]. BD2's R
+arm (26.16) equals BD3's v6 arm (26.14); BD2's N arm (24.28) was low by chance (BD3: 26.10). So realistic rot removes
+the bodies' gain entirely, not "most of it", and the paragraph above about "a real gain remains" is withdrawn. The text
+above is left as it was written.
