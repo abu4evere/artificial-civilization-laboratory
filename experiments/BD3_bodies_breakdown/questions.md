@@ -1,4 +1,4 @@
-# BD3 — What in a body keeps more people alive? A breakdown of the bodies' remaining gain (DRAFT, Revision 1, 24 October 2026; not signed off, not frozen)
+# BD3 — What in a body keeps more people alive? A breakdown of the bodies' remaining gain (SIGNED OFF 24 October 2026; frozen as `BD3-frozen` before any code or data)
 
 **Why.** BD2 found that with realistic rot (now nature v6), worlds where the dead leave bodies hold **+7.7% more
 people** over 120 years than worlds where the dead vanish (95% interval +2.3% to +13.4%; 512 paired seeds), though
@@ -121,6 +121,7 @@ manipulation checks for opportunity as well as absence; exact parity of switches
 numbers); direct avoidance measures; and a ninth arm, F−eat−carried, for the interaction. Not adopted: add-one arms
 (not needed until the leave-one-out results are in).
 
-## Sign-off
+## Sign-off (24 October 2026)
 
-Not yet. Waiting for the creator's decision.
+The creator: "yes go ahead, freeze it and run", on Revision 1 as written (1,024 seeds, nine arms). Frozen as
+`BD3-frozen` before any code or data.
