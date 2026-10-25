@@ -47,3 +47,24 @@ partnered fertile woman within 2 tiles of her partner, 8% if they courted), and 
   PF1/PF2 (courting not tried; food wins), C1, CB1, AP1 (couples apart most fertile weeks; when together, conception
   works as designed), TL1 (ageing out), MB1b (more mixing without easier pairing). A new audit would add care by
   nonparents and the affection deadlock, which have not been measured.
+
+## Follow-up: why reproduction is low (24 October 2026)
+
+**The assistant's quick look (not a frozen study; numbers from a throwaway script):** 4 worlds, v6, 80 founders on
+40 × 40, 100 years; 43 in-world-born women who lived through ages 16–45. Births per woman: mean 3.14, median 3, max 8;
+distribution 0:15, 1:2, 2:3, 3:2, 4:6, 5:3, 6:3, 7:8, 8:1; children reaching 15: 2.37 per woman (right-censored).
+Across fertile woman-weeks: has a partner 55%, partner within 2 tiles 20%. Rules allow a birth about every 2.7 years
+for a couple always together.
+
+**GPT's view:** call it a reproductive-*opportunity* bottleneck, not yet a proven bimodal pattern (43 women, 4 worlds,
+women not independent; selected on surviving to 45). Mothers average 4.82 births, close to some foragers' completed
+family size (Ju/'hoansi 4.7, Hiwi 5.13, Aché 8.15, Agta 7.6; Hadza TFR 6.1; Tsimane ~9); interbirth intervals not yet
+measured (foragers ~2.6–4.1 years). **35% childless is a serious warning sign** for a natural-fertility setting (a
+Tsimane working paper, to be checked, reports ~3% nulliparity at 45+), but not yet a demonstrated defect. Do not raise
+the conception chance and do not add a wish for children to fix it. **New priority order:** (1) explain the 35%
+(never paired, paired late, widowed without re-pairing, apart, or eligible but unlucky); (2) the affection deadlock;
+(3) care by non-parents; (4) only then any new drive. Suggested read-only measures: age at first encounter/courting/
+pairing/birth; partner loss and re-pairing; fully eligible conception weeks per woman, and the chance of zero births
+given them (∏(1 − p_t)); eligible men alive/reachable/met/approached by age band; all birth cohorts including women who
+die before 45; complete follow-up for child survival; birth intervals for women with 2+ births, split by whether the
+previous child survived (the 78-week wait applies only while the youngest lives).
