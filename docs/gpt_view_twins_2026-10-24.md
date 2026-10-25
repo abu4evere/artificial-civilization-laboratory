@@ -53,3 +53,9 @@ twin mothers' survival; Fraga et al. 2005 (epigenetic differences in identical t
 "Add twins, but that should be totally random and low chance." So: a fixed, low chance per birth that depends on
 nothing (not age, parity, population or anything else), as GPT's simplest form. To be drafted as a Law 126 plan (frozen,
 zero checks, the "youngest child alive" check fixed for twins) after BD3, and signed off by the creator before any code.
+
+## Also decided: sex ratio at birth (24 October 2026)
+
+The creator: "make it 105 to 100 like real humans" (boys to girls at birth; ACL now draws 50/50). To go into the same
+Law 126 plan as twins (after BD3), with the figure checked against sources before freezing; founders stay half and
+half unless the plan says otherwise.
