@@ -1,0 +1,25 @@
+seed 11, 5 years: code_wm1 with all switches 0 = code_v7, state and random numbers: yes
+seed 501, 5 years: code_wm1 with all switches 0 = code_v7, state and random numbers: yes
+seed 501, 20 years: code_wm1 with all switches 0 = code_v7, state and random numbers: yes
+seed 601, 20 years: code_wm1 with all switches 0 = code_v7, state and random numbers: yes
+switch P0 alone, seeds 501/601, 20 years: changes the world (it acts): yes
+switch K0 alone, seeds 501/601, 20 years: changes the world (it acts): yes
+switch B0 alone, seed 501 (its first childbirth death), 27 years: changes the world (it acts): yes
+arm c20, seed 501, 20 years: identical with and without the observer: yes
+arm d80, seed 501, 20 years: identical with and without the observer: yes
+arm p, seed 501, 20 years: identical with and without the observer: yes
+arm b, seed 501, 20 years: identical with and without the observer: yes
+arm k, seed 501, 20 years: identical with and without the observer: yes
+arm pb, seed 501, 20 years: identical with and without the observer: yes
+arm pk, seed 501, 20 years: identical with and without the observer: yes
+arm bk, seed 501, 20 years: identical with and without the observer: yes
+arm pbk, seed 501, 20 years: identical with and without the observer: yes
+arm c20, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+arm pbk, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+P0: pregnancy adds 1.5 to need when off, nothing when on; other needs unchanged: yes
+B0: a forced childbirth draw kills when off, not when on; same birth and same draws: yes
+K0: a carer holding less than her own need feeds the child when off, nothing when on: yes
+unit tests: yes
+code_v7 fingerprint: 179f67e1c533189634dafcb7211ad72a4256567191d4ee985dfb437f7757eedb
+code_wm1 fingerprint: ec754f207557eb5a29b7694c7731f2edb303432453cbd13f550b983ec6357c2f
+All: PASS

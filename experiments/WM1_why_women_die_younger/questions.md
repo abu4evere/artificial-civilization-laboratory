@@ -177,3 +177,26 @@ adult male deaths (world-born, aged 16–54). That projects to 3,232 adult femal
 
 The creator: "yea approve it, run the pilot and freeze", on Revision 1 as written. Frozen as `WM1-frozen` after the
 pilot, before any code or data for the study.
+
+## Operational note 1 (25 October 2026, after freezing, before any data)
+
+How the code reads the frozen text, where the text left a choice:
+1. **Q4 verdicts overlap:** an interval such as [−0.8, −0.2] is both "below 0" and "above −1". "Reduces the gap" is
+   checked first, so a small but clear reduction counts as a reduction.
+2. **Food given as a share of need** at the start of a week is the previous week's share (the last thing known before
+   the week runs).
+3. **Week of pregnancy** is logged in trimesters (weeks 0–12, 13–25, 26–38).
+4. **Cohorts** are born before year 40, 40–69, and 70 or later; the last is reported but too young to reach 50.
+5. **B0** keeps the childbirth random draw and ignores its result, so a childbirth changes nothing else.
+6. **K0:** dependants get what the carer holds above her own need: max(0, held − need) shared in proportion to
+   their wants, never more than they want.
+7. **The bootstrap** uses a fixed generator seed (20261025), so the intervals can be reproduced.
+
+## Operational amendment 1 (25 October 2026, before any data)
+
+The first zero check failed on one line: switch B0 (no childbirth deaths) did not change seeds 501 or 601 in 20 years.
+The assistant checked why: none of seeds 501–508 has a childbirth death in its first 20 years on v7 (childbirth deaths
+are about 0.9 per world over 120 years). With no death to prevent, B0 cannot act. Its unit test (a forced childbirth
+draw kills when off, not when on) had passed. The check is changed so it can see the rule act: B0 is checked on the
+first of seeds 501–520 whose v7 world has a childbirth death, run to one year after it. Nothing else changes. This is
+the same situation as BD3's operational amendment 1.

@@ -1,0 +1,49 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' NV7_nature_v7/code_v7/acl/biology.py WM1_why_women_die_younger/code_wm1/acl/biology.py
+--- NV7_nature_v7/code_v7/acl/biology.py	2026-10-25 14:52:38.130002800 -0400
++++ WM1_why_women_die_younger/code_wm1/acl/biology.py	2026-10-25 15:42:39.650194800 -0400
+@@ -60,7 +60,9 @@
+         total = sum(wants)
+         if total <= 0:
+             continue
+-        if p.edible() >= own + total:
++        if c.wm1_k0:                                       # WM1 K0: the carer meets her own need first
++            portion = max(0.0, min(1.0, (p.edible() - own) / total))
++        elif p.edible() >= own + total:
+             portion = 1.0
+         else:
+             dep_weight = total * (0.4 + 1.2 * p.genes["care"])
+@@ -513,7 +515,7 @@
+         sexes = [first.sex] + ([second.sex] if kind else [])
+         log.append((tick, mother.id, round(mother.years(tick), 2), parity, n_alive, kind or "single", sexes,
+                     first.id, second.id if kind else None))
+-    if rng.random() < c.birth_death_chance:
++    if rng.random() < c.birth_death_chance and not c.wm1_b0:   # WM1 B0: no childbirth deaths (the draw is kept)
+         mother.hurt_by = "childbirth"
+         die(world, mother, "childbirth", None)
+ 
+diff -ru --strip-trailing-cr '--exclude=__pycache__' NV7_nature_v7/code_v7/acl/config.py WM1_why_women_die_younger/code_wm1/acl/config.py
+--- NV7_nature_v7/code_v7/acl/config.py	2026-10-25 14:52:38.121102200 -0400
++++ WM1_why_women_die_younger/code_wm1/acl/config.py	2026-10-25 15:42:39.654173600 -0400
+@@ -142,6 +142,10 @@
+                                        # hardly at all in frost, instead of at the rate for stored food (0 = v5)
+     sex_ratio_birth: int = 0           # TW1: 1 = a newborn is a boy with chance 105/205 (0 = an even draw, nature v6)
+     twins: int = 0                     # TW1: 1 = a delivery is identical twins with chance 0.004, fraternal 0.010
++    wm1_p0: int = 0                    # WM1 diagnostic (not nature): 1 = pregnancy needs no extra food
++    wm1_b0: int = 0                    # WM1 diagnostic (not nature): 1 = no childbirth deaths
++    wm1_k0: int = 0                    # WM1 diagnostic (not nature): 1 = a carer meets her own need before feeding
++                                       # dependants, who get only what is left
+     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
+                                        # their remembered places instead of in a random direction
+ 
+diff -ru --strip-trailing-cr '--exclude=__pycache__' NV7_nature_v7/code_v7/acl/person.py WM1_why_women_die_younger/code_wm1/acl/person.py
+--- NV7_nature_v7/code_v7/acl/person.py	2026-10-25 14:52:38.113886500 -0400
++++ WM1_why_women_die_younger/code_wm1/acl/person.py	2026-10-25 15:42:39.639026800 -0400
+@@ -204,7 +204,7 @@
+         st = self.stage(tick)
+         n = {"infant": cfg.need_infant, "child": cfg.need_child, "teen": cfg.need_teen,
+              "adult": cfg.need_adult, "elder": cfg.need_elder}[st]
+-        if self.pregnant is not None:
++        if self.pregnant is not None and not cfg.wm1_p0:   # WM1 P0: pregnancy needs no extra food
+             n += 1.5
+         return n
+ 
