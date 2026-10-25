@@ -75,3 +75,15 @@ the file named.
   bodies; survival not shown). **Decision for the creator: (a) adopt realistic rot into nature v6 (recommended: the
   truer physics); (b) keep v5's rot.** Then: TG1 (things on the ground), WA1 (water).
   - Decided: realistic rot adopted as nature v6. Next (GPT): a breakdown of bodies' remaining gain (plan to draft).
+
+- [ ] **Waiting for the creator (drafted in sleep mode, 25 October 2026; each reviewed by GPT and revised; none frozen):**
+  - **M1** — a thousand years on nature v6 (`experiments/M1_millennium_v6/questions.md`): arms LP (80 founders, 80 × 80,
+    primary), D80 and C20 (secondary); co-primary outcomes: knowledge kept after its inventor dies, and food owed to
+    tools; the cohort test (born at the start vs born at year 900). Sign off, change, or drop.
+  - **TW1** — twins (fixed random chance: identical 0.4%, fraternal 1.0% per delivery) and boys:girls 105:100, with
+    the nursing fix (`experiments/TW1_twins_sex_ratio/questions.md`). Sign off, change, or drop.
+  - **RH1** — why a third of women never have a child, read-only (`experiments/RH1_reproductive_histories/questions.md`).
+    Sign off, change, or drop; and **seeds: its own, or the first 120 years of M1's D80/C20 worlds** (recommended if M1
+    is approved).
+  - **Order** (the assistant's suggestion): BD3's results first; then M1 (+ RH1 sharing its worlds); TW1 can run in
+    parallel (it is small).
