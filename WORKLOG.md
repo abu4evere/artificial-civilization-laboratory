@@ -143,3 +143,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 TW1 done (run 40210448166, 512 worlds): valid, manipulation passes; proposed for v7 (creator decides). findings.md, INDEX, ROADMAP, OPEN_DECISIONS; tag TW1-done.
 - 2026-10-25 TW1: GPT's view (gpt_view_tw1.md): votes (a) v7, conditional on a maternal-death/sex-ratio integrity audit; paired extinction 35 vs 49 discordant (p 0.16); sex-split deaths need a logging pass (creator decides).
 - 2026-10-25 M1: zero PASS locally (observers/wrappers read-only for lp/d80/c20; LP 100y; reloads). Launching on GitHub, chunks=48.
+- 2026-10-25 17:06 M1+RH1 launched on GitHub: run 40214835191 (192 worlds, 1000 years, chunks=48); watcher running.
