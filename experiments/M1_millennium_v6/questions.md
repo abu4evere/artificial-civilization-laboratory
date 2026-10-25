@@ -1,4 +1,4 @@
-# M1 — A thousand years on today's nature: do they keep, lose, or build? (DRAFT, Revision 1, 25 October 2026, sleep mode; not signed off, not frozen)
+# M1 — A thousand years on today's nature: do they keep, lose, or build? (SIGNED OFF 25 October 2026; frozen as `M1-frozen` before any code or data)
 
 **Why.** The creator's yardstick (24 October 2026): the first generations will hardly pass anything on, and that is
 fine; but a world at year 1,000 must differ from its start, as human history does, with nothing handed to its people.
@@ -105,6 +105,6 @@ After GPT's review (`gpt_review_m1.md`): A4 (performance, not possession) added;
 (B-retained and A4); zero-baseline and censoring rules; traditions defined before data; "increase below the margin"
 reading; D80 added as a secondary arm (192 worlds); two views of the cohort test; long-run observer checks.
 
-## Sign-off
+## Sign-off (25 October 2026)
 
-Not yet. Drafted in sleep mode from GPT's design; GPT's review to follow; the creator decides.
+The creator: "yea approve all and run them on github", on the revised drafts as written (Revision 1; arms LP, D80, C20; 64 seeds each), run together with RH1, whose observer runs beside M1's in the D80 and C20 worlds (declared here before any data). Frozen before any code or data.

@@ -1,4 +1,4 @@
-# RH1 — Why does a third of women never have a child? Reproductive histories on nature v6 (DRAFT, Revision 1, 25 October 2026, sleep mode; read-only; not signed off, not frozen)
+# RH1 — Why does a third of women never have a child? Reproductive histories on nature v6 (SIGNED OFF 25 October 2026; read-only; frozen as `RH1-frozen` before any code or data)
 
 **Why.** A quick look on 24 October 2026 (4 worlds, v6, 80 founders on 40 × 40, 100 years; 43 in-world-born women
 who lived through 16–45; a throwaway script, not a result) found: births per woman 3.14 (mothers 4.82, close to some
@@ -71,6 +71,6 @@ After GPT's review (`gpt_review_rh1.md`): the funnel with non-exclusive reasons 
 a secondary summary; each woman's P(0) instead of a 26-week cut; early deaths separate; the affection deadlock logged
 per encounter; a light men's side; ranked shares, no "main path" verdict; seed sharing with M1 offered.
 
-## Sign-off
+## Sign-off (25 October 2026)
 
-Not yet. Drafted in sleep mode; GPT's review to follow; the creator decides.
+The creator: "yea approve all and run them on github", on the revised drafts as written, with the seed choice the assistant recommended: **(b), the first 120 years of M1's D80 and C20 worlds (seeds 16801–16864)**, its observer running beside M1's; declared before any data; not an independent replication. Frozen before any code or data.

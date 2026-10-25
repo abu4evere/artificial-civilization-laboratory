@@ -1,4 +1,4 @@
-# TW1 — Twins and the sex ratio at birth: a change to nature (DRAFT, Revision 1, 25 October 2026, sleep mode; not signed off, not frozen)
+# TW1 — Twins and the sex ratio at birth: a change to nature (SIGNED OFF 25 October 2026; frozen as `TW1-frozen` before any code or data)
 
 **Why.** The creator decided (24 October 2026) to add **twins at a fixed, low, purely random chance** and to make the
 **sex ratio at birth 105 boys to 100 girls**, as in real humans (`../../docs/gpt_view_twins_2026-10-24.md`). Today
@@ -86,6 +86,6 @@ counted with identical pairs once; 99.9% intervals; independence by code and tes
 instead of 512. Twin survival is described only for what ACL represents (shared care and food), never read as human
 twin mortality.
 
-## Sign-off
+## Sign-off (25 October 2026)
 
-Not yet. Drafted in sleep mode; GPT's review to follow; the creator decides.
+The creator: "yea approve all and run them on github", on the revised drafts as written (Revision 1; 256 seeds). Frozen before any code or data.
