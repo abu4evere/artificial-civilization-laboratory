@@ -637,3 +637,7 @@ sex ratio), RH1 (why a third of women have no child), all drafted and reviewed b
 **TW1 done** (`experiments/TW1_twins_sex_ratio/findings.md`; frozen; 512 worlds on GitHub). Twins at a fixed random
 chance and 105 boys to 100 girls work as specified (14.2 twin deliveries per 1,000, 3.8 identical; 106.9 boys per 100
 girls). By the frozen rule both are proposed for nature v7: **the creator decides**. M1 and RH1 (on v6) are running.
+
+**Nature v7** (`experiments/NV7_nature_v7/findings.md`; the creator's decision, 25 October 2026): v6 + twins (fixed
+random chance) + 105 boys to 100 girls + the nursing fix. Zero checks pass; 62 tests. Future studies run on v7; M1 and
+RH1 stay on v6 as frozen.

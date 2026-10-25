@@ -140,6 +140,9 @@ class Config:
     pit_keep: float = 0.5              # NV5 (DG1): share of the rot rate for food in a pit (an assumption)
     body_rot: int = 1                  # NV6 (BD2): 1 = a body's flesh rots by accumulated warmth (degree-days): a
                                        # temperature-based approximation, not full decomposition (0 = nature v5)
+    sex_ratio_birth: int = 1           # NV7 (TW1): 1 = a newborn is a boy with chance 105/205 (0 = an even draw, nature v6)
+    twins: int = 1                     # NV7 (TW1): 1 = a delivery is identical twins with chance 0.004, fraternal 0.010
+                                       # (one random draw that reads nothing else; 0 = one child per delivery, nature v6)
     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
                                        # their remembered places instead of in a random direction
 

@@ -146,3 +146,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 17:06 M1+RH1 launched on GitHub: run 40214835191 (192 worlds, 1000 years, chunks=48); watcher running.
 - 2026-10-25 Creator: new hard rule in CLAUDE.md, independent recompute of key numbers (fresh session or GPT, without the analysis script) before findings are final.
 - 2026-10-25 TW1 independent recompute (GPT, fresh chat, raw files only, no script): every number matches; recompute_tw1.md.
+- 2026-10-25 Creator: 'go with a, make v7'. Nature v7 = v6 + twins + sex_ratio_birth + nursing fix (code_v7 = code_tw1); live acl/ defaults on; zero PASS (run_nv7.py); v7 reference hashes; 62 tests pass; tag nature-v7.

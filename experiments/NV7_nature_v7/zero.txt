@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v7 with twins 0 and sex_ratio_birth 0 = code_v6: yes
+seed 501, 5 years: code_v7 with twins 0 and sex_ratio_birth 0 = code_v6: yes
+seed 501, 20 years: code_v7 with twins 0 and sex_ratio_birth 0 = code_v6: yes
+seed 601, 20 years: code_v7 with twins 0 and sex_ratio_birth 0 = code_v6: yes
+seed 501, 20 years: v7 = code_tw1's T arm: yes
+seed 501, 20 years: the live package with its own defaults = v7: yes
+seed 601, 20 years: v7 = code_tw1's T arm: yes
+seed 601, 20 years: the live package with its own defaults = v7: yes
+seed 501, 20 years: twins and sex_ratio_birth change the world (they act): yes
+v7, seed 501 (a pit held): saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS
