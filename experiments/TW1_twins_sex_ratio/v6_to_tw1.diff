@@ -1,0 +1,95 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV6_nature_v6/code_v6/acl/biology.py experiments/TW1_twins_sex_ratio/code_tw1/acl/biology.py
+--- experiments/NV6_nature_v6/code_v6/acl/biology.py	2026-10-23 22:54:20.631604000 -0400
++++ experiments/TW1_twins_sex_ratio/code_tw1/acl/biology.py	2026-10-25 12:02:52.491154700 -0400
+@@ -333,10 +333,14 @@
+ 
+ 
+ def _youngest_alive(world, p: Person) -> bool:
++    """TW1: whether any child of her latest delivery lives (with one child per delivery, v6's rule exactly)."""
+     for cid in reversed(p.children):
+         child = world.people[cid]
+         if child.mother == p.id:
+-            return child.alive
++            if child.birth != p.last_birth:
++                return False
++            if child.alive:
++                return True
+     return False
+ 
+ 
+@@ -484,12 +488,50 @@
+     father = world.people.get(mother.pregnant)
+     mother.pregnant = None
+     mother.last_birth = tick
++    log = getattr(world, "tw1log", None)                 # TW1 logging (read-only; runner sets it)
++    if log is not None:
++        parity = len({world.people[x].birth for x in mother.children if world.people[x].mother == mother.id})
++        n_alive = len(world.living())
++    gen = max(mother.generation, father.generation if father else 0) + 1
++    genes = _draw_genes(world, mother, father)
++
++    def sex_draw():
++        if c.sex_ratio_birth:                             # TW1: boys 105 to girls 100
++            return "M" if rng.random() < 105.0 / 205.0 else "F"
++        return rng.choice(("F", "M"))
++    first = _born(world, mother, father, genes, make_name(rng), sex_draw(), gen)
++    kind = None
++    if c.twins:                                           # TW1: one draw per delivery that reads nothing else
++        u = rng.random()
++        kind = "identical" if u < 0.004 else "fraternal" if u < 0.014 else None
++        if kind == "identical":
++            second = _born(world, mother, father, dict(genes), make_name(rng), first.sex, gen)
++        elif kind == "fraternal":
++            g2 = _draw_genes(world, mother, father)
++            second = _born(world, mother, father, g2, make_name(rng), sex_draw(), gen)
++    if log is not None:
++        sexes = [first.sex] + ([second.sex] if kind else [])
++        log.append((tick, mother.id, round(mother.years(tick), 2), parity, n_alive, kind or "single", sexes,
++                    first.id, second.id if kind else None))
++    if rng.random() < c.birth_death_chance:
++        mother.hurt_by = "childbirth"
++        die(world, mother, "childbirth", None)
++
++
++def _draw_genes(world, mother, father) -> dict:
++    c = world.cfg
++    rng = world.rng
+     genes = {}
+     for gname in GENES:
+         mid = (mother.genes[gname] + (father.genes[gname] if father else mother.genes[gname])) / 2.0
+         genes[gname] = round(clamp(mid + rng.gauss(0.0, c.mutation), 0.02, 0.98), 4)
+-    gen = max(mother.generation, father.generation if father else 0) + 1
+-    child = Person(world._new_pid(), make_name(rng), rng.choice(("F", "M")), tick, gen, genes, mother.loc)
++    return genes
++
++
++def _born(world, mother, father, genes, name, sex, gen):
++    """One child of a delivery (TW1: called twice for twins; v6's steps, unchanged)."""
++    tick = world.tick
++    child = Person(world._new_pid(), name, sex, tick, gen, genes, mother.loc)
+     child.health = 70.0
+     child.mother = mother.id
+     child.father = father.id if father else None
+@@ -514,9 +556,7 @@
+         if par.alive:
+             remember(world, par, eid, "born", par.id, child.id, mother.loc, 0.8, 0.9)
+             par.mood = clamp(par.mood + 0.2)
+-    if rng.random() < c.birth_death_chance:
+-        mother.hurt_by = "childbirth"
+-        die(world, mother, "childbirth", None)
++    return child
+ 
+ 
+ def die(world, p: Person, cause: str, killer) -> None:
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV6_nature_v6/code_v6/acl/config.py experiments/TW1_twins_sex_ratio/code_tw1/acl/config.py
+--- experiments/NV6_nature_v6/code_v6/acl/config.py	2026-10-23 22:54:20.623398700 -0400
++++ experiments/TW1_twins_sex_ratio/code_tw1/acl/config.py	2026-10-25 12:02:26.543948600 -0400
+@@ -140,6 +140,8 @@
+     pit_keep: float = 0.5              # DG1: share of v4's rot rate for food in a pit (an assumption; 0.75 = weaker)
+     body_rot: int = 0                  # BD2: 1 = a body's flesh rots by accumulated warmth (degree-days), fast in heat,
+                                        # hardly at all in frost, instead of at the rate for stored food (0 = v5)
++    sex_ratio_birth: int = 0           # TW1: 1 = a newborn is a boy with chance 105/205 (0 = an even draw, nature v6)
++    twins: int = 0                     # TW1: 1 = a delivery is identical twins with chance 0.004, fraternal 0.010
+     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
+                                        # their remembered places instead of in a random direction
+ 

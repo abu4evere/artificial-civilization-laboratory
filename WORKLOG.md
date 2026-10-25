@@ -138,3 +138,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 06:05 GPT reviewed BD3 result (gpt_view_bd3.md): wording changed to "not replicated, likely sampling variation" in findings, BD2 correction, INDEX, ROADMAP; no change to v6 or M1.
 - 2026-10-25 06:10 Sleep mode ends with a morning report. Waiting for the creator: M1, TW1, RH1 sign-offs (docs/OPEN_DECISIONS.md).
 - 2026-10-25 Creator: "approve all and run them on github". M1, TW1, RH1 signed off and frozen (RH1 shares M1's D80/C20 worlds, option b).
+- 2026-10-25 TW1: code_tw1 (v6_to_tw1.diff), runner, analysis (before data); zero PASS locally incl. unit tests. Launching on GitHub.

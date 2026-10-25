@@ -1,0 +1,16 @@
+seed 11, 5 years: settings off (with the nursing fix) = code_v6, state and random numbers: yes
+seed 501, 5 years: settings off (with the nursing fix) = code_v6, state and random numbers: yes
+seed 501, 20 years: settings off (with the nursing fix) = code_v6, state and random numbers: yes
+seed 601, 20 years: settings off (with the nursing fix) = code_v6, state and random numbers: yes
+arm t, seeds 501/601, 20 years: the settings change the world (they act): yes
+arm c, seed 501, 20 years: identical with and without observers and logging: yes
+arm t, seed 501, 20 years: identical with and without observers and logging: yes
+arm t, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+identical twins: two people, same temperament and sex, siblings (0.8), both parents' children: yes
+nursing: blocked while either twin lives (second-born dead: still blocked), free when both die: yes
+fraternal twins: two people, separate temperament draws: yes
+no twins (draw 0.5): one child: yes
+mother dies in delivery: both twins born and recorded first, one death draw: yes
+unit tests: yes
+code_tw1 fingerprint: 179f67e1c533189634dafcb7211ad72a4256567191d4ee985dfb437f7757eedb
+All: PASS
