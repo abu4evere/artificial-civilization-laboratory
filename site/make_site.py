@@ -75,7 +75,7 @@ def page(path, title, description, body, extra_ld=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{up}style.css?v=9">
+<link rel="stylesheet" href="{up}style.css?v=10">
 <script type="application/ld+json">{json.dumps(ld if len(ld) > 1 else ld[0])}</script>
 </head>
 <body>
@@ -85,7 +85,7 @@ def page(path, title, description, body, extra_ld=None):
 </main>
 <footer><div>Artificial Civilization Laboratory (ACL), by {AUTHOR}. Code and every experiment record:
 <a href="{GITHUB}">GitHub</a>. The book: <a href="{up}book.html"><em>The World That Nobody Wrote</em></a>.</div></footer>
-<script src="{up}sky.js?v=7" defer></script>
+<script src="{up}sky.js?v=8" defer></script>
 </body>
 </html>
 """
@@ -100,6 +100,53 @@ BOOK_LD = {"@context": "https://schema.org", "@type": "Book", "name": "The World
            "author": {"@type": "Person", "name": AUTHOR}, "isbn": "9798163874385", "url": BASE + "book.html", "numberOfPages": 87,
            "about": "Artificial Civilization Laboratory", "sameAs": [AMAZON],
            "offers": {"@type": "Offer", "url": AMAZON, "availability": "https://schema.org/InStock"}}
+
+# Where ACL is on the way to its mission. A level moves only after a finished study whose key numbers were
+# independently recomputed (CLAUDE.md). The bar is computed from the statuses, never typed by hand: levels 1-7 count,
+# "done" = 1, "partly" = 1/2, "testing" and "not yet" = 0. Level 0 is the foundation.
+LEVELS_UPDATED = "25 October 2026"
+LEVELS = [
+    (0, "A lawful world", "done",
+     "Nature is written as laws: bodies, materials, seasons. Every world replays exactly, and every instrument is "
+     "checked to change nothing.", "method.html"),
+    (1, "Life goes on", "partly",
+     "People find food, pair, raise children and outlive their founders on their own. But small worlds are fragile: "
+     "about a third die out within 120 years.", "findings/why-small-worlds-die-out.html"),
+    (2, "People learn by themselves", "done",
+     "With no list of inventions, people make carriers, rafts, fired clay and vessels, by trial and error in their "
+     "own lifetimes.", "findings/why-inventions-disappear.html"),
+    (3, "Knowledge spreads", "partly",
+     "Teaching happens, but about nine in ten useful inventions are never learned by anyone except their inventor.",
+     "findings/why-inventions-disappear.html"),
+    (4, "Knowledge outlives its maker and builds up", "testing",
+     "Being tested now: a thousand-year study asks whether what people learn survives their deaths, and whether "
+     "tools matter more as the centuries pass.", None),
+    (5, "Open-ended growth", "not yet",
+     "New things built on old things, again and again, with no ceiling.", None),
+    (6, "Autonomy", "not yet",
+     "Minds that set their own goals, beyond the drives nature gives them.", None),
+    (7, "Bob", "not yet",
+     "A mind with autonomy that builds on what it and others learned: the mission accomplished.", None),
+]
+WEIGHT = {"done": 1.0, "partly": 0.5, "testing": 0.0, "not yet": 0.0}
+PROGRESS = round(100 * sum(WEIGHT[st] for n, _, st, _, _ in LEVELS if n > 0) / sum(1 for n, *_ in LEVELS if n > 0))
+
+
+def levels_html():
+    rows = []
+    for n, name, st, text, href in LEVELS:
+        link = f' <a href="{{up}}{href}">The evidence</a>' if href else ""
+        rows.append(f'<li class="lvl {st.replace(" ", "-")}"><span class="lvl-n">{n}</span><div><h3>{name} '
+                    f'<span class="lvl-st">{st}</span></h3><p>{text}{link}</p></div></li>')
+    return (f'<div class="progress" role="img" aria-label="About {PROGRESS}% of the way, by levels">'
+            f'<div class="progress-fill" style="width:{PROGRESS}%"></div></div>'
+            f'<p class="progress-label"><strong>About {PROGRESS}%</strong> of the way, counted by levels '
+            f'(updated {LEVELS_UPDATED}).</p>'
+            f'<ol class="ladder">{"".join(rows)}</ol>'
+            '<p class="note">The later levels are much harder than the early ones, so this is a map, not a '
+            'countdown. A level moves only after a finished study whose key numbers have been recomputed '
+            'independently; a level can also move back. 100% means Bob exists.</p>')
+
 
 INDEX = f"""<section class="hero">
 <div class="scene"><canvas aria-hidden="true"></canvas></div>
@@ -138,6 +185,10 @@ start. Inside the project that hoped-for person has a name: Bob. Bob does not ex
 <p>Real human evidence is used as the referee, not the blueprint: every law of nature is checked against how real
 people live, so that nobody can quietly tune the world toward the answer they want. Which of those laws a mind truly
 needs is one of the questions ACL is built to answer.</p>
+
+<h2 id="progress">Where ACL is now</h2>
+<p>The road to the mission, in levels. Each one is marked only by what the experiments have shown.</p>
+{levels_html()}
 
 <h2>The question</h2>
 <p>Can civilization emerge from nature alone, without anyone writing its history? And if it cannot yet, what exactly

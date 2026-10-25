@@ -68,9 +68,10 @@
   var nebulae = [];
   var meteors = [];
   var lastMeteorTime = performance.now();
+  var nebulaLayer = null;
 
   function initSky() {
-    sDPR = Math.min(window.devicePixelRatio || 1, 2);
+    sDPR = 1;                                   // smoothness: a full-screen sky at 1x is enough for soft stars
     sW = window.innerWidth;
     sH = window.innerHeight;
     skyCanvas.width = sW * sDPR;
@@ -109,6 +110,21 @@
       { x: sW * 0.75, y: sH * 0.4, r: Math.max(sW, sH) * 0.42, color: "rgba(28, 20, 52, 0.09)" },
       { x: sW * 0.5, y: sH * 0.85, r: Math.max(sW, sH) * 0.38, color: "rgba(14, 28, 56, 0.14)" }
     ];
+    // The clouds never move: paint them once, then copy the picture each frame (much cheaper than 3 big gradients).
+    nebulaLayer = document.createElement("canvas");
+    nebulaLayer.width = sW;
+    nebulaLayer.height = sH;
+    var nCtx = nebulaLayer.getContext("2d");
+    for (var n = 0; n < nebulae.length; n++) {
+      var neb = nebulae[n];
+      var g = nCtx.createRadialGradient(neb.x, neb.y, 0, neb.x, neb.y, neb.r);
+      g.addColorStop(0, neb.color);
+      g.addColorStop(1, "rgba(3, 5, 9, 0)");
+      nCtx.fillStyle = g;
+      nCtx.beginPath();
+      nCtx.arc(neb.x, neb.y, neb.r, 0, Math.PI * 2);
+      nCtx.fill();
+    }
   }
 
   function spawnMeteor(now) {
@@ -137,17 +153,8 @@
 
     var scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
 
-    // 1. Draw atmospheric nebulae
-    for (var n = 0; n < nebulae.length; n++) {
-      var neb = nebulae[n];
-      var g = sCtx.createRadialGradient(neb.x, neb.y, 0, neb.x, neb.y, neb.r);
-      g.addColorStop(0, neb.color);
-      g.addColorStop(1, "rgba(3, 5, 9, 0)");
-      sCtx.fillStyle = g;
-      sCtx.beginPath();
-      sCtx.arc(neb.x, neb.y, neb.r, 0, Math.PI * 2);
-      sCtx.fill();
-    }
+    // 1. Atmospheric nebulae (painted once in initSky)
+    if (nebulaLayer) sCtx.drawImage(nebulaLayer, 0, 0, sW, sH);
 
     // 2. Stars rendering with parallax & twinkling
     var pX = mouse.currentX * 14;
@@ -316,7 +323,7 @@
 
   function initHero() {
     if (!heroCanvas) return;
-    hDPR = Math.min(window.devicePixelRatio || 1, 2);
+    hDPR = Math.min(window.devicePixelRatio || 1, 1.5);
     hW = heroCanvas.clientWidth;
     hH = heroCanvas.clientHeight;
     heroCanvas.width = hW * hDPR;
@@ -540,9 +547,12 @@
             eCol = "rgba(255, 85, 30, " + (eAlpha * 0.8).toFixed(3) + ")";
           }
 
+          // A faint halo, then the ember (cheaper than a shadow blur on every particle)
+          hCtx.fillStyle = "rgba(255, 190, 83, " + (0.18 * eAlpha).toFixed(3) + ")";
+          hCtx.beginPath();
+          hCtx.arc(emb.x, emb.y, curSize * 2.6, 0, Math.PI * 2);
+          hCtx.fill();
           hCtx.fillStyle = eCol;
-          hCtx.shadowColor = "#ffbe53";
-          hCtx.shadowBlur = 6 * eAlpha;
           hCtx.beginPath();
           hCtx.arc(emb.x, emb.y, curSize, 0, Math.PI * 2);
           hCtx.fill();
@@ -649,7 +659,7 @@
     mouse.currentY += (mouse.targetY - mouse.currentY) * 0.055;
 
     drawSky(time);
-    drawHero(time);
+    if (heroVisible) drawHero(time);           // nothing to draw once the hero has scrolled away
 
     if (!reducedMotion) {
       requestAnimationFrame(render);
@@ -666,6 +676,12 @@
   }
 
   window.addEventListener("resize", handleResize);
+  var heroVisible = true;
+  if (heroCanvas && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      heroVisible = entries[0].isIntersecting;
+    }).observe(heroCanvas);
+  }
   initSky();
   initHero();
   requestAnimationFrame(render);
