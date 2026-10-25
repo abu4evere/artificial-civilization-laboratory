@@ -128,3 +128,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-24: Creator's question "why our laws?" discussed with GPT (docs/gpt_view_other_natures_2026-10-24.md); the creator stated the mission: minimum laws that produce an autonomous, cognitive mind, not a copy of Earth (added to CLAUDE.md). Book notes kept locally.
 - 2026-10-25: Website: mission section added locally (site/make_site.py, built, NOT committed or pushed: pushing site/ publishes). Latest-experiment box to be rewritten with BD3 when done; publish only on the creator's "publish".
 - 2026-10-25: Website published with the mission section (creator: "publish").
+- 2026-10-25: Website: latest-experiment box removed (creator's request) and published.
