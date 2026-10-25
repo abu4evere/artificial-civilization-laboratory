@@ -1,0 +1,151 @@
+diff -ru '--exclude=__pycache__' NV6_nature_v6/code_v6/acl/actions.py BD3_bodies_breakdown/code_bd3/acl/actions.py
+--- NV6_nature_v6/code_v6/acl/actions.py	2026-10-23 22:54:20.673906200 -0400
++++ BD3_bodies_breakdown/code_bd3/acl/actions.py	2026-10-24 20:46:25.144891000 -0400
+@@ -352,7 +352,9 @@
+             world.emit("found_gone", p.id, None, p.loc)
+         return
+     room = max(0.0, carry_capacity(world, p) - p.edible())
+-    food = min(entry[1], room)
++    log = getattr(world, "bd1log", None)
++    meat_was = biology.body_meat_left(world, owner, entry) if (log is not None or c.bd3_no_eat) else 0.0
++    food = min(biology.takeable(world, owner, entry), room)          # BD3 probe: no_eat leaves the flesh
+     seeds = min(entry[2], max(0.0, room - food))
+     if len(entry) > 5 and entry[1] > 0:
+         kept = min(entry[5], entry[1]) * food / entry[1]
+@@ -362,7 +364,11 @@
+     entry[2] -= seeds
+     p.food += food
+     if c.bodies_stay and owner != p.id and food > 0:
+-        _ate_from_body(world, p, owner, food)
++        meat = max(0.0, food - max(0.0, entry[1] + food - meat_was))   # v6 accounting: carried food goes first
++        if log is not None and meat_was > 0:
++            log.append(("ate_src", world.tick, p.id, owner, round(meat, 4), round(food - meat, 4)))
++        if not (c.bd3_no_eat and meat <= 0):            # BD3 probe: carried food alone does not sicken
++            _ate_from_body(world, p, owner, food)
+     p.seeds += seeds
+     weeks = world.tick - entry[3]
+     if entry[1] + entry[2] < 0.2:
+diff -ru '--exclude=__pycache__' NV6_nature_v6/code_v6/acl/biology.py BD3_bodies_breakdown/code_bd3/acl/biology.py
+--- NV6_nature_v6/code_v6/acl/biology.py	2026-10-23 22:54:20.631604000 -0400
++++ BD3_bodies_breakdown/code_bd3/acl/biology.py	2026-10-24 20:46:25.144891000 -0400
+@@ -569,8 +569,11 @@
+             heir.items.pop(0)
+         world.emit("inherit", heir.id, p.id, p.loc, food=round(p.food + p.seeds, 2), things=len(p.items))
+     else:
+-        if not world.cfg.bodies_stay:
++        if not world.cfg.bodies_stay or world.cfg.bd3_no_carried:     # BD3 probe: carried food to plants
+             tile.plants += p.food + p.seeds
++            log = getattr(world, "bd1log", None)
++            if log is not None:
++                log.append(("toplants", world.tick, p.id, round(p.food + p.seeds, 4)))
+         for k, v in p.mats.items():
+             if v > 0:
+                 tile.pile[k] = tile.pile.get(k, 0.0) + v
+@@ -615,18 +618,21 @@
+     food that is still theirs (v3's store, owned by the dead). Their tools stay with the body for kin to take."""
+     years = p.years(world.tick)
+     meat = BODY_MEAT * (1.0 if years >= 16 else max(0.2, years / 16.0))
+-    food = meat + (p.food if heir is None else 0.0)
+-    seeds = p.seeds if heir is None else 0.0
++    carry = heir is None and not world.cfg.bd3_no_carried                # BD3 probe: carried food to plants
++    food = meat + (p.food if carry else 0.0)
++    seeds = p.seeds if carry else 0.0
+     tile.stash.append([p.id, food, seeds, world.tick])
+     world.bodies.append({"id": p.id, "x": p.loc[0], "y": p.loc[1], "tick": world.tick, "eid": eid,
+                          "kind": kind, "killer": killer, "start": food,
+-                         "items": [] if heir is not None else list(p.items), "flesh": True})
++                         "items": [] if heir is not None or world.cfg.bd3_no_tools else list(p.items),
++                         "flesh": True})
+     if world.cfg.body_rot:                  # BD2: the flesh apart from what they carried, and warmth so far
+         world.bodies[-1]["meat0"] = meat
+         world.bodies[-1]["add"] = 0.0
+     log = getattr(world, "bd1log", None)    # BD1 logging (runner sets it; not saved; read by nothing here)
+     if log is not None:
+-        log.append(("body", world.tick, p.id, round(meat, 2), round(food, 2), len(p.items) if heir is None else 0))
++        log.append(("body", world.tick, p.id, round(meat, 2), round(food, 2), len(p.items) if heir is None else 0,
++                    round(p.food + p.seeds, 4) if heir is None else 0.0, p.loc))   # BD3: carried, place (opportunity)
+ 
+ 
+ BONES_ADD = 1300.0        # BD2: degree-days (deg C x days above 0) until only bones are left; an assumption anchored
+@@ -659,6 +665,22 @@
+         b["bones_now"] = True
+ 
+ 
++def body_meat_left(world, owner, entry) -> float:
++    """BD3: how much of a body's store is its flesh, by v6's own accounting in _rot_by_warmth (the flesh is what
++    warmth has left of the meat, capped by the store; the rest is what they carried). 0 for any other store."""
++    b = next((x for x in world.bodies if x["id"] == owner and x["flesh"]), None)
++    if b is None or "meat0" not in b:
++        return 0.0
++    return min(entry[1], max(0.0, b["meat0"] * (1.0 - b["add"] / BONES_ADD)))
++
++
++def takeable(world, owner, entry) -> float:
++    """BD3 probe: food that can be taken from a store. With bd3_no_eat, a body's flesh cannot."""
++    if world.cfg.bd3_no_eat and world.cfg.bodies_stay:
++        return max(0.0, entry[1] - body_meat_left(world, owner, entry))
++    return entry[1]
++
++
+ def rot_weeks(world) -> int:
+     """Weeks until a body counts as rotten: when ROT_SHARE of loose food would have rotted at v3's rate."""
+     return math.ceil(math.log(1.0 - ROT_SHARE) / math.log(1.0 - world.cfg.spoil_rate))
+@@ -693,12 +715,21 @@
+                 continue
+             near = distance(q.loc, loc, world.cfg.width, world.cfg.height) <= 1
+             if rotten and near:
+-                knowhow.associate(world, q, q.loc, -0.3)        # the smell of rot: the place feels foul
+-                if log is not None:
+-                    log.append(("foul", tick, q.id, b["id"]))
++                if world.cfg.bd3_no_foul:                       # BD3 probe: no disgust at rot
++                    if log is not None:
++                        log.append(("foul_opp", tick, q.id, b["id"], q.loc))
++                else:
++                    knowhow.associate(world, q, q.loc, -0.3)    # the smell of rot: the place feels foul
++                    if log is not None:
++                        log.append(("foul", tick, q.id, b["id"], q.loc))
++            if log is not None and q.loc == loc and (q.id == dead.partner or q.id in dead.children):
++                log.append(("kinvisit", tick, q.id, b["id"]))
+             if b["flesh"] and not any(m.eid == b["eid"] for m in q.memories):
+                 close = _close(world, q, b["id"])
+-                if close > 0:                                   # they see who it is
++                if close > 0 and world.cfg.bd3_no_seen:         # BD3 probe: no learning of a death by sight
++                    if log is not None:
++                        log.append(("seen_opp", tick, q.id, b["id"]))
++                elif close > 0:                                 # they see who it is
+                     sal = clamp(0.3 + 0.6 * max(close, 0.0))
+                     fresh = remember(world, q, b["eid"], b["kind"], b["killer"], b["id"], loc, sal, -0.8)
+                     react(world, q, "died" if b["killer"] is None else "killed", b["killer"], b["id"], 1.0, fresh)
+diff -ru '--exclude=__pycache__' NV6_nature_v6/code_v6/acl/config.py BD3_bodies_breakdown/code_bd3/acl/config.py
+--- NV6_nature_v6/code_v6/acl/config.py	2026-10-23 22:54:20.623398700 -0400
++++ BD3_bodies_breakdown/code_bd3/acl/config.py	2026-10-24 20:46:25.144891000 -0400
+@@ -140,6 +140,11 @@
+     pit_keep: float = 0.5              # DG1: share of v4's rot rate for food in a pit (an assumption; 0.75 = weaker)
+     body_rot: int = 0                  # BD2: 1 = a body's flesh rots by accumulated warmth (degree-days), fast in heat,
+                                        # hardly at all in frost, instead of at the rate for stored food (0 = v5)
++    bd3_no_eat: int = 0                # BD3 probe: a body's meat cannot be taken (what they carried still can)
++    bd3_no_carried: int = 0            # BD3 probe: what the dead carried goes to the tile's plants, as with no bodies
++    bd3_no_foul: int = 0               # BD3 probe: no disgust at rot
++    bd3_no_seen: int = 0               # BD3 probe: no learning of a death from the sight of a body
++    bd3_no_tools: int = 0              # BD3 probe: the dead's tools are gone, as with no bodies
+     outward_search: int = 0            # P2: 1 = a seeker with no eligible partner in sight steps away from the centre of
+                                        # their remembered places instead of in a random direction
+ 
+diff -ru '--exclude=__pycache__' NV6_nature_v6/code_v6/acl/mind.py BD3_bodies_breakdown/code_bd3/acl/mind.py
+--- NV6_nature_v6/code_v6/acl/mind.py	2026-10-23 22:54:20.649781700 -0400
++++ BD3_bodies_breakdown/code_bd3/acl/mind.py	2026-10-24 20:46:25.176145600 -0400
+@@ -340,7 +340,13 @@
+                     else:
+                         scruple = (0.4 + 0.6 * g["kindness"]) * (0.5 + max(aff, 0.0))
+                     watched = o is not None and o.alive and distance(o.loc, t, w, h) <= 1
+-                    u = hunger * (1.0 - 0.5 * scruple) * min(1.0, entry[1] / need) - 0.3 * scruple \
++                    have = entry[1]
++                    if c.bd3_no_eat:                      # BD3 probe: a body's flesh cannot be taken, so it draws nobody
++                        from .biology import takeable
++                        have = takeable(world, owner, entry)
++                        if have < 0.2:
++                            continue
++                    u = hunger * (1.0 - 0.5 * scruple) * min(1.0, have / need) - 0.3 * scruple \
+                         - (0.4 if watched else 0.0)
+                     add("take", (t, owner), u, distance(p.loc, t, w, h))
+                     break

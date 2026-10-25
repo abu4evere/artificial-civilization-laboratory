@@ -125,3 +125,24 @@ numbers); direct avoidance measures; and a ninth arm, F−eat−carried, for the
 
 The creator: "yes go ahead, freeze it and run", on Revision 1 as written (1,024 seeds, nine arms). Frozen as
 `BD3-frozen` before any code or data.
+
+## Operational amendment 1 (24 October 2026, while building, before any data)
+
+The zero check "each switch acts" was run on seed 501 only. There, `bd3_no_eat` left the world identical, because in
+that world's first 20 years nobody ate from a body (0 meat meals; seed 601 had 2, seed 11 had 1): the switch had
+nothing to act on, which is not a fault. The check now asks that each switch change the world on **at least one of
+seeds 501 and 601** (20 years). Nothing else changed; the source tests already show that no meal takes meat in F-eat.
+
+## Operational note 2 (24 October 2026, while building, before any data)
+
+- **The two sources of a body's food** are not kept in a separate record: they are read from v6's own accounting
+  (`biology._rot_by_warmth`), where a body's flesh is what warmth has left of its meat, capped by the store, and the
+  rest is what the dead carried. So in v6, a meal from a body takes the carried food first. `bd3_no_eat` blocks only
+  the flesh, and a hungry person's take option is scored on the takeable amount (a body with only flesh left is not
+  an option at all). A meal of carried food alone does not make anyone ill (illness is from rotten meat).
+- **What F-all still has (searched in the code before any data):** the body's store still exists on the tile, so a
+  passer-by can notice "food" at that place (`marks.around`) and it counts as a store in a place's situation
+  (`stage.py`); storms and floods wet it as any store; when flesh is gone a "bones:person" trace is left, which can be
+  noticed like other traces (`marks.py`). Anything F-all against N shows comes from these, or from something not found.
+- **Running on GitHub:** 9,216 worlds in 120 chunks of about 77 (BD2's chunks of 77 took about 100 minutes), at most
+  20 at once.

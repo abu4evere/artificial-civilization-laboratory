@@ -1,0 +1,36 @@
+seed 11, 5 years, arm f: switches 0 = code_v6 (state and random numbers): yes
+seed 11, 5 years, arm n: switches 0 = code_v6 (state and random numbers): yes
+seed 501, 5 years, arm f: switches 0 = code_v6 (state and random numbers): yes
+seed 501, 5 years, arm n: switches 0 = code_v6 (state and random numbers): yes
+seed 501, 20 years, arm f: switches 0 = code_v6 (state and random numbers): yes
+seed 501, 20 years, arm n: switches 0 = code_v6 (state and random numbers): yes
+seed 601, 20 years, arm f: switches 0 = code_v6 (state and random numbers): yes
+seed 601, 20 years, arm n: switches 0 = code_v6 (state and random numbers): yes
+arm f_eat, seeds 501 and 601, 20 years: the switch changes the world (it acts) in at least one: yes, seed 601
+arm f_carried, seeds 501 and 601, 20 years: the switch changes the world (it acts) in at least one: yes, seed 501 and 601
+arm f_foul, seeds 501 and 601, 20 years: the switch changes the world (it acts) in at least one: yes, seed 501 and 601
+arm f_seen, seeds 501 and 601, 20 years: the switch changes the world (it acts) in at least one: yes, seed 501 and 601
+arm f_tools, seeds 501 and 601, 20 years: the switch changes the world (it acts) in at least one: yes, seed 501 and 601
+arm f_eat_carried, seeds 501 and 601, 20 years: the switch changes the world (it acts) in at least one: yes, seed 501 and 601
+arm f_all, seeds 501 and 601, 20 years: the switch changes the world (it acts) in at least one: yes, seed 501 and 601
+arm f, seed 501, 20 years: identical with and without observers and logging: yes
+arm n, seed 501, 20 years: identical with and without observers and logging: yes
+arm f_eat, seed 501, 20 years: identical with and without observers and logging: yes
+arm f_carried, seed 501, 20 years: identical with and without observers and logging: yes
+arm f_foul, seed 501, 20 years: identical with and without observers and logging: yes
+arm f_seen, seed 501, 20 years: identical with and without observers and logging: yes
+arm f_tools, seed 501, 20 years: identical with and without observers and logging: yes
+arm f_eat_carried, seed 501, 20 years: identical with and without observers and logging: yes
+arm f_all, seed 501, 20 years: identical with and without observers and logging: yes
+arm f, seed 501: saved at year 10 (bodies held) and reloaded, continues exactly to year 15: yes
+arm f_all, seed 501: saved at year 10 (bodies held) and reloaded, continues exactly to year 15: yes
+mixed store, fresh: meat 18 not takeable, carried 5 takeable: yes
+rotten store (half the flesh gone): still only the carried 5 takeable: yes
+after a partial take of carried food: 2 left takeable: yes
+switch off: the whole store takeable, as v6: yes
+an ordinary store has no flesh: yes
+F-carried, seed 501, 20 years: carried food 92.39 all went to plants (92.39), none left with bodies: yes
+F-eat, seed 501, 20 years: 19 bodies, no meal took meat: yes
+source tests: yes
+code_bd3 fingerprint: 06816586dfe49aec0e5d5562aff7f7334a15200037a22ee1a3f1168cf20420eb
+All: PASS
