@@ -68,3 +68,11 @@ pairing/birth; partner loss and re-pairing; fully eligible conception weeks per 
 given them (∏(1 − p_t)); eligible men alive/reachable/met/approached by age band; all birth cohorts including women who
 die before 45; complete follow-up for child survival; birth intervals for women with 2+ births, split by whether the
 previous child survived (the 78-week wait applies only while the youngest lives).
+
+## Source check by the assistant (25 October 2026, sleep mode; search results and abstracts)
+
+- **Tsimane childlessness:** in a Tsimane study of reproduction's health costs, all nulliparous women were under 25
+  (71% under 20); total fertility about 9 (Gurven et al., "Health costs of reproduction are minimal despite high
+  fertility, mortality and subsistence lifestyle", https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4951795/). So
+  childlessness by 45 is close to zero there, consistent with GPT's ~3% working-paper figure (that paper itself not
+  read). ACL's quick-look 35% is far above it.

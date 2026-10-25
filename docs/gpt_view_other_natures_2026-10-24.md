@@ -56,3 +56,12 @@ says the goal is the minimum conditions, not a copy; proposal: keep Earth-anchor
 Sources GPT named (to check): Mesoudi & Thornton 2018; Lewis & Laland 2012; Derex & Mesoudi 2020; Kirby, Cornish &
 Smith 2008; van Leeuwen et al. 2024 (chimpanzees); Bridges et al. 2024 (bumblebees); Garland et al. 2022 (humpback
 song); Taylor & Jelbert 2020 (crows); Taylor 2015 (open-ended evolution); Tennie, Call & Tomasello 2009.
+
+## Source check by the assistant (25 October 2026, sleep mode; search results and abstracts)
+
+- **Kirby, Cornish & Smith 2008**, PNAS 105(31):10681–10686 (https://doi.org/10.1073/pnas.0707835105): artificial
+  languages passed through generations of learners became easier to learn and more structured, with no intentional
+  design. **Confirms GPT** (cumulative structure without survival pressure).
+- **Lewis & Laland 2012**, Phil. Trans. R. Soc. B 367(1599) (https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2012.0119):
+  a simple model without changes in brain architecture; small changes in transmission fidelity can produce cumulative
+  culture. **Confirms GPT.**
