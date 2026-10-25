@@ -9,6 +9,12 @@ An agent-based world of hunter-gatherers where **nature is programmed and cultur
 writes the laws, never the history. The full why is in Book Part One, Chapter 0 and Chapters 1–12
 (`book/editions/part1/the_world_that_nobody_wrote_part1.md`).
 
+## The mission (the creator, 24 October 2026)
+"Our mission is not to recreate Earth with the same human history but to create a world with **minimum laws** and a
+period that produce an **autonomous and cognitive mind**." Earth and human evidence are the reference that keeps nature
+honest (no tuning), not the blueprint. Later, "other natures" (one deep law changed at a time, frozen, never tuned) may
+test which laws are truly needed (`docs/gpt_view_other_natures_2026-10-24.md`).
+
 ## Bob: the goal
 Bob is the "final boss": the agent that will exist **when ACL succeeds**, one with **autonomy and a cumulative mind**.
 Bob does not exist yet, and is not a person to pick or breed now. Every study is judged by whether it moves the world
