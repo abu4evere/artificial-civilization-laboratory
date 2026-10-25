@@ -42,6 +42,12 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   The `tests` workflow runs only when code changes (`acl/`, `tests/`, `code_*`).
 - **Tests:** `python -m pytest -q tests` (61 pass on nature v6).
 
+## Sleep mode
+When the creator says "sleep", they are going to sleep: keep working, with GPT, on useful work that needs no
+decision of theirs (finish and analyse running frozen studies; draft plans and evidence reviews and get GPT's review;
+check sources; book notes, local). Never freeze, sign off or run a new study, change nature, publish or post without
+the creator. Log every step in `WORKLOG.md` and leave a short morning report.
+
 ## Where things are
 - Current state and next step: the end of `WORKLOG.md`; `ROADMAP.md`; `docs/OPEN_DECISIONS.md`.
 - All studies: `experiments/INDEX.md`. GPT's latest handoff: `docs/gpt_handoff_2026-10-24.md`.
