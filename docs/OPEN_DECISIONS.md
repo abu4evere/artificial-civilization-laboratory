@@ -101,3 +101,12 @@ the file named.
   `experiments/WM1_why_women_die_younger/questions.md`: read-only v7 (C20 + D80) plus a 2 x 2 x 2 diagnostic design
   (P0 no pregnancy food cost, B0 no childbirth deaths, K0 carer eats first; tools, not proposals), 1,152 worlds.
   Sign off, change, or drop.
+
+- [ ] **After M1, RH1 and WM1 (all done and independently recomputed, 25 October 2026). What next? The creator decides:**
+  - **M1** (knowledge erodes over 1,000 years on v6): the frozen next step is a **study of loss**. Trace where and when
+    knowledge, skill and deliberate making are lost across the centuries, with CA1–CA3's methods. Not a longer run.
+  - **RH1** (the break is pairing): the frozen next step is an **evidence review** of how real foragers meet and pair,
+    before any change to nature. New question: why food beats courting even when both would accept.
+  - **WM1** (the mother-feeds-first rule makes most of the women's gap): the frozen next step is an **evidence review**
+    of how forager mothers are supported (partners, grandmothers, others), and what ACL lacks. A quarter of the gap has
+    another source.

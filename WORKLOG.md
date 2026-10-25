@@ -162,3 +162,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 M1 (run 40214835191), RH1 and WM1 analysed; provisional findings written for all three (M1: every surviving world erodes, A4 and B-retained decline; RH1: the break is pairing; WM1: the mother-feeds-first rule makes most of the gap). Independent recomputes next.
 - 2026-10-25 Mistake: commit d401693 carried a staged deletion of site/sky.js and triggered a website deploy; cancelled and restored sky.js (commit after it); live site checked unchanged.
 - 2026-10-25 Independent recomputes by GPT (fresh chats, raw files only): M1, RH1, WM1 all match; findings marked final; INDEX updated.
+- 2026-10-25 OPEN_DECISIONS: next steps after M1/RH1/WM1 listed for the creator.
