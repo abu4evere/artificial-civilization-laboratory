@@ -36,7 +36,9 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   the Claude in Chrome extension). You may ask GPT freely about ACL. Save its answers as `gpt_review_*.md`, labelled
   "GPT's opinion, not sign-off". Give the creator both views; only the creator decides.
   The Chrome extension follows one Claude account: after switching accounts, ask the creator to sign the extension
-  into the current one. When typing into ChatGPT, send one paragraph (a newline sends the message early).
+  into the current one. When typing into ChatGPT, send one paragraph (a newline sends the message early). The main chat is very long and the
+  page can freeze when typing: insert the text with JavaScript (`document.execCommand('insertText', ...)` on
+  `#prompt-textarea`) and click `[data-testid="send-button"]`.
 - **Cloud runs:** studies run on GitHub Actions (`.github/workflows/cloud-run.yml`), so the creator's PC can be off.
   `gh` is at `C:\Users\User\gh\bin\gh.exe`; fetch with `python tools/ci/fetch_cloud.py <run-id> <out_dir>`.
   The `tests` workflow runs only when code changes (`acl/`, `tests/`, `code_*`).

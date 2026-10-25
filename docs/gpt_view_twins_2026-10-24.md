@@ -59,3 +59,17 @@ zero checks, the "youngest child alive" check fixed for twins) after BD3, and si
 The creator: "make it 105 to 100 like real humans" (boys to girls at birth; ACL now draws 50/50). To go into the same
 Law 126 plan as twins (after BD3), with the figure checked against sources before freezing; founders stay half and
 half unless the plan says otherwise.
+
+## Source check by the assistant (25 October 2026, sleep mode; search results and abstracts, not full texts)
+
+- **Identical twins ~3.5–4 per 1,000 births, roughly constant across populations; differences between countries are
+  mostly in fraternal twinning** (all twins from about 6 per 1,000 in Asia, 10–20 in Europe and the USA, up to about 40
+  in parts of Africa): Smits & Monden 2011, "Twinning across the Developing World", PLoS ONE
+  (https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0025239); Monden, Pison & Smits 2021, "Twin
+  Peaks", Human Reproduction (https://academic.oup.com/humrep/article/36/6/1666/6168658). **Confirms GPT.**
+- **Twin under-five mortality in sub-Saharan Africa 213 per 1,000 in 2009–14 (327.7 in 1995–2001), about three times
+  singletons; neonatal about five times; not explained by birth weight:** Monden & Smits 2017, Lancet Global Health
+  (https://www.sciencedirect.com/science/article/pii/S2214109X17302231). **Confirms GPT's 21.3%.**
+- **Sex ratio at birth about 105 boys per 100 girls, natural range about 103–107** (UNFPA 2012, "Sex Imbalances at
+  Birth", https://www.unfpa.org/sites/default/files/pub-pdf/Sex%20Imbalances%20at%20Birth.%20PDF%20UNFPA%20APRO%20publication%202012.pdf;
+  WHO SEARO sex-ratio note). **Confirms the creator's 105:100.**

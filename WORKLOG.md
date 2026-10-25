@@ -129,3 +129,5 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25: Website: mission section added locally (site/make_site.py, built, NOT committed or pushed: pushing site/ publishes). Latest-experiment box to be rewritten with BD3 when done; publish only on the creator's "publish".
 - 2026-10-25: Website published with the mission section (creator: "publish").
 - 2026-10-25: Website: latest-experiment box removed (creator's request) and published.
+- 2026-10-25 00:45 Sleep mode (creator asleep). Plan: BD3 fetch+analysis when done; M1 draft + GPT review; twins/sex-ratio plan draft + source checks + GPT review.
+- 2026-10-25 02:30 Sleep mode: timed 80 founders (80x80 ~4 s/yr, pop ~110 at y60; 40x40 ~2 s/yr). Checked twin and sex-ratio sources (confirm GPT). Drafted TW1 (twins + sex ratio; GPT reviewed; Revision 1) and M1 (millennium on v6; GPT reviewing). Nothing frozen. BD3 at ~60/122 jobs.
