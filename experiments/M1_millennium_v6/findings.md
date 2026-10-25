@@ -1,4 +1,4 @@
-# M1 — A thousand years on nature v6: findings (PROVISIONAL until the independent recompute)
+# M1 — A thousand years on nature v6: findings (recomputed independently; final)
 
 Frozen as `M1-frozen` (Revision 1); run on GitHub Actions (run 40214835191). 192 worlds (arms LP, D80, C20; 64 seeds
 each, 16801–16864), 1,000 years. Every number comes from `analyse_m1.py` (written before data); full tables are in
@@ -62,3 +62,7 @@ A finding about this nature, not a failure of the project: it says the ratchet i
 for where.
 
 Limits: v6, not v7, as frozen. Survivorship: "late" describes worlds alive at year 1,000.
+
+## Independent recompute (25 October 2026)
+
+GPT recomputed the co-primary outcomes from the raw files without the script; every number matches (`recompute_m1.md`). Caveat recorded: the late B-retained zero rests on 35 late kinds in all (25 in LP), all lost.

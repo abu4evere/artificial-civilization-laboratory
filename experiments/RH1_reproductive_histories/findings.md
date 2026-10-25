@@ -1,4 +1,4 @@
-# RH1 — Why a third of women never have a child: findings (PROVISIONAL until the independent recompute)
+# RH1 — Why a third of women never have a child: findings (recomputed independently; final)
 
 Frozen as `RH1-frozen`; read-only, in the first 120 years of M1's D80 and C20 worlds (seeds 16801–16864; declared
 before data; not an independent replication). Numbers from `analyse_rh1.py` (written before data); full tables in
@@ -56,3 +56,7 @@ In bigger worlds the problem is refusal; in small worlds it is meeting at all.
 
 Classes 2–3 lead, so the frozen next step is an evidence review of how real foragers meet and pair, before any change
 to nature. The deadlock adds a concrete question: why food beats courting even when both would accept.
+
+## Independent recompute (25 October 2026)
+
+GPT recomputed childlessness from the raw files without the script; it matches (`recompute_rh1.md`). Pooled over women (not worlds): 28.9% (D80) and 44.5% (C20).

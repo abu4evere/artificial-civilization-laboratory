@@ -1,4 +1,4 @@
-# WM1 — Why do women die younger than men? Findings (PROVISIONAL until the independent recompute)
+# WM1 — Why do women die younger than men? Findings (recomputed independently; final)
 
 Frozen as `WM1-frozen` (Revision 1, operational note 1, amendment 1); run on GitHub Actions (run 40230540160). 1,152
 worlds on nature v7, 120 years: Part A read-only C20 and D80; Part B a 2 × 2 × 2 diagnostic design on C20. Seeds
@@ -89,3 +89,7 @@ One load reduces the gap: the rule that a mother feeds her dependants from her o
 an evidence review of how forager women are supported while pregnant and caring: food from partners, grandmothers and
 others, and what ACL lacks. Any change to nature would come after that review, frozen on its own. K0 is a measuring
 tool, not a candidate (it costs children). The remaining quarter of the gap has another source, to be looked for.
+
+## Independent recompute (25 October 2026)
+
+GPT recomputed G, R, every arm and the main effects from the raw files without the script; every number matches (`recompute_wm1.md`).
