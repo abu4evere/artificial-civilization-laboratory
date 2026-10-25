@@ -108,3 +108,17 @@ reading; D80 added as a secondary arm (192 worlds); two views of the cohort test
 ## Sign-off (25 October 2026)
 
 The creator: "yea approve all and run them on github", on the revised drafts as written (Revision 1; arms LP, D80, C20; 64 seeds each), run together with RH1, whose observer runs beside M1's in the D80 and C20 worlds (declared here before any data). Frozen before any code or data.
+
+## Operational note 1 (25 October 2026, while building, before any data)
+
+- The code is `code_v6` unchanged. Observers only read; two read-only wrappers read state at the moment the world uses
+  it and then call the original: around the forage action (the forage factor in hand, food got, food on the tile) for
+  A4, and around the body phase (who could conceive this week) for RH1. The zero checks compare full state and random
+  numbers with and without them (20 years in every arm; 100 years on an LP world).
+- Windows as samples: early = years 25 and 50; late = 950, 975 and 1,000; A4 and making over decades 2–4 and 95–99.
+- B-retained eras: kinds first made in years 0–50 (early) and 900–950 (late), counted only if their first maker died
+  and 25 years followed.
+- The C ladder's "better" rung compares a kind's strongest factor with every kind that existed before it; "improved
+  again" needs a later kind with it as a part and a higher strongest factor. Exact definitions are in
+  `analyse_m1.py`'s docstring, written before data.
+- Chunks on GitHub: 48 (4 worlds each, run in parallel on a chunk's cores).
