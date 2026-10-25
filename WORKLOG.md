@@ -135,3 +135,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 03:40 Sleep mode: RH1 drafted (why a third of women have no child; read-only), GPT reviewed (gpt_review_rh1.md), Revision 1 (funnel primary; affection deadlock; men; seeds shared with M1 offered). Not frozen.
 - 2026-10-25 05:33 BD3 cloud run 40149607984 done (success). Fetching.
 - 2026-10-25 05:50 BD3 done: valid; gain NOT replicated (F/N +0.2% [-3.4,+3.8]); parts described only; avoidance none. Findings, BD2 correction appended, INDEX, ROADMAP, tag BD3-done.
+- 2026-10-25 06:05 GPT reviewed BD3 result (gpt_view_bd3.md): wording changed to "not replicated, likely sampling variation" in findings, BD2 correction, INDEX, ROADMAP; no change to v6 or M1.

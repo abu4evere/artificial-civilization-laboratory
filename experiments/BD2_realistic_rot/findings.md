@@ -54,7 +54,8 @@ Median population at year 60 / 120: C 29 / 33, R 26 / 28, N 23 / 18.
 ## Correction (25 October 2026, after BD3)
 
 BD3 (frozen; 1,024 new seeds; `../BD3_bodies_breakdown/findings.md`) **did not replicate** the gain read above as
-"the gain holds": nature v6 (realistic rot) against no bodies, time-averaged population +0.2% [−3.4%, +3.8%]. BD2's R
-arm (26.16) equals BD3's v6 arm (26.14); BD2's N arm (24.28) was low by chance (BD3: 26.10). So realistic rot removes
-the bodies' gain entirely, not "most of it", and the paragraph above about "a real gain remains" is withdrawn. The text
+"the gain holds": nature v6 (realistic rot) against no bodies, time-averaged population +0.2% [−3.4%, +3.8%]. It now appears
+likely to have reflected sampling variation, above all in the no-bodies arm (BD2's R 26.16 equals BD3's v6 26.14; BD2's N
+24.28 against BD3's 26.10). With realistic rot no population gain from bodies is confirmed, and the paragraph above
+about "a real gain remains" is withdrawn. The text
 above is left as it was written.

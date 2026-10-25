@@ -32,16 +32,19 @@ disgust at rot, as v6 has it, does not change where people go.**
 
 ## What it means
 
-- **BD2's remaining gain (+7.7% against no bodies) was not real.** On 1,024 new seeds, worlds with realistically
-  rotting bodies hold the same population as worlds where the dead vanish. The cause is visible in the numbers: BD2's R
-  arm (26.16) matches BD3's F (26.14) almost exactly, while BD2's no-bodies arm came out low by chance (24.28 against
-  BD3's 26.10). BD2's interval [+2.3%, +13.4%] was a chance result on 512 seeds; BD3's [−3.4%, +3.8%] on twice as many
-  rules out a gain of that size. A correction is appended beside BD2's findings.
+- **BD2's remaining gain (+7.7% against no bodies) was not replicated.** On 1,024 new seeds, worlds with realistically
+  rotting bodies hold about the same population as worlds where the dead vanish. It now appears likely to have reflected
+  sampling variation, above all in the no-bodies arm: BD2's R arm (26.16) matches BD3's F (26.14) almost exactly, while
+  BD2's N came out lower (24.28 against BD3's 26.10). That is suggestive, not proof. BD3's interval [−3.4%, +3.8%]
+  makes a gain of BD2's size unlikely; it does not prove the effect is exactly zero. A correction is appended beside BD2's findings.
 - **What stays true:** BD1 and BD2 found a real gain with v4's slow rot (bodies rotting for about two years): +19–20%
   population and fewer extinctions, repeated twice. Realistic rot removed it entirely, not "most of it".
 - **Bodies are in nature (v4–v6) for their truth, not their benefit**, as the adoption rules said; nothing about that
   changes. The dead now stay, rot as real bodies do, can be eaten, are seen, keep their tools for kin, and do not, in
   this world, change how many people live.
+- **Foul, described only:** removing the disgust at rot lowered population by an estimated 3.1%, but its adjusted
+  interval [−1.0%, +7.0%] includes zero (raw p 0.04, not significant after Holm, and the gate failed): suggestive at
+  most.
 - **The avoidance idea (BD1's exploratory reading, GPT's suspicion) is not supported at realistic rot:** the place
   penalty is applied about two million times, yet return rates are identical. One plausible reason (not tested): a
   rotten body is foul for only weeks, and a single −0.3 in a place's remembered value is small against food and company.
@@ -52,4 +55,6 @@ disgust at rot, as v6 has it, does not change where people go.**
 - 1,024 seeds per arm were enough to answer the gate clearly; they were not enough to resolve parts of 1–3% (as the
   plan warned), and since the gate failed, no part is read.
 - A lesson the method already holds (rule 15): what one set of worlds shows is checked on worlds nobody has seen. BD2's
-  +7.7% looked solid on 512 seeds and vanished on 1,024 fresh ones, as GR1 did with GR2.
+  +7.7% looked solid on 512 seeds and did not replicate on 1,024 fresh ones, as GR1 did not with GR2. GPT's lessons:
+  replicate important effects on fresh seeds even when adoption rests on realism; explain an effect only once it is
+  confirmed; justify the laws of the world independently of the outcome hoped for (`gpt_view_bd3.md`).

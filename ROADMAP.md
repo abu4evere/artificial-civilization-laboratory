@@ -629,7 +629,7 @@ Each starts, as always, with frozen questions and an evidence review; none is de
 - Writing ACL up as a paper (Hughes et al. for framing).
 
 **BD3 done** (`experiments/BD3_bodies_breakdown/findings.md`; frozen; 9,216 worlds on GitHub). The bodies' remaining
-gain from BD2 **did not replicate**: nature v6 against no bodies, +0.2% [−3.4%, +3.8%] (BD2's +7.7% was chance; a
-correction is appended to BD2). No part of a body carries anything; the disgust at rot does not change where people
+gain from BD2 **did not replicate**: nature v6 against no bodies, +0.2% [−3.4%, +3.8%] (BD2's +7.7% was not
+replicated, likely sampling variation; a correction is appended to BD2). No part of a body carries anything; the disgust at rot does not change where people
 go. Bodies stay in nature for their truth. **Next (the creator decides): M1 (a thousand years on v6), TW1 (twins and
 sex ratio), RH1 (why a third of women have no child), all drafted and reviewed by GPT in sleep mode.**
