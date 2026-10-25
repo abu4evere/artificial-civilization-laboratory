@@ -122,3 +122,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-24: Asked GPT (creator's request) whether a wish for children is missing human nature; view recorded (docs/gpt_view_wish_for_children_2026-10-24.md): not yet; infant-responsive care first if anything; audit the funnel. Nothing drafted.
 - 2026-10-24: Quick look at fertility on v6 (3.1 births/woman, 35% childless, partner near 20% of fertile weeks) discussed with GPT; recorded in docs/gpt_view_wish_for_children_2026-10-24.md. Not a frozen result.
 - 2026-10-24: Asked GPT about twins (creator: ask first, then decide); view recorded (docs/gpt_view_twins_2026-10-24.md). Nothing drafted; the creator decides.
+- 2026-10-24: Creator decided: add twins, totally random, low chance (fixed rate, depends on nothing). Plan to be drafted after BD3.

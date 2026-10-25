@@ -47,3 +47,9 @@ Sources GPT named (to check): MedlinePlus Genetics (Twinning); Smits & Monden 20
 world); Monden, Pison & Smits 2021 (twin peaks); Sear et al. 2001 (fitness of twin mothers, Gambia); a rural Gambia
 study of twin mortality causes; Monden & Smits 2017 (mortality among twins and singletons); a 2024 Estonian study of
 twin mothers' survival; Fraga et al. 2005 (epigenetic differences in identical twins).
+
+## The creator's decision (24 October 2026)
+
+"Add twins, but that should be totally random and low chance." So: a fixed, low chance per birth that depends on
+nothing (not age, parity, population or anything else), as GPT's simplest form. To be drafted as a Law 126 plan (frozen,
+zero checks, the "youngest child alive" check fixed for twins) after BD3, and signed off by the creator before any code.
