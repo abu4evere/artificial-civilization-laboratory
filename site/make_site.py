@@ -130,6 +130,15 @@ are; if its agents built one, nobody could tell whether civilization emerged or 
 <figure class="loop"><video autoplay muted loop playsinline preload="metadata" poster="{{up}}img/scene_link.jpg" width="1280" height="720" aria-label="Illustration: three figures joined by a dotted line of light"><source src="{{up}}img/scene_link.mp4?v=3" type="video/mp4"></video>
 <figcaption>What one person learns can pass to another, or be lost with them.</figcaption></figure>
 
+<h2>The mission</h2>
+<p>ACL is not trying to recreate Earth, or to replay human history. Its mission, in its creator's words, is <strong>to
+create a world with minimum laws, and enough time, to produce an autonomous and cognitive mind</strong>: someone who
+grows from their own life, and from what earlier generations left behind, into more than anyone was given at the
+start. Inside the project that hoped-for person has a name: Bob. Bob does not exist yet.</p>
+<p>Real human evidence is used as the referee, not the blueprint: every law of nature is checked against how real
+people live, so that nobody can quietly tune the world toward the answer they want. Which of those laws a mind truly
+needs is one of the questions ACL is built to answer.</p>
+
 <h2>The question</h2>
 <p>Can civilization emerge from nature alone, without anyone writing its history? And if it cannot yet, what exactly
 stops it? ACL answers that one step at a time, with controlled experiments on hundreds of simulated worlds.</p>

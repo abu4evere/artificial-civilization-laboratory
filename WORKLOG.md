@@ -126,3 +126,5 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-24: Creator decided: sex ratio at birth 105:100 (boys:girls) like humans; bundle with the twins plan after BD3.
 - 2026-10-24: Asked GPT about sex differences in body (creator's request); view recorded (docs/gpt_view_sex_differences_2026-10-24.md). For later; nothing drafted.
 - 2026-10-24: Creator's question "why our laws?" discussed with GPT (docs/gpt_view_other_natures_2026-10-24.md); the creator stated the mission: minimum laws that produce an autonomous, cognitive mind, not a copy of Earth (added to CLAUDE.md). Book notes kept locally.
+- 2026-10-25: Website: mission section added locally (site/make_site.py, built, NOT committed or pushed: pushing site/ publishes). Latest-experiment box to be rewritten with BD3 when done; publish only on the creator's "publish".
+- 2026-10-25: Website published with the mission section (creator: "publish").
