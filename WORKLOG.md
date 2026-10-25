@@ -145,3 +145,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 M1: zero PASS locally (observers/wrappers read-only for lp/d80/c20; LP 100y; reloads). Launching on GitHub, chunks=48.
 - 2026-10-25 17:06 M1+RH1 launched on GitHub: run 40214835191 (192 worlds, 1000 years, chunks=48); watcher running.
 - 2026-10-25 Creator: new hard rule in CLAUDE.md, independent recompute of key numbers (fresh session or GPT, without the analysis script) before findings are final.
+- 2026-10-25 TW1 independent recompute (GPT, fresh chat, raw files only, no script): every number matches; recompute_tw1.md.
