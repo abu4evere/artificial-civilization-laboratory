@@ -148,3 +148,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 TW1 independent recompute (GPT, fresh chat, raw files only, no script): every number matches; recompute_tw1.md.
 - 2026-10-25 Creator: 'go with a, make v7'. Nature v7 = v6 + twins + sex_ratio_birth + nursing fix (code_v7 = code_tw1); live acl/ defaults on; zero PASS (run_nv7.py); v7 reference hashes; 62 tests pass; tag nature-v7.
 - 2026-10-25 WM1 drafted (why women die younger; read-only v7 + 2x2x2 diagnostic arms P0/B0/K0); GPT reviewed (fresh chat): major revisions; Revision 1 written; not frozen, waiting for the creator.
+- 2026-10-25 WM1 signed off by the creator; pilot (8 throwaway worlds) projects 3,232 adult female deaths per arm, so 128 seeds; frozen as WM1-frozen. (PC shutdown mid-pilot corrupted pilot_wm1.py; rewritten and rerun; no other files damaged.)

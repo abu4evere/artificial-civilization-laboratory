@@ -1,0 +1,10 @@
+seed 99001: adult deaths F 5, M 4
+seed 99002: adult deaths F 33, M 20
+seed 99003: adult deaths F 41, M 27
+seed 99004: adult deaths F 10, M 8
+seed 99005: adult deaths F 61, M 53
+seed 99006: adult deaths F 47, M 35
+seed 99007: adult deaths F 2, M 5
+seed 99008: adult deaths F 3, M 2
+total F 202, M 154; projected adult female deaths per arm of 128 worlds: 3232
+seeds per arm: 128

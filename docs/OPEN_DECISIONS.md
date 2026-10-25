@@ -97,7 +97,7 @@ the file named.
   **Decision for the creator: (a) cut v7 = v6 + twins + sex ratio + nursing fix; (b) keep v6.**
   - Decided (25 October): (a). Nature v7 built and checked (`experiments/NV7_nature_v7/findings.md`); future studies run on v7.
 
-- [ ] **WM1: why do women die younger than men? (drafted 25 October 2026, Revision 1 after GPT; not frozen)**
+- [x] **WM1: why do women die younger than men? (signed off and frozen 25 October 2026)**
   `experiments/WM1_why_women_die_younger/questions.md`: read-only v7 (C20 + D80) plus a 2 x 2 x 2 diagnostic design
   (P0 no pregnancy food cost, B0 no childbirth deaths, K0 carer eats first; tools, not proposals), 1,152 worlds.
   Sign off, change, or drop.

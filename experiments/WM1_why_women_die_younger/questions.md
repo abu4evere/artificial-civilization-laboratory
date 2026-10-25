@@ -1,4 +1,4 @@
-# WM1 — Why do women die younger than men? Adult mortality by sex on nature v7 (DRAFT, Revision 1, 25 October 2026; not frozen; waiting for the creator)
+# WM1 — Why do women die younger than men? Adult mortality by sex on nature v7 (SIGNED OFF 25 October 2026; Revision 1; frozen as `WM1-frozen` before any code or data)
 
 **Why.** In TW1 (`../TW1_twins_sex_ratio/results.md`), the control arm C (v6, an even sex draw at birth) had 98 boys
 per 100 girls among those reaching 16, but 110 men per 100 women reaching 30 and 141 reaching 50. Arm T (v7) had
@@ -166,3 +166,14 @@ After GPT's review (`gpt_review_wm1.md`):
 - The evidence wording is corrected (Blurton Jones 2016; Pumé age bands; denominators; a narrower claim about men).
 - A feasibility pilot is added (8 throwaway worlds; seeds raised to 256 if needed).
 - The independent recompute is added.
+
+## Feasibility pilot (25 October 2026, before freezing; throwaway, not used for any result)
+
+`pilot_wm1.py` (`pilot.txt`): 8 C20 worlds on live v7 (seeds 99001–99008, never used again), 202 adult female and 154
+adult male deaths (world-born, aged 16–54). That projects to 3,232 adult female deaths per arm of 128 worlds, above
+2,000, so by the rule above **the seeds stay at 128 per arm (17001–17128)**.
+
+## Sign-off (25 October 2026)
+
+The creator: "yea approve it, run the pilot and freeze", on Revision 1 as written. Frozen as `WM1-frozen` after the
+pilot, before any code or data for the study.
