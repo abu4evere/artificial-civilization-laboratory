@@ -140,3 +140,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 Creator: "approve all and run them on github". M1, TW1, RH1 signed off and frozen (RH1 shares M1's D80/C20 worlds, option b).
 - 2026-10-25 TW1: code_tw1 (v6_to_tw1.diff), runner, analysis (before data); zero PASS locally incl. unit tests. Launching on GitHub.
 - 2026-10-25 M1+RH1: runner (read-only observers and wrappers), analyses for M1 and RH1 (before data), operational note 1; smoke OK; zero running. TW1 on GitHub (run 40210448166).
+- 2026-10-25 TW1 done (run 40210448166, 512 worlds): valid, manipulation passes; proposed for v7 (creator decides). findings.md, INDEX, ROADMAP, OPEN_DECISIONS; tag TW1-done.

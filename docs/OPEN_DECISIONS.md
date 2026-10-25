@@ -88,3 +88,10 @@ the file named.
   - **BD3 done (25 October): the bodies' gain did not replicate (+0.2%); nothing to decide from it.**
   - **Order** (the assistant's suggestion): then M1 (+ RH1 sharing its worlds); TW1 can run in
     parallel (it is small).
+  - Decided (25 October): all three signed off and frozen; TW1, M1 and RH1 run on GitHub.
+
+- [ ] **TW1 done (25 October 2026): adopt twins + 105:100 into nature v7?** Valid; manipulation checks pass (14.2 twin
+  deliveries per 1,000; 3.8 identical; 106.9 boys per 100 girls). By the frozen rule both are proposed for v7. Described
+  only: twins die more (to age 5: 0.66 fraternal, 0.56 identical, 0.84 singletons); arm T had 97 extinctions of 256 vs 83,
+  median population at year 120 18 vs 25 (not tested); adult women are scarcer (`experiments/TW1_twins_sex_ratio/findings.md`).
+  **Decision for the creator: (a) cut v7 = v6 + twins + sex ratio + nursing fix; (b) keep v6.**

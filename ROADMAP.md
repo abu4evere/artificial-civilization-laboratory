@@ -633,3 +633,7 @@ gain from BD2 **did not replicate**: nature v6 against no bodies, +0.2% [−3.4%
 replicated, likely sampling variation; a correction is appended to BD2). No part of a body carries anything; the disgust at rot does not change where people
 go. Bodies stay in nature for their truth. **Next (the creator decides): M1 (a thousand years on v6), TW1 (twins and
 sex ratio), RH1 (why a third of women have no child), all drafted and reviewed by GPT in sleep mode.**
+
+**TW1 done** (`experiments/TW1_twins_sex_ratio/findings.md`; frozen; 512 worlds on GitHub). Twins at a fixed random
+chance and 105 boys to 100 girls work as specified (14.2 twin deliveries per 1,000, 3.8 identical; 106.9 boys per 100
+girls). By the frozen rule both are proposed for nature v7: **the creator decides**. M1 and RH1 (on v6) are running.
