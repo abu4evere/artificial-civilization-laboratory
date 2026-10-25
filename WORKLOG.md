@@ -115,3 +115,4 @@ local; no "Claude"/Co-Authored-By in commits; no API keys, passwords or payments
 creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with tools/ci/fetch_cloud.py.
 
 - 2026-10-24: CC1 (Qwen, never frozen) abandoned before freeze: it broke live acl/ signatures and planted a named chain; acl/ edits saved as experiments/CC1_cumulative_proof/qwen_acl_changes.patch and reverted; v6 restored, 61 tests pass. GPT handoff recorded (docs/gpt_handoff_2026-10-24.md). Bob confirmed as the creator's first priority.
+- 2026-10-24: CLAUDE.md added as the shared mind for every assistant account (read first; append to WORKLOG after each step).
