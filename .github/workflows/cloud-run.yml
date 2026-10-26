@@ -2,7 +2,9 @@
 # Started by hand (Actions tab, or `gh workflow run cloud-run -f runner=... `). Same system as the tests: Windows Server
 # 2022 and Python 3.14.7, where ACL's worlds replay exactly as on the creator's computer (see tests.yml).
 #
-#   1. zero:   the study's own zero checks, on this system; nothing else starts unless they pass
+#   1. zero:   the study's own zero checks, on this system; nothing else starts unless they pass. With skip_zero=local,
+#              the committed local record (zero_local.log beside the runner) is checked instead: it must say
+#              "All: PASS" with the same code fingerprint as here (tools/ci/check_local_zero.py)
 #   2. chunk:  the worlds, split into up to 20 chunks run at once; each world runs through the study's own runner
 #   3. gather: every world's file in one artifact, `results`, fetched with tools/ci/fetch_cloud.py
 #
@@ -25,7 +27,7 @@ on:
         description: "'smoke' to run the runner's SMOKE_SEEDS instead (a check, not data)"
         default: "no"
       skip_zero:
-        description: "'yes' only for a replay check of an already-validated study"
+        description: "'local' to accept the committed local zero record (All: PASS, same fingerprint); 'yes' only for a replay check of an already-validated study"
         default: "no"
       saved:
         description: "for replay studies: 'hashes.json:dir' to write stubs of the saved worlds first (tools/ci/saved_stubs.py)"
@@ -69,9 +71,13 @@ jobs:
         with:
           python-version: "3.14.7"
       - name: Zero checks on this system
-        if: ${{ inputs.skip_zero != 'yes' }}
+        if: ${{ inputs.skip_zero != 'yes' && inputs.skip_zero != 'local' }}
         shell: bash
         run: python "${{ inputs.runner }}" zero
+      - name: The committed local zero record (skip_zero=local)
+        if: ${{ inputs.skip_zero == 'local' }}
+        shell: bash
+        run: python tools/ci/check_local_zero.py "${{ inputs.runner }}"
 
   chunk:
     needs: [plan, zero]
