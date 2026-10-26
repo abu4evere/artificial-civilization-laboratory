@@ -114,3 +114,20 @@ Also how much forage-tool life (in uses) the carry limit destroys, against wear.
 The creator: "approve the tool lifecycle audit, freeze it", on the audit drafted in
 `docs/tool_transfer_review_2026-10-27.md` (debate rounds 2–3), written out here in full. Frozen as `TF1-frozen` before
 any code or data. How the code reads choices the text leaves open goes in operational notes, appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_tf1.py`) reads the text where it left a choice, found in a 15-year smoke world (seed 9957, not data):
+1. **"Worn out" with more than one use lost in a week.** A thing can lose more than one use in a week (used in
+   foraging and against the cold). Read literally, the frozen "last seen with 1 or fewer uses left" put such things
+   under "unknown" (97 of 1,473 ends in the smoke world, 6.6%, all with 2 uses left and nothing made). The code reads
+   "worn out" as: gone, its holder alive, and last seen with no more uses left than the most it has lost in any one
+   week (at least 1). In the smoke world, unknown ends then fall to 1 in about 1,300.
+2. **"Used up in making"** is a thing whose kind is a part of what its holder made, heated or combined that week (the
+   recipe's parts, or a heating's part). In the smoke world, this is mostly cords and parts bound into larger composite
+   things. It is a real fate, not a misreading.
+3. **Origins:** "founding" = held at the start; "made" = first seen in its maker's hands in a week they made, played or
+   heated that kind; otherwise "unseen".
+4. **Seeds** 18301–18332 (new). **Carer** for children 12–15 is their last carer (carers end at 12), as in LS1.
+5. **Replacement routes:** the route of the forage tool held again: made by the person, inherited, taken from a body,
+   or unseen.
