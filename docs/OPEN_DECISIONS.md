@@ -114,7 +114,15 @@ the file named.
 - [x] **LS1: where does knowledge go? (signed off and frozen 25 October 2026)**
   `experiments/LS1_where_knowledge_goes/questions.md`: read-only v7, LP 64 + D80 32 worlds, 1,000 years. Sign off,
   change, or drop.
+  **Done 26 October 2026 (recomputed; final):** knowledge leaves with the dead (0.98 of losses), memory is not the leak
+  (push-out 0.02); making collapses at the choice, not at feasibility or weighing (chosen-given-weighed carries 1.57 of
+  the decline; feasible and weighed rose); tools' food falls because almost nobody has a tool (s carries 0.97);
+  children take up about 0.41, then 0.27-0.29, of their carers' useful recipes. Frozen next steps that apply: an
+  **evidence review of how forager children come to make and use tools**; transmission before death; the tool
+  lifecycle (replacement within a year falls from 0.59 to 0.07). Creator decides which first.
 
 - [ ] **Fly-brain-inspired learning (the creator chose GPT's way, 26 October 2026).** Step 2 done (read-only review,
   `docs/fly_brain_review_2026-10-26.md`). Next: after LS1, design the smallest change with a causal hypothesis and a
-  matched-capacity control, for the creator to sign off.
+  matched-capacity control, for the creator to sign off. LS1 points to the review's first branch: making is feasible
+  and weighed but not chosen, so the candidate is how the *worth* of making is learned (gaps 1 and 2: coarse
+  situations, one timescale). Not designed yet; waits for the creator.
