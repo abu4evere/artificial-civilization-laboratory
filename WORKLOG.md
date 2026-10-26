@@ -204,3 +204,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 NA1 zero checks PASS locally; ready to launch with skip_zero=local (waits for the creator's go).
 - 2026-10-27 Creator: 'run na1 on github'. NA1 launched (skip_zero=local, 16 chunks).
 - 2026-10-27 Sleep mode on (creator). Plan: when CO1 and NA1 finish: fetch, analyse, blind recomputes by GPT and Gemini, findings, tags; morning report. No new freezes, no nature change, no publishing.
+- 2026-10-27 Sleep mode: CO1 fetched and analysed (valid). Answer: habit carries 0.86 of the rise in U_other; multiplicity 0.02; per-entry 0.20 (gather, put); habit swap undoes 0.86 of making's fall, entries swap 0.02. Prior 4/4 right. GPT blind recompute matches exactly. Gemini: code tool failed twice; its blind script had a pandas bug, sent back; Gemini now running it. Findings drafted (pending recompute).
