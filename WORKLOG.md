@@ -167,3 +167,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 LS1: GPT reviewed (fresh chat; revise before freezing); Revision 1 written (copy loss vs extinction; origin/transmission/persistence; exact funnel and A4 decompositions; Q5 intergenerational replacement; stronger ledger checks; D80 32 seeds secondary). Waiting for the creator's sign-off.
 - 2026-10-25 LS1 signed off by the creator and frozen (LS1-frozen).
 - 2026-10-25 LS1 build: read-only observer (ledger, teaching, making funnel, tools, inheritance), analysis before data (paths tested), operational note 1; zero PASS locally (incl. 100-year LP/D80, 0 mismatches). cloud_plan accepts a runner's JOBS. Launching on GitHub.
+- 2026-10-26 02:46 UTC LS1 launched on GitHub: run 40260721191 (96 worlds: LP 64 + D80 32, 1,000 years, chunks=48); watcher running.
