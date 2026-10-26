@@ -149,3 +149,9 @@ the file named.
   A→B→C chains exist (38) but almost only before year 50. Next to decide: why uptake collapses after year 50 (the
   learner side; LU1's openness), without tuning uptake.
 
+- [x] **HL1 (done, recomputed by GPT and Gemini; final):** the habits come from own TD learning (0.50) and copying in
+  talk (0.41). The bootstrapped look-ahead inflates every often-done action, and making is starved of practice (258×
+  fewer updates). A rich-get-richer loop (0.83). This is a property of nature's learning rule. **For the creator:**
+  whether to study a learning-rule candidate (fly-brain step 3: how values are learned, on which timescale; or how
+  habits are copied, C4) as a frozen intervention with a matched control; or first the lesson-uptake audit (debate
+  round 7's second choice).
