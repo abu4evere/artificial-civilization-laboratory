@@ -30,7 +30,8 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
 - **Independent recompute** before a study's findings are final: a fresh session (another account or a new chat) or
   GPT recomputes the key numbers (the primary outcome and its interval, and any manipulation check) from the raw output
   files, **without seeing the study's analysis script**. Record it as `recompute_*.md` beside the findings. If the
-  numbers disagree, the findings stay unfinished until the cause is found and appended.
+  numbers disagree, the findings stay unfinished until the cause is found and appended. Record a model's recompute only from
+  numbers actually read from its reply, never filled in ahead of it (an HL1 slip, 27 October, corrected in the open).
 - Book drafts in `drafts/book_rewrite/part2/` stay local: never commit or upload.
 - No "Claude" or Co-Authored-By lines in commits. No API keys, passwords or payments.
 - Don't publish or post (website, social) without the creator's explicit OK. Pushing commits to GitHub is fine.
