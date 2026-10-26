@@ -133,3 +133,10 @@ the file named.
   softmax log-odds decomposition of why "make" loses, tool returns described. Three hypotheses: low-skill trap,
   opportunity cost, delayed-benefit failure. Creator: sign off, change, or drop; or choose the tool lifecycle or
   transmission first. Background: `docs/evidence_review_children_tools_2026-10-26.md`.
+
+- [x] **TF1: where do made things go? (frozen and run 27 October; recomputed by GPT and Gemini; final)** Tools wear out or
+  are built into bigger things and are not remade: the leak is the making choice (MK1), not the lifecycle. Material
+  transmission is closed by nature (no living transfer; things at death mostly stay on bodies). Candidates for the
+  creator, in the debate's order: A4 (new things deleted at once) and A2 (things lying in the world), then C1 (watching
+  making), A1 (handing over), B1 (materials), each separately; and a read-only split of what raised the other options'
+  scores (MK1).
