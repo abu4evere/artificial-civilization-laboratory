@@ -73,3 +73,30 @@ with.
 
 A4 shows that TF1's weekly census cannot see things made and deleted within the same week. Operational note 2 (before
 any data) adds a count of them from the week's events.
+
+## Debate round 4 (27 October 2026): GPT and Gemini on this audit, Claude as council (opinions, not sign-off)
+
+**Rankings:**
+- **GPT:** A4 (new things deleted at once) → C1 (watching making and tool use) → A2, A1, B1 (things lying in the world,
+  handing over, materials), each tested separately → vicarious worth → D1 (care) → E2 and salvage.
+- **Gemini (after revision):** the same order. A4 and A2 first, then C1, then A1, then B1 and B2.
+- **Claude's first ranking** put C1 first and D1 second. Both models put **A4 first**, because it can destroy an
+  invention before its maker can learn its worth. The council accepts that A4 should be investigated first, with the
+  caveat GPT raised: check whether those things could have been used before they were deleted.
+
+| claim | who | council check | result |
+|---|---|---|---|
+| A4 (and B1) are engine bugs to patch outside the nature process | Gemini | The carry limit and eviction are nature (`acl/`, `code_v7`). GPT: a bug is code breaking its own rule; a design limit is code faithfully doing an unrealistic thing, and that needs the nature process | **Withdrawn** |
+| Test A1 + A2 + B1 together as one law of matter | Gemini | ACL changes one law at a time. GPT: shared engineering underneath is fine, but each behind its own switch that reproduces v7 when off, each tested alone, and a combined arm only later | **Withdrawn** |
+| E2 as worth = expected uses × felt gain | Gemini | Inserts foresight the agent never learned; GPT: "foresight rather than the capacity to develop foresight" | **Withdrawn** (a cognitive question for after MK1) |
+| Extending care past 12 smuggles the outcome | Gemini | The 12 cut-off is itself a hardcoded age | **Withdrawn**. GPT: don't just move it to 16 or 18; a candidate might let care follow real dependency, hunger and means, in its own study |
+| **Vicarious worth:** seeing someone do better with a tool should be able to teach its worth before holding or making one | Gemini (added); GPT: "high priority" | The code: watching sets worth only in joint hunts | **Stands, as a gap**. Observation, learning how to make, and learning worth are three separate capacities, to test separately |
+| **Salvage:** worn tools cannot be broken back into materials | Gemini | True in the code | **Stands; low priority** |
+| Abandoned tools as cues that draw people | Gemini | Depends on A2; no curiosity should be hard-coded toward them | **Stands, conditional** |
+| **Skill grows only by completing a making or by play,** not by helping or partial practice | GPT (asked), council (code) | True: `_gain_skill("crafting")` is called only in `_craft` and `_play` | **A gap to note** (fits C3) |
+| A3, A5, C2, C3 are defensible simplifications for now; C4 (whole-table habit copying) deserves its own audit | GPT | — | **Noted** |
+
+**Agreed by all three:** every one of these is an ability or condition, never an outcome. Each is tested alone,
+frozen, with a switch that reproduces v7 when off. "The mission is not to make invention spread by changing numbers
+until it does. It's to ensure the world permits ordinary physical interactions, and then discover what its
+inhabitants actually do with them." (GPT)
