@@ -193,3 +193,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 TF1 zero checks PASS locally (observer identical at 20 and 60 years; ledger balanced; unknown fates 1/2710 and 10/5608, under 1%; reload exact). Ready to launch; waits for the creator's go (they said freeze only).
 - 2026-10-27 Creator: 'run tf1 on github'. TF1 cloud run launched (32 worlds, 16 chunks).
 - 2026-10-27 TF1 fetched and analysed (valid). Recomputed blind by GPT (zip) and Gemini (CSV; its row-level intervals corrected to whole-world on request): all key numbers agree. Findings final; INDEX, OPEN_DECISIONS; tag TF1-done.
+- 2026-10-27 Debate round 5 (creator: which first?): GPT and Gemini both vote (1), a read-only split of what raised U_other (by action family, instinct vs habit, entry multiplicity), before any nature change; Gemini revised its 'extremely high artefact' claim after the arithmetic (0.64 = 24.5x weight). docs/debate_what_first_2026-10-27.md.
