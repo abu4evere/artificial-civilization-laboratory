@@ -212,6 +212,15 @@ class TF1Obs:
         b = self.bins[bi]
         living = world.living()
         b["pw"] += len(living)
+        for e in events:                                # operational note 2: things gone within the week they were made
+            if e.get("k") in ("make", "play") and e.get("thing"):
+                q = world.people.get(e["a"])
+                if q is None or not q.alive:
+                    continue
+                b[f"made_{e['k']}"] += 1
+                if not any(it["sig"] == e["thing"] for it in q.items):
+                    b[f"made_{e['k']}_gone_same_week"] += 1
+                    b[f"made_{e['k']}_gone_worth0"] += q.itemval.get(e["thing"], 0.0) == 0.0
         tools = {}
         for p in living:
             tools[p.id] = sum(1 for it in p.items if ffac(it) > 1.0)

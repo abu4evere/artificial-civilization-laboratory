@@ -151,6 +151,17 @@ def main():
     ud = sum(t[5] for t in dels)
     uw = sum(t[5] for t in allts if t[3] == "worn_out")
     L += [f"- Forage-tool uses destroyed by the carry limit: {ud}; left at wearing out: {uw}.", ""]
+    tb = Counter()
+    for r in rs:
+        for b_ in r["bins"].values():
+            tb.update(b_)
+    L += ["**Gone within the week they were made** (operational note 2; never in the weekly census):", ""]
+    for k_ in ("play", "make"):
+        n_ = tb[f"made_{k_}"]
+        if n_:
+            L.append(f"- made in {k_}: {n_:.0f}; gone the same week {tb[f'made_{k_}_gone_same_week'] / n_:.3f}; of those, "
+                     f"a kind with worth 0: {tb[f'made_{k_}_gone_worth0'] / max(tb[f'made_{k_}_gone_same_week'], 1):.3f}")
+    L.append("")
 
     # Q3
     dr = [death_route(t) for r in rs for t in r["tools"]]

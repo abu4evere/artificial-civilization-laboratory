@@ -131,3 +131,12 @@ How the code (`run_tf1.py`) reads the text where it left a choice, found in a 15
 4. **Seeds** 18301–18332 (new). **Carer** for children 12–15 is their last carer (carers end at 12), as in LS1.
 5. **Replacement routes:** the route of the forage tool held again: made by the person, inherited, taken from a body,
    or unseen.
+
+## Operational note 2 (27 October 2026, before any data)
+
+The missing-abilities audit (`docs/missing_abilities_audit_2026-10-27.md`, item A4) found that a thing made when hands
+are full can be deleted in the same week, and the weekly census never sees it: on a tie of worth, the newest thing is
+the one deleted. In a 30-year smoke world, 15% of things made in play were gone by the end of their week, nearly all
+new kinds with worth 0. TF1 therefore also counts, from each week's events, things made (in play, or deliberately)
+that are not in their maker's hands at the week's end, and how many of them are kinds with worth 0. These are reported
+beside Q2 and are not part of the ledger (they never entered the census). The zero checks are rerun with this code.
