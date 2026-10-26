@@ -110,3 +110,21 @@ Nature v7, LP (80 founders, 80×80), 32 new seeds (18601–18632), 200 years, ru
 The creator: "yea draft it, approve and freeze", on this plan (debate round 7: GPT's design, adopted by Gemini). Frozen as
 `HL1-frozen` before any code or data. How the code reads choices the text leaves open goes in operational notes,
 appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_hl1.py`, `analyse_hl1.py`) reads the text where it left a choice, found in a 15-year smoke world
+(seed 9951, not data):
+1. **Clipping.** Each route's update is clipped to [−1.5, 1.5] inside the code itself. The ledger therefore adds a
+   clipped update's actual change to the route that made it, rather than keeping a separate C_clip. How often a TD
+   update would have passed the bound is counted, and reported with Q3. (In the smoke world it never did.) The ledger
+   still closes exactly.
+2. **Inferring the copying rate.** For copying in talk and the carer's ways, the rate k is read from the change itself:
+   k = (new − old) / (model's or carer's value − old), at the first entry where they differ. Every entry is then
+   accounted with that k. The ledger's closure checks that this is exact.
+3. **The TD replay.** The observer recomputes each weekly update's reward r and future value exactly as `_learn` does,
+   and checks the result against the update (a mismatch counter that must be 0). In the smoke world it was 0.
+4. **Q1** reads adults (16+), as CO1. **Q3's** learning counts, rewards and future values are adults only, so they
+   compare with adults' choices. **Q2's** flows count everyone aged 1+ (habits are learned from age 1).
+5. **Mean habit values** (Q3) are sampled every 4 weeks over adults, averaged over the 32 situations.
+6. **Seeds** 18601–18632.
