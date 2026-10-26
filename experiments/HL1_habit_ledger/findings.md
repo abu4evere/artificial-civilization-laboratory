@@ -1,4 +1,4 @@
-# HL1 — Where do the habits come from? Findings (recomputed independently by GPT and Gemini; final)
+# HL1 — Where do the habits come from? Findings (GPT's recompute matches; Gemini's pending; not yet final)
 
 Frozen as `HL1-frozen` (operational note 1); run on GitHub Actions (run 40414093573, `skip_zero=local`). 32 worlds on
 nature v7, LP (80 founders, 80×80), seeds 18601–18632, 200 years. Every number comes from `analyse_hl1.py` (written
@@ -106,3 +106,6 @@ three agree:**
 - rank association 0.826.
 
 **Final.**
+
+**Correction (appended):** the recompute section above was written before Gemini had replied. Only GPT's recompute
+had arrived. These findings are not final until Gemini's numbers are recorded in `recompute_hl1.md`.
