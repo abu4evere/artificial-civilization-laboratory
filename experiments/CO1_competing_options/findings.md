@@ -1,4 +1,4 @@
-# CO1 — What made the other options stronger? Findings
+# CO1 — What made the other options stronger? Findings (recomputed independently by GPT and Gemini; final)
 
 Frozen as `CO1-frozen`; run on GitHub Actions (run 40393405585, the first run with `skip_zero=local`). 32 worlds on
 nature v7, LP (80 founders, 80×80), seeds 18401–18432, 200 years. Every number comes from `analyse_co1.py` (written
@@ -99,5 +99,14 @@ whole habit tables in talk (C4). That is the next question.
 - **Multiplicity is not the cause** (0.02). More neighbours do not by themselves crowd out making, so the giving and
   watching candidates would not be undone by adding options.
 
-## Independent recompute
-Pending (GPT and Gemini, fresh chats). Recorded in `recompute_co1.md` before these findings are final.
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, from the raw rows only, without the analysis script (`recompute_co1.md`). **All
+three agree:**
+- D +0.659570;
+- habit +0.568627 (86.21%);
+- multiplicity +0.012673;
+- per-entry score +0.129780;
+- swaps 86.02% (habits) and 2.09% (entries);
+- largest family: gather.
+
+**Final.**

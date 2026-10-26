@@ -140,3 +140,12 @@ the file named.
   creator, in the debate's order: A4 (new things deleted at once) and A2 (things lying in the world), then C1 (watching
   making), A1 (handing over), B1 (materials), each separately; and a read-only split of what raised the other options'
   scores (MK1).
+
+- [x] **CO1 (done, recomputed by GPT and Gemini; final):** the other options grew stronger through **learned habits**
+  (0.86), not more options (0.02). A rich-get-richer loop in habits is suspected, not tested. Next to decide: which
+  learning drove the habits (TD from rewards, or copying whole habit tables in talk, C4), as a read-only study.
+- [x] **NA1 (done, recomputed by GPT and Gemini; final):** chances to learn are plentiful; **lessons are refused**
+  (offered → took 0.02, falling tenfold after year 50) and taken lessons are not made (0.03; zero after year 50).
+  A→B→C chains exist (38) but almost only before year 50. Next to decide: why uptake collapses after year 50 (the
+  learner side; LU1's openness), without tuning uptake.
+
