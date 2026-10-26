@@ -1,18 +1,7 @@
 # Artificial Civilization Laboratory (ACL)
 
-> An agent-based simulation of hunter-gatherers in which nature is programmed and culture is not, built by Abdurashid Khudoyberdiev. No list of inventions, no reward for inventing, no language models. It tests whether culture and civilization can emerge from nature alone, and what stops them.
+> The Artificial Civilization Laboratory (ACL) is an artificial civilization simulation that tests whether civilization and intelligence can emerge from nature alone. An independent research project: open code and records, preregistered experiments, and a book. Built by Abdurashid Khudoyberdiev. An agent-based world of hunter-gatherers: no list of inventions, no reward for inventing, no language models.
 
-Key findings: about nine in ten useful inventions are never learned by anyone but their inventor; about a third of small worlds die out because too few people find a partner; teaching the missing part after a failed lesson raises transmission. Every study is planned and frozen before it runs; wrong predictions are kept.
-
-## Pages
-
-- [Home](https://abu4evere.github.io/artificial-civilization-laboratory/): what ACL is and the main findings
-- [Why inventions disappear](https://abu4evere.github.io/artificial-civilization-laboratory/findings/why-inventions-disappear.html)
-- [Why small worlds die out](https://abu4evere.github.io/artificial-civilization-laboratory/findings/why-small-worlds-die-out.html)
-- [How ACL tests itself](https://abu4evere.github.io/artificial-civilization-laboratory/method.html)
-- [FAQ](https://abu4evere.github.io/artificial-civilization-laboratory/faq.html)
-- [The book: The World That Nobody Wrote](https://abu4evere.github.io/artificial-civilization-laboratory/book.html), on Amazon: https://www.amazon.com/dp/B0HNVKRLFL
-
-## Source
-
+- [ACL](https://abu4evere.github.io/artificial-civilization-laboratory/): the mission and the film
 - [Code and every experiment record](https://github.com/abu4evere/artificial-civilization-laboratory) (public; all rights reserved)
+- [The book: The World That Nobody Wrote, Part One](https://www.amazon.com/dp/B0HNVKRLFL)
