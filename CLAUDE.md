@@ -39,6 +39,9 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
 - **GPT:** the creator's main ChatGPT chat is https://chatgpt.com/c/6adb8da9-5984-83ea-bff3-f4d9da68e4b3 (open it with
   the Claude in Chrome extension). You may ask GPT freely about ACL. Save its answers as `gpt_review_*.md`, labelled
   "GPT's opinion, not sign-off". Give the creator both views; only the creator decides.
+  **Ask Gemini too (the creator, 27 October 2026):** every question put to GPT also goes, the same text, to Gemini
+  (https://gemini.google.com, in the same Chrome). Compare the two answers (where they agree, where they differ) and
+  save both in the same `gpt_review_*.md` / `gpt_view_*.md` file, each labelled as an opinion, not sign-off.
   The Chrome extension follows one Claude account: after switching accounts, ask the creator to sign the extension
   into the current one. When typing into ChatGPT, send one paragraph (a newline sends the message early). The main chat is very long and the
   page can freeze when typing: insert the text with JavaScript (`document.execCommand('insertText', ...)` on
