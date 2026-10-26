@@ -136,3 +136,9 @@ After `gpt_review_mk1.md`. These replace the matching parts above when the creat
   - delayed-benefit failure: making pays over the longer term, but learned worth and choice don't reflect it.
 - **Size:** 32 worlds × 200 years, for a descriptive audit. Early-to-late changes are reported within surviving worlds
   and across all worlds, with extinctions recorded.
+
+## Sign-off (27 October 2026)
+
+The creator: "yea approve mk1, freeze and run on github", on this plan with draft revision 1 (which replaces the
+matching parts above). Frozen as `MK1-frozen` before any code or data. How the code reads choices the text leaves open
+goes in operational notes, appended before any data.
