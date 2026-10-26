@@ -211,3 +211,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 Creator: 'yea draft it, approve and freeze'. HL1 (habit ledger: every habit value split exactly by route: own TD, talk copying, carer, birth, paid back, clip; route split of CO1's habit rise; rich-get-richer and social amplification) written and frozen (HL1-frozen). Not run.
 - 2026-10-27 HL1: runner (wrappers on _learn, _imitate, _upbringing, _born, _give, steer; exact route ledger; TD replay), analysis (before data), operational note 1. Smoke OK (all mismatches 0). Zero checks running.
 - 2026-10-27 HL1 zero checks PASS locally; ready to launch (waits for the creator).
+- 2026-10-27 Creator: 'run hl1 on github'. HL1 launched (skip_zero=local, 16 chunks).
