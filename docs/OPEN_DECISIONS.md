@@ -157,3 +157,4 @@ the file named.
   round 7's second choice).
 
   **Correction (appended, 27 October):** HL1 is recomputed by GPT only so far. Gemini's recompute is pending, and HL1 is not final until it arrives.
+  **Update:** Gemini's actual recompute has arrived and matches. HL1 is final.

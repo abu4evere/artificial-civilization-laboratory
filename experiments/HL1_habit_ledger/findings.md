@@ -109,3 +109,5 @@ three agree:**
 
 **Correction (appended):** the recompute section above was written before Gemini had replied. Only GPT's recompute
 had arrived. These findings are not final until Gemini's numbers are recorded in `recompute_hl1.md`.
+
+**Final (appended after Gemini's actual recompute arrived):** Gemini's numbers match the analysis and GPT on every key number (`recompute_hl1.md`). The findings are final.

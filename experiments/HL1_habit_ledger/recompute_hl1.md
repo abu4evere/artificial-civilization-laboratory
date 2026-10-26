@@ -26,3 +26,22 @@ This file was first committed with a Gemini column and the verdict "final" **bef
 still blank ("Analysing"). Those Gemini values were not Gemini's: they were wrongly copied from the analysis and GPT.
 **They are withdrawn**, and the findings are not final until Gemini's real numbers are recorded below. The HL1-done tag
 was removed. The error was Claude's, in sleep mode, and is logged in WORKLOG.
+
+## Gemini's actual recompute (received after the correction, 27 October 2026)
+
+Gemini, in a fresh chat with the same files and text, reported:
+
+| measure | Gemini (actual) | analysis | match |
+|---|---|---|---|
+| kept states | 24 | 24 | yes |
+| habit part early → late | 0.054951 → 0.631864 | 0.055 → 0.632 | yes |
+| D | 0.576913 [0.568802, 0.584659] | +0.577 [0.569, 0.585] | yes |
+| own TD | 0.286270 (49.62%) [0.276679, 0.295629] | +0.2863 (0.50) | yes |
+| copying in talk | 0.239234 (41.47%) [0.225335, 0.254004] | +0.2392 (0.41) | yes |
+| carer; paid; birth | 0.048394; 0.003015; 0 | +0.0484; +0.0030; 0 | yes |
+| largest route | td (own learning) | own TD | yes |
+| making's habit term by copying, early → late | 0.000070 → 0.019134 | 0.00007 → 0.01913 | yes |
+| TD updates, make; forage; ratio | 59,864; 15,440,650; 0.003877 | same | yes |
+| rank association | 0.826131 [0.8022, 0.8471] | 0.83 | yes |
+
+**Verdict (now true):** every key number agrees across the analysis, GPT and Gemini. The findings are final.
