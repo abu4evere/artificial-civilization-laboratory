@@ -116,3 +116,19 @@ expects transmission leaks at the physical and observational stages (which are a
 The creator: "yea draft the network audit, approve and freeze", on this plan (debate round 6: GPT's design, Gemini in
 agreement). Frozen as `NA1-frozen` before any code or data. How the code reads choices the text leaves open goes in
 operational notes, appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_na1.py`) reads the text where it left a choice, found in a 20-year smoke world (seed 9953, not data):
+1. **"Took" is exact.** A learner "took" a kind when that very kind (the lesson's meant kind) entered their recipes in
+   the lesson. A lesson can come across wrong (`_recipe_as_shown`) and leave the learner with a different, new recipe.
+   That is counted separately as **"took a variant"** and reported beside "took". LS1's "taken" counted any new
+   recipe, so the two are not the same measure.
+2. **A lesson implies talk and presence.** A learner offered a lesson is also counted as talked and co-present for that
+   kind, since a lesson is given inside a talk within reach. The observer's weekly co-presence check reads positions at
+   the week's end, after people have moved. So containment (talked ⊆ co-present, offered ⊆ talked) holds by
+   construction; the check guards against coding errors.
+3. **Founders' starting kinds** have no inventor. They are described, not in the primary readings. A kind becomes
+   "useful" when its best factor exceeds 1.
+4. **Ratchet improvement:** k is a part of k′ in k′'s recipe (bound parts, or the part heated). "Higher best factor" is
+   over LS1's eight uses. "C learns k′" is any social route (taught, copied, read) by someone other than B.
