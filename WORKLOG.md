@@ -165,3 +165,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-25 OPEN_DECISIONS: next steps after M1/RH1/WM1 listed for the creator.
 - 2026-10-25 Creator chose the M1 loss study first. LS1 drafted (where knowledge goes over 1,000 years; read-only v7; LP 64 seeds; ledger, endowment vs culture, making gate, tool use); next: GPT review, then the creator's sign-off.
 - 2026-10-25 LS1: GPT reviewed (fresh chat; revise before freezing); Revision 1 written (copy loss vs extinction; origin/transmission/persistence; exact funnel and A4 decompositions; Q5 intergenerational replacement; stronger ledger checks; D80 32 seeds secondary). Waiting for the creator's sign-off.
+- 2026-10-25 LS1 signed off by the creator and frozen (LS1-frozen).

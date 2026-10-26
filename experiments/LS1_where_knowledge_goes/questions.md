@@ -1,4 +1,4 @@
-# LS1 — Where does knowledge go? A study of loss over a thousand years (DRAFT, Revision 1, 25 October 2026; not frozen; waiting for the creator)
+# LS1 — Where does knowledge go? A study of loss over a thousand years (SIGNED OFF 25 October 2026; Revision 1; frozen as `LS1-frozen` before any code or data)
 
 **Why.** M1 (`../M1_millennium_v6/findings.md`, final, independently recomputed) found that over 1,000 years nothing
 builds. Every surviving world erodes:
@@ -189,3 +189,8 @@ After GPT's review (`gpt_review_ls1.md`):
 - the prior is restated as separate predictions;
 - the "what follows" branches are not exclusive;
 - no zero-skill-founder arm (a later question).
+
+## Sign-off (25 October 2026)
+
+The creator: "yea approve it, freeze and run on github", on Revision 1 as written. Frozen as `LS1-frozen` before any
+code or data.

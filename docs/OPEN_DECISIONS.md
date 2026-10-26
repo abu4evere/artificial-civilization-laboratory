@@ -111,6 +111,6 @@ the file named.
     of how forager mothers are supported (partners, grandmothers, others), and what ACL lacks. A quarter of the gap has
     another source.
 
-- [ ] **LS1: where does knowledge go? (drafted 25 October 2026, Revision 1 after GPT; not frozen)**
+- [x] **LS1: where does knowledge go? (signed off and frozen 25 October 2026)**
   `experiments/LS1_where_knowledge_goes/questions.md`: read-only v7, LP 64 + D80 32 worlds, 1,000 years. Sign off,
   change, or drop.
