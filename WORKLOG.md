@@ -201,3 +201,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 Creator: 'yea draft the network audit, approve and freeze'. NA1 (effective cultural network: per useful kind, distinct non-knowers co-present/talked/offered/took/made/passed, with the inventor and with any knower; funnel with largest loss; A->B->C ratchet ledger) written and frozen (NA1-frozen). Not run.
 - 2026-10-27 CO1 zero checks PASS locally (identity mismatches 0; reload exact). Launching CO1 with skip_zero=local (creator: 'run co1 on github').
 - 2026-10-27 NA1: runner (observer + remember/hear wrappers; ratchet ledger), analysis (before data), operational note 1 (exact took vs variant; lesson implies talk and presence). Smoke OK (mismatches 0). Zero checks running.
+- 2026-10-27 NA1 zero checks PASS locally; ready to launch with skip_zero=local (waits for the creator's go).
