@@ -126,3 +126,9 @@ the file named.
   matched-capacity control, for the creator to sign off. LS1 points to the review's first branch: making is feasible
   and weighed but not chosen, so the candidate is how the *worth* of making is learned (gaps 1 and 2: coarse
   situations, one timescale). Not designed yet; waits for the creator.
+
+- [ ] **MK1: why is making not chosen? (draft, 26 October 2026; not frozen)** `experiments/MK1_why_not_make/questions.md`
+  (with draft revision 1 after GPT's review). A read-only audit on v7: the offer gate, the full choice set, a
+  softmax log-odds decomposition of why "make" loses, tool returns described. Three hypotheses: low-skill trap,
+  opportunity cost, delayed-benefit failure. Creator: sign off, change, or drop; or choose the tool lifecycle or
+  transmission first. Background: `docs/evidence_review_children_tools_2026-10-26.md`.
