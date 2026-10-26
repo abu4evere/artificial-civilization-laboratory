@@ -155,3 +155,5 @@ the file named.
   whether to study a learning-rule candidate (fly-brain step 3: how values are learned, on which timescale; or how
   habits are copied, C4) as a frozen intervention with a matched control; or first the lesson-uptake audit (debate
   round 7's second choice).
+
+  **Correction (appended, 27 October):** HL1 is recomputed by GPT only so far. Gemini's recompute is pending, and HL1 is not final until it arrives.
