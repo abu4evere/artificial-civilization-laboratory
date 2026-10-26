@@ -105,3 +105,34 @@ worlds. Validity as in LS1:
 
 - Is a read-only audit the right next step, before the tool-lifecycle and transmission questions?
 - 200 years and 32 worlds, or the full 1,000?
+
+## Draft revision 1 (26 October 2026, after GPT's review; still a draft, not frozen)
+
+After `gpt_review_mk1.md`. These replace the matching parts above when the creator reviews the plan:
+- **The offer gate is logged** (feasible but not offered, because v ≤ 0.05 or the thing is already held; offered;
+  chosen; done; a useful tool produced). The primary reading is conditional on being offered. How often making is
+  offered is reported separately.
+- **Q3 uses the full softmax:**
+  - U_m is making's full score after the thought's pull (`thought.steer`), with its habit term. U_other =
+    0.2 · log Σ exp(U_j / 0.2) over every other offered option, after the pull.
+  - Exactly, log-odds(make | offered) = (U_m − U_other) / 0.2.
+  - The early-to-late change in the mean log-odds, over matched states, is split into making's worth term,
+    hunger and diligence, the habit term, the thought's pull, and U_other. The split uses a Shapley allocation for the
+    interactions, written before data. The actual probability of choosing to make is reported beside it.
+- **The whole choice set is logged:** every option's score, and which option scored highest against which was drawn.
+- **Q2 is read as histories, not causes:** per person, the sequence of making, the tool's quality, its use, and the
+  worth updates that follow. Associations are described, not ranked as causes.
+- **Q4 is descriptive:**
+  - the tool's incremental yield at each actual forage act (the food owed to the tool, as in A4), summed over the
+    tool's life;
+  - its life and use;
+  - cumulative benefit curves at 13, 26, 52 and 104 weeks, with censoring (the tool lost, or the person dead)
+    reported;
+  - the immediate cost of the making week, estimated from comparable observed foraging.
+  Their difference is "an observational benefit-cost proxy, not a causal net return".
+- **Three hypotheses, all of which may hold:**
+  - a low-skill trap;
+  - opportunity cost dominates;
+  - delayed-benefit failure: making pays over the longer term, but learned worth and choice don't reflect it.
+- **Size:** 32 worlds × 200 years, for a descriptive audit. Early-to-late changes are reported within surviving worlds
+  and across all worlds, with extinctions recorded.
