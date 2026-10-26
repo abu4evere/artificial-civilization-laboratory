@@ -202,3 +202,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 CO1 zero checks PASS locally (identity mismatches 0; reload exact). Launching CO1 with skip_zero=local (creator: 'run co1 on github').
 - 2026-10-27 NA1: runner (observer + remember/hear wrappers; ratchet ledger), analysis (before data), operational note 1 (exact took vs variant; lesson implies talk and presence). Smoke OK (mismatches 0). Zero checks running.
 - 2026-10-27 NA1 zero checks PASS locally; ready to launch with skip_zero=local (waits for the creator's go).
+- 2026-10-27 Creator: 'run na1 on github'. NA1 launched (skip_zero=local, 16 chunks).
