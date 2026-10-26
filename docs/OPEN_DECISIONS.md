@@ -110,3 +110,7 @@ the file named.
   - **WM1** (the mother-feeds-first rule makes most of the women's gap): the frozen next step is an **evidence review**
     of how forager mothers are supported (partners, grandmothers, others), and what ACL lacks. A quarter of the gap has
     another source.
+
+- [ ] **LS1: where does knowledge go? (drafted 25 October 2026, Revision 1 after GPT; not frozen)**
+  `experiments/LS1_where_knowledge_goes/questions.md`: read-only v7, LP 64 + D80 32 worlds, 1,000 years. Sign off,
+  change, or drop.
