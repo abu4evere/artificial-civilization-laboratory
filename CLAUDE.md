@@ -50,6 +50,9 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   `#prompt-textarea`) and click `[data-testid="send-button"]`.
 - **Cloud runs:** studies run on GitHub Actions (`.github/workflows/cloud-run.yml`), so the creator's PC can be off.
   `gh` is at `C:\Users\User\gh\bin\gh.exe`; fetch with `python tools/ci/fetch_cloud.py <run-id> <out_dir>`.
+  Run the zero checks locally first and commit `zero_local.log`, then launch with `-f skip_zero=local`. The cloud then
+  only checks that record (All: PASS, same code fingerprint) instead of re-running the zero checks, which saves about
+  15–20 minutes.
   The `tests` workflow runs only when code changes (`acl/`, `tests/`, `code_*`).
 - **Tests:** `python -m pytest -q tests` (62 pass on nature v7, live since 25 October 2026).
 
