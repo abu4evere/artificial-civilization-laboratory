@@ -68,3 +68,20 @@ by someone else) is not people choosing not to give. **The world has no way to g
 
 GPT's question for the study: "Does access to someone else's invention help an individual acquire the capability to
 reproduce it, or does it make that capability unnecessary until the tool disappears?"
+
+## Debate round 3 (27 October 2026): the creator's question (opinions, not sign-off)
+
+**The creator:** "If they cannot pass the things themselves, it is unwise to expect them to pass the knowledge."
+
+| claim | who | council check | result |
+|---|---|---|---|
+| The creator is right: object access matters for knowledge to matter, because people learn a thing's worth by using it before they can make it | GPT ("mostly yes"), Gemini ("right") | Fits the code: a held tool is used automatically, so receiving one teaches its worth by use | **Stands** |
+| ...but it is not a strict prerequisite: a learner can watch and reproduce; naive crows make tools without demonstration | GPT | Gemini accepted it | **Stands** |
+| Evidence that access to artefacts helps: Aka caregivers give infants knives and digging sticks; chimpanzee mothers transfer termite-fishing probes to offspring, who then use tools and feed more (Musgrave et al. 2016); young crows handle parents' tools; young capuchins practise around shared anvils and stones | GPT, Gemini | Sources to check before use | **Stands, to check** |
+| "Active teaching is virtually non-existent in animals" | Gemini | GPT cited the chimpanzee probe transfers, counted as teaching by their authors | **Withdrawn** |
+| Foragers carry "3 to 6 core items" | Gemini | No source; GPT found no universal number, only flexible toolkits and caches | **Withdrawn** |
+| The leak is the deletion, not the number 3 | GPT, Gemini | True: `_keep` deletes the least valued thing | **Stands** |
+| Replace deletion with dropping on the tile | Gemini | **Tiles cannot hold made things in v7** (only materials); a made thing exists only in someone's hands or with a body. So dropping needs a new law (persistence, decay, visibility, who may pick it up). Gemini accepted this; GPT warned against an unlimited communal store | **Not a small fix; a separate candidate** |
+| What matters is **access to artefacts** (gifts, borrowing, abandoned tools, shared places), not gifting alone | GPT; Gemini agreed | — | **Stands** |
+| **Prediction:** allowing tool transfer will improve tool use more reliably than it improves the passing of making knowledge. Material and knowledge transmission may be separate bottlenecks | GPT; Gemini agreed | — | **On record** |
+| Order: finish MK1 and the read-only lifecycle audit, then giving things and what happens to discarded things (two separate candidates, not combined), and teaching last. Don't raise lesson uptake directly (that would be tuning); don't just raise the carry number | GPT, Gemini (same order) | Consistent with ACL's rules | **The council's recommendation, for the creator** |
