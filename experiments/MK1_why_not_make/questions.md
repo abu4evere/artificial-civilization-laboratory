@@ -142,3 +142,64 @@ After `gpt_review_mk1.md`. These replace the matching parts above when the creat
 The creator: "yea approve mk1, freeze and run on github", on this plan with draft revision 1 (which replaces the
 matching parts above). Frozen as `MK1-frozen` before any code or data. How the code reads choices the text leaves open
 goes in operational notes, appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_mk1.py`, `analyse_mk1.py`) reads the frozen text where it left a choice:
+1. **Setting:**
+   - LP (80 founders, 80×80), seeds 18201–18232 (new), 200 years, nature v7 (`code_v7`) unchanged.
+   - The primary readings are for adults (16+). Teens (12–15) are logged apart.
+   - Bins are LS1's up to 200 years. "Early" is years 0–10 and "late" is years 100–200, LS1's decomposition periods.
+2. **The offer gate:**
+   - **Feasible:** as LS1, the person can make at least one recipe now, with a fire for heating.
+   - **Offered:** "make" is among the decision's final options.
+   - **Why feasible but not offered**, from a read-only replay of the decision's own make loop:
+     - "low": every feasible recipe's worth v ≤ 0.05;
+     - "held": every feasible recipe above 0.05 is a thing already held at that worth;
+     - "both";
+     - "tired": too little energy.
+   - **Two internal checks must be exact in every world** (mismatch counters 0): the replayed offer equals the
+     decision's, and the replayed worth term equals the score the decision gave.
+3. **Making's score parts:**
+   - worth term = 2.0 × v × D × H, with D = 0.6 + 0.4 × diligence and H = 1 − 0.5 × hunger;
+   - habit = 0.6 × the habit value in the week's situation;
+   - thought = the steer bonus;
+   - U_other = 0.2 · log Σ exp(U_j / 0.2) over every other option entry after the pull, which is exactly what the
+     softmax draws from;
+   - log-odds = (U_m − U_other) / 0.2, and P = the softmax's own probability.
+4. **Matched states:** hunger band (< 0.25, 0.25–0.5, 0.5–0.75, ≥ 0.75; hunger as the decision computes it) × holding
+   a forage tool (factor > 1) × food on the person's tile in weeks of their need (< 0.5, 0.5–2, ≥ 2).
+   - Materials are matched by construction, since every offered week has them.
+   - Skill is not matched: it is one of the explanations.
+5. **Q3:**
+   - Late states are weighted to the early distribution of adult offered weeks, over states present in both.
+   - The change in mean log-odds is split exactly into worth term, habit, thought and −U_other. The worth term is split
+     by a three-factor Shapley allocation on cell means (v, D, H), and the cell-level covariance is reported as its own
+     part.
+   - The share of the fall in "chosen given offered" that remains within matched states = matched Δ ln ÷ raw Δ ln.
+   - Primary: worlds alive at year 100 (bootstrap over worlds, 10,000 replicates, seed 20261027). All worlds:
+     described.
+   - The part carrying the largest share is named.
+6. **Q2:**
+   - Crafting-skill bands < 0.1, 0.1–0.2, 0.2–0.35, 0.35–0.5, ≥ 0.5.
+   - Rates are directly standardised to all adults' offered weeks over bin × hunger × tool × food, over the states each
+     band has; the reference share covered is shown.
+   - Makings of forage tools: the tool's forage factor and the maker's learned worth for that kind at the making and 13
+     and 52 weeks later. "Relative" worth is compared within the same kind.
+   - Described, not causal.
+7. **Q4:**
+   - **Which tools:** every forage tool (factor > 1) made deliberately. The item followed is the first item of that kind
+     in the maker's hands not already followed.
+   - **Benefit:** food owed to the tool (got × (1 − 1/f)) at the maker's forage acts, cumulative to 13, 26, 52 and 104
+     weeks. A tool stops being followed when its maker dies or no longer holds it, and keeps what it earned.
+   - **Cost:** one forage act's food, the mean per adult forage act in the maker's own world, bin and state (with
+     skill).
+   - **Proxy:** benefit − cost, an observational proxy.
+8. **Q5:** the three hypotheses are read from the tables as listed in the analysis. No thresholds are set; all may
+   hold.
+9. **Zero checks:**
+   - LP seed 501 for 20 years and seed 601 for 60 years, with and without the observer: identical state and random
+     numbers;
+   - the replay mismatches 0;
+   - the observer must see offered weeks and forage tools;
+   - reload is exact.

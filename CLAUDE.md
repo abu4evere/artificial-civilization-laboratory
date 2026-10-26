@@ -41,7 +41,9 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   "GPT's opinion, not sign-off". Give the creator both views; only the creator decides.
   **Ask Gemini too (the creator, 27 October 2026):** every question put to GPT also goes, the same text, to Gemini
   (https://gemini.google.com, in the same Chrome). Compare the two answers (where they agree, where they differ) and
-  save both in the same `gpt_review_*.md` / `gpt_view_*.md` file, each labelled as an opinion, not sign-off.
+  save both in the same `gpt_review_*.md` / `gpt_view_*.md` file, each labelled as an opinion, not sign-off. It is a **debate**: Claude is the council. Check each claim against the code and
+  the records; where either model is wrong, tell that model with the facts and let it defend or revise; pass each one's
+  main argument to the other for a reply. Report to the creator who argued what, and what survived checking.
   The Chrome extension follows one Claude account: after switching accounts, ask the creator to sign the extension
   into the current one. When typing into ChatGPT, send one paragraph (a newline sends the message early). The main chat is very long and the
   page can freeze when typing: insert the text with JavaScript (`document.execCommand('insertText', ...)` on
