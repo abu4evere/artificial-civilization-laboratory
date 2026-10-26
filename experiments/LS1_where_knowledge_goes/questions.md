@@ -194,3 +194,40 @@ After GPT's review (`gpt_review_ls1.md`):
 
 The creator: "yea approve it, freeze and run on github", on Revision 1 as written. Frozen as `LS1-frozen` before any
 code or data.
+
+## Operational note 1 (25 October 2026, after freezing, before any data)
+
+How the code reads the frozen text where the text left a choice:
+1. **Gain routes:**
+   - "invented" = made or heated, the first of its kind in the world;
+   - "rediscovered" = made or heated, a kind already known in the world;
+   - taught, copied (watched) and read are the code's own routes.
+2. **Feasible, weighed, chosen:**
+   - **feasible:** a teen or older person who could make at least one recipe now, with materials or parts in hand
+     and a fire for heating, as the decision itself checks;
+   - **weighed:** "make" was in the full scored option list, read where the list is final, before the choice, not
+     only the four best that the decision record keeps;
+   - **chosen:** the decision chose make.
+   Adults are 16+, teens 12–15. Weighed implies feasible, and chosen implies weighed; the code records the
+   weighed-without-feasible count, which must be 0.
+3. **Lessons:** each time a lesson is heard counts as offered, including a part shown after a failed lesson. Taken =
+   the learner gained a new recipe from it.
+4. **Inheritance (Q5):** "carers while 0–16" uses whoever is the child's carer each week. In the code, carers end at
+   age 12, so in practice it is 0–12. "Useful" is read from the kind's properties when the person turns 30 or dies.
+5. **Tool replacement:** the clock starts when a person stops holding any forage tool (f > 1), for any reason (worn
+   out, lost to the carry limit, given). "Replaced" means holding one again within 52 weeks; "not replaced" means none
+   after 52 weeks. A person who dies within the year is not counted.
+6. **Tool origin:**
+   - **made by the holder:** the holder made it, seen by a making event in the week it first appeared;
+   - **made by someone else:** a known maker who is not the holder (inherited, taken, given);
+   - **unknown:** first seen without a making event, or not seen held for two years.
+   "Held since the founding decades" = made in the first 20 years.
+7. **The making habit** is the mean of the person's habit values for "make" over all situations. The carer's is the
+   child's last carer at the child's 16th birthday, if alive. The talk partners' is the average over the three people
+   they talked with most, if alive.
+8. **Survival (Q5):** checked 25 years after the person's death, over the useful recipes they ever acquired. Not
+   computed for people alive at the end.
+9. **Bins:** a world counts in a bin if it lived into it (it ended after the bin's start). Intervals use generator seed
+   20261026.
+10. **The cloud plan** reads the runner's own job list, because LP and D80 use different seeds
+    (`tools/ci/cloud_plan.py`).

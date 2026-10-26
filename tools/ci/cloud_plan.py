@@ -2,7 +2,7 @@
 
     python tools/ci/cloud_plan.py <runner.py> <chunks> [smoke]   -> prints the job matrix as JSON
 
-The runner must define ARMS and SEEDS (or DISCOVERY and HOLDOUT), YEARS, and accept `one <arm> <seed> <years> <out>`,
+The runner must define ARMS and SEEDS (or DISCOVERY and HOLDOUT, or JOBS as "arm:seed" strings), YEARS, and accept `one <arm> <seed> <years> <out>`,
 as every frozen study runner does. "smoke" uses the runner's SMOKE_SEEDS (the years are given to the chunk step).
 """
 import importlib.util
@@ -21,6 +21,8 @@ def load(script):
 
 
 def items(mod, smoke=False):
+    if not smoke and hasattr(mod, "JOBS"):           # a runner whose arms use different seeds lists its jobs itself
+        return list(mod.JOBS)
     if smoke:
         seeds = tuple(mod.SMOKE_SEEDS)
     elif hasattr(mod, "SEEDS"):
