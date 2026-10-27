@@ -51,8 +51,10 @@ the code's settings.
       deleted, not dropped).
 14. **Fire.** Fire can be made from sparks (struck flint), kept, and used to heat, cook and harden.
 15. **Places.**
-    - **Food, seeds and raw materials** can be set down and found later. **Made things cannot be set down**: there is
-      no law for leaving a tool somewhere.
+    - **Food and seeds** can be set down (a stash, or sown) and food found and taken later.
+    - **Raw materials** can be put on a pile (it gives warmth, or feeds a fire), but **cannot be gathered back from the
+      pile**.
+    - **Made things cannot be set down at all**: there is no law for leaving a tool somewhere.
     - Pits can be dug to hide food and keep it longer.
     - Others can take what was left, which is stealing if it is someone else's.
 
@@ -128,7 +130,9 @@ the code's settings.
     - **A just-taught recipe is valued at 0 at that moment**, so it is usually the one forgotten.
     - **[PT1: 71% of overflows delete the new lesson. MO1 tested setting the value first: helped, but missed its frozen
       threshold.]**
-30. **Watching.** Seeing someone do well with a thing can, rarely, let the watcher work out how to make it.
+30. **Watching.** Only in two moments: on a **joint hunt**, and when someone **floats across water** nearby. There, seeing
+    someone do well with a thing can, rarely, let the watcher work out how to make it. People do **not** learn by
+    watching someone make something.
 31. **Belief and trust (credence).**
     - How much someone is believed depends on goodwill (trust, respect), their record of being right, their visible
       health, whether they hold the thing, and a bonus for adults talking to children.
@@ -174,3 +178,12 @@ Both were wrong against the code:
 
 GPT spotted the second ("Made objects apparently cannot actually be put on the ground and recovered"); the assistant
 checked both in `acl/actions.py` and corrected laws 13 and 15 above.
+
+## Correction 2 (27 October 2026, after GPT's review)
+GPT also flagged laws 15 and 30. Checked in the code:
+- **Law 15:** `_gather` reads only a tile's own stock (`Tile.material`), not its pile, so raw materials put on a pile
+  cannot be taken back.
+- **Law 30:** `knowhow.watch` is called only from joint hunts (`resolve_hunts`) and floating across water
+  (`_over_water`).
+
+Both laws are corrected above.
