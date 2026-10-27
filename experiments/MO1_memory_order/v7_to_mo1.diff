@@ -1,0 +1,36 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/config.py experiments/MO1_memory_order/code_mo1/acl/config.py
+--- experiments/NV7_nature_v7/code_v7/acl/config.py	2026-10-25 14:52:38.121102200 -0400
++++ experiments/MO1_memory_order/code_mo1/acl/config.py	2026-10-27 04:57:47.544339700 -0400
+@@ -124,6 +124,8 @@
+     camp_radius: int = 2               # partners this close count as living together
+     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
++    lesson_value_first: int = 0        # MO1: 1 = a recipe learned from someone (taught, or copied by watching) is given the
++                                       # value that learning carries before memory decides what to keep (0 = nature v7)
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/information.py experiments/MO1_memory_order/code_mo1/acl/information.py
+--- experiments/NV7_nature_v7/code_v7/acl/information.py	2026-10-25 14:52:38.146945600 -0400
++++ experiments/MO1_memory_order/code_mo1/acl/information.py	2026-10-27 04:57:47.546414200 -0400
+@@ -371,6 +371,8 @@
+                     shown = _recipe_as_shown(world, teacher, learner, teacher.recipes[part])
+                     return hear_how(world, learner, teacher, part, shown, claim, parent, part_lesson=True)
+         return False                                        # it needs a part they cannot make
++    if world.cfg.lesson_value_first:                 # MO1: the lesson's value first, then memory decides
++        learner.itemval[sig] = max(learner.itemval.get(sig, 0.0), 0.5 * claim * c)
+     remember_recipe(world, learner, sig, recipe, "taught", teacher.id, meant=meant)
+     learner.itemval[sig] = max(learner.itemval.get(sig, 0.0), 0.5 * claim * c)
+     learner.heard["m:" + sig] = [round(claim, 3), [teacher.id], world.tick]
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/knowhow.py experiments/MO1_memory_order/code_mo1/acl/knowhow.py
+--- experiments/NV7_nature_v7/code_v7/acl/knowhow.py	2026-10-25 14:52:38.130002800 -0400
++++ experiments/MO1_memory_order/code_mo1/acl/knowhow.py	2026-10-27 04:57:47.549418800 -0400
+@@ -240,6 +240,8 @@
+     copy = _sig_of(recipe)
+     if copy in watcher.recipes or not can_follow(watcher, recipe):
+         return
++    if world.cfg.lesson_value_first:                 # MO1: the value seen first, then memory decides
++        watcher.itemval[copy] = max(watcher.itemval.get(copy, 0.0), 0.3 * clamp(outcome))
+     remember_recipe(world, watcher, copy, recipe, "copied", maker.id, meant=sig)
+     watcher.itemval[copy] = max(watcher.itemval.get(copy, 0.0), 0.3 * clamp(outcome))
+ 

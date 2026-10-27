@@ -112,3 +112,26 @@ The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). 
 Gemini 95%); the assistant's estimate is 80%, above the 40% threshold. Logged in `docs/autonomous_decisions.md`. Frozen
 as `MO1-frozen` before any code or data. How the code reads choices the text leaves open goes in operational notes,
 appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`code_mo1`, `run_mo1.py`, `analyse_mo1.py`) reads the text where it left a choice, found in 20-year smoke
+worlds (seed 9945, all three arms; not data):
+1. **The setting**
+   - `information.hear_how` and `knowhow.watch` set the learned value just before `remember_recipe`, when the setting
+     is 1.
+   - The same line after it is unchanged. It is idempotent: max with the same number.
+   - Nothing else changes (`v7_to_mo1.diff`).
+2. **"Taken"** means every recipe that enters memory through a lesson ("taught") or through watching ("copied"),
+   including those deleted at once. They count in P1's denominator as not held. Learners who die before 52 weeks are
+   censored. The check runs at the first year's end at least 52 weeks after the event.
+3. **"Found bad"** means the learner's value for it is below −0.1 at the check. **"Made"** means a `make` event by the
+   learner of that kind after the event.
+4. **"Deleted instead"** is the recipe deleted when the new one survives an overflow. Its value is read at that moment.
+   "Made in the past 52 weeks" is from `make` events.
+5. **The census** runs at each year's end. Adults are 16 or older. P2 pools useful recipes held by adults over adults,
+   years 50–200. "Making events per adult-year" counts every `make` event over adult-years. World-born kinds alive
+   counts distinct kinds held by anyone alive, excluding kinds first made by a founder.
+6. **Paired bootstrap:** the same resampled seeds for both arms, pooled ratios, 10,000 replicates.
+7. **The sham** is `sham_draw` 1 on `code_mo1` with the setting 0.
+8. **Seeds:** 18901–18932, the same in every arm.
