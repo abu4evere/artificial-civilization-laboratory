@@ -118,8 +118,8 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
   Not judged on making. I did not take Gemini's stricter 60% gate, because of the MO1 lesson.
 - **⚠ GPT said you should accept these thresholds before freezing.** I signed them off under sleep mode; please review
   them. Nothing becomes live nature without you.
-- **Status:** `code_hc1` is built (`v7_to_hc1.diff`: one small edit behind one setting). The zero checks are running,
-  then the cloud run.
+- **Status:** `code_hc1` is built (`v7_to_hc1.diff`: one small edit behind one setting). The zero checks pass, and it is
+  running on GitHub (run 40528434282).
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
