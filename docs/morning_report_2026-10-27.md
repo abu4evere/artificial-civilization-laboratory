@@ -77,7 +77,7 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
   with the realised discounted reward afterwards, and measures the optimism of the max look-ahead separately (GPT's
   correction).
 - **Why it matters:** this decides whether any learning-rule change is justified on calibration grounds, not on making.
-- **Status:** the code is built; the zero checks are running, then the cloud run. See the end of `WORKLOG.md`.
+- **Status:** the code is built; the zero checks pass and it is running on GitHub (run 40491681638). See the end of `WORKLOG.md`.
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
