@@ -104,3 +104,21 @@ The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). 
 Gemini 95%); the assistant's estimate is 65%, above the 40% threshold. Logged in `docs/autonomous_decisions.md`. Frozen
 as `VC1-frozen` before any code or data. How the code reads choices the text leaves open goes in operational notes,
 appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_vc1.py`, `analyse_vc1.py`) reads the text where it left a choice, found in a 20-year smoke world
+(seed 9943, not data):
+1. **r** is the reward the update itself uses: the week's reward + 2 × the mood change, replayed exactly as `_learn`.
+   **G** starts with that week's r and adds 0.8^k × r of the person's next weekly updates. Weeks without an update (no
+   action recorded) add nothing.
+2. **G is closed** once the weight 0.8^k falls below 0.001 (31 updates later), at death (counted as censored: rewards
+   end), or not at all if the run ends first. Those still open at the end are excluded; their number is in each output
+   file.
+3. **The max gap** is 0.8 × (max of q[s′] at the update − q[s′, a_next] from the same snapshot). a_next is the action of
+   the person's next update, used only when that update's situation equals s′; the "next-week link" share is reported.
+4. **"Common actions"** are forage, give, talk and gather, pooled.
+5. **Q3** compares G of make with G of all other actions pooled in the same situation (one of the 32), within era. The
+   difference per situation is weighted by make's updates there.
+6. **Bootstraps** resample whole worlds (10,000 replicates) and pool sums.
+7. **Seeds:** 19001–19032.
