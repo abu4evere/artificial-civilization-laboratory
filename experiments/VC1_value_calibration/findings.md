@@ -1,4 +1,4 @@
-# VC1 — Are habits calibrated? Findings (recompute by GPT and Gemini pending; not yet final)
+# VC1 — Are habits calibrated? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `VC1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`). Run
 on GitHub Actions (run 40491681638, `skip_zero=local`). 32 worlds on nature v7, LP (80 founders, 80×80), seeds
@@ -94,3 +94,12 @@ for making"):
 
 **Any change to the learning or copying rule would now be justified on calibration grounds, not on making.** That is
 the creator's decision, one law at a time.
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw cells only, without the analysis script
+(`recompute_vc1.md`). **All three agree on every number:**
+- make −0.558, common +0.418;
+- the difference −0.975 [−0.990, −0.959];
+- the gap share 0.347.
+
+**Final.**

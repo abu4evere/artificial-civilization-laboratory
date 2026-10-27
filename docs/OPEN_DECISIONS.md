@@ -186,3 +186,12 @@ the file named.
 
   **For the creator:** whether to re-test the order under a new frozen plan (a threshold that allows for memories
   filling with lesson-valued recipes), or leave it. Not re-decided in sleep mode.
+- [x] **VC1 (done in sleep mode, recomputed by GPT and Gemini; final):** habit values are miscalibrated in opposite
+  directions:
+  - common actions are over-valued by +0.42;
+  - making is under-valued by −0.56.
+
+  Making's realised returns are within 0.01 of the alternatives', yet habits put it about 1.1 below. The max look-ahead
+  explains only 0.35 of the over-valuation. **For the creator:** this is the first calibration-based (not
+  outcome-based) case for a learning- or copying-rule study (Expected SARSA addresses about a third; copying is the
+  larger remainder, per HL1).
