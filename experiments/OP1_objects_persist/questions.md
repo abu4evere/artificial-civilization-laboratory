@@ -95,3 +95,22 @@ Nothing in choosing changes: picking up is passive, like kin taking tools from a
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). Both models chose it (GPT 80%, Gemini
 95%); the assistant's estimate is 75%, above the 40% threshold. Logged in `docs/autonomous_decisions.md`. Frozen as
 `OP1-frozen` before any code or data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`code_op1`, `run_op1.py`, `analyse_op1.py`) reads the text where it left a choice, found in 20-year
+smoke worlds (seed 9937, all arms; not data):
+1. **The law.**
+   - `actions._keep` takes the world; with the setting on, an overflowed thing goes to `world.ground` (with where,
+     when, by whom) and a `drop` event is emitted.
+   - Inheritance overflow in `bodies_week` does the same.
+   - `actions.ground_week` runs every week right after `bodies_week`.
+   - The ground is saved in the world's state only when non-empty, so v7 worlds are unchanged.
+   - Diff: `v7_to_op1.diff`.
+2. **"Picked up by a living person"** counts `pickup` events. "By someone other" means the picker is not the one who
+   dropped it.
+3. **The manipulation** counts carry-limit overflows from making through a read-only wrapper on `actions._keep`. In
+   arm o each overflow must add exactly one thing to the ground. Inheritance drops come from the events.
+4. **The census** runs at year ends: living people, adults (16+), made things held by adults, and `make` events that
+   year.
+5. **Seeds:** 19301–19332, the same in every arm.
