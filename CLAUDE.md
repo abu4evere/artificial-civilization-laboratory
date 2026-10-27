@@ -63,6 +63,11 @@ gotta work autonomy decide without me do not wait for me. Main priority not to s
 success rate if its more than 40% just go ahead without me. Overally you do everything i am giving you permission for
 that."
 
+**Sleep mode starts by itself** when the creator has not written for more than an hour (the creator, 27 October: "if i
+do not be here for more than 1 hour it means you can start sleep mode automaticly … do not wait for me all the time").
+An hourly heartbeat (a session cron job) checks this and keeps work going. Recurring jobs expire after 7 days; renew the
+job when the creator is around.
+
 So in sleep mode the assistant decides in the creator's place, including the steps that otherwise need their sign-off:
 - drafting, freezing and signing off studies;
 - running them on GitHub;
