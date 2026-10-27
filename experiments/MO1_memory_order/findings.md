@@ -1,4 +1,4 @@
-# MO1 — The memory order. Findings (recompute by GPT and Gemini pending; not yet final)
+# MO1 — The memory order. Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `MO1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`). A
 nature-change study: `code_mo1` = `code_v7` + one setting (`v7_to_mo1.diff`). Run on GitHub Actions (run 40480396086,
@@ -72,3 +72,14 @@ replays. **The rule is not re-read after the data.**
   measured cost. Whether to test it again, under a new frozen plan whose manipulation threshold allows for this feedback,
   is **the creator's decision**. It is not re-decided here.
 - As predicted by both models and stated in the plan, **it does not touch making** (0.130 against 0.128).
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw counts and census only, without the analysis script, and
+applied the frozen rule themselves (`recompute_mo1.md`). **All three agree on every key number:**
+- M 0.2962 / 0.8365;
+- P1 +0.2430;
+- P2 −0.1929;
+- P3 0;
+- the verdict: **not supported (M fails).**
+
+**Final.**

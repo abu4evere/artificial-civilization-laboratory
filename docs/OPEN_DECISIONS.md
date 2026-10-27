@@ -179,3 +179,10 @@ the file named.
 
   **For the creator:** whether the memory order is a bug or a law (the council's next-step vote is in
   `docs/autonomous_decisions.md`).
+- [x] **MO1 (done in sleep mode, recomputed by GPT and Gemini; final): not supported by the frozen rule.**
+  - **The manipulation check fails:** new recipes survive an overflow 0.837 of the time, against the 0.90 required.
+  - The other three criteria are met: retention +0.24, useful knowledge −2% (no harm), no bad recipes.
+  - There is no nature-v8 candidate; v7 stays live.
+
+  **For the creator:** whether to re-test the order under a new frozen plan (a threshold that allows for memories
+  filling with lesson-valued recipes), or leave it. Not re-decided in sleep mode.
