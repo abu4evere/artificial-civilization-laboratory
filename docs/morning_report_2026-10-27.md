@@ -141,7 +141,7 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **Judged on:** do people actually pick up dropped things (at least 5%)? Not on making.
 - **A test world hints:** 82% of dropped things were picked up, almost all by *other* people, within about 4 weeks.
   Tools start passing between people.
-- **Status:** the zero checks are running, then the cloud run.
+- **Status:** the zero checks pass, and it is running on GitHub (run 40578952705).
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
