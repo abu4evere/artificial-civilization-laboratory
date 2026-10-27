@@ -37,6 +37,8 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
 - Don't publish or post (website, social) without the creator's explicit OK. Pushing commits to GitHub is fine.
 
 ## How work is done
+- **Talk to the creator simply** (the creator, 27 October 2026: "always send me messages more clearly simply"): plain
+  words, short sentences, the big picture first, then what they need to decide. Keep technical detail in the files.
 - **GPT:** the creator's main ChatGPT chat is https://chatgpt.com/c/6adb8da9-5984-83ea-bff3-f4d9da68e4b3 (open it with
   the Claude in Chrome extension). You may ask GPT freely about ACL. Save its answers as `gpt_review_*.md`, labelled
   "GPT's opinion, not sign-off". Give the creator both views; only the creator decides.

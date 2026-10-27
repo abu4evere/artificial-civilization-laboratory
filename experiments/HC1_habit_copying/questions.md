@@ -103,3 +103,13 @@ smoke worlds (seed 9939, all arms; not data):
    are counted at year 200.
 5. **Paired bootstrap:** the same resampled seeds for both arms, pooled sums, 10,000 replicates.
 6. **Seeds:** 19201–19232, the same in every arm.
+
+## The creator's review (27 October 2026, while the run was going, before any results)
+Asked whether they accept the thresholds and, if HC1 supports the change, want it to become live nature, the creator
+answered: "I think yes i am fine with that". **The thresholds are approved by the creator.** Adoption still goes by the
+usual path, and the creator is shown the results before anything becomes live:
+- both blind recomputes;
+- both models consulted;
+- a new `code_v8` with zero checks;
+- the tests;
+- a `nature-v8` tag.
