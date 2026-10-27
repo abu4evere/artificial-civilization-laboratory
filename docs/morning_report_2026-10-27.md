@@ -143,6 +143,25 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
   Tools start passing between people.
 - **Status:** the zero checks pass, and it is running on GitHub (run 40578952705).
 
+## 14. OP1 is finished: the law works, but a warning (checked by GPT and Gemini, exact match)
+- **It works:** 94% of dropped tools are picked up, 96% of them by **other** people. Adults hold twice as many tools.
+- **The warning:** about 15% fewer people. But the "no change" sham worlds were also 10% fewer, because worlds vary a lot.
+- **Our rule says:** don't adopt until we know why. The world stays v7.
+
+## 15. "Why" learning: GPT and Gemini agree it's the right direction
+- **First a safe check (PG0):** could the properties of things have predicted what's useful, from what each person
+  experienced?
+- **Then one new ability:** learning what properties do ("sharp things cut").
+- **GPT's warning:** people must only learn from what they can see and feel, never from nature's hidden numbers.
+- Notes: `docs/gpt_view_why_learning_2026-10-27.md`.
+
+## 16. Now: PD1, why population fell (read-only; decided in sleep mode)
+- **Votes:** both models said run it; GPT put it first.
+- **Design:** the same three kinds of world as OP1, but **64 pairs** instead of 32, because worlds vary so much.
+- **It counts:** every death by cause and age, every birth, and every fight (with or without a tool in hand).
+- **It splits the population gap exactly** into fewer births and each cause of death.
+- **Status:** safety checks are running, then GitHub. PG0 comes next.
+
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
 - **MO1:** whether to re-test the memory order under a new frozen plan whose threshold allows for memories filling up, or to leave it (not supported as frozen).
