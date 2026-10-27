@@ -96,9 +96,34 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **Status:** the code is built and the split adds up exactly in a smoke world. The zero checks pass and it is
   running on GitHub (run 40499977145). See the end of `WORKLOG.md`.
 
+## 9. CL1 is finished and final: the over-valuation comes from copying in talk (recomputed blind by GPT and Gemini, exact match)
+- **The common actions' over-valuation (+0.42) splits exactly:**
+  - own experience **−0.07** (own learning never over-values them);
+  - **copying habits in talk +0.39 (93%)**;
+  - carers +0.09.
+- **Making's under-valuation (−0.57) is own experience alone.** Its own value is about 0, against a real return of
+  0.62, because it is almost never practised. Copying adds 0.03.
+- **GPT predicted exactly this.** Expected SARSA is not the target. How habits are copied is.
+
+## 10. Next: HC1, a frozen nature-change study of habit copying (decided for you; NOT adopted)
+- **Votes:** GPT yes at 70%; Gemini yes at 90%; mine 70%.
+- **The law:** in talk, a learner copies only the habit values for the situation the model is in (19 values), not the
+  whole table (608 values). The rate and the conditions are unchanged.
+- **Arms:** v7 / situation-only / sham; 32 paired seeds.
+- **Judged on calibration, with GPT's rule:**
+  - the common actions' over-valuation must fall by at least 0.10 (interval above 0);
+  - realised returns must not fall by more than 0.05;
+  - extinction and population are flags.
+
+  Not judged on making. I did not take Gemini's stricter 60% gate, because of the MO1 lesson.
+- **⚠ GPT said you should accept these thresholds before freezing.** I signed them off under sleep mode; please review
+  them. Nothing becomes live nature without you.
+- **Status:** `code_hc1` is built (`v7_to_hc1.diff`: one small edit behind one setting). The zero checks are running,
+  then the cloud run.
+
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
 - **MO1:** whether to re-test the memory order under a new frozen plan whose threshold allows for memories filling up, or to leave it (not supported as frozen).
-- **After CL1:** whether to run a frozen nature-change study of the learning rule (Expected SARSA) or of habit copying, now on calibration grounds. I will not adopt any nature change without you.
+- **HC1's thresholds** (GPT asked that you accept them), and later, if HC1 supports it, whether to adopt the copying law as nature v8. I will not adopt any nature change without you.
 - Whether teaching deeper parts (PT1: 68% of failures need two or more levels) deserves its own frozen study later.
 - The hourly heartbeat expires about 3 November. Say anything after that and I'll renew it.
