@@ -58,7 +58,7 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 
   It is **not** judged on making or culture.
 - **Status:** `code_mo1` is built (`v7_to_mo1.diff`: three small edits behind one setting). A smoke world shows survival
-  at overflow going from 0.36 to 0.98. The zero checks are running, then the cloud run. See the end of `WORKLOG.md`.
+  at overflow going from 0.36 to 0.98. The zero checks pass (with the setting off it equals v7 exactly), and it is running on GitHub (run 40480396086, 96 worlds). See the end of `WORKLOG.md`.
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
