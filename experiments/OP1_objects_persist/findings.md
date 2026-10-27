@@ -1,4 +1,4 @@
-# OP1 — Objects in the world: made things drop instead of vanishing. Findings (recompute by GPT and Gemini pending; not yet final)
+# OP1 — Objects in the world: made things drop instead of vanishing. Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `OP1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`). A
 nature-change study: `code_op1` = `code_v7` + one setting (`v7_to_op1.diff`). Run on GitHub Actions (run 40578952705,
@@ -59,3 +59,15 @@ it stands.**
   c would come before any decision. That is a study for the creator's and the council's choice.
 - **The mechanism is the first in ACL's studies to move made things from one person to another at scale:** 58,000
   pick-ups by others across 32 worlds.
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw files only, without the analysis script, and applied the
+frozen rule themselves (`recompute_op1.md`). **All three agree on every number:**
+- pick-ups 0.9392;
+- by others 0.9605;
+- population o / c 0.845;
+- **supported and flagged.**
+
+Gemini added that counting dead years as zero gives 0.854; the flag stands either way.
+
+**Final.**

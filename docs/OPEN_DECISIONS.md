@@ -204,3 +204,9 @@ the file named.
   reduce the over-valuation (+0.42 → +0.44). There was no harm. v7 stays live. **Next question:** should copied habits
   be weighed against one's own experience (a different law)? Or, following both models' review of all laws, should the
   next law be about objects in the world (tools that can lie on the ground; drop, not delete)?
+- [x] **OP1 (done, recomputed by GPT and Gemini; final): supported, but flagged.**
+  - Dropped things are picked up 94% of the time, 96% by others: tools pass between people, and adults hold twice as
+    many.
+  - Population was 15% lower (the sham was 10% lower). Adoption is not recommended until the cause is understood.
+  - **For the creator:** a read-only look at why population falls (deaths by cause, births, fighting) is the natural
+    next step.
