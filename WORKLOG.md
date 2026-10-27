@@ -244,3 +244,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 (sleep mode): debate round 12 (both chose the calibration ledger; GPT 80%, Gemini 95%). CL1 frozen (CL1-frozen), signed off under sleep-mode autonomy. Next: runner (HL1 ledger + VC1 returns), smoke, zero.
 - 2026-10-27 (sleep mode): CL1 local zero checks PASS (read-only; TD replay and ledger exact; reload exact). Launched on GitHub: run 40499977145.
 - 2026-10-27 (sleep mode): CL1 run 40499977145 fetched (32 worlds), valid. Common actions' over-valuation +0.418 = own TD -0.069 + talk copying +0.391 (0.93) + carers +0.089 + paid +0.008. Make -0.566 = own TD -0.606 + talk 0.030 + carers 0.011. Findings written, not final; recomputes next.
+- 2026-10-27 (sleep mode): CL1 FINAL. GPT and Gemini blind recomputes match every number (talk copying 0.93 of the common over-valuation; own TD -0.069; make own TD -0.606). INDEX, OPEN_DECISIONS updated; tag CL1-done.

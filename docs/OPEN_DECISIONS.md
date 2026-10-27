@@ -195,3 +195,8 @@ the file named.
   explains only 0.35 of the over-valuation. **For the creator:** this is the first calibration-based (not
   outcome-based) case for a learning- or copying-rule study (Expected SARSA addresses about a third; copying is the
   larger remainder, per HL1).
+- [x] **CL1 (done in sleep mode, recomputed by GPT and Gemini; final):** the common actions' over-valuation arrives
+  through **copying habits in talk** (0.93 of it). Own experience slightly under-values them. Making's under-valuation
+  is own experience alone (practice starvation). **For the creator:** a frozen nature-change study of how habits are
+  copied in talk is now the targeted candidate, on calibration grounds, not on making. GPT's advice stands: no new
+  nature without the creator.

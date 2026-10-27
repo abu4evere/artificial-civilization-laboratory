@@ -1,4 +1,4 @@
-# CL1 — Which route carries the miscalibration? Findings (recompute by GPT and Gemini pending; not yet final)
+# CL1 — Which route carries the miscalibration? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `CL1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`). Run
 on GitHub Actions (run 40499977145, `skip_zero=local`). 32 worlds on nature v7, LP (80 founders, 80×80), seeds
@@ -85,3 +85,11 @@ underestimation"): **right on both counts.**
 built partly by copying in turn. Copied values are not checked against the learner's own returns. A change to how habits
 are copied, one law, frozen, with a matched control, judged on calibration, not on making, would be the targeted test.
 **That is a nature change: the creator's decision** (GPT's caution on adoption stands).
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw cells only, without the analysis script
+(`recompute_cl1.md`). **All three agree on every number:**
+- common actions: C_TD − G −0.069, talk +0.391 (0.93), carers +0.089, paid +0.008;
+- make: −0.606, +0.030, +0.011.
+
+**Final.**
