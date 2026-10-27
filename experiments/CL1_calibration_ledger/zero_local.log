@@ -1,0 +1,5 @@
+arm lp, seed 501, 20 years: identical with and without the observer (state and random numbers): yes; TD-replay and ledger mismatches: none; adult updates 65437
+arm lp, seed 601, 60 years: identical with and without the observer (state and random numbers): yes; TD-replay and ledger mismatches: none; adult updates 229642
+arm lp, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v7 fingerprint: 179f67e1c533189634dafcb7211ad72a4256567191d4ee985dfb437f7757eedb
+All: PASS
