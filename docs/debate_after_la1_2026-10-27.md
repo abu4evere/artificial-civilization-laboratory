@@ -24,11 +24,11 @@ The creator was asleep. Under sleep-mode autonomy, the assistant put the same qu
 | claim | who | check | result |
 |---|---|---|---|
 | The audit is a deterministic replay | Gemini | It is a read-only observer on 32 new worlds; zero checks prove it changes nothing | corrected (told) |
-| Parts-first shows the missing part | (design assumption) | `hear_how` shows the **first** made part the teacher knows, without checking the learner; there is a second belief draw; it goes one level deep | told to both; built into PF1 |
-| A just-taught recipe competes for memory at its lesson value | (design assumption) | `remember_recipe` adds it at 0 and evicts **before** `hear_how` sets 0.5 × claim × credence | told to both; built into PF1 (Q3) |
+| Parts-first shows the missing part | (design assumption) | `hear_how` shows the **first** made part the teacher knows, without checking the learner; there is a second belief draw; it goes one level deep | told to both; built into PT1 |
+| A just-taught recipe competes for memory at its lesson value | (design assumption) | `remember_recipe` adds it at 0 and evicts **before** `hear_how` sets 0.5 × claim × credence | told to both; built into PT1 (Q3) |
 | Signature tie-breaking penalises composites, "as identified in E7.7" | Gemini | Composite signatures begin with "(", which sorts before letters, so on a tie a composite is evicted first. **E7.7 found something else** (watching almost never passes things on) | the measurement is adopted (Q3); the citation is wrong |
 
-## Design notes adopted into PF1
+## Design notes adopted into PT1
 - **GPT:**
   - the full set of missing parts and the stopping gate of the part lesson;
   - conditional probabilities at every step;

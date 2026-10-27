@@ -1,4 +1,4 @@
-# PF1 — Does parts-first teaching work? The parts-first and memory audit (frozen plan)
+# PT1 — Does parts-first teaching work? The parts-first and memory audit (frozen plan)
 
 **Read-only on nature v7. No change to nature.** Chosen in sleep mode (`docs/autonomous_decisions.md`, 27 October
 2026). Both GPT and Gemini chose this study first, after LA1 (GPT 85%, Gemini 95%). The design adds both models' design
@@ -146,6 +146,6 @@ Nature v7, LP (80 founders, 80×80), 32 new seeds (18801–18832), 200 years, ru
 ## Sign-off (27 October 2026)
 
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). Both models chose this study, and its
-estimated success is 85% (above the 40% threshold). Logged in `docs/autonomous_decisions.md`. Frozen as `PF1-frozen`
+estimated success is 85% (above the 40% threshold). Logged in `docs/autonomous_decisions.md`. Frozen as `PT1-frozen`
 before any code or data. How the code reads choices the text leaves open goes in operational notes, appended before any
 data.
