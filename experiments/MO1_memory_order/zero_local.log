@@ -1,0 +1,5 @@
+seed 501, 20 years: code_mo1 with the setting 0 equals code_v7: yes; observer read-only (arms o and c): yes; the setting acts: yes; the sham acts: yes; eviction-prediction mismatches: none; learned recipes (o) 481, overflows 236
+seed 601, 60 years: code_mo1 with the setting 0 equals code_v7: yes; observer read-only (arms o and c): yes; the setting acts: yes; the sham acts: yes; eviction-prediction mismatches: none; learned recipes (o) 2255, overflows 1498
+arm o, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_mo1 fingerprint: ce6642aaac244ad6cdaafcaaeb4f37273f78c0d5bc2dd9186781e5beaf971b58
+All: PASS
