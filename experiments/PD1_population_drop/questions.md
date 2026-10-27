@@ -93,3 +93,24 @@ All o against c and x.
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). Both models agreed (GPT 75%, Gemini
 95%); the assistant's estimate is 75%, above the 40% threshold. Logged in `docs/autonomous_decisions.md`. Frozen as
 `PD1-frozen` before any code or data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_pd1.py`, `analyse_pd1.py`) reads the text where it left a choice, found in 20-year smoke worlds
+(seed 9935, all arms; not data):
+1. **The code** is OP1's (`experiments/OP1_objects_persist/code_op1`), unchanged, with the same arms and settings.
+2. **Death causes** are the `cause` field of `death` events, grouped as:
+   - starvation and neglect → hunger;
+   - thirst; cold; illness; childbirth;
+   - killed → violence;
+   - wolves and a bear → animals;
+   - anything else → other.
+
+   **Age bands** use the event's age: child < 12, teen 12–15, adult 16–49, elder 50+.
+3. **Person-years** are the yearly census counts summed (living at each year's end). Woman-years are women aged 16–44
+   at year ends. Adult-years for fighting are adults plus elders.
+4. **A fighting tool in hand** means `best_item(attacker, "fight")` > 1, read just before the original `_attack` runs
+   (it draws nothing).
+5. **Q1's shares** divide each component's o − c sum by the o − c gap in living at year 200, pooled over paired worlds.
+   Worlds that died out end at 0 living, and the accounting still holds.
+6. **Seeds:** 19401–19464, the same in every arm.
