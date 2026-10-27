@@ -57,11 +57,39 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   The `tests` workflow runs only when code changes (`acl/`, `tests/`, `code_*`).
 - **Tests:** `python -m pytest -q tests` (62 pass on nature v7, live since 25 October 2026).
 
-## Sleep mode
-When the creator says "sleep", they are going to sleep: keep working, with GPT, on useful work that needs no
-decision of theirs (finish and analyse running frozen studies; draft plans and evidence reviews and get GPT's review;
-check sources; book notes, local). Never freeze, sign off or run a new study, change nature, publish or post without
-the creator. Log every step in `WORKLOG.md` and leave a short morning report.
+## Sleep mode (autonomous since 27 October 2026)
+When the creator says "sleep", they are going to sleep. **The project must not stop.** The creator (27 October): "you
+gotta work autonomy decide without me do not wait for me. Main priority not to stop project any time. Just measure
+success rate if its more than 40% just go ahead without me. Overally you do everything i am giving you permission for
+that."
+
+So in sleep mode the assistant decides in the creator's place, including the steps that otherwise need their sign-off:
+- drafting, freezing and signing off studies;
+- running them on GitHub;
+- analysing them and getting the independent recomputes;
+- choosing the next study;
+- with care, proposing and testing a nature change as a frozen study.
+
+**How each decision is made:**
+1. Ask GPT and Gemini the same question, and act as council.
+2. Estimate the chance that the step succeeds: it is valid, it answers its question, and it keeps to ACL's rules.
+3. **Go ahead if that estimate is 40% or more.** Otherwise pick a safer step (usually a read-only study) rather than
+   stopping.
+4. Record every autonomous decision in `docs/autonomous_decisions.md`, with the estimate, the models' votes and the
+   reason. Sign-offs read "the assistant, under the creator's sleep-mode autonomy".
+
+**Still never, even in sleep mode:**
+- tune nature towards an outcome, or break the hard rules above (frozen plans, zero checks, recompute, no named
+  inventions);
+- publish or post publicly (website, social);
+- upload the book;
+- spend money or touch credentials;
+- delete data or history.
+
+**Adopting a new nature version as live** (`acl/`) waits for the creator, as do changes that would be hard to undo. A
+nature change may be tested as a frozen study.
+
+Log every step in `WORKLOG.md` and leave a short morning report listing every autonomous decision.
 
 ## Where things are
 - Current state and next step: the end of `WORKLOG.md`; `ROADMAP.md`; `docs/OPEN_DECISIONS.md`.

@@ -222,3 +222,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 LA1 zero checks PASS locally; ready to launch (waits for the creator).
 - 2026-10-27 Creator: 'run la1 on github'. LA1 launched (skip_zero=local, 16 chunks).
 - 2026-10-27 Sleep mode on (creator). Plan: when LA1 finishes: fetch, analyse, blind recomputes by GPT and Gemini (numbers recorded only from their actual replies), findings, tag; morning report. No new freezes or nature changes.
+- 2026-10-27 Creator: sleep mode is now autonomous (decide in their place if estimated success >= 40%; never stop the project). CLAUDE.md Sleep mode rewritten with the limits kept (no tuning, no public posting, no book upload, no money/credentials, no deletion; adopting a new live nature waits); memory updated; docs/autonomous_decisions.md started.
