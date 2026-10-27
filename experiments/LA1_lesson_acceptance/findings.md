@@ -1,4 +1,4 @@
-# LA1 — Why are lessons refused? Findings (recompute by GPT and Gemini pending; not yet final)
+# LA1 — Why are lessons refused? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `LA1-frozen` (operational note 1). Run on GitHub Actions (run 40461644999, `skip_zero=local`). 32 worlds on
 nature v7, LP (80 founders, 80×80), seeds 18701–18732, 200 years. Every number comes from `analyse_la1.py`, written
@@ -116,3 +116,13 @@ That is consistent with later kinds being deeper (needing more parts the learner
   - making loses at the choice to habits (CO1, HL1);
   - lessons are refused mostly because their parts are missing (LA1);
   - what is taken is often pushed out of a full memory.
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw cells only, without the analysis script
+(`recompute_la1.md`). **All three agree on every key number:**
+- the gate shares;
+- T1–T4;
+- P 0.0236 → 0.0248, Δ ln +0.053;
+- intervals including zero ([−0.040, 0.157] and [−0.040, 0.157]).
+
+**Final.**

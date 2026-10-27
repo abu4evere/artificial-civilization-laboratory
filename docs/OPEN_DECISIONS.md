@@ -158,3 +158,15 @@ the file named.
 
   **Correction (appended, 27 October):** HL1 is recomputed by GPT only so far. Gemini's recompute is pending, and HL1 is not final until it arrives.
   **Update:** Gemini's actual recompute has arrived and matches. HL1 is final.
+
+- [x] **LA1 (done, recomputed by GPT and Gemini; final):** lessons are refused mainly because the learner cannot follow
+  them (a part they cannot make; 0.85–0.88 of offered lessons; ×8.1 if that gate is removed in replay). Acceptance per
+  lesson does not fall after year 50. Belief is not the problem (×1.06). Half of early takes are pushed out at once by
+  the full memory.
+- [x] **Next (decided in sleep mode, 27 October; `docs/autonomous_decisions.md`):** PT1, the parts-first and memory
+  audit (read-only). Both models chose it (GPT 85%, Gemini 95%). Two code facts found by the council feed it:
+  - parts-first shows the first part the teacher knows, not the one the learner lacks;
+  - a taught recipe meets the memory limit at value 0, before its lesson value is set.
+
+  **For the creator, when awake:** review the decision; any nature change that follows (for example, a parts-first rule
+  that shows a missing part) goes by the adoption path.
