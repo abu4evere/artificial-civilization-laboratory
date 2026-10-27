@@ -1,0 +1,5 @@
+seed 501, 20 years: code_hc1 with 'whole' equals code_v7: yes; observer read-only (arms s and w): yes; the setting acts: yes; the sham acts: yes; TD-replay mismatches: none; adult updates (s) 69130
+seed 601, 60 years: code_hc1 with 'whole' equals code_v7: yes; observer read-only (arms s and w): yes; the setting acts: yes; the sham acts: yes; TD-replay mismatches: none; adult updates (s) 275402
+arm s, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_hc1 fingerprint: b4e12f9d0462261e09055c2cde9d17c358f8b704857d74e995b803ed44598aeb
+All: PASS
