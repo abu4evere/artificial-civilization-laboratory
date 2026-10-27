@@ -86,8 +86,16 @@ So in sleep mode the assistant decides in the creator's place, including the ste
 - spend money or touch credentials;
 - delete data or history.
 
-**Adopting a new nature version as live** (`acl/`) waits for the creator, as do changes that would be hard to undo. A
-nature change may be tested as a frozen study.
+**Adopting a new nature version as live** (`acl/`) is also allowed in sleep mode (the creator, 27 October: "you can
+make it live nature"), but only by the same path as before:
+1. a frozen study whose result supports the change;
+2. an independent recompute by GPT and Gemini;
+3. both models consulted on adoption, with an estimated success of 40% or more;
+4. a new `code_vN` with zero checks (off = the previous nature; on = the study's arm);
+5. reference hashes regenerated and the tests passing;
+6. a git tag `nature-vN`.
+
+The previous nature stays in `code_v(N−1)`, so the change can always be undone.
 
 Log every step in `WORKLOG.md` and leave a short morning report listing every autonomous decision.
 
