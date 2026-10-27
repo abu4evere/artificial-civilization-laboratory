@@ -47,10 +47,12 @@ the code's settings.
     - **No invention is named or scripted:** what works is found by trying.
 13. **Wear and carrying.**
     - Tools wear out with use.
-    - A person carries at most 3 of a kind; the least valued goes.
+    - A person carries at most **3 made things in total**. When a 4th is made, the least valued **vanishes** (it is
+      deleted, not dropped).
 14. **Fire.** Fire can be made from sparks (struck flint), kept, and used to heat, cook and harden.
 15. **Places.**
-    - Food and things can be set down and found later.
+    - **Food, seeds and raw materials** can be set down and found later. **Made things cannot be set down**: there is
+      no law for leaving a tool somewhere.
     - Pits can be dug to hide food and keep it longer.
     - Others can take what was left, which is stealing if it is someone else's.
 
@@ -163,3 +165,12 @@ the code's settings.
 - **Teaching fails because parts are missing, and parts-first is too shallow** (LA1, PT1).
 - **The memory order deletes new lessons** (PT1; MO1's fix not supported as frozen).
 - **Making loses the weekly choice** (MK1, CO1, HL1), though tools pay back 1.5–2.2 times their cost.
+
+## Correction (27 October 2026, after GPT's review)
+The first version of this document said "a person carries at most 3 of a kind" and "food and things can be set down".
+Both were wrong against the code:
+- `item_limit` is 3 made things in total, and `_keep` deletes the extra;
+- `_put` handles food, seeds and raw materials only, not made things.
+
+GPT spotted the second ("Made objects apparently cannot actually be put on the ground and recovered"); the assistant
+checked both in `acl/actions.py` and corrected laws 13 and 15 above.
