@@ -1,4 +1,4 @@
-# HC1 — Habit copying in talk: whole table or only the situation at hand? Findings (recompute by GPT and Gemini pending; not yet final)
+# HC1 — Habit copying in talk: whole table or only the situation at hand? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `HC1-frozen`; the creator approved its thresholds on 27 October. A nature-change study:
 `code_hc1` = `code_v7` + one setting (`v7_to_hc1.diff`). Run on GitHub Actions (run 40528434282, `skip_zero=local`).
@@ -57,3 +57,13 @@ in the wrong direction. At least +0.10 was needed. Nothing was harmed either:
 - The next question for the council and the creator: whether copied habits should be **weighed against the learner's
   own experience** (a different law from scope). Or whether the over-valuation should be left alone, since own
   experience is calibrated and people's realised returns did not suffer.
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw files only, without the analysis script, and applied the
+frozen rule themselves (`recompute_hc1.md`). **All three agree on every number:**
+- improvement −0.0123;
+- G −0.0103;
+- population ratio 0.9315;
+- the verdict: **not supported.**
+
+**Final.**

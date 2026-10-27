@@ -200,3 +200,7 @@ the file named.
   is own experience alone (practice starvation). **For the creator:** a frozen nature-change study of how habits are
   copied in talk is now the targeted candidate, on calibration grounds, not on making. GPT's advice stands: no new
   nature without the creator.
+- [x] **HC1 (done, recomputed by GPT and Gemini; final): not supported.** Copying only the situation at hand did not
+  reduce the over-valuation (+0.42 → +0.44). There was no harm. v7 stays live. **Next question:** should copied habits
+  be weighed against one's own experience (a different law)? Or, following both models' review of all laws, should the
+  next law be about objects in the world (tools that can lie on the ground; drop, not delete)?
