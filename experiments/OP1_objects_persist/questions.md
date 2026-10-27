@@ -114,3 +114,6 @@ smoke worlds (seed 9937, all arms; not data):
 4. **The census** runs at year ends: living people, adults (16+), made things held by adults, and `make` events that
    year.
 5. **Seeds:** 19301–19332, the same in every arm.
+6. **A label slip (no effect on any check).** The zero log's wording "eviction-prediction mismatches" was carried over
+   from MO1's runner. In OP1 that field counts the observer's drop and conservation mismatches (`drop_missing`,
+   `conservation`), and both are 0.
