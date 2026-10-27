@@ -32,7 +32,7 @@ agree).
   - with the lesson value set first, every new lesson would have survived the memory limit.
 
 ## 3. Status
-See the end of `WORKLOG.md` for where PT1's run stands.
+PT1 passed its local zero checks (nothing changed by the observer; every replay matched the code) and is running on GitHub (run 40470789434). When it finishes: fetch, analyse, findings, then blind recomputes by GPT and Gemini. See the end of `WORKLOG.md` for the latest.
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
