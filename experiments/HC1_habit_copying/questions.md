@@ -88,3 +88,18 @@ The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). 
 90%); the assistant's estimate is 70%, above the 40% threshold. The decision rule is GPT's, chosen over Gemini's stricter
 one (a 60% reduction) to avoid MO1's threshold mistake. Logged in `docs/autonomous_decisions.md`. Frozen as `HC1-frozen`
 before any code or data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`code_hc1`, `run_hc1.py`, `analyse_hc1.py`) reads the text where it left a choice, found in 20-year
+smoke worlds (seed 9939, all arms; not data):
+1. **The setting.** With "situation", `_imitate` moves only the 19 values at the model's `last_ctx` (the model's most
+   recent situation). Everything else is unchanged (`v7_to_hc1.diff`).
+2. **The bias and G** are VC1's definitions and code: q before each adult update; G summed over the person's next
+   updates until 0.8^k < 0.001, or until death (censored).
+3. **"Improvement"** is bias_w − bias_s for the common actions pooled (forage, give, talk, gather), years 100–200, as
+   frozen. **H** is mean G over all adult updates in years 100–200, s − w.
+4. **Population** is the mean living count at year ends in years 100–200, pooled over the paired worlds. Extinctions
+   are counted at year 200.
+5. **Paired bootstrap:** the same resampled seeds for both arms, pooled sums, 10,000 replicates.
+6. **Seeds:** 19201–19232, the same in every arm.

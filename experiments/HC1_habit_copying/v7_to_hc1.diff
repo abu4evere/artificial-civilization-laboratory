@@ -1,0 +1,28 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/actions.py experiments/HC1_habit_copying/code_hc1/acl/actions.py
+--- experiments/NV7_nature_v7/code_v7/acl/actions.py	2026-10-25 14:52:38.213242700 -0400
++++ experiments/HC1_habit_copying/code_hc1/acl/actions.py	2026-10-27 09:07:56.397534900 -0400
+@@ -723,7 +723,11 @@
+         return
+     rate = world.cfg.imitation_rate * (0.5 + learner.genes["curiosity"]) * (0.5 + respect)
+     lq, mq = learner.q, model.q
+-    for i in range(len(lq)):
++    if world.cfg.talk_copy == "situation":           # HC1: only the situation at hand, the model's current one
++        idx = range(model.last_ctx * N_ACTIONS, (model.last_ctx + 1) * N_ACTIONS)
++    else:
++        idx = range(len(lq))
++    for i in idx:
+         lq[i] += rate * (mq[i] - lq[i])
+ 
+ 
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/config.py experiments/HC1_habit_copying/code_hc1/acl/config.py
+--- experiments/NV7_nature_v7/code_v7/acl/config.py	2026-10-25 14:52:38.121102200 -0400
++++ experiments/HC1_habit_copying/code_hc1/acl/config.py	2026-10-27 09:07:56.395362100 -0400
+@@ -124,6 +124,8 @@
+     camp_radius: int = 2               # partners this close count as living together
+     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
++    talk_copy: str = "whole"           # HC1: "whole" = copying in talk moves every habit value (nature v7); "situation" =
++                                       # only the model's current situation's values
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
