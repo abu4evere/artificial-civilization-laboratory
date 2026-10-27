@@ -117,3 +117,22 @@ Nature v7, LP (80 founders, 80×80), 32 new seeds (18701–18732), 200 years, ru
 The creator: "yea draft it, approve and freeze", on this plan (debate round 8: both models' first choice, GPT's design).
 Frozen as `LA1-frozen` before any code or data. How the code reads choices the text leaves open goes in operational
 notes, appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_la1.py`, `analyse_la1.py`) reads the text where it left a choice, found in a 20-year smoke world
+(seed 9949, not data):
+1. **The random draw** at G3 is read from a copy of the world's generator state, without consuming it, so the gate
+   actually reached is known exactly. The zero checks confirm this changes nothing.
+2. **Taken, then pushed out.** A lesson can be taken (`hear_how` returns True) while the learner's 12-recipe memory is
+   full, and the new recipe can then be pushed out at once as the least valued. It counts as taken, and is reported
+   separately as "taken, then pushed out of a full memory". (In the smoke world: 62 of 237 taken.)
+3. **At G4 the code returns the part lesson's result** (parts-first). The outcome check therefore compares the gate with
+   the code's answer at G1, G2, G3 and taken only. The part lesson is logged as its own call, flagged as a part lesson,
+   and kept out of the primary funnel.
+4. **Origin:** a kind is a founder kind if it was first made in the world by a founder (founders start with no recipes).
+   "Useful" is LS1's definition, from the meant kind.
+5. **Q4's T4** is the p-weighted share of lessons reaching G3 that the learner can follow, so T1 × T2 × T3 × T4 equals
+   the expected share taken exactly. **Q5's (a)–(c)** compare, over the same lessons, the actual expectation with the
+   early-mean replacement. (d) and (e) are over all of the era's lessons.
+6. **Seeds** 18701–18732.
