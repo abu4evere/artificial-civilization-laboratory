@@ -43,5 +43,29 @@ Computed with Python (pandas, NumPy). It checked 32 worlds, 1,316 cell rows and 
 
 **Against the analysis:** every number matches.
 
-## Gemini
-Pending. Nothing is recorded until its reply is read.
+## Gemini (27 October 2026; numbers read from its reply)
+The first attempt returned an error ("I seem to be encountering an error"). Asked to retry, Gemini computed with
+Python (pandas, NumPy):
+- **(1)** 95,580 failures:
+  - none 9,332 (0.098);
+  - wrong 4,249 (0.044);
+  - deep 55,381 (0.579);
+  - **reach 26,618 (0.278)**, 95% [0.266, 0.291] (exact [0.2655, 0.2906]; 10,000 replicates).
+- **(2)** 19,472 reachable chains:
+  - pt 6,092 (0.313);
+  - pk 3,900 (0.640);
+  - pm 436 (0.112);
+  - ah 346 (0.794);
+  - wt 215 (0.621);
+  - wm 12 (0.056).
+
+  **Lowest: wm (whole made).**
+- **(3)** Of 41,808 whole overflows:
+  - evict_new 29,851 (**0.714**);
+  - replay survives 40,004 (**0.957**).
+
+**Against the analysis:** every number matches. The upper bootstrap bound differs in the third decimal (0.291
+against 0.290), which is bootstrap noise.
+
+## Verdict
+**The analysis, GPT and Gemini agree on every key number.** The findings are final.

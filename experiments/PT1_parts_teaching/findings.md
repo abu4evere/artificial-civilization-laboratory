@@ -1,4 +1,4 @@
-# PT1 — Does parts-first teaching work? Findings (recompute by GPT and Gemini pending; not yet final)
+# PT1 — Does parts-first teaching work? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `PT1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`).
 Run on GitHub Actions (run 40470789434, `skip_zero=local`). 32 worlds on nature v7, LP (80 founders, 80×80), seeds
@@ -113,3 +113,13 @@ whole by any route and 0.001 make it.
 - **Memory:** the replay shows most new lessons would survive with their value set first. **By the frozen text, the
   push-out is an order-of-operations artefact of the code, not a property of memory.** It is a candidate correction,
   judged by the same path as any nature change.
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw cells and chains only, without the analysis script
+(`recompute_pt1.md`). **All three agree on every key number:**
+- reach 0.278 [0.266, 0.290];
+- the funnel 19,472 → 6,092 → 3,900 → 436 → 346 → 215 → 12;
+- the lowest step is whole made;
+- memory: 0.714 evicted new, 0.957 survive in the replay.
+
+**Final.**

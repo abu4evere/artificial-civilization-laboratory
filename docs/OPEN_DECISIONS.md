@@ -170,3 +170,12 @@ the file named.
 
   **For the creator, when awake:** review the decision; any nature change that follows (for example, a parts-first rule
   that shows a missing part) goes by the adoption path.
+
+- [x] **PT1 (done in sleep mode, recomputed by GPT and Gemini; final):**
+  - parts-first reaches only 0.28 of cannot-follow failures (most are too deep);
+  - where it reaches, making is where chains die (12 of 19,472 end with the whole made);
+  - the 12-recipe memory deletes the new lesson in 71% of overflows, because its value is set after the limit is
+    applied. With the order reversed, 96% would survive.
+
+  **For the creator:** whether the memory order is a bug or a law (the council's next-step vote is in
+  `docs/autonomous_decisions.md`).
