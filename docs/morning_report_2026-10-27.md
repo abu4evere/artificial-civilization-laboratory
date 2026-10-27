@@ -93,8 +93,8 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **The question:** joining HL1's exact route ledger with VC1's realised returns, which route carries the
   over-valuation: own learning, copying in talk, carers or birth? So that any later nature change targets the right
   law.
-- **Status:** the code is built and the split adds up exactly in a smoke world. The zero checks are running, then the
-  cloud run. See the end of `WORKLOG.md`.
+- **Status:** the code is built and the split adds up exactly in a smoke world. The zero checks pass and it is
+  running on GitHub (run 40499977145). See the end of `WORKLOG.md`.
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
