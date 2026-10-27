@@ -60,8 +60,27 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **Status:** `code_mo1` is built (`v7_to_mo1.diff`: three small edits behind one setting). A smoke world shows survival
   at overflow going from 0.36 to 0.98. The zero checks pass (with the setting off it equals v7 exactly), and it is running on GitHub (run 40480396086, 96 worlds). See the end of `WORKLOG.md`.
 
+## 5. MO1 is finished and final: NOT supported (recomputed blind by GPT and Gemini, all three agree)
+- **The manipulation check failed.** With the value set first, new lessons survive an overflow 84% of the time, below
+  the frozen 90% (v7: 30%). PT1's one-event replay (96%) overestimated: memories fill with lesson-valued recipes, which
+  then compete.
+- **Everything else passed:**
+  - lessons still held a year later: +24 points;
+  - useful knowledge −2%, within the limit;
+  - no bad lessons;
+  - making unchanged.
+- By the frozen rule there is **no v8 candidate. v7 stays live.** I did not re-read the rule after the data.
+
+## 6. Next: VC1, the value-calibration audit (read-only; decided for you)
+- **Votes:** GPT (B) at 75%; Gemini (B) at 95%; mine 65%.
+- **The question:** do habit values match the returns people actually go on to get? Action by action, it compares q
+  with the realised discounted reward afterwards, and measures the optimism of the max look-ahead separately (GPT's
+  correction).
+- **Why it matters:** this decides whether any learning-rule change is justified on calibration grounds, not on making.
+- **Status:** the code is built; the zero checks are running, then the cloud run. See the end of `WORKLOG.md`.
+
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
-- **When MO1 is done:** whether to adopt the memory-order correction as nature v8.
+- **MO1:** whether to re-test the memory order under a new frozen plan whose threshold allows for memories filling up, or to leave it (not supported as frozen).
 - Whether teaching deeper parts (PT1: 68% of failures need two or more levels) deserves its own frozen study later.
 - The hourly heartbeat expires about 3 November. Say anything after that and I'll renew it.
