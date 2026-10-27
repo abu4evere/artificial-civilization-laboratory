@@ -76,3 +76,18 @@ The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). 
 Gemini 95%); the assistant's estimate is 80%, above the 40% threshold. Logged in `docs/autonomous_decisions.md`. Frozen
 as `CL1-frozen` before any code or data. How the code reads choices the text leaves open goes in operational notes,
 appended before any data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_cl1.py`, `analyse_cl1.py`) reads the text where it left a choice, found in a 20-year smoke world
+(seed 9941, not data):
+1. **The ledger is HL1's code unchanged:** the same wrappers, the same blend rule for copying and carers, and birth
+   for founders and newborns. Its five components are read at the entry being updated, just before the update. Their
+   sum must equal q, and does (mismatch 0).
+2. **G and the max gap are VC1's code unchanged:** r as `_learn` computes it, summed over the person's next updates
+   until 0.8^k < 0.001, or until death (censored).
+3. **"Share of q − G"** is each term over the total. A share can be negative when a term works against the total.
+   "Largest share" is the largest positive term.
+4. **"Common actions"** are forage, give, talk and gather, pooled by summing their cells. Q1 and Q2 read years 100–200.
+5. **Bootstraps** resample whole worlds (10,000 replicates) and pool sums.
+6. **Seeds:** 19101–19132.
