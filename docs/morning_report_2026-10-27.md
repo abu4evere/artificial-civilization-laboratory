@@ -79,8 +79,26 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **Why it matters:** this decides whether any learning-rule change is justified on calibration grounds, not on making.
 - **Status:** the code is built; the zero checks pass and it is running on GitHub (run 40491681638). See the end of `WORKLOG.md`.
 
+## 7. VC1 is finished and final: habits are miscalibrated (recomputed blind by GPT and Gemini, exact match)
+- **Late on, habits over-value the common actions** (forage, give, talk, gather) by +0.42 compared with what people
+  actually go on to get.
+- **They under-value making** by −0.56.
+- **Making's real returns are within 0.01 of the alternatives'**, yet the habits put it about 1.1 below.
+- **The max look-ahead explains only a third** of the over-valuation.
+- **This is the first case against the learning or copying rules that rests on calibration, not on wanting more
+  making.**
+
+## 8. Next: CL1, the calibration ledger (read-only; decided for you)
+- **Votes:** GPT (G) at 80%; Gemini (G) at 95%; mine 80%.
+- **The question:** joining HL1's exact route ledger with VC1's realised returns, which route carries the
+  over-valuation: own learning, copying in talk, carers or birth? So that any later nature change targets the right
+  law.
+- **Status:** the code is built and the split adds up exactly in a smoke world. The zero checks are running, then the
+  cloud run. See the end of `WORKLOG.md`.
+
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
 - **MO1:** whether to re-test the memory order under a new frozen plan whose threshold allows for memories filling up, or to leave it (not supported as frozen).
+- **After CL1:** whether to run a frozen nature-change study of the learning rule (Expected SARSA) or of habit copying, now on calibration grounds. I will not adopt any nature change without you.
 - Whether teaching deeper parts (PT1: 68% of failures need two or more levels) deserves its own frozen study later.
 - The hourly heartbeat expires about 3 November. Say anything after that and I'll renew it.
