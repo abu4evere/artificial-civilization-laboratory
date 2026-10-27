@@ -31,12 +31,37 @@ agree).
   - "wrong part" is rare;
   - with the lesson value set first, every new lesson would have survived the memory limit.
 
-## 3. Status
-PT1 passed its local zero checks (nothing changed by the observer; every replay matched the code) and is running on GitHub (run 40470789434). When it finishes: fetch, analyse, findings, then blind recomputes by GPT and Gemini. See the end of `WORKLOG.md` for the latest.
+## 3. PT1 is finished and final
+Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a tool error and it redid it.
+
+- **Parts-first can reach only 28% of "cannot follow" failures.** Most are too deep: the part shown itself needs
+  another missing part (58%). Showing the wrong part is rare (4%).
+- **Where it can reach, making is where chains die.** Of 19,472 reachable chains, 12 ended with the whole made:
+  - part made 0.11;
+  - whole made 0.06.
+
+  This is MK1, CO1 and HL1's choice problem again.
+- **The memory order is an artefact.** In 71% of overflows the new lesson itself is deleted, because its value is set
+  just after the 12-recipe limit is applied. With the value set first, 96% would survive.
+
+## 4. Next: MO1, a frozen nature-change study of the memory order (decided for you; not adopted)
+- **Votes:** GPT (A) at 90%; Gemini (A) at 95%; mine 80%.
+- **GPT's caution:** "do not adopt v8 without the creator's explicit decision". I am following it. **Nothing becomes
+  live nature without you.**
+- **One law:** a recipe learned from someone (taught, or copied by watching, where the same defect sits) is given its
+  learned value before memory decides what to keep.
+- **Arms:** c = v7, o = the setting, s = sham; 32 paired seeds.
+- **Judged on:**
+  - retention;
+  - no loss of useful knowledge;
+  - no rise in bad lessons.
+
+  It is **not** judged on making or culture.
+- **Status:** `code_mo1` is built (`v7_to_mo1.diff`: three small edits behind one setting). A smoke world shows survival
+  at overflow going from 0.36 to 0.98. The zero checks are running, then the cloud run. See the end of `WORKLOG.md`.
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
-- Whether either code fact deserves a frozen nature-change study later, one law at a time, by the adoption path:
-  - a parts-first rule that shows a part the learner lacks;
-  - setting a lesson's value before the memory limit.
+- **When MO1 is done:** whether to adopt the memory-order correction as nature v8.
+- Whether teaching deeper parts (PT1: 68% of failures need two or more levels) deserves its own frozen study later.
 - The hourly heartbeat expires about 3 November. Say anything after that and I'll renew it.
