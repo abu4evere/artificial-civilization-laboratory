@@ -149,3 +149,35 @@ The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). 
 estimated success is 85% (above the 40% threshold). Logged in `docs/autonomous_decisions.md`. Frozen as `PT1-frozen`
 before any code or data. How the code reads choices the text leaves open goes in operational notes, appended before any
 data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_pt1.py`, `analyse_pt1.py`) reads the text where it left a choice, found in a 20-year smoke world
+(seed 9949, not data):
+1. **Name.** The study was drafted as PF1. That name already belonged to the partner-finding study, so it is PT1, frozen
+   as `PT1-frozen` (the earlier commit shows the rename).
+2. **A G4 failure** is a whole lesson that passes G1–G3 and fails G4, judged as LA1 judges it (the copied-generator
+   draw).
+3. **The four classes follow the code's own selection rule:** the first made part, in the recipe's order, that the
+   teacher knows. The class uses the teacher's true recipe for that part; the part lesson itself may still come across
+   garbled, which is recorded.
+4. **"Missing parts"** are the made parts the learner lacks, found recursively through the teacher's recipes (or the
+   world's record when the teacher lacks one), with a guard against cycles. **"Levels needed"** is 1 when every
+   missing part can itself be followed, and is counted up to "3 or more".
+5. **Chains** are one learner and one whole kind, counted from the learner's first G4 failure for that kind. Later
+   failures add to the same chain. **"Reachable" chains** are those with at least one reachable failure.
+6. **The funnel's steps** are counted in order. A chain reaches a step only if it reached every earlier step. The
+   steps are:
+   - "part made": the reachable part, by a `make` or `play` event of the learner;
+   - "every missing part held": every direct missing part was held at some time after the failure, by any route;
+   - "whole taken again": a later lesson for that kind was taken;
+   - "whole made": a `make` or `play` event of that kind.
+
+   Times are measured from the first G4 failure, because holding every missing part can come before making the part.
+7. **The memory replay** sets the new lesson's value to max(its existing value, 0.5 × claim × credence) before the
+   12-recipe limit, with every other value unchanged. The composite share held counts the 13 recipes at the moment of
+   overflow.
+8. **Relearning** counts the evicted recipe entering the learner's memory again, by any route.
+9. **Population** is the number of living people, sampled once a year.
+10. **Bootstraps** resample whole worlds (10,000 replicates) and pool ratios over them.
+11. **Seeds:** 18801–18832.
