@@ -121,9 +121,31 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **Status:** `code_hc1` is built (`v7_to_hc1.diff`: one small edit behind one setting). The zero checks pass, and it is
   running on GitHub (run 40528434282).
 
+## 11. HC1 is finished: the copying fix did not work (checked by GPT and Gemini, exact match)
+- Copying only the situation at hand did not make values more accurate (+0.42 → +0.44).
+- No harm either. The world stays v7.
+- **Lesson:** the problem is copying *without checking against your own experience*, not *how much* is copied.
+
+## 12. All 38 laws written down and reviewed by GPT and Gemini
+- The list is in `docs/laws_of_nature_v7.md`. GPT caught 3 mistakes in my list, which I checked and fixed.
+- **Both want, most of all, things to be able to exist in the world:** tools that can lie on the ground and be picked
+  up, instead of vanishing.
+
+## 13. Next: OP1, objects in the world (a nature-change study; decided for you; NOT adopted)
+- **Votes:** GPT 80%, Gemini 95%, mine 75%.
+- **The law:**
+  - when someone has more than 3 made things, the extra one **drops on the ground** instead of vanishing;
+  - anyone 12+ standing there with room in their hands picks it up.
+  - Things on the ground don't rot, the same as tools on a body today.
+- **No new numbers** are invented: it reuses existing rules.
+- **Judged on:** do people actually pick up dropped things (at least 5%)? Not on making.
+- **A test world hints:** 82% of dropped things were picked up, almost all by *other* people, within about 4 weeks.
+  Tools start passing between people.
+- **Status:** the zero checks are running, then the cloud run.
+
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
 - **MO1:** whether to re-test the memory order under a new frozen plan whose threshold allows for memories filling up, or to leave it (not supported as frozen).
-- **HC1's thresholds** (GPT asked that you accept them), and later, if HC1 supports it, whether to adopt the copying law as nature v8. I will not adopt any nature change without you.
+- **If OP1 supports it:** whether to make "things drop instead of vanishing" a real law (nature v8). I will not adopt any nature change without you.
 - Whether teaching deeper parts (PT1: 68% of failures need two or more levels) deserves its own frozen study later.
 - The hourly heartbeat expires about 3 November. Say anything after that and I'll renew it.
