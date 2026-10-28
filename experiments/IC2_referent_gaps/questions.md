@@ -103,3 +103,27 @@ For each talk, both directions are looked at (each person as the one who knows, 
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). GPT estimates 85% and Gemini 95%; the
 assistant's estimate is 75% (the decision-relevance rules are new and the `perform` attribution is an upper bound).
 Logged in `docs/autonomous_decisions.md`. Read-only: no change to nature. Any signal law stays the creator's decision.
+
+## Operational note 1 (28 October 2026, after freezing, before any data)
+
+How the code (`run_ic2.py`, `analyse_ic2.py`) reads the text where it left a choice, found in two 20-year smoke worlds
+(seeds 9950 and 9951; not data). Nothing in the plan, its thresholds or its rules was changed after the smoke worlds.
+1. **A talk** is noted by wrapping the talk action, which runs only once the two people are within 1 tile of each
+   other (as IC1). So both people see almost the same square, and a danger group one sees and the other does not is
+   rare by construction. This is part of the answer, not a fault: it says when talk could carry danger.
+2. **The listener's hunger** is computed as the mind computes it before choosing (`hunger_of` with dependants' need),
+   at the start of the talk.
+3. **A game gap** counts once per talk direction, however many spots qualify. Its age band is that of the freshest
+   qualifying sighting. Decision-relevant if any qualifying spot is within 3 reaches and hunger > 0.3.
+4. **A danger gap** records, for each group the listener does not see, the last week of such a gap (for Q5's maulings);
+   decision-relevant gaps (group within 3 reaches) are followed for near misses for 2 weeks, checked once a week at the
+   end of the week.
+5. **"Chosen as a destination"** (Q4) is checked before the move, on the person's place at the moment of choosing;
+   "reached" means standing on the option's target tile after the move; "sees game" means a game group within
+   perception after the move. Every chosen option counts in the denominator.
+6. **Pairs** (Q1's repeated-pair share) count all ages, as in IC1; shared moments per adult-year count talks between
+   two adults.
+7. **Maulings** are seen by wrapping `fauna._go_for_people` and comparing the health of the people within 1 tile before
+   and after; the count must equal the `mauled` events.
+8. The zero checks passed locally (`zero_local.log`): identical state and random numbers with and without the observer
+   at 20 and 60 years; reload exact; wrapper counts equal the law's events; fingerprint fedbb8d4.

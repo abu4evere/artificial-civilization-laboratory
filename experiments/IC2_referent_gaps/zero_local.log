@@ -1,0 +1,6 @@
+arm v8, seed 501, 20 years: identical with and without the observer and wrappers (state and random numbers): yes; wrapper-vs-event mismatches: none; chose_told_game 268, danger_gap 0, danger_shared 172, g_accepted 5024, game_gap 2659, game_relevant 565, game_shared 21263, maulings 1, talks 27442, water_gap 80
+arm v8, seed 601, 60 years: identical with and without the observer and wrappers (state and random numbers): yes; wrapper-vs-event mismatches: none; chose_told_game 1835, danger_gap 0, danger_shared 332, g_accepted 26564, game_gap 16082, game_relevant 3067, game_shared 106897, maulings 2, talks 131320, water_gap 444
+arm v8, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v8 fingerprint: fedbb8d41d32e6f791a23b903c49ae3c225d25dc35715715fc42c6819ecca16b
+All: PASS
+
