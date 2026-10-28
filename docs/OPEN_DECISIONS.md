@@ -219,3 +219,9 @@ the file named.
 - [x] **Nature v8 adopted (27 October 2026, the creator: "go ahead"):** made things drop on the ground instead of
   vanishing, and are picked up (OP1's law; PD1 cleared the population flag; GPT 90% and Gemini 98% agreed). All 63
   tests pass. v7 is kept. **Follow-ups:** a 1,000-year check of ground accumulation; future studies on v8.
+- [ ] **After IC1 (final, 28 October 2026; recomputed by GPT and Gemini):** telling where water is does no real work
+  today (never used; listeners almost always see water already), and moments for learning a water signal are common
+  (4 per adult-year, mostly between the same pairs). **For the creator: the first language law** (about 8 meaningless
+  signals learned while both see the same water, replacing direct transfer of water places; no map). A design caution
+  from IC1: water is almost always in view, so such a signal would rarely tell the listener anything new. Next: GPT and
+  Gemini debate it first (`experiments/IC1_information_channels/findings.md`).

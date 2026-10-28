@@ -1,4 +1,4 @@
-# IC1 — How does information pass between people today? Findings (NOT FINAL: blind recompute pending)
+# IC1 — How does information pass between people today? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `IC1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`).
 Read-only on nature v8 (`code_v8`). Run on GitHub Actions (run 40642737865, `skip_zero=local`). 32 worlds (seeds
@@ -75,3 +75,10 @@ Pending: GPT and Gemini, fresh chats, raw numbers only, the B1 and B2 numbers. R
 ## Note (28 October 2026, before the recompute)
 "Every listener already knew water of their own" in Q1 is slightly too strong: 11 of the 240,709 accepted water places
 were new (and first options) for the listener. Shown as 0.000 at three decimals. Nothing else changes.
+
+## Independent recompute (28 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world counts only, without the analysis script
+(`recompute_ic1.md`). **All three agree on every key number:** first option 0.0000; held 0.8857 of 262,774; 4.039
+shared-water talks per adult-year; 0.8697 of moments in repeated pairs; B1 not raised, B2 raised.
+
+**Final.**
