@@ -20,13 +20,14 @@ cause of death and no birth rate differs between o and c beyond what the sham sh
 - **The gap:**
   - **o − c: −222 [−900, +485]** (−3%);
   - **the sham's own gap, x − c: −328 [−1,041, +345],** larger than o's.
-- **Every component's interval includes 0** (`results.md`):
+- **Every component's interval includes 0** (`results.md`). Values are contributions to the population gap: births
+  count as they are; each cause's deaths count with a minus sign.
 
-  | component | o − c |
+  | component | contribution to o − c |
   |---|---|
-  | births | −909 [−3,244, +1,504] |
-  | deaths from illness | +568 [−254, +1,386] |
-  | deaths from violence | −8 [−53, +36] |
+  | births | −909 [−3,244, +1,504] (o had 909 fewer births) |
+  | deaths from illness | +568 [−254, +1,386] (o had 568 fewer illness deaths) |
+  | deaths from violence | −8 [−53, +36] (o had 8 more violent deaths) |
 
 - By the frozen rule, the component with the largest share is **births** (share 4.09). But the gap is small and
   uncertain, so the shares are not meaningful. The sham shows the same pattern (births −1,998).
