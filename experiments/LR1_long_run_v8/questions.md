@@ -73,3 +73,19 @@ and PD1 covered 200 years. **Over 1,000 years, do things pile up, and does anyth
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). Both models chose it (GPT 90%, Gemini
 95%); the assistant's estimate is 85%. Logged in `docs/autonomous_decisions.md`. Frozen as `LR1-frozen` before any code
 or data.
+
+## Operational note 1 (28 October 2026, after freezing, before any data)
+
+How the code (`run_lr1.py`, `analyse_lr1.py`) reads the text where it left a choice, found in 20-year smoke worlds
+(seed 9931, all arms; not data):
+1. **The arms** run on `code_v8`: c = v7 (`ground_items` 0), o = v8, x = the sham. In outputs and tables, "v7", "v8"
+   and "sham" stand for c, o and x.
+2. **The census** runs at each year's end. A world that dies out has no later rows. Every later year counts as 0
+   living, 0 things on the ground, and so on.
+3. **"Most on one tile"** is the largest count of things lying on a single tile in that year. The table shows its
+   maximum over worlds.
+4. **The slope over years 800–1,000** is a least-squares line through each world's yearly ground count, averaged over
+   worlds; its interval is a world bootstrap.
+5. **Population over years 800–1,000** is the pooled sum of yearly living counts (extinct = 0), v8 ÷ v7, with a paired
+   world bootstrap.
+6. **Seeds:** 19601–19632, the same in every arm.
