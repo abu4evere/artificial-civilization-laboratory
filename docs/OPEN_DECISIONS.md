@@ -216,3 +216,6 @@ the file named.
 - [x] **PD1 (final): OP1's population drop was chance** (0.985 with 64 paired worlds). **For the creator:** adopt OP1
   ("made things drop instead of vanishing, and are picked up") as nature v8? If yes: both models consulted, `code_v8`
   with zero checks, the tests, and a `nature-v8` tag.
+- [x] **Nature v8 adopted (27 October 2026, the creator: "go ahead"):** made things drop on the ground instead of
+  vanishing, and are picked up (OP1's law; PD1 cleared the population flag; GPT 90% and Gemini 98% agreed). All 63
+  tests pass. v7 is kept. **Follow-ups:** a 1,000-year check of ground accumulation; future studies on v8.

@@ -1,0 +1,141 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/actions.py experiments/NV8_nature_v8/code_v8/acl/actions.py
+--- experiments/NV7_nature_v7/code_v7/acl/actions.py	2026-10-25 14:52:38.213242700 -0400
++++ experiments/NV8_nature_v8/code_v8/acl/actions.py	2026-10-27 23:37:36.210633300 -0400
+@@ -441,7 +441,7 @@
+         item = matter.bind(parts[0], parts[1], recipe["binder"])
+     if item is None:
+         return None
+-    _keep(p, item, world.cfg.item_limit)
++    _keep(p, item, world.cfg.item_limit, world)
+     return item
+ 
+ 
+@@ -477,15 +477,51 @@
+         else:
+             p.items.insert(index, out)
+         return None
+-    _keep(p, out, world.cfg.item_limit)
++    _keep(p, out, world.cfg.item_limit, world)
+     return out
+ 
+ 
+-def _keep(p: Person, item: dict, limit: int) -> None:
++def _keep(p: Person, item: dict, limit: int, world=None) -> None:
+     p.items.append(item)
+     while len(p.items) > limit:
+         worst = min(range(len(p.items)), key=lambda i: (p.itemval.get(p.items[i]["sig"], 0.0), -i))
+-        p.items.pop(worst)
++        gone = p.items.pop(worst)
++        if world is not None and world.cfg.ground_items:     # OP1: left on the ground, not deleted
++            drop_on_ground(world, p, gone)
++
++
++def drop_on_ground(world, p: Person, item: dict) -> None:
++    """OP1: a made thing p cannot carry is left where p stands, unchanged."""
++    world.ground.append({"x": p.loc[0], "y": p.loc[1], "tick": world.tick, "by": p.id, "item": item})
++    world.emit("drop", p.id, None, p.loc, thing=item["sig"])
++
++
++def ground_week(world) -> None:
++    """OP1: whoever stands where things lie, aged 12 or more and with room in hand, picks them up, the most valued
++    first, until full. Things on the ground neither rot nor wear (as tools on a body). Draws nothing at random."""
++    if not world.ground:
++        return
++    from .config import CHILD_END
++    tick = world.tick
++    limit = world.cfg.item_limit
++    by_tile: dict = {}
++    for g in world.ground:
++        by_tile.setdefault((g["x"], g["y"]), []).append(g)
++    taken = set()
++    for p in sorted(world.living(), key=lambda q: q.id):
++        lying = by_tile.get(p.loc)
++        if not lying or p.age(tick) < CHILD_END:
++            continue
++        while len(p.items) < limit:
++            left = [g for g in lying if id(g) not in taken]
++            if not left:
++                break
++            g = max(left, key=lambda g: (p.itemval.get(g["item"]["sig"], 0.0), -lying.index(g)))
++            taken.add(id(g))
++            p.items.append(g["item"])
++            world.emit("pickup", p.id, g["by"], p.loc, thing=g["item"]["sig"], weeks=tick - g["tick"])
++    if taken:
++        world.ground = [g for g in world.ground if id(g) not in taken]
+ 
+ 
+ def _props(item: dict) -> dict:
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/biology.py experiments/NV8_nature_v8/code_v8/acl/biology.py
+--- experiments/NV7_nature_v7/code_v7/acl/biology.py	2026-10-25 14:52:38.130002800 -0400
++++ experiments/NV8_nature_v8/code_v8/acl/biology.py	2026-10-27 23:37:36.153127100 -0400
+@@ -302,7 +302,7 @@
+             if out is not None and out["sig"] != thing["sig"]:
+                 from .actions import _keep
+                 p.mats[m] -= 1.0
+-                _keep(p, out, world.cfg.item_limit)
++                _keep(p, out, world.cfg.item_limit, world)
+                 _baked(world, p, m, out, level)
+ 
+ 
+@@ -749,7 +749,10 @@
+                 for it in b["items"]:
+                     q.items.append(it)
+                 while len(q.items) > world.cfg.item_limit:
+-                    q.items.pop(0)
++                    gone = q.items.pop(0)
++                    if world.cfg.ground_items:              # OP1: left on the ground, not deleted
++                        from .actions import drop_on_ground
++                        drop_on_ground(world, q, gone)
+                 world.emit("inherit", q.id, b["id"], loc, food=0.0, things=len(b["items"]))
+                 if log is not None:
+                     log.append(("tools", tick, q.id, b["id"], len(b["items"])))
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/config.py experiments/NV8_nature_v8/code_v8/acl/config.py
+--- experiments/NV7_nature_v7/code_v7/acl/config.py	2026-10-25 14:52:38.121102200 -0400
++++ experiments/NV8_nature_v8/code_v8/acl/config.py	2026-10-27 23:37:36.408651900 -0400
+@@ -124,6 +124,8 @@
+     camp_radius: int = 2               # partners this close count as living together
+     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
++    ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
++                                       # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV7_nature_v7/code_v7/acl/world.py experiments/NV8_nature_v8/code_v8/acl/world.py
+--- experiments/NV7_nature_v7/code_v7/acl/world.py	2026-10-25 14:52:38.213242700 -0400
++++ experiments/NV8_nature_v8/code_v8/acl/world.py	2026-10-27 23:37:36.328635000 -0400
+@@ -109,6 +109,7 @@
+         self.sky: dict = {"wet": 1.0, "hard": 0.0, "rain": 0, "rained": 0, "roll": 1.0, "storm": None, "flood": 0}
+         self.graves: dict[str, int] = {}      # "x,y" -> the week someone last died there
+         self.bodies: list[dict] = []          # BD1: bodies of the dead (only when bodies_stay)
++        self.ground: list[dict] = []          # OP1: made things lying on the ground (only when ground_items)
+         self.pits: dict[str, list] = {}       # DG1: "x,y" -> [depth, week last dug] (only when digging)
+         self.events: list[dict] = []          # this week's events
+         self.observers: list = []             # called with (world, events) after each week
+@@ -506,6 +507,9 @@
+         biology.body_phase(self)
+         if self.cfg.bodies_stay:
+             biology.bodies_week(self)
++        if self.cfg.ground_items:                   # OP1: things on the ground are picked up
++            from . import actions as _actions
++            _actions.ground_week(self)
+         if self.cfg.digging and self.pits:          # DG1: a pit slowly fills back in (an assumption)
+             for k in list(self.pits):
+                 self.pits[k][0] = self.pits[k][0] * 0.99 - 0.005
+@@ -707,6 +711,8 @@
+         }
+         if self.bodies:                       # BD1: saved only when held, so v3's world is unchanged
+             d["bodies"] = self.bodies
++        if self.ground:                       # OP1: saved only when held, so v7's world is unchanged
++            d["ground"] = self.ground
+         if self.pits:                         # DG1: saved only when held
+             d["pits"] = self.pits
+         return d
+@@ -731,6 +737,7 @@
+         w.sky = d.get("sky", w.sky)
+         w.graves = d.get("graves", {})
+         w.bodies = d.get("bodies", [])
++        w.ground = d.get("ground", [])
+         w.pits = d.get("pits", {})
+         w.reindex()
+         fauna.index(w)

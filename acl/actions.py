@@ -441,7 +441,7 @@ def _craft(world, p: Person, recipe: dict):
         item = matter.bind(parts[0], parts[1], recipe["binder"])
     if item is None:
         return None
-    _keep(p, item, world.cfg.item_limit)
+    _keep(p, item, world.cfg.item_limit, world)
     return item
 
 
@@ -477,15 +477,51 @@ def _hold_in_fire(world, p: Person, part: str):
         else:
             p.items.insert(index, out)
         return None
-    _keep(p, out, world.cfg.item_limit)
+    _keep(p, out, world.cfg.item_limit, world)
     return out
 
 
-def _keep(p: Person, item: dict, limit: int) -> None:
+def _keep(p: Person, item: dict, limit: int, world=None) -> None:
     p.items.append(item)
     while len(p.items) > limit:
         worst = min(range(len(p.items)), key=lambda i: (p.itemval.get(p.items[i]["sig"], 0.0), -i))
-        p.items.pop(worst)
+        gone = p.items.pop(worst)
+        if world is not None and world.cfg.ground_items:     # OP1: left on the ground, not deleted
+            drop_on_ground(world, p, gone)
+
+
+def drop_on_ground(world, p: Person, item: dict) -> None:
+    """OP1: a made thing p cannot carry is left where p stands, unchanged."""
+    world.ground.append({"x": p.loc[0], "y": p.loc[1], "tick": world.tick, "by": p.id, "item": item})
+    world.emit("drop", p.id, None, p.loc, thing=item["sig"])
+
+
+def ground_week(world) -> None:
+    """OP1: whoever stands where things lie, aged 12 or more and with room in hand, picks them up, the most valued
+    first, until full. Things on the ground neither rot nor wear (as tools on a body). Draws nothing at random."""
+    if not world.ground:
+        return
+    from .config import CHILD_END
+    tick = world.tick
+    limit = world.cfg.item_limit
+    by_tile: dict = {}
+    for g in world.ground:
+        by_tile.setdefault((g["x"], g["y"]), []).append(g)
+    taken = set()
+    for p in sorted(world.living(), key=lambda q: q.id):
+        lying = by_tile.get(p.loc)
+        if not lying or p.age(tick) < CHILD_END:
+            continue
+        while len(p.items) < limit:
+            left = [g for g in lying if id(g) not in taken]
+            if not left:
+                break
+            g = max(left, key=lambda g: (p.itemval.get(g["item"]["sig"], 0.0), -lying.index(g)))
+            taken.add(id(g))
+            p.items.append(g["item"])
+            world.emit("pickup", p.id, g["by"], p.loc, thing=g["item"]["sig"], weeks=tick - g["tick"])
+    if taken:
+        world.ground = [g for g in world.ground if id(g) not in taken]
 
 
 def _props(item: dict) -> dict:

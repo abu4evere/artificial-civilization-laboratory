@@ -302,7 +302,7 @@ def _passive_heat(world, p, tile) -> None:
             if out is not None and out["sig"] != thing["sig"]:
                 from .actions import _keep
                 p.mats[m] -= 1.0
-                _keep(p, out, world.cfg.item_limit)
+                _keep(p, out, world.cfg.item_limit, world)
                 _baked(world, p, m, out, level)
 
 
@@ -749,7 +749,10 @@ def bodies_week(world) -> None:
                 for it in b["items"]:
                     q.items.append(it)
                 while len(q.items) > world.cfg.item_limit:
-                    q.items.pop(0)
+                    gone = q.items.pop(0)
+                    if world.cfg.ground_items:              # OP1: left on the ground, not deleted
+                        from .actions import drop_on_ground
+                        drop_on_ground(world, q, gone)
                 world.emit("inherit", q.id, b["id"], loc, food=0.0, things=len(b["items"]))
                 if log is not None:
                     log.append(("tools", tick, q.id, b["id"], len(b["items"])))

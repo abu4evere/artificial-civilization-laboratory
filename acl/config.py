@@ -124,6 +124,8 @@ class Config:
     camp_radius: int = 2               # partners this close count as living together
     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
+    ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
+                                       # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
     loved_location: str = "last_seen"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
                                        # "last_seen" = toward where the person last had them in sight

@@ -109,6 +109,7 @@ class World:
         self.sky: dict = {"wet": 1.0, "hard": 0.0, "rain": 0, "rained": 0, "roll": 1.0, "storm": None, "flood": 0}
         self.graves: dict[str, int] = {}      # "x,y" -> the week someone last died there
         self.bodies: list[dict] = []          # BD1: bodies of the dead (only when bodies_stay)
+        self.ground: list[dict] = []          # OP1: made things lying on the ground (only when ground_items)
         self.pits: dict[str, list] = {}       # DG1: "x,y" -> [depth, week last dug] (only when digging)
         self.events: list[dict] = []          # this week's events
         self.observers: list = []             # called with (world, events) after each week
@@ -506,6 +507,9 @@ class World:
         biology.body_phase(self)
         if self.cfg.bodies_stay:
             biology.bodies_week(self)
+        if self.cfg.ground_items:                   # OP1: things on the ground are picked up
+            from . import actions as _actions
+            _actions.ground_week(self)
         if self.cfg.digging and self.pits:          # DG1: a pit slowly fills back in (an assumption)
             for k in list(self.pits):
                 self.pits[k][0] = self.pits[k][0] * 0.99 - 0.005
@@ -707,6 +711,8 @@ class World:
         }
         if self.bodies:                       # BD1: saved only when held, so v3's world is unchanged
             d["bodies"] = self.bodies
+        if self.ground:                       # OP1: saved only when held, so v7's world is unchanged
+            d["ground"] = self.ground
         if self.pits:                         # DG1: saved only when held
             d["pits"] = self.pits
         return d
@@ -731,6 +737,7 @@ class World:
         w.sky = d.get("sky", w.sky)
         w.graves = d.get("graves", {})
         w.bodies = d.get("bodies", [])
+        w.ground = d.get("ground", [])
         w.pits = d.get("pits", {})
         w.reindex()
         fauna.index(w)
