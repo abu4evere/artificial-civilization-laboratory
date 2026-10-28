@@ -74,3 +74,13 @@ Listed in `docs/autonomous_decisions.md`:
 **Update (about 05:30):** IC2's first run failed its own safety check: my observer missed one of the two ways a person
 can be mauled (a surprised bear). The check worked as designed, no result was read, and nothing is lost. I fixed the
 observer openly (amendment 1 in IC2's plan) and re-ran it: GitHub run 40664447201. LR1 is at 19 of 22 parts.
+
+**Update (about 07:00): both runs finished and are written up (not final until GPT and Gemini recheck them).**
+- **IC2: none of water, game or danger is a workable first thing to name.** People talk only when standing together,
+  so they see the same things; water and game are nearly always in view; wolves and bears are rare. Game comes closest
+  (0.40 useful gaps per adult-year; the screen needs 1). So a language law would have little to carry today. **Which
+  law change could create a real need is your decision** (GPT and Gemini to be asked first).
+- **LR1: v8 is stable over 1,000 years.** Things on the ground level off; population v8 ≈ v7. But in every version,
+  population halves between years 100 and 500 and tools held fall: the worlds still erode over centuries (as M1 found).
+- **The blind rechecks are waiting:** the Chrome extension disconnected. If it stays off, please sign it in again
+  (Claude side panel in Chrome, same account as this app).
