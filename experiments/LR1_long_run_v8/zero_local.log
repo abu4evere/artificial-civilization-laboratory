@@ -1,0 +1,5 @@
+seed 501, 20 years: code_v8 with ground_items 0 equals code_v7: yes; observer read-only (arms v8 and v7): yes; the setting acts: yes; the sham acts: yes; conservation mismatches: none; drops (v8) 876, pick-ups 694
+seed 601, 60 years: code_v8 with ground_items 0 equals code_v7: yes; observer read-only (arms v8 and v7): yes; the setting acts: yes; the sham acts: yes; conservation mismatches: none; drops (v8) 1700, pick-ups 1611
+arm o, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v8 fingerprint: fedbb8d41d32e6f791a23b903c49ae3c225d25dc35715715fc42c6819ecca16b
+All: PASS
