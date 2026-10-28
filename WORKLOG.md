@@ -262,3 +262,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 (sleep mode): PD1 local zero checks PASS (accounting exact). Launched on GitHub: run 40606901380 (192 worlds).
 - 2026-10-27 (sleep mode): PG0 local zero checks PASS. Launched on GitHub: run 40607486899 (32 worlds).
 - 2026-10-27 (sleep mode): PG0 run 40607486899 fetched (32 worlds), valid. Q3: own-experience property prediction error 0.0717 vs shuffled 0.1053 vs zero 0.1522 (gain +0.0337 [0.0329, 0.0343]): information available. Q1: puzzle-led play 0.07% of play; finds new kinds +0.037 more per play. Q2: 25% of useful new kinds lost before the maker uses them. Findings written; recomputes next.
+- 2026-10-27 (sleep mode): PG0 recompute: GPT matches every number; Gemini's code tool unavailable (returned a script, not numbers; not run by the assistant). PG0 not final; Gemini to be retried in a fresh chat.

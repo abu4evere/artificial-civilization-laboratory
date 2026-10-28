@@ -24,6 +24,11 @@ Computed with Python; 20,000 replicates.
 
 **Against the analysis:** every number matches.
 
-## Gemini
-Its first attempt returned an error ("I encountered an error doing what you asked"), and it was asked to retry. Nothing
-is recorded until its reply is read.
+## Gemini (pending)
+- **First attempt:** an error ("I encountered an error doing what you asked").
+- **Retry:** "The direct execution environment is currently unavailable." It returned a Python script instead of
+  numbers.
+
+**The script is not run by the assistant.** Running it would make the result the assistant's computation, not an
+independent one. Gemini's recompute will be retried in a fresh chat, and **PG0 is not final until its numbers are read
+from its reply.**
