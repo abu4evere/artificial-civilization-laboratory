@@ -1,4 +1,4 @@
-# LR1 — Does nature v8 stay healthy over 1,000 years? Findings (NOT FINAL: blind recompute pending)
+# LR1 — Does nature v8 stay healthy over 1,000 years? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `LR1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`).
 Read-only; a description, not an adoption test. Run on GitHub Actions (run 40640605709, `skip_zero=local`). 96 worlds:
@@ -56,3 +56,11 @@ things on the ground in every year (mismatches 0).
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw per-world numbers (the ground count at years 200 and 1,000, the slope inputs,
 and summed living over years 800–1,000 per arm). Recorded only from their actual replies.
+
+## Independent recompute (28 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world numbers only, without the analysis script
+(`recompute_lr1.md`). **All three agree:** ground 122.28 → 77.59 (ratio 0.6346); slope 0.0034; population v8 ÷ v7
+0.9882 (sham 1.0158); extinct 8 / 8 / 10; no flags. Gemini's bootstrap put the upper end of v8 ÷ v7's interval at 1.389
+instead of 1.406 (different draws; a long-tailed ratio).
+
+**Final.**

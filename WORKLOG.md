@@ -297,3 +297,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 08:40 (heartbeat): no runs; Chrome still disconnected; IC2 and LR1 recomputes still waiting.
 - 2026-10-28 09:40 (heartbeat): no runs; Chrome still disconnected; IC2 and LR1 recomputes still waiting.
 - 2026-10-28 11:59: Chrome signed in by the creator. IC2 FINAL: GPT (fresh chat 6ae21b12) and Gemini (fresh chat 4068de4bb376b35b) blind recomputes match every key number. INDEX, OPEN_DECISIONS updated; tag IC2-done. LR1: GPT recompute (6ae21b78) matches; Gemini pending.
+- 2026-10-28 12:03: LR1 FINAL: Gemini (fresh chat 78a7758f88a1e1fd) matches GPT and the analysis on every key number (one bootstrap interval end 1.389 vs 1.406, explained). INDEX, OPEN_DECISIONS, ROADMAP updated; tag LR1-done.

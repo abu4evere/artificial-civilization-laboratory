@@ -659,3 +659,9 @@ checks pass; 63 tests.
 **IC1 done** (28 October; `experiments/IC1_information_channels/findings.md`): telling where water is does no real
 work today, and moments when two people see the same water while talking are common. **Next: LR1 (is v8 healthy over
 1,000 years; running), then the first language law (the creator decides; no map).**
+
+**LR1 and IC2 done** (28 October; both recomputed blind by GPT and Gemini). LR1: nature v8 is stable over 1,000 years
+(things on the ground level off; population as v7), but every version still erodes over centuries. IC2: no referent
+(water, game, danger) is workable for a first signal law today: people talk only when together, so they already see
+what the other sees. **Next: the creator's decision** (keep language paused, or a law change that creates a real need
+for information, judged against human evidence).

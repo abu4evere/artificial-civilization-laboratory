@@ -231,3 +231,6 @@ the file named.
   language line paused, or consider a law change that would create a real information need (for example, being heard
   at a distance), judged against human evidence and never tuned. GPT and Gemini to be asked first
   (`experiments/IC2_referent_gaps/findings.md`).
+- [x] **LR1 (final, 28 October 2026): nature v8 is stable over 1,000 years** (no accumulation, no demographic flag).
+  Described: every version still erodes over centuries (population halves by year 500; tools held fall), as M1 found
+  (`experiments/LR1_long_run_v8/findings.md`).

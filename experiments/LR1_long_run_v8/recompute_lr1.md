@@ -22,6 +22,23 @@ Recorded from its reply:
 | extinct v7 / v8 / sham | 8 / 8 / 10 | 8 / 8 / 10 | yes |
 | flags A / B | not raised / not raised | no / no | yes |
 
-## Gemini
+## Gemini (fresh chat https://gemini.google.com/app/78a7758f88a1e1fd)
 
-Pending (fresh chat https://gemini.google.com/app/78a7758f88a1e1fd). Recorded only from its actual reply.
+Recorded from its reply:
+
+| measure | analysis | Gemini | match |
+|---|---|---|---|
+| v8 ground, year 200 / 1,000 | 122.3 / 77.6 | 122.2813 / 77.5938 | yes |
+| sham ground, year 200 / 1,000 | 108.2 / 75.2 | 108.2500 / 75.1875 | yes |
+| v8 ratio 1,000 ÷ 200 | 0.63 | 0.6346 | yes |
+| slope, years 800–1,000 | +0.003 [−0.001, +0.008] | 0.0034 [−0.0006, 0.0084] | yes |
+| population v8 ÷ v7 | 0.988 [0.702, 1.406] | 0.9882 [0.7018, 1.3891] | yes (see below) |
+| population sham ÷ v7 | 1.016 [0.771, 1.292] | 1.0158 [0.7740, 1.2967] | yes |
+| extinct v7 / v8 / sham | 8 / 8 / 10 | 8 / 8 / 10 | yes |
+| flags A / B | not raised / not raised | no / no | yes |
+
+The upper end of v8 ÷ v7's interval is 1.389 in Gemini's draw and 1.406 in the analysis and GPT's. A ratio of sums over
+32 worlds with 8 extinctions has a long upper tail, so different bootstrap draws move that end slightly. The point
+estimate and both flags agree exactly.
+
+**Verdict:** every key number agrees across the analysis, GPT and Gemini. The findings are final.
