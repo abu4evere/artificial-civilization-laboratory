@@ -162,6 +162,16 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **It splits the population gap exactly** into fewer births and each cause of death.
 - **Status:** running on GitHub (run 40606901380, 192 worlds). **PG0** (the "why" check) is also running (run 40607486899). Early smoke hints for PG0: puzzle-led play is very rare (0.3% of play), about 29% of useful new finds are lost before their maker uses them, and a person's own past uses do predict a new thing's usefulness better than shuffled properties.
 
+## 17. PG0 ("why" check) results: checked by GPT; Gemini's tool is down, so a retry is pending
+- **People's own experience does contain the answer.** From things they used before, a person could predict how useful
+  a brand-new thing is. Error 0.07, against 0.11 by chance and 0.15 for today's "start at zero".
+- **Today's mind doesn't use this.** Every new thing starts at worth 0.
+- **A quarter of useful new finds are lost** before their maker ever uses them, mostly vanishing at the 3-tool limit.
+  OP1's law would leave them on the ground instead.
+- **Curiosity rarely leads play** (0.07% of plays), though when it does, it finds new things a bit more often.
+- **Next decision for you:** a "learn properties" ability needs to decide **how people see properties: exactly, or
+  with some error.** GPT warns that exact would be handing them nature's hidden numbers.
+
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
 - **MO1:** whether to re-test the memory order under a new frozen plan whose threshold allows for memories filling up, or to leave it (not supported as frozen).
