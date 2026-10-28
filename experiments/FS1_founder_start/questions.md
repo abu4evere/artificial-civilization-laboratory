@@ -88,3 +88,22 @@ at that size the quality of a struck tool changes by about 0.5% (`matter.strike`
 
 ## Sign-off (28 October 2026)
 **The creator: "yessir"** (to "Approve FS1 and run it on GitHub?"). Frozen as `FS1-frozen` before any code or data.
+
+## Operational note 1 (28 October 2026, after freezing, before any data)
+How the code (`run_fs1.py`, `analyse_fs1.py`) reads the text where it left a choice; checked on 12-year smoke worlds
+(seeds 9960 and 9961, all arms; not data). Nothing in the plan, its margin or its readings was changed.
+1. **The setting** is `founder_skill` ("all" = v8, "none" = arm z, "no_crafting" = arm c) in `code_fs1`
+   (`v8_to_fs1.diff`). The founders' skills are drawn exactly as in v8 and then set to 0, so the random stream is the
+   same.
+2. **"World-born"** means generation above 0 (founders are generation 0). **"Aged 20–40"** means from the 20th birthday
+   to just before the 41st, at each year-end census.
+3. **The late window** is the censuses at the ends of years 300–499 (200 censuses); "years 0–100" is the first 100.
+   A world that has died out adds nothing to skill sums and 0 to population.
+4. **Making events** are the law's `make` events, summed per year; "per adult-year" divides by the summed yearly adult
+   counts. "Things held per adult" is made things held by adults at each census, divided the same way.
+5. **Paired bootstrap:** each replicate resamples seeds once and recomputes the pooled means of both arms on the same
+   seeds; the difference and the ratio are read from those replicates.
+6. **"Extinct by year 100"** means the world ended before week 5,200.
+7. **The zero checks passed locally** (`zero_local.log`): `founder_skill` "all" equals `code_v8` at 20 and 60 years;
+   z, c and the sham act; the observer is read-only in t and z; at week 0 only the founders' skills differ (everything
+   else and the random state identical); reload exact in t and z; fingerprint 01b19e66.

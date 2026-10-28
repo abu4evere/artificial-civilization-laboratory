@@ -301,3 +301,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 12:12: the creator: 'go ahead keep working with gpt and gemini' (option A: back to erosion). Debate round 20 (docs/debate_after_ic2_lr1_2026-10-28.md): both chose a founder head-start study before any learning-rule change (GPT 85%, Gemini 95%). Drafting FS1 for the creator's sign-off.
 - 2026-10-28 12:14: FS1 drafted; debate round 21 (GPT 90%, Gemini 95%); revisions adopted (absolute-difference primary, margin 0.012 = one making act's skill gain from the code; survivor weighting reported; start-identity check). Waiting for the creator's sign-off; not frozen.
 - 2026-10-28 12:30: the creator signed off FS1 ('yessir'); frozen (FS1-frozen).
+- 2026-10-28 12:59: FS1 built: code_fs1 (v8_to_fs1.diff), runner, analysis (before data), operational note 1; smoke OK; local zero checks PASS (fingerprint 01b19e66). Launching on GitHub (creator: 'run it on github when ready').

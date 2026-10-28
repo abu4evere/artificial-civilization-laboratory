@@ -1,0 +1,9 @@
+seed 501, 20 years: code_fs1 with founder_skill 'all' equals code_v8: yes; observer read-only (arms t and z): yes; z acts: yes; c acts: yes; the sham acts: yes; census years 20, make events (t) 507
+seed 601, 60 years: code_fs1 with founder_skill 'all' equals code_v8: yes; observer read-only (arms t and z): yes; z acts: yes; c acts: yes; the sham acts: yes; census years 60, make events (t) 1767
+seed 501: at week 0 only the founders' skills differ between t, z and c (ids, names, sexes, ages, genes, places, food, relations and the random state identical; z all 0; c crafting 0, other skills as t; t in 0.2-0.4): yes
+seed 601: at week 0 only the founders' skills differ between t, z and c (ids, names, sexes, ages, genes, places, food, relations and the random state identical; z all 0; c crafting 0, other skills as t; t in 0.2-0.4): yes
+arm t, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+arm z, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_fs1 fingerprint: 01b19e6642717274d2e962355da106fb3ee9bd0afe37411b8279ec6e444211d8
+All: PASS
+

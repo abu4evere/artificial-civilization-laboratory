@@ -1,0 +1,10 @@
+diff -r --strip-trailing-cr -x __pycache__ experiments/NV8_nature_v8/code_v8/acl/config.py experiments/FS1_founder_start/code_fs1/acl/config.py
+129a130,131
+>     founder_skill: str = "all"         # FS1: "all" = founders start with every skill 0.2-0.4 (v8); "none" = all at 0;
+>                                        # "no_crafting" = crafting at 0 only. The same random draws are made in every case.
+diff -r --strip-trailing-cr -x __pycache__ experiments/NV8_nature_v8/code_v8/acl/world.py experiments/FS1_founder_start/code_fs1/acl/world.py
+227a228,231
+>             if c.founder_skill == "none":            # FS1: the same draws are made, then set to the world-born level
+>                 p.skills = {s: 0.0 for s in SKILLS}
+>             elif c.founder_skill == "no_crafting":
+>                 p.skills["crafting"] = 0.0
