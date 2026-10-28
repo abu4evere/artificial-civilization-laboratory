@@ -85,3 +85,27 @@ Nature v7, LP (80 founders, 80×80), 32 new seeds (19501–19532), 200 years, ru
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). Both models proposed it (GPT 85%, Gemini
 95%); the assistant's estimate is 70%. Logged in `docs/autonomous_decisions.md`. Frozen as `PG0-frozen` before any code
 or data.
+
+## Operational note 1 (27 October 2026, after freezing, before any data)
+
+How the code (`run_pg0.py`, `analyse_pg0.py`) reads the text where it left a choice, found in a 20-year smoke world
+(seed 9933, not data):
+1. **"Puzzle-led play"** is read before `_play` runs. It means the person's leading thought is a puzzle about a made
+   thing whose recipe they hold: the condition under which the code's 60% related-materials branch can apply. **The
+   planned replay check** (that the observer's reading equals the code's branch) **is not built.** Knowing whether the
+   branch was taken would need the world's random draw, and the observer must not consume it. So "puzzle-led" means
+   eligible for that branch, and the mismatch counter has nothing to count. This is recorded here, before data.
+2. **"New to the world"** means the kind was not in the world's record before that play. **"Useful"** follows LS1
+   (some use's factor > 1). **"Remade later"** means any later `make` or `play` event of that kind.
+3. **First use** is the first `_judge_use` call (a use of a held thing for a purpose) for that person and kind. The
+   felt value is `factor − 1`, clipped to ±1, as `judge_item` reads it. Fixed-value judgements (floats, warmth) are not
+   uses of properties and are left out.
+4. **Predictors:**
+   - the mean felt value of the 5 nearest past uses for the same purpose, in the 10-property space (scaled 0–1), from
+     the person's last 200 uses of **other** kinds;
+   - the shuffled control permutes the property vectors among those same past uses, with the observer's own generator;
+   - the zero start predicts 0.
+
+   First uses with fewer than 5 such past uses are counted, not predicted.
+5. **"Lost before use"** is checked every 4 weeks: the maker died, or the kind is no longer in their hands.
+6. **Seeds:** 19501–19532.
