@@ -641,3 +641,21 @@ girls). By the frozen rule both are proposed for nature v7: **the creator decide
 **Nature v7** (`experiments/NV7_nature_v7/findings.md`; the creator's decision, 25 October 2026): v6 + twins (fixed
 random chance) + 105 boys to 100 girls + the nursing fix. Zero checks pass; 62 tests. Future studies run on v7; M1 and
 RH1 stay on v6 as frozen.
+
+**25–28 October: why culture does not build up, mapped step by step** (all frozen, recomputed blind by GPT and
+Gemini; one line each in `experiments/INDEX.md`). M1: over 1,000 years every surviving world erodes. RH1: a third of
+women have no child because pairing breaks. WM1: the mother-feeds-first rule makes most of women's shorter lives.
+LS1: knowledge goes with the dead; making collapses at the choice. MK1, CO1: making's own score does not fall; the
+other options' habits rise. HL1, VC1, CL1: habits are over-valued, and copying whole habit tables in talk carries 0.93
+of it; making is under-valued from too little practice. LA1, PT1: 85–88% of lessons cannot be followed because the
+learner lacks a part. NA1: the network is wide but lessons are refused. TF1: made things were deleted at the carry
+limit. Two fixes were **not supported**: MO1 (memory order) and HC1 (copy only the situation at hand). PG0: a person's
+own experience could tell them what a new thing is good for, but the mind does not use it.
+
+**Nature v8** (`experiments/NV8_nature_v8/findings.md`; the creator's decision, 27 October 2026): v7 + made things
+drop on the ground instead of vanishing, and are picked up (OP1; its population flag did not repeat in PD1). Zero
+checks pass; 63 tests.
+
+**IC1 done** (28 October; `experiments/IC1_information_channels/findings.md`): telling where water is does no real
+work today, and moments when two people see the same water while talking are common. **Next: LR1 (is v8 healthy over
+1,000 years; running), then the first language law (the creator decides; no map).**
