@@ -274,3 +274,5 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27: GitHub tests workflow on nature v8 (7d295d6): success.
 - 2026-10-28 (sleep mode): creator silent > 1 h. Debate round 16 (both: LR1 first). LR1 frozen (LR1-frozen): 1,000-year v7 / v8 / sham, 32 paired seeds, descriptive flags for accumulation and demography.
 - 2026-10-28 (sleep mode): LR1 local zero checks PASS (v8 off = v7; observer read-only; conservation exact; reload exact). Launched on GitHub: run 40640605709 (96 worlds x 1,000 years).
+- 2026-10-28 (sleep mode): debate round 17 on the IC1 draft (the language groundwork audit, round 16's "TC0"; renamed, TC1 taken): GPT yes 90%, Gemini yes 95%; their additions adopted. IC1 frozen (IC1-frozen). Noted openly: a runner draft was written during review, run on nothing, revised to the frozen plan. Smoke world fine; analysis written before data; operational note 1.
+- 2026-10-28 (sleep mode): IC1 local zero checks PASS (observer and wrappers read-only at 20 and 60 years; wrapper counts = law events; reload exact; fingerprint fedbb8d4).

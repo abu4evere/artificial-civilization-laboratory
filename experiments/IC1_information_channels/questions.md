@@ -100,3 +100,25 @@ assistant's estimate is 80%. Logged in `docs/autonomous_decisions.md`.
 
 **Note, in the open:** a first draft of the runner was written while this plan was under review. Nothing was run. It is
 committed only after the freeze and was revised to this plan.
+
+## Operational note 1 (28 October 2026, after freezing, before any data)
+
+How the code (`run_ic1.py`, `analyse_ic1.py`) reads the text where it left a choice, found in a 20-year smoke world
+(seed 9941; not data):
+1. **The start of a talk** is noted by wrapping the talk action (`actions.HANDLERS["talk"]`), not `social.gossip`.
+   Gossip can run twice in one talk, so each talk is counted once. Talks noted = `talk` events (a mismatch counter).
+2. **"Both see the same water":** the two people's sets of fresh-water tiles within 4 tiles share a tile. This uses
+   the same square and test as `weather.fresh_near`. In the smoke world it equals "either sees water", because people
+   talk on the same or a neighbouring tile.
+3. **"Per adult-year"** counts talks in which both people are 16 or older, divided by adult-years. **The pair measures
+   (B2's second part, sources and runs)** include all ages, since children would learn words too.
+4. **A pair's "water sources"** are distinct tiles (the shared fresh tile nearest the first speaker). A river gives many
+   tiles, so this is an upper bound on distinct bodies of water. **"Longest run"** is in consecutive weeks.
+5. **"Water places told while both see the spot"** is a share of accepted water places, the ones the wrappers see in
+   full.
+6. **"Used per telling":** a listener-place (the same listener and spot, counted once) later returned as that
+   listener's thirst target, from told water.
+7. **Q3** lists recipes by the law's own `how`. "Heated" (finding by heating) is not a channel between people; it is
+   shown for completeness. Recipe claims checked are the law's `m:` checks. Stories count every telling, including
+   ones the listener already knew.
+8. **Clutter** counts the animal groups within 4 tiles of both people. Other people are not counted.

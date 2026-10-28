@@ -1,0 +1,6 @@
+arm v8, seed 501, 20 years: identical with and without the observer and wrappers (state and random numbers): yes; wrapper-vs-event mismatches: none; talks 27442, water places accepted 290, talks sharing water 26974, habit copies 6856, thirst targets told 0
+arm v8, seed 601, 60 years: identical with and without the observer and wrappers (state and random numbers): yes; wrapper-vs-event mismatches: none; talks 131320, water places accepted 822, talks sharing water 129666, habit copies 42046, thirst targets told 0
+arm v8, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v8 fingerprint: fedbb8d41d32e6f791a23b903c49ae3c225d25dc35715715fc42c6819ecca16b
+All: PASS
+
