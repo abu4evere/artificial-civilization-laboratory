@@ -86,5 +86,5 @@ at that size the quality of a struck tool changes by about 0.5% (`matter.strike`
   making act's skill gain); c becomes the main test if z collapses. Its claim that 32 seeds give "narrow" intervals is
   not assumed: an inconclusive result will be reported as such.
 
-## Sign-off
-Waiting for the creator.
+## Sign-off (28 October 2026)
+**The creator: "yessir"** (to "Approve FS1 and run it on GitHub?"). Frozen as `FS1-frozen` before any code or data.

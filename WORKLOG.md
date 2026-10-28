@@ -300,3 +300,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 12:03: LR1 FINAL: Gemini (fresh chat 78a7758f88a1e1fd) matches GPT and the analysis on every key number (one bootstrap interval end 1.389 vs 1.406, explained). INDEX, OPEN_DECISIONS, ROADMAP updated; tag LR1-done.
 - 2026-10-28 12:12: the creator: 'go ahead keep working with gpt and gemini' (option A: back to erosion). Debate round 20 (docs/debate_after_ic2_lr1_2026-10-28.md): both chose a founder head-start study before any learning-rule change (GPT 85%, Gemini 95%). Drafting FS1 for the creator's sign-off.
 - 2026-10-28 12:14: FS1 drafted; debate round 21 (GPT 90%, Gemini 95%); revisions adopted (absolute-difference primary, margin 0.012 = one making act's skill gain from the code; survivor weighting reported; start-identity check). Waiting for the creator's sign-off; not frozen.
+- 2026-10-28 12:30: the creator signed off FS1 ('yessir'); frozen (FS1-frozen).
