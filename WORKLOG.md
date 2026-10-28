@@ -260,3 +260,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27 (sleep mode): creator silent > 1 h, sleep mode automatic. Debate round 15 (both: run PD1 and PG0; GPT: PD1 first). PD1 frozen (PD1-frozen): read-only on code_op1, 64 paired seeds, exact births/deaths-by-cause split of the population gap.
 - 2026-10-27 (sleep mode): PG0 frozen (PG0-frozen): read-only 'why' audit (puzzle-led play, zero-start cost, own-experience property prediction vs shuffled).
 - 2026-10-27 (sleep mode): PD1 local zero checks PASS (accounting exact). Launched on GitHub: run 40606901380 (192 worlds).
+- 2026-10-27 (sleep mode): PG0 local zero checks PASS. Launched on GitHub: run 40607486899 (32 worlds).

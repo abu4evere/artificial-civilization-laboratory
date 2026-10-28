@@ -160,7 +160,7 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **Design:** the same three kinds of world as OP1, but **64 pairs** instead of 32, because worlds vary so much.
 - **It counts:** every death by cause and age, every birth, and every fight (with or without a tool in hand).
 - **It splits the population gap exactly** into fewer births and each cause of death.
-- **Status:** safety checks are running, then GitHub. PG0 comes next.
+- **Status:** running on GitHub (run 40606901380, 192 worlds). **PG0** (the "why" check) is also running (run 40607486899). Early smoke hints for PG0: puzzle-led play is very rare (0.3% of play), about 29% of useful new finds are lost before their maker uses them, and a person's own past uses do predict a new thing's usefulness better than shuffled properties.
 
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
