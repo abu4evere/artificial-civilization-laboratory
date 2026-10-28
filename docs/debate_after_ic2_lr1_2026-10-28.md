@@ -41,3 +41,15 @@ level (all skills 0) against today's founders, over 300–500 years.
   making" from "a head start in getting food".
 - **Primary:** GPT's (world-born adults' crafting skill, by age) is primary; Gemini's (making per adult-year, tools held
   per adult) are the key secondaries.
+
+# Debate round 21 (28 October 2026): the FS1 draft
+- **GPT: approve after two changes, 90%.** A ratio margin is fragile when late skill is near 0.05: use an absolute
+  difference with a margin tied to how skill affects performance, chosen before data. The pooled skill measure is
+  survivor-weighted: report contributing worlds and adult-years, keep extinction separate. 32 seeds are reasonable,
+  but an inconclusive result must be reported as such, with no seeds added afterwards. Check that zero-start changes
+  nothing else at the start.
+- **Gemini: 95%.** Add an absolute equivalence bound (it proposed 0.008). If z collapses, make c the main test. It
+  claims 32 seeds give narrow intervals.
+- **Council:** all adopted, except the margin: **0.012, from the code** (`skill_gain`, the skill one making act gives
+  from zero; tool quality ∝ 55 + 45 × skill, so about 0.5%), not Gemini's unexplained 0.008. Gemini's "narrow
+  intervals" is not assumed.
