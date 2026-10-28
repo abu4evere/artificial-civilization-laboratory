@@ -287,3 +287,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 04:45 (sleep mode): IC2 runner (talk/hear_place/perform/maul wrappers) and analysis (before data), operational note 1; smoke OK (2 worlds, mismatches 0); local zero checks PASS (fingerprint fedbb8d4).
 - 2026-10-28 04:57 (sleep mode): IC2 launched on GitHub: run 40653330784 (32 worlds x 200 years, 16 chunks, skip_zero=local). LR1 (40640605709) still running. Heartbeat cron re-created to cover IC2.
 - 2026-10-28 05:05 (sleep mode): MISTAKE fixed: the second morning report overwrote the first (same file); the first restored from git, the second appended below it.
+- 2026-10-28 04:47 (heartbeat): LR1 13/22 jobs, IC2 17/18. Correction: the times on my last three lines (04:45, 04:57, 05:05) were estimates and ran ahead of the clock; the true times were about 04:15-04:40 (git commit times are exact).
