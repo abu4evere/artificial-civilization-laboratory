@@ -127,3 +127,31 @@ How the code (`run_ic2.py`, `analyse_ic2.py`) reads the text where it left a cho
    and after; the count must equal the `mauled` events.
 8. The zero checks passed locally (`zero_local.log`): identical state and random numbers with and without the observer
    at 20 and 60 years; reload exact; wrapper counts equal the law's events; fingerprint fedbb8d4.
+
+## Operational amendment 1 (28 October 2026, after the first cloud run, before any outcome was read)
+
+**What happened.** The first cloud run (40653330784, 32 worlds) failed a hard stop: in 15 worlds the maulings the
+observer counted were fewer than the law's `mauled` events. Nothing beyond the validity block was read: `results.md`
+for that run says only "NOT VALID: no reading is drawn" (kept as `results_run1_invalid.md`; the outputs are kept
+locally as `output_run1_invalid/`, not deleted). The per-world listing used to find the cause showed only the mauling,
+talk and accepted-game counts, which are validity counts.
+
+**Why.** v8 has **two** routes to a mauling: a hungry wolf or bear going for people (`fauna._go_for_people`, the one
+the plan named) and a bear **surprised** by someone foraging or hunting on its tile (`fauna.surprised`). The observer
+wrapped only the first. The local zero checks passed because no surprised-bear mauling happened in those two worlds
+(seed 501: 1 mauling; seed 601: 2; both by the first route). The hard stop worked as intended.
+
+**The amendment.** The observer also wraps `fauna.surprised` in the same read-only way (health before and after; it
+draws nothing). For such a mauling the possible groups are the bear groups on that tile, and Q5's "same group" check
+counts a prior danger gap about any of them. Maulings are also counted by route (hungry / surprised). Nothing else
+changes: same seeds, same definitions, same thresholds. The zero checks are re-run, and the 32 worlds are run again on
+GitHub. The seeds stay the same because no outcome was read; the worlds are new worlds with a read-only observer, so
+the same seeds give the same worlds.
+
+**Decided by** the assistant, under the creator's sleep-mode autonomy (a technical fix of a read-only observer; no
+change to nature or to any reading rule).
+
+**Check of the amendment (before the re-run):** the zero checks pass again (`zero_local.log`). They cannot exercise the
+new route (no surprised-bear mauling happens in seeds 501 and 601), so the amended observer was also run on seed 19806
+(one of the 15 failing worlds) for 200 years: maulings counted 3 = `mauled` events 3 (all by surprised bears), no
+mismatch. Only these validity counts were looked at.

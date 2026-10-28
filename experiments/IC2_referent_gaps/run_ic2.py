@@ -187,11 +187,14 @@ class IC2Obs:
             self.told_used.add((p.id, spot))
 
     # --- the mauling wrapper's note ---
-    def mauled(self, world, victim, gid):
+    def mauled(self, world, victim, gids, route):
+        """gids: the groups that could have mauled: the one hungry group, or for a surprised bear the bear groups on
+        that tile (amendment 1)."""
         tick = world.tick
         self.n["maulings"] += 1
-        t = self.last_gap.get((victim, gid))
-        self.n["maulings_after_gap"] += t is not None and tick - t <= MAUL_WEEKS
+        self.n["maulings_" + route] += 1
+        ts = [self.last_gap.get((victim, g)) for g in gids]
+        self.n["maulings_after_gap"] += any(t is not None and tick - t <= MAUL_WEEKS for t in ts)
 
     # --- events, once a week ---
     def __call__(self, world, events):
@@ -294,13 +297,27 @@ def install(w, obs):
         out = orig_maul(world, g, sp)
         for pid, h in before.items():
             if world.people[pid].health < h:
-                obs.mauled(world, pid, g["id"])
+                obs.mauled(world, pid, [g["id"]], "hungry")
+        return out
+
+    orig_surprised = fauna.surprised
+
+    def surprised(world, p, loc):
+        # Amendment 1: the second route to a mauling (a bear surprised while someone forages or hunts close by).
+        if world is not w:
+            return orig_surprised(world, p, loc)
+        bears = [g["id"] for g in world.herds.get(loc, ()) if g["sp"] == "bear" and g["n"] > 0]
+        h = p.health
+        out = orig_surprised(world, p, loc)
+        if p.health < h:
+            obs.mauled(world, p.id, bears, "surprised")
         return out
 
     information.hear_place = hear_place
     actions.HANDLERS["talk"] = talk
     actions.perform = perform
     fauna._go_for_people = _go_for_people
+    fauna.surprised = surprised
 
 
 def hashrun(arm, seed, years, observe):
