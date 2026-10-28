@@ -59,3 +59,12 @@ conditions must be created under which signals become useful. The same question 
 - **Watch:** Gemini mentions agents knowing x,y coordinates. Signals must not carry built-in coordinates (that would be
   a map language given by us). GPT's caution about "where" needs a design answer before freezing, perhaps a direction
   relative to what both can see.
+
+## The creator's rule (27 October 2026)
+"we cannot give them map for sure it means cheating." **Signals carry no built-in meaning, no coordinates and no map
+language.** "Where" can only travel through honest physical means the listener must perceive or follow:
+- pointing (a direction the listener sees);
+- leading (walking together);
+- landmarks named by words the people invented themselves.
+
+The first language law need not include "where" at all.
