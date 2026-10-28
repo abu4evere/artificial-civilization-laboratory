@@ -36,5 +36,7 @@ Computed with Python; 20,000 replicates.
 **Against the analysis:** every number matches. The analysis lists each cause as its contribution to the gap
 (−Δdeaths); GPT lists Δdeaths. They are the same numbers with opposite signs, as stated in the findings.
 
-## Gemini
-Pending. Nothing is recorded until its reply is read.
+## Gemini (pending)
+Its code tool was unavailable: "full execution of external Python scripts on prompt attachments is currently
+unavailable". It returned a script instead of numbers. **The script is not run by the assistant.** The recompute will
+be retried in a fresh chat, and **PD1 is not final until Gemini's numbers are read from its reply.**

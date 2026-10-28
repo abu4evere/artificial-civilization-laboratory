@@ -172,6 +172,14 @@ Recomputed blind by GPT and Gemini, all three agreeing; Gemini's first try hit a
 - **Next decision for you:** a "learn properties" ability needs to decide **how people see properties: exactly, or
   with some error.** GPT warns that exact would be handing them nature's hidden numbers.
 
+## 18. PD1 result: OP1's population drop was chance (checked by GPT; Gemini's calculator is down, so a retry is pending)
+- **With twice as many worlds (64 pairs), the drop doesn't repeat:** population 0.985 of control (OP1 had shown 0.845).
+- **No cause of death or birth rate changes** beyond the normal world-to-world wobble.
+- **People do fight with tools in hand more often** (59% against 40% of fights), but fights are not more frequent or
+  deadlier.
+- **So the "tools drop on the ground" law (OP1) looks safe.** Whether to make it real (nature v8) is your decision,
+  after Gemini's check.
+
 ## For you to review (nothing needs you urgently)
 - The PT1 decision itself.
 - **MO1:** whether to re-test the memory order under a new frozen plan whose threshold allows for memories filling up, or to leave it (not supported as frozen).
