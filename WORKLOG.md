@@ -289,3 +289,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 05:05 (sleep mode): MISTAKE fixed: the second morning report overwrote the first (same file); the first restored from git, the second appended below it.
 - 2026-10-28 04:47 (heartbeat): LR1 13/22 jobs, IC2 17/18. Correction: the times on my last three lines (04:45, 04:57, 05:05) were estimates and ran ahead of the clock; the true times were about 04:15-04:40 (git commit times are exact).
 - 2026-10-28 ~05:40 (heartbeat, sleep mode): IC2 first run 40653330784 NOT VALID (hard stop: maulings seen < mauled events in 15 worlds; the observer missed the surprised-bear route). Operational amendment 1: also wrap fauna.surprised; zero checks PASS again; checked on seed 19806 (3 = 3). Outputs of run 1 kept locally as output_run1_invalid; no outcome read. Re-launching.
+- 2026-10-28 05:28 (sleep mode): IC2 re-launched on GitHub: run 40664447201 (amendment 1). LR1 at 19/22 jobs.
