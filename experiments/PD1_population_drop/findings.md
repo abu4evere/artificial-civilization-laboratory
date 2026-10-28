@@ -1,4 +1,4 @@
-# PD1 — Why does population fall when made things persist? Findings (recompute by GPT and Gemini pending; not yet final)
+# PD1 — Why does population fall when made things persist? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `PD1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`).
 Read-only, on OP1's code (`code_op1`). Run on GitHub Actions (run 40606901380, `skip_zero=local`). 192 worlds: c (v7),
@@ -72,3 +72,14 @@ and baseline variation is borne out: OP1's 15% drop sat inside the range a trivi
   2. `code_v8` with zero checks;
   3. the tests;
   4. a `nature-v8` tag.
+
+## Independent recompute (27 October 2026)
+GPT and Gemini, each in a fresh chat, worked from the raw counts only, without the analysis script
+(`recompute_pd1.md`). **All three agree on every number:**
+- the gap −222 (sham −328);
+- population o ÷ c 0.985;
+- births −909;
+- illness deaths −568;
+- tools in hand at attacks 0.400 → 0.593.
+
+**Final.**

@@ -210,3 +210,9 @@ the file named.
   - Population was 15% lower (the sham was 10% lower). Adoption is not recommended until the cause is understood.
   - **For the creator:** a read-only look at why population falls (deaths by cause, births, fighting) is the natural
     next step.
+- [x] **PG0 (final):** own experience carries information about new things (error 0.072 against 0.105 shuffled). A
+  quarter of useful new kinds are lost before use. **For the creator:** how people should perceive properties (exactly,
+  or with error) before any property-learning law.
+- [x] **PD1 (final): OP1's population drop was chance** (0.985 with 64 paired worlds). **For the creator:** adopt OP1
+  ("made things drop instead of vanishing, and are picked up") as nature v8? If yes: both models consulted, `code_v8`
+  with zero checks, the tests, and a `nature-v8` tag.

@@ -36,7 +36,31 @@ Computed with Python; 20,000 replicates.
 **Against the analysis:** every number matches. The analysis lists each cause as its contribution to the gap
 (−Δdeaths); GPT lists Δdeaths. They are the same numbers with opposite signs, as stated in the findings.
 
-## Gemini (pending)
-Its code tool was unavailable: "full execution of external Python scripts on prompt attachments is currently
-unavailable". It returned a script instead of numbers. **The script is not run by the assistant.** The recompute will
-be retried in a fresh chat, and **PD1 is not final until Gemini's numbers are read from its reply.**
+## Gemini (27 October 2026; numbers read from its reply, chat https://gemini.google.com/app/e28e99fb071c82bd)
+**Earlier attempts** returned scripts, not numbers: "code execution on external uploaded files is currently
+unavailable" (these were not run by the assistant).
+
+**Input for this attempt:** a single small file, `pd1_small.csv`. It holds the same per-world counts, plus each world's
+summed yearly population over years 100–199 and the number of those years (the census, summed per world). Gemini
+computed it with 10,000 replicates.
+- **Accounting:** 192 of 192 worlds; 0 mismatches.
+- **Living at year 200:** c 7,323, o 7,101, x 6,995.
+  - o − c **−222 [−896, +484]**;
+  - x − c **−328 [−1,045, +348]**.
+- **o − c:**
+  - births 45,684 → 44,775 (−909);
+  - deaths: hunger +128, thirst −39, cold +1, illness −568, childbirth −5, violence +8, animals +1, other −213.
+- **Population, years 100–199:** c 129.849 (831,033 / 6,400), o 127.876 (813,545 / 6,362), x 124.242
+  (795,147 / 6,400); o ÷ c **0.985.**
+- **Tool share at attacks:** c 0.400 (1,185 / 2,966), o 0.593 (1,582 / 2,670), x 0.387 (1,176 / 3,040).
+- **Kills per attack:** c 0.036, o 0.044, x 0.043.
+
+**Against the analysis:** every number matches.
+
+## Verdict
+**The analysis, GPT and Gemini agree on every number:**
+- the population gap is −222, with an interval including 0, and smaller than the sham's (−328);
+- o ÷ c is 0.985 in years 100–200;
+- no cause of death differs.
+
+**The OP1 flag does not repeat.** The findings are final.
