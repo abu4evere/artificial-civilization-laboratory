@@ -70,3 +70,7 @@ Listed in `docs/autonomous_decisions.md`:
 - While building the recheck file for IC1, I read the wrong column once (0.719 instead of 0.870). Fixed before sending.
 - I deleted one line from IC2's zero-check log by mistake; restored from the full copy before committing.
 - I overwrote the first morning report (same file name) without reading it; restored it from git and put mine below it.
+
+**Update (about 05:30):** IC2's first run failed its own safety check: my observer missed one of the two ways a person
+can be mauled (a surprised bear). The check worked as designed, no result was read, and nothing is lost. I fixed the
+observer openly (amendment 1 in IC2's plan) and re-ran it: GitHub run 40664447201. LR1 is at 19 of 22 parts.
