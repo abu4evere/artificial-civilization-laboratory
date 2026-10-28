@@ -273,3 +273,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-27: NATURE v8 ADOPTED (the creator: 'go ahead'). Both models consulted (GPT 90%, Gemini 98%). code_v8 = code_op1 with ground_items default 1; NV8 zero checks ALL PASS (off = v7; v8 = OP1 arm o; live = v8; reload exact); reference hashes: live regenerated (= v8), v8 set added, v7 kept; 63 tests pass. Tag nature-v8.
 - 2026-10-27: GitHub tests workflow on nature v8 (7d295d6): success.
 - 2026-10-28 (sleep mode): creator silent > 1 h. Debate round 16 (both: LR1 first). LR1 frozen (LR1-frozen): 1,000-year v7 / v8 / sham, 32 paired seeds, descriptive flags for accumulation and demography.
+- 2026-10-28 (sleep mode): LR1 local zero checks PASS (v8 off = v7; observer read-only; conservation exact; reload exact). Launched on GitHub: run 40640605709 (96 worlds x 1,000 years).
