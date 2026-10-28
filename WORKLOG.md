@@ -278,3 +278,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 (sleep mode): IC1 local zero checks PASS (observer and wrappers read-only at 20 and 60 years; wrapper counts = law events; reload exact; fingerprint fedbb8d4).
 - 2026-10-28 (sleep mode): IC1 launched on GitHub: run 40642737865 (32 worlds x 200 years, 16 chunks, skip_zero=local). LR1 (40640605709) still running.
 - 2026-10-28: HANDOFF written (docs/HANDOFF_2026-10-28.md): the creator is switching Claude accounts. Running: LR1 run 40640605709, IC1 run 40642737865. Next assistant: fetch, analyse, findings, blind recomputes, then the language-law debate. Re-create the hourly sleep-mode heartbeat in the new session.
+- 2026-10-28 03:10: new session (creator's other Claude account) read CLAUDE.md, the handoff and the whole WORKLOG. LR1 run 2/22 chunks done; IC1 17/18. Hourly heartbeat re-created (:17, expires in 7 days).
