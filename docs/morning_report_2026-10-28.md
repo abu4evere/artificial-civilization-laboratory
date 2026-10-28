@@ -69,3 +69,4 @@ Listed in `docs/autonomous_decisions.md`:
 ## My mistakes tonight (all caught before anything was sent or published)
 - While building the recheck file for IC1, I read the wrong column once (0.719 instead of 0.870). Fixed before sending.
 - I deleted one line from IC2's zero-check log by mistake; restored from the full copy before committing.
+- I overwrote the first morning report (same file name) without reading it; restored it from git and put mine below it.
