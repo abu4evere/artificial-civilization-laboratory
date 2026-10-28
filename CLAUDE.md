@@ -1,5 +1,7 @@
 # Read this first (any assistant, any account)
 
+**Latest handoff (28 October 2026, account switch): `docs/HANDOFF_2026-10-28.md`. Read it right after this file.**
+
 The creator works with more than one assistant account. This file is the shared mind: read it, then the tail of
 `WORKLOG.md`, before doing anything. **After every real step, append one dated line to `WORKLOG.md`**, so whoever comes
 next can pick up exactly where you stopped.
@@ -50,7 +52,8 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   The Chrome extension follows one Claude account: after switching accounts, ask the creator to sign the extension
   into the current one. When typing into ChatGPT, send one paragraph (a newline sends the message early). The main chat is very long and the
   page can freeze when typing: insert the text with JavaScript (`document.execCommand('insertText', ...)` on
-  `#prompt-textarea`) and click `[data-testid="send-button"]`.
+  `div.ProseMirror[contenteditable="true"]`; `#prompt-textarea` is gone since 28 October) and click the send button
+  (`[data-testid="send-button"]`, or the round button right of the input if that is not found).
 - **Cloud runs:** studies run on GitHub Actions (`.github/workflows/cloud-run.yml`), so the creator's PC can be off.
   `gh` is at `C:\Users\User\gh\bin\gh.exe`; fetch with `python tools/ci/fetch_cloud.py <run-id> <out_dir>`.
   Run the zero checks locally first and commit `zero_local.log`, then launch with `-f skip_zero=local`. The cloud then
