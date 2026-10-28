@@ -1,0 +1,43 @@
+# Debate round 20 (28 October 2026): after IC2 and LR1, back to erosion (opinions, not sign-off)
+
+**The same text to GPT (main chat) and Gemini (ACL session); Claude as council.** The creator chose to pause language
+and return to erosion. **Code facts put to both (checked):** founders start as adults aged 16–28 with every skill at
+0.2–0.4 (`world.py`, `_make_founders`); every newborn starts at 0 (`person.py`); crafting skill grows only by making or
+play. LS1: 0.73 of useful know-how held in years 0–100 is founders'; making falls from 1 in 40 to 1 in 800 choices;
+tool use in foraging 0.318 → 0.021. Claude's question: is much of the erosion the founders' unearned head start wearing
+off, so that the real question is why world-born people cannot build up from zero? Test: founders at the world-born
+level (all skills 0) against today's founders, over 300–500 years.
+
+## Answers
+- **GPT: test the head start first; don't change habit learning yet. 85%.**
+  - "Yes, partly." But convergence would not prove erosion is only a starting effect: both could approach a low state
+    because today's laws block accumulation.
+  - Changing founders' skills is "an initial-condition intervention, not a change to the ongoing laws"; fair, but an
+    experimental arm, not a read-only audit.
+  - The habit evidence is a strong clue but does not say which single change would work; HC1 showed a plausible fix
+    can fail.
+  - Design: control (today's founders), zero-start founders, a sham; 500 years, paired seeds. **Primary: world-born
+    crafting skill in years 300–500.** Secondary: making, tool ownership, useful know-how, population, extinction.
+    Measure skill by age and experience, so founder deaths and age structure are not mistaken for learning. Include
+    extinct worlds; report survival separately.
+  - Readings: both low → a low-learning equilibrium (not proof that the head start caused everything); zero-start
+    climbs → something about the head start blocks growth; zero-start collapses → founder skills hold up survival and
+    early transmission.
+- **Gemini: the same study ("FS1"). 95%.** (Its first reply was cut off by an error; it repeated point 3 on request.)
+  - The framing is sound; founders' skills are an initial condition, "not a nature change"; the rules of the world stay
+    identical.
+  - Don't jump to habit changes: first establish whether a zero-start population converges to the same late state, to
+    give a clean baseline for later learning-rule studies.
+  - Design: 32 paired seeds, 500 years, v8; control vs zero-start. **Primary: making per adult-year and tools held per
+    adult in years 300–500.**
+
+## Council (checked against the code)
+- **Agreed by all three:** the head-start test comes first; no learning-rule change yet.
+- **Corrected (Gemini):** "zero nature-change risk" is too strong. The zero-start arm needs a new setting in a study
+  copy of the code (`founder_skill`, default = today's founders exactly), with zero checks; it is not adopted into
+  nature unless the creator decides.
+- **A risk both raised, and one more:** zero-start founders also have foraging skill 0, so they may starve early. The
+  draft therefore adds a third arm in which only the founders' crafting skill starts at 0, to separate "a head start in
+  making" from "a head start in getting food".
+- **Primary:** GPT's (world-born adults' crafting skill, by age) is primary; Gemini's (making per adult-year, tools held
+  per adult) are the key secondaries.
