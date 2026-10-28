@@ -295,3 +295,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 07:00 (heartbeat, sleep mode): blind recomputes for IC2 and LR1 NOT sent: Claude in Chrome disconnected. Prompts saved (experiments/IC2_referent_gaps/recompute/prompt.txt, experiments/LR1_long_run_v8/recompute/prompt.txt) with the one-file CSVs; retry at the next heartbeat. Morning report updated.
 - 2026-10-28 07:40 (heartbeat, sleep mode): no runs in progress; Chrome still disconnected, so the IC2 and LR1 blind recomputes wait (prompts ready). Nothing else started: the next step (which law could create a need for signals) is the creator's decision.
 - 2026-10-28 08:40 (heartbeat): no runs; Chrome still disconnected; IC2 and LR1 recomputes still waiting.
+- 2026-10-28 09:40 (heartbeat): no runs; Chrome still disconnected; IC2 and LR1 recomputes still waiting.
