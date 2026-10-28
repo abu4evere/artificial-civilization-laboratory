@@ -71,3 +71,7 @@ As GPT cautioned, counts are not amounts of information.
 
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw numbers only, the B1 and B2 numbers. Recorded only from their actual replies.
+
+## Note (28 October 2026, before the recompute)
+"Every listener already knew water of their own" in Q1 is slightly too strong: 11 of the 240,709 accepted water places
+were new (and first options) for the listener. Shown as 0.000 at three decimals. Nothing else changes.
