@@ -1,0 +1,5 @@
+seed 501, 20 years: code_op1 with the setting 0 equals code_v7: yes; observer read-only (arms o and c): yes; the setting acts: yes; the sham acts: yes; accounting mismatches: none; deaths (o) 67.0, attacks 14.0
+seed 601, 60 years: code_op1 with the setting 0 equals code_v7: yes; observer read-only (arms o and c): yes; the setting acts: yes; the sham acts: yes; accounting mismatches: none; deaths (o) 222.0, attacks 69.0
+arm o, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_op1 fingerprint: 361d6a61538c2da740bb93d0aa2201b71a9f302c9d0212bd445f231edbca6b2b
+All: PASS
