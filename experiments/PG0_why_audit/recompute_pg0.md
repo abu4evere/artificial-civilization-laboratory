@@ -24,11 +24,16 @@ Computed with Python; 20,000 replicates.
 
 **Against the analysis:** every number matches.
 
-## Gemini (pending)
-- **First attempt:** an error ("I encountered an error doing what you asked").
-- **Retry:** "The direct execution environment is currently unavailable." It returned a Python script instead of
-  numbers.
+## Gemini (27 October 2026; numbers read from its reply, third attempt, chat https://gemini.google.com/app/bb0b1f16926f5fad)
+The first two attempts failed: a tool error, then a script returned instead of numbers (`recompute_pg0.md` history).
+The third computed the results, with the exact sums shown, and 100,000 replicates.
+- **(1)** puzzle-led 291 / 397,147 ≈ 0.0007; led 40 / 291 = 0.1375; free 40,059 / 396,856 = 0.1009; led − free
+  **0.0365 [0.0026, 0.0722].**
+- **(2)** 85,136 first uses; nearest-neighbours 6,100.3534 / 85,136 = **0.0717**; shuffled 8,965.2441 / 85,136 =
+  **0.1053**; zero 12,961.7649 / 85,136 = 0.1522; shuffled − nearest **0.0337 [0.0329, 0.0343].**
+- **(3)** (9,939 + 171) / 40,093 = **0.2522.**
 
-**The script is not run by the assistant.** Running it would make the result the assistant's computation, not an
-independent one. Gemini's recompute will be retried in a fresh chat, and **PG0 is not final until its numbers are read
-from its reply.**
+**Against the analysis:** every number matches.
+
+## Verdict
+**The analysis, GPT and Gemini agree on every number.** The findings are final.

@@ -1,4 +1,4 @@
-# PG0 — Does curiosity find useful things, and what does a new thing's zero start cost? Findings (recompute by GPT and Gemini pending; not yet final)
+# PG0 — Does curiosity find useful things, and what does a new thing's zero start cost? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `PG0-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`). Run
 on GitHub Actions (run 40607486899, `skip_zero=local`). 32 worlds on nature v7, LP, seeds 19501–19532, 200 years. Mean
@@ -60,3 +60,13 @@ not use it: every new kind starts at worth 0. Curiosity-led play exists but is v
   later candidate.
 - **The quarter of new kinds lost unused** mostly vanish at the carry limit ("gone from hand"). OP1's law would leave
   them on the ground instead.
+
+## Independent recompute (27 October 2026)
+GPT and Gemini (on its third attempt), each in a fresh chat, worked from the raw counts only, without the analysis
+script (`recompute_pg0.md`). **All three agree on every number:**
+- led − free +0.0365;
+- errors 0.0717 / 0.1053 / 0.1522;
+- the gain +0.0337 [0.0329, 0.0343];
+- lost before use 0.2522.
+
+**Final.**
