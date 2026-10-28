@@ -1,4 +1,4 @@
-# IC2 — Where is there a real information gap: water, game or danger? Findings (NOT FINAL: blind recompute pending)
+# IC2 — Where is there a real information gap: water, game or danger? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `IC2-frozen` (operational note 1; **operational amendment 1**: the first run, 40653330784, failed a hard stop
 because the observer missed the surprised-bear route to a mauling; fixed before any outcome was read). Decided and
@@ -66,3 +66,10 @@ moments in repeated pairs:
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw per-world counts, the Q1 and Q3 numbers. Recorded only from their actual
 replies.
+
+## Independent recompute (28 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world counts only, without the analysis script
+(`recompute_ic2.md`). **All three agree on every key number:** game 0.4036 decision-relevant gaps per adult-year
+(shared 1.9962; repeated pairs 0.8071); water and danger 0; no referent workable.
+
+**Final.**

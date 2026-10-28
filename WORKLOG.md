@@ -296,3 +296,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-28 07:40 (heartbeat, sleep mode): no runs in progress; Chrome still disconnected, so the IC2 and LR1 blind recomputes wait (prompts ready). Nothing else started: the next step (which law could create a need for signals) is the creator's decision.
 - 2026-10-28 08:40 (heartbeat): no runs; Chrome still disconnected; IC2 and LR1 recomputes still waiting.
 - 2026-10-28 09:40 (heartbeat): no runs; Chrome still disconnected; IC2 and LR1 recomputes still waiting.
+- 2026-10-28 11:59: Chrome signed in by the creator. IC2 FINAL: GPT (fresh chat 6ae21b12) and Gemini (fresh chat 4068de4bb376b35b) blind recomputes match every key number. INDEX, OPEN_DECISIONS updated; tag IC2-done. LR1: GPT recompute (6ae21b78) matches; Gemini pending.

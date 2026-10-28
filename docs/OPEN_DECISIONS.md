@@ -225,3 +225,9 @@ the file named.
   signals learned while both see the same water, replacing direct transfer of water places; no map). A design caution
   from IC1: water is almost always in view, so such a signal would rarely tell the listener anything new. Next: GPT and
   Gemini debate it first (`experiments/IC1_information_channels/findings.md`).
+- [ ] **After IC2 (final, 28 October 2026; recomputed by GPT and Gemini): no referent is workable for a first signal
+  law.** Water and game are nearly always in view when people talk (they talk only within 1 tile); game comes closest
+  (0.40 decision-relevant gaps per adult-year; the screen needs 1); danger has no gaps. **For the creator:** keep the
+  language line paused, or consider a law change that would create a real information need (for example, being heard
+  at a distance), judged against human evidence and never tuned. GPT and Gemini to be asked first
+  (`experiments/IC2_referent_gaps/findings.md`).
