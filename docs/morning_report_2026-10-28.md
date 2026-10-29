@@ -106,3 +106,20 @@ observer openly (amendment 1 in IC2's plan) and re-ran it: GitHub run 4066444720
 | decision | GPT | Gemini | mine |
 |---|---|---|---|
 | EX1, experience telling instead of habit copying (nature-change study; adoption is yours) | 85% | 95% | 75% |
+
+# Fourth update (early 29 October, sleep mode)
+
+## In plain words
+1. **EX1 is final: it did not work, and that is a real finding.** When people tell each other one real experience
+   instead of copying whole habit tables, habits are just as inflated, and nothing else changes (no harm). So
+   **copying was never the cause**; it was only the road. GPT and Gemini both expected it to work (80–85%); so did I.
+2. **What really happens:** people's habits only grow for things they do. Whatever they do early gets practised, grows,
+   and wins; making is rarely done, so it never grows. A "rich-get-richer" trap.
+3. **GPT and Gemini both now suggest a curiosity law:** a pull towards things you have rarely tried.
+4. **I did not start it tonight, on purpose.** How strong curiosity should be is a number that could easily become
+   tuning, and curiosity is your own idea. **That one is for you to decide** (ideally anchored to how much time young
+   people really spend exploring and playing).
+
+## Waiting for you
+1. **Curiosity law:** go ahead? how strong (anchored to real evidence)?
+2. Language: still paused until people have a real reason to tell each other things (e.g. calling from afar).

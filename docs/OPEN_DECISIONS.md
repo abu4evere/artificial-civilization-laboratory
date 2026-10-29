@@ -240,3 +240,8 @@ the file named.
 - [x] **EX1 (final, 29 October 2026): not supported.** Experience telling instead of whole-table copying leaves the
   over-valuation unchanged (no harm, no flags), so copying is not its cause. No nature-v9 candidate. Next (debate round
   25): the learning rule itself (practice starvation; the look-ahead) (`experiments/EX1_experience_copying/findings.md`).
+- [ ] **A curiosity law (debate round 25; both models chose it after EX1):** a drive towards actions a person has rarely
+  tried, scaled by the existing curiosity gene, to break the rich-get-richer loop that starves making of practice.
+  **For the creator:** how strong may curiosity be? Both models' versions hide a scale; the council suggests anchoring
+  it to human evidence (how much time young people spend exploring and playing) before any study is frozen
+  (`docs/debate_after_ic2_lr1_2026-10-28.md`, round 25).

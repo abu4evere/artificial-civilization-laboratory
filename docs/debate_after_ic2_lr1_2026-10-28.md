@@ -85,3 +85,22 @@ copied habits are weighted.
   and is not inherited. The learner's own values give the look-ahead.
 - **Council:** all adopted; an exact-step zero check added. **Corrected:** Gemini again said "exact log replays"; the
   runs are new worlds with a read-only observer.
+
+# Debate round 25 (29 October 2026, sleep mode): after EX1 (copying is not the cause), what next?
+**Put to both:** EX1's result; HL1 (rewards flat, look-ahead 0.06 → 1.26; making 258 times fewer updates;
+rich-get-richer 0.83); VC1 (the max gap is 0.35 of the bias). Council reading: practice starvation in a learner whose
+values start at 0 and rise only with use. Options: (A) Expected-SARSA look-ahead; (B) a curiosity law towards rarely
+tried actions, scaled by the existing curiosity gene; (C) a read-only decomposition of the other 0.65 first.
+- **GPT: (B), 85% valid, but only 45% that it meaningfully reduces practice starvation.** A curious person sometimes
+  samples among their least-practised feasible actions, "using the existing curiosity trait as the probability";
+  same rule for every action; fading with experience; feasibility and safety kept. Primary: the share of feasible
+  situation-action pairs that get at least one real learning update, against v8. Expected SARSA as a separate later
+  study. "Record our failed EX1 prediction ... an important scientific result, not a setback to hide."
+- **Gemini: (B), 85%.** A novelty pull curiosity ÷ √(N(s,a) + 1) added to each option's score, which it calls
+  "parameter-free".
+- **Council (checked):** both proposals still hide a scale. Gemini's bonus is added to choice scores whose size it fixes
+  implicitly (an invented unit). GPT's, taken literally, would make a person with curiosity 0.9 pick an untried
+  action 90% of the time. **How strongly curiosity pulls is the kind of number that becomes tuning,** and curiosity is
+  the creator's own interest ("laws for learning 'why'"). So the design is **not frozen in sleep mode**: it goes to the
+  creator, with a possible anchor to settle first (for example, the share of time young foragers spend in play and
+  exploration, from human evidence).
