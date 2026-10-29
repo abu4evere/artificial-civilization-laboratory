@@ -1,4 +1,4 @@
-# FS1 — Is the erosion the founders' head start wearing off? Findings (NOT FINAL: blind recompute pending)
+# FS1 — Is the erosion the founders' head start wearing off? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `FS1-frozen` (operational note 1); **signed off by the creator** ("yessir", 28 October 2026). An
 initial-condition study: `code_fs1` = `code_v8` + one setting, `founder_skill` (`v8_to_fs1.diff`). Run on GitHub
@@ -77,3 +77,10 @@ World-born adults' crafting skill / mean living, by century:
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw per-world numbers (the primary's sums per arm and seed; extinctions by year
 100). Recorded only from their actual replies.
+
+## Independent recompute (28 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world numbers only, without the analysis script
+(`recompute_fs1.md`). **All three agree:** z − t +0.0013 (converges); c − t +0.0052 (not shown); 1 early extinction in
+z, 0 in t; no collapse.
+
+**Final.**

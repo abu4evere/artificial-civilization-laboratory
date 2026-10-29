@@ -665,3 +665,8 @@ work today, and moments when two people see the same water while talking are com
 (water, game, danger) is workable for a first signal law today: people talk only when together, so they already see
 what the other sees. **Next: the creator's decision** (keep language paused, or a law change that creates a real need
 for information, judged against human evidence).
+
+**FS1 done** (28 October; recomputed blind by GPT and Gemini). The founders' head start does not explain the erosion:
+founders with no skills lead to the same late world. Even without a head start, world-born people become skilled early
+(0.43) and lose it century by century (0.08 by years 400–500) as making falls about tenfold. The erosion is made by the
+world's own dynamics.

@@ -18,6 +18,20 @@ Recorded from its reply:
 | extinct by year 100 t / z / c / x | 0 / 1 / 0 / 0 | 0 / 1 / 0 / 0 | yes |
 | collapse flag | not raised | no | yes |
 
-## Gemini
+## Gemini (fresh chat https://gemini.google.com/app/be70e73ac7dc615b)
 
-Pending (fresh chat https://gemini.google.com/app/be70e73ac7dc615b). Recorded only from its actual reply.
+Recorded from its reply (it took several minutes):
+
+| measure | analysis | Gemini | match |
+|---|---|---|---|
+| pooled skill t / z / c / x | 0.0946 / 0.0959 / 0.0998 / 0.0992 | 0.0946 / 0.0959 / 0.0998 / 0.0992 | yes |
+| contributing worlds t / z / c / x | 31 / 30 / 30 / 29 | 31 / 30 / 30 / 29 | yes |
+| **z − t** | **+0.0013 [−0.0082, +0.0116]: converges** | 0.0013 [−0.0083, 0.0118]: converges | yes |
+| c − t | +0.0052 [−0.0025, +0.0131]: not shown | 0.0052 [−0.0026, 0.0129]: not shown | yes |
+| x − t | +0.0046 [−0.0026, +0.0128] | 0.0046 [−0.0028, 0.0129] | yes |
+| extinct by year 100 t / z / c / x | 0 / 1 / 0 / 0 | 0 / 1 / 0 / 0 | yes |
+| collapse flag | not raised | no | yes |
+
+Interval ends differ in the fourth decimal, from different bootstrap draws.
+
+**Verdict:** every key number and both readings agree across the analysis, GPT and Gemini. The findings are final.

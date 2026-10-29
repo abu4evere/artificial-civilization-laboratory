@@ -234,3 +234,6 @@ the file named.
 - [x] **LR1 (final, 28 October 2026): nature v8 is stable over 1,000 years** (no accumulation, no demographic flag).
   Described: every version still erodes over centuries (population halves by year 500; tools held fall), as M1 found
   (`experiments/LR1_long_run_v8/findings.md`).
+- [x] **FS1 (final, 28 October 2026): the founders' head start does not explain erosion.** With no head start, world-born
+  people still reach high skill early and lose it over centuries as making falls tenfold. Next (debate round 23): find
+  when and how making's value collapses in the first centuries (`experiments/FS1_founder_start/findings.md`).
