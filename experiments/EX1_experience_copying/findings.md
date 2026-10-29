@@ -1,4 +1,4 @@
-# EX1 — Experience telling instead of habit copying: does it correct the over-valuation? Findings (NOT FINAL: blind recompute pending)
+# EX1 — Experience telling instead of habit copying: does it correct the over-valuation? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `EX1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`).
 A nature-change study: `code_ex1` = `code_v8` + one setting, `talk_copy` (`v8_to_ex1.diff`). Run on GitHub Actions
@@ -56,3 +56,10 @@ GPT's and Gemini's expectations (both chose this law, 80% and 85%) are not suppo
 
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw per-world numbers. Recorded only from their actual replies.
+
+## Independent recompute (29 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world numbers only, without the analysis script
+(`recompute_ex1.md`). **All three agree:** improvement −0.0064 (not supported); G e − v +0.0004 (no harm); population
+ratio 0.9921; no flags.
+
+**Final.**

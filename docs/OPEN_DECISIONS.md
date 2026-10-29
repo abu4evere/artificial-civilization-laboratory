@@ -237,3 +237,6 @@ the file named.
 - [x] **FS1 (final, 28 October 2026): the founders' head start does not explain erosion.** With no head start, world-born
   people still reach high skill early and lose it over centuries as making falls tenfold. Next (debate round 23): find
   when and how making's value collapses in the first centuries (`experiments/FS1_founder_start/findings.md`).
+- [x] **EX1 (final, 29 October 2026): not supported.** Experience telling instead of whole-table copying leaves the
+  over-valuation unchanged (no harm, no flags), so copying is not its cause. No nature-v9 candidate. Next (debate round
+  25): the learning rule itself (practice starvation; the look-ahead) (`experiments/EX1_experience_copying/findings.md`).

@@ -670,3 +670,7 @@ for information, judged against human evidence).
 founders with no skills lead to the same late world. Even without a head start, world-born people become skilled early
 (0.43) and lose it century by century (0.08 by years 400–500) as making falls about tenfold. The erosion is made by the
 world's own dynamics.
+
+**EX1 done** (29 October; recomputed blind). Replacing whole-table habit copying with people telling one real
+experience changed nothing: copying is not what inflates habits. The source is people's own learning (practice
+starvation and the look-ahead). Next: the learning rule itself.
