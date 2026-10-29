@@ -253,3 +253,6 @@ the file named.
   - **Decided (29 October 2026, under the creator's delegation, after debate round 27):** strength A (the play
     instinct's 0.3 × curiosity × (1 − hunger)), fading 1/(1 + n), primary = the spread of real practice. A frozen
     nature-change study (CU1) to be drafted and shown to the creator before it runs.
+- [x] **PL1 (final, 29 October 2026):** ACL's young children play below the forager range (0.068 vs 0.09–0.58), by
+  choice, not for lack of things; play is where children's crafting skill comes from. CU1's strength was frozen before
+  this and is not adjusted (`experiments/PL1_child_play/findings.md`).

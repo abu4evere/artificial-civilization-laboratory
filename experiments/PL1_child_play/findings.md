@@ -1,4 +1,4 @@
-# PL1 — How much do ACL's children play, against forager children? Findings (NOT FINAL: blind recompute pending)
+# PL1 — How much do ACL's children play, against forager children? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `PL1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`).
 Read-only on nature v8. Run on GitHub Actions (run 40818054966, `skip_zero=local`). 32 worlds (seeds 20101–20132; LP,
@@ -53,3 +53,10 @@ the range). The smoke world was 20 years from founding, not data; the real 200-y
 
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw per-world counts (ages 3–6). Recorded only from their actual replies.
+
+## Independent recompute (29 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world counts only, without the analysis script
+(`recompute_pl1.md`). **All three agree:** ages 3–6 play 0.0684 [0.0655, 0.0716] (below the human range); declining with
+age; bottleneck choice (0.0619 unavailable).
+
+**Final.**
