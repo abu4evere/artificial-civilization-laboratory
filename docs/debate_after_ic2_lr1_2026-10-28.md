@@ -135,3 +135,13 @@ the strength heritable and let it evolve.
      choice (GPT's reason adopted; Gemini's learning-rate fading not adopted: it borrows a rate from another process).
   3. **Primary: GPT's** (the spread of real practice), not Gemini's (a making target would steer toward an outcome).
   4. **C later:** a heritable strength, once A is understood.
+
+# Debate round 28 (29 October 2026, sleep mode): after CU1, a safe step while the creator decides on v9
+**Proposal:** LC1, CU1's code over 1,000 years (v8 / curiosity / sham), primary = world-born adults' crafting skill in
+years 800–999, c − v, FS1's ±0.012 margin.
+- **GPT: yes, 90%.** Keep the primary and margin; report the worlds and adult-years contributing late (survivor
+  weighting); add each arm's change from years 100–199 to 800–999 to tell slower erosion from a parallel shift. 55%
+  that curiosity meets the lasting-improvement threshold. "The creator alone decides adoption, regardless of the
+  outcome."
+- **Gemini: yes, 95%.** Add a century-by-century log-skill slope (slower decay vs a higher floor).
+- **Council:** all adopted (the slope as described, not a gate).
