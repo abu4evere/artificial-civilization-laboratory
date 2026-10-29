@@ -317,3 +317,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 00:08 (sleep mode): debate round 25: both chose a curiosity law (GPT 85%/45%, Gemini 85%); council: both hide a strength scale; NOT frozen in sleep mode (the scale risks tuning; curiosity is the creator's interest); put to the creator (OPEN_DECISIONS, morning report). No study running now.
 - 2026-10-29 00:11 (sleep mode): debate round 26: both approve PL1 (read-only child-play audit against forager evidence; GPT 90%, Gemini 95%). PL1 frozen (PL1-frozen), signed off under sleep-mode autonomy (80%).
 - 2026-10-29 00:29: PL1 built (runner, analysis before data, operational note 1); smoke OK; local zero checks PASS. Launching on GitHub.
+- 2026-10-29 00:30: PL1 launched on GitHub: run 40818054966 (32 worlds x 200 years).
