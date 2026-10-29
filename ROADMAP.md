@@ -674,3 +674,8 @@ world's own dynamics.
 **EX1 done** (29 October; recomputed blind). Replacing whole-table habit copying with people telling one real
 experience changed nothing: copying is not what inflates habits. The source is people's own learning (practice
 starvation and the look-ahead). Next: the learning rule itself.
+
+**PL1 and CU1 done** (29 October; both recomputed blind). PL1: ACL's young children play below forager children
+(6.8% vs 9–58%), by choice; play is where their crafting skill comes from. **CU1: the first fix that works.** A curiosity
+pull towards rarely tried actions, at the strength nature already gives play, widens practice and raises making by
+57% and crafting skill by 18%, with no harm. **Next: the creator decides on nature v9; then a long-run check.**

@@ -256,3 +256,7 @@ the file named.
 - [x] **PL1 (final, 29 October 2026):** ACL's young children play below the forager range (0.068 vs 0.09–0.58), by
   choice, not for lack of things; play is where children's crafting skill comes from. CU1's strength was frozen before
   this and is not adjusted (`experiments/PL1_child_play/findings.md`).
+- [ ] **Adopt the curiosity pull (CU1) as nature v9?** CU1 (final, 29 October 2026; recomputed by GPT and Gemini):
+  supported, no flags; practice spreads, making × 1.57, crafting skill × 1.18, population × 1.025. If yes: both models
+  consulted, `code_v9` with zero checks, the tests, a `nature-v9` tag; then a long-run check and option C (a heritable
+  strength) (`experiments/CU1_curiosity/findings.md`).

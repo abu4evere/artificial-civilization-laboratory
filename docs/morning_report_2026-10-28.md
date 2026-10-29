@@ -134,3 +134,19 @@ observer openly (amendment 1 in IC2's plan) and re-ran it: GitHub run 4066444720
    tried, with the same strength nature already gives play, fading as it is tried more. All safety checks passed.
    Success = people practising a wider range of actions, clearly more than chance drift. **Adopting it is your
    decision** when the results are in.
+
+# Sixth update (29 October, early morning)
+
+## 🎉 CU1 worked: the first fix that passes its test
+- People **practise a wider range of actions** than in today's nature, clearly more than chance (rechecked blind by
+  GPT and Gemini; both match every number).
+- **Making goes up 57%**, young adults' **crafting skill goes up 18%**, and nothing gets worse (population slightly up,
+  fewer worlds die out).
+- The curiosity is honest: the same pull for every action, at the strength nature already gives play, and never
+  adjusted after seeing results.
+- **It is a step, not the cure:** making is still far below the first century's level, and 200 years cannot show
+  whether knowledge now builds up over centuries.
+
+## Your decision
+**Make the curiosity pull part of nature (v9)?** If yes, I consult GPT and Gemini, build v9 with all checks and tests,
+and then run a long check over centuries.

@@ -1,4 +1,4 @@
-# CU1 — A curiosity law: does a pull towards the rarely tried break the practice trap? Findings (NOT FINAL: blind recompute pending)
+# CU1 — A curiosity law: does a pull towards the rarely tried break the practice trap? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `CU1-frozen` (operational note 1); **signed off by the creator** ("yea draft it and run on github", after
 delegating the strength decision; debate round 27). A nature-change study: `code_cu1` = `code_v8` + one setting,
@@ -61,3 +61,10 @@ GPT gave 55% that the law would meaningfully reduce practice starvation; Gemini 
 
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw per-world numbers. Recorded only from their actual replies.
+
+## Independent recompute (29 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world numbers only, without the analysis script
+(`recompute_cu1.md`). **All three agree:** practice spread c − v +0.0182 (supports; above the sham's band); no flags
+(population × 1.0245); making 0.0483 → 0.0758 per adult-year.
+
+**Final.**

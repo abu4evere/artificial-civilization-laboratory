@@ -20,6 +20,23 @@ Recorded from its reply:
 | making per adult-year v / c, c − v | 0.0483 / 0.0758, +0.0275 [+0.0227, +0.0320] | 0.0483 / 0.0758, +0.0275 [0.0227, 0.0320] | yes |
 | make share practised v / c | 0.0550 / 0.0828 | 0.0550 / 0.0828 | yes |
 
-## Gemini
+## Gemini (fresh chat https://gemini.google.com/app/4b0f081f500eb796)
 
-Pending (fresh chat https://gemini.google.com/app/4b0f081f500eb796). Recorded only from its actual reply.
+Recorded from its reply:
+
+| measure | analysis | Gemini | match |
+|---|---|---|---|
+| practice spread v / c / x | 0.2974 / 0.3156 / 0.2936 | 0.2974 / 0.3156 / 0.2936 | yes |
+| **c − v** | **+0.0182 [+0.0157, +0.0205]** | 0.0182 [0.0156, 0.0205] | yes |
+| x − v | −0.0038 [−0.0077, −0.0003] | −0.0038 [−0.0077, −0.0002] | yes |
+| rule | supports | supports | yes |
+| extinct v / c / x | 2 / 1 / 3 | 2 / 1 / 3 | yes |
+| population ratio c / v | 1.025 | 1.0245 | yes |
+| flags | none | not flagged | yes |
+| making per adult-year v / c, c − v | 0.0483 / 0.0758, +0.0275 [+0.0227, +0.0320] | 0.0483 / 0.0758, 0.0275 [0.0226, 0.0321] | yes |
+| make share practised v / c | 0.0550 / 0.0828 | 0.0550 / 0.0828 | yes |
+
+Interval ends differ in the fourth decimal, from different bootstrap draws.
+
+**Verdict:** every key number and the verdict (supports; no flags) agree across the analysis, GPT and Gemini. The
+findings are final.

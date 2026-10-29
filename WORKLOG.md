@@ -327,3 +327,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 01:54 (sleep mode): CU1 launched on GitHub: run 40826056140 (96 worlds x 200 years).
 - 2026-10-29 03:23 (sleep mode): CU1 run 40826056140 fetched (96 worlds), analysed, valid. SUPPORTED: practice spread c-v +0.0182 [+0.0157,+0.0205] (sham -0.0038 [-0.0077,-0.0003]); no flags (pop x1.025; extinct 1 vs 2). Making per adult-year x1.57; crafting skill x1.18. Findings written (not final); recompute file built.
 - 2026-10-29 03:26 (sleep mode): CU1 GPT blind recompute (6ae2f491) matches every number and the verdict; Gemini pending (4b0f081f500eb796).
+- 2026-10-29 03:26 (sleep mode): CU1 FINAL: Gemini (4b0f081f500eb796) matches GPT and the analysis (supports; no flags). INDEX, OPEN_DECISIONS, ROADMAP, morning report updated; tag CU1-done. Adoption as v9 left to the creator (asked in the morning report). No run in progress.
