@@ -250,3 +250,6 @@ the file named.
     0.3 × curiosity), checked against PL1's comparison with forager children; (B) fit it to human exploration data
     (close to tuning); (C) let it evolve through the curiosity gene. The assistant recommends A, then C later. Waiting
     for the creator's answer; PL1 running.
+  - **Decided (29 October 2026, under the creator's delegation, after debate round 27):** strength A (the play
+    instinct's 0.3 × curiosity × (1 − hunger)), fading 1/(1 + n), primary = the spread of real practice. A frozen
+    nature-change study (CU1) to be drafted and shown to the creator before it runs.

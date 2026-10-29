@@ -116,3 +116,22 @@ Proposal: PL1, a read-only audit of how much ACL's children play, by age, agains
 - **Gemini: yes, 95%.** The same key point: separate "nothing to play with" from "available but out-competed".
 - **Council:** all adopted. **Corrected (again):** Gemini says "deterministic decision logs"; the runs are new worlds
   with a read-only observer.
+
+# Debate round 27 (29 October 2026): the curiosity law's strength (the creator delegated the decision)
+The creator: "i will say yes to the curiosity but honestly i do not know where strength should come from"; then "ask
+gemini and gpt then you decide". Options put to both: (A) borrow the play instinct's existing strength, 0.3 × curiosity
+× (1 − hunger), for a never- or rarely-tried action, fading as 1/(1 + n); (B) fit the strength to human data; (C) make
+the strength heritable and let it evolve.
+- **GPT: A now, C later. 85% valid; 55% that it meaningfully reduces practice starvation.** 1/(1 + n) "is a design
+  choice, but a defensible one"; prefers it to fading by the TD learning rate, "which governs value updating rather
+  than curiosity". Primary: the share of feasible situation–action pairs that get at least one real learning update in
+  years 100–200, against v8; making, skill, returns, population and extinction secondary. Count experience, not mere
+  availability. **"Don't use PL1 results to adjust the 0.3 strength after seeing them."**
+- **Gemini: A now, C later. 85%.** Prefers fading by the learning rate ((1 − 0.05)^n or 1/(1 + 0.05 n)). Primary: a
+  threefold rise in making per adult-year, with population and survival gates.
+- **Decision (the assistant, under the creator's delegation, 29 October 2026):**
+  1. **Strength: A**, the play instinct's 0.3 × curiosity × (1 − hunger); never adjusted after seeing PL1 or any result.
+  2. **Fading: 1/(1 + n)**, n = the person's own tries of that action in that situation; recorded openly as a design
+     choice (GPT's reason adopted; Gemini's learning-rate fading not adopted: it borrows a rate from another process).
+  3. **Primary: GPT's** (the spread of real practice), not Gemini's (a making target would steer toward an outcome).
+  4. **C later:** a heritable strength, once A is understood.

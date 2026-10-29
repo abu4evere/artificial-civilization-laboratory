@@ -319,3 +319,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 00:29: PL1 built (runner, analysis before data, operational note 1); smoke OK; local zero checks PASS. Launching on GitHub.
 - 2026-10-29 00:30: PL1 launched on GitHub: run 40818054966 (32 worlds x 200 years).
 - 2026-10-29 00:33: the creator said yes to a curiosity law, unsure of the strength's source. Options A (reuse the play instinct's strength, checked by PL1), B (fit to human data), C (evolve via the gene) put to the creator; A recommended.
+- 2026-10-29 01:12: the creator delegated the curiosity-strength decision ('ask gemini and gpt then you decide'). Round 27: both A now, C later (GPT 85%/55%, Gemini 85%). Decided: A, fading 1/(1+n), GPT's primary (practice spread). CU1 to be drafted for the creator.
