@@ -1,0 +1,6 @@
+arm v8, seed 501, 20 years: identical with and without the observer and wrappers (state and random numbers): yes; wrapper-vs-law mismatches: none; avail_3_6 18095, play_3_6 2296, play_handler_kids 3270, weeks_3_6 18845
+arm v8, seed 601, 60 years: identical with and without the observer and wrappers (state and random numbers): yes; wrapper-vs-law mismatches: none; avail_3_6 61844, play_3_6 6014, play_handler_kids 7812, weeks_3_6 64263
+arm v8, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v8 fingerprint: fedbb8d41d32e6f791a23b903c49ae3c225d25dc35715715fc42c6819ecca16b
+All: PASS
+

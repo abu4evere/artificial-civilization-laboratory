@@ -57,3 +57,18 @@ Age bands (completed years): **1–2, 3–6, 7–12, 13–18** (children under 1
 ## Sign-off (29 October 2026)
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). GPT 90%, Gemini 95%; the assistant's
 estimate is 80%. Read-only: no change to nature. Logged in `docs/autonomous_decisions.md`.
+
+## Operational note 1 (29 October 2026, after freezing, before any data)
+How the code (`run_pl1.py`, `analyse_pl1.py`) reads the text where it left a choice; checked on 20-year smoke worlds
+(seeds 9980 and 9981; not data). Nothing in the plan or its readings was changed.
+1. **Available** = `play` was among the options returned by `thought.steer` for that person in that week. If a person's
+   options were empty (they rest), play counts as unavailable.
+2. **Chosen** = the action passed to `actions.perform`. The check: play carried out by children (ages 1–18) =
+   play chosen by them, summed over bands (a mismatch counter that must be 0).
+3. **Crafting skill** gains are attributed by `p.doing` at the time of the gain (play, make, or other). Gains at
+   other ages are shown as "infants and 19+".
+4. **Survivors (Q4):** a child counts for a band if they were alive at the band's upper age + 1 (for example, alive at
+   their 7th birthday for 3–6), or the world ended later.
+5. In the smoke worlds children aged 1–2 never had play available (they hold nothing); this is reported, not changed.
+6. **The zero checks passed locally** (`zero_local.log`): identical state and random numbers with and without the
+   observer at 20 and 60 years; reload exact; wrapper counts equal the law; fingerprint fedbb8d4.
