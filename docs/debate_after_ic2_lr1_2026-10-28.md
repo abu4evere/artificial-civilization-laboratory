@@ -104,3 +104,15 @@ tried actions, scaled by the existing curiosity gene; (C) a read-only decomposit
   the creator's own interest ("laws for learning 'why'"). So the design is **not frozen in sleep mode**: it goes to the
   creator, with a possible anchor to settle first (for example, the share of time young foragers spend in play and
   exploration, from human evidence).
+
+# Debate round 26 (29 October 2026, sleep mode): a safe step while the curiosity law waits
+**Put to both:** the council's objection to their curiosity designs (a hidden strength scale); the code fact that ACL
+already has a play instinct that builds crafting skill; the human anchor (Lew-Levy et al. 2022: play is 9–58% of time
+at ages 3–6 in 12 forager societies, then declines; Lew-Levy et al. 2020: 24.2% for Hadza and BaYaka aged 3–18).
+Proposal: PL1, a read-only audit of how much ACL's children play, by age, against that range.
+- **GPT: yes, 90%.** Agrees to reject both curiosity designs ("both introduced an unjustified strength scale").
+  Separate availability from choice; measure where crafting skill comes from. Keep the human range as context, not an
+  equivalence test (different denominators). Report play among children who survive each band.
+- **Gemini: yes, 95%.** The same key point: separate "nothing to play with" from "available but out-competed".
+- **Council:** all adopted. **Corrected (again):** Gemini says "deterministic decision logs"; the runs are new worlds
+  with a read-only observer.
