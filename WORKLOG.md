@@ -325,3 +325,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 01:51 (sleep mode): PL1 FINAL: GPT (6ae2de64) and Gemini (e08a8536e74b4664) blind recomputes match every number. INDEX, OPEN_DECISIONS updated; tag PL1-done. CU1 zero checks still running locally.
 - 2026-10-29 01:54 (sleep mode): CU1 built: code_cu1 (v8_to_cu1.diff), runner, analysis (before data), operational note 1; smoke OK; local zero checks PASS (fingerprint 12bdc869). Launching on GitHub (creator: 'run cu1 on github').
 - 2026-10-29 01:54 (sleep mode): CU1 launched on GitHub: run 40826056140 (96 worlds x 200 years).
+- 2026-10-29 03:23 (sleep mode): CU1 run 40826056140 fetched (96 worlds), analysed, valid. SUPPORTED: practice spread c-v +0.0182 [+0.0157,+0.0205] (sham -0.0038 [-0.0077,-0.0003]); no flags (pop x1.025; extinct 1 vs 2). Making per adult-year x1.57; crafting skill x1.18. Findings written (not final); recompute file built.
