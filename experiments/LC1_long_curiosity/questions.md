@@ -41,3 +41,13 @@ v (`curiosity_pull` 0 = v8), c (`curiosity_pull` 1), x (sham).
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). GPT 90%, Gemini 95%; the assistant's
 estimate is 80%. No change to live nature; adoption of v9 stays the creator's decision. Logged in
 `docs/autonomous_decisions.md`.
+
+## Operational note 1 (29 October 2026, after freezing, before any data)
+1. **The runner** (`run_lc1.py`) imports CU1's runner unchanged and sets only the years (1,000), seeds, smoke seeds,
+   jobs and output folder. The code and observer are CU1's (fingerprint 12bdc869, the same as CU1).
+2. **Windows:** "years 100–199" and "years 800–999" are the yearly censuses at the ends of those years; a world that has
+   died out adds nothing to skill sums and 0 to population.
+3. **The log-skill slope** is a least-squares line through each arm's pooled skill per century (centuries with data),
+   in log units per century; described only.
+4. **The zero checks passed locally** (`zero_local.log`), re-run for this runner. Smoke worlds (15 years, seed 9993)
+   showed the analysis runs; they were not data.

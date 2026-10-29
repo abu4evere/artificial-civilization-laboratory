@@ -1,0 +1,6 @@
+seed 501, 20 years: code_cu1 with 0 equals code_v8: yes; observer read-only (arms c and v): yes; the setting acts: yes; the sham acts: yes; tried-vs-updates mismatches (c): none; own updates (c) 110996, make events (c) 720
+seed 601, 60 years: code_cu1 with 0 equals code_v8: yes; observer read-only (arms c and v): yes; the setting acts: yes; the sham acts: yes; tried-vs-updates mismatches (c): none; own updates (c) 483195, make events (c) 2185
+arm c, seed 501 (tried saved): saved at year 10 and reloaded, continues exactly to year 15: yes
+code_cu1 fingerprint: 12bdc8695c4ddc1dc47cb5b34497ea6c97c595fe15ceedab8f53f12ad7e48e14
+All: PASS
+
