@@ -150,3 +150,7 @@ observer openly (amendment 1 in IC2's plan) and re-ran it: GitHub run 4066444720
 ## Your decision
 **Make the curiosity pull part of nature (v9)?** If yes, I consult GPT and Gemini, build v9 with all checks and tests,
 and then run a long check over centuries.
+
+**Also started overnight (safe, no change to nature): LC1**, CU1's curiosity over **1,000 years** (run 40838846290). It
+answers the question that matters most for your v9 decision: does curiosity slow the long erosion, or only delay it?
+It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
