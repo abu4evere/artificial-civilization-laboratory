@@ -1,0 +1,6 @@
+seed 501, 20 years: code_ex1 with 'table' equals code_v8: yes; observer read-only (arms e and v): yes; the setting acts: yes; the sham acts: yes; TD-replay and told-experience mismatches: none; adult updates (e) 61793; experiences told (e) 6946
+seed 601, 60 years: code_ex1 with 'table' equals code_v8: yes; observer read-only (arms e and v): yes; the setting acts: yes; the sham acts: yes; TD-replay and told-experience mismatches: none; adult updates (e) 264080; experiences told (e) 35700
+arm e, seed 501 (last_exp saved): saved at year 10 and reloaded, continues exactly to year 15: yes
+code_ex1 fingerprint: 9516ff3b6e790aae34997ad68f4e724245bc8666c3034ed214818cab0e5b6d74
+All: PASS
+

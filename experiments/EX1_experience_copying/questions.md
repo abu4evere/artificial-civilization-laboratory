@@ -100,3 +100,21 @@ person only when held, so with "table" the world is v8 exactly.
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode). GPT 85%, Gemini 95%; the assistant's
 estimate is 75% (new law code, a reused but complex observer). Logged in `docs/autonomous_decisions.md`. Frozen as
 `EX1-frozen` before any code or data. **Adoption into nature is left to the creator.**
+
+## Operational note 1 (28 October 2026, after freezing, before any data)
+How the code (`code_ex1`, `run_ex1.py`, `analyse_ex1.py`) reads the text where it left a choice; checked on 20-year
+smoke worlds (seed 9971, all arms; not data). Nothing in the plan, its thresholds or its rule was changed.
+1. **The law** (`v8_to_ex1.diff`): with "experience", `biology._learn` stores `last_exp` = [the updated habit's index
+   (situation × action), the reward used, the next situation]; `actions._imitate`, after its unchanged gate, applies one
+   TD step to the learner at that index with the learner's own look-ahead, and returns. `last_exp` is a person's own and
+   is saved only when held. With "table", nothing new is written or read.
+2. **The bias and G** are VC1's, CL1's and HC1's definitions and code (HC1's observer, unchanged): q before each adult
+   update; G summed over the person's next updates until 0.8^k < 0.001, or until death (censored). Years 100–200 is
+   era 2.
+3. **The told-experience checks** (mismatch counters that must be 0): every stored `last_exp` equals the update the
+   observer just replayed; every told experience equals the model's latest own TD event; the learner's values change
+   by exactly one TD step at that index and nowhere else; nothing changes when the gate fails or the model has no
+   experience. Smoke: 7,184 experiences told in 20 years, 0 mismatches; 0.884 about a situation the listener had already
+   learned in.
+4. **Described measures** add the yearly census's making events and made things held by adults, per adult-year in
+   years 100–200, with paired differences e − v and sham − v.

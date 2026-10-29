@@ -1,0 +1,73 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/actions.py experiments/EX1_experience_copying/code_ex1/acl/actions.py
+--- experiments/NV8_nature_v8/code_v8/acl/actions.py	2026-10-27 23:37:36.210633300 -0400
++++ experiments/EX1_experience_copying/code_ex1/acl/actions.py	2026-10-28 22:13:59.076853500 -0400
+@@ -757,6 +757,16 @@
+     respect = r.respect if r else 0.0
+     if respect < 0.2 and model.mood <= learner.mood + 0.1:
+         return
++    c = world.cfg
++    if c.talk_copy == "experience":
++        # EX1: the model tells what last happened to them; the learner learns from it by their own TD rule.
++        if model.last_exp is None:
++            return
++        i, r, nxt = model.last_exp
++        lq = learner.q
++        future = max(lq[nxt * N_ACTIONS:(nxt + 1) * N_ACTIONS])
++        lq[i] = clamp(lq[i] + c.learning_rate * (r + c.discount * future - lq[i]), -1.5, 1.5)
++        return
+     rate = world.cfg.imitation_rate * (0.5 + learner.genes["curiosity"]) * (0.5 + respect)
+     lq, mq = learner.q, model.q
+     for i in range(len(lq)):
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/biology.py experiments/EX1_experience_copying/code_ex1/acl/biology.py
+--- experiments/NV8_nature_v8/code_v8/acl/biology.py	2026-10-27 23:37:36.153127100 -0400
++++ experiments/EX1_experience_copying/code_ex1/acl/biology.py	2026-10-28 22:13:59.073915300 -0400
+@@ -394,6 +394,8 @@
+     r = p.reward + 2.0 * (p.mood - p.mood_before)
+     i = p.last_ctx * N_ACTIONS + A[p.last_action]
+     p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
++    if c.talk_copy == "experience":
++        p.last_exp = [i, r, nxt]       # EX1: what p just lived through, which p can tell
+ 
+ 
+ def _follow(world, p: Person) -> None:
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/config.py experiments/EX1_experience_copying/code_ex1/acl/config.py
+--- experiments/NV8_nature_v8/code_v8/acl/config.py	2026-10-27 23:37:36.408651900 -0400
++++ experiments/EX1_experience_copying/code_ex1/acl/config.py	2026-10-28 22:13:48.286160000 -0400
+@@ -126,6 +126,8 @@
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
+     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
+                                        # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
++    talk_copy: str = "table"           # EX1: "table" = copying in talk moves the whole habit table (nature v8); "experience" =
++                                       # the model tells its latest own experience and the learner learns from it by its TD rule
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/person.py experiments/EX1_experience_copying/code_ex1/acl/person.py
+--- experiments/NV8_nature_v8/code_v8/acl/person.py	2026-10-27 23:37:36.330635900 -0400
++++ experiments/EX1_experience_copying/code_ex1/acl/person.py	2026-10-28 22:13:59.070904100 -0400
+@@ -98,7 +98,7 @@
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at",
++        "kept", "damp", "seen_at", "last_exp",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -179,6 +179,7 @@
+         self.kept = 0.0                # of their food, how much has been held in a fire: it keeps longer
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
++        self.last_exp = None           # EX1: own latest learning event [index, reward, next situation] (only with "experience")
+ 
+     # --- life stage -------------------------------------------------------
+ 
+@@ -252,6 +253,8 @@
+                 v = [m.to_list() for m in v]
+             elif k == "seen_at" and not v:
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
++            elif k == "last_exp" and v is None:
++                continue                 # EX1: saved only when held, so v8's world is unchanged
+             elif k == "loc":
+                 v = list(v)
+             d[k] = v
