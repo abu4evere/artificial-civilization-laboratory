@@ -245,3 +245,8 @@ the file named.
   **For the creator:** how strong may curiosity be? Both models' versions hide a scale; the council suggests anchoring
   it to human evidence (how much time young people spend exploring and playing) before any study is frozen
   (`docs/debate_after_ic2_lr1_2026-10-28.md`, round 25).
+  - **The creator (29 October 2026): "i will say yes to the curiosity but honestly i do not know where strength should
+    come from."** Options put to the creator: (A) borrow the strength nature already has (the play instinct's
+    0.3 × curiosity), checked against PL1's comparison with forager children; (B) fit it to human exploration data
+    (close to tuning); (C) let it evolve through the curiosity gene. The assistant recommends A, then C later. Waiting
+    for the creator's answer; PL1 running.

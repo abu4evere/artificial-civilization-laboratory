@@ -318,3 +318,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 00:11 (sleep mode): debate round 26: both approve PL1 (read-only child-play audit against forager evidence; GPT 90%, Gemini 95%). PL1 frozen (PL1-frozen), signed off under sleep-mode autonomy (80%).
 - 2026-10-29 00:29: PL1 built (runner, analysis before data, operational note 1); smoke OK; local zero checks PASS. Launching on GitHub.
 - 2026-10-29 00:30: PL1 launched on GitHub: run 40818054966 (32 worlds x 200 years).
+- 2026-10-29 00:33: the creator said yes to a curiosity law, unsure of the strength's source. Options A (reuse the play instinct's strength, checked by PL1), B (fit to human data), C (evolve via the gene) put to the creator; A recommended.
