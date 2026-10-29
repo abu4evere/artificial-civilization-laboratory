@@ -84,3 +84,25 @@ observer openly (amendment 1 in IC2's plan) and re-ran it: GitHub run 4066444720
   population halves between years 100 and 500 and tools held fall: the worlds still erode over centuries (as M1 found).
 - **The blind rechecks are waiting:** the Chrome extension disconnected. If it stays off, please sign it in again
   (Claude side panel in Chrome, same account as this app).
+
+---
+
+# Third update (night of 28 October, sleep mode)
+
+## In plain words
+1. **FS1 is final** (rechecked blind by GPT and Gemini): **the shrinking is not the founders' head start.** Even with
+   founders who know nothing, the first world-born people become skilled (0.43), then each century's people are less
+   skilled (0.08 by year 400–500), because they make things ten times less often.
+2. **GPT and Gemini both remembered your language plan** the same way (audit → find a need → one channel → test →
+   expand). Steps 1–2 are done; step 3 waits until people have a real need to tell (for example calling from afar).
+3. **Why do people stop making?** Our older studies already show it: making's value stays low, while the other actions'
+   values grow about threefold, mostly because people copy each other's **whole habit tables** in talk, a copy of a
+   copy that is never checked.
+4. **So I started EX1** (frozen in sleep mode; GPT 85%, Gemini 95%; mine 75%): in talk, people **tell what actually
+   happened to them** (one real experience) instead of copying a whole table of beliefs. It is running on GitHub (run
+   40808047321). **Whether to make it part of nature is your decision** when it's done.
+
+## Autonomous decisions tonight
+| decision | GPT | Gemini | mine |
+|---|---|---|---|
+| EX1, experience telling instead of habit copying (nature-change study; adoption is yours) | 85% | 95% | 75% |
