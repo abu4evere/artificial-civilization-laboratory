@@ -70,3 +70,22 @@ the current situation gets a pull of
 ## Sign-off (29 October 2026)
 **The creator: "yea draft it and run on github"**, after delegating the strength decision. Frozen as `CU1-frozen`
 before any code or data beyond the law itself (the law was written to `code_cu1` while drafting, run on nothing).
+
+## Operational note 1 (29 October 2026, after freezing, before any data)
+How the code (`code_cu1`, `run_cu1.py`, `analyse_cu1.py`) reads the text where it left a choice; checked on 20-year
+smoke worlds (seeds 9990 and 9991, all arms; not data). Nothing in the plan, the strength or the rule was changed.
+1. **The law** (`v8_to_cu1.diff`): `biology._learn` counts each own update in `tried` (608 per person, created at the
+   first update); `mind.decide`'s `add` adds the pull to an offered option's score before the habit term, after the
+   dry-ground cost. The pull uses the hunger the mind already computed for that week. Children's 1.6 play factor is not
+   part of the borrowed strength (the strength is the play instinct's curiosity term, as decided in round 27).
+2. **Offered pairs** are the (situation, action) pairs among the options returned by `thought.steer` for adults (16+)
+   in weeks 5,200–10,399 (years 100–199); the situation is `p.last_ctx`, set by the mind before weighing.
+   **Practised pairs** are those with an own TD update in the same window. A pair is offered or practised at most once
+   per person (sets).
+3. **P** pools over people and then over seeds (summed practised ÷ summed offered); the paired bootstrap resamples
+   seeds once per replicate for both arms. The sham's interval is (x − v) from the same replicates' scheme.
+4. **Secondaries** come from the yearly census (years 100–199): making events, made things held by adults, and
+   world-born adults' (20–40) crafting skill, each per adult-year or per head.
+5. **The zero checks passed locally** (`zero_local.log`): with 0 the code equals v8 at 20 and 60 years; the setting and
+   the sham act; the observer is read-only in arms c and v; `tried` equals the observer's count of own updates for every
+   person (0 mismatches); reload exact with `tried` saved; fingerprint 12bdc869.

@@ -1,0 +1,68 @@
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/biology.py experiments/CU1_curiosity/code_cu1/acl/biology.py
+--- experiments/NV8_nature_v8/code_v8/acl/biology.py	2026-10-27 23:37:36.153127100 -0400
++++ experiments/CU1_curiosity/code_cu1/acl/biology.py	2026-10-29 01:17:11.720774500 -0400
+@@ -394,6 +394,10 @@
+     r = p.reward + 2.0 * (p.mood - p.mood_before)
+     i = p.last_ctx * N_ACTIONS + A[p.last_action]
+     p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
++    if c.curiosity_pull:                # CU1: p remembers having tried this here
++        if p.tried is None:
++            p.tried = [0] * len(p.q)
++        p.tried[i] += 1
+ 
+ 
+ def _follow(world, p: Person) -> None:
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/config.py experiments/CU1_curiosity/code_cu1/acl/config.py
+--- experiments/NV8_nature_v8/code_v8/acl/config.py	2026-10-27 23:37:36.408651900 -0400
++++ experiments/CU1_curiosity/code_cu1/acl/config.py	2026-10-29 01:17:11.716210100 -0400
+@@ -126,6 +126,8 @@
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
+     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
+                                        # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
++    curiosity_pull: int = 0            # CU1: 1 = an action rarely tried in this situation draws the play instinct's own pull,
++                                       # 0.3 x curiosity x (1 - hunger), fading as 1/(1 + times tried there) (0 = nature v8)
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/mind.py experiments/CU1_curiosity/code_cu1/acl/mind.py
+--- experiments/NV8_nature_v8/code_v8/acl/mind.py	2026-10-27 23:37:36.192632900 -0400
++++ experiments/CU1_curiosity/code_cu1/acl/mind.py	2026-10-29 01:17:11.733324500 -0400
+@@ -175,6 +175,9 @@
+             t = target[0] if action == "gather" else target
+             if isinstance(t, tuple) and len(t) == 2 and isinstance(t[0], int) and dry(t):
+                 u -= dry_cost
++        if c.curiosity_pull:            # CU1: what has rarely been tried here draws the curious, as play does
++            n = p.tried[base + A[action]] if p.tried is not None else 0
++            u += 0.3 * g["curiosity"] * (1.0 - hunger) / (1 + n)
+         options.append((u + lw * p.q[base + A[action]], action, target))
+ 
+     age_years = p.years(tick)
+diff -ru --strip-trailing-cr '--exclude=__pycache__' experiments/NV8_nature_v8/code_v8/acl/person.py experiments/CU1_curiosity/code_cu1/acl/person.py
+--- experiments/NV8_nature_v8/code_v8/acl/person.py	2026-10-27 23:37:36.330635900 -0400
++++ experiments/CU1_curiosity/code_cu1/acl/person.py	2026-10-29 01:17:11.720774500 -0400
+@@ -98,7 +98,7 @@
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at",
++        "kept", "damp", "seen_at", "tried",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -179,6 +179,7 @@
+         self.kept = 0.0                # of their food, how much has been held in a fire: it keeps longer
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
++        self.tried = None              # CU1: how often p has learned from each action in each situation (only with curiosity_pull)
+ 
+     # --- life stage -------------------------------------------------------
+ 
+@@ -252,6 +253,8 @@
+                 v = [m.to_list() for m in v]
+             elif k == "seen_at" and not v:
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
++            elif k == "tried" and v is None:
++                continue                 # CU1: saved only when held, so v8's world is unchanged
+             elif k == "loc":
+                 v = list(v)
+             d[k] = v
