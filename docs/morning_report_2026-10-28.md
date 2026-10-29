@@ -123,3 +123,14 @@ observer openly (amendment 1 in IC2's plan) and re-ran it: GitHub run 4066444720
 ## Waiting for you
 1. **Curiosity law:** go ahead? how strong (anchored to real evidence)?
 2. Language: still paused until people have a real reason to tell each other things (e.g. calling from afar).
+
+# Fifth update (night of 29 October, sleep mode)
+
+## In plain words
+1. **PL1 is final** (rechecked blind by GPT and Gemini): ACL's young children (3–6) play **6.8%** of weeks, **below**
+   real forager children (9–58%). They almost always *could* play; they choose other things. And play is where nearly
+   all of a child's crafting skill comes from. (Correction: the earlier "about 12%" hint from a test world was not data.)
+2. **CU1, your curiosity law, is running on GitHub** (run 40826056140): a pull towards actions a person has rarely
+   tried, with the same strength nature already gives play, fading as it is tried more. All safety checks passed.
+   Success = people practising a wider range of actions, clearly more than chance drift. **Adopting it is your
+   decision** when the results are in.
