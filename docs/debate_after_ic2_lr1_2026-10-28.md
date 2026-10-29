@@ -53,3 +53,35 @@ level (all skills 0) against today's founders, over 300–500 years.
 - **Council:** all adopted, except the margin: **0.012, from the code** (`skill_gain`, the skill one making act gives
   from zero; tool quality ∝ 55 + 45 × skill, so about 0.5%), not Gemini's unexplained 0.008. Gemini's "narrow
   intervals" is not assumed.
+
+# Debate round 23 (28 October 2026, sleep mode): after FS1, what next?
+**Asked:** (A) a read-only audit of how making's value changes over years 0–200, or (B) a nature-change study on how
+copied habits are weighted.
+- **First answers: both (A).** GPT 90% (follow individuals through life; find which changes first); Gemini 95%
+  (decadal crossover with a route ledger).
+- **Council check, sent to both:** CL1 (final, v7) already gives that timeline by era. Making's value is always low
+  (q 0.025 → 0.043 → 0.049, almost no social part), while the common actions' values rise about threefold (0.38 → 0.86
+  → 1.12), mostly through copying in talk (C_talk 0.13 → 0.31 → 0.39). MK1: making's own score is flat; the
+  competitors' soft maximum rises 1.30 → 1.94. CO1: habit carries 0.86 of that rise.
+- **Second answers: both (B).**
+  - **GPT, 80%: "experience-checked copying."** The speaker shares an action and the outcome they personally
+    experienced; the listener updates on that evidence instead of taking the speaker's accumulated value. The same rule
+    for every action. Safeguard: the shared outcome must be a genuine recorded experience, not a value or an inferred
+    success. Arms: v8, the new rule, a sham. Primary: late common-action over-valuation (q − G), with a pre-set
+    meaningful reduction and no harm to making's calibration; making and tools secondary. Limit: one person's
+    experience may not apply to another.
+  - **Gemini, 85%: "experience-grounded copying."** In talk, the listener moves toward the speaker's own-experience
+    component (C_TD) instead of the whole value, breaking the copy-of-a-copy loop. Primary: common over-valuation in
+    years 100–200 from about +0.42 to at most +0.15; no-harm gates on population and survival.
+- **Council:** agreed, B now. Two ways to build it; **GPT's is the more physical** (people tell what happened to them,
+  a story of experience), while Gemini's needs each person to carry, as nature, a record of which part of their values
+  they learned themselves. Gemini's +0.15 target is an unexplained number. To be drafted and reviewed (round 24).
+
+# Debate round 24 (28 October 2026, sleep mode): the EX1 draft
+- **GPT: approve, 85%.** The latest experience, not a random one. Record how often the listener has met that situation.
+  Warning: this replaces whole-table telepathy with "one-event telepathy"; fine as a copying experiment, not language.
+  Check that no second learning step happens. v8 unchanged until the creator decides.
+- **Gemini: approve, 95%.** The latest experience (a buffer would need invented sizes). The record belongs to its owner
+  and is not inherited. The learner's own values give the look-ahead.
+- **Council:** all adopted; an exact-step zero check added. **Corrected:** Gemini again said "exact log replays"; the
+  runs are new worlds with a read-only observer.
