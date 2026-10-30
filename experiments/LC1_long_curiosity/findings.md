@@ -1,4 +1,4 @@
-# LC1 — Does curiosity slow the erosion over 1,000 years? Findings (NOT FINAL: blind recompute pending)
+# LC1 — Does curiosity slow the erosion over 1,000 years? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `LC1-frozen` (operational note 1); decided and signed off in sleep mode (`docs/autonomous_decisions.md`).
 No change to live nature: CU1's code (`code_cu1`) and runner, 1,000 years. Run on GitHub Actions (run 40838846290,
@@ -63,3 +63,11 @@ GPT gave 55% that curiosity would meet the lasting-improvement threshold; it did
 
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, raw per-world numbers. Recorded only from their actual replies.
+
+## Independent recompute (29 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world numbers only, without the analysis script
+(`recompute_lc1.md`). **All three agree:** late skill c − v +0.0327 (curiosity holds skill higher); the same absolute
+fall (−0.0018); extinct 12 / 7 / 12. Population: averaged over surviving world-years c ÷ v = 1.165 (both models);
+counting died-out worlds as 0 (this study's definition) 1.462; explained in `recompute_lc1.md`.
+
+**Final.**
