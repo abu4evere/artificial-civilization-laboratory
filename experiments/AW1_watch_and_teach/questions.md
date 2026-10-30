@@ -61,3 +61,13 @@ sums over worlds). Paired world bootstrap (10,000 replicates; generator seed 202
 ## Sign-off (30 October 2026)
 **The creator: "yea go ahead with AW1 run it after AG1".** Frozen as `AW1-frozen` before any code or data. It runs on
 GitHub after AG1 finishes.
+
+## Operational note 1 (30 October 2026, after freezing, before any data)
+1. **Code:** `code_aw1` = `code_v9` + `skill_pass` (`v9_to_aw1.diff`, 17 lines): a helper `_pass_skill` that calls the
+   existing `_gain_skill` (so the observer can count the steps); W's hook in `_make`'s success branch; T's hook in
+   `information.show_how` after the recipe offer is heard (so the step does not change that lesson's copying error).
+2. **Zero checks passed locally** (`zero_local.log`, fingerprint 0e9de6a7…): `code_aw1` with 0 equals `code_v9`; the
+   observer is read-only; W and T act; the sham acts; each arm passes only its own kind of step; reload exact.
+3. **Smoke:** 8 throwaway worlds (seeds 9987, 9986; 30 years); the analysis ran with a test window (years 10–30).
+   Not data.
+4. **Cloud:** 128 worlds in 20 jobs, `skip_zero=local`.
