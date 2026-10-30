@@ -1,0 +1,5 @@
+arm lp, seed 501, 20 years: identical with and without the observer (state and random numbers): yes; identity, family and Q5 mismatches: none; offered weeks 25112.0, swapped weeks 17021.0
+arm lp, seed 601, 60 years: identical with and without the observer (state and random numbers): yes; identity, family and Q5 mismatches: none; offered weeks 189943.0, swapped weeks 179653.0
+arm lp, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v9 fingerprint: 8f88ec3357e1c0e98f056e218d17269b507c833591c2389c7deff68b7412b75c
+All: PASS
