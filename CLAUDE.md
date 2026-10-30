@@ -104,11 +104,16 @@ decides.
 - spend money or touch credentials;
 - delete data or history.
 
-**Adopting a new nature version as live** (`acl/`) is also allowed in sleep mode (the creator, 27 October: "you can
-make it live nature"), but only by the same path as before:
+**Adopting a new nature version as live** (`acl/`) is **never autonomous** (the creator, 30 October 2026, approving
+the autonomous-researcher proposal: no experimental change becomes part of nature without the creator's explicit,
+specific authorization; this replaces the 27 October permission "you can make it live nature"). In sleep mode and in
+scheduled research ticks, a supported nature-change study ends at **"proposed for adoption"**: findings final, the
+recompute matched, and a confirmatory run where the plan requires one. The creator then decides, in a Claude Code
+session, by a message naming the version. "Continue", "ok" or "keep going" do not count. After that decision, the
+path is as before:
 1. a frozen study whose result supports the change;
 2. an independent recompute by GPT and Gemini;
-3. both models consulted on adoption, with an estimated success of 40% or more;
+3. both models consulted on adoption;
 4. a new `code_vN` with zero checks (off = the previous nature; on = the study's arm);
 5. reference hashes regenerated and the tests passing;
 6. a git tag `nature-vN`.
