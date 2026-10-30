@@ -40,3 +40,14 @@ work is already done.
   the task, lists cloud runs). Or create an empty file `research\STOP`.
 - Pause new work but keep daily summaries: create `research\PAUSE`.
 - One manual tick: `powershell -ExecutionPolicy Bypass -File tools\research_tick.ps1 -Reason "demonstration: read-only status"`.
+
+## Talking to the PC from Telegram (Phase 2, the creator's choice, 30 October 2026)
+- Write to the bot in plain words, as in the desktop chat. `tools/tg_listener.py` (task "ACL Telegram listener",
+  started at logon, checked every 10 minutes) answers each message with a fresh Claude Code session
+  (`research/telegram_prompt.md`). It obeys **only** the account saved by `tg_setup.py`; everyone else, groups and
+  forwarded messages are ignored without a reply.
+- Hard-to-undo actions come back with a 4-digit code; nothing happens until you reply with it (checked by the listener).
+- Never through Telegram: nature changes or adoption, passwords or tokens, payments, deleting, Windows or security
+  settings, untrusted software, publishing.
+- Logs on this PC only: `research/local/telegram_audit.jsonl`, `research/local/tg/`.
+- Stop: `tools\stop_research.ps1` (also stops the listener), or create `research\local\TG_OFF`.
