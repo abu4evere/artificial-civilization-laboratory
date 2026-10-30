@@ -41,3 +41,13 @@ channels, Q3's decomposition and Q5's inheritance rate before the findings are f
 
 ## Sign-off (29 October 2026)
 **The creator: "yea draft it and run on github".** Frozen as `LS2-frozen` before any code or data.
+
+## Operational note 1 (29 October 2026, after freezing, before any data)
+1. **The runner** (`run_ls2.py`) imports LS1's runner unchanged and points it at `code_v9` (fingerprint 8f88ec33),
+   with nature v9's settings passed explicitly (= `code_v9`'s defaults: v8 + `curiosity_pull` 1), LP only, 40 seeds,
+   1,000 years. It re-states LS1's zero checks and `run_one` so that every subprocess runs `code_v9` and the record says
+   "v9". The analysis is LS1's (`analyse_ls2.py`), with only names and labels changed.
+2. **The zero checks** are LS1's for the LP arm (20 and 100 years, reload). D80 is not run, so it is not checked.
+   They passed locally (`zero_local.log`).
+3. **Smoke:** as for LS1, the analysis needs a world that reaches year 200; a 25-year smoke world was too short (the
+   decomposition had no late bin), so one smoke world was run for 220 years (seed 9995); the analysis then ran. Not data.
