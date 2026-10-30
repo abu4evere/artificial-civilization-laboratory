@@ -93,6 +93,8 @@ def _outbox(now: str, kind: str, text: str) -> None:
 
 if __name__ == "__main__":
     args = sys.argv[1:]
+    if not args or args[0] in ("-h", "--help"):
+        sys.exit(__doc__)
     kind = "info"
     if "--kind" in args:
         i = args.index("--kind")

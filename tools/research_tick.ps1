@@ -33,8 +33,11 @@ try {
     $maxFail = [int]$state.budgets.failures_before_pause
 
     # --- gate: free; wakes Claude only when something changed ---
-    $gateRaw = & python tools\research_gate.py
-    $gate = $gateRaw | ConvertFrom-Json
+    if ($Reason) { $gate = [pscustomobject]@{ wake = $true; reasons = @($Reason) } }
+    else {
+        $gateRaw = & python tools\research_gate.py
+        $gate = $gateRaw | ConvertFrom-Json
+    }
     if (-not $gate.wake) { Log ("gate: no wake (" + ($gate.reasons -join '; ') + ")"); exit 0 }
 
     # --- budget ---
@@ -59,8 +62,8 @@ try {
     $allowed = @('Read', 'Glob', 'Grep', 'Edit', 'Write', 'Bash(python *)', 'Bash(git status*)', 'Bash(git add *)',
                  'Bash(git commit *)', 'Bash(git push*)', 'Bash(git log*)', 'Bash(git diff*)', 'Bash(cp *)',
                  'Bash(C:/Users/User/gh/bin/gh.exe run *)', 'PowerShell(Get-CimInstance *)', 'PowerShell(Copy-Item *)')
-    $denied  = @('Edit(acl/**)', 'Write(acl/**)', 'Edit(tests/**)', 'Write(tests/**)', 'Edit(.github/**)',
-                 'Write(.github/**)', 'Bash(git push --force*)', 'Bash(git reset*)', 'Bash(git checkout*)',
+    $denied  = @('Edit(acl/**)', 'Edit(tests/**)', 'Edit(.github/**)',   # Edit rules cover every file-editing tool
+                 'Bash(git push --force*)', 'Bash(git reset*)', 'Bash(git checkout*)',
                  'Bash(rm *)', 'Bash(C:/Users/User/gh/bin/gh.exe workflow*)', 'PowerShell(Remove-Item *)')
     $q = { param($a) '"' + $a + '"' }
     $argList = @('-p', '--permission-mode', 'dontAsk', '--output-format', 'text', '--allowedTools') +
@@ -68,6 +71,7 @@ try {
     Log ("tick starts: " + ($gate.reasons -join '; '))
     $p = Start-Process -FilePath $claude -ArgumentList $argList -WorkingDirectory $root -NoNewWindow -PassThru `
          -RedirectStandardInput $prompt -RedirectStandardOutput $outLog -RedirectStandardError $errLog
+    $null = $p.Handle                 # keeps the handle so ExitCode is readable after the wait
     $p.PriorityClass = 'BelowNormal'
     if (-not $p.WaitForExit($timeout * 60 * 1000)) {
         try { $p.Kill() } catch {}
