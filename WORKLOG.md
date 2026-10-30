@@ -345,3 +345,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 22:28 (sleep mode): LS2 local zero checks PASS (fingerprint 8f88ec33); smoke analysis runs on a 220-year world; operational note 1. Launching on GitHub.
 - 2026-10-29 22:28 (sleep mode): LS2 launched on GitHub: run 40991857659 (40 worlds x 1,000 years, 20 chunks).
 - 2026-10-29 23:25 (sleep mode): LS2 run 40991857659 at 4/20 chunks done. Prepared the blind-recompute builder (recompute/build_one_file.py: raw per-world sums only, no ratios) and prompt; on the smoke worlds its sums reproduce the analysis's Q1 shares, Q3 terms and Q5 rates exactly.
+- 2026-10-29 23:28: the creator asked for status, then 'ok keep going, sleep' (sleep mode). LS2 at 4/20 chunks; background watcher waits for it; heartbeat 3ca5801c active.
