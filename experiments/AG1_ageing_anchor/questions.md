@@ -107,3 +107,6 @@ problem") **and sleep-mode autonomy** (estimate 80%; GPT 90%, Gemini 90%; `docs/
 3. **Cross-machine identity is checked first:** one world the cloud finished (arm v, seed 20517, ended in year 219) is
    re-run locally; its saved world hash must equal the cloud's (`f774ceb6daf8…`). If it differs, local worlds are not
    used, and the missing worlds are re-run in the cloud instead.
+4. **Identity check result (30 October 2026):** the local re-run of arm v, seed 20517 is identical to the cloud's
+   (world hash f774ceb6daf8bd28…, final week 11424, and every death and census row the same). The 5 local worlds are
+   used as planned (`output_local/`, merged into the analysis folder when all 5 are done).

@@ -367,3 +367,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-30 15:00: AW1 local zero checks PASS (fingerprint 0e9de6a7); operational note 1; launching on GitHub (AG1's cloud run has ended; its 5 local worlds continue).
 - 2026-10-30 15:00: AW1 launched on GitHub: run 41111670960 (128 worlds x 200 years, 20 chunks, skip_zero=local).
 - 2026-10-30 15:05: the creator: 'yes remove it and build phase 1'. Phase 0 done: CLAUDE.md now says adopting a nature version is never autonomous (a supported study ends at 'proposed for adoption'; the creator decides by a message naming the version); memory updated. Building Phase 1.
+- 2026-10-30 15:05: AG1 identity check PASSED: local re-run of v 20517 identical to the cloud's (hash, deaths, census). The 5 local AG1 worlds will be used.
