@@ -1,4 +1,4 @@
-# LS2 — Where does knowledge go under nature v9? Findings (not final until GPT and Gemini recompute; see the end)
+# LS2 — Where does knowledge go under nature v9? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `LS2-frozen` (operational note 1); signed off by the creator ("yea draft it and run on github"). Read-only:
 LS1's observer, ledger and analysis on `code_v9` (live nature v9, the curiosity pull). Run on GitHub Actions (run
@@ -115,3 +115,11 @@ loss. Q3 places the fall at the choice; it does not show why the choice changes.
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, from raw per-world numbers (`recompute/ls2_one_file.csv`). Recorded only from
 their actual replies.
+
+## Independent recompute (30 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world sums only, without the analysis script
+(`recompute_ls2.md`). **All three agree:** death carries 0.9802 of copy loss and 0.9790 of kind extinction; the choice
+gate ("chosen given weighed") carries 1.6636 of the decline in making; inheritance 0.3914 / 0.3172 / 0.2933 for the
+first three cohorts and 0.2617 pooled from year 100 on.
+
+**Final.**

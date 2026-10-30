@@ -684,3 +684,10 @@ pull towards rarely tried actions, at the strength nature already gives play, wi
 towards actions rarely tried, at the play instinct's own strength. LC1: over 1,000 years, curious worlds keep more
 skill, make twice as much and die out less often, but knowledge still fades over generations. **Next: what makes
 knowledge build up.**
+
+**LS2 done** (30 October; recomputed blind by GPT and Gemini). Under nature v9 the leak is where it was under v7:
+knowledge goes with the dead (0.98), making collapses at the choice, and each generation takes up only about a quarter
+of what its carers knew. A read-only count on 6 throwaway v9 worlds shows ACL adults dying at a mean age of 42 (only
+11% of adult deaths at 60+). **Next, in the creator's order (30 October): ageing anchored to forager evidence (being
+settled with GPT and Gemini, delegated by the creator), then apprenticeship (watching making teaches technique), then
+talent.**

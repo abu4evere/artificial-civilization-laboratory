@@ -1,0 +1,121 @@
+# LS2 — where does knowledge go? Results (SMOKE TEST, throwaway seeds)
+
+Frozen as `LS2-frozen`. run_ls2.py (LS1's observer), analyse_ls2.py (LS1's analysis; written before data).
+
+## Validity
+
+- Zero checks: **yes**
+- All worlds present (2): **yes**
+- One fingerprint (`code_v9`): **yes**
+- Ledger balances, kind counts and holdings match in every world: **yes**
+
+**Valid.**
+
+# LP (primary): 2 worlds
+
+## Check against M1 (M1's rules, worlds alive at year 1,000)
+
+No world alive at year 1,000.
+## Survivorship and population (worlds alive at each bin's start)
+
+| bin (years) | worlds alive | mean population | mean adults | people per 100 land tiles |
+|---|---|---|---|---|
+| 0-5 | 2 of 2 (thin) | 85.0 | 42.5 | 3.32 |
+| 5-10 | 2 of 2 (thin) | 85.0 | 42.5 | 3.32 |
+| 10-20 | 2 of 2 (thin) | 85.5 | 47.0 | 3.34 |
+| 20-50 | 2 of 2 (thin) | 112.0 | 66.3 | 4.38 |
+| 50-100 | 1 of 2 (thin) | 126.4 | 81.4 | 4.94 |
+| 100-200 | 1 of 2 (thin) | 97.6 | 66.6 | 3.82 |
+| 200-300 | 1 of 2 (thin) | 81.5 | 57.5 | 3.19 |
+| 300-400 | 0 of 2 (thin) | nan | nan | nan |
+| 400-500 | 0 of 2 (thin) | nan | nan | nan |
+| 500-600 | 0 of 2 (thin) | nan | nan | nan |
+| 600-700 | 0 of 2 (thin) | nan | nan | nan |
+| 700-800 | 0 of 2 (thin) | nan | nan | nan |
+| 800-900 | 0 of 2 (thin) | nan | nan | nan |
+| 900-1000 | 0 of 2 (thin) | nan | nan | nan |
+
+Worlds that ended before year 1,000 (year): [25, 220].
+
+## Q1 — The ledger: copy loss and kind extinction
+
+Inflow by route and outflow by channel, per 1,000 person-years (worlds alive at each bin's start).
+
+| bin | in: invented | in: rediscovered | in: taught | in: copied | in: read | in: other | out: pushout | out: useless | out: death | net | losses per held recipe-year |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0-5 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 5-10 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 10-20 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 20-50 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 50-100 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 100-200 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 200-300 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 300-400 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 400-500 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 500-600 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 600-700 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 700-800 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 800-900 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+| 900-1000 | (fewer than 10 worlds: no reading) | | | | | | | | | | |
+
+- **Net flow first turns negative and stays negative:** never.
+- **The dominant copy-loss channel after year 100:** **death** (pushout 0.083 [0.0833, 0.0833]; useless 0.000 [0, 0]; death 0.917 [0.917, 0.917]; 3362 events in 1 worlds).
+- **The dominant kind-extinction channel after year 100:** **death** (pushout 0.047 [0.0466, 0.0466]; useless 0.000 [0, 0]; death 0.953 [0.953, 0.953]; 494 events in 1 worlds).
+
+## Q2 — Origin, transmission, persistence (useful kinds: a factor > 1)
+
+| origin | era first made | useful kinds | ever held by 2+ people | still held 25 years after the maker's death (eligible) | held 2+ generations after the maker |
+|---|---|---|---|---|---|
+| founder | years 0-100 | 242 | 0.591 | 0.434 (of 136) | 0.372 |
+| founder | years 100-1,000 | 0 | - | - | - |
+| world-born | years 0-100 | 843 | 0.251 | 0.101 (of 671) | 0.152 |
+| world-born | years 100-1,000 | 157 | 0.057 | 0.030 (of 99) | 0.025 |
+
+- Founder share of useful know-how held in years 0-100 (person-recipe-weeks): 0.725 [0.72, 0.778] (descriptive).
+
+## Q3 — The making funnel
+
+Adults (16+). Feasible per adult person-week; weighed given feasible; chosen given weighed; chosen per adult person-week. Teens (12-15) after the bar.
+
+| bin | worlds | feasible | weighed / feasible | chosen / weighed | chosen per person-week | teens: chosen per person-week |
+|---|---|---|---|---|---|---|
+
+**The decline decomposition (frozen): years 0-10 to years 100-200,** Δ ln(chosen per person-week) = Δ ln(feasible) + Δ ln(weighed | feasible) + Δ ln(chosen | weighed), pooled counts.
+
+- feasible: Δ ln +0.507 [0.507, 0.507]; share of the decline -0.28 [-0.276, -0.276]
+- weighed given feasible: Δ ln +0.281 [0.281, 0.281]; share of the decline -0.15 [-0.153, -0.153]
+- chosen given weighed: Δ ln -2.627 [-2.63, -2.63]; share of the decline 1.43 [1.43, 1.43]
+- Total Δ ln(chosen per person-week): -1.839. **The gate carrying the largest share: chosen given weighed.**
+- When making was weighed and not chosen (after year 100), what won: forage 0.48, gather 0.23, put 0.17, talk 0.05, join 0.03, give 0.02.
+
+## Q4 — The fall in A4, exactly (A4 = s × g × k)
+
+No world alive at year 1,000.
+
+## Q5 — Does each generation replace what it inherits?
+
+World-born people, by birth cohort (50-year bands). Inheritance: of the useful recipes their carers held while they were 0-16, the share they ever acquired by 30.
+
+| born (years) | people | inheritance rate [95%] | inherited by: taught / own making / other | useful acquired by 30 (mean) | acquired by 16: taught / copied / own (mean) | used: acquired from others and later made | onward: passed to someone younger | survival: outlived them by 25 years |
+|---|---|---|---|---|---|---|---|---|
+| 0-50 | 190 | 0.414 [0.404, 0.522] | 0.24 / 0.65 / 0.11 | 15.71 | 1.91 / 0.02 / 12.85 | 0.223 | 0.028 | 0.816 |
+| 50-100 | 127 | 0.325 [0.325, 0.325] | 0.16 / 0.76 / 0.09 | 12.80 | 1.08 / 0.00 / 10.85 | 0.136 | 0.013 | 0.817 |
+| 100-150 | 97 | 0.304 [0.304, 0.304] | 0.20 / 0.76 / 0.04 | 11.29 | 1.18 / 0.00 / 9.12 | 0.082 | 0.027 | 0.852 |
+| 150-200 | 94 | 0.324 [0.324, 0.324] | 0.33 / 0.66 / 0.02 | 9.36 | 2.00 / 0.00 / 6.80 | 0.031 | 0.044 | 0.851 |
+| 200-250 | 6 | 0.263 [0.263, 0.263] | 0.45 / 0.50 / 0.05 | 8.17 | 2.50 / 0.00 / 5.83 | 0.056 | 0.038 | nan |
+
+- New knowledge: useful kinds invented by world-born people: 895; held by someone of a later generation: 119 (0.133).
+
+## Described: teaching, skill and habits
+
+| bin | lessons offered per person-year | taken | taken from parents / carers / kin / others | taken lessons later made | later passed on |
+|---|---|---|---|---|---|
+
+| born (years) | crafting skill at 16 | at 30 | practice weeks per person | making habit at 16 | carer's | talk partners' |
+|---|---|---|---|---|---|---|
+| 0-50 | 0.550 | 0.591 | 53.7 | 0.0085 | 0.0076 | 0.0084 |
+| 50-100 | 0.393 | 0.431 | 31.4 | 0.0183 | 0.0175 | 0.0185 |
+| 100-200 | 0.292 | 0.325 | 21.1 | 0.0263 | 0.0261 | 0.0264 |
+| 200-400 | 0.209 | nan | 11.5 | 0.0310 | 0.0325 | 0.0292 |
+
+
