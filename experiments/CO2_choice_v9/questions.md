@@ -57,3 +57,14 @@ Independent recompute of Q5's shares and Q2's habit share by GPT and Gemini befo
 ## Sign-off (30 October 2026)
 **Signed off by the assistant under the creator's sleep-mode autonomy** (read-only; Gemini 95%; the assistant 80%; GPT
 not reachable tonight). Frozen as `CO2-frozen` before any code or data.
+
+## Operational note 1 (30 October 2026, after freezing, before any data)
+1. **Runner:** `run_co2.py` imports CO1's runner unchanged, points it at `code_v9` (fingerprint 8f88ec33…) with v9's
+   settings explicit, and replaces its observer with `CO2Obs` (CO1's observer plus the curiosity split). It re-states
+   the zero checks and `run_one`, so that every subprocess runs `code_v9` and the record says "v9".
+2. **Q5 uses adults** (as CO1's primary). Its exact identity is checked in every logged week (mismatch counter
+   `q5_identity`), and making's curiosity part is checked to be positive whenever the pull is on (`q5_curiosity`).
+3. **Zero checks passed locally** (`zero_local.log`): the observer is read-only at 20 and 60 years; no identity,
+   family or Q5 mismatches; reload exact.
+4. **Smoke:** 2 throwaway worlds (seeds 9985, 9984; 25 years); the analysis ran with `--smoke-late` (years 10–20).
+   Not data.
