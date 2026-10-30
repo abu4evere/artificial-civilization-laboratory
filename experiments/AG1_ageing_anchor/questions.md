@@ -84,3 +84,16 @@ primary (each arm's band rates and D, and D(arm) − D(v) with intervals) and th
 **Signed off by the assistant under the creator's delegation** ("just discuss with gpt and gemini and solve this aging
 problem") **and sleep-mode autonomy** (estimate 80%; GPT 90%, Gemini 90%; `docs/autonomous_decisions.md`). Frozen as
 `AG1-frozen` before any code or data.
+
+## Operational note 1 (30 October 2026, after freezing, before any data)
+1. **The runner** (`run_ag1.py`) uses `code_v9` unchanged (fingerprint 8f88ec33…) with nature v9's settings passed
+   explicitly, and the four arms exactly as frozen (`mortality_base` b = 4.3373 × 10⁻⁶, a = 2.8269 × 10⁻⁶, computed in
+   the runner from the frozen formulas). The observer reads each week's events (death events carry the age and cause)
+   and the living (person-weeks by age band, per century; LC1's yearly census plus the number aged 60+). It wraps
+   nothing.
+2. **Zero checks passed locally** (`zero_local.log`): the observer is read-only (arms v and a, 20 and 60 years); arms
+   a and b act; the sham acts; the observer's death count equals the world's dead; reload exact with the anchored
+   setting kept.
+3. **Smoke:** 8 throwaway worlds (seeds 9989, 9988; all four arms; 40 years) ran, and the analysis ran on them with
+   `--from-year 0` (a smoke world has no years 100–999). Not data.
+4. **Cloud:** 80 worlds in 20 jobs of 4 (one seed's four arms per job), `skip_zero=local`.

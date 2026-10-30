@@ -1,0 +1,5 @@
+seed 501, 20 years: observer read-only (arms v and a): yes; arm a acts: yes; arm b acts: yes (required by 60 years); the sham acts: yes; observer deaths equal the world's dead (v, a): yes; deaths seen (v, a): [60, 51]
+seed 601, 60 years: observer read-only (arms v and a): yes; arm a acts: yes; arm b acts: yes (required by 60 years); the sham acts: yes; observer deaths equal the world's dead (v, a): yes; deaths seen (v, a): [208, 236]
+arm a, seed 501: saved at year 10 and reloaded, continues exactly to year 15, with the anchored setting kept: yes
+code_v9 fingerprint: 8f88ec3357e1c0e98f056e218d17269b507c833591c2389c7deff68b7412b75c
+All: PASS
