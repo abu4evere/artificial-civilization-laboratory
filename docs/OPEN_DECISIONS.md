@@ -263,3 +263,8 @@ the file named.
 - [x] **Nature v9 adopted (29 October 2026, the creator: "yes make it v9"):** the curiosity pull. Both models consulted
   (GPT 95%, Gemini 98%); zero checks pass; 64 tests pass; tag `nature-v9`; v8 kept. **Next question:** why knowledge
   still fades over generations, and what would make it build up (`experiments/NV9_nature_v9/findings.md`).
+- [ ] **Emotions (the creator, 30 October 2026: feelings are partly inborn, partly reactions to the world; debate round
+  31, `docs/gpt_view_emotions_2026-10-30.md`):** ACL's five feelings are designed drives (like hunger), each set off
+  only by events and scaled by genes. Both models: not now (mood feeds the learning reward); knowledge loss first.
+  Possible later step: a read-only emotion audit (activity, triggers, effect on choices, share of the reward; GPT 90%,
+  Gemini later). **The creator decides whether and when.**
