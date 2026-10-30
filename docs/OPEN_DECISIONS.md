@@ -273,3 +273,12 @@ the file named.
   Order: knowledge transmission first (LS2, then an apprenticeship law: watching making teaches technique, reusing
   nature's existing chance and practice increment; both 85% valid); define and measure autonomy early (GPT's five
   signs); no harsher world without a measurement first (FX2). **The creator decides the order.**
+- [ ] **Talent (the creator, 30 October 2026: "add talent to the list and debate it later"):** ACL has no direct talent
+  (everyone's skill grows at the same rate, `skill_gain` 0.012 of the remaining gap per practice week; 1.6 × when
+  focused), only indirect talent through genes (diligence: more making and longer focus; curiosity; boldness).
+  Candidate: one more heritable gene that scales how fast skill grows, its spread anchored in evidence, not chosen
+  (one anchor: chess players needed about 3,000 to 24,000 hours to reach master level, about 1:8, Campitelli & Gobet;
+  practice explained 26% of differences in games and 21% in music, Macnamara et al. 2014; whether this transfers to
+  forager crafts needs checking). **Order agreed with the creator:** ageing first (skilled people live long enough),
+  then apprenticeship (skill can pass on), then talent (learners differ). Debate with GPT and Gemini when its turn
+  comes.
