@@ -97,3 +97,13 @@ problem") **and sleep-mode autonomy** (estimate 80%; GPT 90%, Gemini 90%; `docs/
 3. **Smoke:** 8 throwaway worlds (seeds 9989, 9988; all four arms; 40 years) ran, and the analysis ran on them with
    `--from-year 0` (a smoke world has no years 100–999). Not data.
 4. **Cloud:** 80 worlds in 20 jobs of 4 (one seed's four arms per job), `skip_zero=local`.
+
+## Operational note 2 (30 October 2026, after the cloud run, before any outcome was read)
+1. **Two cloud jobs hit GitHub's 340-minute limit** (run 41042869183, chunks 0 and 5): 75 of 80 worlds were saved;
+   missing are b and a for seed 20501, and b, a and x for seed 20506 (slower worlds, larger populations). The
+   analysis stopped at its validity check ("NOT VALID: no reading is drawn"); **no outcome was read.**
+2. **The 5 missing worlds are run on the assistant's PC** with the same code (`code_v9`, the same fingerprint), the
+   same runner and the same Python (3.14.7), without a time limit. The frozen design, seeds and analysis are unchanged.
+3. **Cross-machine identity is checked first:** one world the cloud finished (arm v, seed 20517, ended in year 219) is
+   re-run locally; its saved world hash must equal the cloud's (`f774ceb6daf8…`). If it differs, local worlds are not
+   used, and the missing worlds are re-run in the cloud instead.

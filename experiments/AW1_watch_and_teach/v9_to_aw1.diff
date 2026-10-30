@@ -1,0 +1,55 @@
+diff -ru '--exclude=__pycache__' experiments/NV9_nature_v9/code_v9/acl/actions.py experiments/AW1_watch_and_teach/code_aw1/acl/actions.py
+--- experiments/NV9_nature_v9/code_v9/acl/actions.py	2026-10-29 21:08:16.021724200 -0400
++++ experiments/AW1_watch_and_teach/code_aw1/acl/actions.py	2026-10-30 11:04:17.828155600 -0400
+@@ -98,6 +98,11 @@
+     p.skills[skill] = min(1.0, p.skills[skill] + rate * (1.0 - p.skills[skill]))
+ 
+ 
++def _pass_skill(world, q: Person, how: str) -> None:
++    """AW1: one ordinary practice step picked up from someone else's work ("watched" or "shown")."""
++    _gain_skill(world, q, "crafting")
++
++
+ def _judge_use(world, p: Person, index: int, use: str) -> None:
+     """Whatever was in hand made the job easier by however much its properties allow, and p feels it."""
+     if index >= 0:
+@@ -398,6 +403,10 @@
+         p.reward += 0.1
+         p.doing = "make"
+         world.emit("make", p.id, None, p.loc, thing=item["sig"], **_props(item))
++        if world.cfg.skill_pass == 1:    # AW1 (W): those who see it made may pick up a little of how
++            for q in world.people_near(p.loc, world.cfg.perception, exclude=p.id):
++                if q.age(world.tick) >= 6 * 52 and world.rng.random() < 0.04 * (0.5 + q.genes["curiosity"]):
++                    _pass_skill(world, q, "watched")
+ 
+ 
+ def _craft(world, p: Person, recipe: dict):
+diff -ru '--exclude=__pycache__' experiments/NV9_nature_v9/code_v9/acl/config.py experiments/AW1_watch_and_teach/code_aw1/acl/config.py
+--- experiments/NV9_nature_v9/code_v9/acl/config.py	2026-10-29 21:08:16.452883600 -0400
++++ experiments/AW1_watch_and_teach/code_aw1/acl/config.py	2026-10-30 11:04:17.826154800 -0400
+@@ -128,6 +128,9 @@
+                                        # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
+     curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,
+                                        # 0.3 x curiosity x (1 - hunger), fading as 1/(1 + times tried there) (0 = nature v8)
++    skill_pass: int = 0                # AW1: 1 = (W) seeing someone make a thing may give an onlooker aged 6+ one practice
++                                       # step, at the existing noticing chance; 2 = (T) being shown a recipe in talk gives
++                                       # the learner one practice step (0 = nature v9)
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+diff -ru '--exclude=__pycache__' experiments/NV9_nature_v9/code_v9/acl/information.py experiments/AW1_watch_and_teach/code_aw1/acl/information.py
+--- experiments/NV9_nature_v9/code_v9/acl/information.py	2026-10-29 21:08:15.927980800 -0400
++++ experiments/AW1_watch_and_teach/code_aw1/acl/information.py	2026-10-30 11:04:17.830154700 -0400
+@@ -265,7 +265,11 @@
+     claim = v * (0.85 + 0.35 * rng.random())          # people talk up what works for them
+     if kind == "m":
+         recipe = _recipe_as_shown(world, teacher, learner, teacher.recipes[what])
+-        return hear_how(world, learner, teacher, what, recipe, claim, parent)
++        took = hear_how(world, learner, teacher, what, recipe, claim, parent)
++        if world.cfg.skill_pass == 2:    # AW1 (T): being shown how is a little practice, taken or not
++            from .actions import _pass_skill
++            _pass_skill(world, learner, "shown")
++        return took
+     key = _belief_as_told(world, what)
+     return hear_belief(world, learner, teacher, key, claim, parent)
+ 
