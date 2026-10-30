@@ -1,4 +1,4 @@
-# AW1 — Learning a craft from others: does watching, or being shown, pass technique and bring making back? Findings (not final until GPT and Gemini recompute; see the end)
+# AW1 — Learning a craft from others: does watching, or being shown, pass technique and bring making back? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `AW1-frozen` (operational note 1); **signed off by the creator** ("yea go ahead with AW1 run it after AG1").
 A nature-change study: `code_aw1` = `code_v9` + one setting, `skill_pass` (`v9_to_aw1.diff`). Run on GitHub Actions (run
@@ -63,3 +63,10 @@ GPT gave 40% that making would rise meaningfully. It did not.
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, from raw per-world sums (`recompute/aw1_one_file.csv`). Recorded only from their
 actual replies.
+
+## Independent recompute (30 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world sums only, without the analysis script
+(`recompute_aw1.md`). **All three agree:** making per adult-year v 0.0763, w 0.0754, t 0.0832, sham 0.0798; w − v
+−0.0009 and t − v +0.0069, both **not supported**; no flags; being shown raises world-born adults' skill by +0.2238.
+
+**Final.**

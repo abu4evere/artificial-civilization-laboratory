@@ -691,3 +691,8 @@ of what its carers knew. A read-only count on 6 throwaway v9 worlds shows ACL ad
 11% of adult deaths at 60+). **Next, in the creator's order (30 October): ageing anchored to forager evidence (being
 settled with GPT and Gemini, delegated by the creator), then apprenticeship (watching making teaches technique), then
 talent.**
+
+**AW1 done** (30 October; recomputed blind by GPT and Gemini). Being shown a recipe passes real technique (skill nearly
+doubles), but people still rarely choose to make things; watching passes almost nothing. Neither law supported.
+**Technique is not the bottleneck; the choice is.** Next: a read-only look at why the choice to make falls. AG1
+(ageing) awaits its 5 local worlds.

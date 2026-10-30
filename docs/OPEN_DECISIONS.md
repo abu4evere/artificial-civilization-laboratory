@@ -282,3 +282,8 @@ the file named.
   forager crafts needs checking). **Order agreed with the creator:** ageing first (skilled people live long enough),
   then apprenticeship (skill can pass on), then talent (learners differ). Debate with GPT and Gemini when its turn
   comes.
+- [ ] **After AW1** (final, 30 October 2026; `experiments/AW1_watch_and_teach/findings.md`): passing technique (being
+  shown) nearly doubles skill but does not bring making back; neither law is proposed for adoption. Frozen next step:
+  a **read-only look at why the choice to make falls** (what makes foraging win, 0.67 of the time when making was
+  weighed; the worth people expect from made things, and how often those things actually help). To debate with GPT and
+  Gemini, then freeze.
