@@ -1,4 +1,4 @@
-# AW1 — Learning a craft from others: does watching, or being shown, pass technique and bring making back? (DRAFT plan; not frozen; awaiting the creator's sign-off)
+# AW1 — Learning a craft from others: does watching, or being shown, pass technique and bring making back? (frozen plan)
 
 **A nature-change study.** `code_aw1` would be `code_v9` + one setting, `skill_pass` (0 = v9 exactly). Adoption is the
 creator's decision.
@@ -25,12 +25,12 @@ passed stone-tool skill, while imitation alone did not (Morgan et al. 2015). Deb
 
 ## Design
 - **Arms:** v (v9), w (`skill_pass` 1), t (`skill_pass` 2), x (sham: v9 with `sham_draw` 1).
-- **World:** LP (80 founders, 80 × 80), **200 years**, **32 new paired seeds**. 128 worlds. (CU1's pattern: 200 years
+- **World:** LP (80 founders, 80 × 80), **200 years**, **32 new paired seeds (20601–20632)**. 128 worlds. (CU1's pattern: 200 years
   first; a 1,000-year check only if supported.)
 
 ## Primary
 **Making events per adult-year, years 100–200** (CU1's and LC1's measure: adults 16+, survivor-weighted, ratio of
-sums over worlds). Paired world bootstrap (10,000; generator seed to be fixed at freezing).
+sums over worlds). Paired world bootstrap (10,000 replicates; generator seed 20261031; 95% percentile intervals).
 **Rule (CU1's):** an arm **supports** if the lower bound of (arm − v) is above 0 and above the upper bound of
 (x − v). **Flags (CU1's):** 3 or more extinct worlds than v; population in years 100–200 below 0.90 × v.
 
@@ -53,7 +53,11 @@ sums over worlds). Paired world bootstrap (10,000; generator seed to be fixed at
   worth of made things, LS2's "what won": foraging 0.67), read-only first.
 - **Neither:** the passed steps are too few to matter; report how many were given.
 
-## Open before freezing (for the creator)
-- Sign-off on this plan (a change to nature, tested; adoption separate).
-- Whether T should apply only to recipes the teacher can make at that moment (shown with the things in hand), as the
-  copying-error rule already favours.
+## Settled at freezing
+- **T applies to every recipe shown in talk**, whether or not the teacher can make it at that moment: being told is
+  part of being shown (Morgan et al. 2015: verbal teaching passed the most), and the existing copying-error rule
+  already rewards showing with the things in hand. No new condition is added.
+
+## Sign-off (30 October 2026)
+**The creator: "yea go ahead with AW1 run it after AG1".** Frozen as `AW1-frozen` before any code or data. It runs on
+GitHub after AG1 finishes.
