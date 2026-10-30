@@ -89,3 +89,8 @@ experiments/E13R_replication/l2_timing/add_fx3.py
 drafts/book_rewrite/google_play/
 # Part Two of the book: text stays local (Amazon only, no free copies)
 drafts/book_rewrite/part2/
+
+# Autonomous research: local logs, locks, budgets and stop/pause switches stay on this PC
+research/local/
+research/STOP
+research/PAUSE
