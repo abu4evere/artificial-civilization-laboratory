@@ -1,0 +1,33 @@
+30004 7800 455
+30006 7800 433
+30002 7800 499
+30003 7800 541
+30005 7800 620
+30001 7800 832
+worlds: 6; final years: [150, 150, 150, 150, 150, 150]
+
+cohort born years 0-50 in worlds alive at year 150: 1314 people (0 still alive, censored)
+  died before 1: 0.052; before 5: 0.134; before 16: 0.235
+  mean age at death (dead only; censored few): 33.4; median 35.2
+  reached 16 and died: 1005; their mean age at death 42.0, median 43.0; oldest 75.1
+    share of 16+ deaths at 16+: 1.000
+    share of 16+ deaths at 30+: 0.743
+    share of 16+ deaths at 45+: 0.451
+    share of 16+ deaths at 60+: 0.113
+    share of 16+ deaths at 70+: 0.010
+    share of 16+ deaths at 80+: 0.000
+  causes of death, 16+: illness 0.38, old age 0.32, starvation 0.18, thirst 0.09, childbirth 0.02, killed 0.01
+  causes of death, under 16: starvation 0.46, thirst 0.27, illness 0.13, neglect 0.12, killed 0.02
+  deaths per person-year by age (all causes) [forager total, SA1 note: 0.018 at 40, 0.039 at 60]:
+    0-1: 68 deaths / 1280 person-years = 0.0531
+    1-5: 108 deaths / 4743 person-years = 0.0228
+    5-15: 123 deaths / 10699 person-years = 0.0115
+    15-30: 268 deaths / 13358 person-years = 0.0201
+    30-45: 294 deaths / 9105 person-years = 0.0323
+    45-60: 339 deaths / 4196 person-years = 0.0808
+    60-70: 104 deaths / 475 person-years = 0.2190
+    70-200: 10 deaths / 27 person-years = 0.3663
+
+all world-born deaths in years 100-150: 1357; mean age 38.2; median 40.8; oldest 79.9
+
+[exited with code 0]
