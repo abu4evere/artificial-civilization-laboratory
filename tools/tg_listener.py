@@ -180,9 +180,14 @@ def main() -> None:
     while not (LOCAL / "TG_OFF").exists():
         try:
             upd = api(token, "getUpdates", http_timeout=70, offset=offset, timeout=50)
-        except Exception as e:                     # network hiccups: wait and poll again
+        except Exception as e:                     # network hiccups, or a replaced token: wait, re-read, poll again
             audit(kind="poll-error", error=type(e).__name__)
             time.sleep(15)
+            try:                                   # tg_setup.py may have saved a new token or account
+                cfg = json.loads(notify.CONFIG.read_text(encoding="utf-8"))
+                token, user = cfg["token"], int(cfg["user_id"])
+            except (OSError, ValueError, KeyError):
+                pass
             continue
         for u in upd.get("result", []):
             offset = u["update_id"] + 1
