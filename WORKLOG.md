@@ -340,3 +340,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 21:16: NATURE v9 ADOPTED (the creator: 'yes make it v9'). Both models consulted (GPT 95%, Gemini 98%). code_v9 = code_cu1 with curiosity_pull default 1; live acl/ patched; NV9 zero checks ALL PASS (off = v8; v9 = CU1 arm c; live = v9; acts; reload exact with tried); reference hashes: live regenerated (= v9), v9 set added, v8 kept; 64 tests pass. Tag nature-v9. CLAUDE.md test line updated.
 - 2026-10-29 21:20: GitHub tests workflow on nature v9 (0fa5678e): success.
 - 2026-10-29 21:46: the creator asked what to study next. Round 30: both chose A (LS2: where knowledge is lost under v9, per generation; GPT 90%, Gemini 95%), then B (apprenticeship) shaped by it.
+- 2026-10-29 21:59: the creator: 'yea draft it and run on github'. LS2 (LS1's frozen design on nature v9; LP, 40 seeds, 1,000 years; read-only) drafted and frozen (LS2-frozen).
