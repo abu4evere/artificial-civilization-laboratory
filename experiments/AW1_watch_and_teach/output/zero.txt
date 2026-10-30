@@ -1,0 +1,6 @@
+seed 501, 20 years: code_aw1 with 0 equals code_v9: yes; observer read-only (arms w and t): yes; W acts: yes; T acts: yes; the sham acts: yes; steps passed (w: watched 110, shown 0; t: watched 0, shown 5372), each only its own kind: yes; make events w 472, t 720
+seed 601, 60 years: code_aw1 with 0 equals code_v9: yes; observer read-only (arms w and t): yes; W acts: yes; T acts: yes; the sham acts: yes; steps passed (w: watched 988, shown 0; t: watched 0, shown 23768), each only its own kind: yes; make events w 2089, t 1911
+arm w, seed 501: saved at year 10 and reloaded, continues exactly to year 15, setting kept: yes
+arm t, seed 501: saved at year 10 and reloaded, continues exactly to year 15, setting kept: yes
+code_aw1 fingerprint: 0e9de6a7d400414109c5083eb1a66f666d7abf40b33a308d8c4bcb9ffcc107f7
+All: PASS
