@@ -16,6 +16,7 @@ from __future__ import annotations
 import getpass
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -46,7 +47,13 @@ def save(cfg: dict) -> None:
 
 def main() -> None:
     print("ACL Telegram setup. The token is typed in hidden and saved only on this PC.")
-    token = getpass.getpass("Bot token from @BotFather (hidden): ").strip()
+    raw = getpass.getpass("Bot token from @BotFather (hidden): ")
+    # A pasted token can arrive wrapped in invisible terminal characters (bracketed paste); keep only the token itself.
+    m = re.search(r"\d{5,}:[A-Za-z0-9_-]{30,}", raw)
+    if not m:
+        sys.exit("That did not look like a bot token (digits, a colon, then letters). Run again and paste it once, "
+                 "with right-click or Ctrl+V, then press Enter.")
+    token = m.group(0)
     try:
         me = api(token, "getMe")
     except Exception as e:
