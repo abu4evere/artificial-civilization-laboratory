@@ -145,3 +145,16 @@ years 800–999, c − v, FS1's ±0.012 margin.
   outcome."
 - **Gemini: yes, 95%.** Add a century-by-century log-skill slope (slower decay vs a higher floor).
 - **Council:** all adopted (the slope as described, not a gate).
+
+# Debate round 30 (29 October 2026): what next after nature v9?
+**The creator asked.** Options: (A) a read-only "where knowledge is lost under v9" audit (LS1's ledger, per generation);
+(B) an apprenticeship condition (watch someone make a thing and learn from it; the top missing ability C1); (C) a
+heritable curiosity strength; (D) other.
+- **GPT: A first, then B. 90%.** v9 changed exploration, so LS1's v7 picture may not hold. A generation-by-generation
+  ledger: creation, transmission, retention after the maker's death, loss (death, forgetting, failed transmission);
+  founders' knowledge kept apart from world-born; a recipe kept apart from the practical skill to use it. B second
+  because watching could teach a technique, a recipe, or both: the ledger should say which to test. Not C yet.
+- **Gemini: A, 95%.** A per-generation inflow/outflow ledger over 300 years on v9: invention and practice,
+  intergenerational transmission, know-how lost unpassed at death, and failures from missing parts.
+- **Council:** both choose A (call it LS2, comparable to LS1), then B shaped by its answer. To be drafted for the
+  creator.
