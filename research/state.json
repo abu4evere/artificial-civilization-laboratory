@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-30T18:35:00-04:00",
+  "updated": "2026-10-30T19:45:00-04:00",
   "nature": {
     "live": "v9",
     "acl_fingerprint": "edb0cd3daec9db7cfc00c16833d4e3e34f2d1ef6965760f915f4cdbc52ee8195",
@@ -67,12 +67,12 @@
       "plan": "experiments/CO2_choice_v9/questions.md",
       "frozen_tag": "CO2-frozen",
       "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
-      "status": "running-cloud",
+      "status": "recompute-pending",
       "jobs": {
         "cloud_run": 41138990924
       },
-      "next_step": "ask GPT for its view of the plan (recorded beside it) before reading results; when the run completes: fetch, run analyse_co2.py, write findings, build the recompute file",
-      "evidence": "none yet"
+      "next_step": "blind recompute (Gemini and GPT, fresh chats; needs the browser: Chrome link dropped and ChatGPT would not send at 19:40)",
+      "evidence": "finding (not yet recomputed): the level of making's deficit is carried by the built-in pull (0.562); the decline over time by habit (0.87, as CO1 on v7); curiosity favours making a little (-0.051)"
     }
   ],
   "queue_after": [
