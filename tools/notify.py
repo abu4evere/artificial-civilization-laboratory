@@ -29,7 +29,8 @@ LOCAL = ROOT / "research" / "local"
 CONFIG = Path(os.environ.get("USERPROFILE", str(Path.home()))) / ".acl" / "telegram.json"
 MAX_CHARS = 1000
 DAILY_LIMIT = 12
-KINDS = ("info", "started", "finished", "problem", "approval", "summary", "test")
+KINDS = ("info", "started", "finished", "problem", "approval", "summary", "test", "reply")
+REPLY_MAX = 3800        # answers to the creator's own Telegram messages: longer, and not counted in the daily limit
 
 
 def credentials():
@@ -55,14 +56,14 @@ def sent_today() -> int:
         return 0
     day = datetime.now().strftime("%Y-%m-%d")
     return sum(1 for ln in log.read_text(encoding="utf-8").splitlines()
-               if ln.startswith(day) and " sent " in ln and " problem " not in ln)
+               if ln.startswith(day) and ln.endswith(" sent") and " problem " not in ln and " reply " not in ln)
 
 
 def send(text: str, kind: str = "info") -> bool:
     """Returns True if Telegram accepted the message."""
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    text = text.strip().replace("\r", "")[:MAX_CHARS]
-    if kind != "problem" and sent_today() >= DAILY_LIMIT:
+    text = text.strip().replace("\r", "")[:REPLY_MAX if kind == "reply" else MAX_CHARS]
+    if kind not in ("problem", "reply") and sent_today() >= DAILY_LIMIT:
         _log(f"{now} {kind} held (daily limit {DAILY_LIMIT})")
         _outbox(now, kind, text)
         return False
