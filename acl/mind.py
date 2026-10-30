@@ -175,6 +175,9 @@ def decide(world, p: Person) -> tuple:
             t = target[0] if action == "gather" else target
             if isinstance(t, tuple) and len(t) == 2 and isinstance(t[0], int) and dry(t):
                 u -= dry_cost
+        if c.curiosity_pull:            # CU1: what has rarely been tried here draws the curious, as play does
+            n = p.tried[base + A[action]] if p.tried is not None else 0
+            u += 0.3 * g["curiosity"] * (1.0 - hunger) / (1 + n)
         options.append((u + lw * p.q[base + A[action]], action, target))
 
     age_years = p.years(tick)

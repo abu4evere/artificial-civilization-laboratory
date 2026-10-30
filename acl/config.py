@@ -126,6 +126,8 @@ class Config:
     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
                                        # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
+    curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,
+                                       # 0.3 x curiosity x (1 - hunger), fading as 1/(1 + times tried there) (0 = nature v8)
     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
     loved_location: str = "last_seen"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
                                        # "last_seen" = toward where the person last had them in sight

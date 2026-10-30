@@ -679,3 +679,8 @@ starvation and the look-ahead). Next: the learning rule itself.
 (6.8% vs 9–58%), by choice; play is where their crafting skill comes from. **CU1: the first fix that works.** A curiosity
 pull towards rarely tried actions, at the strength nature already gives play, widens practice and raises making by
 57% and crafting skill by 18%, with no harm. **Next: the creator decides on nature v9; then a long-run check.**
+
+**Nature v9** (`experiments/NV9_nature_v9/findings.md`; the creator's decision, 29 October 2026): v8 + a curiosity pull
+towards actions rarely tried, at the play instinct's own strength. LC1: over 1,000 years, curious worlds keep more
+skill, make twice as much and die out less often, but knowledge still fades over generations. **Next: what makes
+knowledge build up.**

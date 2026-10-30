@@ -260,3 +260,6 @@ the file named.
   supported, no flags; practice spreads, making × 1.57, crafting skill × 1.18, population × 1.025. If yes: both models
   consulted, `code_v9` with zero checks, the tests, a `nature-v9` tag; then a long-run check and option C (a heritable
   strength) (`experiments/CU1_curiosity/findings.md`).
+- [x] **Nature v9 adopted (29 October 2026, the creator: "yes make it v9"):** the curiosity pull. Both models consulted
+  (GPT 95%, Gemini 98%); zero checks pass; 64 tests pass; tag `nature-v9`; v8 kept. **Next question:** why knowledge
+  still fades over generations, and what would make it build up (`experiments/NV9_nature_v9/findings.md`).

@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v9 with curiosity_pull 0 = code_v8: yes
+seed 501, 5 years: code_v9 with curiosity_pull 0 = code_v8: yes
+seed 501, 20 years: code_v9 with curiosity_pull 0 = code_v8: yes
+seed 601, 20 years: code_v9 with curiosity_pull 0 = code_v8: yes
+seed 501, 20 years: v9 = code_cu1's arm c: yes
+seed 501, 20 years: the live package with its own defaults = v9: yes
+seed 601, 20 years: v9 = code_cu1's arm c: yes
+seed 601, 20 years: the live package with its own defaults = v9: yes
+seed 501, 20 years: curiosity_pull changes the world (it acts): yes
+v9, seed 501 (`tried` held): saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

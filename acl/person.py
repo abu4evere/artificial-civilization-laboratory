@@ -98,7 +98,7 @@ class Person:
         "focus", "focus_weeks", "thoughts", "considered",
         "heard", "puzzles", "marks", "thirst", "springs",
         "records", "sightings", "shores", "voyage",
-        "kept", "damp", "seen_at",
+        "kept", "damp", "seen_at", "tried",
     )
 
     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
@@ -179,6 +179,7 @@ class Person:
         self.kept = 0.0                # of their food, how much has been held in a fire: it keeps longer
         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+        self.tried = None              # CU1: how often p has learned from each action in each situation (only with curiosity_pull)
 
     # --- life stage -------------------------------------------------------
 
@@ -252,6 +253,8 @@ class Person:
                 v = [m.to_list() for m in v]
             elif k == "seen_at" and not v:
                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+            elif k == "tried" and v is None:
+                continue                 # CU1: saved only when held, so v8's world is unchanged
             elif k == "loc":
                 v = list(v)
             d[k] = v

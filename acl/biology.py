@@ -394,6 +394,10 @@ def _learn(world, p: Person) -> None:
     r = p.reward + 2.0 * (p.mood - p.mood_before)
     i = p.last_ctx * N_ACTIONS + A[p.last_action]
     p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
+    if c.curiosity_pull:                # CU1: p remembers having tried this here
+        if p.tried is None:
+            p.tried = [0] * len(p.q)
+        p.tried[i] += 1
 
 
 def _follow(world, p: Person) -> None:
