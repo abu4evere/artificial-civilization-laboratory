@@ -68,3 +68,10 @@ not reachable tonight). Frozen as `CO2-frozen` before any code or data.
    family or Q5 mismatches; reload exact.
 4. **Smoke:** 2 throwaway worlds (seeds 9985, 9984; 25 years); the analysis ran with `--smoke-late` (years 10–20).
    Not data.
+
+## Operational note 2 (30 October 2026, before any outcome was read)
+GPT's view of the plan, promised before results, **could not be obtained**. Between about 18:10 and 19:35, ChatGPT
+did not load on this PC: the main chat froze, new chats stayed on "loading", and a message typed into a new chat would
+not send. The run finished and was fetched (32 of 32 worlds) without being analysed. The analysis is now run as
+frozen. GPT will be asked for the blind recompute when ChatGPT works again; until then, the recompute is Gemini's
+alone, and the findings say so.
