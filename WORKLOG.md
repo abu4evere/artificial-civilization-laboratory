@@ -335,3 +335,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-29 05:28 (heartbeat): LC1 run 40838846290 still running.
 - 2026-10-29 06:28 (heartbeat): LC1 run 40838846290 still running.
 - 2026-10-29 07:28 (heartbeat): LC1 run 40838846290 still running.
+- 2026-10-29 20:09: LC1 run 40838846290 fetched (96 worlds; chunk 4 hit the 340-min job limit after its worlds were saved; all 96 files complete). Valid. 'Curiosity holds skill higher': years 800-999 c-v +0.0327 [+0.0232,+0.0434]; same absolute fall as v (-0.185 vs -0.184), slower relative fall (-0.17 vs -0.22 log/century); making x2; extinct 7 vs 12; population x1.46. Findings written (not final); recompute file built.
