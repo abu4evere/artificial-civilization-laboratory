@@ -90,6 +90,12 @@ So in sleep mode the assistant decides in the creator's place, including the ste
 4. Record every autonomous decision in `docs/autonomous_decisions.md`, with the estimate, the models' votes and the
    reason. Sign-offs read "the assistant, under the creator's sleep-mode autonomy".
 
+**Keep researching (the creator, 30 October 2026):** "do not forget to do research all the time because we may find
+good sources we can use we can find our solutions somewhere maybe". Whenever runs are going, look for published work
+(anchors, mechanisms, methods) bearing on the open question, read it, label what was read (full text / abstract /
+record only), never invent a source, and save notes under `docs/research/`. A source suggests; only a frozen study
+decides.
+
 **Still never, even in sleep mode:**
 - tune nature towards an outcome, or break the hard rules above (frozen plans, zero checks, recompute, no named
   inventions);

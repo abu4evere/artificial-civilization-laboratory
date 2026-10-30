@@ -62,3 +62,10 @@ Less for now: language, emergent emotions, Minecraft, the book.
 3. **No harsher world without a measurement first** (GPT; FX2 agrees).
 4. **Population connections:** study whether isolation stops useful knowledge spreading, not only grow numbers.
 5. **Later:** language and emergent emotions.
+
+## Correction (appended 30 October 2026, by the assistant; found by the read-only scout and re-checked in the code)
+The council text above says that when someone uses a tool successfully in a hunt, "each onlooker aged 6+ within
+sight" may work out the recipe. **That holds only for a crossing** (`acl/actions.py:90-93`: onlookers within
+`perception`, aged 6+). **In a hunt, only the co-hunters can watch** (`acl/actions.py:186-189`: `for o in hunters`),
+with no sight radius and no age check. The point made to GPT and Gemini (the existing watching law passes a recipe,
+never skill, and is set off by use, not making) is unchanged.
