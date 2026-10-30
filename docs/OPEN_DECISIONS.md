@@ -268,3 +268,8 @@ the file named.
   only by events and scaled by genes. Both models: not now (mood feeds the learning reward); knowledge loss first.
   Possible later step: a read-only emotion audit (activity, triggers, effect on choices, share of the reward; GPT 90%,
   Gemini later). **The creator decides whether and when.**
+- [ ] **Mission focus (the creator, 30 October 2026; debate round 32, `docs/gpt_view_mission_focus_2026-10-30.md`):**
+  both models: cumulative knowledge and autonomy are two requirements of Bob, developed together, not two stages.
+  Order: knowledge transmission first (LS2, then an apprenticeship law: watching making teaches technique, reusing
+  nature's existing chance and practice increment; both 85% valid); define and measure autonomy early (GPT's five
+  signs); no harsher world without a measurement first (FX2). **The creator decides the order.**
