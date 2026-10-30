@@ -385,3 +385,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-30 18:28 (telegram): creator freed the PC for full CPU; raised the 5 running AG1 local workers (pids 6596, 7796, 11748, 11812, 15216) from BelowNormal (4) to AboveNormal (10). No code or runner change; nothing restarted.
 - 2026-10-30 18:34 (sleep mode): CO2 local zero checks PASS (8f88ec33); operational note 1. Launching on GitHub.
 - 2026-10-30 18:34 (sleep mode): CO2 launched on GitHub: run 41138990924 (32 worlds x 200 years, 16 chunks). state.json updated.
+- 2026-10-30 18:36 (sleep mode): research note docs/research/learning_rule_sources_2026-10-30.md (Double Q-learning, van Hasselt 2010; Expected Sarsa, van Seijen et al. 2009; abstracts): ACL's max look-ahead is Q-learning's known overestimation bias; a possible later nature-change study (creator only) if CO2 finds habit carries making's deficit. ChatGPT still not loading on this PC.
