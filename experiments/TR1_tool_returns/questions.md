@@ -84,3 +84,24 @@ same state, with pure functions:
 ## Sign-off (31 October 2026)
 The assistant, under the creator's sleep-mode autonomy. It is read-only (the 40% rule). GPT estimates 85%, Gemini 85%
 and the assistant 75%. Frozen as `TR1-frozen` before any code or data.
+
+## Operational note 1 (31 October 2026, after freezing, before any data)
+
+How the code (`run_tr1.py`, `analyse_tr1.py`) reads the text where it left a choice, found in a 110-year smoke world
+(seed 9993; not data):
+1. **Zero checks run at 20 and 120 years,** not 20 and 60, so the late-window counters are checked too (stricter).
+2. **"Food got"** is the edible food the forage adds (food and seeds together), as `_forage` adds it. The replay equals
+   the food actually got in every forage of the smoke world (counter `forage_replay`, required 0).
+3. **"The best tool the person knows"** is the best forage factor among items that exist that week (in anyone's
+   hands) of a kind in the person's recipe memory, or the tool in hand if better. **"In anyone's hands"** is the best
+   forage factor among all items held by the living that week.
+4. **"Tool-aided week"** means the person holds an item whose forage factor is above 1.
+   - "Added nothing": food with = food without.
+   - "Partly capped": some gain, less than the uncapped gain (rate × effort × (factor − 1)).
+   - "Fully realized": the whole uncapped gain.
+5. **Hunting counts hunts in years 100–200 with at least one adult hunter,** and only where prey is present (as the
+   law does). Expected kills sum the law's kill chance under each tool assumption. Meat per kill is the mean over all
+   kills in the run.
+6. **Q5's seasons** are the world's season index (0–3), as the code numbers them.
+7. **"Near the line"** is decided on the threshold that sets the reading. For "knowing matters but is unused", it is
+   headroom (b)'s lower bound below 0.10, or the realized share's upper bound at or above half of headroom (b).

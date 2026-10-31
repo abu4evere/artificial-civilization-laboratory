@@ -417,3 +417,5 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-31 04:28 (sleep mode): IW1 FINAL: GPT (fresh chat 6ae5a640) and Gemini (fresh chat 739056e8d63c2f56) blind recomputes match every number (U 0.0040 [0.0022, 0.0058], F 0.1628, S 0.1155, mixed). INDEX, ROADMAP, OPEN_DECISIONS, state.json updated; tag IW1-done.
 - 2026-10-31 04:28: IW1 result sent to Telegram; morning report updated (31 October section).
 - 2026-10-31 05:28 (sleep mode): debate round 34: GPT (6ae5b429) yes 85%, Gemini (ba26c2914973cdfe) yes 85%; additions adopted; Gemini's TR1b (doubled carry, Ache hunting) is a nature-change candidate for the creator. TR1 frozen (TR1-frozen), seeds 21001-21032, code_v10.
+- 2026-10-31 05:41 (sleep mode): TR1 runner and analysis written before data; 110-year smoke world OK (forage replay exact); operational note 1; local zero checks running (20 and 120 years).
+- 2026-10-31 06:07 (sleep mode): TR1 local zero checks PASS (read-only at 20 and 120 years; forage replay exact over 533,094 forages; reload exact; code_v10 fingerprint 51385ff4). Launching on GitHub.
