@@ -1,0 +1,5 @@
+seed 501, 20 years: code_hd1 with hand_items 0 = code_v10: yes; observer read-only (arm h): yes; the law acts: yes; the sham acts: yes; conservation and replay mismatches: none; handings (arm h) 1786
+seed 601, 60 years: code_hd1 with hand_items 0 = code_v10: yes; observer read-only (arm h): yes; the law acts: yes; the sham acts: yes; conservation and replay mismatches: none; handings (arm h) 7079
+arm h, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_hd1 fingerprint: 8217eac339e49ea19918e1f1161fc2c17e361e96da41a3b43d98ab3893a5d006
+All: PASS
