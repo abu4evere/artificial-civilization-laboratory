@@ -433,3 +433,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-31 10:48 (sleep mode): TA1 110-year smoke OK (mismatches 0; analysis runs). Local zero checks running.
 - 2026-10-31 11:15 (sleep mode): TA1 local zero checks PASS (read-only at 20 and 120 years; accounting exact; reload exact; code_v10 51385ff4). Launching.
 - 2026-10-31 11:15 (sleep mode): TA1 launched: run 41213975492 (32 worlds x 200 years, 16 chunks, skip_zero=local, code_v10); state.json updated.
+- 2026-10-31 11:24 (sleep mode): TA1 run 41213975492 at 2/18 jobs. Morning report updated (TR1 final, amendment 1, debate 35-36, TA1 running, two candidate laws for the creator).

@@ -175,3 +175,32 @@ It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
 | decision | GPT | Gemini | mine |
 |---|---|---|---|
 | IW1, how the worth of made things forms (read-only) | 75% | 85% | 70% |
+
+## Later on 31 October (sleep mode)
+1. **TR1 is final** (rechecked blind by GPT and Gemini):
+   - tools add only 1% of foraged food, but the best tools already in the world would add 20%;
+   - about 9 in 10 people forage bare-handed: **knowing matters, but it is unused.**
+2. **TR1's first run failed its own safety check.** In 3 of 10 million forages, the person died during the forage. That
+   was a flaw in my check, not in nature. It was fixed openly (amendment 1), and the study was re-run before any result
+   was read.
+3. **GPT and Gemini both chose to measure first** (95% each) before testing a "handing things to others" law. They
+   agree such a law would be a fair physical ability, and gave guards for it:
+   - no rewards for giving;
+   - objects conserved;
+   - the receiver must have room.
+4. **TA1** (why tools don't reach hands) is running on GitHub. A test world hints at two things at once:
+   - a tool is usually within reach of a bare-handed forager (an access gap);
+   - the forager could often make one now (a choice gap);
+   - and children under 12 hold tools most.
+
+## Autonomous decisions (later 31 October)
+| decision | GPT | Gemini | mine |
+|---|---|---|---|
+| TR1, what tools really add (read-only) | 85% | 85% | 75% |
+| TA1, why tools don't reach hands (read-only) | 95% / 90% | 95% / 94% | 75% |
+
+## Waiting for you
+- **Two possible laws** (physical abilities only; using them stays culture):
+  - handing a made thing to another person;
+  - children making known things before 12.
+  TA1's result will show which matters more.
