@@ -297,3 +297,5 @@ the file named.
   step: a read-only look at how the worth of made things forms and decays. **For the creator:** a learning-rule
   study (an expected look-ahead instead of the max; `docs/research/learning_rule_sources_2026-10-30.md`).
 - [ ] **Children cannot make known things before 12** (found 31 October 2026, `docs/research/making_time_and_child_objects_2026-10-31.md`): in ACL the "make" choice starts at 12; under 12, only play. Forager children readily make their own toys, mostly small versions of adult tools (Lew-Levy et al. 2022, 54 societies). A possible Law 126 question (evidence first, then a frozen study). **The creator decides whether to pursue it.**
+
+- [ ] **After IW1** (final, 31 October 2026; `experiments/IW1_item_worth/findings.md`): worth is learned; made things just help modestly (0.163 per use), so making loses to food. Candidate next step (read-only, to debate): where in the world could tools matter more (which tasks, seasons and needs), measured before any law makes anything harder or more rewarding (the creator's "a world where knowing matters").

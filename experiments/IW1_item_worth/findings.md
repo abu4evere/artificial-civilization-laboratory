@@ -1,4 +1,4 @@
-# IW1 — How does the worth of made things form? Findings (not final until GPT and Gemini recompute)
+# IW1 — How does the worth of made things form? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `IW1-frozen` (operational note 1). Signed off by the assistant under sleep-mode autonomy (read-only; GPT 75%,
 Gemini 85%; debate round 33). Run on GitHub Actions (run 41180403699, `skip_zero=local`). 32 worlds on nature v9
@@ -79,3 +79,9 @@ time people make things. **GPT's caution** (six uses is a diagnostic bin) is bor
 ## Independent recompute
 Pending: GPT and Gemini, each in a fresh chat, from `recompute/iw1_one_file.csv` (per-world sums from the raw output).
 Recorded only from their actual replies.
+
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, worked from per-world sums of the raw output only, without the analysis script
+(`recompute_iw1.md`). **All three agree:** U +0.0040 [0.0022, 0.0058]; F 0.1628; S 0.1155; reading "mixed".
+
+**Final.**

@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T05:00:00-04:00",
+  "updated": "2026-10-31T04:28:13-04:00",
   "nature": {
     "live": "v10",
     "acl_fingerprint": "b3a820c032a9d22f4bcad7f84ae9855ecf792760d6323627f8d2b81849812629",
@@ -78,12 +78,17 @@
       "id": "IW1",
       "title": "How the worth of made things forms (read-only, frozen on code_v9)",
       "kind": "read-only",
-      "status": "running-cloud",
+      "status": "final",
       "run": 41180403699,
-      "next_step": "when run 41180403699 completes: python tools/ci/fetch_cloud.py 41180403699 experiments/IW1_item_worth/output; count 32 worlds; run analyse_iw1.py; write findings (not final until GPT and Gemini recompute)"
+      "next_step": "none; next: debate a read-only look at where tools could matter more (a world where knowing matters)"
     }
   ],
   "queue_after": [
+    {
+      "what": "read-only: where in the world could made things matter more (tasks, seasons, needs), after IW1",
+      "status": "proposed",
+      "needs": "debate with GPT and Gemini, then a frozen plan"
+    },
     {
       "what": "an early, read-only autonomy audit (design note Part 2)",
       "status": "proposed",
