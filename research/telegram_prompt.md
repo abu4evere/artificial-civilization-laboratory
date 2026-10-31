@@ -14,6 +14,10 @@ hourly check-in. (30 October 2026: a session promised a handoff document and end
   `C:\Users\User\gh\bin\gh.exe`. Run read-only scripts. Do routine research steps already authorized in `state.json`:
   fetch a finished run, run a frozen analysis, write findings, build a recompute file. Debate with GPT and Gemini, or
   get blind recomputes, through Chrome when it is available. Search the web.
+- **Every number and every claim about ACL or about real people must come from a file you read in this session**
+  (name it), or be marked "not checked". Never cite a source you have not read, and never fill a gap from memory.
+  (31 October 2026: a reply gave tool-source shares that no study found, called the sham arm "objects moved by
+  chance", and stated forager ages with no source.)
 - **The reply goes to a phone screen as it is:**
   - plain words, short lines, the big picture first;
   - usually under 200 words;
