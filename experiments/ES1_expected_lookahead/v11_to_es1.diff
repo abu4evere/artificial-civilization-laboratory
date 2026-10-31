@@ -1,0 +1,33 @@
+diff -ru --strip-trailing-cr -x __pycache__ NV11_nature_v11/code_v11/acl/biology.py ES1_expected_lookahead/code_es1/acl/biology.py
+--- NV11_nature_v11/code_v11/acl/biology.py	2026-10-31 18:31:15.733628500 -0400
++++ ES1_expected_lookahead/code_es1/acl/biology.py	2026-10-31 19:28:14.253809300 -0400
+@@ -390,7 +390,16 @@
+     c = world.cfg
+     near = world.people_near(p.loc, c.reach, exclude=p.id)
+     nxt = context_index(world, p, bool(near))
+-    future = max(p.q[nxt * N_ACTIONS:(nxt + 1) * N_ACTIONS])
++    nq = p.q[nxt * N_ACTIONS:(nxt + 1) * N_ACTIONS]
++    if c.expected_lookahead:
++        # ES1: what the next situation is worth on average, the way this person would choose in it (their habits'
++        # share of the choice), instead of its single best-looking option.
++        k = c.learned_weight / c.choice_temperature
++        top = max(nq)
++        w = [math.exp(k * (v - top)) for v in nq]
++        future = sum(wi * v for wi, v in zip(w, nq)) / sum(w)
++    else:
++        future = max(nq)
+     r = p.reward + 2.0 * (p.mood - p.mood_before)
+     i = p.last_ctx * N_ACTIONS + A[p.last_action]
+     p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
+diff -ru --strip-trailing-cr -x __pycache__ NV11_nature_v11/code_v11/acl/config.py ES1_expected_lookahead/code_es1/acl/config.py
+--- NV11_nature_v11/code_v11/acl/config.py	2026-10-31 18:31:16.032348200 -0400
++++ ES1_expected_lookahead/code_es1/acl/config.py	2026-10-31 19:28:14.250809400 -0400
+@@ -125,6 +125,8 @@
+     camp_radius: int = 2               # partners this close count as living together
+     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
++    expected_lookahead: int = 0        # ES1: 1 = a habit looks ahead to the expected value of the next situation under the
++                                       # person's own habit softmax, instead of its best value (0 = nature v11 exactly)
+     hand_items: int = 1                # NV11 (HD1): 1 = a person may hand one made thing they hold to someone within reach who has room
+                                        # (the give action, generalized; 0 = nature v10 exactly)
+     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
