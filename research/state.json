@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T06:07:29-04:00",
+  "updated": "2026-10-31T07:58:46-04:00",
   "nature": {
     "live": "v10",
     "acl_fingerprint": "b3a820c032a9d22f4bcad7f84ae9855ecf792760d6323627f8d2b81849812629",
@@ -87,8 +87,9 @@
       "title": "What do tools really add? (read-only, frozen on code_v10)",
       "kind": "read-only",
       "status": "running-cloud",
-      "run": 41191446977,
-      "next_step": "when run 41191446977 completes: python tools/ci/fetch_cloud.py 41191446977 experiments/TR1_tool_returns/output; count 32 worlds; run analyse_tr1.py; write findings (not final until GPT and Gemini recompute)"
+      "run": 41199047689,
+      "next_step": "when run 41199047689 completes: python tools/ci/fetch_cloud.py 41199047689 experiments/TR1_tool_returns/output; count 32 worlds; run analyse_tr1.py; write findings (not final until GPT and Gemini recompute)",
+      "note": "run 1 (41191446977) not valid: 3 deaths within forage counted as mismatches; amendment 1; outputs kept in output_run1_invalid/"
     }
   ],
   "queue_after": [
