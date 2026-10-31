@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T12:27:32-04:00",
+  "updated": "2026-10-31T13:56:17-04:00",
   "nature": {
     "live": "v10",
     "acl_fingerprint": "b3a820c032a9d22f4bcad7f84ae9855ecf792760d6323627f8d2b81849812629",
@@ -98,14 +98,17 @@
       "status": "final",
       "run": 41213975492,
       "next_step": "none; next: debate B (handing a made thing, a nature-change test in a copy) against the choice to make"
+    },
+    {
+      "id": "HD1",
+      "title": "Handing a made thing (nature-change test in a copy, code_hd1)",
+      "kind": "nature-change test (copy)",
+      "status": "running-cloud",
+      "run": 41226917887,
+      "next_step": "when run 41226917887 completes: python tools/ci/fetch_cloud.py 41226917887 experiments/HD1_handing/output; count 96 worlds; run analyse_hd1.py; findings (not final until GPT and Gemini recompute); if supported, adoption only by the safe path (confirmatory run first)"
     }
   ],
   "queue_after": [
-    {
-      "what": "B: handing a made thing to another person (nature-change test in a copy, with round 35's guards), or the choice to make; after TA1 (both gaps)",
-      "status": "proposed",
-      "needs": "debate with GPT and Gemini, then a frozen plan"
-    },
     {
       "what": "an early, read-only autonomy audit (design note Part 2)",
       "status": "proposed",
