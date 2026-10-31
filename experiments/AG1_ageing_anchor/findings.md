@@ -1,4 +1,4 @@
-# AG1 — Ageing anchored to forager evidence: does it make ACL's adult deaths realistic, safely? Findings (not final until recomputed; see the end)
+# AG1 — Ageing anchored to forager evidence: does it make ACL's adult deaths realistic, safely? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `AG1-frozen` (operational notes 1 and 2); signed off by the assistant **under the creator's delegation**
 ("just discuss with gpt and gemini and solve this aging problem") and sleep-mode autonomy. A calibration study: `code_v9`
@@ -81,3 +81,11 @@ Longer lives alone do not make knowledge build up, which fits LS2, AW1 and CO2: 
 ## Independent recompute
 Pending: GPT and Gemini, fresh chats, from raw per-world counts (`recompute/ag1_one_file.csv`). Recorded only from
 their actual replies.
+
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world counts only, without the analysis script
+(`recompute_ag1.md`). **All three agree:** D v 0.9952, b 0.1246, a 0.1723, sham 1.0045; D(b) − D(v) −0.8707 and
+D(a) − D(v) −0.8229, both **more realistic**; no flags for b; both flags for a (extinct 5 against 2; late population
+0.774).
+
+**Final.**

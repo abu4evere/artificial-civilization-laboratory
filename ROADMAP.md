@@ -696,3 +696,10 @@ talent.**
 doubles), but people still rarely choose to make things; watching passes almost nothing. Neither law supported.
 **Technique is not the bottleneck; the choice is.** Next: a read-only look at why the choice to make falls. AG1
 (ageing) awaits its 5 local worlds.
+
+**AG1 and CO2 done** (31 October; both recomputed blind by GPT and Gemini). AG1: ageing anchored to the !Kung makes
+ACL's adult deaths realistic (adults die at 54 on average instead of 45) with no harm; the forager average overshoots.
+Knowledge does not improve by longer lives alone. CO2: under v9, making loses at any moment to the built-in pull of
+food and gathering, and declines over the centuries through habit inflation, as on v7; curiosity helps only a little.
+**Next: the creator decides (1) a confirmatory ageing run, then v10; (2) a learning-rule study. Read-only meanwhile:
+how the worth of made things forms.**

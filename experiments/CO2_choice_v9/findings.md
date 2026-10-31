@@ -1,4 +1,4 @@
-# CO2 — What makes the other options beat making under nature v9? Findings (not final until recomputed; see the end)
+# CO2 — What makes the other options beat making under nature v9? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `CO2-frozen` (operational notes 1 and 2); signed off by the assistant under sleep-mode autonomy (read-only;
 Gemini 95%; GPT could not be reached tonight). CO1's design re-run on `code_v9`, plus an exact curiosity split. Run on
@@ -56,3 +56,10 @@ becomes a much longer one: 0.20% of offered weeks.
 ## Independent recompute
 Pending: Gemini (fresh chat), and GPT when ChatGPT works on this PC again. From raw per-world sums
 (`recompute/co2_one_file.csv`). Recorded only from their actual replies.
+
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, worked from raw per-world sums only, without the analysis script
+(`recompute_co2.md`). **All three agree:** Q5's shares (built-in 0.5619, habit 0.3513, curiosity −0.0509, multiplicity
+and spread 0.1377; reading "built-in pull carries it"); Q2's rise +0.6394 with habit +0.5592 (share 0.8747).
+
+**Final.**

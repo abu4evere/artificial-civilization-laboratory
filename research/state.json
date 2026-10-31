@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-30T23:55:00-04:00",
+  "updated": "2026-10-31T00:25:00-04:00",
   "nature": {
     "live": "v9",
     "acl_fingerprint": "edb0cd3daec9db7cfc00c16833d4e3e34f2d1ef6965760f915f4cdbc52ee8195",
@@ -29,7 +29,7 @@
       "plan": "experiments/AG1_ageing_anchor/questions.md",
       "frozen_tag": "AG1-frozen",
       "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
-      "status": "recompute-pending",
+      "status": "final",
       "jobs": {
         "cloud_run": 41042869183,
         "cloud_saved": 75,
@@ -43,8 +43,8 @@
         "local_dir": "experiments/AG1_ageing_anchor/output_local",
         "identity_check": "passed"
       },
-      "next_step": "blind recompute (GPT and Gemini); then propose a confirmatory run of b on new seeds (frozen branch) and put adoption (nature v10) to the creator",
-      "evidence": "finding (not yet recomputed): both anchors more realistic (D 0.995 -> b 0.125, a 0.172); b no flags; a two flags (extinct 5 vs 2; late population 0.774); knowledge unchanged"
+      "next_step": "proposed for the creator: a confirmatory run of b on new seeds, then the adoption decision (nature v10); never autonomous",
+      "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
     },
     {
       "id": "AW1",
@@ -67,15 +67,20 @@
       "plan": "experiments/CO2_choice_v9/questions.md",
       "frozen_tag": "CO2-frozen",
       "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
-      "status": "recompute-pending",
+      "status": "final",
       "jobs": {
         "cloud_run": 41138990924
       },
-      "next_step": "blind recompute (Gemini and GPT, fresh chats; needs the browser: Chrome link dropped and ChatGPT would not send at 19:40)",
-      "evidence": "finding (not yet recomputed): the level of making's deficit is carried by the built-in pull (0.562); the decline over time by habit (0.87, as CO1 on v7); curiosity favours making a little (-0.051)"
+      "next_step": "none; next: read-only study of how the worth of made things forms (debate first); the learning-rule study waits for the creator",
+      "evidence": "verified: level of the deficit = built-in pull (0.562); decline = habit (0.87); curiosity -0.051; recompute matched (GPT, Gemini)"
     }
   ],
   "queue_after": [
+    {
+      "what": "read-only: how the worth of made things (itemval) forms and decays (CO2's frozen next step)",
+      "status": "proposed",
+      "needs": "debate with GPT and Gemini, then a frozen plan"
+    },
     {
       "what": "an early, read-only autonomy audit (design note Part 2)",
       "status": "proposed",
@@ -89,8 +94,12 @@
   ],
   "pending_approvals": [
     {
-      "what": "AG1 adoption (if supported): needs a confirmatory run and the creator's decision",
-      "status": "not yet asked"
+      "what": "AG1: a confirmatory run of arm b (the !Kung step) on new seeds, then whether b becomes nature v10",
+      "status": "asked in the morning report, 31 October"
+    },
+    {
+      "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
+      "status": "asked in the morning report"
     }
   ],
   "budgets": {
