@@ -41,6 +41,10 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
 ## How work is done
 - **Talk to the creator simply** (the creator, 27 October 2026: "always send me messages more clearly simply"): plain
   words, short sentences, the big picture first, then what they need to decide. Keep technical detail in the files.
+- **The creator's ideas go into the book notes automatically** (the creator, 31 October 2026: "do not ask me to add my
+  ideas to the book but add them automaticly"). Whenever they share an idea or reflection about the project, append it,
+  in their exact words, to `drafts/book_rewrite/part2/notes_for_book_<date>.md` (local only, gitignored; never commit or
+  upload). Never write feelings for them; leave [YOUR WORDS: …] where only they can speak.
 - **GPT:** the creator's main ChatGPT chat is https://chatgpt.com/c/6adb8da9-5984-83ea-bff3-f4d9da68e4b3 (open it with
   the Claude in Chrome extension). You may ask GPT freely about ACL. Save its answers as `gpt_review_*.md`, labelled
   "GPT's opinion, not sign-off". Give the creator both views; only the creator decides.
