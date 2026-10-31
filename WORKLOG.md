@@ -449,3 +449,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-31 16:29 (sleep mode): HD1-C frozen (HD1C-frozen): HD1 exactly on new seeds 21301-21332 (the safe path's confirmatory run); thin wrappers reuse HD1's runner and analysis unchanged. Zero checks next.
 - 2026-10-31 16:57 (sleep mode): HD1-C local zero checks PASS (same as HD1; fingerprint 8217eac3); cloud plan reads 96 jobs on seeds 21301-21332. Launching.
 - 2026-10-31 16:58 (sleep mode): HD1-C launched: run 41241346782 (96 worlds, 20 chunks, skip_zero=local); state.json updated.
+- 2026-10-31 18:25: HD1-C run 41241346782 success; fetched 96/96; analysed, VALID; CONFIRMED: R v10 1.03% -> h 1.28% (+0.25 pts [+0.18, +0.34]; sham +0.02); tool in hand 10.4% -> 13.7%; 0.18 handings per adult-year; no flags; no extinctions. Findings (not final); recompute file built (matches). Next: blind recompute, then both models on adoption as v11 (safe path).
