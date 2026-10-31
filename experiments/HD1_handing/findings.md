@@ -1,4 +1,4 @@
-# HD1 — Can a person hand a made thing to another? Findings (not final until GPT and Gemini recompute)
+# HD1 — Can a person hand a made thing to another? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **A nature-change test in a copy (`code_hd1` = `code_v10` + `hand_items`), not an adoption.** Frozen as `HD1-frozen`
 (operational note 1). Signed off by the assistant under sleep-mode autonomy (GPT 88%, Gemini 85%; debate round 37).
@@ -71,6 +71,9 @@ TR1's 20% headroom.
   Adoption is not decided here.
 - **The choice to make** (the creator's learning-rule item) remains the other half.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/hd1_one_file.csv` (per-world sums from the raw output).
-Recorded only from their actual replies.
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, worked from per-world sums of the raw output only, without the analysis script
+(`recompute_hd1.md`). **All three agree:** R 1.07% / 1.43% / 1.14%; h − v10 +0.0036 [0.0028, 0.0045]; sham +0.0007; supported.
+GPT: this supports the measured outcome, not necessarily cumulative culture or autonomy.
+
+**Final.** Next by the safe path in `CLAUDE.md`: a confirmatory run on new seeds, then both models on adoption.
