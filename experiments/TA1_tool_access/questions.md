@@ -99,3 +99,34 @@ read-only audit first (GPT 95%, Gemini 95%), before any handing law (B).
 ## Sign-off (31 October 2026)
 The assistant, under the creator's sleep-mode autonomy. It is read-only (the 40% rule). GPT estimates 90%, Gemini 94%
 and the assistant 75%. Frozen as `TA1-frozen` before any code or data.
+
+## Operational note 1 (31 October 2026, after freezing, before any data)
+
+How the code (`run_ta1.py`, `analyse_ta1.py`) reads the text where it left a choice, found in smoke worlds (seed 9995,
+25 and 110 years; not data):
+1. **Zero checks run at 20 and 120 years** (stricter than 20 and 60, as TR1).
+2. **"Bare-handed"** means no item in hand with forage factor > 1. "Within reach" is `world.people_near(loc, reach = 3)`.
+   "Room to receive" means fewer than 3 items (`item_limit`).
+3. **"Knows a helpful kind"** means a kind in the forager's recipes whose best item in living hands that week has forage
+   factor > 1. "Could make it now" is the law's own `can_make` (materials and parts in hand).
+4. **The accounting follows each forage tool weekly** in living hands, on the ground (v8) and on bodies (BD1).
+   - **Entries:**
+     - made (a new item, made or changed from another);
+     - picked up (from the ground);
+     - from a body;
+     - passed (it was in another's hands, as by inheritance).
+   - **Exits:**
+     - worn (confirmed by the `matter.wear` wrapper);
+     - dropped (onto the ground);
+     - to a body;
+     - passed;
+     - lost at death;
+     - used or changed (gone while the holder lives: used up as a part, or changed by heat).
+   - The first smoke showed that a catch-all "worn" was wrong (3,464 against 943 confirmed wears), so "used or changed"
+     was split out. The checks:
+     - tools held at the end = entries − exits;
+     - no worn tool is still in hand.
+   Both are 0 in the smoke.
+5. **"Makes by someone already holding one":** a forage tool newly in the maker's hands, with a `make` event of that
+   kind that week, by someone who held a forage tool the week before.
+6. **Q2's age bands:** 0–11, 12–15, 16–39, 40–59, 60+. "Holders who forage" are adult holders who chose forage that week.

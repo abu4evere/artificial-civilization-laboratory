@@ -1,0 +1,6 @@
+arm lp, seed 501, 20 years: identical with and without the wrappers (state and random numbers): yes; accounting and wear mismatches: none; forage-tool entries 3505, exits 3289 (worn 781), bare-handed adult forage weeks years 100+ 0
+arm lp, seed 601, 120 years: identical with and without the wrappers (state and random numbers): yes; accounting and wear mismatches: none; forage-tool entries 16253, exits 16158 (worn 5474), bare-handed adult forage weeks years 100+ 65117
+arm lp, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v10 fingerprint: 51385ff4e402deb32039467114c9bf319dcf01a4c04ac87d0e4488f193e9d537
+All: PASS
+
