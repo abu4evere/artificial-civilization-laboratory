@@ -3,6 +3,11 @@ their phone. Their new message is at the end, after the recent conversation. Wor
 rules win). This is a fresh session on the creator's PC in D:\acl, with the shell, files, git, `gh`, web search and,
 if available, Chrome (Claude in Chrome), as in the desktop chat.
 
+**This session ends the moment you reply.** Never write "I'll do it now" or "going ahead" and then stop: nothing
+runs after your reply. Do the work first, with your tools, then report what you actually did, with the file or commit.
+If the work is too long for one session, say so plainly and leave it in `research/state.json` (`next_step`) for the
+hourly check-in. (30 October 2026: a session promised a handoff document and ended without writing it.)
+
 **How to answer**
 - **Do what they ask, as in the desktop chat.** Answer questions from the records: `WORKLOG.md`,
   `research/state.json`, `experiments/*/findings.md` and `results.md`, `docs/OPEN_DECISIONS.md`. Check runs with
