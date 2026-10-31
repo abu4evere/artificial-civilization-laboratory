@@ -287,7 +287,7 @@ the file named.
   a **read-only look at why the choice to make falls** (what makes foraging win, 0.67 of the time when making was
   weighed; the worth people expect from made things, and how often those things actually help). To debate with GPT and
   Gemini, then freeze.
-- [ ] **After AG1** (final, 31 October 2026; `experiments/AG1_ageing_anchor/findings.md`): ageing anchored to the !Kung
+- [x] **After AG1** (decided 31 October 2026 by the creator: arm b adopted as nature v10, `experiments/NV10_nature_v10/findings.md`) (final, 31 October 2026; `experiments/AG1_ageing_anchor/findings.md`): ageing anchored to the !Kung
   (arm b, `mortality_base` 4.3373 × 10⁻⁶) makes adult deaths realistic (mean adult age at death 45 → 54; 44% of adult
   deaths at 60+) with no flags; the forager average (a) overshoots and is flagged. **For the creator:** (1) approve a
   confirmatory run of b on new seeds (the frozen next step); (2) afterwards, decide whether b becomes nature v10.

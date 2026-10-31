@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v10 with v9's mortality_base = code_v9: yes
+seed 501, 5 years: code_v10 with v9's mortality_base = code_v9: yes
+seed 501, 20 years: code_v10 with v9's mortality_base = code_v9: yes
+seed 601, 20 years: code_v10 with v9's mortality_base = code_v9: yes
+seed 501, 20 years: v10 = AG1's arm b (code_v9 with b's base): yes
+seed 501, 20 years: the live package with its own defaults = v10: yes
+seed 601, 20 years: v10 = AG1's arm b (code_v9 with b's base): yes
+seed 601, 20 years: the live package with its own defaults = v10: yes
+seed 501, 20 years: the new mortality_base changes the world (it acts): yes
+v10, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

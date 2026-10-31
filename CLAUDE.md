@@ -60,9 +60,9 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   only checks that record (All: PASS, same code fingerprint) instead of re-running the zero checks, which saves about
   15–20 minutes.
   The `tests` workflow runs only when code changes (`acl/`, `tests/`, `code_*`).
-- **Tests:** `python -m pytest -q tests` (64 pass on nature v9, live since 29 October 2026: a curiosity pull towards
-  actions rarely tried, at the play instinct's strength; `experiments/NV9_nature_v9/findings.md`). New studies use
-  `code_v9`; v8 findings stay v8's.
+- **Tests:** `python -m pytest -q tests` (65 pass on nature v10, live since 31 October 2026: ageing anchored to the
+  !Kung, `mortality_base` × 0.0072/0.0249; `experiments/NV10_nature_v10/findings.md`; v9 = curiosity pull, 29 October).
+  New studies use `code_v10`; v9 findings stay v9's (IW1 was frozen on v9 and runs on v9).
 
 ## Sleep mode (autonomous since 27 October 2026)
 When the creator says "sleep", they are going to sleep. **The project must not stop.** The creator (27 October): "you

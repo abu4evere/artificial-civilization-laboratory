@@ -1,11 +1,11 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T01:05:00-04:00",
+  "updated": "2026-10-31T04:40:00-04:00",
   "nature": {
-    "live": "v9",
-    "acl_fingerprint": "edb0cd3daec9db7cfc00c16833d4e3e34f2d1ef6965760f915f4cdbc52ee8195",
-    "frozen_copy": "experiments/NV9_nature_v9/code_v9",
-    "frozen_copy_fingerprint": "8f88ec3357e1c0e98f056e218d17269b507c833591c2389c7deff68b7412b75c",
+    "live": "v10",
+    "acl_fingerprint": "b3a820c032a9d22f4bcad7f84ae9855ecf792760d6323627f8d2b81849812629",
+    "frozen_copy": "experiments/NV10_nature_v10/code_v10",
+    "frozen_copy_fingerprint": "51385ff4e402deb32039467114c9bf319dcf01a4c04ac87d0e4488f193e9d537",
     "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session"
   },
   "objectives": [
@@ -43,7 +43,7 @@
         "local_dir": "experiments/AG1_ageing_anchor/output_local",
         "identity_check": "passed"
       },
-      "next_step": "proposed for the creator: a confirmatory run of b on new seeds, then the adoption decision (nature v10); never autonomous",
+      "next_step": "adopted as nature v10 (the creator, 31 October 2026); see experiments/NV10_nature_v10/findings.md",
       "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
     },
     {
@@ -98,10 +98,6 @@
     }
   ],
   "pending_approvals": [
-    {
-      "what": "AG1: a confirmatory run of arm b (the !Kung step) on new seeds, then whether b becomes nature v10",
-      "status": "asked in the morning report, 31 October"
-    },
     {
       "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
       "status": "asked in the morning report"

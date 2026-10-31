@@ -703,3 +703,5 @@ Knowledge does not improve by longer lives alone. CO2: under v9, making loses at
 food and gathering, and declines over the centuries through habit inflation, as on v7; curiosity helps only a little.
 **Next: the creator decides (1) a confirmatory ageing run, then v10; (2) a learning-rule study. Read-only meanwhile:
 how the worth of made things forms.**
+
+**Nature v10** (`experiments/NV10_nature_v10/findings.md`; the creator's decision, 31 October 2026): v9 + ageing anchored to the !Kung (AG1's arm b). Adults now die at 54 on average instead of 45. Knowledge does not improve by longer lives alone. **Next:** IW1 (how the worth of made things forms; frozen on v9) and, on v10, a first look at age structure and who survives to teach.

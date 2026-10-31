@@ -109,7 +109,8 @@ class Config:
     illness_chance: float = 0.003      # per week, before risk factors
     illness_damage: float = 3.5
     illness_recovery: float = 0.15
-    mortality_base: float = 1.5e-5     # Gompertz: weekly death risk = base * e^(rate * age_years)
+    mortality_base: float = 1.5e-5 * 0.0072 / 0.0249   # NV10 (AG1's arm b): the !Kung step at age 40, ACL's rate
+                                       # unchanged (1.5e-5 = nature v9). Gompertz: weekly death risk = base * e^(rate * age_years)
     mortality_rate: float = 0.0866     # risk doubles about every 8 years
     energy_recovery: float = 25.0
 
