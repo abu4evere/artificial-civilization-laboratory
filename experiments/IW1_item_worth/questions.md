@@ -103,3 +103,31 @@ against food and gathering. **Why is that worth low?**
 The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode; the creator, 31 October on Telegram:
 "just keep working yourself"). It is read-only, so allowed by the 40% rule. GPT estimates 75%, Gemini 85% and the
 assistant 70%. Seeds 20901–20932 (new). Frozen as `IW1-frozen` before any code or data.
+
+## Operational note 1 (31 October 2026, after freezing, before any data)
+
+How the code (`run_iw1.py`, `analyse_iw1.py`) reads the text where it left a choice, found in a 110-year smoke world
+(seed 9991; not data):
+1. **Zero checks run at 20 and 120 years,** not 20 and 60. The longer run enters years 100+, so the offered-make
+   recomputation (Q7, Q8) is checked too. That is stricter than the plan.
+2. **"At the make"** is the week's offered make (`thought.steer`'s options, adults, years 100–200) whose kind the
+   person then made (a `make` event that week). The worth used is the one held when the option was weighed.
+3. **Q8 is exact:** making's option score, recomputed from the person's state with the code's own functions, matches the
+   score the mind gave it in every offered week (counter `make_score_recompute`, required 0). So Q8 stays.
+4. **"Everyone's uses" (b)** means every use of that kind in that world over the whole run, at any age. A kind no one
+   ever used is counted apart ("unknown").
+5. **"The maker's later uses" (a)** are the maker's uses after the make, to the end of the run. Makes with none are
+   counted apart.
+6. **"Source"** is how the person first got the kind (the law's `how`: made, heated, taught, copied, read). "Initial"
+   means the person already held the kind with no recorded first source (founders' starting kinds).
+7. **Q4 is split by the law that called `judge_item`:**
+   - `_judge_use`: tool use;
+   - `body_phase`: wear;
+   - `_over_water`: floats;
+   - `_judge_carry`, `drink`, and so on.
+8. **Q5 classifies a leaving kind by that person's own uses:**
+   - "helpful": own mean felt > 0.1;
+   - "unused": never used by them.
+   "Limit" includes a new kind pushed out at once. "Death" is counted at the yearly census for people who died that
+   year.
+9. **Q6 uses all kinds with at least one use** in that world. Rho is averaged over worlds (described).
