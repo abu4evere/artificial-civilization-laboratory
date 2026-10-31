@@ -78,3 +78,9 @@ Nothing urgent. LS2's results will come with a plain summary.
    change to nature, tested first as a frozen study; only you decide.
 2. **AG1's result** when the last 5 worlds finish: whether more realistic ageing should become nature (after a
    confirmatory run).
+- **Fixed (about 9:40 pm):** the Telegram bot's errors came from this network's **IPv6 route to Telegram**, which
+  times out while IPv4 works. The bot now uses IPv4 for Telegram and works again. ChatGPT's failures on the PC tonight
+  may have the same cause. I can't change network settings myself; if ChatGPT keeps failing in Chrome, restarting the
+  router, or turning off IPv6 on the Wi-Fi adapter (your choice), may help.
+- **The Chrome connection keeps dropping,** so CO2's blind recheck is stuck half-way: Gemini was calculating when it
+  dropped. I'll retry every hour. If it stays down, open the Claude side panel in Chrome once to reconnect it.
