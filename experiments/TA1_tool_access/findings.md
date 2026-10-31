@@ -1,4 +1,4 @@
-# TA1 — Why do tools not reach hands? Findings (not final until GPT and Gemini recompute)
+# TA1 — Why do tools not reach hands? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `TA1-frozen` (operational note 1). Signed off by the assistant under sleep-mode autonomy (read-only; GPT
 95%/90%, Gemini 95%/94%; debate rounds 35–36). Run on GitHub Actions (run 41213975492, `skip_zero=local`). 32 worlds
@@ -73,6 +73,9 @@ made on the spot. Hardly anyone lacks the knowledge.
   - Both models are to be asked which first.
 - **No change to nature** follows from this study by itself.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/ta1_one_file.csv` (per-world counts from the raw
-output). Recorded only from their actual replies.
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, worked from per-world counts of the raw output only, without the analysis
+script (`recompute_ta1.md`). **All three agree:** A 0.819 [0.802, 0.834]; B 0.726 [0.712, 0.739]; F 0.680; reading
+"both".
+
+**Final.**
