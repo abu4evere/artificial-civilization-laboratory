@@ -1,4 +1,4 @@
-# HD1-C — The handing law, confirmatory run on new seeds. Findings (not final until GPT and Gemini recompute)
+# HD1-C — The handing law, confirmatory run on new seeds. Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **The safe path's confirmatory step** for HD1 (`CLAUDE.md`). HD1's code (`code_hd1`, fingerprint 8217eac3…), arms,
 runner and analysis, unchanged, on 32 new paired seeds (21301–21332). Frozen as `HD1C-frozen`. Run on GitHub Actions
@@ -55,6 +55,8 @@ sham's was 0.948.
      message.
   The creator, on Telegram (31 October): "I think that law is fine."
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/hd1c_one_file.csv`. Recorded only from their actual
-replies.
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, from per-world sums of the raw output only (`recompute_hd1c.md`). **All three
+agree:** R 1.03% / 1.28% / 1.05%; h − v10 +0.0025 [0.0018, 0.0034]; sham +0.0002; supported.
+
+**Final: the handing law is confirmed.** Next by the safe path: both models on adoption as nature v11.
