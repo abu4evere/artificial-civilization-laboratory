@@ -1,119 +1,119 @@
 {
- "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
- "updated": "2026-10-31T01:05:00-04:00",
- "nature": {
-  "live": "v9",
-  "acl_fingerprint": "edb0cd3daec9db7cfc00c16833d4e3e34f2d1ef6965760f915f4cdbc52ee8195",
-  "frozen_copy": "experiments/NV9_nature_v9/code_v9",
-  "frozen_copy_fingerprint": "8f88ec3357e1c0e98f056e218d17269b507c833591c2389c7deff68b7412b75c",
-  "adoption": "never autonomous: only the creator, in a Claude Code session, by a message naming the version (CLAUDE.md, 30 October 2026)"
- },
- "objectives": [
-  "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
-  "define and measure autonomy early",
-  "a world where knowing matters (measure before making it harder)",
-  "connected populations",
-  "later: language, emergent feelings, talent"
- ],
- "authorized_scope": {
-  "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
-  "nature_change_tests": "only studies listed below with approved_by set",
-  "nature_adoption": "never autonomous",
-  "money_credentials_publishing_deleting": "never"
- },
- "studies": [
-  {
-   "id": "AG1",
-   "title": "Ageing anchored to forager evidence",
-   "kind": "nature-change test (calibration); exploratory (20 seeds)",
-   "plan": "experiments/AG1_ageing_anchor/questions.md",
-   "frozen_tag": "AG1-frozen",
-   "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
-   "status": "final",
-   "jobs": {
-    "cloud_run": 41042869183,
-    "cloud_saved": 75,
-    "local": [
-     "b:20501",
-     "a:20501",
-     "b:20506",
-     "a:20506",
-     "x:20506"
-    ],
-    "local_dir": "experiments/AG1_ageing_anchor/output_local",
-    "identity_check": "passed"
-   },
-   "next_step": "proposed for the creator: a confirmatory run of b on new seeds, then the adoption decision (nature v10); never autonomous",
-   "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
+  "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
+  "updated": "2026-10-31T01:05:00-04:00",
+  "nature": {
+    "live": "v9",
+    "acl_fingerprint": "edb0cd3daec9db7cfc00c16833d4e3e34f2d1ef6965760f915f4cdbc52ee8195",
+    "frozen_copy": "experiments/NV9_nature_v9/code_v9",
+    "frozen_copy_fingerprint": "8f88ec3357e1c0e98f056e218d17269b507c833591c2389c7deff68b7412b75c",
+    "adoption": "never autonomous: only the creator, in a Claude Code session, by a message naming the version (CLAUDE.md, 30 October 2026)"
   },
-  {
-   "id": "AW1",
-   "title": "Learning a craft from others: watching (W) and being shown (T)",
-   "kind": "nature-change test; 32 paired seeds, 200 years",
-   "plan": "experiments/AW1_watch_and_teach/questions.md",
-   "frozen_tag": "AW1-frozen",
-   "approved_by": "the creator, 30 Oct: 'yea go ahead with AW1 run it after AG1'",
-   "status": "final",
-   "jobs": {
-    "cloud_run": 41111670960
-   },
-   "next_step": "none; next study: a read-only look at why the choice to make falls (to debate, then freeze)",
-   "evidence": "verified: not supported (making unchanged); being shown nearly doubles skill; recompute matched (GPT, Gemini)"
+  "objectives": [
+    "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
+    "define and measure autonomy early",
+    "a world where knowing matters (measure before making it harder)",
+    "connected populations",
+    "later: language, emergent feelings, talent"
+  ],
+  "authorized_scope": {
+    "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
+    "nature_change_tests": "only studies listed below with approved_by set",
+    "nature_adoption": "never autonomous",
+    "money_credentials_publishing_deleting": "never"
   },
-  {
-   "id": "CO2",
-   "title": "What makes the other options beat making under v9 (read-only)",
-   "kind": "read-only; 32 seeds, 200 years",
-   "plan": "experiments/CO2_choice_v9/questions.md",
-   "frozen_tag": "CO2-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
-   "status": "final",
-   "jobs": {
-    "cloud_run": 41138990924
-   },
-   "next_step": "none; next: read-only study of how the worth of made things forms (debate first); the learning-rule study waits for the creator",
-   "evidence": "verified: level of the deficit = built-in pull (0.562); decline = habit (0.87); curiosity -0.051; recompute matched (GPT, Gemini)"
+  "studies": [
+    {
+      "id": "AG1",
+      "title": "Ageing anchored to forager evidence",
+      "kind": "nature-change test (calibration); exploratory (20 seeds)",
+      "plan": "experiments/AG1_ageing_anchor/questions.md",
+      "frozen_tag": "AG1-frozen",
+      "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
+      "status": "final",
+      "jobs": {
+        "cloud_run": 41042869183,
+        "cloud_saved": 75,
+        "local": [
+          "b:20501",
+          "a:20501",
+          "b:20506",
+          "a:20506",
+          "x:20506"
+        ],
+        "local_dir": "experiments/AG1_ageing_anchor/output_local",
+        "identity_check": "passed"
+      },
+      "next_step": "proposed for the creator: a confirmatory run of b on new seeds, then the adoption decision (nature v10); never autonomous",
+      "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
+    },
+    {
+      "id": "AW1",
+      "title": "Learning a craft from others: watching (W) and being shown (T)",
+      "kind": "nature-change test; 32 paired seeds, 200 years",
+      "plan": "experiments/AW1_watch_and_teach/questions.md",
+      "frozen_tag": "AW1-frozen",
+      "approved_by": "the creator, 30 Oct: 'yea go ahead with AW1 run it after AG1'",
+      "status": "final",
+      "jobs": {
+        "cloud_run": 41111670960
+      },
+      "next_step": "none; next study: a read-only look at why the choice to make falls (to debate, then freeze)",
+      "evidence": "verified: not supported (making unchanged); being shown nearly doubles skill; recompute matched (GPT, Gemini)"
+    },
+    {
+      "id": "CO2",
+      "title": "What makes the other options beat making under v9 (read-only)",
+      "kind": "read-only; 32 seeds, 200 years",
+      "plan": "experiments/CO2_choice_v9/questions.md",
+      "frozen_tag": "CO2-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
+      "status": "final",
+      "jobs": {
+        "cloud_run": 41138990924
+      },
+      "next_step": "none; next: read-only study of how the worth of made things forms (debate first); the learning-rule study waits for the creator",
+      "evidence": "verified: level of the deficit = built-in pull (0.562); decline = habit (0.87); curiosity -0.051; recompute matched (GPT, Gemini)"
+    }
+  ],
+  "queue_after": [
+    {
+      "what": "read-only: how the worth of made things (itemval) forms and decays (CO2's frozen next step)",
+      "status": "proposed",
+      "needs": "debate with GPT and Gemini, then a frozen plan"
+    },
+    {
+      "what": "an early, read-only autonomy audit (design note Part 2)",
+      "status": "proposed",
+      "needs": "debate with GPT and Gemini, then a frozen plan"
+    },
+    {
+      "what": "talent (a heritable learning-speed gene)",
+      "status": "listed by the creator",
+      "needs": "debate when its turn comes"
+    },
+    {
+      "what": "children making known things before 12 (in ACL 'make' starts at 12; forager children make their own toys, Lew-Levy et al. 2022)",
+      "status": "found 31 October 2026; for the creator",
+      "needs": "the creator's decision; evidence on ages, then a frozen nature-change study"
+    }
+  ],
+  "pending_approvals": [
+    {
+      "what": "AG1: a confirmatory run of arm b (the !Kung step) on new seeds, then whether b becomes nature v10",
+      "status": "asked in the morning report, 31 October"
+    },
+    {
+      "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
+      "status": "asked in the morning report"
+    }
+  ],
+  "budgets": {
+    "tick_minutes": 60,
+    "ticks_per_day": 24,
+    "tick_timeout_minutes": 45,
+    "local_simulations_max": 4,
+    "cloud_studies_at_once": 1,
+    "failures_before_pause": 3,
+    "daily_summary_at": "07:30"
   }
- ],
- "queue_after": [
-  {
-   "what": "read-only: how the worth of made things (itemval) forms and decays (CO2's frozen next step)",
-   "status": "proposed",
-   "needs": "debate with GPT and Gemini, then a frozen plan"
-  },
-  {
-   "what": "an early, read-only autonomy audit (design note Part 2)",
-   "status": "proposed",
-   "needs": "debate with GPT and Gemini, then a frozen plan"
-  },
-  {
-   "what": "talent (a heritable learning-speed gene)",
-   "status": "listed by the creator",
-   "needs": "debate when its turn comes"
-  },
-  {
-   "what": "children making known things before 12 (in ACL 'make' starts at 12; forager children make their own toys, Lew-Levy et al. 2022)",
-   "status": "found 31 October 2026; for the creator",
-   "needs": "the creator's decision; evidence on ages, then a frozen nature-change study"
-  }
- ],
- "pending_approvals": [
-  {
-   "what": "AG1: a confirmatory run of arm b (the !Kung step) on new seeds, then whether b becomes nature v10",
-   "status": "asked in the morning report, 31 October"
-  },
-  {
-   "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
-   "status": "asked in the morning report"
-  }
- ],
- "budgets": {
-  "tick_minutes": 60,
-  "ticks_per_day": 24,
-  "tick_timeout_minutes": 45,
-  "local_simulations_max": 4,
-  "cloud_studies_at_once": 1,
-  "failures_before_pause": 3,
-  "daily_summary_at": "07:30"
- }
 }
