@@ -1,0 +1,5 @@
+arm lp, seed 501, 20 years: identical with and without the wrappers (state and random numbers): yes; forage replay mismatches: none; forages 45133, adult forage weeks years 100+ 0 (with a tool 0), adult hunts years 100+ 0
+arm lp, seed 601, 120 years: identical with and without the wrappers (state and random numbers): yes; forage replay mismatches: none; forages 533094, adult forage weeks years 100+ 74328 (with a tool 9211), adult hunts years 100+ 37
+arm lp, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v10 fingerprint: 51385ff4e402deb32039467114c9bf319dcf01a4c04ac87d0e4488f193e9d537
+All: PASS

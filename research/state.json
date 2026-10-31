@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T07:58:46-04:00",
+  "updated": "2026-10-31T09:27:40-04:00",
   "nature": {
     "live": "v10",
     "acl_fingerprint": "b3a820c032a9d22f4bcad7f84ae9855ecf792760d6323627f8d2b81849812629",
@@ -86,13 +86,18 @@
       "id": "TR1",
       "title": "What do tools really add? (read-only, frozen on code_v10)",
       "kind": "read-only",
-      "status": "running-cloud",
+      "status": "final",
       "run": 41199047689,
-      "next_step": "when run 41199047689 completes: python tools/ci/fetch_cloud.py 41199047689 experiments/TR1_tool_returns/output; count 32 worlds; run analyse_tr1.py; write findings (not final until GPT and Gemini recompute)",
+      "next_step": "none; next: debate a read-only look at tool access and choice (who holds the best tools; why others do not make or get them)",
       "note": "run 1 (41191446977) not valid: 3 deaths within forage counted as mismatches; amendment 1; outputs kept in output_run1_invalid/"
     }
   ],
   "queue_after": [
+    {
+      "what": "read-only: tool access and choice after TR1 (who holds the best tools; why others do not make or get them)",
+      "status": "proposed",
+      "needs": "debate with GPT and Gemini, then a frozen plan"
+    },
     {
       "what": "an early, read-only autonomy audit (design note Part 2)",
       "status": "proposed",

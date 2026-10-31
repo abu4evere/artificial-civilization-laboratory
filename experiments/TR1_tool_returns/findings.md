@@ -1,4 +1,4 @@
-# TR1 — What do tools really add? Findings (not final until GPT and Gemini recompute)
+# TR1 — What do tools really add? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 Frozen as `TR1-frozen` (operational note 1; amendment 1). Signed off by the assistant under sleep-mode autonomy
 (read-only; GPT 85%, Gemini 85%; debate round 34). 32 worlds on nature v10 (seeds 21001–21032), LP (80 founders,
@@ -69,6 +69,10 @@ it). It is not near the line.
     culture) would be a nature-change study under the safe path, **and a question for the creator first.**
 - **No change to nature** follows from this study by itself.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/tr1_one_file.csv` (per-world sums from the raw output).
-Recorded only from their actual replies.
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, worked from per-world sums of the raw output only, without the analysis script
+(`recompute_tr1.md`). **All three agree:** R 0.010 [0.010, 0.011]; H 0.200 [0.195, 0.204]; A 0.127; reading
+"knowing matters but is unused". GPT: these are counterfactual improvements for the same forages, not predictions of
+whole-economy food.
+
+**Final.**
