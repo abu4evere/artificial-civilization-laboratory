@@ -24,6 +24,23 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
+import socket
+
+_getaddrinfo = socket.getaddrinfo
+
+
+def _telegram_ipv4_first(host, *args, **kwargs):
+    """This network's IPv6 route to Telegram times out (30 October 2026: IPv4 TLS 0.2 s, IPv6 timeout), and Python
+    tries IPv6 first. For api.telegram.org only, use the IPv4 addresses when there are any."""
+    infos = _getaddrinfo(host, *args, **kwargs)
+    if host == "api.telegram.org":
+        v4 = [i for i in infos if i[0] == socket.AF_INET]
+        return v4 or infos
+    return infos
+
+
+socket.getaddrinfo = _telegram_ipv4_first
+
 ROOT = Path(__file__).resolve().parents[1]
 LOCAL = ROOT / "research" / "local"
 CONFIG = Path(os.environ.get("USERPROFILE", str(Path.home()))) / ".acl" / "telegram.json"
