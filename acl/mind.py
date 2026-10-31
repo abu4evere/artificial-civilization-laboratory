@@ -405,11 +405,26 @@ def decide(world, p: Person) -> tuple:
 
         # Give food.
         surplus = p.edible() - need * 2.0 - dep_need
+        give_u = None
         if surplus > 1.0 and not (q.caregiver == p.id and q_st in ("infant", "child")):
             motive = q_hunger * (0.25 * g["kindness"] + 0.6 * max(aff, 0.0) + 0.6 * kin
                                  + (0.6 if is_partner else 0.0))
             motive += 0.35 * clamp(bal / need) * (0.5 + g["kindness"])    # paying back
-            add("give", q.id, motive * min(1.0, surplus / need), d)
+            give_u = motive * min(1.0, surplus / need)
+        if c.hand_items:
+            # HD1: or hand them a made thing, if it would help them more than it costs the giver.
+            world.hand_intent.pop((p.id, q.id), None)
+            if p.items and len(q.items) < c.item_limit:
+                net, _ = hand_pick(p, q)
+                if net > 0.0:
+                    social = (0.25 * g["kindness"] + 0.6 * max(aff, 0.0) + 0.6 * kin + (0.6 if is_partner else 0.0)
+                              + 0.35 * clamp(bal / need) * (0.5 + g["kindness"]))
+                    hand_u = net * social
+                    if give_u is None or hand_u > give_u:
+                        world.hand_intent[(p.id, q.id)] = True
+                        give_u = hand_u
+        if give_u is not None:
+            add("give", q.id, give_u, d)
 
         # Care for the sick, the hurt and the very young.
         q_trouble = (0.6 if q.sick else 0.0) + (1.0 - q.health / 100.0) + (0.3 if q_st == "infant" else 0.0)
@@ -569,6 +584,27 @@ def _worth_trying(p: Person, key: str, c, learned: str | None = None) -> float:
     if "tried:" + key not in p.expect:
         return 0.02 + c.novelty * p.genes["curiosity"]
     return c.worth_weight * p.expect.get(learned or key, 0.0) * (0.5 + 0.5 * p.genes["diligence"])
+
+
+HAND_USES = ("forage", "hunt", "wood", "stone", "fiber", "fight", "carry", "cold")
+
+
+def hand_pick(p: Person, q: Person) -> tuple[float, int]:
+    """HD1: the made thing p holds that would help q most, net of what p would lose without it: (net use, index).
+    q's gain is how far the item beats q's own best for any use; p's loss is how far p's own best for any use falls
+    without it. (0.0, -1) if nothing would help q more than it costs p."""
+    from .matter import factor
+    best = (0.0, -1)
+    for i, it in enumerate(p.items):
+        gain = max(max(0.0, factor(it, u) - best_item(q, u)[1]) for u in HAND_USES)
+        loss = 0.0
+        for u in HAND_USES:
+            rest = max([factor(o, u) for j, o in enumerate(p.items) if j != i] + [1.0])
+            loss = max(loss, best_item(p, u)[1] - rest)
+        net = gain - loss
+        if net > best[0] + 1e-12:
+            best = (net, i)
+    return best
 
 
 def _wanted_parts(p: Person) -> dict:

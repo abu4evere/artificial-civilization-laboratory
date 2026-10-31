@@ -685,6 +685,9 @@ def _explore(world, p, target, eff):
 def _give(world, p, target, eff):
     c = world.cfg
     q = world.people[target]
+    if c.hand_items and world.hand_intent.get((p.id, q.id)):
+        _hand(world, p, q)                    # HD1: a made thing instead of food
+        return
     need = p.need(c, world.tick)
     q_need = q.need(c, world.tick)
     keep = need * 1.5
@@ -709,6 +712,20 @@ def _give(world, p, target, eff):
         q.q[i] = clamp(q.q[i] + world.cfg.learning_rate * 0.5, -1.5, 1.5)
     eid = world.emit("give", p.id, q.id, p.loc, amount=round(amount, 2), returned=owed_before < 0)
     remember(world, q, eid, "gave", p.id, q.id, p.loc, 0.15 + 0.3 * clamp(1.0 - q.edible() / (2 * q_need)), 0.6)
+
+
+def _hand(world, p, q) -> None:
+    """HD1: p hands q the made thing that would help q most, net of what p loses, if q has room. The thing moves from
+    one hand to the other; nothing else changes."""
+    from .mind import hand_pick
+    if not p.items or len(q.items) >= world.cfg.item_limit:
+        return
+    net, idx = hand_pick(p, q)
+    if idx < 0 or net <= 0.0:
+        return
+    it = p.items.pop(idx)
+    q.items.append(it)
+    world.emit("hand", p.id, q.id, p.loc, thing=it["sig"])
 
 
 def _care(world, p, target, eff):

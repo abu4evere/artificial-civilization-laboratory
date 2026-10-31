@@ -467,6 +467,7 @@ class World:
         self.hunts = {}
         self.courting = []
         self.plan = {}
+        self.hand_intent = {}                 # HD1: this week's (giver, receiver) pairs whose give hands a made thing
         self.week_decisions = []
         self._living = None
         if self.cfg.sham_draw and self.tick == 0:

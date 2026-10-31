@@ -125,6 +125,8 @@ class Config:
     camp_radius: int = 2               # partners this close count as living together
     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
+    hand_items: int = 1                # NV11 (HD1): 1 = a person may hand one made thing they hold to someone within reach who has room
+                                       # (the give action, generalized; 0 = nature v10 exactly)
     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
                                        # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
     curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,

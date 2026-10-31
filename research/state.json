@@ -1,11 +1,11 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T18:28:49-04:00",
+  "updated": "2026-10-31T18:40:54-04:00",
   "nature": {
-    "live": "v10",
-    "acl_fingerprint": "b3a820c032a9d22f4bcad7f84ae9855ecf792760d6323627f8d2b81849812629",
-    "frozen_copy": "experiments/NV10_nature_v10/code_v10",
-    "frozen_copy_fingerprint": "51385ff4e402deb32039467114c9bf319dcf01a4c04ac87d0e4488f193e9d537",
+    "live": "v11",
+    "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
+    "frozen_copy": "experiments/NV11_nature_v11/code_v11",
+    "frozen_copy_fingerprint": "f39100bd938b2aa7a9ade4942e0e0c091af351999b442c4f76c13e38dac6885c",
     "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session"
   },
   "objectives": [
@@ -105,7 +105,7 @@
       "kind": "nature-change test (copy)",
       "status": "final",
       "run": 41226917887,
-      "next_step": "confirmatory run on new seeds (frozen, same rule), then both models on adoption as nature v11 (safe path)"
+      "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
     },
     {
       "id": "HD1-C",
@@ -113,10 +113,15 @@
       "kind": "nature-change test (copy), confirmatory",
       "status": "final",
       "run": 41241346782,
-      "next_step": "both models on adoption of hand_items as nature v11 (safe path); then code_v11, zero checks, hashes, tests, tag nature-v11, Telegram"
+      "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
     }
   ],
   "queue_after": [
+    {
+      "what": "first study on v11: why handing stays rare, who receives tools, kin pooling, tools in low-use hands (GPT, Gemini)",
+      "status": "proposed",
+      "needs": "debate, then a frozen read-only plan"
+    },
     {
       "what": "an early, read-only autonomy audit (design note Part 2)",
       "status": "proposed",

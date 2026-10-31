@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v11 with hand_items 0 = code_v10: yes
+seed 501, 5 years: code_v11 with hand_items 0 = code_v10: yes
+seed 501, 20 years: code_v11 with hand_items 0 = code_v10: yes
+seed 601, 20 years: code_v11 with hand_items 0 = code_v10: yes
+seed 501, 20 years: v11 = HD1's arm h (code_hd1 with hand_items 1): yes
+seed 501, 20 years: the live package with its own defaults = v11: yes
+seed 601, 20 years: v11 = HD1's arm h (code_hd1 with hand_items 1): yes
+seed 601, 20 years: the live package with its own defaults = v11: yes
+seed 501, 20 years: the handing law changes the world (it acts): yes
+v11, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS
