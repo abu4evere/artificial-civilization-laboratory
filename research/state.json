@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-30T19:45:00-04:00",
+  "updated": "2026-10-30T23:55:00-04:00",
   "nature": {
     "live": "v9",
     "acl_fingerprint": "edb0cd3daec9db7cfc00c16833d4e3e34f2d1ef6965760f915f4cdbc52ee8195",
@@ -29,7 +29,7 @@
       "plan": "experiments/AG1_ageing_anchor/questions.md",
       "frozen_tag": "AG1-frozen",
       "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
-      "status": "running-local",
+      "status": "recompute-pending",
       "jobs": {
         "cloud_run": 41042869183,
         "cloud_saved": 75,
@@ -43,8 +43,8 @@
         "local_dir": "experiments/AG1_ageing_anchor/output_local",
         "identity_check": "passed"
       },
-      "next_step": "when all 5 local worlds exist in output_local: copy them into output/, run analyse_ag1.py, write findings, build the recompute file; blind recompute by GPT and Gemini needs the browser (interactive)",
-      "evidence": "none yet"
+      "next_step": "blind recompute (GPT and Gemini); then propose a confirmatory run of b on new seeds (frozen branch) and put adoption (nature v10) to the creator",
+      "evidence": "finding (not yet recomputed): both anchors more realistic (D 0.995 -> b 0.125, a 0.172); b no flags; a two flags (extinct 5 vs 2; late population 0.774); knowledge unchanged"
     },
     {
       "id": "AW1",
