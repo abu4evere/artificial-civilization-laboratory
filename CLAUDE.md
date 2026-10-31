@@ -104,19 +104,22 @@ decides.
 - spend money or touch credentials;
 - delete data or history.
 
-**Adopting a new nature version as live** (`acl/`) is **never autonomous** (the creator, 30 October 2026, approving
-the autonomous-researcher proposal: no experimental change becomes part of nature without the creator's explicit,
-specific authorization; this replaces the 27 October permission "you can make it live nature"). In sleep mode and in
-scheduled research ticks, a supported nature-change study ends at **"proposed for adoption"**: findings final, the
-recompute matched, and a confirmatory run where the plan requires one. The creator then decides, in a Claude Code
-session, by a message naming the version. "Continue", "ok" or "keep going" do not count. After that decision, the
-path is as before:
-1. a frozen study whose result supports the change;
-2. an independent recompute by GPT and Gemini;
-3. both models consulted on adoption;
-4. a new `code_vN` with zero checks (off = the previous nature; on = the study's arm);
-5. reference hashes regenerated and the tests passing;
-6. a git tag `nature-vN`.
+**Adopting a new nature version as live** (`acl/`) **is allowed autonomously by the safe path** (the creator, 31 October
+2026, at the PC in this Claude Code session, choosing "Adopt with safe path"; this replaces the 30 October rule "never
+autonomous"). The assistant may adopt a version itself only when **all** of these hold, in this order:
+1. a frozen study whose result supports the change (findings final);
+2. an independent blind recompute by GPT and Gemini that matches;
+3. **a confirmatory run on new seeds** that also supports it (not needed when the creator decides the version
+   themselves, by a message naming it);
+4. both GPT and Gemini consulted on adoption, with the assistant's estimate of success at 40% or more;
+5. a new `code_vN` with zero checks (off = the previous nature; on = the study's arm);
+6. reference hashes regenerated and the tests passing;
+7. a git tag `nature-vN`, a line in `docs/autonomous_decisions.md`, and a Telegram message to the creator
+   (`tools/notify.py`).
+
+Adoption needs the browser (GPT and Gemini), so it happens in interactive or heartbeat sessions, **never in a scheduled
+tick or a Telegram session**. Tuning nature towards an outcome stays forbidden. The creator can always decide a
+version directly, by a message naming it.
 
 The previous nature stays in `code_v(N−1)`, so the change can always be undone.
 

@@ -6,7 +6,7 @@
     "acl_fingerprint": "edb0cd3daec9db7cfc00c16833d4e3e34f2d1ef6965760f915f4cdbc52ee8195",
     "frozen_copy": "experiments/NV9_nature_v9/code_v9",
     "frozen_copy_fingerprint": "8f88ec3357e1c0e98f056e218d17269b507c833591c2389c7deff68b7412b75c",
-    "adoption": "never autonomous: only the creator, in a Claude Code session, by a message naming the version (CLAUDE.md, 30 October 2026)"
+    "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session"
   },
   "objectives": [
     "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
@@ -18,7 +18,7 @@
   "authorized_scope": {
     "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
     "nature_change_tests": "only studies listed below with approved_by set",
-    "nature_adoption": "never autonomous",
+    "nature_adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
     "money_credentials_publishing_deleting": "never"
   },
   "studies": [
