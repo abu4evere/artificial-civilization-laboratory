@@ -154,3 +154,24 @@ and then run a long check over centuries.
 **Also started overnight (safe, no change to nature): LC1**, CU1's curiosity over **1,000 years** (run 40838846290). It
 answers the question that matters most for your v9 decision: does curiosity slow the long erosion, or only delay it?
 It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
+
+# Update, 31 October 2026 (night, this account)
+
+## In plain words
+1. **Deep check of the whole project: clean** (`docs/check_2026-10-31.md`). 64 tests passed; the 11 newest studies
+   re-run from raw data give the same numbers. Two old to-do items were ticked.
+2. **You changed the rule** (at the PC): I may adopt a new nature by the full safe path (study, both rechecks, a
+   confirmation run, both models, tests), with a Telegram message each time.
+3. **Nature v10 is live (your decision):** people age like the !Kung; adults die at 54 on average instead of 45. GPT
+   93%, Gemini 98%. 65 tests pass. v9 is kept.
+4. **IW1 is final** (rechecked blind by GPT and Gemini):
+   - people know what their tools are worth;
+   - tools just help modestly, so making loses to food.
+   The next question is the world itself: where could knowing matter more? That will be measured first.
+5. **Found:** in ACL nobody under 12 can make known things, though forager children make their own toys. It is noted
+   for you (`docs/research/making_time_and_child_objects_2026-10-31.md`).
+
+## Autonomous decisions
+| decision | GPT | Gemini | mine |
+|---|---|---|---|
+| IW1, how the worth of made things forms (read-only) | 75% | 85% | 70% |
