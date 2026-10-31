@@ -35,3 +35,17 @@ council.**
   - `_give` passes food and seeds only;
   - its cost is 5 (`COST["give"]`), the same as Gemini's "parity" would use;
   - transfers among the living happen only by pick-up (v8).
+
+## Round 36: the design check of TA1 (same chats, about 10:45)
+- **GPT: sound, 90%.**
+  - Keep (a) and (e) as overlapping flags; make (b), (c) and (d) exclusive.
+  - Separate proximity from transfer feasibility.
+  - Q5 with the tool's real properties and the caps.
+  - Verify the wrappers are read-only, and account for every tool's entry and exit.
+  - Thresholds are classifications, not causal proof.
+- **Gemini: sound, 94%.**
+  - A strict priority partition.
+  - Empty hands against hands clogged with other things.
+  - Track adult tools in children's hands.
+- **Council:** all adopted (`experiments/TA1_tool_access/questions.md`). **Corrected:** Gemini attributed tool making
+  to ACL's children under 12; that is the forager evidence. ACL's children cannot make known things.
