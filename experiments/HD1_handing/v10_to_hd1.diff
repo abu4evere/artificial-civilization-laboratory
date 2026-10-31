@@ -1,0 +1,116 @@
+diff -ru --strip-trailing-cr -x __pycache__ NV10_nature_v10/code_v10/acl/actions.py HD1_handing/code_hd1/acl/actions.py
+--- NV10_nature_v10/code_v10/acl/actions.py	2026-10-31 03:11:26.221008200 -0400
++++ HD1_handing/code_hd1/acl/actions.py	2026-10-31 13:29:06.991621100 -0400
+@@ -685,6 +685,9 @@
+ def _give(world, p, target, eff):
+     c = world.cfg
+     q = world.people[target]
++    if c.hand_items and world.hand_intent.get((p.id, q.id)):
++        _hand(world, p, q)                    # HD1: a made thing instead of food
++        return
+     need = p.need(c, world.tick)
+     q_need = q.need(c, world.tick)
+     keep = need * 1.5
+@@ -711,6 +714,20 @@
+     remember(world, q, eid, "gave", p.id, q.id, p.loc, 0.15 + 0.3 * clamp(1.0 - q.edible() / (2 * q_need)), 0.6)
+ 
+ 
++def _hand(world, p, q) -> None:
++    """HD1: p hands q the made thing that would help q most, net of what p loses, if q has room. The thing moves from
++    one hand to the other; nothing else changes."""
++    from .mind import hand_pick
++    if not p.items or len(q.items) >= world.cfg.item_limit:
++        return
++    net, idx = hand_pick(p, q)
++    if idx < 0 or net <= 0.0:
++        return
++    it = p.items.pop(idx)
++    q.items.append(it)
++    world.emit("hand", p.id, q.id, p.loc, thing=it["sig"])
++
++
+ def _care(world, p, target, eff):
+     q = world.people[target]
+     q.health = min(q.max_health(world.tick), q.health + 4.0)
+diff -ru --strip-trailing-cr -x __pycache__ NV10_nature_v10/code_v10/acl/config.py HD1_handing/code_hd1/acl/config.py
+--- NV10_nature_v10/code_v10/acl/config.py	2026-10-31 03:11:34.510345800 -0400
++++ HD1_handing/code_hd1/acl/config.py	2026-10-31 13:29:06.978321300 -0400
+@@ -125,6 +125,8 @@
+     camp_radius: int = 2               # partners this close count as living together
+     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
++    hand_items: int = 0                # HD1: 1 = a person may hand one made thing they hold to someone within reach who has room
++                                       # (the give action, generalized; 0 = nature v10 exactly)
+     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
+                                        # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
+     curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,
+diff -ru --strip-trailing-cr -x __pycache__ NV10_nature_v10/code_v10/acl/mind.py HD1_handing/code_hd1/acl/mind.py
+--- NV10_nature_v10/code_v10/acl/mind.py	2026-10-31 03:11:26.189356300 -0400
++++ HD1_handing/code_hd1/acl/mind.py	2026-10-31 13:29:06.991621100 -0400
+@@ -405,11 +405,26 @@
+ 
+         # Give food.
+         surplus = p.edible() - need * 2.0 - dep_need
++        give_u = None
+         if surplus > 1.0 and not (q.caregiver == p.id and q_st in ("infant", "child")):
+             motive = q_hunger * (0.25 * g["kindness"] + 0.6 * max(aff, 0.0) + 0.6 * kin
+                                  + (0.6 if is_partner else 0.0))
+             motive += 0.35 * clamp(bal / need) * (0.5 + g["kindness"])    # paying back
+-            add("give", q.id, motive * min(1.0, surplus / need), d)
++            give_u = motive * min(1.0, surplus / need)
++        if c.hand_items:
++            # HD1: or hand them a made thing, if it would help them more than it costs the giver.
++            world.hand_intent.pop((p.id, q.id), None)
++            if p.items and len(q.items) < c.item_limit:
++                net, _ = hand_pick(p, q)
++                if net > 0.0:
++                    social = (0.25 * g["kindness"] + 0.6 * max(aff, 0.0) + 0.6 * kin + (0.6 if is_partner else 0.0)
++                              + 0.35 * clamp(bal / need) * (0.5 + g["kindness"]))
++                    hand_u = net * social
++                    if give_u is None or hand_u > give_u:
++                        world.hand_intent[(p.id, q.id)] = True
++                        give_u = hand_u
++        if give_u is not None:
++            add("give", q.id, give_u, d)
+ 
+         # Care for the sick, the hurt and the very young.
+         q_trouble = (0.6 if q.sick else 0.0) + (1.0 - q.health / 100.0) + (0.3 if q_st == "infant" else 0.0)
+@@ -571,6 +586,27 @@
+     return c.worth_weight * p.expect.get(learned or key, 0.0) * (0.5 + 0.5 * p.genes["diligence"])
+ 
+ 
++HAND_USES = ("forage", "hunt", "wood", "stone", "fiber", "fight", "carry", "cold")
++
++
++def hand_pick(p: Person, q: Person) -> tuple[float, int]:
++    """HD1: the made thing p holds that would help q most, net of what p would lose without it: (net use, index).
++    q's gain is how far the item beats q's own best for any use; p's loss is how far p's own best for any use falls
++    without it. (0.0, -1) if nothing would help q more than it costs p."""
++    from .matter import factor
++    best = (0.0, -1)
++    for i, it in enumerate(p.items):
++        gain = max(max(0.0, factor(it, u) - best_item(q, u)[1]) for u in HAND_USES)
++        loss = 0.0
++        for u in HAND_USES:
++            rest = max([factor(o, u) for j, o in enumerate(p.items) if j != i] + [1.0])
++            loss = max(loss, best_item(p, u)[1] - rest)
++        net = gain - loss
++        if net > best[0] + 1e-12:
++            best = (net, i)
++    return best
++
++
+ def _wanted_parts(p: Person) -> dict:
+     """Made things that go into something they value and do not have: worth making for that."""
+     out: dict = {}
+diff -ru --strip-trailing-cr -x __pycache__ NV10_nature_v10/code_v10/acl/world.py HD1_handing/code_hd1/acl/world.py
+--- NV10_nature_v10/code_v10/acl/world.py	2026-10-31 03:11:26.257179100 -0400
++++ HD1_handing/code_hd1/acl/world.py	2026-10-31 13:29:06.978321300 -0400
+@@ -467,6 +467,7 @@
+         self.hunts = {}
+         self.courting = []
+         self.plan = {}
++        self.hand_intent = {}                 # HD1: this week's (giver, receiver) pairs whose give hands a made thing
+         self.week_decisions = []
+         self._living = None
+         if self.cfg.sham_draw and self.tick == 0:
