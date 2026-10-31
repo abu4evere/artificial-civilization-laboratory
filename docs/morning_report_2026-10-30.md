@@ -84,3 +84,22 @@ Nothing urgent. LS2's results will come with a plain summary.
   router, or turning off IPv6 on the Wi-Fi adapter (your choice), may help.
 - **The Chrome connection keeps dropping,** so CO2's blind recheck is stuck half-way: Gemini was calculating when it
   dropped. I'll retry every hour. If it stays down, open the Claude side panel in Chrome once to reconnect it.
+
+---
+
+# Night update (just after midnight, 31 October)
+
+## In plain words
+1. **AG1 (your ageing idea) is final:** rechecked blind by GPT and Gemini; every number matches.
+   - Both realistic-ageing versions make ACL adults die at realistic ages.
+   - **The small step (the !Kung) fits best and is safe:** adults die at 54 on average instead of 45, 44% of adult
+     deaths come at 60 or later instead of 15%, no harm to survival, and slightly more people.
+   - The forager average goes too far, and its worlds die out more often.
+   - Living longer does **not** by itself make knowledge build up.
+2. **CO2 is final** (rechecked by both): making loses because food and gathering pull harder, and it fades over the
+   centuries because habits for common actions keep inflating.
+3. **ChatGPT works again** after you fixed Chrome.
+
+## Your decisions (only you)
+1. **Ageing:** run a confirmatory test of the small step on new worlds, and then, if it holds, make it nature v10?
+2. **Learning rule:** test a fairer way of learning habits (an "expected look-ahead" instead of the "max")?
