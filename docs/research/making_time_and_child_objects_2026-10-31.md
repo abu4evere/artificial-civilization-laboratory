@@ -33,3 +33,18 @@ These sources suggest; only a frozen study decides.
   infancy to adolescence.
 - Lew-Levy et al. (2017), *Hum Nat* 28:367 (PMC5662667): how forager children learn subsistence skills. Adults teach
   complex tool making directly only in adolescence.
+
+## Checked in the code after reading (31 October 2026, live nature v9)
+- **In ACL, "make"** (making again a thing whose recipe is known) **is offered only to people aged 12 or more.**
+  - `acl/mind.py`, the make option sits under `if grown:`, where `grown` means teen, adult or elder;
+  - `acl/config.py`: `CHILD_END` = 12 years.
+- **Children from 3 to 12 can only "play"** (`actions._play`): striking, tying, wetting and shaping what they hold.
+  Play builds crafting skill and can turn up new kinds. Toddlers (under 3) cannot gather.
+- **Against Lew-Levy et al. (2022):** forager children "readily manufacture their own toys", mostly miniature or
+  full-sized versions of adult tools, that is, making known things. ACL's children cannot make a known thing until 12.
+- **This is a possible gap, not a proposal.** Letting children make would be a nature change (Law 126):
+  - it needs the creator's decision;
+  - evidence first: at what ages forager children make which things;
+  - a frozen study.
+  It bears on the creator's first goal (knowledge that survives death), since practice in childhood is where PL1 found
+  crafting skill comes from.
