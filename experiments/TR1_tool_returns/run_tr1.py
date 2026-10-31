@@ -122,7 +122,9 @@ class TR1Obs:
     def after_forage(self, world, p, info):
         actual = p.food + p.seeds - info["food0"]
         g = info["got"]
-        if abs(actual - g["with"]) > 1e-9:
+        if not p.alive:                         # amendment 1: died within the forage; their food went to body or heir
+            self.s["died_in_forage"] += 1
+        elif abs(actual - g["with"]) > 1e-9:
             self.mismatch["forage_replay"] += 1
         self.s["forage_weeks_all"] += 1
         if not self.late_adult(world, p):

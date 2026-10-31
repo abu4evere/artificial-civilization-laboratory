@@ -105,3 +105,19 @@ How the code (`run_tr1.py`, `analyse_tr1.py`) reads the text where it left a cho
 6. **Q5's seasons** are the world's season index (0–3), as the code numbers them.
 7. **"Near the line"** is decided on the threshold that sets the reading. For "knowing matters but is unused", it is
    headroom (b)'s lower bound below 0.10, or the realized share's upper bound at or above half of headroom (b).
+
+## Amendment 1 (31 October 2026, ~07:40; after the first run, before any outcome was read)
+
+- **The first run** (GitHub 41191446977, 32 of 32 worlds) failed its own validity check. There were 3 forage-replay
+  mismatches: 1 in seed 21003 and 2 in seed 21016, out of about 10 million forages. The analysis stopped at validity,
+  and no outcome was read. Its validity-only output is kept as `results_run1_invalid.md`.
+- **The cause:** seed 21003 was re-run locally, stopping at the first mismatch.
+  - Person p00059 died within the forage action (week 129; `alive` false after the action). Their food and seeds went
+    to body or heir, so the change in their own food was −2.18, against a replayed yield of 14.71.
+  - The replay was right; **the check compared it with a dead person's emptied stores.**
+  - Seed 21016 is being re-run to confirm both of its mismatches have the same cause. The result is appended below.
+- **The fix:** a forage in which the forager dies within the action is counted apart (`died_in_forage`) and not
+  checked against the food actually got. Every other forage keeps the exact check.
+  - The measured sums are unchanged: they always used the replayed yields.
+  - No threshold, measure or seed changes.
+- **The whole study is re-run** with the amended runner, on the same seeds, after fresh local zero checks.
