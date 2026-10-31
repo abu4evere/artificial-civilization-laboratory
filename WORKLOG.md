@@ -448,3 +448,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-10-31 16:28 (sleep mode): HD1 FINAL: GPT (fresh chat 6ae64ef9) and Gemini (fresh chat ed86021013cba8ea) blind recomputes match every number (R 1.07/1.43/1.14%; D_h +0.0036 [0.0028, 0.0045]; sham +0.0007; supported). INDEX, ROADMAP, OPEN_DECISIONS, state.json updated; tag HD1-done. Next by the safe path: a confirmatory run on new seeds.
 - 2026-10-31 16:29 (sleep mode): HD1-C frozen (HD1C-frozen): HD1 exactly on new seeds 21301-21332 (the safe path's confirmatory run); thin wrappers reuse HD1's runner and analysis unchanged. Zero checks next.
 - 2026-10-31 16:57 (sleep mode): HD1-C local zero checks PASS (same as HD1; fingerprint 8217eac3); cloud plan reads 96 jobs on seeds 21301-21332. Launching.
+- 2026-10-31 16:58 (sleep mode): HD1-C launched: run 41241346782 (96 worlds, 20 chunks, skip_zero=local); state.json updated.
