@@ -1,6 +1,6 @@
 # Read this first (any assistant, any account)
 
-**Latest handoff (28 October 2026, account switch): `docs/HANDOFF_2026-10-28.md`. Read it right after this file.**
+**Latest handoff (30 October 2026): `docs/HANDOFF_2026-10-30.md`. Read it right after this file** (the 28 October one, `docs/HANDOFF_2026-10-28.md`, is older).
 
 The creator works with more than one assistant account. This file is the shared mind: read it, then the tail of
 `WORKLOG.md`, before doing anything. **After every real step, append one dated line to `WORKLOG.md`**, so whoever comes
