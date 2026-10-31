@@ -121,3 +121,9 @@ How the code (`run_tr1.py`, `analyse_tr1.py`) reads the text where it left a cho
   - The measured sums are unchanged: they always used the replayed yields.
   - No threshold, measure or seed changes.
 - **The whole study is re-run** with the amended runner, on the same seeds, after fresh local zero checks.
+- **Seed 21016 confirmed** (re-run locally to week 89 and stopped there, since both of its mismatches had then been
+  found):
+  - p00051 died within a forage at week 67;
+  - p00019 died within a forage at week 89.
+  `alive` was false after the action both times. **All 3 mismatches of run 1 are deaths within the action.** The
+  amended runner's zero checks pass again (`zero_local.log`, same `code_v10` fingerprint).
