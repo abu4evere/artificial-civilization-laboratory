@@ -1,4 +1,4 @@
-# IW1 — How does the worth of made things form? (DRAFT, not frozen)
+# IW1 — How does the worth of made things form? (frozen plan)
 
 **Read-only on nature v9. No change to nature.** It is CO2's frozen next step for its reading "built-in pull carries
 it" (`experiments/CO2_choice_v9/findings.md`): making loses at any moment mostly because a made thing's worth is low
@@ -48,6 +48,18 @@ against food and gathering. **Why is that worth low?**
   `forget_useless` or death, and the share never used before leaving.
 - **Q6:** whether the kinds people make are the ones that help most (rank correlation of make counts with mean felt,
   per world).
+- **Q7: offered but not chosen** (GPT). Every adult week, years 100–200, in which a make candidate was offered
+  (`world.week_decisions`) but not chosen, with the same calibration as Q1. This avoids studying only the makes that
+  won.
+- **Q8: which term carries the make score** (GPT). In offered weeks, the share where each term wins the max: itemval,
+  worth as a part, belief, or 0.5 × surprise. It is recomputed from the person's state with the same read-only
+  functions the code uses. If it cannot be recomputed exactly, the zero checks say so and Q8 is dropped, stated in the
+  open.
+- **Never used against unhelpful** (GPT): person-kinds with 0 uses are reported apart ("unknown worth"). They count
+  for neither "honest" nor "unlearned" except through Q2's share. The maker's own uses (a) and everyone's (b) are
+  reported side by side.
+- **Sensitivity** (GPT): the reading is also shown at thresholds of 0.05 and 0.15 (and ±0.03 for "honest"). These are
+  described, not decisive.
 
 ## Frozen reading (Q1 and Q2)
 - **"Unlearned"** if under-valuation (b) is > 0.10 with its lower bound > 0, **and** most makes (> 50%) rest on fewer
@@ -63,8 +75,31 @@ against food and gathering. **Why is that worth low?**
   question; measure before making anything harder.
 - **"Mixed":** report both, by source and by kind of use.
 
-## Status
-**A draft for debate (round 33).**
-- **Gemini: yes, 85%.** Its two changes are adopted: the 6-use bins and the trajectory by source.
-- **GPT:** not yet reachable. The ChatGPT page stuck on "Loading profile", 31 October about 01:50. It will be asked
-  before freezing.
+## Validity (hard stops)
+- **Zero checks:**
+  - the observer and wrapper are read-only (state and random numbers identical with and without them, at 20 and 60
+    years);
+  - reload is exact;
+  - judge_item calls seen = itemval changes replayed (mismatch 0).
+- All worlds are present under one fingerprint (`code_v9`).
+- **A blind recompute by GPT and Gemini** of Q1 (a) and (b), Q2's share and the reading, before the findings are final.
+
+## The assistant's prior
+1. **"Mixed", leaning unlearned:** most makes rest on fewer than 6 uses; itemval is below everyone's felt help.
+2. **Mean felt help per tool use is modest** (0.1 to 0.3).
+3. **Invented kinds are the most under-valued** at the make (the zero start).
+
+## Review (debate round 33, `docs/debate_round33_iw1_2026-10-31.md`)
+- **Gemini: yes, 85%.** Adopted: the 6-use bins, and the trajectory by source.
+- **GPT: yes, 75%.** Adopted:
+  - weeks where making was offered but not chosen;
+  - which term wins the max;
+  - never used kept apart from unhelpful;
+  - the maker's own help against the world's;
+  - sensitivity.
+  GPT: "Six uses should be a diagnostic bin, not proof of inadequate learning." This is stated in the reading.
+
+## Sign-off (31 October 2026)
+The assistant, under the creator's sleep-mode autonomy (CLAUDE.md, Sleep mode; the creator, 31 October on Telegram:
+"just keep working yourself"). It is read-only, so allowed by the 40% rule. GPT estimates 75%, Gemini 85% and the
+assistant 70%. Seeds 20901–20932 (new). Frozen as `IW1-frozen` before any code or data.
