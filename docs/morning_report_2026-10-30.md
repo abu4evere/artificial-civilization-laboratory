@@ -43,3 +43,38 @@ Nothing urgent. LS2's results will come with a plain summary.
 | decision | GPT | Gemini | mine |
 |---|---|---|---|
 | AG1, ageing anchored to forager evidence (four arms; under your delegation) | 90% | 90% | 80% |
+
+---
+
+# Evening update (30 October, after you left)
+
+## In plain words
+1. **AW1 is final** (rechecked blind by GPT and Gemini). Being shown a recipe **nearly doubles** crafting skill, but
+   people still don't make things more often. Watching passes almost nothing. **So skill is not the problem; the
+   choice to make is.** Neither law is proposed for nature.
+2. **CO2 is done** (read-only; waiting for its blind recheck). Why does making lose?
+   - **At any moment:** mostly because food and gathering simply pull harder (56% of the gap). Habits are 35%.
+     Curiosity helps making, but only a little (5%).
+   - **Over the centuries:** the slide comes from **habits** (87%), the same as before curiosity (86%). People's
+     habits for common actions keep inflating; making's never does, because it is rarely tried.
+   - **What it points to:** a known flaw in how ACL people learn habits (the "max look-ahead" overestimates, in the AI
+     research literature too). Fixing it would change nature, so **it is your decision**. Notes:
+     `docs/research/learning_rule_sources_2026-10-30.md`.
+3. **AG1 (ageing):** 75 of 80 worlds finished on GitHub; the 5 missing ones run on your PC (a check proved PC runs
+   match GitHub exactly). They are slow, many hours, so please keep the PC awake.
+4. **Your new system works:**
+   - Telegram messages reach your phone;
+   - the bot answers you (only you);
+   - the hourly check-ins and the morning summary are on.
+
+## Problems tonight (nothing lost)
+- **ChatGPT would not load or send on the PC** from about 6 pm, so GPT could not review CO2's plan before its results
+  (recorded openly in the plan). Gemini alone did. GPT's blind recheck of CO2 waits until ChatGPT works.
+- **My usage limit ran out once** (about 8–9 pm). One hourly check-in failed then; it is logged and harmless.
+- **The Telegram bot lost the internet for a few minutes** around 8:45 pm; it retried by itself.
+
+## Waiting for you
+1. **The learning-rule question:** test a fairer way of learning habits (Expected Sarsa instead of the max)? It is a
+   change to nature, tested first as a frozen study; only you decide.
+2. **AG1's result** when the last 5 worlds finish: whether more realistic ageing should become nature (after a
+   confirmatory run).
