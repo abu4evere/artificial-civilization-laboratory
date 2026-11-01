@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T18:40:54-04:00",
+  "updated": "2026-10-31T20:19:16-04:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -114,6 +114,14 @@
       "status": "final",
       "run": 41241346782,
       "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
+    },
+    {
+      "id": "ES1",
+      "title": "Expected look-ahead in habit learning (nature-change test in a copy, code_es1)",
+      "kind": "nature-change test (copy)",
+      "status": "running-cloud",
+      "run": 41256219936,
+      "next_step": "when run 41256219936 completes: python tools/ci/fetch_cloud.py 41256219936 experiments/ES1_expected_lookahead/output; count 96; analyse_es1.py; findings (not final until GPT and Gemini recompute); if supported, a confirmatory run before any adoption"
     }
   ],
   "queue_after": [
