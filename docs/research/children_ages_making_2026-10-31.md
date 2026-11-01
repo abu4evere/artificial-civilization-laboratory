@@ -68,3 +68,24 @@ collects what was actually read.** A source suggests; only a frozen study decide
 - **Bearing on ACL** (a suggestion only): this supports the gradient reading again. Ability is low and rises with
   practice from early childhood, and the move from play to work differs between children. No single age line is
   supported by anything read so far. **Still missing:** an age-graded source on tool *making* itself.
+
+## Addendum (1 November 2026): Lew-Levy, Andersen, Lavi & Riede (2022), on age
+*Frontiers in Psychology*, 11 May 2022, PMC9132165 (the 54-society paper above). **Read now:** the methods paragraph on
+age coding, Table 2 (the contrasts), the Figure 2 caption, and the results and limitations paragraphs on age.
+- **Age was coded in only two groups:** "approximately 6 years or younger" and "approximately 7 years or older".
+- **No strong age differences** in any of the five models. The age contrasts' odds ratios are 1.42–2.69, none with an
+  89% interval clear of 1.
+- **The authors' own limit:** "We had few observations for precise age categories, limiting our ability to infer
+  developmental trends."
+- **One example of young making:** the Figure 2 caption shows "a five-year-old Kaska boy making a rolling toy"
+  (Honigmann and Bennett 1948).
+- 27% of objects used instrumentally involved children manufacturing toys (dolls, games, play shelters).
+- **Not stated:**
+  - A web-search summary said children "around four or five" begin making their own tools. That was **not found in
+    this paper**.
+  - It may come from Milks et al., "Hunter-gatherer children in the past: an archaeological review", which is a PDF
+    and was not opened (no downloads without the creator's permission).
+  - So it is not stated here as a finding.
+- **Bearing:** making by young children is documented (one five-year-old example, and toy-making in general). But this
+  dataset cannot place an age line, and it shows no strong age trend. The gradient reading stands; no age line is
+  supported.
