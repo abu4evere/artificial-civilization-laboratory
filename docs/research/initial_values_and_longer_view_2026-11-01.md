@@ -46,3 +46,16 @@ the formulas themselves were not read. No other section was read.
 4. **The first step stays read-only.** Calibration split by age, or by how often the person had already updated that
    habit, would show whether the under-valuation is a "young minds" effect. It is queued in `research/state.json`, for
    debate with GPT and Gemini.
+
+## Addendum (11:57): how human value learning changes with age
+**Palminteri, S., Kilford, E. J., Coricelli, G. & Blakemore, S.-J. (2016).** "The computational development of
+reinforcement learning during adolescence." *PLoS Computational Biology* 12(6): e1004953 (open access,
+doi 10.1371/journal.pcbi.1004953). **Read: the abstract and the author summary only.**
+- **Adolescents' choices were better fit by a basic learning rule.** Adults added "a counterfactual learning module"
+  and "a value contextualisation module".
+- **Adolescents learned from reward but were "less likely to learn from punishment"**; adults learned from both alike.
+- **Bearing on ACL** (a suggestion only):
+  - In people, age changes *how* values are learned, not only where they start.
+  - In ACL, every age uses the same rule, so UV1's age bins can show only starting values and experience, not a
+    developing rule.
+  - That is a difference from Earth to keep in mind when reading UV1. It is not a proposal to change nature.

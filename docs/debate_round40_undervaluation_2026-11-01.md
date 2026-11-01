@@ -1,7 +1,7 @@
 # Debate round 40 (1 November 2026, sleep mode): after ES2, what first? (opinions, not sign-off)
 
 **The same text to GPT (fresh chat `6ae76d5c`) and Gemini (fresh chat `104275749d6e6139`); Claude as council.**
-Sent at about 11:55, three rounds. The question's facts are from `experiments/ES2_realized_lookahead/findings.md`,
+Sent between 11:47 and 11:52, three rounds (from the commit times; first written as 'about 11:55', an estimate, corrected). The question's facts are from `experiments/ES2_realized_lookahead/findings.md`,
 `explore_rest.md`, `explore_q_vs_G.md` and `docs/research/initial_values_and_longer_view_2026-11-01.md`.
 
 **The options:**
