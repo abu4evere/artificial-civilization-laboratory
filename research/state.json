@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-10-31T22:46:19-04:00",
+  "updated": "2026-11-01T00:41:43-04:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -131,6 +131,14 @@
       "frozen_tag": "ES2-frozen",
       "status": "built; local zero checks interrupted (zero_local.log empty, no process running at 2026-11-01 00:30)",
       "next_step": "re-run ES2 local zero checks into zero_local.log; if All: PASS, commit it and launch cloud-run with skip_zero=local (seeds 21501-21532)"
+    },
+    {
+      "id": "ES2",
+      "title": "Realized look-ahead (deferred Expected Sarsa over the real choice; nature-change test in a copy, code_es2)",
+      "kind": "nature-change test (copy)",
+      "status": "running-cloud",
+      "run": 41274072560,
+      "next_step": "when run 41274072560 completes: python tools/ci/fetch_cloud.py 41274072560 experiments/ES2_realized_lookahead/output; count 96; analyse_es2.py; findings (not final until GPT and Gemini recompute); recompute builder to write (per-seed per-arm n and sum_abs)"
     }
   ],
   "queue_after": [
