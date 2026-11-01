@@ -76,3 +76,10 @@ guard is enough.
 ## Independent recompute
 Pending: GPT and Gemini, each in a fresh chat, from `recompute/es2_one_file.csv` (the primary) and
 `recompute/es2_rest_guard.csv` (the guard that decided it). Recorded only from their actual replies.
+
+## Correction (appended 1 November 2026, 10:45)
+- **"No held update was left uncompleted" and "uncompleted held updates: 0" above are wrong as worded.**
+  - The raw output (`sums.held_dropped`) counts **122** held updates dropped at death in arm r, out of 48,306,910
+    updates (a share of 2.5 per million). v11 and the sham have none, since they hold no updates.
+  - `results.md` shows the share rounded to five decimals (0.00000), and I read that as zero.
+- **The frozen guard is not affected:** it is raised only at 1% of updates or more in any arm. Nothing else changes.
