@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T13:52:47",
+  "updated": "2026-11-01T14:01:30",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -145,6 +145,15 @@
       "run": 41331098954,
       "next_step": "debate round 41: the floor (coarse situations) and the children (upbringing pull), read-only first",
       "recompute": "experiments/UV1_undervaluation_by_experience/recompute_uv1.md (GPT and Gemini match)"
+    },
+    {
+      "id": "UV2",
+      "title": "Does the habit floor come from unpractised choices further ahead? (read-only replay of ES2's r arm)",
+      "kind": "read-only",
+      "plan": "experiments/UV2_propagation/questions.md",
+      "frozen_tag": "UV2-frozen",
+      "status": "zero checks running",
+      "next_step": "commit zero_local.log; smoke r 9989 105 years against ES2 and UV1 smoke; launch cloud run (skip_zero=local); write up; blind recompute"
     }
   ],
   "queue_after": [
