@@ -49,3 +49,22 @@ collects what was actually read.** A source suggests; only a frozen study decide
 - The time-budget tables of Salali et al. (2019), by age and sex.
 - Crittenden (2016), on Hadza children's play (cited in Lew-Levy 2017).
 - Lee (1979), ch. 9.
+
+## Addendum (1 November 2026): Salali et al. (2019), the time budgets
+**Read now:** the results paragraph on time allocation, Table 2 and the figure 3 caption, the video-sample age groups
+(Table 3), and the discussion's first paragraph. The figures themselves (images) were not seen.
+- **The time budgets measure play and childcare/domestic work, not tool making.** So they give **no age for making
+  things.** The gap noted above stays open.
+- **The shift from play to work is gradual and differs by sex:**
+  - **girls:** play time "decreased after 5 years of age", as childcare and domestic work grew;
+  - **boys:** play stayed "around a third of their in-camp hours" between ages 5 and 12, then "declined continuously
+    throughout the teenage years";
+  - both reach "a similarly low level upon reaching adulthood".
+  - Table 2: play falls with age, more steeply for boys (age × sex term); N = 96 rows; children with under 10 scan
+    observations were excluded.
+- **Practice comes early:** children "employed practice-based learning at all ages, but their efficiency at tasks such
+  as using tools was low in infancy". Once they learn a skill's basics by watching and imitating, "they start
+  practicing those skills from early ages".
+- **Bearing on ACL** (a suggestion only): this supports the gradient reading again. Ability is low and rises with
+  practice from early childhood, and the move from play to work differs between children. No single age line is
+  supported by anything read so far. **Still missing:** an age-graded source on tool *making* itself.
