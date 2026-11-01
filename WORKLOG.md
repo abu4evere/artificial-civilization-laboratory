@@ -468,3 +468,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-11-01 00:32 (telegram): ES2 local zero checks found interrupted (zero_local.log empty, no process); ES2 entry with next_step (re-run zero checks, then launch) added to research/state.json for the hourly check-in.
 - 2026-11-01 00:41 (sleep mode): ES2 local zero checks PASS (es2 off = code_v11; acts; sham acts; observer read-only in arm r; 553,387 updates replayed exactly at 60 years; reload exact with held updates; fingerprint f3dcddf9). Launching.
 - 2026-11-01 00:41 (sleep mode): ES2 launched: run 41274072560 (96 worlds x 200 years, 20 chunks, skip_zero=local); state.json updated.
+- 2026-11-01 00:45 (telegram): creator's PC lagging; two stray ES2 smoke runs (run_es2.py one r/x 9989 105, started 23:52, ~33 CPU-min each) stopped; the real ES2 run 41274072560 continues on the cloud. Free RAM still low (~0.4 of 8 GB: ChatGPT app, Chrome, Claude, game.exe).
