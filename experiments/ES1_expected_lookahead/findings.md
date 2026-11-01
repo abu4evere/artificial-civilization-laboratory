@@ -1,4 +1,4 @@
-# ES1 — Do minds learn more accurately with an expected look-ahead? Findings (not final until GPT and Gemini recompute)
+# ES1 — Do minds learn more accurately with an expected look-ahead? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **A nature-change test in a copy (`code_es1` = `code_v11` + `expected_lookahead`), not an adoption.** Frozen as
 `ES1-frozen` (operational note 1, which recorded a smoke observation before any data). Signed off by the assistant
@@ -68,6 +68,8 @@ more food from tools, and larger populations, with no guard flag.
     returns?). That would be a new question for a new frozen study, **never a change to this one's reading.**
 - **No change to nature** follows from this study.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/es1_one_file.csv` (per-seed, per-arm sums). Recorded only
-from their actual replies.
+## Independent recompute (31 October 2026)
+GPT and Gemini, each in a fresh chat, from per-seed sums of the raw output only (`recompute_es1.md`). **All three agree:**
+M 0.3919 / 0.4230 / 0.3859; e − v11 +0.0311 [+0.0218, +0.0398]; sham −0.0060; not supported.
+
+**Final: not supported. Not adopted.**
