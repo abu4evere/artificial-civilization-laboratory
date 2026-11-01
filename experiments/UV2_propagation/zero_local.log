@@ -1,0 +1,5 @@
+seed 501, 20 years, arm r: observer read-only: yes; update-replay mismatches (incl. a missing U): none; habit updates replayed 106388; every counted update binned once (102897 = 102897): yes; Dn outside [0, 1]: 0
+seed 601, 60 years, arm r: observer read-only: yes; update-replay mismatches (incl. a missing U): none; habit updates replayed 553387; every counted update binned once (546002 = 546002): yes; Dn outside [0, 1]: 0
+code_es2 fingerprint: f3dcddf901196013c25f5a87f536cf4922ec39fd3dca055a3a5028ef9532981a
+All: PASS
+
