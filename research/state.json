@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T00:41:43-04:00",
+  "updated": "2026-11-01T01:42:00-04:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -176,6 +176,7 @@
     "local_simulations_max": 4,
     "cloud_studies_at_once": 1,
     "failures_before_pause": 3,
-    "daily_summary_at": "07:30"
+    "daily_summary_at": "07:30",
+    "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2)."
   }
 }
