@@ -78,3 +78,15 @@ stays v11. Adoption would follow only the safe path in `CLAUDE.md` (a confirmato
 The assistant, under the creator's standing instruction to keep working (a nature-change test in a copy, allowed as a
 frozen study under the 40% rule; adoption only by the safe path). GPT estimates 75%, Gemini 88% and the assistant 70%.
 Frozen as `ES1-frozen` before any code or data.
+
+## Operational note 1 (31 October 2026, after freezing, before any data)
+
+1. **The analysis was tested on 105-year smoke worlds** in all three arms (seed 9999; not data). Every measure and guard
+   computes, and the analysis is unchanged.
+2. **Recorded before the data, without changing anything:** in that one smoke world, the e arm's signed bias q − G
+   was negative for nearly every action (about −0.4 to −0.5, where v11 had positive values for the common actions).
+   - **A possible reason, to be read only after the real data:** the expected look-ahead weights only the habit part
+     of a future choice (learned weight ÷ temperature), not its instinct terms. So it may sit below the returns
+     actually followed.
+   - The frozen rule and primary stand as written. If the real run shows this, it is a finding about this form of the
+     law, not a reason to change the test.
