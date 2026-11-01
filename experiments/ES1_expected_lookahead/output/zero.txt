@@ -1,0 +1,5 @@
+seed 501, 20 years: code_es1 with expected_lookahead 0 = code_v11: yes; observer read-only (arm e): yes; the law acts: yes; the sham acts: yes; update-replay mismatches: none; habit updates replayed 109145
+seed 601, 60 years: code_es1 with expected_lookahead 0 = code_v11: yes; observer read-only (arm e): yes; the law acts: yes; the sham acts: yes; update-replay mismatches: none; habit updates replayed 499166
+arm e, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_es1 fingerprint: b842104423641184545402874df50d704d2b64b97568f51fdf5bf896e3cc2f5b
+All: PASS
