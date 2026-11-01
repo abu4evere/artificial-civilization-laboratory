@@ -30,3 +30,15 @@ a frozen study decides.
     options are dominated by instinct terms (instinct share 0.96 in ES2), so habits carry little.
   - Would a longer view (more than one week) recover rest's worth?
 - **ES2's reading stands as frozen:** not supported.
+
+## Addendum (06:50): a longer view
+**Sutton, R. S. (1988).** "Learning to predict by the methods of temporal differences." *Machine Learning* 3:9–44
+(Springer, doi 10.1007/BF00115009). **Read: the abstract only.**
+- **Temporal-difference methods** "assign credit by means of the difference between temporally successive
+  predictions". ACL's one-step habit update is such a method.
+- The paper's TD(λ) family blends one-step and longer looks ahead. That is described in its body, **which was not
+  read here.** It is named only as a candidate to read before any proposal.
+- **Bearing:**
+  - ES2's distortion arises at one step: the next week's habit values carry little after a crisis rest.
+  - A longer view might recover what resting in a crisis is worth.
+  - This is a hypothesis for the council, not a proposal.
