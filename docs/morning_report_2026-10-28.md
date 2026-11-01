@@ -204,3 +204,36 @@ It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
   - handing a made thing to another person;
   - children making known things before 12.
   TA1's result will show which matters more.
+
+# Night of 31 October → 1 November (sleep mode)
+
+## In plain words
+1. **Nature v11 is live:** people can hand a made thing to one another (the law you said is fine).
+   - It passed the whole safe path: the study, a confirmation on 32 new worlds, blind rechecks by GPT and Gemini, and
+     both models' approval (92% and 88%). 66 tests pass.
+   - Tools give a third more food, with no harm. The effect is small, because people hand things over rarely.
+2. **ES1, a new way of learning: not supported.** Habits got less accurate, so it was not adopted. But making rose
+   fivefold, which showed **that the old learning rule is what holds making back.**
+3. **ES2, a fairer version: very close, still not supported.**
+   - Habits became **40% more accurate.** Making tripled, tools gave 2.8× more food, and population rose 16%, with no
+     harm to survival.
+   - But one frozen safety guard tripped: people now under-value **resting** more. By the rule set before the run, it is
+     not supported, and not adopted.
+4. **The blind recheck of ES2 waits:** the Chrome extension disconnected at about 02:55. The message is ready and goes
+   out when Chrome is back.
+5. **Your PC lagged at 00:43 because of my test runs.** Sorry. Local runs now go at low priority while you are at the
+   PC, and at full speed only while you are away, as you allowed.
+
+## Autonomous decisions
+| decision | GPT | Gemini | mine |
+|---|---|---|---|
+| ES1, expected look-ahead, test in a copy | 75% | 88% | 70% |
+| ES2, realized look-ahead, test in a copy | 85% | 80% | 70% |
+| Nature v11, adopted by the safe path | 92% | 88% | 85% |
+
+## Waiting for you (no rush)
+- **Learning:** ES2 came close.
+  - **Look into why "rest" goes wrong** (read-only), then perhaps a corrected rule? That is my lean.
+  - **Or step back.**
+- **Children making things before 12:** research says a gradual slope, not a line. Still reading.
+- **Reconnect the Chrome extension** (the Claude side panel in Chrome), so GPT and Gemini can be asked again.
