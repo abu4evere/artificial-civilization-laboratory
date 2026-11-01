@@ -122,6 +122,15 @@
       "status": "final",
       "run": 41256219936,
       "next_step": "not adopted; next: debate ES2 (expected look-ahead over the whole choice, calibration primary) and whether relative accuracy is the better test"
+    },
+    {
+      "id": "ES2",
+      "title": "Realized look-ahead in habit learning (nature-change test in a copy, code_es2)",
+      "kind": "nature-change test (copy)",
+      "plan": "experiments/ES2_realized_lookahead/questions.md",
+      "frozen_tag": "ES2-frozen",
+      "status": "built; local zero checks interrupted (zero_local.log empty, no process running at 2026-11-01 00:30)",
+      "next_step": "re-run ES2 local zero checks into zero_local.log; if All: PASS, commit it and launch cloud-run with skip_zero=local (seeds 21501-21532)"
     }
   ],
   "queue_after": [
