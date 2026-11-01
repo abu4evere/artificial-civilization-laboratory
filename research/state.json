@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T11:47:11",
+  "updated": "2026-11-01T12:22:26",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -134,14 +134,19 @@
       "frozen_tag": "ES2-frozen",
       "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0).",
       "recompute": "experiments/ES2_realized_lookahead/recompute_es2.md (GPT and Gemini match, 1 November 2026, 11:45)"
+    },
+    {
+      "id": "UV1",
+      "title": "Does habit under-valuation fade with experience? (read-only replay of ES2's v11 and r worlds)",
+      "kind": "read-only",
+      "plan": "experiments/UV1_undervaluation_by_experience/questions.md",
+      "frozen_tag": "UV1-frozen",
+      "status": "running",
+      "run": 41331098954,
+      "next_step": "when run 41331098954 finishes: fetch to output/, run analyse_uv1.py, findings, build recompute/uv1_one_file.csv, blind recompute by GPT and Gemini in fresh chats, tag UV1-done"
     }
   ],
   "queue_after": [
-    {
-      "what": "read-only diagnostic for ES2's under-valuation: calibration by age, or by prior updates of that habit, under v11 and the realized look-ahead (explore_q_vs_G.md)",
-      "status": "proposed 1 November 2026 (sleep mode)",
-      "needs": "debate with GPT and Gemini, then a frozen read-only plan"
-    },
     {
       "what": "first study on v11: why handing stays rare, who receives tools, kin pooling, tools in low-use hands (GPT, Gemini)",
       "status": "proposed",
