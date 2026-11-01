@@ -260,3 +260,18 @@ It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
   - (B) a longer look-ahead;
   - (C) the handing audit.
 - My lean is A: it changes nothing in nature and tells us where the problem is.
+
+## Later on 1 November: UV1 done (read-only, final)
+- **Question:** do habit values that start too low catch up with practice?
+- **Answer: partly.**
+  - Under the new learning rule, practice halves the error within about 20 tries.
+  - Then a gap of about −0.11 stays, even for very practised habits.
+  - So the low start explains part of it, not all.
+  - GPT and Gemini redid the numbers blind and matched.
+- **A surprise:** ES2's "rest" problem was mostly **toddlers**.
+  - Children carry no food, so ACL always counts them as "in a food crisis".
+  - 94% of those "crisis rest" weeks were children aged 1–5.
+  - Their habit values are also pulled 8% a week toward their carer's values, which is stronger than their own
+    learning.
+- **Next (to debate):** what keeps the remaining gap. The leading idea is that ACL's 32 "situations" lump very
+  different moments together. Also: whether children's values should be read separately.

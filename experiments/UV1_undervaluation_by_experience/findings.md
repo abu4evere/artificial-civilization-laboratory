@@ -1,4 +1,4 @@
-# UV1 — Does habit under-valuation fade with experience? Findings (not final until GPT and Gemini recompute)
+# UV1 — Does habit under-valuation fade with experience? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **Read-only: no change to nature.** Frozen as `UV1-frozen`. Signed off by the assistant (GPT 96%, Gemini 98%, the
 assistant 80%; debate round 40). Run on GitHub Actions (run 41331098954, `skip_zero=local`). 64 worlds: ES2's v11 and r
@@ -82,6 +82,8 @@ in all 32 worlds.
   council and the creator.
 - **No change to nature** follows from this study.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/uv1_one_file.csv`. Recorded only from their actual
-replies.
+## Independent recompute (1 November 2026)
+GPT and Gemini, each in a fresh chat, from per-seed sums of the raw output only (`recompute_uv1.md`). **All three
+agree:** r −0.2071 → −0.1077 [−0.1106, −0.1047]; v11 +0.2050 → +0.4935; coverage met; persistent bias.
+
+**Final: persistent bias.**
