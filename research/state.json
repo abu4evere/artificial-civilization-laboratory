@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T12:22:26",
+  "updated": "2026-11-01T13:50:03",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -141,9 +141,9 @@
       "kind": "read-only",
       "plan": "experiments/UV1_undervaluation_by_experience/questions.md",
       "frozen_tag": "UV1-frozen",
-      "status": "running",
+      "status": "results in; recompute pending",
       "run": 41331098954,
-      "next_step": "when run 41331098954 finishes: fetch to output/, run analyse_uv1.py, findings, build recompute/uv1_one_file.csv, blind recompute by GPT and Gemini in fresh chats, tag UV1-done"
+      "next_step": "send the UV1 recompute prompt (recompute/prompt.txt) to fresh GPT and Gemini chats; record recompute_uv1.md; finalize (persistent bias); then debate the next step"
     }
   ],
   "queue_after": [

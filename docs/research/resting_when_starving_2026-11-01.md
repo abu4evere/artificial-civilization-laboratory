@@ -42,3 +42,14 @@ a frozen study decides.
   - ES2's distortion arises at one step: the next week's habit values carry little after a crisis rest.
   - A longer view might recover what resting in a crisis is worth.
   - This is a hypothesis for the council, not a proposal.
+
+## Correction (1 November 2026, after UV1)
+- **The analogy above does not fit most of ES2's crisis rest updates.** UV1's exploratory table
+  (`experiments/UV1_undervaluation_by_experience/explore_crisis_by_age.md`) finds that **94% of them are by children
+  aged 1–5**. Children hold almost no food, so they always count as "under half a week of food".
+- For them, the "crisis" situation is not starvation. Semi-starved adults' shallow torpor (Minnesota) says nothing
+  about toddlers resting.
+- What stands:
+  - in ACL's own worlds, the realized look-ahead values those rest weeks below what followed (a distortion against G);
+  - ES2's frozen guard stands.
+- What does not: the reading "resting when starving is adaptive, so the guard caught that".
