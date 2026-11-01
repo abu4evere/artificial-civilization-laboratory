@@ -275,3 +275,13 @@ It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
     learning.
 - **Next (to debate):** what keeps the remaining gap. The leading idea is that ACL's 32 "situations" lump very
   different moments together. Also: whether children's values should be read separately.
+
+## Afternoon of 1 November: UV2 done (read-only, final)
+- **Question:** is the leftover gap passed back from choices people have hardly ever tried?
+- **Answer: no.** The gap is just as big for people whose upcoming choices are all well practised. GPT and Gemini
+  matched the numbers blind.
+- **The clearest clue is time:** the gap halves between year 100 and year 200. Either the world keeps getting better
+  (tools spread) faster than values catch up, or each generation starts a bit higher than the last (babies start at
+  half their parents' values) and the whole population climbs slowly.
+- **A slip, fixed in the open:** the analysis first said "not valid" because of a small type bug in one check. It was
+  fixed before any result was read, and recorded as an operational note.

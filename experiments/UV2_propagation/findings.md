@@ -1,4 +1,4 @@
-# UV2 — Does the habit floor come from unpractised choices further ahead? Findings (not final until GPT and Gemini recompute)
+# UV2 — Does the habit floor come from unpractised choices further ahead? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **Read-only: no change to nature.** Frozen as `UV2-frozen`. Signed off by the assistant (GPT 91%, Gemini 98%, the
 assistant 75%; debate round 41). Run on GitHub Actions (run 41341318088, `skip_zero=local`). 32 worlds: ES2's r arm
@@ -71,6 +71,8 @@ None of the three was right.
   than values are passed on, every generation starts behind. **Cumulative culture needs the passing-on to keep up.**
 - **No change to nature** follows from this study.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/uv2_one_file.csv`. Recorded only from their actual
-replies.
+## Independent recompute (1 November 2026)
+GPT (two fresh chats) and Gemini (a fresh chat), from per-seed sums of the raw output only (`recompute_uv2.md`).
+**All agree:** B(Dn < 0.1) −0.1108 [−0.1151, −0.1064]; all Dn −0.1077; coverage met; not propagation.
+
+**Final: not propagation.**
