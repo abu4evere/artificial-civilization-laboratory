@@ -91,6 +91,8 @@ def main():
                         nn += v[0]
                         sg += v[1]
             b3 = quarter_b(qt)
+            if nn == 0 and b3 is None and SMOKE:      # a short smoke world has no updates in the later quarters
+                continue
             same_uv2 &= bool(nn > 0 and b3 is not None and round(sg / nn, 4) == round(b3, 4))
     ok = "All: PASS" in zero and present and len(fps) == 1 and mism == 0 and match and tabled and same_uv2 is not False
     if not SMOKE:
