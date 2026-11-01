@@ -1,0 +1,7 @@
+seed 501, 20 years, arm c: observer read-only: yes; update-replay mismatches: none; habit updates replayed 119552; every counted update binned once (115600 = 115600): yes
+seed 501, 20 years, arm r: observer read-only: yes; update-replay mismatches: none; habit updates replayed 106388; every counted update binned once (102897 = 102897): yes
+seed 601, 60 years, arm c: observer read-only: yes; update-replay mismatches: none; habit updates replayed 561770; every counted update binned once (555777 = 555777): yes
+seed 601, 60 years, arm r: observer read-only: yes; update-replay mismatches: none; habit updates replayed 553387; every counted update binned once (546002 = 546002): yes
+code_es2 fingerprint: f3dcddf901196013c25f5a87f536cf4922ec39fd3dca055a3a5028ef9532981a
+All: PASS
+
