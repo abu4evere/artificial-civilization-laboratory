@@ -64,6 +64,9 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   only checks that record (All: PASS, same code fingerprint) instead of re-running the zero checks, which saves about
   15–20 minutes.
   The `tests` workflow runs only when code changes (`acl/`, `tests/`, `code_*`).
+- **Local runs must not slow the creator's PC** (1 November 2026: the PC lagged under four of the assistant's
+  simulations). Run local simulations at Idle priority (PowerShell: `(Get-Process -Id <pid>).PriorityClass = 'Idle'`,
+  or start them with `start /low`), at most 2 at once; prefer the cloud for anything long.
 - **Tests:** `python -m pytest -q tests` (66 pass on nature v11, live since 31 October 2026: people can hand a made
   thing to one another, adopted by the safe path; `experiments/NV11_nature_v11/findings.md`; v10 = ageing anchored to
   the !Kung, also 31 October). New studies use `code_v11`; earlier findings stay their version's.
