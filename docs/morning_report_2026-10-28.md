@@ -237,3 +237,26 @@ It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
   - **Or step back.**
 - **Children making things before 12:** research says a gradual slope, not a line. Still reading.
 - **Reconnect the Chrome extension** (the Claude side panel in Chrome), so GPT and Gemini can be asked again.
+
+# Morning of 1 November (sleep mode)
+
+## In plain words
+- **ES2 is final: not supported.** Chrome came back at about 11:40. GPT and Gemini, in fresh chats and blind, got the
+  same numbers as my analysis.
+  - The new rule makes habits 40% more accurate overall.
+  - But resting gets worse by more than the frozen limit, so the rule stops it. It is not adopted.
+- **One correction appended to ES2's findings:** 122 learning steps were lost at death, not 0 (2.5 in a million). The
+  verdict does not change.
+- **A new clue (exploratory, decides nothing):** under the new rule, every action is valued *below* what it really
+  brings, not just rest.
+  - The old rule hid this by over-valuing the common actions.
+  - A likely cause is in the code: babies start with half their parents' habit values and learn slowly (5% a step).
+  - A textbook note (Sutton & Barto 1998, section 2.7) says such a starting bias lasts a long time.
+  - The same low start may keep making rare: a low value means rarely tried, so it stays low. Only a test can tell.
+
+## Next
+- **Debate round 40 with GPT and Gemini:**
+  - (A) a read-only check of the under-valuation by age;
+  - (B) a longer look-ahead;
+  - (C) the handing audit.
+- My lean is A: it changes nothing in nature and tells us where the problem is.

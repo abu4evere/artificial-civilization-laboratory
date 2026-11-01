@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T10:47:22",
+  "updated": "2026-11-01T11:47:11",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -127,12 +127,13 @@
       "id": "ES2",
       "title": "Realized look-ahead (deferred Expected Sarsa over the real choice; nature-change test in a copy, code_es2)",
       "kind": "nature-change test (copy)",
-      "status": "recompute-pending",
+      "status": "final: not supported (rest guard)",
       "run": 41274072560,
-      "next_step": "send experiments/ES2_realized_lookahead/recompute/prompt.txt to fresh GPT and Gemini chats (Chrome extension disconnected at 02:55, 1 Nov); record replies in recompute_es2.md; finalize (not supported: rest guard)",
+      "next_step": "debate round 40 with GPT and Gemini (research/local/next_debate_prompt.txt): A read-only under-valuation diagnostic, B longer view, C handing audit",
       "plan": "experiments/ES2_realized_lookahead/questions.md",
       "frozen_tag": "ES2-frozen",
-      "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0)."
+      "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0).",
+      "recompute": "experiments/ES2_realized_lookahead/recompute_es2.md (GPT and Gemini match, 1 November 2026, 11:45)"
     }
   ],
   "queue_after": [

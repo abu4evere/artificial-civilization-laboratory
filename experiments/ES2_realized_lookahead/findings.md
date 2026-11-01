@@ -1,4 +1,4 @@
-# ES2 — Do minds learn more accurately when they look ahead by their real next choice? Findings (not final until GPT and Gemini recompute)
+# ES2 — Do minds learn more accurately when they look ahead by their real next choice? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **A nature-change test in a copy (`code_es2` = `code_v11` + `realized_lookahead`), not an adoption.** Frozen as
 `ES2-frozen`. Signed off by the assistant (GPT 85%, Gemini 80%; debate round 39). Run on GitHub Actions (run
@@ -73,9 +73,12 @@ guard is enough.
     stay as frozen.
 - **No change to nature** follows from this study.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/es2_one_file.csv` (the primary) and
-`recompute/es2_rest_guard.csv` (the guard that decided it). Recorded only from their actual replies.
+## Independent recompute (1 November 2026)
+GPT and Gemini, each in a fresh chat, from per-seed sums of the raw output only (`recompute_es2.md`). **All three
+agree:** M 0.3911 / 0.2364 / 0.3919; r − v11 −0.1547 [−0.1614, −0.1480]; sham +0.0008; rest 0.2367 → 0.3912
+(+0.1545, over the 0.10 limit); not supported.
+
+**Final: not supported (the rest guard). Not adopted.**
 
 ## Correction (appended 1 November 2026, 10:45)
 - **"No held update was left uncompleted" and "uncompleted held updates: 0" above are wrong as worded.**
