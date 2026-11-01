@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T02:45:32-05:00",
+  "updated": "2026-11-01T10:47:22",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -125,23 +125,22 @@
     },
     {
       "id": "ES2",
-      "title": "Realized look-ahead in habit learning (nature-change test in a copy, code_es2)",
-      "kind": "nature-change test (copy)",
-      "plan": "experiments/ES2_realized_lookahead/questions.md",
-      "frozen_tag": "ES2-frozen",
-      "status": "recompute-pending",
-      "next_step": "send experiments/ES2_realized_lookahead/recompute/prompt.txt to fresh GPT and Gemini chats (Chrome extension disconnected at 02:55, 1 Nov); record replies in recompute_es2.md; finalize (not supported: rest guard)"
-    },
-    {
-      "id": "ES2",
       "title": "Realized look-ahead (deferred Expected Sarsa over the real choice; nature-change test in a copy, code_es2)",
       "kind": "nature-change test (copy)",
       "status": "recompute-pending",
       "run": 41274072560,
-      "next_step": "send experiments/ES2_realized_lookahead/recompute/prompt.txt to fresh GPT and Gemini chats (Chrome extension disconnected at 02:55, 1 Nov); record replies in recompute_es2.md; finalize (not supported: rest guard)"
+      "next_step": "send experiments/ES2_realized_lookahead/recompute/prompt.txt to fresh GPT and Gemini chats (Chrome extension disconnected at 02:55, 1 Nov); record replies in recompute_es2.md; finalize (not supported: rest guard)",
+      "plan": "experiments/ES2_realized_lookahead/questions.md",
+      "frozen_tag": "ES2-frozen",
+      "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0)."
     }
   ],
   "queue_after": [
+    {
+      "what": "read-only diagnostic for ES2's under-valuation: calibration by age, or by prior updates of that habit, under v11 and the realized look-ahead (explore_q_vs_G.md)",
+      "status": "proposed 1 November 2026 (sleep mode)",
+      "needs": "debate with GPT and Gemini, then a frozen read-only plan"
+    },
     {
       "what": "first study on v11: why handing stays rare, who receives tools, kin pooling, tools in low-use hands (GPT, Gemini)",
       "status": "proposed",
