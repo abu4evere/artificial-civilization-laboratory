@@ -1,0 +1,98 @@
+diff -ru --strip-trailing-cr -x __pycache__ NV11_nature_v11/code_v11/acl/biology.py ES2_realized_lookahead/code_es2/acl/biology.py
+--- NV11_nature_v11/code_v11/acl/biology.py	2026-10-31 18:31:15.733628500 -0400
++++ ES2_realized_lookahead/code_es2/acl/biology.py	2026-10-31 23:47:49.862537900 -0400
+@@ -385,6 +385,21 @@
+     p.mood += 0.25 * (p.wellbeing - p.mood)
+ 
+ 
++def apply_held(world, p: Person, opts: list, base: int) -> None:
++    """ES2: complete last week's habit update at this decision. The look-ahead is the expected habit value of this
++    decision under its real choice: the choice's own softmax over the options' scores (no random draw)."""
++    c = world.cfg
++    i, r = p.held
++    p.held = None
++    if opts:
++        top = max(s for s, _ in opts)
++        w = [math.exp((s - top) / c.choice_temperature) for s, _ in opts]
++        future = sum(wi * p.q[base + A[a]] for wi, (_, a) in zip(w, opts)) / sum(w)
++    else:
++        future = p.q[base + A["rest"]]
++    p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
++
++
+ def _learn(world, p: Person) -> None:
+     """Habits: how well this kind of action went here, counting what it led to next week."""
+     c = world.cfg
+@@ -393,7 +408,10 @@
+     future = max(p.q[nxt * N_ACTIONS:(nxt + 1) * N_ACTIONS])
+     r = p.reward + 2.0 * (p.mood - p.mood_before)
+     i = p.last_ctx * N_ACTIONS + A[p.last_action]
+-    p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
++    if c.realized_lookahead:
++        p.held = [i, r]                 # ES2: completed at the next decision (apply_held)
++    else:
++        p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
+     if c.curiosity_pull:                # CU1: p remembers having tried this here
+         if p.tried is None:
+             p.tried = [0] * len(p.q)
+diff -ru --strip-trailing-cr -x __pycache__ NV11_nature_v11/code_v11/acl/config.py ES2_realized_lookahead/code_es2/acl/config.py
+--- NV11_nature_v11/code_v11/acl/config.py	2026-10-31 18:31:16.032348200 -0400
++++ ES2_realized_lookahead/code_es2/acl/config.py	2026-10-31 23:47:49.854574100 -0400
+@@ -125,6 +125,8 @@
+     camp_radius: int = 2               # partners this close count as living together
+     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
++    realized_lookahead: int = 0        # ES2: 1 = last week's habit update is held and completed at the next decision, looking ahead
++                                       # by the expected habit value under that decision's real choice (0 = nature v11 exactly)
+     hand_items: int = 1                # NV11 (HD1): 1 = a person may hand one made thing they hold to someone within reach who has room
+                                        # (the give action, generalized; 0 = nature v10 exactly)
+     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
+diff -ru --strip-trailing-cr -x __pycache__ NV11_nature_v11/code_v11/acl/mind.py ES2_realized_lookahead/code_es2/acl/mind.py
+--- NV11_nature_v11/code_v11/acl/mind.py	2026-10-31 18:31:15.790304500 -0400
++++ ES2_realized_lookahead/code_es2/acl/mind.py	2026-10-31 23:47:49.864599400 -0400
+@@ -542,10 +542,16 @@
+     if allowed is not None:
+         options = [o for o in options if o[1] in allowed]
+     if not options:
++        if c.realized_lookahead and p.held is not None:
++            from .biology import apply_held
++            apply_held(world, p, [], base)          # ES2
+         p.considered = []
+         _p2_log(world, p2, ("rest", None))
+         return ("rest", None)
+     options = thought.steer(p, options)
++    if c.realized_lookahead and p.held is not None:
++        from .biology import apply_held
++        apply_held(world, p, [(o[0], o[1]) for o in options], base)    # ES2
+     i = softmax_pick(rng, [o[0] for o in options], c.choice_temperature)
+     ranked = sorted(range(len(options)), key=lambda k: -options[k][0])[:4]
+     p.considered = [[options[k][1], _aim(options[k][2]), round(options[k][0], 2), 1 if k == i else 0] for k in ranked]
+diff -ru --strip-trailing-cr -x __pycache__ NV11_nature_v11/code_v11/acl/person.py ES2_realized_lookahead/code_es2/acl/person.py
+--- NV11_nature_v11/code_v11/acl/person.py	2026-10-31 18:31:15.846301600 -0400
++++ ES2_realized_lookahead/code_es2/acl/person.py	2026-10-31 23:47:49.858546900 -0400
+@@ -98,7 +98,7 @@
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at", "tried",
++        "kept", "damp", "seen_at", "tried", "held",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -180,6 +180,7 @@
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+         self.tried = None              # CU1: how often p has learned from each action in each situation (only with curiosity_pull)
++        self.held = None               # ES2: last week's habit update, waiting for the next decision: [index, reward]
+ 
+     # --- life stage -------------------------------------------------------
+ 
+@@ -255,6 +256,8 @@
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+             elif k == "tried" and v is None:
+                 continue                 # CU1: saved only when held, so v8's world is unchanged
++            elif k == "held" and v is None:
++                continue                 # ES2: saved only when held, so v11's world is unchanged
+             elif k == "loc":
+                 v = list(v)
+             d[k] = v
