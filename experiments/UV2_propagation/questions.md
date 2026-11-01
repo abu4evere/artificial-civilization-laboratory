@@ -93,3 +93,13 @@ Exposure may go with circumstances, which the secondary tables describe.
 ## Sign-off (1 November 2026)
 The assistant, under the creator's sleep-mode autonomy (a read-only study under the 40% rule). GPT estimates 91%,
 Gemini 98% and the assistant 75%. Frozen as `UV2-frozen` before any code or data.
+
+## Operational note 1 (01 November 2026, 16:44, after the cloud run, before any outcome was read)
+- **What happened:** `analyse_uv2.py` printed "yes" for every validity check but then "NOT VALID", and stopped before
+  computing any outcome.
+- **The cause:** the check "the primary pooled over all Dn equals UV1's r B_high" produced a NumPy true/false value.
+  The full-data branch tested it with `is True`, which a NumPy value never passes. The smoke branch tested
+  `is not False`, so the smoke did not catch it.
+- **The fix:** cast that value to a plain Python true/false (`bool(...)`). Nothing else changes: no measure, bin, rule,
+  threshold or check.
+- No outcome had been computed or read when the fix was made.

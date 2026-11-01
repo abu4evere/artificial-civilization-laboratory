@@ -86,7 +86,7 @@ def main():
     same_uv1 = None
     if all(s in uv1 for s in seeds):      # UV1's key: kbin|agebin|crisis|action|censored
         u = sums(uv1, "uv", lambda p: p[0] in HIGH and p[1] in PRIME and p[4] == "0")
-        same_uv1 = u[0].sum() > 0 and round(u[1].sum() / u[0].sum(), 4) == round(all_dn[1].sum() / all_dn[0].sum(), 4)
+        same_uv1 = bool(u[0].sum() > 0 and round(u[1].sum() / u[0].sum(), 4) == round(all_dn[1].sum() / all_dn[0].sum(), 4))
     ok = "All: PASS" in zero and present and len(fps) == 1 and mism == 0 and match and binned and dn_bad == 0 \
         and same_uv1 is not False
     if not SMOKE:
