@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T16:55:51",
+  "updated": "2026-11-01T17:05:04",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -156,9 +156,23 @@
       "next_step": "debate round 42: rising returns vs a generations-long climb (the time trend), read-only first",
       "run": 41341318088,
       "recompute": "experiments/UV2_propagation/recompute_uv2.md (GPT and Gemini match)"
+    },
+    {
+      "id": "UV3",
+      "title": "Is the shrinking habit gap rising returns or climbing values? (read-only replay of ES2's r arm)",
+      "kind": "read-only",
+      "plan": "experiments/UV3_time_trend/questions.md",
+      "frozen_tag": "UV3-frozen",
+      "status": "zero checks running",
+      "next_step": "commit zero_local.log; smoke r 9989 105 years; launch cloud run (skip_zero=local); write up; blind recompute (CSV file to GPT and Gemini)"
     }
   ],
   "queue_after": [
+    {
+      "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
+      "status": "deferred until after UV3",
+      "needs": "debate after UV3; biological justification for the age line independent of ES2"
+    },
     {
       "what": "first study on v11: why handing stays rare, who receives tools, kin pooling, tools in low-use hands (GPT, Gemini)",
       "status": "proposed",
