@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACL Brain Scan v2 (nature v11)</title>
+<style>
+:root{--bg:#04070d;--panel:#0b1220;--ink:#d8ecff;--muted:#7f95b0;--line:#16243a;--cyan:#38d6ff;--mag:#ff4fa3;--amber:#ffb547;--green:#5fe08a;--violet:#b083ff;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1360px;margin:0 auto;padding:14px}
+h1{font-size:20px;margin:0;font-weight:650}
+.sub{color:var(--muted);font-size:13px;margin:4px 0 12px}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.bar input[type=range]{flex:1;min-width:140px;accent-color:var(--cyan)}
+button,select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 11px;font:inherit;cursor:pointer}
+button:hover{border-color:var(--cyan)} button.on{border-color:var(--cyan);box-shadow:0 0 10px rgba(56,214,255,.35)}
+.wk{color:var(--muted);font-variant-numeric:tabular-nums}
+.who{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;margin:2px 0 10px}
+.who .n{font-size:22px;font-weight:650;color:#fff}.tag{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+.thought{color:#cfe3ff;font-style:italic}
+.stage{position:relative;background:radial-gradient(ellipse at 50% 45%,#0b1a2e 0%,#04070d 72%);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+canvas{display:block;width:100%;height:auto}
+.tip{position:absolute;pointer-events:none;background:rgba(5,12,24,.94);border:1px solid var(--cyan);border-radius:8px;padding:6px 9px;font-size:12px;display:none;max-width:290px}
+.cols{display:grid;grid-template-columns:1fr 1.15fr 1fr 1fr;margin-top:6px;color:var(--muted);font-size:11px;letter-spacing:.8px;text-transform:uppercase;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media (max-width:960px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}.cols{font-size:8.5px}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;position:relative;overflow:hidden}
+.card h2{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin:0 0 8px;font-weight:600;display:flex;justify-content:space-between}
+.card h2 b{color:#fff;font-weight:600;letter-spacing:0;text-transform:none}
+.card::before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:var(--rc,var(--cyan));opacity:.7}
+.opt{display:grid;grid-template-columns:118px 1fr 44px;gap:8px;align-items:center;font-size:13px;margin:4px 0}
+.st{height:10px;background:#0f1a2b;border-radius:5px;position:relative;overflow:hidden}.st i{position:absolute;top:0;bottom:0}
+.v{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.key{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.dots{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;margin:4px 0 8px}
+.dot{aspect-ratio:1;border-radius:50%;background:#101a2a;border:1px solid #1a2a40}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin:4px 0 8px}
+.slot{height:30px;border-radius:6px;background:#101a2a;border:1px solid #1a2a40;position:relative;overflow:hidden}
+.slot i{position:absolute;left:0;right:0;bottom:0;background:var(--green);opacity:.75}
+ul{margin:4px 0 0 18px;padding:0}li{margin:2px 0;font-size:13px}
+p.small{font-size:12.5px;color:var(--muted);margin:6px 0}
+.bob{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+@media (max-width:640px){.bob{grid-template-columns:1fr 1fr}}
+.cap{border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12.5px;background:#08101c}
+.cap b{display:block;color:#fff;font-size:13px;margin-bottom:2px}.cap .s{font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+.cap .live{color:#cfe3ff;margin-top:4px}
+.given .s{color:var(--amber)}.learned .s{color:var(--green)}.weak .s{color:var(--violet)}.missing .s{color:var(--mag)}
+.missing{border-style:dashed;opacity:.85}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Brain scan v2 — an ACL person on nature v11</h1>
+  <div class="sub" id="sub"></div>
+  <div class="bar">
+    <select id="who" aria-label="Person"></select>
+    <button id="prev" title="Previous week">◀</button><button id="play" title="Play the weeks">▶ play</button><button id="next" title="Next week">▶</button>
+    <input id="week" type="range" min="0" max="0" value="0" aria-label="Week"><span class="wk" id="wk"></span>
+    <button id="delta" title="Colour the habit lines by how much they changed since the first week shown">Show learning</button>
+  </div>
+  <div class="who" id="whoLine"></div>
+  <div class="stage">
+    <canvas id="cv" width="2400" height="1360" aria-label="Brain scan: how this week's choice was made"></canvas>
+    <div class="tip" id="tip"></div>
+  </div>
+  <div class="cols"><div>senses · body · temperament</div><div>situation map (32)</div><div>actions (19)</div><div>options weighed → choice</div></div>
+
+  <div class="grid">
+    <div class="card" style="--rc:var(--cyan)"><h2>How the choice was made</h2><div id="opts"></div>
+      <div class="key"><span><span class="sw" style="background:var(--amber)"></span>instinct (drives, temperament: written by nature)</span><span><span class="sw" style="background:var(--cyan)"></span>habit (inherited, copied or learned)</span></div></div>
+    <div class="card" style="--rc:#e8e36a"><h2>Memory <b id="memN"></b></h2><div class="dots" id="memDots"></div><ul id="memWords"></ul>
+      <p class="small">Each dot is one memory slot. Brighter = stronger. Green felt good, pink felt bad. A ring = told by someone, not lived.</p></div>
+    <div class="card" style="--rc:var(--green)"><h2>Know-how <b id="mkN"></b></h2><div class="slots" id="mkSlots"></div><ul id="mkWords"></ul>
+      <p class="small">Each slot is one recipe they hold. The bar is how much that kind of thing has helped them.</p></div>
+    <div class="card" style="--rc:var(--violet)"><h2>Puzzles: testing cause <b id="pzN"></b></h2><ul id="pzWords"></ul>
+      <p class="small">A surprise becomes a puzzle. The curious go back and test it again. This is ACL's seed of cause-and-effect.</p></div>
+    <div class="card" style="--rc:#3fc8ff"><h2>Whom they trust</h2><ul id="trWords"></ul>
+      <p class="small">They keep score of whose words held up and whose failed.</p></div>
+    <div class="card" style="--rc:#ff9f5a"><h2>Heard, not yet tried <b id="bfN"></b></h2><ul id="hdWords"></ul>
+      <p class="small">Things others told them. Plus the count of beliefs about what is worth leaving where.</p></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;--rc:#fff"><h2>Bob's twelve capacities: where this mind stands</h2>
+    <div class="bob" id="bob"></div>
+    <p class="small">Status per capacity is from <code>docs/research/bob_twelve_capacities_2026-11-02.md</code> (the assistant's reading of nature v11, not a finding).
+      The white line under each is what this person shows this week. <span style="color:var(--amber)">Given</span> = written by us as a law; <span style="color:var(--green)">learned</span> = grows with experience; <span style="color:var(--violet)">weak</span>; <span style="color:var(--mag)">missing</span>.</p></div>
+  <p class="small" id="foot"></p>
+</div>
+<script>
+const D = /*DATA*/null;
+const WORDS = {rest:"rest", forage:"gather plants", hunt:"hunt", gather:"pick something up", put:"set something down",
+  take:"fetch stored food", make:"make something", play:"play", explore:"explore", give:"give", care:"care for someone",
+  talk:"talk", court:"court someone", steal:"steal", attack:"attack", flee:"flee", join:"go to someone or somewhere", heat:"tend a fire", fill:"fetch water"};
+const SEASONS = ["spring", "summer", "autumn", "winter"];
+const FOOD = ["under ½ week of food, or ill", "½–2 weeks of food", "2–6 weeks of food", "6+ weeks of food"];
+const FOODS = ["<½ wk", "½–2 wk", "2–6 wk", "6+ wk"];
+const BODY = ["hunger", "thirst", "fatigue", "health", "mood", "fear", "anger", "grief", "loneliness"];
+const GENES = ["curiosity", "diligence", "sociability", "kindness", "temper", "anxiety", "care", "boldness"];
+const SENSE = ["food held", "company", "season"];
+// instinct wiring as summarised by the world viewer (acl/viewer.html WIRE)
+const WIRE = {rest:["fatigue","health"], forage:["hunger","diligence"], hunt:["hunger","boldness","fear"], gather:["curiosity"],
+  put:["diligence"], take:["hunger","kindness"], make:["diligence"], play:["curiosity"],
+  explore:["curiosity","hunger","loneliness","sociability","boldness","thirst"], give:["kindness"], care:["kindness","care"],
+  talk:["sociability","loneliness","care"], court:["sociability","hunger"], steal:["hunger","kindness","temper"],
+  attack:["anger","temper","boldness","kindness"], flee:["fear","anxiety","boldness"], join:["loneliness","sociability","thirst","hunger"],
+  heat:["health"], fill:["thirst"]};
+const ctxLabel = k => `${FOOD[Math.floor(k / 8)]} · ${(k % 8) >= 4 ? "with company" : "alone"} · ${SEASONS[k % 4]}`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+
+const NA = D.actions.length, NC = D.n_contexts;
+// people present in every week shown, so the slider never loses them
+const ids = Object.keys(D.names).filter(id => D.frames.every(f => f.people.some(p => p.id === id)));
+const first = D.frames[0].people;
+ids.sort((a, b) => first.find(p => p.id === b).age - first.find(p => p.id === a).age);
+ids.forEach(id => { const p = first.find(q => q.id === id), o = document.createElement("option"); o.value = id; o.textContent = `${p.name} (${p.stage}, ${Math.floor(p.age)})`; $("who").appendChild(o); });
+let sel = ids.find(id => first.find(p => p.id === id).stage === "adult") || ids[0]; $("who").value = sel;
+let wi = 0, showDelta = false, playing = null;
+$("week").max = D.frames.length - 1;
+$("sub").textContent = `World seed ${D.seed}, year ${D.year}, ${D.frames.length} weeks, read from the live nature (${D.nature}). Nothing here changes the world.`;
+const cur = () => D.frames[wi].people.find(p => p.id === sel);
+const firstQ = () => D.frames[0].people.find(p => p.id === sel).q;
+
+// ---------- the decision canvas ----------
+const cv = $("cv"), g = cv.getContext("2d"), W = cv.width, H = cv.height, hits = [];
+const X = [250, 760, 1480, 1930], GX = 600, GY = 250, CW = 40, CH = 200;   // grid: 8 columns (company x season) x 4 rows (food)
+const inputs = [...SENSE.map(n => ({n, kind: "sense"})), ...BODY.map(n => ({n, kind: "body"})), ...GENES.map(n => ({n, kind: "gene"}))];
+inputs.forEach((o, i) => { o.x = X[0]; o.y = 70 + i * (H - 160) / (inputs.length - 1) + (o.kind === "body" ? 22 : o.kind === "gene" ? 44 : 0); });
+const cell = k => { const r = Math.floor(k / 8), c = k % 8; return {x: GX + c * 42 + (c >= 4 ? 18 : 0), y: GY + r * CH + CH / 2}; };
+const actN = D.actions.map((a, i) => ({a, x: X[2], y: 60 + i * (H - 120) / (NA - 1)}));
+function curve(x1, y1, x2, y2, col, a, w){ g.globalAlpha = a; g.strokeStyle = col; g.lineWidth = w; g.beginPath(); g.moveTo(x1, y1); const m = (x1 + x2) / 2; g.bezierCurveTo(m, y1, m, y2, x2, y2); g.stroke(); }
+function bez(x1, y1, x2, y2, t){ const m = (x1 + x2) / 2, u = 1 - t; return [u*u*u*x1 + 3*u*u*t*m + 3*u*t*t*m + t*t*t*x2, u*u*u*y1 + 3*u*u*t*y1 + 3*u*t*t*y2 + t*t*t*y2]; }
+function node(x, y, r, col, glow, a = 1){ g.globalAlpha = a; g.shadowColor = col; g.shadowBlur = glow; g.fillStyle = col; g.beginPath(); g.arc(x, y, r, 0, 7); g.fill(); g.shadowBlur = 0; }
+function text(s, x, y, col, size, align){ g.globalAlpha = 1; g.fillStyle = col; g.font = `${size}px system-ui,Segoe UI,sans-serif`; g.textAlign = align; g.textBaseline = "middle"; g.fillText(s, x, y); }
+function draw(now){
+  requestAnimationFrame(draw);
+  const p = cur(); g.globalCompositeOperation = "source-over"; g.clearRect(0, 0, W, H); hits.length = 0; if (!p) return;
+  const t = now / 1000, fq = firstQ(), vals = showDelta ? p.q.map((v, i) => v - fq[i]) : p.q, vmax = Math.max(5, ...vals.map(Math.abs));
+  const level = {...p.body, ...p.genes}, opts = p.weighed, oy = i => H / 2 - (opts.length - 1) * 80 + i * 160, cn = cell(p.ctx);
+  const chN = actN[D.actions.indexOf(p.chosen)];
+  // the situation map: one cell per situation; its brightness is how strongly any habit is held there
+  for (let k = 0; k < NC; k++){ const c = cell(k), on = k === p.ctx, st = Math.max(...vals.slice(k * NA, k * NA + NA).map(Math.abs)) / vmax;
+    g.globalAlpha = 1; g.fillStyle = on ? "rgba(255,255,255,.18)" : `rgba(56,214,255,${.04 + .22 * st})`; g.strokeStyle = on ? "#fff" : "#1d3b57"; g.lineWidth = on ? 3 : 1;
+    g.beginPath(); g.roundRect(c.x - 18, c.y - CH / 2 + 8, 36, CH - 16, 8); g.fill(); g.stroke();
+    hits.push({x: c.x, y: c.y, r: 24, tip: `situation: ${ctxLabel(k)}${on ? " (lit this week)" : ""}. Strongest habit here: ${(Math.max(...p.q.slice(k * NA, k * NA + NA).map(Math.abs)) / 100).toFixed(2)}`}); }
+  for (let r = 0; r < 4; r++) text(FOODS[r], GX - 40, GY + r * CH + CH / 2, "#a9bdd6", 22, "right");
+  text("alone", GX + 63, GY - 52, "#7f97b3", 21, "center"); text("with company", GX + 18 + 4 * 42 + 63, GY - 52, "#7f97b3", 21, "center");
+  for (let c = 0; c < 8; c++) text(SEASONS[c % 4][0].toUpperCase() + SEASONS[c % 4].slice(1, 3), cell(c).x, GY - 18, "#5f7a99", 17, "center");
+  text("food held ↓", GX - 40, GY - 18, "#5f7a99", 17, "right");
+  g.globalCompositeOperation = "lighter";
+  // habit lines from the lit situation to every action (the rest of the table is the map's brightness)
+  for (let j = 0; j < NA; j++){ const v = vals[p.ctx * NA + j]; if (!v) continue;
+    curve(cn.x + 18, cn.y, actN[j].x, actN[j].y, v > 0 ? "#38d6ff" : "#ff4fa3", .15 + .8 * Math.abs(v) / vmax, 1.5 + 6 * Math.abs(v) / vmax); }
+  if (p.decides) inputs.forEach(o => { if (o.kind === "sense") return; const lv = Math.abs(level[o.n] || 0);
+    actN.forEach(n => { if ((WIRE[n.a] || []).includes(o.n)) curve(o.x, o.y, n.x, n.y, "#ffb547", .04 + .4 * lv * (n.a === p.chosen ? 1.6 : .6), 1 + 2.5 * lv); }); });
+  inputs.filter(o => o.kind === "sense").forEach(o => curve(o.x, o.y, cn.x - 18, cn.y, "#ffffff", .5, 2.5));
+  opts.forEach(([a, sc, ch], i) => { const n = actN[D.actions.indexOf(a)]; if (n) curve(n.x, n.y, X[3], oy(i), ch ? "#ffffff" : "#38d6ff", ch ? .9 : .3, ch ? 5 : 2); });
+  const pulse = (x1, y1, x2, y2, col, ph) => { const [px, py] = bez(x1, y1, x2, y2, (t * .45 + ph) % 1); node(px, py, 6, col, 24); };
+  inputs.filter(o => o.kind === "sense").forEach((o, i) => pulse(o.x, o.y, cn.x - 18, cn.y, "#ffffff", i / 3));
+  if (chN && p.decides){ pulse(cn.x + 18, cn.y, chN.x, chN.y, "#38d6ff", 0); pulse(cn.x + 18, cn.y, chN.x, chN.y, "#38d6ff", .5);
+    inputs.forEach((o, i) => { if ((WIRE[p.chosen] || []).includes(o.n)) pulse(o.x, o.y, chN.x, chN.y, "#ffb547", i / 7); });
+    const ci = opts.findIndex(o => o[2]); if (ci >= 0) pulse(chN.x, chN.y, X[3], oy(ci), "#ffffff", .25); }
+  g.globalCompositeOperation = "source-over";
+  inputs.forEach(o => { const lv = o.kind === "sense" ? 1 : Math.abs(level[o.n] || 0), col = o.kind === "sense" ? "#ffffff" : o.kind === "gene" ? "#ffd27a" : "#ffb547";
+    node(o.x, o.y, 9 + 9 * lv, col, 18 * lv + 4, .35 + .65 * lv);
+    const val = o.kind === "sense" ? (o.n === "food held" ? FOODS[Math.floor(p.ctx / 8)] : o.n === "company" ? ((p.ctx % 8) >= 4 ? "yes" : "no") : SEASONS[p.ctx % 4]) : (level[o.n] ?? 0).toFixed(2);
+    text(o.n, o.x - 26, o.y, "#a9bdd6", 24, "right"); text(val, o.x + 26, o.y, "#ffffff", 22, "left");
+    hits.push({x: o.x, y: o.y, r: 26, tip: `${o.n}: ${val}${o.kind === "gene" ? " (inborn temperament)" : o.kind === "sense" ? " (a sense that picks the situation)" : " (this week)"}`}); });
+  actN.forEach((n, j) => { const v = vals[p.ctx * NA + j], isC = n.a === p.chosen, wd = opts.some(o => o[0] === n.a), col = isC ? "#ffffff" : wd ? "#38d6ff" : "#2f6f9a";
+    node(n.x, n.y, isC ? 18 : wd ? 12 : 8, col, isC ? 46 : wd ? 18 : 4); text(n.a, n.x + 28, n.y, isC ? "#ffffff" : "#a9bdd6", 24, "left");
+    hits.push({x: n.x, y: n.y, r: 20, tip: `${WORDS[n.a] || n.a}: habit in this situation ${(p.q[p.ctx * NA + j] / 100).toFixed(2)}${showDelta ? ` (changed ${(v >= 0 ? "+" : "") + (v / 100).toFixed(2)} since the first week shown)` : ""}`}); });
+  opts.forEach(([a, sc, ch], i) => { const y = oy(i);
+    g.globalAlpha = 1; g.fillStyle = ch ? "rgba(255,255,255,.12)" : "rgba(56,214,255,.06)"; g.strokeStyle = ch ? "#fff" : "#1d4a66"; g.lineWidth = ch ? 3 : 1.5;
+    g.beginPath(); g.roundRect(X[3] - 10, y - 48, 400, 96, 14); g.fill(); g.stroke();
+    text(WORDS[a] || a, X[3] + 8, y - 15, ch ? "#fff" : "#bcd3ea", 25, "left"); text(`score ${sc.toFixed(2)}${ch ? "  ✓ chosen" : ""}`, X[3] + 8, y + 20, ch ? "#fff" : "#7f97b3", 21, "left"); });
+  if (!p.decides) text("Not deciding yet", W / 2, 26, "#ffb547", 26, "center");
+}
+requestAnimationFrame(draw);
+const tip = $("tip");
+cv.addEventListener("mousemove", e => { const r = cv.getBoundingClientRect(), x = (e.clientX - r.left) * W / r.width, y = (e.clientY - r.top) * H / r.height;
+  const h = hits.find(o => Math.hypot(o.x - x, o.y - y) < o.r + 8), box = cv.parentElement.getBoundingClientRect();
+  if (h){ tip.style.display = "block"; tip.textContent = h.tip; tip.style.left = Math.min(e.clientX - box.left + 14, box.width - 300) + "px"; tip.style.top = (e.clientY - box.top + 14) + "px"; } else tip.style.display = "none"; });
+cv.addEventListener("mouseleave", () => tip.style.display = "none");
+
+// ---------- the rest of the mind ----------
+const BOB = [
+  ["Perception", "given", "coarse: the world is sorted into 32 situations for them", p => `this week: ${ctxLabel(p.ctx)}`],
+  ["Memory", "given", "store given, content learned", p => `${p.mem.length} of ${D.max_mem} memory slots used`],
+  ["Learning", "learned", "the strongest part, but it gets stuck", p => { const fq = firstQ(), n = p.q.filter((v, i) => v !== fq[i]).length; return `${n} habits changed since the first week shown`; }],
+  ["Cause and effect", "weak", "a seed: puzzles tested again", p => `${p.puzzles.length} open puzzles, ${p.puzzles.reduce((s, x) => s + x[2], 0)} tests so far`],
+  ["Reasoning, planning", "missing", "only a season's look-ahead", p => "no plan is held"],
+  ["Creativity, invention", "weak", "new things yes, new kinds of action no", p => `${p.makes.length} recipes; still ${NA} given actions`],
+  ["Own goals", "missing", "focus is attention, not a goal", p => p.state ? `state: ${p.state}` : "no goal is held"],
+  ["Self-model", "missing", "nothing represents their own ability", p => "not represented"],
+  ["Communication", "given", "talk and marks, fixed signals", p => `${p.heard.length} things heard and not yet tried (top 4 shown)`],
+  ["Social learning, culture", "weak", "channels given, little builds up", p => `trust kept on ${p.trust.length}+ people`],
+  ["Motivation, feeling", "given", "8 traits, 6 feelings, written by us", p => `curiosity ${p.genes.curiosity.toFixed(2)}, mood ${p.body.mood.toFixed(2)}`],
+  ["Identity, continuity", "weak", "own history, no commitments", p => `${p.valued} of ${NC * NA} habits hold a value`]];
+const LABEL = {given: "given", learned: "learned", weak: "weak", missing: "missing"};
+function cards(){
+  const p = cur(); if (!p) return; const f = D.frames[wi];
+  $("wk").textContent = `week ${wi + 1} of ${D.frames.length} · ${typeof f.season === "number" ? SEASONS[f.season] : f.season}`; $("week").value = wi;
+  $("whoLine").innerHTML = `<span class="n">${esc(p.name)}</span>${[`${p.sex === "F" ? "woman" : "man"}, ${Math.floor(p.age)}`, p.stage, p.state || "", `doing: ${WORDS[p.chosen] || p.chosen || "—"}`].filter(Boolean).map(x => `<span class="tag">${esc(x)}</span>`).join("")}
+    ${p.thoughts.length ? `<span class="thought">“${esc(p.thoughts.join("; "))}”</span>` : ""}`;
+  const mx = Math.max(.01, ...p.weighed.map(o => Math.abs(o[1])));
+  $("opts").innerHTML = p.weighed.map(([a, sc, ch, lr]) => { const inst = sc - lr, w = v => Math.max(0, v) / mx * 100;
+    return `<div class="opt"><span${ch ? ' style="color:#fff;font-weight:600"' : ""}>${esc(WORDS[a] || a)}${ch ? " ✓" : ""}</span><div class="st" title="instinct ${inst.toFixed(2)}, habit ${lr.toFixed(2)}"><i style="left:0;width:${w(inst)}%;background:var(--amber)"></i><i style="left:${w(inst)}%;width:${w(lr)}%;background:var(--cyan)"></i></div><span class="v">${sc.toFixed(2)}</span></div>`; }).join("") || '<p class="small">Not deciding this week.</p>';
+  $("memN").textContent = `${p.mem.length} / ${D.max_mem}`;
+  $("memDots").innerHTML = Array.from({length: D.max_mem}, (_, i) => { const m = p.mem[i]; if (!m) return '<div class="dot"></div>';
+    const [s, sal, val, told] = m, col = val >= 0 ? "95,224,138" : "255,79,163", a = .25 + .75 * Math.min(1, s * (.5 + sal));
+    return `<div class="dot" title="strength ${s}, matters ${sal}, felt ${val}${told ? ", told" : ""}" style="background:rgba(${col},${a});box-shadow:0 0 ${6 * a}px rgba(${col},${a});${told ? "border:2px solid #fff" : ""}"></div>`; }).join("");
+  $("memWords").innerHTML = p.mem_words.map(x => `<li>${esc(x)}</li>`).join("");
+  const top = Math.max(.01, ...p.makes.map(m => m[1]));
+  $("mkN").textContent = `${p.makes.length} / 12`;
+  $("mkSlots").innerHTML = Array.from({length: 12}, (_, i) => { const m = p.makes[i]; return m ? `<div class="slot" title="${esc(m[0])}: worth ${m[1]}"><i style="height:${Math.max(6, 100 * Math.max(0, m[1]) / top)}%"></i></div>` : '<div class="slot"></div>'; }).join("");
+  $("mkWords").innerHTML = p.makes.slice(0, 4).map(m => `<li>${esc(m[0])} <span class="v">(${m[1].toFixed(2)})</span></li>`).join("") || '<li class="v">nothing yet</li>';
+  $("pzN").textContent = p.puzzles.length; $("pzWords").innerHTML = p.puzzles.map(([s, pull, n]) => `<li>${esc(s)} <span class="v">(pull ${pull}, tested ${n}×)</span></li>`).join("") || '<li class="v">no open puzzles</li>';
+  $("trWords").innerHTML = p.trust.map(x => `<li>${esc(x)}</li>`).join("") || '<li class="v">no record yet</li>';
+  $("bfN").textContent = `${p.beliefs} beliefs`; $("hdWords").innerHTML = p.heard.map(x => `<li>${esc(x)}</li>`).join("") || '<li class="v">nothing waiting</li>';
+  $("bob").innerHTML = BOB.map(([n, s, why, live], i) => `<div class="cap ${s}"><b>${i + 1}. ${n}</b><span class="s">${LABEL[s]}</span> — ${why}<div class="live">${esc(live(p))}</div></div>`).join("");
+  $("foot").textContent = `This is not a neural network: it is a body, a temperament, a table of ${NC * NA} habits, and separate stores for memory, know-how, beliefs, puzzles and trust. Lines are drawn only where the world viewer draws them (habits and instinct); the stores are shown apart because in ACL they are apart.`;
+}
+const go = i => { wi = Math.max(0, Math.min(D.frames.length - 1, i)); cards(); };
+$("who").onchange = e => { sel = e.target.value; cards(); };
+$("week").oninput = e => go(+e.target.value);
+$("prev").onclick = () => go(wi - 1); $("next").onclick = () => go(wi + 1);
+$("play").onclick = e => { if (playing){ clearInterval(playing); playing = null; e.target.textContent = "▶ play"; return; }
+  e.target.textContent = "❚❚ pause"; playing = setInterval(() => go(wi + 1 >= D.frames.length ? 0 : wi + 1), 900); };
+$("delta").onclick = e => { showDelta = !showDelta; e.target.classList.toggle("on", showDelta); };
+cards();
+</script>
+</body>
+</html>
