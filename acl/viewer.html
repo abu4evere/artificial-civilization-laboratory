@@ -190,7 +190,7 @@ a{color:var(--cyan)}
     <div class="panel brainbox">
       <h2>Inside their mind, this week</h2>
       <canvas id="brain" width="2400" height="1300" aria-label="Brain scan"></canvas>
-      <div class="cols"><span>What they sense and feel</span><span>Situation neurons (32)</span><span>Action neurons (17)</span><span>What they chose</span></div>
+      <div class="cols"><span>What they sense and feel</span><span>Situation neurons (<span id="nctx">32</span>)</span><span>Action neurons (<span id="nact">19</span>)</span><span>What they chose</span></div>
       <div class="btip" id="btip"></div>
     </div>
     <div class="panel story" id="story"></div>
@@ -428,7 +428,7 @@ function renderCard(){
   let body2 = "";
   if (cardTab === "overview") body2 = p && !p.alive ? `<p class="empty">${esc(name)} has died (${esc(p.death)}). Their family and history remain in the other tabs.</p>` : bars.length ? bars.map(([ic, l, v, c]) => `<div class="bar"><span>${ic}</span><span>${l}</span><div class="meter"><i style="width:${Math.max(0, Math.min(1, v)) * 100}%;background:${c}"></i></div><span class="v">${Math.round(v * 100)}%</span></div>`).join("") + '<p class="note">Mood is shown from −1 (0%) to +1 (100%).</p>' : '<p class="empty">Reading…</p>';
   if (cardTab === "mind") body2 = `${(p && p.mind && p.mind.thoughts || []).slice(0, 5).map(o => `<div class="th"><span>${esc(o.text)}</span><span>${o.pull.toFixed(2)}</span></div>`).join("") || '<p class="empty">Nothing holds their attention.</p>'}
-    ${b ? `<p class="note">Lit this week: <b style="color:#fff">${esc(ctxLabel(b.ctx))}</b>. ${b.valued} of 544 habits hold a value (inherited, copied or learned; the viewer cannot tell which).</p>` : ""}`;
+    ${b ? `<p class="note">Lit this week: <b style="color:#fff">${esc(ctxLabel(b.ctx))}</b>. ${b.valued} of ${b.n_contexts * b.actions.length} habits hold a value (inherited, copied or learned; the viewer cannot tell which).</p>` : ""}`;
   if (cardTab === "family") body2 = p ? `<div class="th"><span>Partner</span><span style="color:#fff">${esc(p.partner || "none")}</span></div><div class="th"><span>Mother</span><span style="color:#fff">${esc(p.mother || "—")}</span></div><div class="th"><span>Father</span><span style="color:#fff">${esc(p.father || "—")}</span></div><div class="th"><span>Children alive</span><span style="color:#fff">${p.children.length ? esc(p.children.join(", ")) : "none"}</span></div>` : "";
   if (cardTab === "history") body2 = p ? `${(p.memories || []).length ? `<ul class="l">${p.memories.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : '<p class="empty">No strong memories yet.</p>'}${(p.makes || []).length ? `<div class="k">Knows how to make</div><ul class="l">${p.makes.map(x => `<li>${esc(x.what)}</li>`).join("")}</ul>` : ""}${(p.beliefs || []).length ? `<div class="k">Has come to believe</div><ul class="l">${p.beliefs.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}` : "";
   const log = (thoughtsLog.get(selected) || []).slice().reverse();
@@ -586,6 +586,7 @@ function drawBrain(now){
   if ($("person").hidden) return;
   bg.globalCompositeOperation = "source-over"; bg.clearRect(0, 0, BW, BH); hits.length = 0;
   const b = personInfo && personInfo.brain; if (!b){ label(personInfo && !personInfo.alive ? "They have died." : "Reading their mind…", BW / 2, BH / 2, "#7f97b3", 34, "center"); return; }
+  { const ca = document.getElementById("nact"), cc = document.getElementById("nctx"); if (ca) ca.textContent = b.actions.length; if (cc) cc.textContent = b.n_contexts; }
   const NA = b.actions.length, NC = b.n_contexts, ctxN = [...Array(NC)].map((_, k) => ({k, x: X[1] + (k % 2 ? 36 : -36), y: 50 + k * (BH - 100) / (NC - 1)}));
   const actN = b.actions.map((a, i) => ({a, x: X[2], y: 80 + i * (BH - 160) / (NA - 1)}));
   const vals = showDelta && firstQ ? b.q.map((v, i) => v - firstQ[i]) : b.q, vmax = Math.max(5, ...vals.map(Math.abs)), t = now / 1000;
@@ -642,13 +643,13 @@ function story(){
       ${b.weighed.map(([a, sc, ch, lr]) => { const inst = sc - lr, w = v => Math.max(0, v) / mx * 100;
         return `<div class="opt"><span${ch ? ' style="color:#fff;font-weight:600"' : ""}>${esc(WORDS[a] || a)}${ch ? " ✓" : ""}</span><div class="st" title="instinct ${inst.toFixed(2)}, habit ${lr.toFixed(2)}"><i style="left:0;width:${w(inst)}%;background:#ffb547"></i><i style="left:${w(inst)}%;width:${w(lr)}%;background:#38d6ff"></i></div><span class="v">${sc.toFixed(2)}</span></div>`; }).join("")}
       <div class="key"><span><span class="sw" style="background:#ffb547"></span>instinct (drives and temperament, written by nature)</span><span><span class="sw" style="background:#38d6ff"></span>habit (inherited, copied or learned)</span></div>
-      <p class="p"><b>${b.valued} of 544</b> habits hold a value. Some were inherited at birth, some absorbed from carers or copied in talk, some learned from their own life; the world does not record which. The choice has some chance in it, so the top score does not always win.</p>` : ""}
+      <p class="p"><b>${b.valued} of ${b.n_contexts * b.actions.length}</b> habits hold a value. Some were inherited at birth, some absorbed from carers or copied in talk, some learned from their own life; the world does not record which. The choice has some chance in it, so the top score does not always win.</p>` : ""}
     ${(m.thoughts || []).length ? `<div class="k">On their mind</div><ul>${m.thoughts.slice(0, 5).map(o => `<li>${esc(o.text)}</li>`).join("")}</ul>` : ""}
     ${(p.memories || []).length ? `<div class="k">They remember</div><ul>${p.memories.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
     ${(p.makes || []).length ? `<div class="k">They know how to make</div><ul>${p.makes.map(x => `<li>${esc(x.what)}</li>`).join("")}</ul>` : ""}
     ${(p.beliefs || []).length ? `<div class="k">They have come to believe</div><ul>${p.beliefs.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
     <div class="k">How to read the brain</div>
-    <p class="p">Three senses (white) light <b>one of 32 situation neurons</b>: how much food they hold, whether anyone is near, and the season. That neuron's lines to the <b>17 action neurons</b> are their habits for this situation: cyan where the habit pulls toward an action, magenta where it pulls away. Amber lines are instinct: which drives and inborn traits push towards which action. Hover any point for details.</p>
+    <p class="p">Three senses (white) light <b>one of ${b ? b.n_contexts : 32} situation neurons</b>: how much food they hold, whether anyone is near, and the season. That neuron's lines to the <b>${b ? b.actions.length : 19} action neurons</b> are their habits for this situation: cyan where the habit pulls toward an action, magenta where it pulls away. Amber lines are instinct: which drives and inborn traits push towards which action. Hover any point for details.</p>
     <p class="p">This is not a neural network. It is a body, a temperament, and a table of habits: some inherited at birth, some copied from carers and from talk, some learned from their own life.</p>`;
 }
 
