@@ -234,6 +234,10 @@
     {
       "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
       "status": "asked in the morning report"
+    },
+    {
+      "what": "fix the in-world brain screen acl/viewer.html (says 17 action neurons and 544 habits at lines 193, 431, 645, 651; v11 has 19 and 608; better to read the counts from the data than hard-code them); display only, no nature change; then run the tests",
+      "status": "approved by the creator on Telegram 2026-11-02 02:52 ('Yes fix that too'); acl/ may only be edited at the PC in a Claude Code session, so do it in the next desktop session (not a tick, not Telegram)"
     }
   ],
   "budgets": {
