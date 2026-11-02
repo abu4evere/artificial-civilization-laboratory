@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T21:36:22",
+  "updated": "2026-11-01T22:00:08",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -178,6 +178,16 @@
       "run": 41365641251,
       "next_step": "debate: knowledge transmission; IQ1 report first (the creator, 1 Nov)",
       "recompute": "experiments/HA1_handing_audit/recompute_ha1.md (GPT and Gemini match)"
+    },
+    {
+      "id": "KL1",
+      "title": "Does know-how outlive its holders? (read-only audit on live v11; IQ1-H3 step 1)",
+      "kind": "read-only",
+      "plan": "experiments/KL1_knowledge_loss/questions.md",
+      "frozen_tag": "KL1-frozen",
+      "status": "running",
+      "run": 41380622576,
+      "next_step": "when run 41380622576 finishes: save the cloud zero log as zero_cloud.log; fetch; analyse_kl1.py; findings; recompute (kl1_one_file.csv); tag KL1-done"
     }
   ],
   "queue_after": [
@@ -223,5 +233,19 @@
     "daily_summary_at": "07:30",
     "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2).",
     "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud."
-  }
+  },
+  "directions": [
+    {
+      "id": "IQ1",
+      "title": "Islamic Sources and Emergent Cognition",
+      "from": "the creator, 1 November 2026",
+      "rules": "literature and proposals first; verify every source; no change to live nature or adoption without the creator's explicit approval; inspiration, not proof",
+      "report": "docs/research/iq1_islamic_sources_report_2026-11-01.md",
+      "priorities": [
+        "H3 step 1 = KL1 (running)",
+        "H1 born without learned content (a copy)",
+        "H2 graded child abilities (a copy)"
+      ]
+    }
+  ]
 }
