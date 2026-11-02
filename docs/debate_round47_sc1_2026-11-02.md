@@ -76,3 +76,21 @@ Revise the draft before freezing:
 - **12:** nested models with the habit table in Model A.
 - **Readings:** as above.
 - **Worlds:** 32, or 64 if the cloud budget allows.
+
+## Second round (each told the facts and the other's main point)
+- **Gemini (opinion), told its steer claim was wrong:** "matching own vs. told puzzles on starting puzzle size cleanly
+  fixes Measure 7". It accepts GPT's nested models for 12 and the gated labels. **88% → 94%.**
+- **GPT (opinion), given Gemini's points:** "I raise my estimate from 80% to 86%."
+  - It keeps Gemini's cross-situation test as a secondary for 12; the nested models stay the primary.
+  - **Its refinement of the gate:** "require the 95% interval's lower bound to exceed the pre-set meaningful-effect
+    threshold". Thresholds are set **per capacity**, since one 15% rule does not fit rates near zero.
+  - 7 deserves the same priority as 5.
+  - Its remaining concern: 10a, "social transmission should not be mistaken for social cognition".
+- **Agreed for the frozen plan:**
+  - **one primary contrast per measured capacity**, each with its own control and a per-capacity minimum effect;
+  - **"positive contrast detected"** only when the interval's **lower bound** clears that minimum; otherwise
+    "inconclusive"; never "absent";
+  - **7:** matched on puzzle size;
+  - **12:** nested models, with Gemini's cross-situation test as a secondary;
+  - **10a:** split into social learning (described) and social cognition (partner choice, or "not measurable").
+- Both chat tabs were closed afterwards.
