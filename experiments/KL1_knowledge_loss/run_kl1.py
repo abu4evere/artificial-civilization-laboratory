@@ -125,10 +125,12 @@ class KL1Obs:
                     self.world_losses[mk][kind] += 1
                     self.lifetimes.append(t - self.alive_since.get(sig, rec.get("first_tick", t)))
             elif not rec["alive"] and sig in known:            # revived
-                g = sorted(self.gains.get(sig, ()))
+                g = self.gains.get(sig, ())                     # in the order the gains happened
                 if not g:
                     self.mismatch["unexplained_revival"] += 1
                 else:
+                    if g[0][2] not in ("made", "heated", "read"):  # teaching and copying need a living knower
+                        self.mismatch["revival_path"] += 1
                     self.alive_since[sig] = g[0][0]
                     if self.counted(t):
                         self.revivals[mk][g[0][2]] += 1

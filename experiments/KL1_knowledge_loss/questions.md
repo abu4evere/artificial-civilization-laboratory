@@ -89,3 +89,14 @@ A threshold crossing describes. It is not proof of a mechanism (GPT).
 ## Sign-off (1 November 2026)
 The assistant, with the creator present ("keep working"; a read-only study under the 40% rule, within IQ1's rules). GPT
 estimates 91%, Gemini 75% and the assistant 80%. Frozen as `KL1-frozen` before any code or data.
+
+## Operational note 1 (01 November 2026, 22:29, after the smoke world, before any study data)
+- **The bug:** the smoke world's analysis showed 2 of 6 revivals with a path that should be impossible ("taught" or
+  "copied"). The observer took a revival's path from the earliest gain after **sorting by tick and then by person
+  id**, so several gains in the same week were ordered by id, not by when they happened.
+- **The fix:** the gains are kept in the order they happened, and the first is the revival's path. A revival through
+  any path other than made, heated or read now counts as a **mismatch** (a hard stop). The plan already said this was
+  impossible.
+- **The cloud run** started with the old observer (run 41380622576). It was **cancelled** and is replaced; its output
+  is not used.
+- Nothing else changes: no measure, threshold, seed or reading.
