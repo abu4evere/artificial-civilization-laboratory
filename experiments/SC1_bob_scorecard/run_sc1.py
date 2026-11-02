@@ -148,7 +148,7 @@ class SC1Obs(base.ES2Obs):
         if props is not None and self.fits(tick, W6):
             f = best_factor(props)
             cls = "f" if f >= 1.10 else ("n" if f < 1.02 else "m")
-            self.c6[sig] = [tick, cls, 0]
+            self.c6[sig] = [tick, cls, 0, round(f, 4)]
         parts = self.made_parts(recipe)
         if parts:
             others = [s for s in p.recipes if s != sig]
@@ -365,6 +365,8 @@ class SC1Obs(base.ES2Obs):
                 "c4": dict(self.c4), "c5": dict(self.c5),
                 "c6": {cls: [sum(1 for e in self.c6.values() if e[1] == cls),
                              sum(e[2] for e in self.c6.values() if e[1] == cls)] for cls in ("f", "n", "m")},
+                "c6_kinds_fields": ["best_factor", "remade"],
+                "c6_kinds": [[e[3], e[2]] for e in self.c6.values()],
                 "c7": dict(self.c7), "c9_fields": ["checked", "verified", "control_true"], "c9": dict(self.c9),
                 "c10": dict(self.c10),
                 "holders_late_kinds": [len(self.holders[s]) for s in late_kinds],
