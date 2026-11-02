@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T08:11:10",
+  "updated": "2026-11-02T09:40:57",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -223,10 +223,11 @@
       "plan": "experiments/UP1_uptake_of_new_kinds/questions.md",
       "frozen_tag": "UP1-frozen",
       "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 95%, round 48)",
-      "status": "running",
+      "status": "final: mainly blocked at 'cannot make' (0.867 [0.852, 0.883]); new kinds are nested, parts not in hand",
       "run": 41450747356,
       "zero": "local, All: PASS (zero_local.log)",
-      "next_step": "fetch, analyse, findings, blind recompute (recompute/prompt.txt, up1_counts.csv; Gemini on 3.1 Pro)"
+      "next_step": "for the creator: a frozen nature-change test of a general condition (goal kept across weeks, deeper wanted-part bridge, or carrying room); read-only follow-ups for the council meanwhile",
+      "recompute": "experiments/UP1_uptake_of_new_kinds/recompute_up1.md (GPT and Gemini 3.1 Pro match)"
     }
   ],
   "queue_after": [
@@ -264,6 +265,10 @@
     {
       "what": "fix the in-world brain screen acl/viewer.html (says 17 action neurons and 544 habits at lines 193, 431, 645, 651; v11 has 19 and 608; better to read the counts from the data than hard-code them); display only, no nature change; then run the tests",
       "status": "done 2 November 2026 ~03:55 in the desktop Claude Code session (approved by the creator on Telegram 02:52): acl/viewer.html reads the counts from the brain data (19 actions, 32 situations, 608 habits shown in the viewer); display only; nature fingerprint unchanged (a1fb3d5e...)"
+    },
+    {
+      "what": "after UP1: which general condition (if any) to test in a copy so that nested inventions can be remade: a goal kept across weeks, a deeper wanted-part bridge, or more carrying room (forager evidence first)",
+      "status": "for the creator (2 November 2026)"
     }
   ],
   "budgets": {
