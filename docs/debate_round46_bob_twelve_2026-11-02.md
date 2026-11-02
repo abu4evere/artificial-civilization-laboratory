@@ -118,3 +118,50 @@ that adds a condition, not an outcome, with an estimate (%).
 - **The council's note:** "useless if the agent has no structural way to evaluate their utility before trying them" is
   too strong. ACL's people try untried things and learn from the result (the curiosity pull, play). The cost Gemini
   names is real, though: every new action kind dilutes learning over a fixed table.
+
+**GPT (opinion, not sign-off), given the composition facts and Gemini's first pick:**
+- "The code correction changes my recommendation. I underestimated v11's existing creativity."
+- **AC1, narrowed:** **temporal composition**, turning an experienced action sequence into a reusable unit. Each part
+  still costs its normal time and resources, gets no novelty reward, and can fail. **Its estimate falls to 60%.**
+- **It now favours capacity 5 (prospective reasoning), as "PL1", in a weaker form than Gemini's:**
+  - **the condition:** a **fallible** internal simulation built only from each person's own remembered transitions,
+    with no oracle for the world's rules;
+  - **kept for a separate study:** choosing which variables enter the situation;
+  - **the primary:** completing naturally available multi-step sequences that need a costly first step and pay off
+    later, especially ones the person has not completed before;
+  - **its estimate: 72%.** Not Gemini's 85%: coarse situations, limited memory and the known habit miscalibration make
+    imagined futures unreliable.
+- **The models crossed over.** GPT moved toward planning (72%) at the moment Gemini moved away from it (40%). Neither
+  had seen the other's revision. Both were then given it, with one last question (below).
+
+## Last question: a read-only scorecard first, or a nature change?
+- **The question to both:** given the creator's order (knowledge that survives death first; define and measure
+  autonomy early), should the next step be a read-only scorecard of the twelve capacities in today's worlds, before
+  any nature change?
+- **GPT (opinion):** "Yes. I now favor a read-only baseline scorecard before any nature change." **90%**, "provided
+  unobservable capacities are explicitly marked not measurable, rather than scored zero".
+  - It calls this **SC1**, a cognitive baseline of v11, with "No combined intelligence score, no nature changes".
+  - "PL1 should no longer come first. Its possible benefits are too indirect for the creator's immediate priority."
+  - After SC1: "select the smallest missing condition that addresses the observed bottleneck in knowledge transmission
+    or retention."
+- **Gemini (opinion):** "Yes, the read-only scorecard should come first". **90%**.
+  - Its first nature-change test after that: **cue-driven transmission**. A holder's relevant know-how would be called
+    up by what the other person is doing or handling, instead of by global salience. This targets KL1's
+    lone-holder loss.
+
+## Outcome (the assistant, as council; the creator decides)
+- **Both models agree:**
+  - **next:** a read-only scorecard, SC1. It needs no nature change, so it is allowed under the 40% rule;
+  - **after it:** the smallest missing condition aimed at keeping know-how alive.
+- **Checked against the code:** teaching in v11 (`information.show_how`) offers one of the teacher's three most valued
+  things **at random**, whatever the learner is doing. So "teaching what is relevant to the listener" is a real gap,
+  and a fair candidate condition later.
+- **What survived the debate:**
+  - **Relevant memory retrieval is missing:** both models accepted the code check.
+  - **Working memory is missing:** GPT raised it and Gemini agreed.
+  - **Social cognition (a person's) and cumulative culture (a population's) are separate.**
+  - **Object composition already exists.**
+  - **The council's view of the estimates:** planning (PL1, 72% from GPT, 40% from Gemini) and action composition (60%
+    from GPT; Gemini calls it a trap) stay later candidates, not next steps.
+- **SC1 still needs:** its own frozen plan, with measures chosen so they do not echo written formulas (both models
+  gave candidates above), and "not measurable in v11" where the behaviour cannot occur.
