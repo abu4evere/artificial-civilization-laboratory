@@ -531,3 +531,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-11-01 21:48: the creator: 'keep working'. Next: IQ1-H3 step 1, a read-only audit of know-how loss at death (design, then council).
 - 2026-11-01 21:51: debate round 44 on KL1's design (GPT 6ae7fa2b 91%, Gemini 17bcc08091baa56c 75%); both changes adopted (event-level loss causes; R on markable kinds); revival floor 30.
 - 2026-11-01 21:51: KL1 plan frozen (experiments/KL1_knowledge_loss/questions.md, tag KL1-frozen): read-only on v11, seeds 21701-21732; primary D (losses by death) and R_markable (markable revivals through marks).
+- 2026-11-01 21:59: KL1 runner, analysis and recompute builder written before data; 20-year test at Idle: read-only, mismatches none, 2,998 gains, 443 world-level losses. Cloud run launched with skip_zero=no (zero on the cloud; light PC use).
