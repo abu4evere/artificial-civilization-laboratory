@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T02:30:00",
+  "updated": "2026-11-02T04:12:05",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -197,13 +197,19 @@
       "plan": "experiments/BN1_born_without_learned_content/questions.md",
       "frozen_tag": "BN1-frozen",
       "approved_by": "the assistant under the 40% rule, the creator present (2 Nov); adoption needs the creator",
-      "status": "running",
+      "status": "final: inconclusive (D_z +0.0205 [+0.0157, +0.0252] vs margin 0.02); no guard",
       "run": 41394713611,
       "zero": "cloud, All: PASS (zero_cloud.log, fingerprint f236c149...)",
-      "next_step": "fetch, analyse at Idle, findings, blind recompute by GPT and Gemini"
+      "next_step": "the creator decides on birth inheritance (no change without them); next study SC1 (debate round 46)",
+      "recompute": "experiments/BN1_born_without_learned_content/recompute_bn1.md (GPT and Gemini match)"
     }
   ],
   "queue_after": [
+    {
+      "what": "SC1: a read-only scorecard of the creator's twelve capacities for Bob on live v11 (debate round 46: GPT 90%, Gemini 90%); capacities v11 cannot show are marked 'not measurable', no combined score",
+      "status": "next (read-only, allowed under the 40% rule)",
+      "needs": "frozen plan with measures that do not echo written formulas; debate on the measures"
+    },
     {
       "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
       "status": "deferred until after UV3",
