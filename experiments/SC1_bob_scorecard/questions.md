@@ -139,3 +139,16 @@
 ## Sign-off (2 November 2026)
 The assistant, with the creator present and asking to keep working. A read-only study under the 40% rule: GPT 86%,
 Gemini 94% (round 47), the assistant 70%. Frozen as `SC1-frozen` before any code or data.
+
+## Operational note 1 (2 November 2026, before any code or data)
+**Follow-up windows must fit in the run.** An event enters a measure only if its whole follow-up window ends by year
+200:
+
+| measure | window | events counted |
+|---|---|---|
+| C4 | 13 weeks | tests up to week 10,387 |
+| C5 | 26 weeks | gathers up to week 10,374 |
+| C7 | 26 weeks | puzzles opened up to week 10,374 |
+| C6 | 260 weeks | kinds first made in years 100–195 |
+
+Otherwise, late events would count as "not followed" only because the run ended. Nothing else changes.
