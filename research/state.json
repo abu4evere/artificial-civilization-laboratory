@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T09:40:57",
+  "updated": "2026-11-02T10:55:47",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -228,6 +228,18 @@
       "zero": "local, All: PASS (zero_local.log)",
       "next_step": "for the creator: a frozen nature-change test of a general condition (goal kept across weeks, deeper wanted-part bridge, or carrying room); read-only follow-ups for the council meanwhile",
       "recompute": "experiments/UP1_uptake_of_new_kinds/recompute_up1.md (GPT and Gemini 3.1 Pro match)"
+    },
+    {
+      "id": "WP1",
+      "title": "Want propagation: can new inventions be made again? (a nature-change test in a copy)",
+      "kind": "nature-change test in a copy (code_wp1 = v11 + want_propagation); adoption only by the safe path, the creator asked first",
+      "plan": "experiments/WP1_want_propagation/questions.md",
+      "frozen_tag": "WP1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 94%, round 49); the creator on Telegram 10:05 'Yes go ahead'",
+      "status": "running",
+      "run": 41476346903,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "fetch, analyse, findings, blind recompute (recompute/prompt.txt, wp1_counts.csv; Gemini on 3.1 Pro)"
     }
   ],
   "queue_after": [
