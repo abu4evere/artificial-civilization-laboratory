@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T06:35:00",
+  "updated": "2026-11-02T08:11:10",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -215,14 +215,21 @@
       "zero": "local, All: PASS (zero_local.log)",
       "next_step": "council: a read-only audit of why new kinds are never made again (uptake)",
       "recompute": "experiments/SC1_bob_scorecard/recompute_sc1.md (GPT matches; Gemini 3.1 Pro matches)"
+    },
+    {
+      "id": "UP1",
+      "title": "Why is a new kind never made again? (read-only funnel on live v11)",
+      "kind": "read-only",
+      "plan": "experiments/UP1_uptake_of_new_kinds/questions.md",
+      "frozen_tag": "UP1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 95%, round 48)",
+      "status": "running",
+      "run": 41450747356,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "fetch, analyse, findings, blind recompute (recompute/prompt.txt, up1_counts.csv; Gemini on 3.1 Pro)"
     }
   ],
   "queue_after": [
-    {
-      "what": "UP1 (proposed): why is a new kind never made again? A read-only audit of the make choice for kinds invented after year 100 (value never proven, parts not in hand, the 3-item limit, eviction from 12 recipes)",
-      "status": "proposed after SC1",
-      "needs": "debate with GPT and Gemini; frozen plan"
-    },
     {
       "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
       "status": "deferred until after UV3",
