@@ -80,3 +80,27 @@ The sample is 4,977,150 person × kind × decisions for new kinds and 166,823,58
 GPT (chat `6ae89f21`) and Gemini 3.1 Pro (chat `003f78c1d7b2d7f3`) recomputed UP1 from the per-world step counts,
 blind, with the prompt written before the data. **Both match every point value and both readings** (mainly blocked at
 step 3; the largest difference from old kinds at step 3). Interval ends differ by at most 0.0006. **UP1 is final.**
+
+## Addendum (2 November 2026, about 10:20): what is missing (exploratory; outside the frozen plan)
+`explore/check_missing.py` (`explore/check_missing.json`) replays world 22101 to year 130.
+- **What it counts:** for each "cannot make" case of a nested kind invented from year 100 that the person values above
+  0.05 and is not holding (its value v omits the puzzle pull), it records what is missing.
+- **One world, 46 new kinds, described only:**
+
+| what is missing | cases |
+|---|---|
+| raw materials only | 0 |
+| **a made part, whose recipe the person knows, but that part cannot be made now either** | **15,513 (88.8%)** |
+| a made part whose recipe the person does not know | 1,909 (10.9%) |
+| a made part they could make right now | 41 (0.2%); in none of these was it the make option |
+
+In 1,149 of these cases (6.6%) the person's hands were already full (3 made things).
+
+**A lead from the code, not yet a finding:**
+- Wanting **does** reach one step back for making. A part of a valued thing gets 0.8 of its value (`_wanted_parts`).
+- It **does not** reach into gathering. The pull to gather a material (`_material_wants`) counts only recipes valued by
+  their own use (`itemval`), not parts wanted for something else.
+- So the chain can break at the part's ingredients: the whole is wanted, the part is wanted, but nothing pulls the
+  person to gather what the part needs.
+
+This is a written-law detail, and only a frozen study can say whether it is the cause.

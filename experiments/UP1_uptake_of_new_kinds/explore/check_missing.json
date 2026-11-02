@@ -1,0 +1,10 @@
+{
+ "cases": {
+  "stuck": 15513,
+  "items_full": 1149,
+  "unknown": 1909,
+  "bridge_part_not_make_option": 41,
+  "bridge": 41
+ },
+ "new_kinds_played": 46
+}
