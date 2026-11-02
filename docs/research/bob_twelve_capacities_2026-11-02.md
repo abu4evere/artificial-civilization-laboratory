@@ -36,3 +36,10 @@ nothing in ODD v11 does it. *Not checked* = not looked up in the code for this n
 ## Open for the council
 Put the same question to GPT and Gemini: which of the twelve must be laws, which should emerge, and which one
 read-only measure per capacity is honest. Not yet done (Telegram session, 2 November 02:2x).
+
+## Correction (2 November 2026, about 15:50; appended)
+**Row 3 cites "UV1: the undervaluing mistake halves in about 20 tries, then stays stuck". That is UV1's arm r**, a
+test copy, not v11.
+- **In live v11,** habits over-value what follows, and the over-valuation **grows** with experience (+0.08 to +0.49), from
+  the max look-ahead.
+- **Learning still gets stuck,** but in the other direction.

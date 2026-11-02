@@ -136,3 +136,16 @@ person can make and is not already holding (`mind.decide`). Possible blocks:
 - "make" loses to other actions.
 
 **This is a lead for UP1, not a finding.**
+
+## Correction (2 November 2026, about 15:50; appended, the text above is unchanged)
+**The C3 explanation above is wrong.** It reads: "UV1 found the signed bias shrinking with experience. Together, the two
+suggest experienced habits are less biased but more spread out".
+- **That shrinking bias belongs to UV1's arm r,** a test copy with the realized look-ahead, not to v11.
+- **In v11, UV1 found the opposite.** The signed bias q − G is **positive and grows** with experience, +0.078 at k 0–9 to
+  +0.494 at k 80–159. UV1 calls this "the max look-ahead's inflation".
+- **Re-read from UV1's existing outputs** (`explore/c3_from_uv1.py`, `explore/c3_from_uv1.json`; 32 worlds, ages
+  16–44): the mean absolute error is almost equal to the signed error at high k (0.501 against +0.494).
+- **So the C3 puzzle has a plain answer:** experienced habits are not more spread out. They **over-value** what follows,
+  more with practice, because the learning rule looks ahead with the best next value, not the one actually taken.
+
+Item 2 under "Possible next questions" is answered by this.

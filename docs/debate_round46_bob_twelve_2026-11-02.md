@@ -165,3 +165,13 @@ that adds a condition, not an outcome, with an estimate (%).
     from GPT; Gemini calls it a trap) stay later candidates, not next steps.
 - **SC1 still needs:** its own frozen plan, with measures chosen so they do not echo written formulas (both models
   gave candidates above), and "not measurable in v11" where the behaviour cannot occur.
+
+## Correction (2 November 2026, about 15:50; appended)
+**The question sent to both models said "habits persistently undervalue what actually follows". For v11 that is
+wrong.**
+- **What UV1 actually found:**
+  - **in v11:** habits **over-value** what follows, increasingly with experience (+0.08 to +0.49);
+  - **in arm r** (ES2's copy with the realized look-ahead): they undervalue, and the gap halves with experience.
+- **The council's code check** cited UV2 against Gemini's mechanism. UV2 studied arm r, so that check speaks about arm r
+  only.
+- **The round's outcome** (a read-only scorecard first) did not rest on this sentence.
