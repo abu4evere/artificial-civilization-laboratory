@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The ACL Mind: one heartbeat a week (nature v11)</title>
+<style>
+:root{--bg:#03060b;--panel:#0a111d;--ink:#e2eeff;--muted:#7d90aa;--line:#18263b;--warm:#ffad4a;--cool:#3fd0ff;--gold:#ffd66b;--violet:#b48cff;--green:#63e39a;--red:#ff5d73}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1440px;margin:0 auto;padding:16px}
+h1{font-size:24px;margin:0;font-weight:680;letter-spacing:.2px}
+.sub{color:var(--muted);margin:4px 0 14px;max-width:900px}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.bar input[type=range]{flex:1;min-width:140px;accent-color:var(--cool)}
+button,select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:7px 12px;font:inherit;cursor:pointer}
+button:hover{border-color:var(--cool)} button.big{border-color:var(--warm);color:#fff;box-shadow:0 0 14px rgba(255,173,74,.3)}
+.wk{color:var(--muted);font-variant-numeric:tabular-nums}
+.main{display:grid;grid-template-columns:1fr 340px;gap:14px}
+@media (max-width:1100px){.main{grid-template-columns:1fr}}
+.stage{position:relative;background:radial-gradient(ellipse at 50% 50%,#0a1830 0%,#03060b 75%);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+svg{display:block;width:100%;height:auto}
+.side{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.side .step{color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.side h2{margin:0;font-size:20px}
+.side p{margin:0}
+.side .num{color:var(--gold)}
+.nav{display:flex;gap:8px;margin-top:auto}
+.who{font-size:13px;color:var(--muted)}
+.who b{color:#fff;font-size:17px}
+.foot{color:var(--muted);font-size:12.5px;margin-top:14px;line-height:1.55;max-width:1100px}
+.tip{position:absolute;pointer-events:none;background:rgba(4,10,20,.95);border:1px solid var(--cool);border-radius:8px;padding:6px 9px;font-size:12.5px;display:none;max-width:300px}
+.organ{cursor:pointer;transition:opacity .4s}
+.dim .organ{opacity:.18}.dim .organ.hot{opacity:1}
+.dim .flow{opacity:.08}.dim .flow.hot{opacity:1}
+.flow{transition:opacity .4s}
+@keyframes dash{to{stroke-dashoffset:-40}}
+.flowline{stroke-dasharray:4 9;animation:dash 1.4s linear infinite}
+@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}
+.breathe{animation:breathe 3.2s ease-in-out infinite}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The ACL Mind</h1>
+  <div class="sub">This is what goes on inside one person in ACL, drawn as its own kind of creature. It isn't a human brain.
+    Every part shown here exists in the code of nature v11, and every number is read from a real person in a real world.
+    Their mind does one "heartbeat" a week: it feels, sorts, weighs, chooses, acts, and learns.
+    Press <b>Follow one heartbeat</b> for a guided tour, or click any part.</div>
+  <div class="bar">
+    <button id="tour" class="big">▶ Follow one heartbeat</button>
+    <select id="who"></select>
+    <button id="play">▶ weeks</button>
+    <input id="wk" type="range" min="0" value="0">
+    <span id="wkl" class="wk"></span>
+  </div>
+  <div class="main">
+    <div class="stage" id="stage">
+      <svg id="svg" viewBox="0 0 1400 820" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="side" id="side"></div>
+  </div>
+  <div class="foot" id="foot"></div>
+</div>
+<script>
+const D = /*DATA*/null;
+const A = D.actions, NA = A.length, NC = D.n_contexts;
+const SEASONS = ["spring", "summer", "autumn", "winter"];
+const FOOD = ["almost no food (or ill)", "food for under 2 weeks", "food for 2–6 weeks", "food for 6+ weeks"];
+const FOOD_S = ["none", "short", "some", "plenty"];
+const ctxLabel = k => `${FOOD[Math.floor(k / 8)]}, ${(k % 8) >= 4 ? "with others" : "alone"}, ${SEASONS[k % 4]}`;
+const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("svg"), tip = document.getElementById("tip"), side = document.getElementById("side");
+const el = (tag, at = {}, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); parent.appendChild(e); return e; };
+const txt = (s, x, y, at = {}, parent = svg) => { const e = el("text", Object.assign({x, y, fill: "#cfe0f5", "font-size": 13, "font-family": "system-ui,Segoe UI,sans-serif"}, at), parent); e.textContent = s; return e; };
+const pct = v => Math.round(v * 100) + "%";
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c]));
+
+// ---------- people: ranked by how much of the mind they show ----------
+const richness = p => p.mem.length + 5 * p.makes.length + 3 * p.puzzles.length + 2 * p.trust.length;
+const ids = Object.keys(D.names);
+const firstSeen = {};
+D.frames.forEach(f => f.people.forEach(p => { if (!(p.id in firstSeen)) firstSeen[p.id] = p; }));
+ids.sort((a, b) => richness(firstSeen[b]) - richness(firstSeen[a]));
+const whoSel = document.getElementById("who");
+ids.forEach(id => { const p = firstSeen[id]; const o = document.createElement("option"); o.value = id; o.textContent = `${p.name} (${p.stage}, ${Math.round(p.age)})`; whoSel.appendChild(o); });
+const wk = document.getElementById("wk"); wk.max = D.frames.length - 1;
+let cur = {id: ids[0], w: 0}, tourStep = -1, focus = null;
+
+// ---------- defs: glows and gradients ----------
+const defs = el("defs");
+defs.innerHTML = `
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+<radialGradient id="cellg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#132a48" stop-opacity=".9"/><stop offset="1" stop-color="#08111f" stop-opacity=".95"/></radialGradient>
+<radialGradient id="voidg" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#000" /><stop offset="1" stop-color="#0b1220"/></radialGradient>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a7ca6"/></marker>
+<marker id="arrw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ffad4a"/></marker>
+<marker id="arrg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#63e39a"/></marker>`;
+
+// ---------- the membrane: the whole mind as one creature ----------
+const membrane = el("path", {d: "M70,60 C300,10 1000,10 1330,60 C1395,250 1395,560 1330,770 C1000,815 300,815 70,770 C5,560 5,250 70,60 Z",
+  fill: "none", stroke: "#2a4b78", "stroke-width": 2, class: "breathe", filter: "url(#glow)"});
+const heart = el("circle", {cx: 700, cy: 410, r: 380, fill: "#163a6a", opacity: 0, filter: "url(#soft)"});
+
+// ---------- organ layout ----------
+const O = {
+  senses:   {x: 40,   y: 80,  w: 200, h: 360, name: "Body & senses", col: "#63e39a"},
+  temper:   {x: 40,   y: 470, w: 200, h: 300, name: "Temperament (born with it)", col: "#ff8ad8"},
+  situ:     {x: 270,  y: 80,  w: 220, h: 220, name: "Situation sorter", col: "#3fd0ff"},
+  feel:     {x: 270,  y: 330, w: 220, h: 220, name: "Feelings", col: "#ff8a6b"},
+  thought:  {x: 270,  y: 580, w: 220, h: 190, name: "Thoughts & puzzles", col: "#ffd66b"},
+  habits:   {x: 520,  y: 80,  w: 300, h: 380, name: "Habit bank (608 values)", col: "#3fd0ff"},
+  memory:   {x: 520,  y: 490, w: 300, h: 280, name: "Memory sky", col: "#b48cff"},
+  choice:   {x: 850,  y: 80,  w: 250, h: 470, name: "Choice arena", col: "#ffad4a"},
+  knowhow:  {x: 850,  y: 580, w: 250, h: 190, name: "Know-how", col: "#63e39a"},
+  world:    {x: 1130, y: 80,  w: 230, h: 200, name: "The world answers", col: "#ffffff"},
+  trust:    {x: 1130, y: 310, w: 230, h: 240, name: "Other people", col: "#7fb0ff"},
+  missing:  {x: 1130, y: 580, w: 230, h: 190, name: "Not grown yet", col: "#44506a"},
+};
+const G = {};
+for (const k in O) {
+  const o = O[k];
+  const g = el("g", {class: "organ", "data-k": k});
+  el("rect", {x: o.x, y: o.y, width: o.w, height: o.h, rx: 26, fill: k === "missing" ? "url(#voidg)" : "url(#cellg)",
+    stroke: o.col, "stroke-opacity": k === "missing" ? .35 : .55, "stroke-width": 1.4, "stroke-dasharray": k === "missing" ? "5 6" : ""}, g);
+  txt(o.name.toUpperCase(), o.x + 16, o.y + 24, {fill: o.col, "font-size": 11.5, "letter-spacing": 1.2, "font-weight": 600}, g);
+  g.addEventListener("click", () => { tourStep = -1; focus = k; render(); });
+  G[k] = {g, inner: el("g", {}, g)};
+}
+
+// ---------- flows between organs ----------
+const FLOWS = [
+  ["senses", "M240,200 C255,200 255,190 270,190", "", ["situ"]],
+  ["senses", "M240,330 C255,330 255,420 270,420", "", ["feel"]],
+  ["situ", "M490,190 C505,190 505,230 520,230", "", ["habits"]],
+  ["habits", "M820,250 C835,250 835,250 850,250", "", ["choice"]],
+  ["temper", "M240,620 C560,620 560,560 850,520", "", ["choice"]],
+  ["feel", "M490,440 C700,470 760,470 850,470", "", ["choice"]],
+  ["thought", "M490,660 C680,560 760,520 850,500", "", ["choice"]],
+  ["memory", "M520,650 C505,650 505,670 490,670", "", ["thought"]],
+  ["choice", "M1100,180 C1115,180 1115,180 1130,180", "w", ["world"]],
+  ["world", "M1245,80 C1245,30 700,30 680,80", "g", ["habits", "learn"]],
+  ["trust", "M1130,430 C1115,430 1115,430 1100,430", "", ["choice"]],
+  ["knowhow", "M975,580 C975,565 975,565 975,550", "", ["choice"]],
+];
+const flowEls = FLOWS.map(([from, d, kind, to]) => {
+  const g = el("g", {class: "flow"});
+  const c = kind === "w" ? "#ffad4a" : kind === "g" ? "#63e39a" : "#5a7ca6";
+  el("path", {d, fill: "none", stroke: c, "stroke-width": kind ? 2.6 : 1.6, class: "flowline", "marker-end": `url(#arr${kind})`, opacity: .9}, g);
+  return {g, from, to, kind};
+});
+const learnLbl = txt("what happened flows back and moves one habit value", 760, 40, {fill: "#63e39a", "font-size": 12, "text-anchor": "middle"});
+const spark = el("circle", {r: 6, fill: "#fff", filter: "url(#glow)", opacity: 0});
+
+// ---------- helpers ----------
+const clear = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+const hover = (e, html) => { e.addEventListener("mousemove", ev => { const r = document.getElementById("stage").getBoundingClientRect(); tip.style.display = "block"; tip.innerHTML = html; tip.style.left = Math.min(ev.clientX - r.left + 14, r.width - 310) + "px"; tip.style.top = (ev.clientY - r.top + 14) + "px"; }); e.addEventListener("mouseleave", () => tip.style.display = "none"); };
+const qcol = v => v === 0 ? "#122034" : v > 0 ? `rgba(63,208,255,${0.25 + 0.75 * Math.min(1, v / 60)})` : `rgba(255,93,115,${0.25 + 0.75 * Math.min(1, -v / 60)})`;
+const person = () => D.frames[cur.w].people.find(p => p.id === cur.id);
+
+function bestOptions(p) {
+  const m = new Map();
+  for (const [a, sc, ch, hab] of p.weighed) { const o = m.get(a); if (!o || ch || (!o.ch && sc > o.sc)) m.set(a, {a, sc, ch, hab}); }
+  return [...m.values()].sort((x, y) => y.sc - x.sc).slice(0, 8);
+}
+
+// ---------- drawing each organ ----------
+function drawSenses(p) {
+  const g = G.senses.inner; clear(g); const o = O.senses;
+  const items = [["hunger", p.body.hunger, "#ffad4a"], ["thirst", p.body.thirst, "#3fd0ff"], ["tiredness", p.body.fatigue, "#b48cff"],
+    ["health", p.body.health, "#63e39a"], ["people near", (p.ctx % 8) >= 4 ? 1 : 0, "#7fb0ff"], ["season: " + SEASONS[p.ctx % 4], 1, "#ffd66b"]];
+  items.forEach(([n, v, c], i) => {
+    const cy = o.y + 66 + i * 50, cx = o.x + 36;
+    el("circle", {cx, cy, r: 16, fill: "none", stroke: c, "stroke-opacity": .3, "stroke-width": 5}, g);
+    const L = 2 * Math.PI * 16;
+    el("circle", {cx, cy, r: 16, fill: "none", stroke: c, "stroke-width": 5, "stroke-dasharray": `${L * v} ${L}`, transform: `rotate(-90 ${cx} ${cy})`, filter: "url(#glow)"}, g);
+    txt(n, cx + 28, cy - 2, {"font-size": 13}, g);
+    txt(i < 4 ? pct(v) : (i === 4 ? (v ? "yes" : "no one") : ""), cx + 28, cy + 14, {"font-size": 11.5, fill: "#7d90aa"}, g);
+  });
+}
+
+function drawTemper(p) {
+  const g = G.temper.inner; clear(g); const o = O.temper;
+  const keys = Object.keys(p.genes), cx = o.x + o.w / 2, cy = o.y + 160, R = 62;
+  keys.forEach((k, i) => {
+    const a = -Math.PI / 2 + i * 2 * Math.PI / keys.length, v = p.genes[k], r = 18 + R * v;
+    const x = cx + r * Math.cos(a), y = cy + r * Math.sin(a);
+    const pe = el("path", {d: `M${cx},${cy} Q${cx + r * .6 * Math.cos(a - .32)},${cy + r * .6 * Math.sin(a - .32)} ${x},${y} Q${cx + r * .6 * Math.cos(a + .32)},${cy + r * .6 * Math.sin(a + .32)} ${cx},${cy}`,
+      fill: "#ff8ad8", "fill-opacity": .22 + .5 * v, stroke: "#ff8ad8", "stroke-opacity": .7}, g);
+    hover(pe, `<b>${k}</b>: ${v}<br>Set at birth from the parents' genes. It changes how strongly instinct pulls.`);
+    const lx = cx + (R + 26) * Math.cos(a), ly = cy + (R + 26) * Math.sin(a);
+    txt(k, lx, ly + 4, {"font-size": 10.5, fill: "#e9c6e0", "text-anchor": "middle"}, g);
+  });
+  el("circle", {cx, cy, r: 9, fill: "#ff8ad8", filter: "url(#glow)"}, g);
+}
+
+function drawSitu(p) {
+  const g = G.situ.inner; clear(g); const o = O.situ;
+  const cw = 22, ch = 30, x0 = o.x + 22, y0 = o.y + 58;
+  txt("alone", x0 + 2 * cw, y0 - 8, {"font-size": 10.5, fill: "#7d90aa", "text-anchor": "middle"}, g);
+  txt("with others", x0 + 6 * cw + 6, y0 - 8, {"font-size": 10.5, fill: "#7d90aa", "text-anchor": "middle"}, g);
+  for (let f = 0; f < 4; f++) {
+    txt(FOOD_S[3 - f], x0 + 8 * cw + 14, y0 + f * ch + 19, {"font-size": 10.5, fill: "#7d90aa"}, g);
+    for (let c = 0; c < 8; c++) {
+      const k = (3 - f) * 8 + c, on = k === p.ctx;
+      const r = el("rect", {x: x0 + c * cw + (c >= 4 ? 6 : 0), y: y0 + f * ch, width: cw - 3, height: ch - 3, rx: 4,
+        fill: on ? "#3fd0ff" : "#10223a", stroke: on ? "#fff" : "#1d3554", filter: on ? "url(#glow)" : ""}, g);
+      hover(r, `<b>Situation ${k + 1} of 32</b><br>${ctxLabel(k)}${on ? "<br><b>This is where they are this week.</b>" : ""}`);
+    }
+  }
+  txt("food", x0 + 8 * cw + 14, y0 - 8, {"font-size": 10.5, fill: "#7d90aa"}, g);
+  txt("spr sum aut win  ·  spr sum aut win", x0, y0 + 4 * ch + 14, {"font-size": 9.5, fill: "#56708f"}, g);
+}
+
+function drawFeel(p) {
+  const g = G.feel.inner; clear(g); const o = O.feel;
+  const f = [["mood", p.body.mood, "#ffd66b"], ["fear", p.body.fear, "#b48cff"], ["anger", p.body.anger, "#ff5d73"], ["grief", p.body.grief, "#7fb0ff"], ["lonely", p.body.loneliness, "#ff8ad8"]];
+  f.forEach(([n, v, c], i) => {
+    const x = o.x + 22 + i * 40, yb = o.y + 180, H = 130, hv = Math.max(0, Math.min(1, v)) * H;
+    el("rect", {x, y: yb - H, width: 24, height: H, rx: 12, fill: "#0d1a2c", stroke: "#1f3350"}, g);
+    el("rect", {x, y: yb - hv, width: 24, height: hv, rx: 12, fill: c, opacity: .85, filter: "url(#glow)"}, g);
+    txt(n, x + 12, yb + 18, {"font-size": 10.5, "text-anchor": "middle", fill: "#aebfd6"}, g);
+    txt(pct(v), x + 12, yb - H - 6, {"font-size": 10, "text-anchor": "middle", fill: "#7d90aa"}, g);
+  });
+}
+
+function wrap(s, n) { const w = s.split(" "), out = []; let l = ""; for (const x of w) { if ((l + " " + x).trim().length > n) { out.push(l.trim()); l = x; } else l += " " + x; } if (l.trim()) out.push(l.trim()); return out; }
+function drawThought(p) {
+  const g = G.thought.inner; clear(g); const o = O.thought;
+  let y = o.y + 50;
+  if (!p.thoughts.length) txt("(nothing in particular on their mind)", o.x + 16, y, {fill: "#7d90aa", "font-size": 12.5, "font-style": "italic"}, g);
+  p.thoughts.slice(0, 3).forEach((t, i) => {
+    wrap((i === 0 ? "★ " : "· ") + t, 30).forEach(line => { txt(line, o.x + 16, y, {"font-size": i === 0 ? 13.5 : 12, fill: i === 0 ? "#ffe9a8" : "#aebfd6", "font-style": "italic"}, g); y += 18; });
+    y += 4;
+  });
+  if (p.puzzles.length) {
+    txt(`? ${p.puzzles.length} puzzle${p.puzzles.length > 1 ? "s" : ""} being tested`, o.x + 16, o.y + o.h - 18, {"font-size": 12, fill: "#ffd66b"}, g);
+  }
+}
+
+function drawHabits(p) {
+  const g = G.habits.inner; clear(g); const o = O.habits;
+  const cw = 13.4, ch = 9.6, x0 = o.x + 26, y0 = o.y + 50;
+  const opts = new Set(p.weighed.map(w => w[0]));
+  for (let k = 0; k < NC; k++) {
+    const on = k === p.ctx;
+    for (let a = 0; a < NA; a++) {
+      const v = p.q[k * NA + a];
+      el("rect", {x: x0 + a * cw, y: y0 + k * ch, width: cw - 2.4, height: ch - 2.4, rx: 2, fill: qcol(v),
+        stroke: on && A[a] === p.chosen ? "#fff" : "none", "stroke-width": 1.5}, g);
+    }
+    if (on) {
+      const r = el("rect", {x: x0 - 5, y: y0 + k * ch - 2.5, width: NA * cw + 6, height: ch + 2.5, rx: 4, fill: "none", stroke: "#3fd0ff", "stroke-width": 1.5, filter: "url(#glow)"}, g);
+      txt("◀ now", x0 + NA * cw + 6, y0 + k * ch + 8, {"font-size": 10, fill: "#3fd0ff"}, g);
+    }
+  }
+  // hover on rows
+  for (let k = 0; k < NC; k++) {
+    const r = el("rect", {x: x0, y: y0 + k * ch, width: NA * cw, height: ch, fill: "transparent"}, g);
+    const row = A.map((a, i) => [a, p.q[k * NA + i]]).filter(x => x[1]).sort((x, y) => y[1] - x[1]);
+    hover(r, `<b>${ctxLabel(k)}</b><br>` + (row.length ? row.slice(0, 6).map(([a, v]) => `${a}: ${(v / 100).toFixed(2)}`).join("<br>") : "nothing learned here yet"));
+  }
+  txt(`${p.valued} of ${NC * NA} values are not zero`, x0, o.y + o.h - 26, {"font-size": 11.5, fill: "#7d90aa"}, g);
+  txt("blue = it went well here · red = it went badly", x0, o.y + o.h - 10, {"font-size": 10, fill: "#56708f"}, g);
+}
+
+function drawMemory(p) {
+  const g = G.memory.inner; clear(g); const o = O.memory;
+  const cx = o.x + o.w / 2, cy = o.y + 140;
+  for (let i = 0; i < D.max_mem; i++) {
+    const a = i * 2.39996, r = 8 + 13 * Math.sqrt(i);
+    const x = cx + r * Math.cos(a), y = cy + r * Math.sin(a) * .82;
+    const m = p.mem[i];
+    if (!m) { el("circle", {cx: x, cy: y, r: 1.6, fill: "#1b2a40"}, g); continue; }
+    const [s, sal, val, told] = m;
+    const c = val >= 0 ? "#ffd66b" : "#b48cff";
+    const st = el("circle", {cx: x, cy: y, r: 1.8 + 4.5 * sal, fill: c, opacity: .15 + .85 * s, filter: s > .6 ? "url(#glow)" : ""}, g);
+    if (told) el("circle", {cx: x, cy: y, r: 3.5 + 4.5 * sal, fill: "none", stroke: "#7fb0ff", "stroke-width": 1, opacity: .7}, g);
+    hover(st, (i < p.mem_words.length ? `<b>${esc(p.mem_words[i])}</b><br>` : "") + `strength ${s} · matters ${sal} · ${val >= 0 ? "good" : "bad"} (${val})<br>${told ? "heard from someone" : "lived or seen"}`);
+  }
+  txt(`${p.mem.length} of ${D.max_mem} memories · bright = strong · ring = heard from others`, o.x + 16, o.y + o.h - 12, {"font-size": 10.5, fill: "#7d90aa"}, g);
+}
+
+function drawChoice(p) {
+  const g = G.choice.inner; clear(g); const o = O.choice;
+  if (!p.decides || !p.weighed.length) { txt("(no choice recorded this week)", o.x + 16, o.y + 60, {fill: "#7d90aa"}, g); return; }
+  const opts = bestOptions(p), x0 = o.x + 82, W = 140;
+  const mx = Math.max(...opts.map(x => Math.max(x.sc, x.sc - x.hab, 0.01)));
+  const sc = W / (mx + 0.6);
+  const zero = x0 + 0.6 * sc * 0.5;
+  txt("instinct", o.x + 82, o.y + 46, {"font-size": 10.5, fill: "#ffad4a"}, g);
+  txt("+ habit", o.x + 132, o.y + 46, {"font-size": 10.5, fill: "#3fd0ff"}, g);
+  opts.forEach((x, i) => {
+    const y = o.y + 62 + i * 46, inst = x.sc - x.hab;
+    txt(x.a, o.x + 16, y + 16, {"font-size": 13.5, fill: x.ch ? "#fff" : "#aebfd6", "font-weight": x.ch ? 700 : 400}, g);
+    const iw = Math.max(0, inst) * sc;
+    el("rect", {x: zero, y: y + 4, width: iw, height: 16, rx: 4, fill: "#ffad4a", opacity: .85}, g);
+    if (x.hab >= 0) el("rect", {x: zero + iw, y: y + 4, width: x.hab * sc, height: 16, rx: 4, fill: "#3fd0ff", opacity: .9}, g);
+    else el("rect", {x: zero + iw + x.hab * sc, y: y + 4, width: -x.hab * sc, height: 16, rx: 4, fill: "#ff5d73", opacity: .85}, g);
+    txt(x.sc.toFixed(2), o.x + o.w - 16, y + 17, {"font-size": 11, fill: "#7d90aa", "text-anchor": "end"}, g);
+    if (x.ch) el("rect", {x: o.x + 8, y: y - 4, width: o.w - 16, height: 32, rx: 10, fill: "none", stroke: "#ffad4a", "stroke-width": 1.6, filter: "url(#glow)"}, g);
+    const r = el("rect", {x: o.x + 8, y: y - 4, width: o.w - 16, height: 32, fill: "transparent"}, g);
+    hover(r, `<b>${x.a}</b>${x.ch ? " (chosen)" : ""}<br>instinct, curiosity and thoughts: ${inst.toFixed(2)}<br>habit (learned): ${x.hab.toFixed(2)}<br>total: ${x.sc.toFixed(2)}`);
+  });
+  // the dice: choice has chance in it
+  const dy = o.y + o.h - 40;
+  el("rect", {x: o.x + 16, y: dy - 14, width: 22, height: 22, rx: 5, fill: "none", stroke: "#ffad4a"}, g);
+  [[6, 6], [16, 16], [11, 11]].forEach(([a, b]) => el("circle", {cx: o.x + 16 + a, cy: dy - 14 + b, r: 2, fill: "#ffad4a"}, g));
+  txt("then a weighted roll: the top option", o.x + 46, dy - 4, {"font-size": 11, fill: "#aebfd6"}, g);
+  txt("usually wins, but not always", o.x + 46, dy + 11, {"font-size": 11, fill: "#aebfd6"}, g);
+}
+
+function drawWorld(p) {
+  const g = G.world.inner; clear(g); const o = O.world;
+  const cx = o.x + o.w / 2, cy = o.y + 112;
+  el("circle", {cx, cy, r: 54, fill: "#0f2a1e", stroke: "#63e39a", "stroke-opacity": .6, filter: "url(#glow)"}, g);
+  el("ellipse", {cx: cx - 14, cy: cy - 10, rx: 22, ry: 14, fill: "#1f5b3a", opacity: .8}, g);
+  el("ellipse", {cx: cx + 18, cy: cy + 16, rx: 16, ry: 10, fill: "#1f5b3a", opacity: .8}, g);
+  txt(p.decides ? p.chosen : "too young to choose", cx, cy + 6, {"font-size": 20, "font-weight": 700, fill: "#fff", "text-anchor": "middle", filter: "url(#glow)"}, g);
+  txt("the action goes out into the world", cx, o.y + o.h - 14, {"font-size": 11, fill: "#7d90aa", "text-anchor": "middle"}, g);
+}
+
+function drawTrust(p) {
+  const g = G.trust.inner; clear(g); const o = O.trust;
+  const cx = o.x + 40, cy = o.y + 125;
+  el("circle", {cx, cy, r: 10, fill: "#fff", filter: "url(#glow)"}, g);
+  const t = p.trust.slice(0, 4);
+  if (!t.length) txt("(no one they keep a record of yet)", o.x + 16, o.y + 60, {fill: "#7d90aa", "font-size": 12}, g);
+  t.forEach((s, i) => {
+    const y = o.y + 58 + i * 46, x = o.x + 92;
+    const name = s.split(":")[0], rest = s.slice(name.length + 1).trim();
+    const held = +(rest.match(/(\d+) held/) || [0, 0])[1], fail = +(rest.match(/(\d+) failed/) || [0, 0])[1];
+    el("path", {d: `M${cx},${cy} C${cx + 30},${cy} ${x - 30},${y} ${x - 6},${y}`, fill: "none", stroke: "#7fb0ff", "stroke-width": 1 + Math.min(4, held / 3), opacity: .7}, g);
+    el("circle", {cx: x, cy: y, r: 6, fill: "#7fb0ff"}, g);
+    txt(name, x + 12, y + 1, {"font-size": 13, fill: "#e2eeff"}, g);
+    txt(`${held} held, ${fail} failed`, x + 12, y + 16, {"font-size": 10.5, fill: "#7d90aa"}, g);
+  });
+  if (p.heard.length) txt(`${p.heard.length} thing${p.heard.length > 1 ? "s" : ""} heard, not yet tried`, o.x + 16, o.y + o.h - 14, {"font-size": 11, fill: "#7fb0ff"}, g);
+}
+
+function drawKnow(p) {
+  const g = G.knowhow.inner; clear(g); const o = O.knowhow;
+  const n = p.makes.length;
+  if (!n) { txt("(knows how to make nothing yet)", o.x + 16, o.y + 60, {fill: "#7d90aa", "font-size": 12}, g); return; }
+  p.makes.slice(0, 12).forEach(([what, v], i) => {
+    const cx = o.x + 32 + (i % 6) * 37, cy = o.y + 64 + Math.floor(i / 6) * 48, r = 8 + 22 * Math.min(1, v);
+    const pts = [...Array(6)].map((_, j) => `${cx + r * Math.cos(j * Math.PI / 3)},${cy + r * Math.sin(j * Math.PI / 3)}`).join(" ");
+    const h = el("polygon", {points: pts, fill: "#63e39a", "fill-opacity": .2 + .6 * Math.min(1, v * 3), stroke: "#63e39a", filter: "url(#glow)"}, g);
+    hover(h, `<b>${esc(what)}</b><br>worth to them: ${v}<br>A recipe they found or learned. Only "make" uses it.`);
+  });
+  txt(`${n} recipe${n > 1 ? "s" : ""} known (room for 12)`, o.x + 16, o.y + o.h - 14, {"font-size": 11, fill: "#7d90aa"}, g);
+}
+
+function drawMissing() {
+  const g = G.missing.inner; clear(g); const o = O.missing;
+  [["planning ahead", 0], ["their own goals", 1], ["new kinds of action", 2], ["knowing what they don't know", 3]].forEach(([n, i]) => {
+    const cx = o.x + 30, cy = o.y + 56 + i * 32;
+    el("circle", {cx, cy, r: 10, fill: "#000", stroke: "#44506a", "stroke-dasharray": "3 3"}, g);
+    txt(n, cx + 20, cy + 4, {"font-size": 12.5, fill: "#6f7c94"}, g);
+  });
+}
+
+// ---------- the tour: one heartbeat, in plain words ----------
+const STEPS = [
+  {k: ["senses"], t: "1. It feels its body", s: p => `Every week, ${p.name} feels their body first. Hunger is at <span class=num>${pct(p.body.hunger)}</span>, tiredness at <span class=num>${pct(p.body.fatigue)}</span>, health at <span class=num>${pct(p.body.health)}</span>. They also notice whether anyone is near, and what season it is.`},
+  {k: ["situ"], f: [0], t: "2. It sorts the world into 32 boxes", s: p => `The mind doesn't see the world in detail. It sorts everything into just <span class=num>32</span> situations: how much food they hold (4 levels) × alone or with others × the season. This week it's: <b>${ctxLabel(p.ctx)}</b>. All learning hangs on these 32 boxes.`},
+  {k: ["habits"], f: [2], t: "3. It looks up its habits", s: p => `For each of the 32 situations, the mind keeps one number for each of the <span class=num>${NA}</span> actions. That's <span class=num>${NC * NA}</span> numbers, a value for "how did this go here before?". ${p.name} has <span class=num>${p.valued}</span> that aren't zero. Some came from parents and carers, some from talk, some from their own life. The world doesn't record which. The lit row is this week's situation.`},
+  {k: ["temper", "feel", "thought"], f: [4, 5, 6, 7], t: "4. Instinct, temperament and feelings pull", s: p => `Nature gives every option a pull: hunger pulls toward food, tiredness toward rest, loneliness toward company, fear toward running. The <b>temperament</b> (8 traits set at birth) sets how strong each pull is. What's on their mind adds its own tilt${p.thoughts[0] ? `. Right now that's: <i>"${esc(p.thoughts[0])}"</i>` : ""}.`},
+  {k: ["choice"], f: [3, 4, 5, 6, 10, 11], t: "5. It weighs and chooses", s: p => { const o = bestOptions(p); const c = o.find(x => x.ch); return `Each option's score = instinct (orange) + habit (blue, counted at 60%). Then the mind makes a weighted roll: the best option usually wins, but not always, so two similar people still live different lives. ${c ? `This week ${p.name} chose <b>${c.a}</b>, scoring <span class=num>${c.sc.toFixed(2)}</span>.` : ""}`; }},
+  {k: ["world"], f: [8], t: "6. The world answers", s: p => `The action goes out into the world, and the world decides what happens: food found or not, a fall, a gift returned. Nobody writes the result. It comes from nature's laws.`},
+  {k: ["habits", "world"], f: [9], learn: true, t: "7. It learns, one number at a time", s: p => `This is the heartbeat. Just <b>one</b> of the 608 numbers moves: the one for <i>this</i> situation and <i>this</i> action. It moves 5% of the way toward "how it went (and how mood changed), plus 80% of the best prospect next week". Everything ACL's people learn from their own lives comes from small steps like this, one each week.`},
+  {k: ["memory"], f: [7], t: "8. It remembers, and forgets", s: p => `Beside the habits, the mind keeps up to <span class=num>${D.max_mem}</span> memories of events: being hurt, a flood, someone attacking someone. ${p.name} holds <span class=num>${p.mem.length}</span>. Memories fade unless thought about again. Ringed stars were <b>heard</b> from others, not lived. Hover over the stars to read them.`},
+  {k: ["knowhow", "trust"], f: [10, 11], t: "9. Know-how and other people", s: p => `${p.name} knows <span class=num>${p.makes.length}</span> recipes for making things, and keeps a record of whom to trust: whose words held true and whose failed. This is how know-how and stories can pass between people. It's also where they get lost: in study KL1, 61% of kinds of know-how were held by just one person, and 90% of losses came when the people who knew them died.`},
+  {k: ["missing"], t: "10. What isn't there yet: room for Bob", s: p => `Four parts are dark. ACL's people don't <b>plan ahead</b>, don't set <b>their own goals</b>, can't invent <b>new kinds of action</b> (they choose among ${NA} given ones), and don't know <b>what they don't know</b>. We won't write these parts in. ACL's question is whether a world with few laws can grow them by itself. A mind with these lit, building on what others learned, would be Bob.`},
+];
+const ABOUT = {
+  senses: STEPS[0], situ: STEPS[1], habits: STEPS[2], temper: STEPS[3], feel: STEPS[3], thought: STEPS[3], choice: STEPS[4],
+  world: STEPS[5], memory: STEPS[7], knowhow: STEPS[8], trust: STEPS[8], missing: STEPS[9],
+};
+
+function renderSide(p) {
+  const step = tourStep >= 0 ? STEPS[tourStep] : (focus ? ABOUT[focus] : null);
+  const head = `<div class="who"><b>${esc(p.name)}</b> · ${p.sex === "F" ? "woman" : "man"}${p.stage === "child" || p.stage === "teen" ? " (" + p.stage + ")" : ""}, ${p.age} years · ${p.stage}<br>week ${cur.w + 1} of ${D.frames.length} · ${SEASONS[D.frames[cur.w].season]}</div>`;
+  if (!step) {
+    side.innerHTML = head + `<div class="step">How to read this</div><h2>A mind with one heartbeat a week</h2>
+      <p>Follow the arrows from left to right. <b style="color:#63e39a">Body</b> → <b style="color:#3fd0ff">situation</b> → <b style="color:#3fd0ff">habits</b> + <b style="color:#ffad4a">instinct</b> → <b style="color:#ffad4a">choice</b> → <b>world</b>, and the <b style="color:#63e39a">green arrow</b> along the top brings back what happened, so the mind learns.</p>
+      <p>Press <b>Follow one heartbeat</b> for the tour, or click any part.</p>
+      <div class="nav"><button onclick="startTour()">▶ Start the tour</button></div>`;
+    return;
+  }
+  const n = tourStep >= 0 ? `step ${tourStep + 1} of ${STEPS.length}` : "part of the mind";
+  side.innerHTML = head + `<div class="step">${n}</div><h2>${step.t.replace(/^\d+\. /, "")}</h2><p>${step.s(p)}</p>` +
+    (tourStep >= 0 ? `<div class="nav"><button onclick="go(-1)">◀ back</button><button onclick="go(1)">${tourStep < STEPS.length - 1 ? "next ▶" : "finish"}</button></div>`
+                   : `<div class="nav"><button onclick="focus=null;render()">show the whole mind</button></div>`);
+}
+
+function render() {
+  const p = person();
+  document.getElementById("wkl").textContent = `week ${cur.w + 1}/${D.frames.length} · year ${D.year} · ${SEASONS[D.frames[cur.w].season]}`;
+  if (!p) { side.innerHTML = `<div class="who"><b>${esc(D.names[cur.id])}</b></div><p>Not alive or not in view this week.</p>`; return; }
+  drawSenses(p); drawTemper(p); drawSitu(p); drawFeel(p); drawThought(p); drawHabits(p); drawMemory(p); drawChoice(p);
+  drawWorld(p); drawTrust(p); drawKnow(p); drawMissing();
+  const step = tourStep >= 0 ? STEPS[tourStep] : (focus ? ABOUT[focus] : null);
+  svg.classList.toggle("dim", !!step);
+  for (const k in G) G[k].g.classList.toggle("hot", !!step && step.k.includes(k));
+  flowEls.forEach((f, i) => f.g.classList.toggle("hot", !!step && (step.f || []).includes(i)));
+  learnLbl.setAttribute("opacity", !step || step.learn ? 1 : .1);
+  renderSide(p);
+  if (!step || step.learn) pulse(p);
+}
+
+// the heartbeat: a spark runs the whole loop, then lands on the one habit value that learns
+let anim = null;
+function pulse(p) {
+  if (anim) cancelAnimationFrame(anim);
+  const path = [[140, 200], [380, 190], [670, 230], [670, 80 + 50 + p.ctx * 9.6], [975, 250], [1245, 190], [1245, 80], [960, 45], [700, 60],
+    [546 + A.indexOf(p.chosen) * 13.4 + 5, 80 + 50 + p.ctx * 9.6 + 4]];
+  const t0 = performance.now(), T = 3800;
+  heart.setAttribute("opacity", 0);
+  const step = now => {
+    const u = Math.min(1, (now - t0) / T), s = u * (path.length - 1), i = Math.min(path.length - 2, Math.floor(s)), f = s - i;
+    spark.setAttribute("cx", path[i][0] + (path[i + 1][0] - path[i][0]) * f);
+    spark.setAttribute("cy", path[i][1] + (path[i + 1][1] - path[i][1]) * f);
+    spark.setAttribute("opacity", u < 1 ? 1 : 0);
+    spark.setAttribute("fill", i >= 5 ? "#63e39a" : "#fff");
+    heart.setAttribute("opacity", u > .92 ? (1 - u) * 2.2 : 0);
+    if (u < 1) anim = requestAnimationFrame(step);
+  };
+  anim = requestAnimationFrame(step);
+}
+
+function startTour() { tourStep = 0; focus = null; render(); }
+function go(d) { tourStep += d; if (tourStep < 0) tourStep = 0; if (tourStep >= STEPS.length) tourStep = -1; render(); }
+document.getElementById("tour").onclick = startTour;
+whoSel.onchange = () => { cur.id = whoSel.value; render(); };
+wk.oninput = () => { cur.w = +wk.value; render(); };
+let timer = null;
+document.getElementById("play").onclick = e => {
+  if (timer) { clearInterval(timer); timer = null; e.target.textContent = "▶ weeks"; return; }
+  e.target.textContent = "❚❚ pause";
+  timer = setInterval(() => { cur.w = (cur.w + 1) % D.frames.length; wk.value = cur.w; render(); }, 4200);
+};
+document.getElementById("foot").innerHTML = `Read from the live nature (${esc(D.nature)}), world seed ${D.seed}, year ${D.year}, ${D.frames.length} weeks; people aged child or older. The data file comes from design/brain_v11/brain_data_v11.py, which only reads; nothing in the world was changed.
+ The shapes are a drawing of how the code works (acl/mind.py decides, acl/biology.py learns), not of any body part: ACL's people have no neurons and no faces.
+ Learning numbers from acl/config.py: learning rate 0.05, look-ahead 0.8, habit counted at 0.6 against instinct, choice chance (temperature) 0.2.
+ Which parts are written by nature and which grow: the senses, the 32 boxes, the ${NA} actions, the instincts, the learning rule and the memory size are written into nature. The values in the habit bank, the memories, the recipes, the trust, and the choices themselves grow from each life.`;
+const hs = location.hash.match(/step(\d+)/); if (hs) tourStep = Math.min(STEPS.length, +hs[1]) - 1;
+render();
+</script>
+</body>
+</html>
