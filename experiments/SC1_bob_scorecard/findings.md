@@ -62,7 +62,11 @@
 - **6, invention: none of the 3,883 kinds first made in years 100–195 was ever made again by choice within five
   years.** That holds for the more useful and the less useful alike.
   - **New things are one-off.** They are invented, held, and dropped.
-  - **An exploratory check of this zero** (world 22001, outside the frozen plan): pending; see below.
+  - **An exploratory check confirms it is real, not a counting error** (outside the frozen plan:
+    `explore/check_remakes.py`, `explore/check_remakes.json`). World 22001 was replayed to year 130 with only that
+    check attached. **All 421 makes in years 100–130 were of kinds first invented before year 100.** None of the 72
+    kinds invented in those years was made again.
+  - **Every made thing of the late centuries is an old kind.**
 - **7, own goals: not measurable in v11.** A lesson's puzzle almost never starts as large as a person's own surprise
   (2 of 29,745 in the matching range).
 - **10b, cumulative culture: inventions almost never build on what the inventor learned from someone.**
