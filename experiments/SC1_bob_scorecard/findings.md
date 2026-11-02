@@ -112,3 +112,27 @@
   in a fresh chat (`1f6d665aeec0d48a`) and **matches every point value and reading**. It called C7 "not measurable" and
   also labelled it "inconclusive"; no number differs.
 - **SC1 is final.**
+
+## Addendum (2 November 2026, about 07:50): what happens to a new kind (exploratory; outside the frozen plan)
+`explore/check_new_kind_fate.py` (`explore/check_new_kind_fate.json`) replays world 22001 to year 130 and follows the
+66 kinds invented in play in years 100–130. **One world, described only:**
+
+| fate | kinds |
+|---|---|
+| dropped at once: the inventor already held 12 recipes, and a new kind starts at value 0 | 14 (21%) |
+| kept | 52 |
+| — the made thing was used | 47 |
+| — its value rose above 0.05 (the make choice's floor) | 41 |
+| — still held at year 130 | 45 |
+| — lost when the inventor died | 6 |
+| — dropped later | 1 |
+
+**So the 12-recipe cap explains only part of the zero.** Most new kinds are kept, used and valued, and still nobody makes
+them again. The block must lie in the make choice itself, which offers only the single most valued recipe that the
+person can make and is not already holding (`mind.decide`). Possible blocks:
+- the person is still holding the one they made;
+- the parts are not in hand (a nested kind needs made parts, and only 3 things can be carried);
+- an older kind is valued more;
+- "make" loses to other actions.
+
+**This is a lead for UP1, not a finding.**

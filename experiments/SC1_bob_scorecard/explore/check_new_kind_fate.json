@@ -1,0 +1,12 @@
+{
+ "new_kinds": 66,
+ "dropped_at_once": 14,
+ "inventor_had_12_before": 14,
+ "kept": 52,
+ "kept_ever_used": 47,
+ "kept_value_ever_above_0.05": 41,
+ "kept_lost_by_drop": 1,
+ "kept_lost_by_death": 6,
+ "kept_still_held_at_130": 45,
+ "median_weeks_held_if_dropped": 130
+}
