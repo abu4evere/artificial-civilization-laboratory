@@ -1,4 +1,4 @@
-# KL1 — Does know-how outlive its holders? Findings (not final until GPT and Gemini recompute)
+# KL1 — Does know-how outlive its holders? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **Read-only: no change to nature.** Live v11 (`code_v11`). Frozen as `KL1-frozen`, with two operational notes made
 before any study data (the revival order; transmission errors as a revival path). Signed off by the assistant with
@@ -73,6 +73,9 @@ Every number comes from `analyse_kl1.py`, written before data and tested on a sm
   - The open question is whether rare know-how is valuable or mostly minor variants. KL1 did not measure value.
 - **No change to nature** follows from this study.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/kl1_one_file.csv`. Recorded only from their actual
-replies.
+## Independent recompute (2 November 2026)
+GPT and Gemini, each in a fresh chat, from per-seed counts of the raw output only (`recompute_kl1.md`). **All
+three agree:** D 0.9025 [0.891, 0.913]; R_markable 0.0202 (2 of 99); death is the main road of loss; marks do not
+(yet).
+
+**Final.**

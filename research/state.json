@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T22:00:08",
+  "updated": "2026-11-02T00:03:58",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -185,9 +185,10 @@
       "kind": "read-only",
       "plan": "experiments/KL1_knowledge_loss/questions.md",
       "frozen_tag": "KL1-frozen",
-      "status": "running",
+      "status": "final: death is the main road of loss; marks do not (yet)",
       "run": 41380622576,
-      "next_step": "when run 41380622576 finishes: save the cloud zero log as zero_cloud.log; fetch; analyse_kl1.py; findings; recompute (kl1_one_file.csv); tag KL1-done"
+      "next_step": "literature review (the creator's sources); then H1 in a copy",
+      "recompute": "experiments/KL1_knowledge_loss/recompute_kl1.md (GPT and Gemini match)"
     }
   ],
   "queue_after": [
