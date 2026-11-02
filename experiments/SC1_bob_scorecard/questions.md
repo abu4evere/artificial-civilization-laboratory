@@ -152,3 +152,16 @@ Gemini 94% (round 47), the assistant 70%. Frozen as `SC1-frozen` before any code
 | C6 | 260 weeks | kinds first made in years 100–195 |
 
 Otherwise, late events would count as "not followed" only because the run ended. Nothing else changes.
+
+## Operational note 2 (2 November 2026, before any study data; from a 6-year code-test world, seed 9939, not data)
+The code test showed that three controls can be nearly empty in v11. This note sets fallback rules that depend **only
+on sample sizes**, never on outcomes. The test world's counts were seen: C5 had 192 wanted and 2 unwanted gathers; C6
+had 13 functional kinds, 10 remade, and 0 non-functional; C7 had 0 told puzzles in the size bins.
+
+| measure | why the control can be empty | fallback |
+|---|---|---|
+| **C5** | When a person knows a recipe that uses a material and holds less than 1, the written want almost always fires (`_material_wants`). | If fewer than 30 not-wanted gathers are pooled over the 32 worlds, C5 is **"not measurable in v11"**: the written want covers nearly every case, so planning cannot be told apart from it. |
+| **C6** | Nearly every made thing helps a little (best factor ≥ 1.02). | If either class (best factor ≥ 1.10, or < 1.02) has fewer than 30 kinds pooled, the classes become the **top and bottom thirds** of best factor among the counted kinds. The cut points come from the pooled distribution, without the outcome. |
+| **C7** | A lesson's puzzle starts at 0.1 + 0.35 × curiosity × claim, so few reach the 0.25–0.45 range shared with one's own surprises. | If fewer than 30 told puzzles in the bins are pooled, C7 is **"not measurable in v11"**: too few told puzzles of matching size. |
+
+The deltas, windows and labels are unchanged.
