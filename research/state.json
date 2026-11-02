@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T10:55:47",
+  "updated": "2026-11-02T13:33:17",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -236,10 +236,11 @@
       "plan": "experiments/WP1_want_propagation/questions.md",
       "frozen_tag": "WP1-frozen",
       "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 94%, round 49); the creator on Telegram 10:05 'Yes go ahead'",
-      "status": "running",
+      "status": "final: A1 and A2 inconclusive (late inventions still never remade); no guard",
       "run": 41476346903,
       "zero": "local, All: PASS (zero_local.log)",
-      "next_step": "fetch, analyse, findings, blind recompute (recompute/prompt.txt, wp1_counts.csv; Gemini on 3.1 Pro)"
+      "next_step": "for the creator: a goal kept across weeks, or carrying room, or neither (a frozen test in a copy first)",
+      "recompute": "experiments/WP1_want_propagation/recompute_wp1.md (GPT and Gemini 3.1 Pro match)"
     }
   ],
   "queue_after": [
@@ -280,7 +281,7 @@
     },
     {
       "what": "after UP1: which general condition (if any) to test in a copy so that nested inventions can be remade: a goal kept across weeks, a deeper wanted-part bridge, or more carrying room (forager evidence first)",
-      "status": "for the creator (2 November 2026)"
+      "status": "for the creator; WP1 (2 Nov) ruled out want propagation, leaving goal persistence and carrying room"
     }
   ],
   "budgets": {
