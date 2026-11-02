@@ -1,0 +1,81 @@
+diff --git a/../NV11_nature_v11/code_v11/acl/config.py b/code_wp1/acl/config.py
+index 4a88fba..d202e40 100644
+--- a/../NV11_nature_v11/code_v11/acl/config.py
++++ b/code_wp1/acl/config.py
+@@ -132,6 +132,8 @@ class Config:
+     curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,
+                                        # 0.3 x curiosity x (1 - hunger), fading as 1/(1 + times tried there) (0 = nature v8)
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
++    want_propagation: int = 0          # WP1: 0 = v11; 1 = the gather pull uses the one-level wanted-part value; 2 = a valued
++                                       # thing's value flows to its inputs at 0.8 per step through the whole chain (making and gathering)
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff --git a/../NV11_nature_v11/code_v11/acl/mind.py b/code_wp1/acl/mind.py
+index 25cbc52..41cda5f 100644
+--- a/../NV11_nature_v11/code_v11/acl/mind.py
++++ b/code_wp1/acl/mind.py
+@@ -253,7 +253,8 @@ def decide(world, p: Person) -> tuple:
+     if not toddler:
+         # Gather: picking things up, out of curiosity or because you have found a use for them.
+         if p.mat_total() < c.material_limit:
+-            want = _material_wants(p, season)
++            want = _material_wants(p, season, None if not c.want_propagation else
++                                   (_wanted_parts(p) if c.want_propagation == 1 else _wanted_parts_deep(p)))   # WP1
+             best, best_u, best_d = None, 0.0, 0
+             for kind in GATHERABLE + (("earth",) if c.digging else ()):
+                 wk = c.worth_weight * want.get(kind, 0.0) + 0.03 + 0.08 * g["curiosity"]
+@@ -280,7 +281,7 @@ def decide(world, p: Person) -> tuple:
+         # Make again something that has proved its worth.
+         best, best_u = None, 0.05
+         fire_here = world.tile(p.loc).fire > 0
+-        part_of = _wanted_parts(p)
++        part_of = _wanted_parts_deep(p) if c.want_propagation == 2 else _wanted_parts(p)   # WP1
+         for sig, recipe in p.recipes.items():
+             if recipe["verb"] == "heat" and not fire_here:
+                 continue
+@@ -621,6 +622,27 @@ def _wanted_parts(p: Person) -> dict:
+     return out
+ 
+ 
++def _wanted_parts_deep(p: Person) -> dict:
++    """WP1 (A2): a valued thing's value flows to its missing made parts at 0.8 per step, through the whole chain: each
++    part takes the largest 0.8 x value of the things it goes into (own value or flowed), until nothing changes. Never
++    summed, so a loop cannot amplify it."""
++    out: dict = {}
++    for _ in range(len(p.recipes) + 1):
++        changed = False
++        for sig, recipe in p.recipes.items():
++            v = max(p.itemval.get(sig, 0.0), out.get(sig, 0.0))
++            if v <= 0 or _holding(p, sig):
++                continue
++            parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe["verb"] == "heat" else [])
++            for part in parts:
++                if part not in MATERIALS and not _holding(p, part, worn_ok=True) and 0.8 * v > out.get(part, 0.0):
++                    out[part] = 0.8 * v
++                    changed = True
++        if not changed:
++            break
++    return out
++
++
+ def can_fill(world, p: Person, substance: str) -> bool:
+     """Can p fill something with water or embers here, or tip embers out onto something dry that burns?"""
+     tile = world.tile(p.loc)
+@@ -646,11 +668,14 @@ def _aim(target) -> str:
+     return ""
+ 
+ 
+-def _material_wants(p: Person, season: int) -> dict:
+-    """How much each material is wanted for the things p knows how to make, or likes to leave places."""
++def _material_wants(p: Person, season: int, part_of: dict | None = None) -> dict:
++    """How much each material is wanted for the things p knows how to make, or likes to leave places.
++    WP1: with `part_of`, a recipe also counts what it is worth as a part of something wanted."""
+     want = {k: 0.0 for k in GATHERABLE}
+     for sig, recipe in p.recipes.items():
+         v = p.itemval.get(sig, 0.0)
++        if part_of:
++            v = max(v, part_of.get(sig, 0.0))
+         if v <= 0 or _holding(p, sig):
+             continue
+         for kind in recipe_materials(recipe):
