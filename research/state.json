@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T17:25:13",
+  "updated": "2026-11-01T19:00:06",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -163,9 +163,10 @@
       "kind": "read-only",
       "plan": "experiments/UV3_time_trend/questions.md",
       "frozen_tag": "UV3-frozen",
-      "status": "running",
-      "next_step": "when run 41357015837 finishes: fetch to output/, analyse_uv3.py, findings, build recompute/uv3_cells.csv, blind recompute by GPT and Gemini (CSV file), tag UV3-done",
-      "run": 41357015837
+      "status": "final: returns stable",
+      "next_step": "debate round 43: ES3, value passing-on, or the handing/making line",
+      "run": 41357015837,
+      "recompute": "experiments/UV3_time_trend/recompute_uv3.md (GPT and Gemini match)"
     }
   ],
   "queue_after": [

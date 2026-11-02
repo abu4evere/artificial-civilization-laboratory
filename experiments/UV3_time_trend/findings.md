@@ -1,4 +1,4 @@
-# UV3 — Is the shrinking habit gap rising returns or climbing values? Findings (not final until GPT and Gemini recompute)
+# UV3 — Is the shrinking habit gap rising returns or climbing values? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **Read-only: no change to nature.** Frozen as `UV3-frozen`. Signed off by the assistant (GPT 95%, Gemini 97%, the
 assistant 75%; debate round 42). Run on GitHub Actions (run 41357015837, `skip_zero=local`). 32 worlds: ES2's r arm
@@ -72,6 +72,8 @@ The common support covers 21 of 43 cells, which hold 99.6% and 99.9% of the two 
   minds that build on what others learned.
 - **No change to nature** follows from this study.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/uv3_cells.csv` (a CSV file). Recorded only from their
-actual replies.
+## Independent recompute (1 November 2026)
+GPT and Gemini, each in a fresh chat, from the per-seed cell sums given as a CSV file (`recompute_uv3.md`). **All
+three agree:** 21 common cells; coverage 0.996 / 0.999; ΔG −0.0100 [−0.0157, −0.0039]; returns stable.
+
+**Final: returns stable.**

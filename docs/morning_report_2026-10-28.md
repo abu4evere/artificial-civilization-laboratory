@@ -285,3 +285,18 @@ It takes several hours. GPT 90%, Gemini 95%; my estimate 80%.
   half their parents' values) and the whole population climbs slowly.
 - **A slip, fixed in the open:** the analysis first said "not valid" because of a small type bug in one check. It was
   fixed before any result was read, and recorded as an operational note.
+
+## Evening of 1 November: UV3 done (read-only, final)
+- **Question:** the "valued too low" gap shrinks over the years. Is that because the world gets better, or because
+  people's values catch up?
+- **Answer: values catch up.**
+  - What people actually get from their habits stays about the same over the years.
+  - Their sense of what those habits are worth climbs slowly, for everyone alive at the same time.
+  - Newborns start a little higher every decade.
+  - GPT and Gemini matched the numbers blind.
+- **Tools did not spread:** their share of food falls a little (3.7% to 3.0%).
+- **What it means for Bob:** values are passed down and build up across generations, which is cumulative. But it is
+  slow: babies start at half their parents' values, and children learn values from one carer only. Forager children
+  learn from many people after about age 6 (Hewlett 2011, abstract).
+- **My mistake today:** I missed your 16:44 "keep the PC light" message and ran 4 checks for 20 minutes. Now I check
+  your messages right before using the PC.
