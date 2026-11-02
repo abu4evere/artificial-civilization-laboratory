@@ -305,3 +305,20 @@ changes live nature.**
     and keeps H2 on 16:78 and the ethnography.
   - **H1's sham:** Gemini prefers a neutral baseline; GPT wants a matched random draw. The council keeps GPT's
     matched sham as the test of content, plus the zero arm itself as the neutral baseline.
+
+## Addendum (1 November 2026, evening): what is innate, for H1
+**Spelke, E. S. & Kinzler, K. D. (2007).** "Core knowledge." *Developmental Science* 10(1): 89–96 (PubMed 17181705).
+**Read: the abstract only.**
+- "Human cognition is founded, in part, on four systems for representing objects, actions, number, and space. It may
+  be based, as well, on a fifth system for representing social partners."
+- "Each system has deep roots in human phylogeny and ontogeny."
+
+**Bearing on H1** (the assistant's synthesis; [C], not a finding):
+- Developmental science does not say newborns are blank: they come with structured **systems for representing** the
+  world. Q 16:78's "knowing nothing" sits beside the "hearing, sight and minds" given at birth, and Ibn Kathir reads
+  those as faculties.
+- So the two can be read together: what is innate is **structure and faculties**, not **learned content**, such as how
+  much a given action is worth in a given situation.
+- H1 keeps everything innate in ACL: genes, instincts, the way situations are perceived. It removes only the inherited
+  learned habit values. That makes H1 a cleaner test of "content versus structure", and it stays consistent with this
+  literature.
