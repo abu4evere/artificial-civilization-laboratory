@@ -32,3 +32,31 @@ not the paper, so it is **not stated here as a finding**.
 - **Any change here would be a nature change** (how children's habits are pulled, and by whom). It would need a frozen
   study, debated first, with no target outcome. The full text should be read first: who children learn *what* from, by
   age.
+
+## Addendum (1 November 2026, evening): the full text, section 4(a)
+**Read now (PMC3049106):** section 4(a), "Modes of transmission: from whom do hunter–gatherer children learn?", with
+Table 2. Sections 1–3, 4(b) and 5 were not read.
+- **Parents stay the largest single source.**
+  - Foragers "say that parents as a category provide more cultural transmission than any other similar category".
+  - Boyette asked 39 Aka children aged 5–18 who taught them to share food. They named mothers 60% of the time,
+    fathers 27%, other kin 20% and non-family 3% (more than one could be named).
+  - Often the same-sex parent was named: girls named mothers 84% of the time, and boys named fathers 65%.
+- **Others matter early.** From 3–4 years of age, children "were interacting with others just as frequently as
+  parents" (Table 2). In infancy, others were more likely than parents to play with the child.
+- **Middle and late childhood:** "children spend most of the day in multi-aged child groups" and "frequently observed
+  and imitated/emulated other children's behaviour". Step-parent households add oblique learning: 42.4% of 11–15 year
+  olds do not live with both biological parents.
+- **Public against private knowledge:** among the Baka (Hattori, as cited), plants used for food or material culture
+  showed 80–95% agreement between informants, but medicinal plants only 25–30%. The authors suggest that public
+  knowledge is shaped by more than parents.
+- "The roles of 'others' … are poorly understood and probably underestimated."
+
+**Revised bearing (a suggestion only):**
+- ACL's vertical pull (both parents at birth, one carer through childhood) is close to what foragers say about
+  **parents**.
+- What it lacks:
+  - the other children of the same age group;
+  - the other adults from about age 3–4;
+  - perhaps the "public" domains, such as foraging and making, where many people's ways are seen.
+- **A law to test would add, not replace.** Children would also be pulled, more weakly, toward the people they spend
+  their days with. It would be frozen and debated first, with no target outcome.
