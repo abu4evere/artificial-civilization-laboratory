@@ -1,4 +1,4 @@
-# SC1 — A scorecard of the creator's twelve capacities on live v11: findings (GPT's blind recompute matches; Gemini's, required by the plan, pending)
+# SC1 — A scorecard of the creator's twelve capacities on live v11: findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **Read-only: no change to nature.** Live v11 (`code_v11`).
 - **Frozen** as `SC1-frozen`, with two operational notes made before any study data.
@@ -108,6 +108,7 @@
 ## Blind recompute (`recompute_sc1.md`)
 - **GPT** (chat `6ae86e86`) recomputed every primary contrast from the per-world sums, blind, with the prompt written
   before the data. **It matches every point value and every label**; interval ends differ by at most 0.0025.
-- **Gemini** could not run its code tool on 2 November: four attempts in three fresh chats. No numbers were obtained.
-- **The plan names both models, so SC1 is not yet final.** The readings above stand on GPT's match until Gemini's
-  recompute is added.
+- **Gemini:** Flash could not run its code tool (four attempts in three chats). **Gemini 3.1 Pro** then recomputed it
+  in a fresh chat (`1f6d665aeec0d48a`) and **matches every point value and reading**. It called C7 "not measurable" and
+  also labelled it "inconclusive"; no number differs.
+- **SC1 is final.**

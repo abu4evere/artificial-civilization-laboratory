@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T06:23:47",
+  "updated": "2026-11-02T06:35:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -210,17 +210,18 @@
       "plan": "experiments/SC1_bob_scorecard/questions.md",
       "frozen_tag": "SC1-frozen",
       "approved_by": "the assistant under the 40% rule, the creator present (GPT 86%, Gemini 94%, round 47)",
-      "status": "results in (valid): C9 communication and C12 individuality positive; C3, C4, C5, C6, C10b inconclusive; C7 not measurable. GPT recompute matches; Gemini recompute pending (its code tool failed 2 Nov)",
+      "status": "final: communication and individuality positive; uptake missing (0 of 3,883 late kinds remade); several capacities not measurable",
       "run": 41424864945,
       "zero": "local, All: PASS (zero_local.log)",
-      "next_step": "retry Gemini's blind recompute (recompute/prompt.txt + sc1_sums.csv, or the split files) in a fresh chat; then finalize, records, tag SC1-done"
+      "next_step": "council: a read-only audit of why new kinds are never made again (uptake)",
+      "recompute": "experiments/SC1_bob_scorecard/recompute_sc1.md (GPT matches; Gemini 3.1 Pro matches)"
     }
   ],
   "queue_after": [
     {
-      "what": "SC1: a read-only scorecard of the creator's twelve capacities for Bob on live v11 (debate round 46: GPT 90%, Gemini 90%); capacities v11 cannot show are marked 'not measurable', no combined score",
-      "status": "running (run 41424864945)",
-      "needs": "frozen plan with measures that do not echo written formulas; debate on the measures"
+      "what": "UP1 (proposed): why is a new kind never made again? A read-only audit of the make choice for kinds invented after year 100 (value never proven, parts not in hand, the 3-item limit, eviction from 12 recipes)",
+      "status": "proposed after SC1",
+      "needs": "debate with GPT and Gemini; frozen plan"
     },
     {
       "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
