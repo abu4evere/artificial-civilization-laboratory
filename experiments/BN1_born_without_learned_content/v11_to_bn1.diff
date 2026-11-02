@@ -1,0 +1,110 @@
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/__init__.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/__init__.cpython-314.pyc
+deleted file mode 100644
+index 56f1453..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/__init__.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/actions.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/actions.cpython-314.pyc
+deleted file mode 100644
+index f23d026..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/actions.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/biology.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/biology.cpython-314.pyc
+deleted file mode 100644
+index 3d47ba3..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/biology.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/config.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/config.cpython-314.pyc
+deleted file mode 100644
+index e5eba0d..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/config.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/decision.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/decision.cpython-314.pyc
+deleted file mode 100644
+index abb0e92..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/decision.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/fauna.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/fauna.cpython-314.pyc
+deleted file mode 100644
+index b269561..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/fauna.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/geo.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/geo.cpython-314.pyc
+deleted file mode 100644
+index 7a14de3..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/geo.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/information.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/information.cpython-314.pyc
+deleted file mode 100644
+index 903371e..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/information.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/inquiry.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/inquiry.cpython-314.pyc
+deleted file mode 100644
+index a85488c..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/inquiry.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/knowhow.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/knowhow.cpython-314.pyc
+deleted file mode 100644
+index 3f0bca8..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/knowhow.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/marks.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/marks.cpython-314.pyc
+deleted file mode 100644
+index 7df6083..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/marks.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/matter.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/matter.cpython-314.pyc
+deleted file mode 100644
+index 39a9d40..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/matter.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/mind.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/mind.cpython-314.pyc
+deleted file mode 100644
+index 7649696..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/mind.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/person.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/person.cpython-314.pyc
+deleted file mode 100644
+index 108d4f1..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/person.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/social.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/social.cpython-314.pyc
+deleted file mode 100644
+index 2de4577..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/social.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/thought.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/thought.cpython-314.pyc
+deleted file mode 100644
+index 731751e..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/thought.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/util.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/util.cpython-314.pyc
+deleted file mode 100644
+index 3c78059..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/util.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/weather.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/weather.cpython-314.pyc
+deleted file mode 100644
+index e4fd454..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/weather.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/world.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/world.cpython-314.pyc
+deleted file mode 100644
+index c987690..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/world.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/__pycache__/world_traces.cpython-314.pyc b/NV11_nature_v11/code_v11/acl/__pycache__/world_traces.cpython-314.pyc
+deleted file mode 100644
+index 5040b66..0000000
+Binary files a/NV11_nature_v11/code_v11/acl/__pycache__/world_traces.cpython-314.pyc and /dev/null differ
+diff --git a/NV11_nature_v11/code_v11/acl/biology.py b/BN1_born_without_learned_content/code_bn1/acl/biology.py
+index 6108849..9916d0c 100644
+--- a/NV11_nature_v11/code_v11/acl/biology.py
++++ b/BN1_born_without_learned_content/code_bn1/acl/biology.py
+@@ -551,6 +551,13 @@ def _born(world, mother, father, genes, name, sex, gen):
+     # Habits start as a softened blend of the parents'.
+     fq = father.q if father and father.alive else mother.q
+     child.q = [0.25 * (a + b) for a, b in zip(mother.q, fq)]
++    if world.cfg.newborn_values == 1:                 # BN1: born without learned content
++        child.q = [0.0] * len(child.q)
++    elif world.cfg.newborn_values == 2:               # BN1 control: the same numbers, shuffled across actions within each situation
++        for s in range(0, len(child.q), N_ACTIONS):
++            block = child.q[s:s + N_ACTIONS]
++            world.rng.shuffle(block)
++            child.q[s:s + N_ACTIONS] = block
+     world.people[child.id] = child
+     world._living = None
+     world.occ.setdefault(child.loc, []).append(child.id)
+diff --git a/NV11_nature_v11/code_v11/acl/config.py b/BN1_born_without_learned_content/code_bn1/acl/config.py
+index 4a88fba..85c863b 100644
+--- a/NV11_nature_v11/code_v11/acl/config.py
++++ b/BN1_born_without_learned_content/code_bn1/acl/config.py
+@@ -126,6 +126,7 @@ class Config:
+     moving_camp: int = 0               # MC1: 1 = partners within reach end each week together on the better of their tiles
+     home_base: int = 0                 # HB1: 1 = a couple shares a home and partners within reach return to it each week
+     hand_items: int = 1                # NV11 (HD1): 1 = a person may hand one made thing they hold to someone within reach who has room
++    newborn_values: int = 0            # BN1: 0 = v11 (half the parents' mean learned values); 1 = all 0 (born without learned content); 2 = v11's numbers shuffled across actions within each situation
+                                        # (the give action, generalized; 0 = nature v10 exactly)
+     ground_items: int = 1              # NV8 (OP1): 1 = a made thing pushed out by the carry limit is left on the ground
+                                        # (not deleted), and is picked up by whoever stands there with room in hand (0 = v7)
