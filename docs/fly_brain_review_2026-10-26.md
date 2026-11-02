@@ -78,3 +78,7 @@ Sources to read (titles from the assistant's knowledge; to be checked before use
   does the advantage vanish when the mechanism is disabled? Not population.
 - Report the **costs**: interference, false associations, worse choices in some places.
 - Frozen with the creator first, zero checks, and an independent recompute before findings are final.
+
+## Correction (2 November 2026)
+The row **Copied habits** says "A child moves 8% a week toward its carer's". The carer pull (`_upbringing`) runs
+**every 4 weeks**, not every week: 8% about 13 times a year. The talk channel described in the same row is correct.

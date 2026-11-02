@@ -60,3 +60,22 @@ Table 2. Sections 1–3, 4(b) and 5 were not read.
   - perhaps the "public" domains, such as foraging and making, where many people's ways are seen.
 - **A law to test would add, not replace.** Children would also be pulled, more weakly, toward the people they spend
   their days with. It would be frozen and debated first, with no target outcome.
+
+## Correction (2 November 2026): how learned values pass between people
+Two statements here were wrong, and they also went into other records and into questions put to GPT and Gemini.
+1. **The carer pull runs every 4 weeks, not every week.**
+   - `acl/biology.py` calls `_upbringing` when `tick % 4 == 0`: 8% about 13 times a year.
+   - About a third (0.92^13 ≈ 0.34) of a newborn's starting difference is still there at age one, when habit learning
+     begins. It is nearly gone by twelve if the carer stays near.
+   - Per week, the pull is about 2%; a child's own learning step is 5% on the habit being updated, while the pull moves
+     every entry. So "the pull is stronger than the child's own learning" does not hold as stated.
+2. **Values do not pass only from parents and one carer.**
+   - In every conversation, the listener also moves part of the way toward the speaker's **whole** habit table, if
+     they respect the speaker or the speaker seems happier (`acl/actions.py`, `_imitate`; rate 0.05 × (0.5 +
+     curiosity) × (0.5 + respect)).
+   - So learning values from other adults and from peers (oblique and horizontal) **already exists in ACL**, at any
+     age.
+3. **What this changes here:** the bearing above ("ACL's value transmission is vertical through all of
+   childhood") is wrong. ACL already has oblique and horizontal value transmission through talk. Whether children
+   should learn values from the people they spend their days with is therefore partly answered by the existing law;
+   the open question becomes how strong each channel is.

@@ -87,3 +87,21 @@ GPT and Gemini, each in a fresh chat, from per-seed sums of the raw output only 
 agree:** r −0.2071 → −0.1077 [−0.1106, −0.1047]; v11 +0.2050 → +0.4935; coverage met; persistent bias.
 
 **Final: persistent bias.**
+
+## Correction (2 November 2026): how learned values pass between people
+Two statements here were wrong, and they also went into other records and into questions put to GPT and Gemini.
+1. **The carer pull runs every 4 weeks, not every week.**
+   - `acl/biology.py` calls `_upbringing` when `tick % 4 == 0`: 8% about 13 times a year.
+   - About a third (0.92^13 ≈ 0.34) of a newborn's starting difference is still there at age one, when habit learning
+     begins. It is nearly gone by twelve if the carer stays near.
+   - Per week, the pull is about 2%; a child's own learning step is 5% on the habit being updated, while the pull moves
+     every entry. So "the pull is stronger than the child's own learning" does not hold as stated.
+2. **Values do not pass only from parents and one carer.**
+   - In every conversation, the listener also moves part of the way toward the speaker's **whole** habit table, if
+     they respect the speaker or the speaker seems happier (`acl/actions.py`, `_imitate`; rate 0.05 × (0.5 +
+     curiosity) × (0.5 + respect)).
+   - So learning values from other adults and from peers (oblique and horizontal) **already exists in ACL**, at any
+     age.
+3. **What this changes here:** the code fact under "Exploratory" understated the carer pull's interval and missed the
+   talk channel. The frozen reading (persistent bias) and every number above are unchanged; only the candidate
+   explanation for the children's values is affected.

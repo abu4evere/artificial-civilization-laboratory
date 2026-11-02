@@ -322,3 +322,21 @@ changes live nature.**
 - H1 keeps everything innate in ACL: genes, instincts, the way situations are perceived. It removes only the inherited
   learned habit values. That makes H1 a cleaner test of "content versus structure", and it stays consistent with this
   literature.
+
+## Correction (2 November 2026): how learned values pass between people
+Two statements here were wrong, and they also went into other records and into questions put to GPT and Gemini.
+1. **The carer pull runs every 4 weeks, not every week.**
+   - `acl/biology.py` calls `_upbringing` when `tick % 4 == 0`: 8% about 13 times a year.
+   - About a third (0.92^13 ≈ 0.34) of a newborn's starting difference is still there at age one, when habit learning
+     begins. It is nearly gone by twelve if the carer stays near.
+   - Per week, the pull is about 2%; a child's own learning step is 5% on the habit being updated, while the pull moves
+     every entry. So "the pull is stronger than the child's own learning" does not hold as stated.
+2. **Values do not pass only from parents and one carer.**
+   - In every conversation, the listener also moves part of the way toward the speaker's **whole** habit table, if
+     they respect the speaker or the speaker seems happier (`acl/actions.py`, `_imitate`; rate 0.05 × (0.5 +
+     curiosity) × (0.5 + respect)).
+   - So learning values from other adults and from peers (oblique and horizontal) **already exists in ACL**, at any
+     age.
+3. **What this changes here:** principle 2 ("pulled 8% a week toward one carer's") and gap 5 in section C
+   ("value transmission is one carer only") are wrong as worded. Gap 5 falls away as stated. H1's design is affected:
+   see `docs/debate_round45_bn1_2026-11-02.md`.
