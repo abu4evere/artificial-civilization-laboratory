@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T01:42:27",
+  "updated": "2026-11-02T02:30:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -240,12 +240,13 @@
     "tick_minutes": 60,
     "ticks_per_day": 24,
     "tick_timeout_minutes": 45,
-    "local_simulations_max": 1,
+    "local_simulations_max": 4,
     "cloud_studies_at_once": 1,
     "failures_before_pause": 3,
     "daily_summary_at": "07:30",
     "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2).",
-    "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud."
+    "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud.",
+    "pc_full_use_2": "the creator, Telegram 2026-11-02 02:21: 'Ok good you can use pc at max capacity now'. pc_light_use (1 Nov 16:44) ends. While the creator is away, local simulations may run at normal priority, up to 4 at once; reported through Telegram. Ends when the creator writes otherwise or is back at the PC (then CLAUDE.md: Idle, at most 2)."
   },
   "directions": [
     {
@@ -259,6 +260,13 @@
         "H1 born without learned content (a copy)",
         "H2 graded child abilities (a copy)"
       ]
+    },
+    {
+      "id": "BOB12",
+      "title": "Bob's twelve capacities as a scorecard",
+      "from": "the creator, Telegram 2026-11-02 02:21",
+      "note": "docs/research/bob_twelve_capacities_2026-11-02.md",
+      "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
     }
   ]
 }
