@@ -101,3 +101,10 @@ values, action selection and socially passed values all affect it.
 The assistant, with the creator present and asking to keep working. This is a nature-change test in a copy under the
 40% rule; adoption only with the creator's explicit approval. GPT estimates 91%, Gemini 95% and the assistant 75%.
 Frozen as `BN1-frozen` before any code or data.
+
+## Correction (2 November 2026, appended; the frozen text above is unchanged)
+- **"Cells: situation × action (32 × 16)" is wrong: it is 32 × 19.** v11 has 19 actions (`acl/person.py`:
+  `ACTIONS`, `N_ACTIONS` = 19), so a habit table has 608 values. Found while writing the ODD description from the code.
+- **The code was already right.** `code_bn1`'s shuffle (arm x) and the runner's newborn check both use `N_ACTIONS`
+  from nature, and the analysis takes its cells from the data. The zero checks passed with it (`zero_cloud.log`).
+  The rule, measures and arms are unchanged. The error was only in this text.
