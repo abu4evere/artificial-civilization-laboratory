@@ -1,0 +1,6 @@
+seed 501, 20 years: code_wp1 with want_propagation 0 = code_v11: yes; observer read-only (c, a1, a2): yes; A1, A2 and the sham act: yes; A1 and A2 differ: yes; kinds / remade / adult makes {'c': {'_kinds': 562, '_makes': 684, '_remade': 26}, 'a1': {'_kinds': 467, '_makes': 669, '_remade': 37}, 'a2': {'_kinds': 507, '_makes': 611, '_remade': 35}}
+seed 601, 60 years: code_wp1 with want_propagation 0 = code_v11: yes; observer read-only (c, a1, a2): yes; A1, A2 and the sham act: yes; A1 and A2 differ: yes; kinds / remade / adult makes {'c': {'_kinds': 1416, '_makes': 2469, '_remade': 22}, 'a1': {'_kinds': 1322, '_makes': 2285, '_remade': 33}, 'a2': {'_kinds': 1258, '_makes': 2326, '_remade': 29}}
+arm A2, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_wp1 fingerprint: f2e0eeb18abbfd7f69d8cfeda4bfc11cf1de5103bd2cec15db5085a61ddc1efb
+All: PASS
+
