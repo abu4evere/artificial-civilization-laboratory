@@ -1,4 +1,4 @@
-# HA1 — Why does handing stay rare? Findings (not final until GPT and Gemini recompute)
+# HA1 — Why does handing stay rare? Findings (final: recomputed blind by GPT and Gemini; see the end)
 
 **Read-only: no change to nature.** Live v11 (`code_v11`). Frozen as `HA1-frozen`. Signed off by the assistant (GPT
 97%, Gemini 96%, the assistant 80%; debate round 43). Run on GitHub Actions (run 41365641251). The zero checks ran on
@@ -70,6 +70,8 @@ Two thirds of handings go to people who cannot make the thing. Almost none of th
   watching, teaching and copying. That points the next step at knowledge transmission, not at more handing.
 - **No change to nature** follows from this study.
 
-## Independent recompute
-Pending: GPT and Gemini, each in a fresh chat, from `recompute/ha1_one_file.csv`. Recorded only from their actual
-replies.
+## Independent recompute (1 November 2026)
+GPT and Gemini, each in a fresh chat, from per-seed sums of the raw output only (`recompute_ha1.md`). **All three
+agree:** E 0.0709 [0.0667, 0.0747]; C 0.0533; opportunity-limited.
+
+**Final: opportunity-limited.**

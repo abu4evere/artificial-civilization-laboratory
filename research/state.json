@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-01T20:53:41",
+  "updated": "2026-11-01T21:36:22",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -174,9 +174,10 @@
       "kind": "read-only",
       "plan": "experiments/HA1_handing_audit/questions.md",
       "frozen_tag": "HA1-frozen",
-      "status": "recompute-pending",
+      "status": "final: opportunity-limited",
       "run": 41365641251,
-      "next_step": "Chrome disconnected (about 20:55, 1 Nov): send experiments/HA1_handing_audit/recompute/prompt.txt to fresh GPT and Gemini chats; record recompute_ha1.md; finalize (opportunity-limited); then debate round 44 (knowledge transmission)"
+      "next_step": "debate: knowledge transmission; IQ1 report first (the creator, 1 Nov)",
+      "recompute": "experiments/HA1_handing_audit/recompute_ha1.md (GPT and Gemini match)"
     }
   ],
   "queue_after": [
