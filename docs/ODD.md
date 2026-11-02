@@ -100,3 +100,11 @@ None. The world is generated from the seed; no external data drive it.
 **Still to do before this is final:** the full list of conditions for each action; the pattern targets with their
 sources. Each will be filled in from the code, not from memory. (Reward terms and learning values: filled in 21 October
 2026 from `acl/actions.py`, `acl/biology.py` and `acl/config.py`.)
+
+## Correction and pointer (2 November 2026, appended)
+- **The current nature is described in `docs/ODD_v11.md`** (nature v11, written from the code). This file stays as
+  the nature v2 record.
+- **Correction:** "No reward exists for inventing, teaching, storing, sowing or any cultural outcome" (section 4)
+  was not accurate, even for v2. No reward names an invention or a cultural result, but small fixed rewards exist
+  for the act of making (+0.1), for play that makes something (+0.05), and for a lesson the listener takes (+0.1,
+  `actions._talk`, present in v2).
