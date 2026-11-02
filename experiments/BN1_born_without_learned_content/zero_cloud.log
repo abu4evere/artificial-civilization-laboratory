@@ -1,0 +1,6 @@
+Zero checks for BN1, run on GitHub Actions (run 41394713611, zero job 125113854776), saved from the job log on 2 November 2026:
+seed 501, 20 years: code_bn1 with newborn_values 0 = code_v11: yes; observer read-only (c, z, x): yes; z and x act: yes; the sham acts: yes; mismatches (replay, newborn law): {'c': 'none', 'z': 'none', 'x': 'none'}; newborns checked {'c': 118.0, 'z': 137.0, 'x': 114.0}
+seed 601, 60 years: code_bn1 with newborn_values 0 = code_v11: yes; observer read-only (c, z, x): yes; z and x act: yes; the sham acts: yes; mismatches (replay, newborn law): {'c': 'none', 'z': 'none', 'x': 'none'}; newborns checked {'c': 383.0, 'z': 338.0, 'x': 334.0}
+arm x, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_bn1 fingerprint: f236c149f7aeb3b7268e21c8b0fc595b63bf7c7ae967ead49b2f71421af21392
+All: PASS

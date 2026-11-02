@@ -1,252 +1,264 @@
 {
-  "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T00:03:58",
-  "nature": {
-    "live": "v11",
-    "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
-    "frozen_copy": "experiments/NV11_nature_v11/code_v11",
-    "frozen_copy_fingerprint": "f39100bd938b2aa7a9ade4942e0e0c091af351999b442c4f76c13e38dac6885c",
-    "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session"
+ "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
+ "updated": "2026-11-02T01:42:27",
+ "nature": {
+  "live": "v11",
+  "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
+  "frozen_copy": "experiments/NV11_nature_v11/code_v11",
+  "frozen_copy_fingerprint": "f39100bd938b2aa7a9ade4942e0e0c091af351999b442c4f76c13e38dac6885c",
+  "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session"
+ },
+ "objectives": [
+  "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
+  "define and measure autonomy early",
+  "a world where knowing matters (measure before making it harder)",
+  "connected populations",
+  "later: language, emergent feelings, talent"
+ ],
+ "authorized_scope": {
+  "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
+  "nature_change_tests": "only studies listed below with approved_by set",
+  "nature_adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
+  "money_credentials_publishing_deleting": "never"
+ },
+ "studies": [
+  {
+   "id": "AG1",
+   "title": "Ageing anchored to forager evidence",
+   "kind": "nature-change test (calibration); exploratory (20 seeds)",
+   "plan": "experiments/AG1_ageing_anchor/questions.md",
+   "frozen_tag": "AG1-frozen",
+   "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
+   "status": "final",
+   "jobs": {
+    "cloud_run": 41042869183,
+    "cloud_saved": 75,
+    "local": [
+     "b:20501",
+     "a:20501",
+     "b:20506",
+     "a:20506",
+     "x:20506"
+    ],
+    "local_dir": "experiments/AG1_ageing_anchor/output_local",
+    "identity_check": "passed"
+   },
+   "next_step": "adopted as nature v10 (the creator, 31 October 2026); see experiments/NV10_nature_v10/findings.md",
+   "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
   },
-  "objectives": [
-    "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
-    "define and measure autonomy early",
-    "a world where knowing matters (measure before making it harder)",
-    "connected populations",
-    "later: language, emergent feelings, talent"
-  ],
-  "authorized_scope": {
-    "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
-    "nature_change_tests": "only studies listed below with approved_by set",
-    "nature_adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
-    "money_credentials_publishing_deleting": "never"
+  {
+   "id": "AW1",
+   "title": "Learning a craft from others: watching (W) and being shown (T)",
+   "kind": "nature-change test; 32 paired seeds, 200 years",
+   "plan": "experiments/AW1_watch_and_teach/questions.md",
+   "frozen_tag": "AW1-frozen",
+   "approved_by": "the creator, 30 Oct: 'yea go ahead with AW1 run it after AG1'",
+   "status": "final",
+   "jobs": {
+    "cloud_run": 41111670960
+   },
+   "next_step": "none; next study: a read-only look at why the choice to make falls (to debate, then freeze)",
+   "evidence": "verified: not supported (making unchanged); being shown nearly doubles skill; recompute matched (GPT, Gemini)"
   },
-  "studies": [
-    {
-      "id": "AG1",
-      "title": "Ageing anchored to forager evidence",
-      "kind": "nature-change test (calibration); exploratory (20 seeds)",
-      "plan": "experiments/AG1_ageing_anchor/questions.md",
-      "frozen_tag": "AG1-frozen",
-      "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
-      "status": "final",
-      "jobs": {
-        "cloud_run": 41042869183,
-        "cloud_saved": 75,
-        "local": [
-          "b:20501",
-          "a:20501",
-          "b:20506",
-          "a:20506",
-          "x:20506"
-        ],
-        "local_dir": "experiments/AG1_ageing_anchor/output_local",
-        "identity_check": "passed"
-      },
-      "next_step": "adopted as nature v10 (the creator, 31 October 2026); see experiments/NV10_nature_v10/findings.md",
-      "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
-    },
-    {
-      "id": "AW1",
-      "title": "Learning a craft from others: watching (W) and being shown (T)",
-      "kind": "nature-change test; 32 paired seeds, 200 years",
-      "plan": "experiments/AW1_watch_and_teach/questions.md",
-      "frozen_tag": "AW1-frozen",
-      "approved_by": "the creator, 30 Oct: 'yea go ahead with AW1 run it after AG1'",
-      "status": "final",
-      "jobs": {
-        "cloud_run": 41111670960
-      },
-      "next_step": "none; next study: a read-only look at why the choice to make falls (to debate, then freeze)",
-      "evidence": "verified: not supported (making unchanged); being shown nearly doubles skill; recompute matched (GPT, Gemini)"
-    },
-    {
-      "id": "CO2",
-      "title": "What makes the other options beat making under v9 (read-only)",
-      "kind": "read-only; 32 seeds, 200 years",
-      "plan": "experiments/CO2_choice_v9/questions.md",
-      "frozen_tag": "CO2-frozen",
-      "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
-      "status": "final",
-      "jobs": {
-        "cloud_run": 41138990924
-      },
-      "next_step": "none; next: read-only study of how the worth of made things forms (debate first); the learning-rule study waits for the creator",
-      "evidence": "verified: level of the deficit = built-in pull (0.562); decline = habit (0.87); curiosity -0.051; recompute matched (GPT, Gemini)"
-    },
-    {
-      "id": "IW1",
-      "title": "How the worth of made things forms (read-only, frozen on code_v9)",
-      "kind": "read-only",
-      "status": "final",
-      "run": 41180403699,
-      "next_step": "none; next: debate a read-only look at where tools could matter more (a world where knowing matters)"
-    },
-    {
-      "id": "TR1",
-      "title": "What do tools really add? (read-only, frozen on code_v10)",
-      "kind": "read-only",
-      "status": "final",
-      "run": 41199047689,
-      "next_step": "none; next: debate a read-only look at tool access and choice (who holds the best tools; why others do not make or get them)",
-      "note": "run 1 (41191446977) not valid: 3 deaths within forage counted as mismatches; amendment 1; outputs kept in output_run1_invalid/"
-    },
-    {
-      "id": "TA1",
-      "title": "Why tools do not reach hands (read-only, frozen on code_v10)",
-      "kind": "read-only",
-      "status": "final",
-      "run": 41213975492,
-      "next_step": "none; next: debate B (handing a made thing, a nature-change test in a copy) against the choice to make"
-    },
-    {
-      "id": "HD1",
-      "title": "Handing a made thing (nature-change test in a copy, code_hd1)",
-      "kind": "nature-change test (copy)",
-      "status": "final",
-      "run": 41226917887,
-      "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
-    },
-    {
-      "id": "HD1-C",
-      "title": "Handing law, confirmatory run on new seeds",
-      "kind": "nature-change test (copy), confirmatory",
-      "status": "final",
-      "run": 41241346782,
-      "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
-    },
-    {
-      "id": "ES1",
-      "title": "Expected look-ahead in habit learning (nature-change test in a copy, code_es1)",
-      "kind": "nature-change test (copy)",
-      "status": "final",
-      "run": 41256219936,
-      "next_step": "not adopted; next: debate ES2 (expected look-ahead over the whole choice, calibration primary) and whether relative accuracy is the better test"
-    },
-    {
-      "id": "ES2",
-      "title": "Realized look-ahead (deferred Expected Sarsa over the real choice; nature-change test in a copy, code_es2)",
-      "kind": "nature-change test (copy)",
-      "status": "final: not supported (rest guard)",
-      "run": 41274072560,
-      "next_step": "debate round 40 with GPT and Gemini (research/local/next_debate_prompt.txt): A read-only under-valuation diagnostic, B longer view, C handing audit",
-      "plan": "experiments/ES2_realized_lookahead/questions.md",
-      "frozen_tag": "ES2-frozen",
-      "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0).",
-      "recompute": "experiments/ES2_realized_lookahead/recompute_es2.md (GPT and Gemini match, 1 November 2026, 11:45)"
-    },
-    {
-      "id": "UV1",
-      "title": "Does habit under-valuation fade with experience? (read-only replay of ES2's v11 and r worlds)",
-      "kind": "read-only",
-      "plan": "experiments/UV1_undervaluation_by_experience/questions.md",
-      "frozen_tag": "UV1-frozen",
-      "status": "final: persistent bias",
-      "run": 41331098954,
-      "next_step": "debate round 41: the floor (coarse situations) and the children (upbringing pull), read-only first",
-      "recompute": "experiments/UV1_undervaluation_by_experience/recompute_uv1.md (GPT and Gemini match)"
-    },
-    {
-      "id": "UV2",
-      "title": "Does the habit floor come from unpractised choices further ahead? (read-only replay of ES2's r arm)",
-      "kind": "read-only",
-      "plan": "experiments/UV2_propagation/questions.md",
-      "frozen_tag": "UV2-frozen",
-      "status": "final: not propagation",
-      "next_step": "debate round 42: rising returns vs a generations-long climb (the time trend), read-only first",
-      "run": 41341318088,
-      "recompute": "experiments/UV2_propagation/recompute_uv2.md (GPT and Gemini match)"
-    },
-    {
-      "id": "UV3",
-      "title": "Is the shrinking habit gap rising returns or climbing values? (read-only replay of ES2's r arm)",
-      "kind": "read-only",
-      "plan": "experiments/UV3_time_trend/questions.md",
-      "frozen_tag": "UV3-frozen",
-      "status": "final: returns stable",
-      "next_step": "debate round 43: ES3, value passing-on, or the handing/making line",
-      "run": 41357015837,
-      "recompute": "experiments/UV3_time_trend/recompute_uv3.md (GPT and Gemini match)"
-    },
-    {
-      "id": "HA1",
-      "title": "Why does handing stay rare? (read-only audit on live v11)",
-      "kind": "read-only",
-      "plan": "experiments/HA1_handing_audit/questions.md",
-      "frozen_tag": "HA1-frozen",
-      "status": "final: opportunity-limited",
-      "run": 41365641251,
-      "next_step": "debate: knowledge transmission; IQ1 report first (the creator, 1 Nov)",
-      "recompute": "experiments/HA1_handing_audit/recompute_ha1.md (GPT and Gemini match)"
-    },
-    {
-      "id": "KL1",
-      "title": "Does know-how outlive its holders? (read-only audit on live v11; IQ1-H3 step 1)",
-      "kind": "read-only",
-      "plan": "experiments/KL1_knowledge_loss/questions.md",
-      "frozen_tag": "KL1-frozen",
-      "status": "final: death is the main road of loss; marks do not (yet)",
-      "run": 41380622576,
-      "next_step": "literature review (the creator's sources); then H1 in a copy",
-      "recompute": "experiments/KL1_knowledge_loss/recompute_kl1.md (GPT and Gemini match)"
-    }
-  ],
-  "queue_after": [
-    {
-      "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
-      "status": "deferred until after UV3",
-      "needs": "debate after UV3; biological justification for the age line independent of ES2"
-    },
-    {
-      "what": "wider value passing-on in childhood (oblique and horizontal from age 6; Hewlett 2011): a nature-change test in a copy, after reading the full text",
-      "status": "queued (GPT's order after HA1: B then A/ES3)",
-      "needs": "full text read; debate; frozen plan with no target outcome"
-    },
-    {
-      "what": "an early, read-only autonomy audit (design note Part 2)",
-      "status": "proposed",
-      "needs": "debate with GPT and Gemini, then a frozen plan"
-    },
-    {
-      "what": "talent (a heritable learning-speed gene)",
-      "status": "listed by the creator",
-      "needs": "debate when its turn comes"
-    },
-    {
-      "what": "children making known things before 12 (in ACL 'make' starts at 12; forager children make their own toys, Lew-Levy et al. 2022)",
-      "status": "found 31 October 2026; for the creator",
-      "needs": "the creator's decision; evidence on ages, then a frozen nature-change study"
-    }
-  ],
-  "pending_approvals": [
-    {
-      "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
-      "status": "asked in the morning report"
-    }
-  ],
-  "budgets": {
-    "tick_minutes": 60,
-    "ticks_per_day": 24,
-    "tick_timeout_minutes": 45,
-    "local_simulations_max": 1,
-    "cloud_studies_at_once": 1,
-    "failures_before_pause": 3,
-    "daily_summary_at": "07:30",
-    "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2).",
-    "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud."
+  {
+   "id": "CO2",
+   "title": "What makes the other options beat making under v9 (read-only)",
+   "kind": "read-only; 32 seeds, 200 years",
+   "plan": "experiments/CO2_choice_v9/questions.md",
+   "frozen_tag": "CO2-frozen",
+   "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
+   "status": "final",
+   "jobs": {
+    "cloud_run": 41138990924
+   },
+   "next_step": "none; next: read-only study of how the worth of made things forms (debate first); the learning-rule study waits for the creator",
+   "evidence": "verified: level of the deficit = built-in pull (0.562); decline = habit (0.87); curiosity -0.051; recompute matched (GPT, Gemini)"
   },
-  "directions": [
-    {
-      "id": "IQ1",
-      "title": "Islamic Sources and Emergent Cognition",
-      "from": "the creator, 1 November 2026",
-      "rules": "literature and proposals first; verify every source; no change to live nature or adoption without the creator's explicit approval; inspiration, not proof",
-      "report": "docs/research/iq1_islamic_sources_report_2026-11-01.md",
-      "priorities": [
-        "H3 step 1 = KL1 (running)",
-        "H1 born without learned content (a copy)",
-        "H2 graded child abilities (a copy)"
-      ]
-    }
-  ]
+  {
+   "id": "IW1",
+   "title": "How the worth of made things forms (read-only, frozen on code_v9)",
+   "kind": "read-only",
+   "status": "final",
+   "run": 41180403699,
+   "next_step": "none; next: debate a read-only look at where tools could matter more (a world where knowing matters)"
+  },
+  {
+   "id": "TR1",
+   "title": "What do tools really add? (read-only, frozen on code_v10)",
+   "kind": "read-only",
+   "status": "final",
+   "run": 41199047689,
+   "next_step": "none; next: debate a read-only look at tool access and choice (who holds the best tools; why others do not make or get them)",
+   "note": "run 1 (41191446977) not valid: 3 deaths within forage counted as mismatches; amendment 1; outputs kept in output_run1_invalid/"
+  },
+  {
+   "id": "TA1",
+   "title": "Why tools do not reach hands (read-only, frozen on code_v10)",
+   "kind": "read-only",
+   "status": "final",
+   "run": 41213975492,
+   "next_step": "none; next: debate B (handing a made thing, a nature-change test in a copy) against the choice to make"
+  },
+  {
+   "id": "HD1",
+   "title": "Handing a made thing (nature-change test in a copy, code_hd1)",
+   "kind": "nature-change test (copy)",
+   "status": "final",
+   "run": 41226917887,
+   "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
+  },
+  {
+   "id": "HD1-C",
+   "title": "Handing law, confirmatory run on new seeds",
+   "kind": "nature-change test (copy), confirmatory",
+   "status": "final",
+   "run": 41241346782,
+   "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
+  },
+  {
+   "id": "ES1",
+   "title": "Expected look-ahead in habit learning (nature-change test in a copy, code_es1)",
+   "kind": "nature-change test (copy)",
+   "status": "final",
+   "run": 41256219936,
+   "next_step": "not adopted; next: debate ES2 (expected look-ahead over the whole choice, calibration primary) and whether relative accuracy is the better test"
+  },
+  {
+   "id": "ES2",
+   "title": "Realized look-ahead (deferred Expected Sarsa over the real choice; nature-change test in a copy, code_es2)",
+   "kind": "nature-change test (copy)",
+   "status": "final: not supported (rest guard)",
+   "run": 41274072560,
+   "next_step": "debate round 40 with GPT and Gemini (research/local/next_debate_prompt.txt): A read-only under-valuation diagnostic, B longer view, C handing audit",
+   "plan": "experiments/ES2_realized_lookahead/questions.md",
+   "frozen_tag": "ES2-frozen",
+   "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0).",
+   "recompute": "experiments/ES2_realized_lookahead/recompute_es2.md (GPT and Gemini match, 1 November 2026, 11:45)"
+  },
+  {
+   "id": "UV1",
+   "title": "Does habit under-valuation fade with experience? (read-only replay of ES2's v11 and r worlds)",
+   "kind": "read-only",
+   "plan": "experiments/UV1_undervaluation_by_experience/questions.md",
+   "frozen_tag": "UV1-frozen",
+   "status": "final: persistent bias",
+   "run": 41331098954,
+   "next_step": "debate round 41: the floor (coarse situations) and the children (upbringing pull), read-only first",
+   "recompute": "experiments/UV1_undervaluation_by_experience/recompute_uv1.md (GPT and Gemini match)"
+  },
+  {
+   "id": "UV2",
+   "title": "Does the habit floor come from unpractised choices further ahead? (read-only replay of ES2's r arm)",
+   "kind": "read-only",
+   "plan": "experiments/UV2_propagation/questions.md",
+   "frozen_tag": "UV2-frozen",
+   "status": "final: not propagation",
+   "next_step": "debate round 42: rising returns vs a generations-long climb (the time trend), read-only first",
+   "run": 41341318088,
+   "recompute": "experiments/UV2_propagation/recompute_uv2.md (GPT and Gemini match)"
+  },
+  {
+   "id": "UV3",
+   "title": "Is the shrinking habit gap rising returns or climbing values? (read-only replay of ES2's r arm)",
+   "kind": "read-only",
+   "plan": "experiments/UV3_time_trend/questions.md",
+   "frozen_tag": "UV3-frozen",
+   "status": "final: returns stable",
+   "next_step": "debate round 43: ES3, value passing-on, or the handing/making line",
+   "run": 41357015837,
+   "recompute": "experiments/UV3_time_trend/recompute_uv3.md (GPT and Gemini match)"
+  },
+  {
+   "id": "HA1",
+   "title": "Why does handing stay rare? (read-only audit on live v11)",
+   "kind": "read-only",
+   "plan": "experiments/HA1_handing_audit/questions.md",
+   "frozen_tag": "HA1-frozen",
+   "status": "final: opportunity-limited",
+   "run": 41365641251,
+   "next_step": "debate: knowledge transmission; IQ1 report first (the creator, 1 Nov)",
+   "recompute": "experiments/HA1_handing_audit/recompute_ha1.md (GPT and Gemini match)"
+  },
+  {
+   "id": "KL1",
+   "title": "Does know-how outlive its holders? (read-only audit on live v11; IQ1-H3 step 1)",
+   "kind": "read-only",
+   "plan": "experiments/KL1_knowledge_loss/questions.md",
+   "frozen_tag": "KL1-frozen",
+   "status": "final: death is the main road of loss; marks do not (yet)",
+   "run": 41380622576,
+   "next_step": "literature review (the creator's sources); then H1 in a copy",
+   "recompute": "experiments/KL1_knowledge_loss/recompute_kl1.md (GPT and Gemini match)"
+  },
+  {
+   "id": "BN1",
+   "title": "Born without learned content (a nature-change test in a copy; IQ1-H1)",
+   "kind": "nature-change test in a copy (code_bn1); adoption only with the creator's explicit approval",
+   "plan": "experiments/BN1_born_without_learned_content/questions.md",
+   "frozen_tag": "BN1-frozen",
+   "approved_by": "the assistant under the 40% rule, the creator present (2 Nov); adoption needs the creator",
+   "status": "running",
+   "run": 41394713611,
+   "zero": "cloud, All: PASS (zero_cloud.log, fingerprint f236c149...)",
+   "next_step": "fetch, analyse at Idle, findings, blind recompute by GPT and Gemini"
+  }
+ ],
+ "queue_after": [
+  {
+   "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
+   "status": "deferred until after UV3",
+   "needs": "debate after UV3; biological justification for the age line independent of ES2"
+  },
+  {
+   "what": "wider value passing-on in childhood (oblique and horizontal from age 6; Hewlett 2011): a nature-change test in a copy, after reading the full text",
+   "status": "queued (GPT's order after HA1: B then A/ES3)",
+   "needs": "full text read; debate; frozen plan with no target outcome"
+  },
+  {
+   "what": "an early, read-only autonomy audit (design note Part 2)",
+   "status": "proposed",
+   "needs": "debate with GPT and Gemini, then a frozen plan"
+  },
+  {
+   "what": "talent (a heritable learning-speed gene)",
+   "status": "listed by the creator",
+   "needs": "debate when its turn comes"
+  },
+  {
+   "what": "children making known things before 12 (in ACL 'make' starts at 12; forager children make their own toys, Lew-Levy et al. 2022)",
+   "status": "found 31 October 2026; for the creator",
+   "needs": "the creator's decision; evidence on ages, then a frozen nature-change study"
+  }
+ ],
+ "pending_approvals": [
+  {
+   "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
+   "status": "asked in the morning report"
+  }
+ ],
+ "budgets": {
+  "tick_minutes": 60,
+  "ticks_per_day": 24,
+  "tick_timeout_minutes": 45,
+  "local_simulations_max": 1,
+  "cloud_studies_at_once": 1,
+  "failures_before_pause": 3,
+  "daily_summary_at": "07:30",
+  "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2).",
+  "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud."
+ },
+ "directions": [
+  {
+   "id": "IQ1",
+   "title": "Islamic Sources and Emergent Cognition",
+   "from": "the creator, 1 November 2026",
+   "rules": "literature and proposals first; verify every source; no change to live nature or adoption without the creator's explicit approval; inspiration, not proof",
+   "report": "docs/research/iq1_islamic_sources_report_2026-11-01.md",
+   "priorities": [
+    "H3 step 1 = KL1 (running)",
+    "H1 born without learned content (a copy)",
+    "H2 graded child abilities (a copy)"
+   ]
+  }
+ ]
 }
