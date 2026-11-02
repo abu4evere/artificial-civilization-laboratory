@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T04:12:05",
+  "updated": "2026-11-02T04:57:47",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -202,12 +202,24 @@
       "zero": "cloud, All: PASS (zero_cloud.log, fingerprint f236c149...)",
       "next_step": "the creator decides on birth inheritance (no change without them); next study SC1 (debate round 46)",
       "recompute": "experiments/BN1_born_without_learned_content/recompute_bn1.md (GPT and Gemini match)"
+    },
+    {
+      "id": "SC1",
+      "title": "A scorecard of the creator's twelve capacities (read-only on live v11)",
+      "kind": "read-only",
+      "plan": "experiments/SC1_bob_scorecard/questions.md",
+      "frozen_tag": "SC1-frozen",
+      "approved_by": "the assistant under the 40% rule, the creator present (GPT 86%, Gemini 94%, round 47)",
+      "status": "running",
+      "run": 41424864945,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "fetch, analyse, findings, blind recompute by GPT and Gemini (recompute/prompt.txt, sc1_sums.csv)"
     }
   ],
   "queue_after": [
     {
       "what": "SC1: a read-only scorecard of the creator's twelve capacities for Bob on live v11 (debate round 46: GPT 90%, Gemini 90%); capacities v11 cannot show are marked 'not measurable', no combined score",
-      "status": "next (read-only, allowed under the 40% rule)",
+      "status": "running (run 41424864945)",
       "needs": "frozen plan with measures that do not echo written formulas; debate on the measures"
     },
     {
