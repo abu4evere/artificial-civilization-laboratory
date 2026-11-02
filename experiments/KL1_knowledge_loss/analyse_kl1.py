@@ -113,14 +113,14 @@ def main():
         t = sum(a)
         L.append(f"| {name} | {a[0]:,} ({a[0] / t:.3f}) | {a[1]:,} ({a[1] / t:.3f}) | {a[2]:,} ({a[2] / t:.3f}) |" if t
                  else f"| {name} | 0 | 0 | 0 |")
-    L += ["", "### Revivals by path (re-invention is not preservation)", "", "| kinds | made | heated | read | other |",
-          "|---|---|---|---|---|"]
+    L += ["", "### Revivals by path (re-invention is not preservation)", "",
+          "| kinds | made | heated | read | taught with an error | copied with an error |", "|---|---|---|---|---|---|"]
     for mk, name in (("1", "markable (strike)"), ("0", "other")):
         c = Counter()
         for s in seeds:
             c.update(runs[s]["revivals"].get(mk, {}))
-        other = sum(v for k, v in c.items() if k not in ("made", "heated", "read"))
-        L.append(f"| {name} | {c['made']:,} | {c['heated']:,} | {c['read']:,} | {other:,} |")
+        L.append(f"| {name} | {c['made']:,} | {c['heated']:,} | {c['read']:,} | {c['taught_variant']:,} | "
+                 f"{c['copied_variant']:,} |")
     g, ml = Counter(), Counter()
     for s in seeds:
         g.update(runs[s]["gain_paths"])

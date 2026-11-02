@@ -100,3 +100,18 @@ estimates 91%, Gemini 75% and the assistant 80%. Frozen as `KL1-frozen` before a
 - **The cloud run** started with the old observer (run 41380622576). It was **cancelled** and is replaced; its output
   is not used.
 - Nothing else changes: no measure, threshold, seed or reading.
+
+## Operational note 2 (01 November 2026, 22:45, after a 60-year test, before any study data)
+- **A wrong statement in this plan:** "teaching and copying need a living knower, so a lost kind can come back only by
+  being made, heated or read".
+- **Why it is wrong:** a 60-year test with the fixed observer found 9 revivals through teaching or copying. The code
+  explains it. A recipe is passed on "as shown" (`_recipe_as_shown`), with errors, so a learner can end up with a
+  different kind from the one meant (`meant` ≠ the kind learned). That kind may be one no living person knows. **A
+  transmission error can revive a lost kind**, a form of re-invention.
+- **The change:**
+  - Such gains are labelled **taught with an error** (`taught_variant`) or **copied with an error**
+    (`copied_variant`), whenever the kind learned differs from the kind meant.
+  - The allowed revival paths are made, heated, read and these two.
+  - A revival through teaching or copying of the **exact** kind meant stays a mismatch (a hard stop).
+- **The primary is unchanged:** R_markable = revivals through read ÷ all revivals of markable kinds; all paths count in
+  the denominator. Nothing else changes.

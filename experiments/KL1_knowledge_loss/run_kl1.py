@@ -30,7 +30,8 @@ ARMS = {"k": dict(base.LP)}               # live v11 as it is
 JOBS = [f"{a}:{s}" for a in ARMS for s in SEEDS]
 OUT = HERE / "output"
 LATE = (100 * WPY, 200 * WPY)
-PATHS = ("made", "heated", "taught", "copied", "read")
+PATHS = ("made", "heated", "taught", "copied", "read", "taught_variant", "copied_variant")
+REVIVAL_PATHS = ("made", "heated", "read", "taught_variant", "copied_variant")   # no living knower needed
 
 
 class KL1Obs:
@@ -59,9 +60,11 @@ class KL1Obs:
         rec = world.knowledge.get(sig)
         return "1" if rec is not None and rec.get("recipe", {}).get("verb") == "strike" else "0"
 
-    def gained(self, world, p, before, how, sig_in):
+    def gained(self, world, p, before, how, sig_in, meant=None):
         after = set(p.recipes)
         t = world.tick
+        if how in ("taught", "copied") and meant and meant != sig_in:
+            how = how + "_variant"                         # shown or seen with an error: a kind other than the one meant
         if sig_in not in before and sig_in not in after:   # learned and pushed out by the cap in the same moment
             self.gains[sig_in].append((t, p.id, how))
             self.losses[sig_in].append((t, p.id, "evicted"))
@@ -129,7 +132,7 @@ class KL1Obs:
                 if not g:
                     self.mismatch["unexplained_revival"] += 1
                 else:
-                    if g[0][2] not in ("made", "heated", "read"):  # teaching and copying need a living knower
+                    if g[0][2] not in REVIVAL_PATHS:               # the exact kind taught or copied needs a living knower
                         self.mismatch["revival_path"] += 1
                     self.alive_since[sig] = g[0][0]
                     if self.counted(t):
@@ -182,7 +185,7 @@ def install(w, obs):
         sig_in = args[0] if args else kw.get("sig")
         before = set(p.recipes)
         out = o_remember(world, p, *args, **kw)
-        obs.gained(world, p, before, how, sig_in)
+        obs.gained(world, p, before, how, sig_in, kw.get("meant"))
         return out
 
     def forget_useless(p):
