@@ -1,0 +1,5 @@
+seed 501, 20 years: observer read-only (state and random stream; the observer's own stream, the material-want and recipe reads included): yes; update-replay mismatches: none; habit updates replayed 119552; samples {'c10': 684.0, 'c3': 45901, 'c4': 3344, 'c5': 1498, 'c6': 562, 'c7': 607, 'c9': 3300, 'snaps': 257}
+seed 601, 60 years: observer read-only (state and random stream; the observer's own stream, the material-want and recipe reads included): yes; update-replay mismatches: none; habit updates replayed 561770; samples {'c10': 1427.0, 'c3': 140532, 'c4': 10630, 'c5': 12480, 'c6': 1416, 'c7': 2195, 'c9': 13800, 'snaps': 1213}
+code_v11 fingerprint: f39100bd938b2aa7a9ade4942e0e0c091af351999b442c4f76c13e38dac6885c
+All: PASS
+
