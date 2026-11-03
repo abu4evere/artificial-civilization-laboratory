@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T00:07:00",
+  "updated": "2026-11-03T01:25:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -251,11 +251,11 @@
       "plan": "experiments/AF1_open_affordances/questions.md",
       "frozen_tag": "AF1-frozen",
       "approved_by": "the creator's 'go ahead' for step 1 (2 November); GPT 93%, Gemini 95% (round 50)",
-      "status": "running on the cloud (local zero checks passed 22:43), launched 22:44",
+      "status": "final: S, K and S+K inconclusive (late inventions still not remade: 1, 2, 0, 0 of ~3,300); no guard; adults hold <1 made thing, make ~once in 14 years",
       "run": 41573896983,
       "zero": "local, All: PASS (zero_local.log)",
-      "next_step": "when done: fetch, analyse, findings, blind recomputes by GPT, Gemini and DeepSeek; if positive, a confirmatory run on the newest nature",
-      "recompute": null
+      "next_step": "council round 53: why making is so rare (read-only, worth vs real help) and the rules-review queue",
+      "recompute": "experiments/AF1_open_affordances/recompute_af1.md (GPT and Gemini 3.1 Pro match with code; DeepSeek matches by hand)"
     },
     {
       "id": "FX1",
@@ -277,8 +277,8 @@
       "plan": "experiments/AM1_autonomy_measures/questions.md",
       "frozen_tag": "AM1-frozen",
       "approved_by": "the assistant under sleep-mode autonomy and the 2 November permission (GPT 94%, Gemini 97%, DeepSeek ~92%, round 52)",
-      "status": "local zero checks passed (00:06, 3 November); waiting for a free cloud slot (AF1 and FX1 running)",
-      "run": null,
+      "status": "running on the cloud, launched 01:02 (3 November)",
+      "run": 41587348657,
       "zero": "local, All: PASS (zero_local.log)",
       "next_step": "launch 160 worlds with skip_zero=local when AF1 finishes",
       "recompute": null
