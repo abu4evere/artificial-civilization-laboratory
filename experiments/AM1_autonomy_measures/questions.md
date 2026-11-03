@@ -104,3 +104,25 @@ changes.
 The assistant, under the creator's sleep-mode autonomy and the permission of 2 November. It is read-only. Council
 rounds 51 and 52: GPT 94%, Gemini 97%, DeepSeek about 92%, the assistant 70%. Frozen as `AM1-frozen` before any code or
 data.
+
+## Amendment 1 (2 November 2026, 23:02, before any data): "more chance" is `choice_temperature` 0.25, not 0.6
+- **Why: a feasibility problem, found by the code test.** In the 11-year code-test worlds (seeds 9905 and 9904, not
+  study data), temperature 0.6 left 6,829 living-weeks against v11's 119,182, and both worlds died out. A control that
+  empties the world cannot validate anything.
+- **The rule used to choose, on population only and never on any measure's value:** the highest temperature among
+  0.6, 0.4, 0.3 and 0.25 under which the test world keeps at least half of v11's living-weeks and is alive at the end.
+- **The checks** (`explore/feasibility.py`; living-weeks, people alive at the end):
+
+  | world | temperature | living-weeks | alive at the end |
+  |---|---|---|---|
+  | 11 years, 2 worlds | v11 (0.2) | 119,182 | |
+  | | 0.4 | 33,941 | 13 and 18 |
+  | | 0.3 | 88,697 | 60 and 73 |
+  | 60 years, seed 9905 | v11 (0.2) | 431,148 | 160 |
+  | | 0.3 | 193,380 (45%) | 75 |
+  | | 0.25 | 311,820 (72%) | 117 |
+
+- **The choice:** 0.25, so "more chance" is now a weak control (25% more randomness). A measure it does not move is not
+  thereby shown invalid. The reading rule is unchanged.
+- **A side observation (2 test worlds, described only):** ACL's people are very sensitive to randomness in choice.
+  Doubling the temperature from 0.2 to 0.4 empties a world within 11 years.

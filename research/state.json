@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T22:20:00",
+  "updated": "2026-11-02T22:44:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -251,10 +251,10 @@
       "plan": "experiments/AF1_open_affordances/questions.md",
       "frozen_tag": "AF1-frozen",
       "approved_by": "the creator's 'go ahead' for step 1 (2 November); GPT 93%, Gemini 95% (round 50)",
-      "status": "zero checks running locally (started 21:22)",
-      "run": null,
-      "zero": "local, running",
-      "next_step": "commit zero_local.log, launch 160 worlds with skip_zero=local, chunks=20",
+      "status": "running on the cloud (local zero checks passed 22:43), launched 22:44",
+      "run": 41573896983,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "when done: fetch, analyse, findings, blind recomputes by GPT, Gemini and DeepSeek; if positive, a confirmatory run on the newest nature",
       "recompute": null
     },
     {
@@ -264,10 +264,10 @@
       "plan": "experiments/FX1_fault_fixes/questions.md",
       "frozen_tag": "FX1-frozen",
       "approved_by": "the assistant under the creator's permission to edit world rules (2 November); GPT 97%, Gemini 99%, DeepSeek ~95% (round 51)",
-      "status": "code written; smoke worlds running",
-      "run": null,
+      "status": "running on the cloud (its own zero checks first), launched 22:24",
+      "run": 41571953456,
       "zero": "cloud (skip_zero=no)",
-      "next_step": "launch 160 worlds on the cloud with its own zero checks",
+      "next_step": "when done: save zero_cloud.log from the zero job, fetch, analyse, blind recomputes by GPT, Gemini and DeepSeek, findings; if no harm, build code_v12",
       "recompute": null
     }
   ],
