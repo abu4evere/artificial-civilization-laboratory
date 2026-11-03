@@ -139,3 +139,18 @@ you find something fix it or add any new rules. From now on keep working without
 - **`marks.py` (the making and wearing of marks):** F6, above.
 - **`geo.py`** (map making at the start) is not reviewed. It shapes the land once and has no behaviour.
 - **The review of behaviour rules is complete.** Faults F1–F6; restrictions R1–R3 and the audits' lists.
+
+## Appended (3 November 2026, 01:15): found while planning HN1 (hunting)
+- **F7. Per-species catch rates are written but never used** (`fauna.SPECIES`).
+  - **The values:** rabbit 0.40, deer 0.16, bison 0.10, fish 0.25. They have been in the table since the first commit.
+  - **What the code does instead:** the success chance is one flat `hunt_base_chance` (0.10) × party^1.5 × (0.5 +
+    skill) × tool, whatever the animal (`mind.hunt_chance`).
+  - **The other fields are used:** `flee` (animals run from a person within one tile) and `danger`.
+  - **The status:** a dead parameter. Either the table or the code does not say what the world does.
+- **F8. The decision to hunt expects meat the hunt does not give** (`mind.decide`, the hunt option).
+  - **The expectation:** `share = (hunt_prey_base 25 + hunt_prey_per_hunter 12 × n) ÷ n`, about 37 food per success for
+    a lone hunter. These two settings are used nowhere else.
+  - **The reality:** meat comes from `fauna.take_prey`, by species: rabbits 3 each and about 10 a success, deer 22,
+    bison 55. The old FX1 review measured about 10.5 a success.
+  - **The status:** the decision uses a stale model of the hunt, probably from before animals existed.
+- **Both go to HN1** (measured: expected against realized meat, and success by species) and are weighed before HR1.
