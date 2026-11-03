@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T03:50:00",
+  "updated": "2026-11-03T12:05:00",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -295,11 +295,38 @@
       "status": "final: F = 0, routing base chance; ratio 0.023; base chance alone cannot reach 0.5 (ceiling 0.42)",
       "run": 41595719392,
       "zero": "local, All: PASS",
-      "next_step": "council round 54: redesign HR1 (two settings, or fix F7/F8 first, or a reachable target, or turn to the habit/ends tension)",
+      "next_step": "done: round 54 chose FF2 (F8, F4, F5) and AM2 in parallel; HR1 (with F7) after FF2",
       "recompute": "experiments/HN1_hunting_funnel/recompute_hn1.md (all three match)"
+    },
+    {
+      "id": "FF2",
+      "title": "Fixing three more faults in nature v12 (F8 hunt expectation, F4 material limit, F5 water holder; a fault-fix harm check in a copy)",
+      "kind": "fault-fix check in a copy (code_ff2 = v12 + fix_hunt_expect + fix_mat_limit + fix_water_holder); 'no harm' -> nature v13",
+      "plan": "experiments/FF2_fault_fixes_2/questions.md",
+      "frozen_tag": "FF2-frozen",
+      "approved_by": "the assistant under the creator's permission to edit world rules (2 November); round 54: GPT 97%, Gemini 99%, DeepSeek ~92%",
+      "status": "code written; unit checks running locally; cloud run next",
+      "next_step": "launch the cloud run (zero checks on the cloud), then the frozen analysis, blind recompute by GPT, Gemini and DeepSeek"
+    },
+    {
+      "id": "AM2",
+      "title": "AM1's autonomy battery, unchanged, on nature v12 (read-only)",
+      "kind": "read-only",
+      "plan": "experiments/AM2_autonomy_measures_v12/questions.md",
+      "frozen_tag": "AM2-frozen",
+      "approved_by": "the assistant under standing autonomy; round 54",
+      "status": "running on the cloud",
+      "run": 41676999711,
+      "zero": "cloud",
+      "next_step": "fetch, frozen analysis, blind recompute of M3 and M5"
     }
   ],
   "queue_after": [
+    {
+      "what": "HR1: calibrate per-species success (F7's table, provenance unknown) and meat per kill to forager evidence (return ratio 0.5-1.5; success per hunter-week as a second check; docs/research/hunting_success_hadza_2026-11-03.md)",
+      "status": "after FF2",
+      "needs": "FF2 final; a frozen plan; council"
+    },
     {
       "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
       "status": "deferred until after UV3",

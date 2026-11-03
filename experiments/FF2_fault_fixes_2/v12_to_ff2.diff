@@ -1,0 +1,149 @@
+diff -r -u --strip-trailing-cr -x __pycache__ NV12_nature_v12/code_v12/acl/actions.py FF2_fault_fixes_2/code_ff2/acl/actions.py
+--- NV12_nature_v12/code_v12/acl/actions.py	2026-11-03 02:27:26.058621200 -0500
++++ FF2_fault_fixes_2/code_ff2/acl/actions.py	2026-11-03 11:44:22.723479300 -0500
+@@ -170,9 +170,9 @@
+             if sp and sp != "fish":
+                 leave_trace(world.tile(loc), f"bones:{sp}", world.tick)
+             if hide > 0:
+-                rng.choice(hunters).mats["hide"] += hide
++                matter.receive(world, rng.choice(hunters), "hide", hide, loc, "hunt")
+             for _ in range(int(round(bone))):
+-                rng.choice(hunters).mats["bone"] += 1.0
++                matter.receive(world, rng.choice(hunters), "bone", 1.0, loc, "hunt")
+             if sp == "fish":
+                 for h in hunters:
+                     h.doing = "fish"     # fishing is its own quiet work
+diff -r -u --strip-trailing-cr -x __pycache__ NV12_nature_v12/code_v12/acl/biology.py FF2_fault_fixes_2/code_ff2/acl/biology.py
+--- NV12_nature_v12/code_v12/acl/biology.py	2026-11-03 02:27:25.970620300 -0500
++++ FF2_fault_fixes_2/code_ff2/acl/biology.py	2026-11-03 11:44:22.723479300 -0500
+@@ -606,7 +606,7 @@
+         heir.food += p.food
+         heir.seeds += p.seeds
+         for k, v in p.mats.items():
+-            heir.mats[k] += v
++            matter.receive(world, heir, k, v, p.loc, "inherit")
+         for it in p.items:
+             heir.items.append(it)
+         log = getattr(world, "fx1log", None)    # FX1 logging (runner sets it; not saved; read by nothing here)
+diff -r -u --strip-trailing-cr -x __pycache__ NV12_nature_v12/code_v12/acl/config.py FF2_fault_fixes_2/code_ff2/acl/config.py
+--- NV12_nature_v12/code_v12/acl/config.py	2026-11-03 02:27:26.310678300 -0500
++++ FF2_fault_fixes_2/code_ff2/acl/config.py	2026-11-03 11:44:22.707853100 -0500
+@@ -138,6 +138,13 @@
+     fix_overflow: int = 1              # NV12 (FF1's F2, F3): 1 = things beyond the carry limit after an inheritance go onto the
+                                        # ground, the least valued first, as in _keep; 0 = v11 (an heir's first-held thing
+                                        # is deleted; from a body, the first held goes to the ground)
++    fix_hunt_expect: int = 0           # FF2 (F8): 1 = the hunt option weighs a success as the meat of the prey seen on that
++                                       # tile (the mean over take_prey's list of meat x number taken), divided by the
++                                       # hunters; 0 = v12 ((hunt_prey_base + hunt_prey_per_hunter x n) / n)
++    fix_mat_limit: int = 0             # FF2 (F4): 1 = hide and bone from a kill, and an heir's materials, past the material
++                                       # limit are left on the tile's pile; 0 = v12 (kept past the limit)
++    fix_water_holder: int = 0          # FF2 (F5): 1 = only a thing that can hold water saves the walk to water; 0 = v12
++                                       # (the best carry thing does, whether or not it holds water)
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff -r -u --strip-trailing-cr -x __pycache__ NV12_nature_v12/code_v12/acl/fauna.py FF2_fault_fixes_2/code_ff2/acl/fauna.py
+--- NV12_nature_v12/code_v12/acl/fauna.py	2026-11-03 02:27:26.049618500 -0500
++++ FF2_fault_fixes_2/code_ff2/acl/fauna.py	2026-11-03 11:44:22.707853100 -0500
+@@ -127,6 +127,22 @@
+     return (info["meat"] * taken, info["hide"] * taken, info["bone"] * taken, sp)
+ 
+ 
++def expected_take(world, loc: tuple) -> float:
++    """FF2 (F8): the meat a success here would give, as seen now: the mean, over the herds take_prey would choose from
++    (the same list), of the species' meat x the number it would take. 0 if there are none. Reads only."""
++    prey = [g for g in near(world, loc, 0) if g["sp"] in PREY and g["n"] > 0]
++    fish = fish_by(world, loc)
++    if fish is not None and fish["n"] > 0:
++        prey.append(fish)
++    if not prey:
++        return 0.0
++    total = 0.0
++    for g in prey:
++        info = SPECIES[g["sp"]]
++        total += info["meat"] * min(g["n"], 1 if info["meat"] >= 10 else max(1, round(10.0 / info["meat"])))
++    return total / len(prey)
++
++
+ def _lives_on(world, sp: str, loc: tuple) -> bool:
+     return world.tile(loc).biome in SPECIES[sp]["lives"]
+ 
+diff -r -u --strip-trailing-cr -x __pycache__ NV12_nature_v12/code_v12/acl/matter.py FF2_fault_fixes_2/code_ff2/acl/matter.py
+--- NV12_nature_v12/code_v12/acl/matter.py	2026-11-03 02:27:25.987624500 -0500
++++ FF2_fault_fixes_2/code_ff2/acl/matter.py	2026-11-03 11:44:22.707853100 -0500
+@@ -258,6 +258,21 @@
+         p.items.pop(index)
+ 
+ 
++def receive(world, p, kind: str, amount: float, loc: tuple, how: str) -> None:
++    """Raw material coming to p at loc (spoils of a kill, an inheritance). FF2 (F4): with fix_mat_limit, what goes past
++    the material limit is left on that tile's pile, kept and not deleted; 0 = v12 (p keeps it all). The runner's log
++    (read by nothing here) counts the units past the limit either way."""
++    over = min(amount, max(0.0, p.mat_total() + amount - world.cfg.material_limit))
++    log = getattr(world, "ff2log", None)
++    if log is not None and over > 0:
++        log.append(("mat_over", how, over))
++    if world.cfg.fix_mat_limit and over > 0:
++        tile = world.tile(loc)
++        tile.pile[kind] = tile.pile.get(kind, 0.0) + over
++        amount -= over
++    p.mats[kind] += amount
++
++
+ def carry_capacity(world, p) -> float:
+     _, f = best_item(p, "carry")
+     return world.cfg.carry_limit * f
+diff -r -u --strip-trailing-cr -x __pycache__ NV12_nature_v12/code_v12/acl/mind.py FF2_fault_fixes_2/code_ff2/acl/mind.py
+--- NV12_nature_v12/code_v12/acl/mind.py	2026-11-03 02:27:26.029618200 -0500
++++ FF2_fault_fixes_2/code_ff2/acl/mind.py	2026-11-03 11:44:22.707853100 -0500
+@@ -230,6 +230,7 @@
+         # Hunt: better with others.
+         _, tool = best_item(p, "hunt")
+         best, best_u, best_d = None, -1.0, 0
++        best_n = 1.0
+         for t in tiles:
+             tile = world.tile(t)
+             if fauna.prey_here(world, t) < 1 or tile.fire > 0:
+@@ -240,6 +241,8 @@
+             n = 1 + committed + 0.25 * max(0, others - committed)
+             chance = hunt_chance(world, n, p.skills["hunting"], tool)
+             share = (c.hunt_prey_base + c.hunt_prey_per_hunter * min(n, 5)) / n
++            if c.fix_hunt_expect:               # FF2 (F8): the meat of the prey seen there, shared
++                share = fauna.expected_take(world, t) / n
+             ev = chance * share * (1.0 - 0.1 * d)
+             u = (0.25 + 1.6 * food_hunger) * min(1.0, ev / (need * 1.5)) * (0.7 + 0.6 * g["boldness"]) + 0.05
+             # What they have learned to fear holds them back.
+@@ -247,8 +250,14 @@
+             u -= 0.5 * dread * (1.0 - 0.5 * g["boldness"])
+             if u > best_u:
+                 best, best_u, best_d = t, u, d
++                best_n = n
+         if best is not None:
+             add("hunt", best, best_u, best_d)
++            log = getattr(world, "ff2log", None)    # FF2 logging (runner sets it; not saved; read by nothing here)
++            if log is not None:
++                log.append(("hunt_opt", p.id, best, best_n,
++                            (c.hunt_prey_base + c.hunt_prey_per_hunter * min(best_n, 5)) / best_n,
++                            fauna.expected_take(world, best) / best_n))
+ 
+     if not toddler:
+         # Gather: picking things up, out of curiosity or because you have found a use for them.
+diff -r -u --strip-trailing-cr -x __pycache__ NV12_nature_v12/code_v12/acl/weather.py FF2_fault_fixes_2/code_ff2/acl/weather.py
+--- NV12_nature_v12/code_v12/acl/weather.py	2026-11-03 02:27:26.075620900 -0500
++++ FF2_fault_fixes_2/code_ff2/acl/weather.py	2026-11-03 11:44:22.723479300 -0500
+@@ -136,6 +136,15 @@
+     if best is not None:
+         if best > c.water_reach:
+             _, f = best_item(p, "carry")
++            log = getattr(world, "ff2log", None)    # FF2 logging (runner sets it; not saved; read by nothing here)
++            if c.fix_water_holder or log is not None:
++                from .matter import can_hold, factor
++                fw = max([factor(it, "carry") for it in p.items if can_hold(it, "water") > 0], default=1.0)
++                f_carry = f
++                if c.fix_water_holder:          # FF2 (F5): only a thing that can hold water saves the walk
++                    f = max(1.0, fw)
++                if log is not None:
++                    log.append(("water_walk", p.id, f_carry, max(1.0, fw), f))
+             walk = 6.0 * (best - c.water_reach) * (1.0 - 0.6 * min(1.0, f - 1.0))
+             p.energy = max(0.0, p.energy - walk)
+         return 0.0
