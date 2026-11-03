@@ -1,0 +1,247 @@
+diff --git a/../NV11_nature_v11/code_v11/acl/config.py b/code_af1/acl/config.py
+index 4a88fba..791be23 100644
+--- a/../NV11_nature_v11/code_v11/acl/config.py
++++ b/code_af1/acl/config.py
+@@ -132,6 +132,10 @@ class Config:
+     curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,
+                                        # 0.3 x curiosity x (1 - hunger), fading as 1/(1 + times tried there) (0 = nature v8)
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
++    similar_parts: int = 0             # AF1 (S): 1 = when making a known thing, any input may be replaced by something held
++                                       # whose 10 properties are each within 10 of the original's (0 = v11 exactly)
++    containers_carry: int = 0          # AF1 (K): 1 = the best container's carry factor also multiplies the made-thing and
++                                       # material limits, as it already multiplies the food limit (0 = v11 exactly)
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff --git a/../NV11_nature_v11/code_v11/acl/matter.py b/code_af1/acl/matter.py
+index 1cda556..8939383 100644
+--- a/../NV11_nature_v11/code_v11/acl/matter.py
++++ b/code_af1/acl/matter.py
+@@ -263,6 +263,23 @@ def carry_capacity(world, p) -> float:
+     return world.cfg.carry_limit * f
+ 
+ 
++def item_cap(world, p) -> int:
++    """How many made things p can carry. AF1 (K): the best container's carry factor multiplies the limit, as it does for
++    food; the container counts toward its own limit."""
++    if not world.cfg.containers_carry:
++        return world.cfg.item_limit
++    _, f = best_item(p, "carry")
++    return int(world.cfg.item_limit * f)
++
++
++def material_cap(world, p) -> float:
++    """How much raw material p can carry. AF1 (K): multiplied by the best container's carry factor."""
++    if not world.cfg.containers_carry:
++        return world.cfg.material_limit
++    _, f = best_item(p, "carry")
++    return world.cfg.material_limit * f
++
++
+ def worn_warmth(p) -> float:
+     """Share of cold kept out by what p wears."""
+     _, f = best_item(p, "cold")
+diff --git a/../NV11_nature_v11/code_v11/acl/mind.py b/code_af1/acl/mind.py
+index 25cbc52..839e61c 100644
+--- a/../NV11_nature_v11/code_v11/acl/mind.py
++++ b/code_af1/acl/mind.py
+@@ -22,7 +22,7 @@ from __future__ import annotations
+ from . import fauna, inquiry, thought, weather
+ from .knowhow import belief
+ from .config import WEEKS_PER_YEAR
+-from .matter import MATERIALS, SOFT_WHEN_WET, best_holder, best_item, holding
++from .matter import MATERIALS, PROPS, SOFT_WHEN_WET, best_holder, best_item, holding, item_cap, material_cap, raw_props
+ from .person import A, N_ACTIONS, PLACEABLE, Person
+ from .util import clamp, distance, softmax_pick
+ import math
+@@ -252,7 +252,7 @@ def decide(world, p: Person) -> tuple:
+ 
+     if not toddler:
+         # Gather: picking things up, out of curiosity or because you have found a use for them.
+-        if p.mat_total() < c.material_limit:
++        if p.mat_total() < material_cap(world, p):          # AF1 (K)
+             want = _material_wants(p, season)
+             best, best_u, best_d = None, 0.0, 0
+             for kind in GATHERABLE + (("earth",) if c.digging else ()):
+@@ -291,7 +291,7 @@ def decide(world, p: Person) -> tuple:
+                 v = max(v, belief(p, f"{recipe['target']}/{recipe['tool']}@{season}") or 0.0)
+             # Something about it surprised them: they want to try it again and see.
+             v = max(v, 0.5 * max(inquiry.pull(p, "m:" + sig), inquiry.pull(p, "f:" + sig)))
+-            if v <= best_u or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or not can_make(p, recipe):
++            if v <= best_u or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or resolve_recipe(world, p, recipe) is None:
+                 continue
+             u = c.worth_weight * v * (0.6 + 0.4 * g["diligence"]) * (1.0 - 0.5 * hunger)
+             if u > best_u:
+@@ -414,7 +414,7 @@ def decide(world, p: Person) -> tuple:
+         if c.hand_items:
+             # HD1: or hand them a made thing, if it would help them more than it costs the giver.
+             world.hand_intent.pop((p.id, q.id), None)
+-            if p.items and len(q.items) < c.item_limit:
++            if p.items and len(q.items) < item_cap(world, q):          # AF1 (K)
+                 net, _ = hand_pick(p, q)
+                 if net > 0.0:
+                     social = (0.25 * g["kindness"] + 0.6 * max(aff, 0.0) + 0.6 * kin + (0.6 if is_partner else 0.0)
+@@ -746,6 +746,74 @@ def can_make(p: Person, recipe: dict) -> bool:
+     return all(p.mats.get(k, 0.0) >= n for k, n in need.items())
+ 
+ 
++SIMILAR_D = 10   # AF1 (S): how close, in every one of the 10 properties, a stand-in must be
++
++
++def _props_of(world, p: Person, name: str):
++    """The 10 properties of an input: a raw material's from the table, a made kind's from the world's record, else from
++    a held thing of that kind. None if unknown."""
++    if name in MATERIALS:
++        return raw_props(name)
++    rec = world.knowledge.get(name)
++    if rec is not None and rec.get("props"):
++        return rec["props"]
++    for it in p.items:
++        if it["sig"] == name:
++            return it
++    return None
++
++
++def resolve_recipe(world, p: Person, recipe: dict):
++    """The recipe as p can make it now, or None. v11: only with the exact inputs. AF1 (S): an input p does not hold may
++    be replaced by a held thing whose 10 properties are each within SIMILAR_D of the original's; the closest first, in a
++    fixed order (no chance). The remembered recipe itself never changes."""
++    if can_make(p, recipe):
++        return recipe
++    if not world.cfg.similar_parts or recipe["verb"] == "fill":
++        return None
++    if recipe["verb"] == "strike":
++        slots = [("target", None), ("tool", None)]
++    elif recipe["verb"] == "shape":
++        slots = [("material", None)]
++    elif recipe["verb"] == "heat":
++        slots = [("part", None)]
++    else:
++        slots = [("parts", 0), ("parts", 1), ("binder", None)]
++    held = sorted({m for m in MATERIALS if p.mats.get(m, 0.0) >= 1.0} | {it["sig"] for it in p.items})
++    options = []
++    for key, i in slots:
++        name = recipe[key][i] if i is not None else recipe[key]
++        target = _props_of(world, p, name)
++        close = []
++        if target is not None:
++            for h in held:
++                if h == name:
++                    continue
++                hp = _props_of(world, p, h)
++                if hp is None:
++                    continue
++                d = max(abs(hp[k] - target[k]) for k in PROPS)
++                if d <= SIMILAR_D:
++                    close.append((d, h))
++        cands = ([name] if name in held else []) + [h for _, h in sorted(close)]
++        if not cands:
++            return None
++        options.append(cands)
++    import itertools
++    for combo in itertools.product(*options):
++        out = dict(recipe)
++        if "parts" in out:
++            out["parts"] = list(out["parts"])
++        for (key, i), name in zip(slots, combo):
++            if i is None:
++                out[key] = name
++            else:
++                out[key][i] = name
++        if can_make(p, out):
++            return out
++    return None
++
++
+ def _holding(p: Person, sig: str, worn_ok: bool = False) -> bool:
+     for it in p.items:
+         if it["sig"] == sig and (worn_ok or it["uses"] > 5):
+diff --git a/../NV11_nature_v11/code_v11/acl/actions.py b/code_af1/acl/actions.py
+index 463083d..ddde35b 100644
+--- a/../NV11_nature_v11/code_v11/acl/actions.py
++++ b/code_af1/acl/actions.py
+@@ -238,7 +238,7 @@ def _gather(world, p, target, eff):
+     tile = world.tile(p.loc)
+     idx, f = best_item(p, kind)
+     rate = (c.gather_base + c.gather_skill * p.skills["crafting"]) * eff * f
+-    got = min(tile.material(kind), rate, max(0.0, c.material_limit - p.mat_total()))
++    got = min(tile.material(kind), rate, max(0.0, matter.material_cap(world, p) - p.mat_total()))   # AF1 (K)
+     setattr(tile, kind, tile.material(kind) - got)
+     if matter.RAW[kind][7] >= 50:          # soft earth comes up wet
+         have = p.mats[kind]
+@@ -393,7 +393,8 @@ def _make(world, p, sig, eff):
+     recipe = p.recipes.get(sig)
+     if recipe is None:
+         return
+-    item = _craft(world, p, recipe)
++    from .mind import resolve_recipe
++    item = _craft(world, p, resolve_recipe(world, p, recipe) or recipe)          # AF1 (S): stand-in inputs
+     if item is not None:
+         p.reward += 0.1
+         p.doing = "make"
+@@ -483,6 +484,8 @@ def _hold_in_fire(world, p: Person, part: str):
+ 
+ def _keep(p: Person, item: dict, limit: int, world=None) -> None:
+     p.items.append(item)
++    if world is not None:
++        limit = matter.item_cap(world, p)          # AF1 (K); = the given limit in v11
+     while len(p.items) > limit:
+         worst = min(range(len(p.items)), key=lambda i: (p.itemval.get(p.items[i]["sig"], 0.0), -i))
+         gone = p.items.pop(worst)
+@@ -499,11 +502,15 @@ def drop_on_ground(world, p: Person, item: dict) -> None:
+ def ground_week(world) -> None:
+     """OP1: whoever stands where things lie, aged 12 or more and with room in hand, picks them up, the most valued
+     first, until full. Things on the ground neither rot nor wear (as tools on a body). Draws nothing at random."""
++    if world.cfg.containers_carry:                  # AF1 (K): over the limit (a container lost), the least valued go down
++        for q in sorted(world.living(), key=lambda q: q.id):
++            while len(q.items) > matter.item_cap(world, q):
++                worst = min(range(len(q.items)), key=lambda i: (q.itemval.get(q.items[i]["sig"], 0.0), -i))
++                drop_on_ground(world, q, q.items.pop(worst))
+     if not world.ground:
+         return
+     from .config import CHILD_END
+     tick = world.tick
+-    limit = world.cfg.item_limit
+     by_tile: dict = {}
+     for g in world.ground:
+         by_tile.setdefault((g["x"], g["y"]), []).append(g)
+@@ -512,7 +519,7 @@ def ground_week(world) -> None:
+         lying = by_tile.get(p.loc)
+         if not lying or p.age(tick) < CHILD_END:
+             continue
+-        while len(p.items) < limit:
++        while len(p.items) < matter.item_cap(world, p):          # AF1 (K); = item_limit in v11
+             left = [g for g in lying if id(g) not in taken]
+             if not left:
+                 break
+@@ -718,7 +725,7 @@ def _hand(world, p, q) -> None:
+     """HD1: p hands q the made thing that would help q most, net of what p loses, if q has room. The thing moves from
+     one hand to the other; nothing else changes."""
+     from .mind import hand_pick
+-    if not p.items or len(q.items) >= world.cfg.item_limit:
++    if not p.items or len(q.items) >= matter.item_cap(world, q):          # AF1 (K)
+         return
+     net, idx = hand_pick(p, q)
+     if idx < 0 or net <= 0.0:
+diff --git a/../NV11_nature_v11/code_v11/acl/biology.py b/code_af1/acl/biology.py
+index 6108849..b88c57a 100644
+--- a/../NV11_nature_v11/code_v11/acl/biology.py
++++ b/code_af1/acl/biology.py
+@@ -609,7 +609,7 @@ def die(world, p: Person, cause: str, killer) -> None:
+             heir.mats[k] += v
+         for it in p.items:
+             heir.items.append(it)
+-        while len(heir.items) > world.cfg.item_limit:
++        while len(heir.items) > matter.item_cap(world, heir):          # AF1 (K)
+             heir.items.pop(0)
+         world.emit("inherit", heir.id, p.id, p.loc, food=round(p.food + p.seeds, 2), things=len(p.items))
+     else:
+@@ -752,7 +752,7 @@ def bodies_week(world) -> None:
+                                                                            and q.age(tick) >= CHILD_END)):
+                 for it in b["items"]:
+                     q.items.append(it)
+-                while len(q.items) > world.cfg.item_limit:
++                while len(q.items) > matter.item_cap(world, q):          # AF1 (K)
+                     gone = q.items.pop(0)
+                     if world.cfg.ground_items:              # OP1: left on the ground, not deleted
+                         from .actions import drop_on_ground
