@@ -21,7 +21,7 @@ intended scale, a stone-scratched mark on rock lasts about 17 years. A fix shoul
 
 ## What it suggests (the assistant's reading, pending a source read in full)
 - **The scale:** a scratch a fraction of a millimetre deep, on rock that loses about 1 mm per thousand years, would
-  last **centuries**, not 17 years.
+  last **centuries**, not 17 years (superseded below by a source read in full: decades to about two centuries).
 - **ACL's rock wear rate looks far too fast for physics:** depth × 0.998 a week halves a mark in about 7 years. If an
   anchored rate is adopted, marks on rock would last far longer.
 - **The consequence:** knowledge kept in marks could then outlive its makers (KL1: marks revived lost know-how 2 times
@@ -30,7 +30,7 @@ intended scale, a stone-scratched mark on rock lasts about 17 years. A fix shoul
   - read a source in full: a weathering-rate paper on open access, or a rock-art conservation review;
   - convert the rate to ACL's depth units, with the stated assumption that depth 1.0 ≈ 1 mm.
 
-## Added (2 November 2026, about 23:15): a source read in full
+## Added (2 November 2026, 23:10): a source read in full
 **Portenga & Bierman 2011,** "Understanding Earth's eroding surface with 10Be", *GSA Today* 21(8), doi
 10.1130/G111A.1 (open access).
 - **Read:** the abstract and the "Outcrop Erosion Rates" results, as text taken from the PDF (rock.geosociety.org).
