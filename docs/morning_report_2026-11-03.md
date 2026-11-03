@@ -30,6 +30,17 @@
   2 test worlds and is only described, but it bears on any redesign that gives people more freedom: freedom has to come
   with ways to survive mistakes.
 
+## Found later in the night
+- **Two more faults, held for a second fix round (FX2;** draft `docs/fx2_design_draft_2026-11-02.md`):
+  - **F5:** a leaky basket wrongly saves walks to water.
+  - **F6:** marks made with made tools are scored about 100 times too deep, a units mix-up.
+- **Evidence I read for F6:**
+  - real scratches on rock last about 50–200 years (rock wears about 5 mm per thousand years; Portenga & Bierman
+    2011);
+  - marks on wood last about 10 years (wood wears about 0.05 mm a year; Williams et al. 2001).
+  - **ACL's marks wear about 3 times too fast.** A fix anchored to these numbers would let marks, and the knowledge
+    in them, outlast their makers, by honest physics.
+
 ## Next in line (the review's order)
 1. FX1's result, then v12 if it does no harm.
 2. AF1's result. If positive, a confirmatory run on v12.
