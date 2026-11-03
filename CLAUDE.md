@@ -50,7 +50,11 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   "GPT's opinion, not sign-off". Give the creator both views; only the creator decides.
   **Ask Gemini too (the creator, 27 October 2026):** every question put to GPT also goes, the same text, to Gemini
   (https://gemini.google.com, in the same Chrome). Compare the two answers (where they agree, where they differ) and
-  save both in the same `gpt_review_*.md` / `gpt_view_*.md` file, each labelled as an opinion, not sign-off. It is a **debate**: Claude is the council. Check each claim against the code and
+  save both in the same `gpt_review_*.md` / `gpt_view_*.md` file, each labelled as an opinion, not sign-off.
+  **Ask DeepSeek too (the creator, 2 November 2026):** "i also opened deepseek tab use that as extra for gpt and
+  gemini from now on you will use those 3". DeepSeek (https://chat.deepseek.com, in the same Chrome) gets the same
+  question text as GPT and Gemini, and its answer is saved beside theirs, labelled as an opinion, not sign-off. Its
+  briefing on ACL is `docs/deepseek_briefing_2026-11-02.md`. It is a **debate**: Claude is the council. Check each claim against the code and
   the records; where either model is wrong, tell that model with the facts and let it defend or revise; pass each one's
   main argument to the other for a reply. Report to the creator who argued what, and what survived checking.
   The Chrome extension follows one Claude account: after switching accounts, ask the creator to sign the extension
@@ -132,6 +136,20 @@ tick or a Telegram session**. Tuning nature towards an outcome stays forbidden. 
 version directly, by a message naming it.
 
 The previous nature stays in `code_v(N−1)`, so the change can always be undone.
+
+**Editing the world's rules (the creator, 2 November 2026, at the PC in this Claude Code session):** "I give you
+permission to edit world rules. Take a look and check all rules. If you find something fix it or add any new rules.
+From now on keep working without me". So the assistant may review every rule of nature, propose fixes and new rules,
+and adopt them without asking first. How:
+- each change is still **a general law or a fix of a fault**, never a named invention, recipe chain or reward, and never
+  tuned towards an outcome;
+- each goes through the same path: council (GPT and Gemini), a frozen test in a copy with a sham, the blind recompute,
+  a confirmatory run on new seeds, then the safe-path adoption above (steps 4–7);
+- a plain **fault in the code** (a rule that does not do what its own comment or plan says) may be fixed as a new
+  `code_vN` after zero checks and tests, with the fault shown in a recorded check, without a full study;
+- the guiding aim is the creator's: open what people can do through general abilities and physics
+  (`docs/action_audit_2026-11-02.md`, `docs/affordance_audit_2026-11-02.md`); tell the creator on Telegram each time a
+  rule goes live.
 
 Log every step in `WORKLOG.md` and leave a short morning report listing every autonomous decision.
 
