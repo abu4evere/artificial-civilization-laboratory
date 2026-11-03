@@ -1,0 +1,231 @@
+--- AM1_autonomy_measures/run_am1.py	2026-11-02 23:01:54.611845900 -0500
++++ AM2_autonomy_measures_v12/run_am2.py	2026-11-03 11:41:38.672926900 -0500
+@@ -1,5 +1,6 @@
+-"""AM1 — measuring autonomy, with measures checked against constrained controls (questions.md, frozen as `AM1-frozen`).
+-Read-only on live nature v11 (`code_v11`); the arms change existing settings only: v11 (c), no habits (h,
++"""AM2 — AM1's autonomy battery, unchanged, on nature v12 (questions.md, frozen as `AM2-frozen`): AM1's runner with only
++the code, seeds and labels changed (am1_to_am2.diff).
++Read-only on live nature v12 (`code_v12`); the arms change existing settings only: v12 (c), no habits (h,
+ learned_weight 0), fewer acts (a, stage E0-C), more chance (t, choice_temperature 0.25; amendment 1), sham (x). ES2's runner supplies
+ the set-up (`../ES2_realized_lookahead/run_es2.py`). AM1's observer records, for adults aged 16-49 in years 100-200:
+   M1   SC1's C12 snapshots (year-t action and situation shares, habit summary) every 5 years
+@@ -10,8 +11,8 @@
+   M6a  first makes of a recipe that use an input the person never used or gathered before
+   M6b  completions of established gather-make chains under a cue (season x food band) not seen before for that pair
+ 
+-  python experiments/AM1_autonomy_measures/run_am1.py zero
+-  python experiments/AM1_autonomy_measures/run_am1.py one <arm> <seed> <years> <out>
++  python experiments/AM2_autonomy_measures_v12/run_am2.py zero
++  python experiments/AM2_autonomy_measures_v12/run_am2.py one <arm> <seed> <years> <out>
+ """
+ from __future__ import annotations
+ 
+@@ -27,9 +28,10 @@
+ sys.path.insert(0, str(HERE.parent / "ES2_realized_lookahead"))
+ import run_es2 as base  # noqa: E402
+ 
+-CODE = "v11"
++base.CODES["v12"] = HERE.parent / "NV12_nature_v12" / "code_v12"
++CODE = "v12"
+ WPY, YEARS = base.WPY, 200
+-SEEDS = tuple(range(22501, 22533))        # 32 new paired seeds, used by no study
++SEEDS = tuple(range(22801, 22833))        # 32 new paired seeds, used by no study
+ SMOKE_SEEDS = (9905, 9904)
+ ARMS = {"c": {**base.LP},
+         "h": {**base.LP, "learned_weight": 0.0},
+@@ -312,7 +314,7 @@
+     t = r.stdout.split()[-1:] == ["True"]
+     ok &= t
+     lines.append(f"arm c, seed 501: saved at year 10 and reloaded, continues exactly to year 15: {'yes' if t else 'NO'}")
+-    lines.append(f"code_v11 fingerprint: {call('fp')}")
++    lines.append(f"code_v12 fingerprint: {call('fp')}")
+     OUT.mkdir(parents=True, exist_ok=True)
+     text = "\n".join(lines) + f"\nAll: {'PASS' if ok else 'FAIL'}\n"
+     (OUT / "zero.txt").write_text(text, encoding="utf-8")
+@@ -331,7 +333,7 @@
+         w.step()
+         if not w.living():
+             break
+-    res = {"arm": arm, "seed": seed, "nature": "code_v11", "code_hash": f0, "code_hash_after": base.fingerprint(CODE),
++    res = {"arm": arm, "seed": seed, "nature": "code_v12", "code_hash": f0, "code_hash_after": base.fingerprint(CODE),
+            "final_tick": w.tick, "extinct": not w.living(), "world_hash": base.world_hash(w), **obs.results()}
+     out = out or OUT
+     out.mkdir(parents=True, exist_ok=True)
+--- AM1_autonomy_measures/analyse_am1.py	2026-11-02 22:33:56.345880700 -0500
++++ AM2_autonomy_measures_v12/analyse_am2.py	2026-11-03 11:42:40.551046500 -0500
+@@ -1,7 +1,8 @@
+-"""AM1 analysis, written before any data (questions.md, frozen as `AM1-frozen`).
++"""AM2 analysis: AM1's analysis with only the code, seeds, bootstrap seed and labels changed, plus the described v12 - v11
++comparison for arm c (questions.md, frozen as `AM2-frozen`); written before any data.
+ 
+-  python experiments/AM1_autonomy_measures/analyse_am1.py                      # writes results.md
+-  python experiments/AM1_autonomy_measures/analyse_am1.py --smoke --dir <folder>
++  python experiments/AM2_autonomy_measures_v12/analyse_am2.py                      # writes results.md
++  python experiments/AM2_autonomy_measures_v12/analyse_am2.py --smoke --dir <folder>
+ """
+ from __future__ import annotations
+ 
+@@ -15,14 +16,14 @@
+ 
+ HERE = Path(__file__).parent
+ sys.path.insert(0, str(HERE))
+-import run_am1 as R  # noqa: E402
++import run_am2 as R  # noqa: E402
+ 
+ SMOKE = "--smoke" in sys.argv
+ OUTDIR = Path(sys.argv[sys.argv.index("--dir") + 1]) if "--dir" in sys.argv else HERE / "output"
+ REPS = 10_000
+-RNG = np.random.default_rng(20261108)
++RNG = np.random.default_rng(20261110)
+ ARMS = ("c", "h", "a", "t", "x")
+-NAME = {"c": "v11", "h": "no habits", "a": "fewer acts", "t": "more chance", "x": "sham"}
++NAME = {"c": "v12", "h": "no habits", "a": "fewer acts", "t": "more chance", "x": "sham"}
+ 
+ 
+ def pct(x):
+@@ -44,7 +45,7 @@
+             break
+     R.base.setup(R.CODE)
+     fp_now = R.base.fingerprint(R.CODE)
+-    m = re.search(r"code_v11 fingerprint: ([0-9a-f]{64})", zero)
++    m = re.search(r"code_v12 fingerprint: ([0-9a-f]{64})", zero)
+     zero_ok = "All: PASS" in zero and m is not None and m.group(1) == fp_now
+     if SMOKE:
+         seeds = sorted(set.intersection(*[set(runs[a]) for a in ARMS if runs[a]]))
+@@ -57,11 +58,11 @@
+     sane = all(runs["a"][s]["sums"].get("m3_g_made", 0) + runs["a"][s]["sums"].get("m3_m_made", 0) == 0
+                for s in seeds if s in runs["a"])
+     ok = bool(zero_ok and present and fps == {fp_now} and sane)
+-    L = ["# AM1: Measuring autonomy against constrained controls (results)", "",
+-         "Frozen as `AM1-frozen`. run_am1.py, analyse_am1.py (written before data).", "", "## Validity", "",
+-         f"- Zero checks (All: PASS, same `code_v11` fingerprint): **{'yes' if zero_ok else 'NO'}**",
++    L = ["# AM2: AM1's autonomy battery on nature v12 (results)", "",
++         "Frozen as `AM2-frozen`. run_am2.py, analyse_am2.py (written before data).", "", "## Validity", "",
++         f"- Zero checks (All: PASS, same `code_v12` fingerprint): **{'yes' if zero_ok else 'NO'}**",
+          f"- All worlds present ({sum(len(runs[a]) for a in ARMS)}): **{'yes' if present else 'NO'}**",
+-         f"- One fingerprint, `code_v11`'s: **{'yes' if fps == {fp_now} else 'NO'}**",
++         f"- One fingerprint, `code_v12`'s: **{'yes' if fps == {fp_now} else 'NO'}**",
+          f"- Sanity (fewer acts completes no chain): **{'yes' if sane else 'NO'}**", "",
+          f"**{'Valid.' if ok else 'NOT VALID: no reading is drawn.'}**", ""]
+     if not ok and not SMOKE:
+@@ -76,11 +77,12 @@
+         return np.array([float(runs[a][s]["sums"].get(key, 0)) for s in seeds])
+ 
+     # --- M1: SC1's C12 within each arm (ridge, lambda 1, four folds of eight worlds)
+-    folds = {s: i % 4 for i, s in enumerate(seeds)}
+-
+-    def m1_sse(a):
++    def m1_sse(a, rr=None, ss=None):
++        rr = runs[a] if rr is None else rr
++        ss = seeds if ss is None else ss
++        folds = {s: i % 4 for i, s in enumerate(ss)}
+         def design(s):
+-            snaps = {(x[0], x[1]): x for x in runs[a][s]["snaps"]}
++            snaps = {(x[0], x[1]): x for x in rr[s]["snaps"]}
+             XA, XB, Y = [], [], []
+             for (pid, y), p in snaps.items():
+                 q = snaps.get((pid, y + 5))
+@@ -94,13 +96,13 @@
+                 XB.append(b0 + [v / ta for v in p[5]])
+                 Y.append([v / tb for v in q[5]])
+             return np.array(XA), np.array(XB), np.array(Y)
+-        D = {s: design(s) for s in seeds}
++        D = {s: design(s) for s in ss}
+         out = []
+         for which in (0, 1):
+-            sse = np.zeros(n)
++            sse = np.zeros(len(ss))
+             for f in range(4):
+-                tr = [s for s in seeds if folds[s] != f and len(D[s][2])]
+-                te = [s for s in seeds if folds[s] == f and len(D[s][2])]
++                tr = [s for s in ss if folds[s] != f and len(D[s][2])]
++                te = [s for s in ss if folds[s] == f and len(D[s][2])]
+                 if not tr or not te:
+                     continue
+                 X = np.vstack([D[s][which] for s in tr])
+@@ -113,9 +115,9 @@
+                 B = np.linalg.solve(Xs.T @ Xs + 1.0 * P, Xs.T @ Y)
+                 for s in te:
+                     Xt = np.hstack([(D[s][which] - mu) / sd, np.ones((len(D[s][which]), 1))])
+-                    sse[seeds.index(s)] = float(((D[s][2] - Xt @ B) ** 2).sum())
++                    sse[ss.index(s)] = float(((D[s][2] - Xt @ B) ** 2).sum())
+             out.append(sse)
+-        return out[0], out[1], sum(len(D[s][2]) for s in seeds)
++        return out[0], out[1], sum(len(D[s][2]) for s in ss)
+ 
+     val, rep, info = {}, {}, {}
+     for a in arms:
+@@ -137,7 +139,7 @@
+             info[(meas, a)] = f"gather chains {int(gc.sum()):,}, matched {int(mc.sum()):,}"
+ 
+     L += ["## The three measures with frozen predictions (each predicted lower in no habits and in more chance)", "",
+-          "| measure | arm | value | arm − v11 [95%] | sample |", "|---|---|---|---|---|"]
++          "| measure | arm | value | arm − v12 [95%] | sample |", "|---|---|---|---|---|"]
+     readings = {}
+     for meas in ("M1", "M3", "M5"):
+         for a in arms:
+@@ -163,9 +165,9 @@
+             lo, hi = pct(rep[(meas, "x")] - rep[(meas, "c")])
+             unstable = lo > half or hi < -half
+         readings[meas] = rd + ("; unstable (sham)" if unstable else "")
+-    L += ["", "Rule: validated if v11 − no habits and v11 − more chance both have 95% intervals wholly above 0; partly "
++    L += ["", "Rule: validated if v12 − no habits and v12 − more chance both have 95% intervals wholly above 0; partly "
+           "validated if only one does; otherwise not validated (reported, not dropped). Unstable if the sham − v11 "
+-          "interval lies wholly outside ±(half the v11 − no habits point difference).", ""]
++          "interval lies wholly outside ±(half the v12 − no habits point difference).", ""]
+     for meas in ("M1", "M3", "M5"):
+         L.append(f"**{meas}: {readings.get(meas, 'not computed')}.**")
+     L.append("")
+@@ -182,7 +184,7 @@
+                  ("M6a new in steps", "m6a_new_in_steps", "m6a_new_acts"),
+                  ("M6b transfer to a new cue", "m6b_new_cue", "m6b_established")]
+     L += ["## Described (no frozen prediction)", "", "| measure | " + " | ".join(NAME[a] for a in arms) +
+-          " | v11 − no habits [95%] | v11 − more chance [95%] |", "|---|" + "---|" * (len(arms) + 2)]
++          " | v12 − no habits [95%] | v12 − more chance [95%] |", "|---|" + "---|" * (len(arms) + 2)]
+     for label, num, den in described:
+         vals = {a: ratio(a, num, den) for a in arms}
+         cells = " | ".join(f"{vals[a][0]:.4f}" for a in arms)
+@@ -194,6 +196,43 @@
+             else:
+                 dd.append("-")
+         L.append(f"| {label} | {cells} | {dd[0]} | {dd[1]} |")
++    # --- described only: v12 - v11 for arm c (AM2's seeds against AM1's; unpaired, a two-sample world bootstrap).
++    # It never redefines success and never changes a validation reading (questions.md).
++    old = {}
++    for f in sorted(glob.glob(str(HERE.parent / "AM1_autonomy_measures" / "output" / "c_seed_*.json"))):
++        r = json.load(open(f))
++        old[r["seed"]] = r
++    if old:
++        os_ = sorted(old)
++        n1 = len(os_)
++        W1 = np.stack([np.bincount(row, minlength=n1) for row in RNG.integers(0, n1, size=(REPS, n1))]).astype(float)
++
++        def ocol(key):
++            return np.array([float(old[s]["sums"].get(key, 0)) for s in os_])
++        cmp_ = []
++        sa1, sb1, _ = m1_sse("c", old, os_)
++        sa2, sb2, _ = m1_sse("c")
++        with np.errstate(invalid="ignore", divide="ignore"):
++            cmp_.append(("M1", (sa2.sum() - sb2.sum()) / sa2.sum(), (sa1.sum() - sb1.sum()) / sa1.sum(),
++                         ((W @ sa2) - (W @ sb2)) / (W @ sa2) - ((W1 @ sa1) - (W1 @ sb1)) / (W1 @ sa1)))
++            for meas, pre in (("M3", "m3"), ("M5", "m5")):
++                g2 = [col("c", f"{pre}_{k}") for k in ("g_chains", "g_made", "m_chains", "m_made")]
++                g1 = [ocol(f"{pre}_{k}") for k in ("g_chains", "g_made", "m_chains", "m_made")]
++                v2 = g2[1].sum() / g2[0].sum() - g2[3].sum() / g2[2].sum()
++                v1 = g1[1].sum() / g1[0].sum() - g1[3].sum() / g1[2].sum()
++                b2 = (W @ g2[1]) / (W @ g2[0]) - (W @ g2[3]) / (W @ g2[2])
++                b1 = (W1 @ g1[1]) / (W1 @ g1[0]) - (W1 @ g1[3]) / (W1 @ g1[2])
++                cmp_.append((meas, v2, v1, b2 - b1))
++            for label, num, den in described:
++                nu2, de2, nu1, de1 = col("c", num), col("c", den), ocol(num), ocol(den)
++                cmp_.append((label, nu2.sum() / de2.sum(), nu1.sum() / de1.sum(),
++                             (W @ nu2) / (W @ de2) - (W1 @ nu1) / (W1 @ de1)))
++        L += ["", "## v12 against v11, arm c (described only; different seeds, unpaired)", "",
++              f"AM2's {n} worlds (seeds {seeds[0]}–{seeds[-1]}) against AM1's {n1} (seeds {os_[0]}–{os_[-1]}). "
++              "It never redefines success.", "", "| measure | v12 | v11 | v12 − v11 [95%] |", "|---|---|---|---|"]
++        for label, v2, v1, b in cmp_:
++            L.append("| {} | {:.4f} | {:.4f} | {:+.4f} [{:+.4f}, {:+.4f}] |".format(label, v2, v1, v2 - v1, *pct(b)))
++        L.append("")
+     L += ["", "## Population (beside every measure)", "", "| arm | living-weeks | adult-weeks (16–49) | extinct worlds |",
+           "|---|---|---|---|"]
+     for a in arms:
