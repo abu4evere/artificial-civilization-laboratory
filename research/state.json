@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T16:47:20",
+  "updated": "2026-11-03T16:52:02",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -322,6 +322,16 @@
       "zero": "cloud",
       "next_step": "done",
       "recompute": "GPT and Gemini match (recompute_am2.md)"
+    },
+    {
+      "id": "PB0",
+      "title": "Would knowing what happens next change people's choices? (read-only prediction audit on v12; the brain road, step 1)",
+      "kind": "read-only",
+      "plan": "experiments/PB0_prediction_audit/questions.md",
+      "frozen_tag": "PB0-frozen",
+      "approved_by": "the assistant under the creator's direction (brain first) and sleep-mode autonomy; round 57: Gemini 85%, DeepSeek ~80% after the control fix",
+      "status": "code written; cloud smoke test 41725606184 running",
+      "next_step": "check the smoke (timing, zero checks), then the full cloud run (32 worlds)"
     }
   ],
   "queue_after": [
