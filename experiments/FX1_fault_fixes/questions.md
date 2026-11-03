@@ -99,3 +99,8 @@
 ## Sign-off (2 November 2026)
 The assistant, under the creator's permission to edit world rules (2 November). Council round 51: GPT 97%, Gemini 99%,
 DeepSeek about 95%, the assistant 85%. Frozen as `FX1-frozen` before any code or data.
+
+## Amendment 1 (2 November 2026, 22:25, before any data)
+The code's log also records, at each make choice, whether v11's rule and whether the fixed rule would each offer the
+person's newest recipe. This shows F1's effect on the same decisions, and it adds two described columns. Nothing else
+changes: no world state, no reading and no guard.

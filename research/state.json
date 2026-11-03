@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T13:33:17",
+  "updated": "2026-11-02T22:20:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -19,7 +19,9 @@
     "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
     "nature_change_tests": "only studies listed below with approved_by set",
     "nature_adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
-    "money_credentials_publishing_deleting": "never"
+    "money_credentials_publishing_deleting": "never",
+    "rule_edits": "the creator, 2 November 2026 (at the PC): 'I give you permission to edit world rules. Take a look and check all rules. If you find something fix it or add any new rules. From now on keep working without me'. Fixes and new general laws without asking first, each via council (GPT, Gemini, DeepSeek), a frozen test in a copy with a sham, blind recomputes and the safe path; a fault fix needs only a harm check (FX1); never named inventions, recipe chains, rewards or tuning",
+    "council": "GPT, Gemini and DeepSeek (the creator, 2 November 2026: 'from now on you will use those 3'); the same question to all three; close browser tabs when done"
   },
   "studies": [
     {
@@ -241,6 +243,32 @@
       "zero": "local, All: PASS (zero_local.log)",
       "next_step": "for the creator: a goal kept across weeks, or carrying room, or neither (a frozen test in a copy first)",
       "recompute": "experiments/WP1_want_propagation/recompute_wp1.md (GPT and Gemini 3.1 Pro match)"
+    },
+    {
+      "id": "AF1",
+      "title": "Open what made things can do: S make by what it does, K containers contain (a nature-change test in a copy)",
+      "kind": "nature-change test in a copy (code_af1 = v11 + similar_parts + containers_carry)",
+      "plan": "experiments/AF1_open_affordances/questions.md",
+      "frozen_tag": "AF1-frozen",
+      "approved_by": "the creator's 'go ahead' for step 1 (2 November); GPT 93%, Gemini 95% (round 50)",
+      "status": "zero checks running locally (started 21:22)",
+      "run": null,
+      "zero": "local, running",
+      "next_step": "commit zero_local.log, launch 160 worlds with skip_zero=local, chunks=20",
+      "recompute": null
+    },
+    {
+      "id": "FX1",
+      "title": "Fixing three faults in nature v11 (a fault-fix harm check in a copy)",
+      "kind": "fault-fix check in a copy (code_fx1 = v11 + fix_make_choice + fix_overflow); 'no harm' -> nature v12",
+      "plan": "experiments/FX1_fault_fixes/questions.md",
+      "frozen_tag": "FX1-frozen",
+      "approved_by": "the assistant under the creator's permission to edit world rules (2 November); GPT 97%, Gemini 99%, DeepSeek ~95% (round 51)",
+      "status": "code written; smoke worlds running",
+      "run": null,
+      "zero": "cloud (skip_zero=no)",
+      "next_step": "launch 160 worlds on the cloud with its own zero checks",
+      "recompute": null
     }
   ],
   "queue_after": [
@@ -289,12 +317,14 @@
     "ticks_per_day": 24,
     "tick_timeout_minutes": 45,
     "local_simulations_max": 4,
-    "cloud_studies_at_once": 1,
+    "cloud_studies_at_once": 2,
     "failures_before_pause": 3,
     "daily_summary_at": "07:30",
     "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2).",
     "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud.",
-    "pc_full_use_2": "the creator, Telegram 2026-11-02 02:21: 'Ok good you can use pc at max capacity now'. pc_light_use (1 Nov 16:44) ends. While the creator is away, local simulations may run at normal priority, up to 4 at once; reported through Telegram. Ends when the creator writes otherwise or is back at the PC (then CLAUDE.md: Idle, at most 2)."
+    "pc_full_use_2": "the creator, Telegram 2026-11-02 02:21: 'Ok good you can use pc at max capacity now'. pc_light_use (1 Nov 16:44) ends. While the creator is away, local simulations may run at normal priority, up to 4 at once; reported through Telegram. Ends when the creator writes otherwise or is back at the PC (then CLAUDE.md: Idle, at most 2).",
+    "cloud_note": "raised from 1 to 2 on 2 November 2026 (22:20) for AF1 and FX1 together: the repository is public, so Actions minutes cost nothing, and extra chunks wait for free runners",
+    "pc_note_2026_11_02_22_20": "the creator was at the PC this evening (opened a DeepSeek tab), so local simulations were set to Idle priority; long work goes to the cloud"
   },
   "directions": [
     {
