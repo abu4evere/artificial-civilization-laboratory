@@ -81,3 +81,25 @@ inventor, after about 64 weeks.
 GPT (chat `6ae8d65a`) and Gemini 3.1 Pro (chat `8a14af5997ab7e3f`; Flash had returned an error) recomputed WP1 from the
 per-world counts, blind, with the prompt written before the data. **Both match every point value, reading and guard.**
 **WP1 is final.**
+
+## Addendum (2 November 2026, about 20:30): where new kinds stop under A2 (exploratory; outside the frozen plan)
+`explore/funnel_under_a2.py` (`explore/funnel_under_a2.json`) runs one A2 world of the copy (seed 22201) to year 130 with
+UP1's make-choice funnel. The observer's reproduction of the make choice matched the copy's at every decision
+(mismatches 0). **One world, 23 new kinds from years 100–125, described only:**
+
+| step | new kinds under A2 (6,766 cases) | new kinds under v11 (UP1, 32 worlds) |
+|---|---|---|
+| value floor | 24.2% | 13.2% |
+| **cannot make** | **75.9%** | **86.7%** |
+| any later step (4, 5, made) | 0 | 0.05% |
+
+- **Even when value flows down the whole chain, new kinds stop at "cannot make".** No case reached the make option.
+- **So the missing piece is not wanting.** The inputs do not come together in the hand.
+- **The candidates left are logistic:**
+  - parts are used up, and only 3 made things can be carried;
+  - each extra level needs its own inputs;
+  - there is no persistence: nothing keeps the parts gathered for the goal.
+
+  A goal kept across weeks would add persistence. The carrying limit would still stand.
+
+**A lead for the creator's decision, not a finding.**
