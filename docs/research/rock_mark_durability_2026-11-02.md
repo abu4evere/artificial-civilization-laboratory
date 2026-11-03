@@ -52,3 +52,21 @@ intended scale, a stone-scratched mark on rock lasts about 17 years. A fix shoul
   wear need their own anchors.
 - **A caution:** these are long-term averages of whole-surface erosion. Lichen, frost and wind on a fresh scratch may
   be faster at first. The figure is an order of magnitude, not a calibration.
+
+## Added (2 November 2026, 23:21): an anchor for wood
+**Williams, Knaebe, Evans & Feist 2001,** "Erosion rates of wood during natural weathering. Part III. Effect of
+exposure angle on erosion rate", *Wood and Fiber Science* 33(1):50–57.
+- **Read:** the abstract and the introduction's summary of the earlier parts, as text taken from the PDF (USDA Forest
+  Service, research.fs.usda.gov).
+- **What it says:** the specimens were exposed near Madison, Wisconsin, for 10 years. Summarising part II: "The rate of
+  erosion for smooth-planed vertical-grained lumber was about 40 to 60 µm/year for all species except western
+  redcedar, which had an erosion rate of about 95 µm/year." Erosion was often faster at lower exposure angles (for
+  example, red oak at 0°: 105 µm/year).
+
+**What it suggests (the assistant's reading):**
+- **How long a mark on wood lasts:** about 0.05 mm a year. So a 0.5 mm deep mark lasts about **10 years**.
+- **Against ACL:** v11's intended stone-on-wood mark (0.54 deep, wear × 0.985 a week) lasts about 3 years, again
+  roughly 3 times too short.
+- **The caution:** this is planed lumber, not living bark or a fresh-cut surface. It is an order of magnitude.
+- **Ground marks (washed out in weeks)** still have no anchor. v11's rate (× 0.8 a week) is left as it is unless a
+  source is found.
