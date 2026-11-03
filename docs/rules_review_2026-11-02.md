@@ -110,3 +110,27 @@ you find something fix it or add any new rules. From now on keep working without
 - **`fauna.py` (read in part, about 23:05).** A predator that kills 3 rabbits from a herd of fewer than 3 leaves a negative
   count for the rest of that week, until the herd is removed. That week's total, which is used for the land's
   carrying cap, is off by at most a few animals. This is noted as trivial and is not fixed.
+- **F6 (found in `marks.tool_of`, about 23:10). A scale fault in mark depth.**
+  - **The fault:** raw markers have hardness on a 0–1 scale (`MARKERS`: stone 0.8, flint 0.7, bone 0.5). A made
+    thing's `hard` and `edge` are on the 0–100 scale (`matter`'s docstring: such properties "are read as fractions
+    here, where they meet the efforts of the body"). `tool_of` compares and returns them **without dividing by 100**.
+  - **The effects:**
+    - any made thing with hard ≥ 1 beats a raw stone as a marker;
+    - `make` computes depth = clamp(hard − surface + 0.4) × (0.6 + 0.4 × edge), so a made tool's mark is up to about
+      **38 deep instead of about 0.3**. For a sharp flake (edge 95), the second factor alone is 38.6.
+  - **How long marks last** (wear is depth × 0.998 a week on rock, 0.985 on wood, 0.8 on ground; a mark is gone
+    below 0.05):
+
+    | tool | rock | wood | ground |
+    |---|---|---|---|
+    | stone | about 17 years (0.29 deep) | about 3 years | about 11 weeks |
+    | any made tool (the fault) | about 64 years | about 5 years | about 30 weeks |
+
+  - **The catch:** the docstring promises "rock marks last generations". At the intended scale, rock marks last about
+    17 years, under one generation. So the documented intent is now met **only through the fault**. A plain
+    divide-by-100 would break it.
+  - **What FX2 must decide with the council:**
+    - the scale fix itself;
+    - whether the rock wear rate (0.998) should be anchored to evidence on how long scratches on rock survive, so that
+      "generations" holds by design, not by accident;
+    - the effect on knowledge kept in marks (KL1: marks revived lost know-how 2 times in 99).
