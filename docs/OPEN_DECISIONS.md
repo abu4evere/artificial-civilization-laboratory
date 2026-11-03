@@ -312,7 +312,7 @@ the file named.
 - [ ] **After KL1** (final, 2 November 2026; `experiments/KL1_knowledge_loss/findings.md`): death is the main road of loss; marks do not (yet). Next: H1 (a copy; adoption only with the creator's approval), informed by the cultural-evolution literature the creator supplied.
 - [ ] **Correction (2 November 2026)** to the item 'After UV1' above: the carer pull is 8% **every 4 weeks**, not a week, and learned values also pass in talk from anyone respected or happier (`_imitate`). See the corrections appended to UV1's and UV3's findings.
 - [ ] **After BN1** (final, 2 November 2026; `experiments/BN1_born_without_learned_content/findings.md`): inconclusive (D_z +0.0205 [+0.0157, +0.0252] against a 0.02 margin); no guard; no all-age cost. **For the creator:** keep v11's birth inheritance, or test removing it again with a confirmatory run on new seeds (a pre-registered margin), or decide directly. Nothing changes without the creator. Next study (debate round 46, both models 90%): SC1, a read-only scorecard of the twelve capacities.
-  - **Decided by the assistant** (2 November, 23:10), under the creator's permission of the same evening to edit
+  - **Decided by the assistant** (2 November, about 23:00), under the creator's permission of the same evening to edit
     world rules. **Keep v11's birth inheritance for now.**
     - **Why:** the safe path needs a *supported* study. BN1 was inconclusive, with z slightly **worse** (+0.0205),
       so a confirmatory run of the same arm cannot make it supported.

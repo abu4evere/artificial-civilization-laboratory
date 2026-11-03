@@ -96,7 +96,7 @@ you find something fix it or add any new rules. From now on keep working without
 4. **Made things as hammers and binders, and building and storing with made things** (the audit's next rules).
 5. **Free targets, teaching as a choice, general verbs, goals across weeks** (`docs/action_audit_2026-11-02.md`).
 
-## Appended (2 November 2026, 23:10): the files not read at first
+## Appended (2 November 2026, about 23:05): the files not read at first
 - **Read since:** `social.py`, `thought.py`, `inquiry.py` and `weather.py`. No fault in the first three.
 - **F5 (minor; found in `weather.drink`). A leaky container saves water walks.**
   - **The comment says:** "something that holds water saves some of the walking".
@@ -107,6 +107,6 @@ you find something fix it or add any new rules. From now on keep working without
   - **The trade-off:** the effect is small (energy only), and fixing it removes a help some people now have. It is
     physics honesty, not a new limit. **It goes to the next fault-fix round (FX2)** with F4, after FX1's result.
 - **Still not read line by line:** `fauna.py`, `geo.py`, `marks.py`, and the rest of `information.py`.
-- **`fauna.py` (read in part, 23:10).** A predator that kills 3 rabbits from a herd of fewer than 3 leaves a negative
+- **`fauna.py` (read in part, about 23:05).** A predator that kills 3 rabbits from a herd of fewer than 3 leaves a negative
   count for the rest of that week, until the herd is removed. That week's total, which is used for the land's
   carrying cap, is off by at most a few animals. This is noted as trivial and is not fixed.
