@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T02:45:00",
+  "updated": "2026-11-03T03:30:00",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -279,11 +279,11 @@
       "plan": "experiments/AM1_autonomy_measures/questions.md",
       "frozen_tag": "AM1-frozen",
       "approved_by": "the assistant under sleep-mode autonomy and the 2 November permission (GPT 94%, Gemini 97%, DeepSeek ~92%, round 52)",
-      "status": "running on the cloud, launched 01:02 (3 November)",
+      "status": "final: M1 partly validated; M3 and M5 not validated (controls higher: habits suppress gather-then-make); M2 a candidate",
       "run": 41587348657,
       "zero": "local, All: PASS (zero_local.log)",
-      "next_step": "launch 160 worlds with skip_zero=local when AF1 finishes",
-      "recompute": null
+      "next_step": "rerun the identical battery on v12; council on the habit/ends tension",
+      "recompute": "experiments/AM1_autonomy_measures/recompute_am1.md (GPT and Gemini match with code; DeepSeek values and readings)"
     }
   ],
   "queue_after": [
