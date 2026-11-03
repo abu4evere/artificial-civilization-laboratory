@@ -37,3 +37,22 @@ Society B* 277:2559–2564, doi 10.1098/rspb.2010.0452, PMCID PMC2894932.
 - **The use for the council:** if R1 is tested, a larger cap can be anchored to evidence like this, as AG1 anchored
   ageing to the !Kung, rather than chosen to make remaking happen. MO1 (v7) showed that keeping recipes longer did not
   by itself change making. So this is a realism fix, not expected to unlock remaking alone.
+
+## Added (3 November 2026, 00:10): individual know-how, one person at a time
+**Reyes-García, Vadez, Huanca, Leonard & Wilkie 2005,** "Knowledge and consumption of wild plants: a comparative study
+in two Tsimane' villages in the Bolivian Amazon", *Ethnobotany Research & Applications* 3:201–207.
+- **Read:** the abstract and the methods and results on free listing, as text taken from the PDF
+  (ethnobotanyjournal.org).
+- **What it says:**
+  - **The sample:** 132 adults in two villages of a foraging-farming society.
+  - **In free listing:** "Participants mentioned a total of 233 different plants in free listing, which had a total of
+    355 different unique uses."
+  - **Per person:** "The 24 participants in Yaranda mentioned an average of 51.1 uses of plants per respondent", against
+    an average of 26.6 in the more accessible village of San Antonio.
+
+**What it suggests (the assistant's reading):**
+- **One person** names on average **27–51 plant uses** in one domain, and free lists understate what people know.
+- **ACL's cap of 12 recipes per person** covers every domain. It is low against both this individual evidence and the
+  group toolkits (13–71 marine tool types; Kline & Boyd 2010).
+- **The caution:** a plant use is not a made-thing recipe (many uses need no making). The anchor shows the order of
+  magnitude of what one mind holds, not a recipe count.
