@@ -69,6 +69,9 @@
     - F7: each animal's catch rate is written down but never used;
     - F8: when deciding to hunt, people expect about 37 meat from a kill, but a kill gives about 10.
 - **A naming fix:** the bug-fix study is now called **FF1**. The name FX1 belonged to an older study.
-- **FF1 (bug fixes):** running on GitHub.
+- **FF1 (bug fixes): final, and nature v12 is live (about 02:45).**
+  - No harm in 160 worlds, and all three advisors checked the numbers blind.
+  - People now choose the best recipe to make, not the oldest. Things an heir can't carry are dropped, not deleted.
+  - All 67 tests pass. v11 is kept, so the change can be undone.
 - **AM1 (autonomy measures):** running on GitHub.
-- **HN1 (hunting funnel):** safety checks running, then GitHub.
+- **HN1 (hunting funnel):** safety checks passed; running on GitHub since about 02:20.
