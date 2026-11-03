@@ -1,0 +1,7 @@
+seed 501, 20 years: code_af1 with both settings 0 = code_v11: yes; observer read-only (c, s, k, sk): yes; S, K, S+K and the sham act: yes; S, K and S+K differ: yes; {'c': {'_kinds': 562, '_makes': 683, '_remade': 26, '_standin': 0}, 's': {'_kinds': 579, '_makes': 787, '_remade': 34, '_standin': 25}, 'k': {'_kinds': 518, '_makes': 729, '_remade': 36, '_standin': 0}, 'sk': {'_kinds': 555, '_makes': 724, '_remade': 31, '_standin': 16}}
+seed 601, 60 years: code_af1 with both settings 0 = code_v11: yes; observer read-only (c, s, k, sk): yes; S, K, S+K and the sham act: yes; S, K and S+K differ: yes; {'c': {'_kinds': 1416, '_makes': 2469, '_remade': 22, '_standin': 0}, 's': {'_kinds': 1297, '_makes': 2310, '_remade': 34, '_standin': 86}, 'k': {'_kinds': 1262, '_makes': 2256, '_remade': 29, '_standin': 0}, 'sk': {'_kinds': 1134, '_makes': 2092, '_remade': 32, '_standin': 73}}
+arm S+K, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+arm S, seed 701, 30 years: with the exact inputs held, the recipe is made exactly as in v11 (checked 279043 times): yes
+code_af1 fingerprint: 6c639b86c87ed7cd846c647efbd5742062f0f28dd3d9b73290fb7159524df05d
+All: PASS
+
