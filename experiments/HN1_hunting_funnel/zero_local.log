@@ -1,0 +1,7 @@
+seed 501, 20 years: observer read-only: yes; {"forage_weeks":30700,"hunter_weeks":397,"no_prey":0,"roll_failed":342,"success":55}
+seed 601, 60 years: observer read-only: yes; {"forage_weeks":124032,"hunter_weeks":506,"no_prey":0,"roll_failed":455,"success":51}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+seed 701, 30 years: the funnel adds up (a + b + c = adult hunter-weeks = the count from the hunt events; 359 and 359): yes
+code_v11 fingerprint: f39100bd938b2aa7a9ade4942e0e0c091af351999b442c4f76c13e38dac6885c
+All: PASS
+
