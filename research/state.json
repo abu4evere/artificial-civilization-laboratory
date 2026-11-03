@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T14:42:22",
+  "updated": "2026-11-03T14:47:00",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -328,6 +328,11 @@
       "what": "THE BRAIN ROAD (first priority, the creator 3 November 2026: 'first of everything we should work on agent brain'): PB0 read-only prediction-opportunity audit on v12, then a brain design note (predictor + goal memory + short planner, general abilities only, evolvable structure), council, frozen tests in a copy",
       "status": "first priority; PB0 next after FF2/AM2 are written up",
       "needs": "PB0 frozen plan; council on the design note"
+    },
+    {
+      "what": "the creator's list of ways to build ACL toward Bob (round 55; to discuss after the brain road is under way): 2 brains that evolve (inherit how the brain learns, never knowledge); 3 open actions (general abilities, physics decides); 4 fewer scripted feelings, grown ones; 5 a signal channel with no meanings; 6 much bigger and longer worlds",
+      "status": "listed by the creator, 3 November 2026: 'keep going in this pathway then we will discuss other things from this list'",
+      "needs": "discussion with the creator after the brain road's first steps; council; frozen studies"
     },
     {
       "what": "HR1: calibrate per-species success (F7's table, provenance unknown) and meat per kill to forager evidence (return ratio 0.5-1.5; success per hunter-week as a second check; docs/research/hunting_success_hadza_2026-11-03.md)",
