@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T12:20:00",
+  "updated": "2026-11-03T14:42:22",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -325,8 +325,13 @@
   ],
   "queue_after": [
     {
+      "what": "THE BRAIN ROAD (first priority, the creator 3 November 2026: 'first of everything we should work on agent brain'): PB0 read-only prediction-opportunity audit on v12, then a brain design note (predictor + goal memory + short planner, general abilities only, evolvable structure), council, frozen tests in a copy",
+      "status": "first priority; PB0 next after FF2/AM2 are written up",
+      "needs": "PB0 frozen plan; council on the design note"
+    },
+    {
       "what": "HR1: calibrate per-species success (F7's table, provenance unknown) and meat per kill to forager evidence (return ratio 0.5-1.5; success per hunter-week as a second check; docs/research/hunting_success_hadza_2026-11-03.md)",
-      "status": "after FF2",
+      "status": "after the brain road's PB0 and FF2 (lower priority by the creator's 3 November order)",
       "needs": "FF2 final; a frozen plan; council"
     },
     {
