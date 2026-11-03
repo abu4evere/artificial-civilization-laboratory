@@ -39,4 +39,4 @@
   path.
 - **Numbering:** HR1's council round becomes round 57.
 
-**Correction (14:46):** the times in the title were estimated, not read from the clock. Commit times: round 55 recorded at 14:31, round 56 at 14:40 (both 3 November, New York).
+**Correction (14:46):** the times in the title were estimated, not read from the clock. Commit times: round 55 recorded at 14:25, round 56 at 14:38 (both 3 November, New York).

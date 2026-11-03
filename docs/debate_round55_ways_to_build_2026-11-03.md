@@ -38,4 +38,4 @@
 4. **Not yet run past the models:** the follow-up round, which would send this merged order to all three, with the
    correction to Gemini. It is for the creator to say whether to go on.
 
-**Correction (14:46):** the times in the title were estimated, not read from the clock. Commit times: round 55 recorded at 14:31, round 56 at 14:40 (both 3 November, New York).
+**Correction (14:46):** the times in the title were estimated, not read from the clock. Commit times: round 55 recorded at 14:25, round 56 at 14:38 (both 3 November, New York).
