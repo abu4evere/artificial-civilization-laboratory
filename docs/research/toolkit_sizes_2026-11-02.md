@@ -38,7 +38,7 @@ Society B* 277:2559–2564, doi 10.1098/rspb.2010.0452, PMCID PMC2894932.
   ageing to the !Kung, rather than chosen to make remaking happen. MO1 (v7) showed that keeping recipes longer did not
   by itself change making. So this is a realism fix, not expected to unlock remaking alone.
 
-## Added (3 November 2026, 00:10): individual know-how, one person at a time
+## Added (3 November 2026, 00:06): individual know-how, one person at a time
 **Reyes-García, Vadez, Huanca, Leonard & Wilkie 2005,** "Knowledge and consumption of wild plants: a comparative study
 in two Tsimane' villages in the Bolivian Amazon", *Ethnobotany Research & Applications* 3:201–207.
 - **Read:** the abstract and the methods and results on free listing, as text taken from the PDF

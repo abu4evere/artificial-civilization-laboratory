@@ -631,3 +631,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-11-02 23:46: FX1's cloud zero job (125707076451) completed: success; its chunks wait for runners behind AF1. The zero log is saved as zero_cloud.log when the run completes (GitHub serves job logs only then). code_fx1 fingerprint f2a8b1b7...
 - 2026-11-03 00:06: AM1 local zero checks: All: PASS (committed). Waiting for a cloud slot (AF1 and FX1 running; budget 2). Telegram night update sent (DeepSeek, the 6 faults, the three studies, the randomness surprise).
 - 2026-11-03 00:06: rules review complete for behaviour rules (information.py read: no fault). Faults F1-F6; F1-F3 in FX1, F4-F6 drafted for FX2.
+- 2026-11-03 00:07: research: Reyes-Garcia et al. 2005 (Tsimane; abstract and results read from the PDF): one adult free-lists 27-51 plant uses on average; ACL's 12-recipe cap for all domains is low (R1).
