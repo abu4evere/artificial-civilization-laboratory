@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T12:05:00",
+  "updated": "2026-11-03T12:20:00",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -305,8 +305,10 @@
       "plan": "experiments/FF2_fault_fixes_2/questions.md",
       "frozen_tag": "FF2-frozen",
       "approved_by": "the assistant under the creator's permission to edit world rules (2 November); round 54: GPT 97%, Gemini 99%, DeepSeek ~92%",
-      "status": "code written; unit checks running locally; cloud run next",
-      "next_step": "launch the cloud run (zero checks on the cloud), then the frozen analysis, blind recompute by GPT, Gemini and DeepSeek"
+      "status": "running on the cloud (unit checks passed locally)",
+      "next_step": "fetch, frozen analysis, blind recompute by GPT, Gemini and DeepSeek; if no harm, nature v13 by the fault-fix path",
+      "run": 41680655094,
+      "zero": "cloud"
     },
     {
       "id": "AM2",
