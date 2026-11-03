@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T03:30:00",
+  "updated": "2026-11-03T03:50:00",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -284,6 +284,19 @@
       "zero": "local, All: PASS (zero_local.log)",
       "next_step": "rerun the identical battery on v12; council on the habit/ends tension",
       "recompute": "experiments/AM1_autonomy_measures/recompute_am1.md (GPT and Gemini match with code; DeepSeek values and readings)"
+    },
+    {
+      "id": "HN1",
+      "title": "Where do v11's hunts fail? (read-only funnel)",
+      "kind": "read-only",
+      "plan": "experiments/HN1_hunting_funnel/questions.md",
+      "frozen_tag": "HN1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (round 53: GPT 95%, Gemini 98%, DeepSeek ~78%)",
+      "status": "final: F = 0, routing base chance; ratio 0.023; base chance alone cannot reach 0.5 (ceiling 0.42)",
+      "run": 41595719392,
+      "zero": "local, All: PASS",
+      "next_step": "council round 54: redesign HR1 (two settings, or fix F7/F8 first, or a reachable target, or turn to the habit/ends tension)",
+      "recompute": "experiments/HN1_hunting_funnel/recompute_hn1.md (all three match)"
     }
   ],
   "queue_after": [
