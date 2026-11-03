@@ -281,6 +281,7 @@ def decide(world, p: Person) -> tuple:
         best, best_u = None, 0.05
         fire_here = world.tile(p.loc).fire > 0
         part_of = _wanted_parts(p)
+        cands = []           # FX1: the eligible recipes, in the order learned: (sig, v, u)
         for sig, recipe in p.recipes.items():
             if recipe["verb"] == "heat" and not fire_here:
                 continue
@@ -291,11 +292,22 @@ def decide(world, p: Person) -> tuple:
                 v = max(v, belief(p, f"{recipe['target']}/{recipe['tool']}@{season}") or 0.0)
             # Something about it surprised them: they want to try it again and see.
             v = max(v, 0.5 * max(inquiry.pull(p, "m:" + sig), inquiry.pull(p, "f:" + sig)))
-            if v <= best_u or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or not can_make(p, recipe):
+            if v <= 0.05 or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or not can_make(p, recipe):
                 continue
-            u = c.worth_weight * v * (0.6 + 0.4 * g["diligence"]) * (1.0 - 0.5 * hunger)
-            if u > best_u:
-                best, best_u = sig, u
+            cands.append((sig, v, c.worth_weight * v * (0.6 + 0.4 * g["diligence"]) * (1.0 - 0.5 * hunger)))
+        old, old_u = None, 0.05          # v11: a recipe is skipped if its value is at or below the best's utility
+        for sig, v, u in cands:
+            if v > old_u and u > old_u:
+                old, old_u = sig, u
+        new, new_u = None, 0.05          # FX1 (F1): the highest utility above the floor
+        for sig, v, u in cands:
+            if u > new_u:
+                new, new_u = sig, u
+        best, best_u = (new, new_u) if c.fix_make_choice else (old, old_u)
+        log = getattr(world, "fx1log", None)    # FX1 logging (runner sets it; not saved; read by nothing here)
+        if log is not None and cands:
+            newest = next(reversed(p.recipes))
+            log.append(("offer", p.id, old != new, best == newest, len(cands), best, old == newest, new == newest))
         if best is not None:
             add("make", best, best_u)
 

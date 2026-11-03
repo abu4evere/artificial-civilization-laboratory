@@ -132,6 +132,12 @@ class Config:
     curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,
                                        # 0.3 x curiosity x (1 - hunger), fading as 1/(1 + times tried there) (0 = nature v8)
     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
+    fix_make_choice: int = 1           # NV12 (FF1's F1): 1 = the make option is the recipe with the highest utility (a recipe is
+                                       # skipped only below the 0.05 floor); 0 = v11, which skips a recipe whose value is
+                                       # at or below the best so far's scaled utility
+    fix_overflow: int = 1              # NV12 (FF1's F2, F3): 1 = things beyond the carry limit after an inheritance go onto the
+                                       # ground, the least valued first, as in _keep; 0 = v11 (an heir's first-held thing
+                                       # is deleted; from a body, the first held goes to the ground)
     loved_location: str = "last_seen"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
                                        # "last_seen" = toward where the person last had them in sight
     corner_block: int = 1              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step

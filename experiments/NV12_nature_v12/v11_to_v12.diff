@@ -1,0 +1,98 @@
+diff --git a/experiments/NV11_nature_v11/code_v11/acl/config.py b/experiments/NV12_nature_v12/code_v12/acl/config.py
+index 42b3d762..1edd168e 100644
+--- a/experiments/NV11_nature_v11/code_v11/acl/config.py
++++ b/experiments/NV12_nature_v12/code_v12/acl/config.py
+@@ -132,6 +132,12 @@ class Config:
+     curiosity_pull: int = 1            # NV9 (CU1): 1 = an action rarely tried in this situation draws the play instinct's own pull,
+                                        # 0.3 x curiosity x (1 - hunger), fading as 1/(1 + times tried there) (0 = nature v8)
+     sham_draw: int = 0                 # HB1 sham arm: 1 = one extra draw from the world's random stream in week one
++    fix_make_choice: int = 1           # NV12 (FF1's F1): 1 = the make option is the recipe with the highest utility (a recipe is
++                                       # skipped only below the 0.05 floor); 0 = v11, which skips a recipe whose value is
++                                       # at or below the best so far's scaled utility
++    fix_overflow: int = 1              # NV12 (FF1's F2, F3): 1 = things beyond the carry limit after an inheritance go onto the
++                                       # ground, the least valued first, as in _keep; 0 = v11 (an heir's first-held thing
++                                       # is deleted; from a body, the first held goes to the ground)
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff --git a/experiments/NV11_nature_v11/code_v11/acl/mind.py b/experiments/NV12_nature_v12/code_v12/acl/mind.py
+index f7ee7263..a9ed971f 100644
+--- a/experiments/NV11_nature_v11/code_v11/acl/mind.py
++++ b/experiments/NV12_nature_v12/code_v12/acl/mind.py
+@@ -281,6 +281,7 @@ def decide(world, p: Person) -> tuple:
+         best, best_u = None, 0.05
+         fire_here = world.tile(p.loc).fire > 0
+         part_of = _wanted_parts(p)
++        cands = []           # FX1: the eligible recipes, in the order learned: (sig, v, u)
+         for sig, recipe in p.recipes.items():
+             if recipe["verb"] == "heat" and not fire_here:
+                 continue
+@@ -291,11 +292,22 @@ def decide(world, p: Person) -> tuple:
+                 v = max(v, belief(p, f"{recipe['target']}/{recipe['tool']}@{season}") or 0.0)
+             # Something about it surprised them: they want to try it again and see.
+             v = max(v, 0.5 * max(inquiry.pull(p, "m:" + sig), inquiry.pull(p, "f:" + sig)))
+-            if v <= best_u or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or not can_make(p, recipe):
++            if v <= 0.05 or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or not can_make(p, recipe):
+                 continue
+-            u = c.worth_weight * v * (0.6 + 0.4 * g["diligence"]) * (1.0 - 0.5 * hunger)
+-            if u > best_u:
+-                best, best_u = sig, u
++            cands.append((sig, v, c.worth_weight * v * (0.6 + 0.4 * g["diligence"]) * (1.0 - 0.5 * hunger)))
++        old, old_u = None, 0.05          # v11: a recipe is skipped if its value is at or below the best's utility
++        for sig, v, u in cands:
++            if v > old_u and u > old_u:
++                old, old_u = sig, u
++        new, new_u = None, 0.05          # FX1 (F1): the highest utility above the floor
++        for sig, v, u in cands:
++            if u > new_u:
++                new, new_u = sig, u
++        best, best_u = (new, new_u) if c.fix_make_choice else (old, old_u)
++        log = getattr(world, "fx1log", None)    # FX1 logging (runner sets it; not saved; read by nothing here)
++        if log is not None and cands:
++            newest = next(reversed(p.recipes))
++            log.append(("offer", p.id, old != new, best == newest, len(cands), best, old == newest, new == newest))
+         if best is not None:
+             add("make", best, best_u)
+ 
+diff --git a/experiments/NV11_nature_v11/code_v11/acl/biology.py b/experiments/NV12_nature_v12/code_v12/acl/biology.py
+index 5079477d..22d60a74 100644
+--- a/experiments/NV11_nature_v11/code_v11/acl/biology.py
++++ b/experiments/NV12_nature_v12/code_v12/acl/biology.py
+@@ -609,8 +609,20 @@ def die(world, p: Person, cause: str, killer) -> None:
+             heir.mats[k] += v
+         for it in p.items:
+             heir.items.append(it)
++        log = getattr(world, "fx1log", None)    # FX1 logging (runner sets it; not saved; read by nothing here)
+         while len(heir.items) > world.cfg.item_limit:
+-            heir.items.pop(0)
++            if world.cfg.fix_overflow:          # FX1 (F2): the least valued goes onto the ground, as in _keep
++                worst = min(range(len(heir.items)), key=lambda i: (heir.itemval.get(heir.items[i]["sig"], 0.0), -i))
++                gone = heir.items.pop(worst)
++                if world.cfg.ground_items:
++                    from .actions import drop_on_ground
++                    drop_on_ground(world, heir, gone)
++                if log is not None:
++                    log.append(("heir_dropped", heir.id))
++            else:
++                heir.items.pop(0)
++                if log is not None:
++                    log.append(("heir_deleted", heir.id))
+         world.emit("inherit", heir.id, p.id, p.loc, food=round(p.food + p.seeds, 2), things=len(p.items))
+     else:
+         if not world.cfg.bodies_stay:
+@@ -753,7 +765,14 @@ def bodies_week(world) -> None:
+                 for it in b["items"]:
+                     q.items.append(it)
+                 while len(q.items) > world.cfg.item_limit:
+-                    gone = q.items.pop(0)
++                    if world.cfg.fix_overflow:      # FX1 (F3): the least valued, as in _keep
++                        worst = min(range(len(q.items)), key=lambda i: (q.itemval.get(q.items[i]["sig"], 0.0), -i))
++                        gone = q.items.pop(worst)
++                    else:
++                        gone = q.items.pop(0)
++                    flog = getattr(world, "fx1log", None)
++                    if flog is not None:
++                        flog.append(("body_dropped", q.id))
+                     if world.cfg.ground_items:              # OP1: left on the ground, not deleted
+                         from .actions import drop_on_ground
+                         drop_on_ground(world, q, gone)

@@ -1,12 +1,13 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T01:30:00",
+  "updated": "2026-11-03T02:45:00",
   "nature": {
-    "live": "v11",
-    "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
-    "frozen_copy": "experiments/NV11_nature_v11/code_v11",
-    "frozen_copy_fingerprint": "f39100bd938b2aa7a9ade4942e0e0c091af351999b442c4f76c13e38dac6885c",
-    "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session"
+    "live": "v12",
+    "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
+    "frozen_copy": "experiments/NV12_nature_v12/code_v12",
+    "frozen_copy_fingerprint": "52ec206d75a9958ab90bbdf1072bd0b41ee2803a2b5d5d5c5cec9ae3911570c1",
+    "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
+    "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek"
   },
   "objectives": [
     "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
@@ -264,11 +265,11 @@
       "plan": "experiments/FX1_fault_fixes/questions.md",
       "frozen_tag": "FX1-frozen",
       "approved_by": "the assistant under the creator's permission to edit world rules (2 November); GPT 97%, Gemini 99%, DeepSeek ~95% (round 51)",
-      "status": "cloud zero job passed (23:45); chunks waiting for runners behind AF1",
+      "status": "final: no harm; adopted as nature v12 (3 November)",
       "run": 41571953456,
       "zero": "cloud (skip_zero=no)",
-      "next_step": "when done: save zero_cloud.log from the zero job, fetch, analyse, blind recomputes by GPT, Gemini and DeepSeek, findings; if no harm, build code_v12",
-      "recompute": null,
+      "next_step": "done",
+      "recompute": "experiments/FX1_fault_fixes/recompute_ff1.md (GPT, Gemini and DeepSeek match)",
       "note": "frozen and run under the folder name FX1_fault_fixes and tag FX1-frozen; renamed FF1 because FX1 was already used (FX1_extracted_foods)"
     },
     {

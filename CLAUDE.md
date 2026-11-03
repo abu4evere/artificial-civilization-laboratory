@@ -74,9 +74,10 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   (the creator, 1 November 2026: "Now u can use pc at max capacity cuz i am not working its all your own just lmk what is
   happening through telegram"), local runs may use full speed, up to 4 at once (`research/state.json` budgets); report
   through Telegram. The careful setting returns when they are back.
-- **Tests:** `python -m pytest -q tests` (66 pass on nature v11, live since 31 October 2026: people can hand a made
-  thing to one another, adopted by the safe path; `experiments/NV11_nature_v11/findings.md`; v10 = ageing anchored to
-  the !Kung, also 31 October). New studies use `code_v11`; earlier findings stay their version's.
+- **Tests:** `python -m pytest -q tests` (67 pass on nature v12, live since 3 November 2026: three faults fixed (the
+  make choice favoured old recipes; inherited things were deleted), adopted under the creator's 2 November permission;
+  `experiments/NV12_nature_v12/findings.md`; v11 = handing made things, 31 October). New studies use `code_v12`;
+  earlier findings stay their version's.
 
 ## Sleep mode (autonomous since 27 October 2026)
 When the creator says "sleep", they are going to sleep. **The project must not stop.** The creator (27 October): "you

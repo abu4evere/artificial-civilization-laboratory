@@ -609,8 +609,20 @@ def die(world, p: Person, cause: str, killer) -> None:
             heir.mats[k] += v
         for it in p.items:
             heir.items.append(it)
+        log = getattr(world, "fx1log", None)    # FX1 logging (runner sets it; not saved; read by nothing here)
         while len(heir.items) > world.cfg.item_limit:
-            heir.items.pop(0)
+            if world.cfg.fix_overflow:          # FX1 (F2): the least valued goes onto the ground, as in _keep
+                worst = min(range(len(heir.items)), key=lambda i: (heir.itemval.get(heir.items[i]["sig"], 0.0), -i))
+                gone = heir.items.pop(worst)
+                if world.cfg.ground_items:
+                    from .actions import drop_on_ground
+                    drop_on_ground(world, heir, gone)
+                if log is not None:
+                    log.append(("heir_dropped", heir.id))
+            else:
+                heir.items.pop(0)
+                if log is not None:
+                    log.append(("heir_deleted", heir.id))
         world.emit("inherit", heir.id, p.id, p.loc, food=round(p.food + p.seeds, 2), things=len(p.items))
     else:
         if not world.cfg.bodies_stay:
@@ -753,7 +765,14 @@ def bodies_week(world) -> None:
                 for it in b["items"]:
                     q.items.append(it)
                 while len(q.items) > world.cfg.item_limit:
-                    gone = q.items.pop(0)
+                    if world.cfg.fix_overflow:      # FX1 (F3): the least valued, as in _keep
+                        worst = min(range(len(q.items)), key=lambda i: (q.itemval.get(q.items[i]["sig"], 0.0), -i))
+                        gone = q.items.pop(worst)
+                    else:
+                        gone = q.items.pop(0)
+                    flog = getattr(world, "fx1log", None)
+                    if flog is not None:
+                        flog.append(("body_dropped", q.id))
                     if world.cfg.ground_items:              # OP1: left on the ground, not deleted
                         from .actions import drop_on_ground
                         drop_on_ground(world, q, gone)
