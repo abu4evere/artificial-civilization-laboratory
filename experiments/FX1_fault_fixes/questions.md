@@ -104,3 +104,11 @@ DeepSeek about 95%, the assistant 85%. Frozen as `FX1-frozen` before any code or
 The code's log also records, at each make choice, whether v11's rule and whether the fixed rule would each offer the
 person's newest recipe. This shows F1's effect on the same decisions, and it adds two described columns. Nothing else
 changes: no world state, no reading and no guard.
+
+## Amendment 2 (3 November 2026, 01:30): the study's name is FF1
+- **Why:** the ID **FX1 was already in use** by an earlier study, `experiments/FX1_extracted_foods` (an evidence
+  review of food that must be opened, dug or hunted). FX2 and FX3 also exist.
+- **From now on this study is FF1** ("fault fixes"). Its folder (`FX1_fault_fixes`), tag (`FX1-frozen`), code
+  (`code_fx1`, `run_fx1.py`, `analyse_fx1.py`) and recompute prompt keep their names, so the frozen files and the
+  running cloud job are unchanged.
+- **The planned second round of fault fixes is FF2**, not FX2.

@@ -5,7 +5,7 @@
   a copy first, with a sham, checks and blind recomputes, and only proven changes go live.
 - **DeepSeek is on the council** with GPT and Gemini. I briefed it on all of ACL first. It gave sharp, useful answers,
   and its main point changed the plan: measure autonomy properly now.
-- **I checked the rules and found 5 small bugs.** The 3 that matter are being tested now (FX1):
+- **I checked the rules and found 5 small bugs.** The 3 that matter are being tested now (FF1; its folder is named FX1, an ID an older study already had):
   1. when choosing what to make, people unfairly prefer **old** recipes over new ones;
   2. when someone dies, an heir's extra tools get **deleted** instead of dropped on the ground;
   3. tools taken from a body push out the wrong item.
@@ -31,7 +31,7 @@
   with ways to survive mistakes.
 
 ## Found later in the night
-- **Two more faults, held for a second fix round (FX2;** draft `docs/fx2_design_draft_2026-11-02.md`):
+- **Two more faults, held for a second fix round (FF2;** draft `docs/ff2_design_draft_2026-11-02.md`):
   - **F5:** a leaky basket wrongly saves walks to water.
   - **F6:** marks made with made tools are scored about 100 times too deep, a units mix-up.
 - **Evidence I read for F6:**

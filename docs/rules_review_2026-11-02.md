@@ -105,7 +105,7 @@ you find something fix it or add any new rules. From now on keep working without
     to water in sight.
   - **The fix:** only a thing that can hold water (`can_hold(item, "water") > 0`) saves walking, by the same formula.
   - **The trade-off:** the effect is small (energy only), and fixing it removes a help some people now have. It is
-    physics honesty, not a new limit. **It goes to the next fault-fix round (FX2)** with F4, after FX1's result.
+    physics honesty, not a new limit. **It goes to the next fault-fix round (FF2; first called FX2, a name already taken)** with F4, after FF1's result.
 - **Still not read line by line:** `fauna.py`, `geo.py`, `marks.py`, and the rest of `information.py`.
 - **`fauna.py` (read in part, about 23:05).** A predator that kills 3 rabbits from a herd of fewer than 3 leaves a negative
   count for the rest of that week, until the herd is removed. That week's total, which is used for the land's
@@ -129,7 +129,7 @@ you find something fix it or add any new rules. From now on keep working without
   - **The catch:** the docstring promises "rock marks last generations". At the intended scale, rock marks last about
     17 years, under one generation. So the documented intent is now met **only through the fault**. A plain
     divide-by-100 would break it.
-  - **What FX2 must decide with the council:**
+  - **What FF2 must decide with the council:**
     - the scale fix itself;
     - whether the rock wear rate (0.998) should be anchored to evidence on how long scratches on rock survive, so that
       "generations" holds by design, not by accident;

@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T01:25:00",
+  "updated": "2026-11-03T01:30:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -258,7 +258,7 @@
       "recompute": "experiments/AF1_open_affordances/recompute_af1.md (GPT and Gemini 3.1 Pro match with code; DeepSeek matches by hand)"
     },
     {
-      "id": "FX1",
+      "id": "FF1",
       "title": "Fixing three faults in nature v11 (a fault-fix harm check in a copy)",
       "kind": "fault-fix check in a copy (code_fx1 = v11 + fix_make_choice + fix_overflow); 'no harm' -> nature v12",
       "plan": "experiments/FX1_fault_fixes/questions.md",
@@ -268,7 +268,8 @@
       "run": 41571953456,
       "zero": "cloud (skip_zero=no)",
       "next_step": "when done: save zero_cloud.log from the zero job, fetch, analyse, blind recomputes by GPT, Gemini and DeepSeek, findings; if no harm, build code_v12",
-      "recompute": null
+      "recompute": null,
+      "note": "frozen and run under the folder name FX1_fault_fixes and tag FX1-frozen; renamed FF1 because FX1 was already used (FX1_extracted_foods)"
     },
     {
       "id": "AM1",

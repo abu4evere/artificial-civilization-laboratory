@@ -1,6 +1,6 @@
-# FX2 draft: the second round of fault fixes (2 November 2026)
+# FF2 draft: the second round of fault fixes (named FX2 in the first draft; FX2 was already taken) (2 November 2026)
 
-**What this is:** a draft for a council round once FX1's result is known. It would run on v12 if FX1 is adopted.
+**What this is:** a draft for a council round once FF1's ("FX1" folder) result is known. It would run on v12 if FF1 is adopted.
 Nothing is frozen or run. The faults are from `docs/rules_review_2026-11-02.md`; the evidence is in
 `docs/research/rock_mark_durability_2026-11-02.md`.
 
