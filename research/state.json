@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-02T22:44:00",
+  "updated": "2026-11-03T00:07:00",
   "nature": {
     "live": "v11",
     "acl_fingerprint": "a1fb3d5ebeb8301b785cdfacebc64c1d6264ad84a387f7c5a6a750119a5f02a7",
@@ -264,10 +264,23 @@
       "plan": "experiments/FX1_fault_fixes/questions.md",
       "frozen_tag": "FX1-frozen",
       "approved_by": "the assistant under the creator's permission to edit world rules (2 November); GPT 97%, Gemini 99%, DeepSeek ~95% (round 51)",
-      "status": "running on the cloud (its own zero checks first), launched 22:24",
+      "status": "cloud zero job passed (23:45); chunks waiting for runners behind AF1",
       "run": 41571953456,
       "zero": "cloud (skip_zero=no)",
       "next_step": "when done: save zero_cloud.log from the zero job, fetch, analyse, blind recomputes by GPT, Gemini and DeepSeek, findings; if no harm, build code_v12",
+      "recompute": null
+    },
+    {
+      "id": "AM1",
+      "title": "Measuring autonomy against constrained controls (read-only on v11)",
+      "kind": "read-only",
+      "plan": "experiments/AM1_autonomy_measures/questions.md",
+      "frozen_tag": "AM1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy and the 2 November permission (GPT 94%, Gemini 97%, DeepSeek ~92%, round 52)",
+      "status": "local zero checks passed (00:06, 3 November); waiting for a free cloud slot (AF1 and FX1 running)",
+      "run": null,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "launch 160 worlds with skip_zero=local when AF1 finishes",
       "recompute": null
     }
   ],
