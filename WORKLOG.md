@@ -630,3 +630,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-11-02 23:21: research: Williams et al. 2001 (Wood and Fiber Science; abstract and intro read from the PDF): planed wood erodes ~40-60 um/year, so a 0.5 mm wood mark lasts ~10 years; ACL's ~3 years is also ~3x too short. Both anchors for FX2 (F6).
 - 2026-11-02 23:46: FX1's cloud zero job (125707076451) completed: success; its chunks wait for runners behind AF1. The zero log is saved as zero_cloud.log when the run completes (GitHub serves job logs only then). code_fx1 fingerprint f2a8b1b7...
 - 2026-11-03 00:06: AM1 local zero checks: All: PASS (committed). Waiting for a cloud slot (AF1 and FX1 running; budget 2). Telegram night update sent (DeepSeek, the 6 faults, the three studies, the randomness surprise).
+- 2026-11-03 00:06: rules review complete for behaviour rules (information.py read: no fault). Faults F1-F6; F1-F3 in FX1, F4-F6 drafted for FX2.

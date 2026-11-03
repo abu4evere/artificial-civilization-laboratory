@@ -134,7 +134,7 @@ you find something fix it or add any new rules. From now on keep working without
     - whether the rock wear rate (0.998) should be anchored to evidence on how long scratches on rock survive, so that
       "generations" holds by design, not by accident;
     - the effect on knowledge kept in marks (KL1: marks revived lost know-how 2 times in 99).
-- **`information.py` (all of it), read 3 November, 00:10:** credence, records, reputation, stories, lessons, beliefs
+- **`information.py` (all of it), read 3 November, 00:05:** credence, records, reputation, stories, lessons, beliefs
   and places. No fault found: each rule does what its comment says.
 - **`marks.py` (the making and wearing of marks):** F6, above.
 - **`geo.py`** (map making at the start) is not reviewed. It shapes the land once and has no behaviour.
