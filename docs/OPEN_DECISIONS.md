@@ -312,6 +312,20 @@ the file named.
 - [ ] **After KL1** (final, 2 November 2026; `experiments/KL1_knowledge_loss/findings.md`): death is the main road of loss; marks do not (yet). Next: H1 (a copy; adoption only with the creator's approval), informed by the cultural-evolution literature the creator supplied.
 - [ ] **Correction (2 November 2026)** to the item 'After UV1' above: the carer pull is 8% **every 4 weeks**, not a week, and learned values also pass in talk from anyone respected or happier (`_imitate`). See the corrections appended to UV1's and UV3's findings.
 - [ ] **After BN1** (final, 2 November 2026; `experiments/BN1_born_without_learned_content/findings.md`): inconclusive (D_z +0.0205 [+0.0157, +0.0252] against a 0.02 margin); no guard; no all-age cost. **For the creator:** keep v11's birth inheritance, or test removing it again with a confirmatory run on new seeds (a pre-registered margin), or decide directly. Nothing changes without the creator. Next study (debate round 46, both models 90%): SC1, a read-only scorecard of the twelve capacities.
+  - **Decided by the assistant** (2 November, 23:10), under the creator's permission of the same evening to edit
+    world rules. **Keep v11's birth inheritance for now.**
+    - **Why:** the safe path needs a *supported* study. BN1 was inconclusive, with z slightly **worse** (+0.0205),
+      so a confirmatory run of the same arm cannot make it supported.
+    - **The realism concern stays open:** learned values passing at birth is not biological.
+    - **What could still resolve it:** a future law that gives the same early start by learning, for example a
+      stronger carer pull in infancy (today 0.08 every 4 weeks), tested in a copy against v11 with BN1's measure.
+      Not scheduled; the rules review's order comes first.
 - [ ] **After SC1** (final, 2 November 2026; `experiments/SC1_bob_scorecard/findings.md`): the baseline for the creator's twelve capacities. Strong: communication, individuality. Gap: uptake (no late invention is ever remade). Next for the council: a read-only audit of why new kinds are never made again; later, the creator's choice among missing conditions (relevant memory retrieval, working memory).
 - [ ] **After UP1** (final, 2 November 2026; `experiments/UP1_uptake_of_new_kinds/findings.md`): new kinds die at 'cannot make' (parts not in hand). **For the creator:** whether to test a general condition in a copy, for example remembering an unfinished goal across weeks, the wanted-part bridge reaching further back, or more carrying room if forager evidence supports it. Each would be a frozen nature-change test, adopted only with the creator's approval.
 - [ ] **After WP1** (final, 2 November 2026; `experiments/WP1_want_propagation/findings.md`): want propagation does not help (A1 and A2 inconclusive). **For the creator:** whether to test next, in a copy, a goal kept across weeks (an unfinished make target that persists and draws its parts), or more carrying room (only with forager evidence), or neither. Live nature unchanged.
+  - **Settled** (2 November, evening). The creator approved step 1 of the inventions rules, then gave permission
+    to edit world rules.
+    - **More carrying room:** being tested as AF1's K, "containers contain". It is a general law by property, not a
+      raised limit.
+    - **A goal kept across weeks:** queued as the action audit's step 5, after AM1 has validated measures of
+      autonomy (research note `docs/research/options_routines_2026-11-02.md`).
