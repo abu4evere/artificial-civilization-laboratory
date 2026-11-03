@@ -54,6 +54,21 @@
 5. Later: routines and goals across weeks (research note on the "options" framework).
 
 ## Results (filled in as they arrive)
-- AF1: running.
-- FX1: running.
-- AM1: zero checks running.
+- **AF1 (final, 3 November, about 01:00):** neither rule helped.
+  - Late inventions were still almost never made again: 1, 2, 0 and 0 out of about 3,300 per arm. No harm.
+  - People hold under one made thing (they could hold 3), and make something about once in 14 years.
+  - So the block is not carrying room or exact parts: **making itself is rare, because tools add little in this
+    world.**
+  - GPT, Gemini and DeepSeek all recomputed it blind and agree.
+- **What came next (council round 53; all three agree, 95 / 98 / about 78%):**
+  - **hunting first.** In ACL a hunting week returns only about 4% of a foraging week. Among the Aché the two pay
+    about the same, and most forager groups get over half their food from animals.
+  - **HN1** finds where hunts fail. **HR1** then calibrates one hunting setting toward real forager numbers, chosen by
+    evidence and safety, never by whether it raises inventions.
+  - **Two more faults were found on the way:**
+    - F7: each animal's catch rate is written down but never used;
+    - F8: when deciding to hunt, people expect about 37 meat from a kill, but a kill gives about 10.
+- **A naming fix:** the bug-fix study is now called **FF1**. The name FX1 belonged to an older study.
+- **FF1 (bug fixes):** running on GitHub.
+- **AM1 (autonomy measures):** running on GitHub.
+- **HN1 (hunting funnel):** safety checks running, then GitHub.
