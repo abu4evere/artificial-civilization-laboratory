@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T14:47:00",
+  "updated": "2026-11-03T15:27:03",
   "nature": {
     "live": "v12",
     "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
@@ -317,10 +317,11 @@
       "plan": "experiments/AM2_autonomy_measures_v12/questions.md",
       "frozen_tag": "AM2-frozen",
       "approved_by": "the assistant under standing autonomy; round 54",
-      "status": "running on the cloud",
+      "status": "final: M3/M5 not validated again (habits suppress gather-then-make, ~7.7x); M1 not validated (does not replicate); M2 falls in both controls; v12 = v11 on all measures",
       "run": 41676999711,
       "zero": "cloud",
-      "next_step": "fetch, frozen analysis, blind recompute of M3 and M5"
+      "next_step": "done",
+      "recompute": "GPT and Gemini match (recompute_am2.md)"
     }
   ],
   "queue_after": [

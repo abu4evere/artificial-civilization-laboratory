@@ -1,4 +1,4 @@
-# AM2 — AM1's autonomy battery, unchanged, on nature v12: findings (pending the blind recompute)
+# AM2 — AM1's autonomy battery, unchanged, on nature v12: findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `AM2-frozen`. Read-only on `code_v12`. Run on GitHub Actions, run 41676999711, with the zero checks on the
 cloud (`zero_cloud.log`: All: PASS, `code_v12` fingerprint `52ec206d…`). 32 paired seeds 22801–22832; 5 arms; LP
@@ -57,6 +57,10 @@ The sham is stable for all three: no "unstable" mark.
 The rule line printed under the table reads "Unstable if the sham − v11 interval …". The word "v11" was left over from
 AM1 in that one sentence of text. The computation uses arm c (v12) throughout. Only the printed label is wrong.
 
-## Independent recompute
-Pending: GPT, Gemini and DeepSeek, each in a fresh chat, from `recompute/am2_counts.csv` and `recompute/prompt.txt`,
-without the analysis script.
+## Independent recompute (3 November 2026)
+GPT and Gemini 3.1 Pro, each in a fresh chat, worked from `recompute/am2_counts.csv` without the analysis script
+(`recompute_am2.md`). Both match every number: M3 and M5 per arm, the four differences and their intervals, the
+readings, the sanity count and the living-weeks. DeepSeek worked by hand and stopped before a final answer; its working
+notes show the same differences.
+
+**Final.**
