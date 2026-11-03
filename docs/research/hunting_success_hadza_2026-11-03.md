@@ -1,4 +1,4 @@
-# How often does a hunt succeed? Hadza figures for HR1 (3 November 2026)
+# How often does a hunt succeed? Hadza and Aché figures for HR1 (3 November 2026)
 
 **Why:**
 - HN1 found ACL's hunts never fail for lack of prey; they fail at the roll (5.4% success).
@@ -47,7 +47,30 @@
    anchor should be the return ratio (hunting against foraging per unit of time), with success per hunter-week as a
    second check. It should not be any single society's prey choice.
 
+## Second source: the Aché, kill per encounter by prey
+**Walker, Hill, Kaplan & McMillan 2002,** "Age-dependency in hunting ability among the Ache of Eastern Paraguay",
+*Journal of Human Evolution* 42:639–657, doi 10.1006/jhev.2001.0541.
+- **Read:** the full text (the first author's PDF, <https://www.unm.edu/~robwal/achehunt.pdf>).
+- **The sample:** 2,642 man-pursuits of the ten main prey.
+- **Kill on an encounter, at the peak age (45):** 24% of encounters in the 1980s; 10% in the 1990s/2000. The authors
+  suggest lost practice.
+- **By prey (Table 3):** a logistic model of kill upon encounter with prey as a random effect.
+  - The prey terms are positive for coati (+1.19), armadillo (+1.12), tegu lizard (+1.04) and monkey (+0.75). They are
+    about 0 for paca, collared peccary and agouti.
+  - They are negative for deer (−0.92), white-lipped peccary (−1.16) and tapir (−1.62).
+  - Read as odds against paca (the assistant's arithmetic): deer × 0.40, tapir × 0.20, armadillo × 3.1.
+- **Adult weights** (from Hill & Padwe 2000, as quoted): most prey under 10 kg; white-lipped peccary 24.9 kg, collared
+  peccary 16.3 kg, deer 25.8 kg, tapir 177 kg.
+
+## Both sources together (the assistant's reading)
+- **The order of ACL's unused table is supported:** small, burrowing or slow prey are killed more often per encounter
+  than deer, and large prey less often (rabbit 0.40 > deer 0.16 > bison 0.10).
+- **Its levels are not checked.** Per-encounter kill rates run from about 7% (Hadza small game) to 10–24% (Aché, all
+  ten prey, at the peak age). One ACL "hunt" is a week, not an encounter.
+- **For HR1:** a per-species success **per hunter-week**, anchored to these per-day and per-encounter figures through an
+  explicit conversion written in the frozen plan. The return ratio stays the primary target.
+
 ## Not read (to find next)
 - Hawkes, Hill & O'Connell 1982 (Aché, encounter and pursuit rates by prey).
-- Walker et al. 2002 (Aché hunting ability by age): <https://www.unm.edu/~robwal/achehunt.pdf>.
 - Wood & Marlowe 2013 itself.
+- Hill & Padwe 2000 (Aché prey weights).
