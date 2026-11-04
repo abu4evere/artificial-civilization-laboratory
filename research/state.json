@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T20:21:59",
+  "updated": "2026-11-03T21:30:57",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -345,7 +345,7 @@
     {
       "what": "after the new brain is built and live: redraw the ACL Brain Scan picture (acl_brain_scan.html, from brain_data.py + brain_template.html; also acl_mind_map*.html) to show the new brain (predictor, goal memory, planner) instead of the habit table",
       "status": "the creator, 3 November 2026: 'note after you build whole brain then change that brain picture from acl'",
-      "needs": "the new brain adopted as nature; the files are the creator's (untracked), so redraw, do not delete the old ones"
+      "needs": "the new brain adopted as nature; the files are the creator's (untracked), so redraw, do not delete the old ones; the creator, 3 November 2026: 'in brain scanner do not put any extra info and text just brain neural network thats it nothing extra' (the picture shows only the neural network: no labels, no text, no extra panels)"
     },
     {
       "what": "the creator's list of ways to build ACL toward Bob (round 55; to discuss after the brain road is under way): 2 brains that evolve (inherit how the brain learns, never knowledge); 3 open actions (general abilities, physics decides); 4 fewer scripted feelings, grown ones; 5 a signal channel with no meanings; 6 much bigger and longer worlds",
