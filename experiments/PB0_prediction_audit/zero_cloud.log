@@ -1,0 +1,7 @@
+Zero checks for PB0, run on GitHub Actions (run 41751443724, zero job 126318290571), saved from the job log on 4 November 2026.
+seed 501, 20 years: the observer and its copies are read-only (sampling in years 10-12): yes; {'sampled': 21, 'skipped': 0}
+seed 601, 60 years: the observer and its copies are read-only (sampling in years 10-12): yes; {'sampled': 21, 'skipped': 0}
+seed 701: a copy with nothing forced reproduces the real week, and forcing the softmax's own pick reproduces the record run (6 checks): copies True, forced pick True: yes
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v12 fingerprint: 52ec206d75a9958ab90bbdf1072bd0b41ee2803a2b5d5d5c5cec9ae3911570c1
+All: PASS
