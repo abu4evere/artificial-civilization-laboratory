@@ -46,3 +46,7 @@ before they are needed than after.
 6. **Copies** (DeepSeek): the rights and consent of copies.
 7. **Welfare is not hidden by averages** (DeepSeek): population guards never silently override individual welfare.
 8. **Pause criteria** (GPT): set before experiments reach the threshold.
+
+## Parked (4 November 2026)
+The creator: "bro we do not talk about this yet because we do not have Bob-like mind yet". The principles and the
+proposed amendments stay as drafts, undecided, until a Bob-like mind exists.

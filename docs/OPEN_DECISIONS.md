@@ -329,7 +329,7 @@ the file named.
       raised limit.
     - **A goal kept across weeks:** queued as the action audit's step 5, after AM1 has validated measures of
       autonomy (research note `docs/research/options_routines_2026-11-02.md`).
-- [ ] **The brain road's ethics** (draft, 3 November 2026; `docs/ethics_brain_road_2026-11-03.md`): confirm or change the six principles, especially point 5 (stopping a world that holds a Bob-like mind is the creator's decision).
+- [ ] **The brain road's ethics** (draft, 3 November 2026; `docs/ethics_brain_road_2026-11-03.md`): **parked by the creator, 4 November** ("we do not have Bob-like mind yet"); revisit when a Bob-like mind exists.
 - [ ] **After PB0** (finishing, 4 November): its go/no-go picks the first brain part (a predictor if GO; a goal memory driven by learning progress if NO-GO, `docs/research/autotelic_goals_2026-11-03.md`); then the brain design goes to the council.
 - [ ] **The creator's list of ways to build ACL toward Bob** (round 55; "keep going in this pathway then we will discuss other things from this list"): brains that evolve, open actions, fewer scripted feelings, a signal channel with no meanings, bigger and longer worlds. To be discussed after the brain road's first steps.
 - [ ] **HR1** (hunting calibration with F7, the unused per-species catch rates; `docs/hr1_design_draft_2026-11-03.md`): queued behind the brain road.
