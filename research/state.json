@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-04T16:45:19",
+  "updated": "2026-11-04T17:00:43",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -331,8 +331,8 @@
       "plan": "experiments/PB0_prediction_audit/questions.md",
       "frozen_tag": "PB0-frozen",
       "approved_by": "the assistant under the creator's direction (brain first) and sleep-mode autonomy; round 57: Gemini 85%, DeepSeek ~80% after the control fix",
-      "status": "analysed: GO (G +0.159 [0.151, 0.167], G/A 0.31); gain from reward, chiefly by switching food work to talk/give (post-hoc); no survival difference at 4 weeks; recompute pending",
-      "next_step": "blind recompute (fresh chats); then round 58 on the brain design with PB0's result",
+      "status": "final: GO (recomputed by GPT and Gemini); gain is social reward, not survival or making",
+      "next_step": "round 58: the brain design with PB0's result",
       "run": 41751443724
     }
   ],

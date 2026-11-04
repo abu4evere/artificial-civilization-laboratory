@@ -1,4 +1,4 @@
-# PB0 — Would knowing what happens next change people's choices? Findings (pending the blind recompute)
+# PB0 — Would knowing what happens next change people's choices? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `PB0-frozen`. Read-only on `code_v12`.
 - **The run:** GitHub Actions run 41751443724, with the zero checks on the cloud (`zero_cloud.log`: All: PASS,
@@ -55,5 +55,9 @@ learning signal.**
 2. "Where gains appear, they come mostly from mood": **wrong.** They come from reward.
 3. "The full-menu winner lies outside the top 6 in under 10% of decisions": **wrong.** It is 66%.
 
-## Independent recompute
-Pending: GPT, Gemini and DeepSeek in fresh chats, from `recompute/pb0_outcomes.csv` with `recompute/prompt.txt`.
+## Independent recompute (4 November 2026)
+GPT and Gemini 3.1 Pro, each in a fresh chat with code, worked from `recompute/pb0_outcomes.csv` without the analysis
+script, picking the winners themselves (`recompute_pb0.md`). Both match: G 0.1592 (GPT [0.1513, 0.1672], Gemini
+[0.1513, 0.1671]); A 0.5074; G / A 0.314; GO; winner differs from the top option in 85.4%.
+
+**Final.**
