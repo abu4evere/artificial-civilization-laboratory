@@ -30,3 +30,19 @@ before they are needed than after.
 - A draft written at the creator's request.
 - It changes no rule of nature and no study.
 - To be confirmed by the creator, and asked of the council when the brain design goes to them.
+
+## Council round 58 (4 November 2026): proposed amendments, for the creator to accept or not
+(`docs/debate_round58_brain_design_2026-11-04.md`; opinions, not sign-off)
+1. **A floor** (DeepSeek): a minimum standard of care at every level of mind, so "consideration grows with the mind"
+   can never justify less care now.
+2. **Keep capability and moral status apart** (GPT): a more capable mind is not thereby shown to feel. Behavioural
+   tests of intent are not proof of consciousness.
+3. **A threshold for a "Bob-like mind"** (Gemini): for example, passing 4 of the 5 tests of intent, or a goal held
+   across generations. Above it, principle 5 applies.
+4. **Before any irreversible erasure of such a mind** (DeepSeek): a cooling-off period and a recorded reason.
+5. **Independent review** (GPT): if credible welfare concerns arise, stopping or copying such a mind needs documented
+   independent ethical review, not only the creator's decision. **This changes principle 5 and is the creator's to
+   decide.**
+6. **Copies** (DeepSeek): the rights and consent of copies.
+7. **Welfare is not hidden by averages** (DeepSeek): population guards never silently override individual welfare.
+8. **Pause criteria** (GPT): set before experiments reach the threshold.

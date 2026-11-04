@@ -92,3 +92,21 @@ passes tests 1–5 counts.
 3. **Data:** about 2,000 weekly choices a life (round 56). How much should come from watching others versus one's own
    acts, and how are those weighted?
 4. **Cost:** a world 10–100 × slower. Should worlds be smaller and longer, or larger and shorter?
+
+## After PB0 and council round 58 (4 November 2026)
+**PB0 (final): GO**, but a predictor that steers by today's reward would make people more social, not more inventive.
+Round 58 (`docs/debate_round58_brain_design_2026-11-04.md`) sets the plan:
+1. **PB1, read-only:** a shadow predictor. Its outputs are a **vector of observable changes** (food, energy, health,
+   materials, relations, place, object properties), never one "goodness" number. It learns online from the person's
+   own and observed experience, with replay. Linear is compared against one small hidden layer. It is judged on
+   prediction and generalisation to unfamiliar situations and materials. It steers nothing.
+2. **PB2, a test in a copy:**
+   - **the arms:** v13; predictor steering by today's reward; predictor + a learning-progress goal memory; the same
+     with the goal memory off; and a sham;
+   - **the judges:** the five tests of intent plus an abandonment test (dropping unreachable goals), a sham removal
+     beside the causal removal, and observers blind to the arm.
+3. **Rules:**
+   - value is learned, never written;
+   - goals are few, decay and compete;
+   - learning progress drives exploration, but a separate rule decides lasting commitment (GPT);
+   - **nothing rewards remaking, improvement or transmission directly.**
