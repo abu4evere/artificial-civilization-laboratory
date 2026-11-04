@@ -1,4 +1,4 @@
-# ACL council, round 58 (draft; sent after PB0): the brain design
+# ACL council, round 58 (4 November 2026): the brain design, after PB0
 
 The same question goes to GPT, Gemini and DeepSeek. Your answer is an opinion, not sign-off.
 
@@ -8,8 +8,17 @@ The same question goes to GPT, Gemini and DeepSeek. Your answer is an opinion, n
   - the habit trap holds, at about 7.7 times;
   - the self-prediction measure (M1) does not replicate;
   - sequence structure (M2) is the one candidate measure that held twice.
-- **PB0's result:** [FILLED IN FROM `experiments/PB0_prediction_audit/findings.md` WHEN FINAL: G, its interval, A, the
-  reading, and the described splits].
+- **PB0's result** (final; recomputed blind by GPT and Gemini): **GO.**
+  - **The gain:** at 4 weeks, the oracle's held-out gain over the person's top-scored option is G = +0.159 [0.151,
+    0.167]. That is 31% of the mean absolute outcome A (0.507).
+  - **How often choices change:** the winner differs from the top option in 85% of 3,328 decisions. The full-menu
+    winner lies outside the top 6 in 66%.
+  - **What the gain is made of:** almost all reward (+0.148), not mood (+0.012).
+  - **No survival effect:** food, health and alive at 4 weeks are unchanged.
+  - **Post-hoc:** the oracle mostly switches food work to social acts (forage → talk 618, gather → give 358,
+    gather → talk 348). Make wins in only 40 of 3,328.
+  - **The reading:** a predictor has room, but with today's reward and a forgiving world, a perfect predictor would
+    make people more social, not more inventive.
 
 ## The documents (attached)
 - **`docs/brain_design_draft_2026-11-03.md`:**
