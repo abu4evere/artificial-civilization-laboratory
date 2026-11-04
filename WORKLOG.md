@@ -696,3 +696,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-11-04 07:46: heartbeat (sleep mode): PB0 local worlds 22901 and 22923 still running (about 5 CPU-hours each; their cloud jobs ran past 5h40m in pairs, so they are the slowest worlds).
 - 2026-11-04 15:07: the creator is back ("hey how you doing bro"). PB0: local world 22923 done (104 decisions); 22901 still running (about 8 CPU-hours), now set to Idle since the creator is at the PC (CLAUDE.md: the careful setting returns when they are back). No heartbeat ran between 07:46 and now.
 - 2026-11-04 15:22: ROADMAP and OPEN_DECISIONS brought up to date (AM1, HN1, AM2, FF2/v13, the brain road; open: ethics draft, after PB0, the creator's list, HR1).
+- 2026-11-04 15:22: round 58 question drafted (docs/debate_round58_brain_design_question_draft.md: brain design + ethics + PB0 result, to send when PB0 is final). PB0 world 22901 still running (about 8 CPU-hours, Idle).
