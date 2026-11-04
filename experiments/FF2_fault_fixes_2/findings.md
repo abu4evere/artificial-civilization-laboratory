@@ -1,4 +1,4 @@
-# FF2 — Fixing three more faults, in nature v12: findings (pending the blind recompute)
+# FF2 — Fixing three more faults, in nature v12: findings (final: recomputed blind by GPT, Gemini and DeepSeek)
 
 Frozen as `FF2-frozen`. A fault-fix check in a copy: `code_ff2` = `code_v12` + `fix_hunt_expect` (F8), `fix_mat_limit`
 (F4) and `fix_water_holder` (F5).
@@ -65,3 +65,10 @@ interval wholly below 1).
 2. If it matches: `code_v13` = `code_v12` with the three fixes on by default; zero checks (v13 with the fixes off =
    v12; v13 = FF2's arm f); reference hashes; tests; tag `nature-v13`; a Telegram message. No confirmatory run (a
    fault fix, as FF1).
+
+## Independent recompute (3 November 2026)
+GPT and Gemini 3.1 Pro (code) and DeepSeek (by hand), each in a fresh chat, worked from `recompute/ff2_counts.csv`
+without the analysis script (`recompute_ff2.md`). All three agree: R = 1.0008 (GPT [0.8928, 1.1192], Gemini [0.8913,
+1.1241]); extinctions 0 and 0; the reading "no harm"; hunter-weeks 0.1375 on v12 against 0.1085 under f (ratio 0.7888).
+
+**Final.** By the frozen plan, f is adopted as nature v13 (a fault fix; no confirmatory run).
