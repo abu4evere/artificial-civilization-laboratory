@@ -46,8 +46,21 @@ Learning: A Short Survey", *Journal of Artificial Intelligence Research* 74, doi
 5. **For PB0 and after:** if PB0 says NO-GO for foresight alone, a goal memory driven by learning progress is a strong
    candidate for the first brain part.
 
+## Second source (4 November 2026)
+**Forestier, Portelas, Mollard & Oudeyer,** "Intrinsically Motivated Goal Exploration Processes with Automatic
+Curriculum Learning", *JMLR* 2022 (arXiv 1708.02190, first submitted August 2017).
+- **Read:** the abstract only (the arXiv page).
+- **What it says:**
+  - IMGEP is a framework for learning from **self-generated goals**, chosen by intrinsic rewards that follow the
+    agent's own learning progress;
+  - a variant with object-centred modules was shown on a humanoid robot;
+  - the robot discovered skills including **nested tool use**, as stepping stones, with no external task given. The
+    designers did not specify the goals or the tools.
+- **For ACL:** this is direct evidence that tool use can emerge from a general goal-choosing law (learning progress)
+  without naming tools. It fits the brain design's rule (goals as states, never named things). The full text should be
+  read before any frozen brain study cites its details.
+
 ## Not read (to find next)
-- Forestier, Portelas, Mollard & Oudeyer 2017/2022, "Intrinsically motivated goal exploration processes with automatic
-  curriculum learning" (JMLR; the nested tool-use work).
+- The full text of Forestier et al. (JMLR 2022): the goal-space modules and how the tool stages appeared.
 - Baranes & Oudeyer 2013 (active learning of skills by learning progress).
 - Elliot & Fryer 2008 (the goal construct in psychology).
