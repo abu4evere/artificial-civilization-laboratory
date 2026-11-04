@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v13 with the three fixes 0 = code_v12: yes
+seed 501, 5 years: code_v13 with the three fixes 0 = code_v12: yes
+seed 501, 20 years: code_v13 with the three fixes 0 = code_v12: yes
+seed 601, 20 years: code_v13 with the three fixes 0 = code_v12: yes
+seed 501, 20 years: v13 = FF2's arm f (code_ff2 with the three fixes 1): yes
+seed 501, 20 years: the live package with its own defaults = v13: yes
+seed 601, 20 years: v13 = FF2's arm f (code_ff2 with the three fixes 1): yes
+seed 601, 20 years: the live package with its own defaults = v13: yes
+seed 501, 20 years: the fixes change the world (they act): yes
+v13, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

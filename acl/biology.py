@@ -606,7 +606,7 @@ def die(world, p: Person, cause: str, killer) -> None:
         heir.food += p.food
         heir.seeds += p.seeds
         for k, v in p.mats.items():
-            heir.mats[k] += v
+            matter.receive(world, heir, k, v, p.loc, "inherit")
         for it in p.items:
             heir.items.append(it)
         log = getattr(world, "fx1log", None)    # FX1 logging (runner sets it; not saved; read by nothing here)

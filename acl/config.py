@@ -138,6 +138,13 @@ class Config:
     fix_overflow: int = 1              # NV12 (FF1's F2, F3): 1 = things beyond the carry limit after an inheritance go onto the
                                        # ground, the least valued first, as in _keep; 0 = v11 (an heir's first-held thing
                                        # is deleted; from a body, the first held goes to the ground)
+    fix_hunt_expect: int = 1           # NV13 (FF2's F8): 1 = the hunt option weighs a success as the meat of the prey seen on that
+                                       # tile (the mean over take_prey's list of meat x number taken), divided by the
+                                       # hunters; 0 = v12 ((hunt_prey_base + hunt_prey_per_hunter x n) / n)
+    fix_mat_limit: int = 1             # NV13 (FF2's F4): 1 = hide and bone from a kill, and an heir's materials, past the material
+                                       # limit are left on the tile's pile; 0 = v12 (kept past the limit)
+    fix_water_holder: int = 1          # NV13 (FF2's F5): 1 = only a thing that can hold water saves the walk to water; 0 = v12
+                                       # (the best carry thing does, whether or not it holds water)
     loved_location: str = "last_seen"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
                                        # "last_seen" = toward where the person last had them in sight
     corner_block: int = 1              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step

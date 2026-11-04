@@ -127,6 +127,22 @@ def take_prey(world, loc: tuple) -> tuple:
     return (info["meat"] * taken, info["hide"] * taken, info["bone"] * taken, sp)
 
 
+def expected_take(world, loc: tuple) -> float:
+    """FF2 (F8): the meat a success here would give, as seen now: the mean, over the herds take_prey would choose from
+    (the same list), of the species' meat x the number it would take. 0 if there are none. Reads only."""
+    prey = [g for g in near(world, loc, 0) if g["sp"] in PREY and g["n"] > 0]
+    fish = fish_by(world, loc)
+    if fish is not None and fish["n"] > 0:
+        prey.append(fish)
+    if not prey:
+        return 0.0
+    total = 0.0
+    for g in prey:
+        info = SPECIES[g["sp"]]
+        total += info["meat"] * min(g["n"], 1 if info["meat"] >= 10 else max(1, round(10.0 / info["meat"])))
+    return total / len(prey)
+
+
 def _lives_on(world, sp: str, loc: tuple) -> bool:
     return world.tile(loc).biome in SPECIES[sp]["lives"]
 

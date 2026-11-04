@@ -1,13 +1,14 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-03T20:08:48",
+  "updated": "2026-11-03T20:21:59",
   "nature": {
-    "live": "v12",
-    "acl_fingerprint": "226f051b823c0659d609d76896d02d3e1d1e3daffc458477979a3c4f622c49c7",
-    "frozen_copy": "experiments/NV12_nature_v12/code_v12",
-    "frozen_copy_fingerprint": "52ec206d75a9958ab90bbdf1072bd0b41ee2803a2b5d5d5c5cec9ae3911570c1",
+    "live": "v13",
+    "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
+    "frozen_copy": "experiments/NV13_nature_v13/code_v13",
+    "frozen_copy_fingerprint": "f8b793bffd43d7af1123feb4cfa47fbbc57b015261f9646d64af7173128edcd6",
     "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
-    "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek"
+    "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek",
+    "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek"
   },
   "objectives": [
     "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
@@ -305,8 +306,8 @@
       "plan": "experiments/FF2_fault_fixes_2/questions.md",
       "frozen_tag": "FF2-frozen",
       "approved_by": "the assistant under the creator's permission to edit world rules (2 November); round 54: GPT 97%, Gemini 99%, DeepSeek ~92%",
-      "status": "final: no harm (recomputed by GPT, Gemini, DeepSeek); adopting as nature v13",
-      "next_step": "nature v13: code_v13, zero checks, tests, tag, Telegram",
+      "status": "final: no harm; adopted as nature v13",
+      "next_step": "done",
       "run": 41680655094,
       "zero": "cloud"
     },

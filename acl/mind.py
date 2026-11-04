@@ -230,6 +230,7 @@ def decide(world, p: Person) -> tuple:
         # Hunt: better with others.
         _, tool = best_item(p, "hunt")
         best, best_u, best_d = None, -1.0, 0
+        best_n = 1.0
         for t in tiles:
             tile = world.tile(t)
             if fauna.prey_here(world, t) < 1 or tile.fire > 0:
@@ -240,6 +241,8 @@ def decide(world, p: Person) -> tuple:
             n = 1 + committed + 0.25 * max(0, others - committed)
             chance = hunt_chance(world, n, p.skills["hunting"], tool)
             share = (c.hunt_prey_base + c.hunt_prey_per_hunter * min(n, 5)) / n
+            if c.fix_hunt_expect:               # FF2 (F8): the meat of the prey seen there, shared
+                share = fauna.expected_take(world, t) / n
             ev = chance * share * (1.0 - 0.1 * d)
             u = (0.25 + 1.6 * food_hunger) * min(1.0, ev / (need * 1.5)) * (0.7 + 0.6 * g["boldness"]) + 0.05
             # What they have learned to fear holds them back.
@@ -247,8 +250,14 @@ def decide(world, p: Person) -> tuple:
             u -= 0.5 * dread * (1.0 - 0.5 * g["boldness"])
             if u > best_u:
                 best, best_u, best_d = t, u, d
+                best_n = n
         if best is not None:
             add("hunt", best, best_u, best_d)
+            log = getattr(world, "ff2log", None)    # FF2 logging (runner sets it; not saved; read by nothing here)
+            if log is not None:
+                log.append(("hunt_opt", p.id, best, best_n,
+                            (c.hunt_prey_base + c.hunt_prey_per_hunter * min(best_n, 5)) / best_n,
+                            fauna.expected_take(world, best) / best_n))
 
     if not toddler:
         # Gather: picking things up, out of curiosity or because you have found a use for them.

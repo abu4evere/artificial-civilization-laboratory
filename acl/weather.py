@@ -136,6 +136,15 @@ def drink(world, p) -> float:
     if best is not None:
         if best > c.water_reach:
             _, f = best_item(p, "carry")
+            log = getattr(world, "ff2log", None)    # FF2 logging (runner sets it; not saved; read by nothing here)
+            if c.fix_water_holder or log is not None:
+                from .matter import can_hold, factor
+                fw = max([factor(it, "carry") for it in p.items if can_hold(it, "water") > 0], default=1.0)
+                f_carry = f
+                if c.fix_water_holder:          # FF2 (F5): only a thing that can hold water saves the walk
+                    f = max(1.0, fw)
+                if log is not None:
+                    log.append(("water_walk", p.id, f_carry, max(1.0, fw), f))
             walk = 6.0 * (best - c.water_reach) * (1.0 - 0.6 * min(1.0, f - 1.0))
             p.energy = max(0.0, p.energy - walk)
         return 0.0

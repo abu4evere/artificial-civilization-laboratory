@@ -258,6 +258,21 @@ def wear(p, index: int) -> None:
         p.items.pop(index)
 
 
+def receive(world, p, kind: str, amount: float, loc: tuple, how: str) -> None:
+    """Raw material coming to p at loc (spoils of a kill, an inheritance). FF2 (F4): with fix_mat_limit, what goes past
+    the material limit is left on that tile's pile, kept and not deleted; 0 = v12 (p keeps it all). The runner's log
+    (read by nothing here) counts the units past the limit either way."""
+    over = min(amount, max(0.0, p.mat_total() + amount - world.cfg.material_limit))
+    log = getattr(world, "ff2log", None)
+    if log is not None and over > 0:
+        log.append(("mat_over", how, over))
+    if world.cfg.fix_mat_limit and over > 0:
+        tile = world.tile(loc)
+        tile.pile[kind] = tile.pile.get(kind, 0.0) + over
+        amount -= over
+    p.mats[kind] += amount
+
+
 def carry_capacity(world, p) -> float:
     _, f = best_item(p, "carry")
     return world.cfg.carry_limit * f

@@ -170,9 +170,9 @@ def resolve_hunts(world) -> None:
             if sp and sp != "fish":
                 leave_trace(world.tile(loc), f"bones:{sp}", world.tick)
             if hide > 0:
-                rng.choice(hunters).mats["hide"] += hide
+                matter.receive(world, rng.choice(hunters), "hide", hide, loc, "hunt")
             for _ in range(int(round(bone))):
-                rng.choice(hunters).mats["bone"] += 1.0
+                matter.receive(world, rng.choice(hunters), "bone", 1.0, loc, "hunt")
             if sp == "fish":
                 for h in hunters:
                     h.doing = "fish"     # fishing is its own quiet work
