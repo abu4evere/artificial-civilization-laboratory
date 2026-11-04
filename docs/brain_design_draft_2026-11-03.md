@@ -68,6 +68,23 @@ Each is a measure that already exists or can be built read-only:
 The shared "breakthrough sequence" is then a pattern these measures can detect: discovered, remade, improved, taught,
 outlives its inventor. It must never be written as a target.
 
+**"Remade" is not "remade on purpose"** (the creator, 3 November 2026: "Making something again isn't necessarily making it
+again on purpose."). A remake can come by chance (play, a habit, a lucky mix of materials at hand). Intent has to be
+shown by tests that chance cannot pass:
+1. **Above chance.** The inventor remakes more often than matched people who had the same materials and chances but
+   never made the thing.
+2. **Prepared.** The make follows gathering of its specific inputs that the person did not otherwise need, as in M3:
+   preparation against opportunity-matched weeks.
+3. **Persistent.** After an interruption (hunger, a move), the person comes back to it, as in M5.
+4. **Causal (the strongest).** In a copy of the world, the person's memory of the discovery is removed (its worth, or
+   the goal), and nothing else changes. Remaking must then drop. If it does not, the remake was not driven by the
+   memory, and it was not on purpose. This uses PB0's copy method.
+5. **Flexible.** The person reaches the same end by a different route when the usual input is missing (a substitute
+   material, or a new place).
+
+A goal memory is internal state we built, so we can read it. Reading it is not evidence, though: only behaviour that
+passes tests 1–5 counts.
+
 ## Open questions for the council (after PB0)
 1. **The predictor:** linear over a fixed set of perceived features, or a small network? Which features, so that no
    outcome is built in?
