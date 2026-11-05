@@ -46,3 +46,23 @@
 3. **After PB3, R:** check the recipe-memory rule. Is a new recipe evicted at once a fault? A recency protection
    ("a newly learned recipe is not evicted before it is tried") would be a general memory law, not an invention. It
    gets its own frozen study.
+
+## Correction appended (5 November 2026, 05:43): this rule was already known and tested
+Checks 3 and 4 above presented the new-recipe eviction as a fresh finding and "the most concrete candidate" behind R.
+That overstated it.
+- **It was already recorded:** `docs/rules_review_2026-11-02.md`, item **R1**, "A new recipe is the first thing
+  forgotten". SC1's addendum found 21% of new kinds dropped this way in one world.
+- **It was already tested in part:**
+  - **MO1 (v7)** let a learned recipe enter memory with its value. Retention at 52 weeks rose by +0.243, but making did
+    not change, and its manipulation check failed.
+  - **MR1** (memory by use) lowered passing on and was not adopted.
+
+  The rules review concluded that recency alone is unlikely to unlock remaking: "a realism fix", with a larger,
+  evidence-anchored capacity as the other option (`docs/research/toolkit_sizes_2026-11-02.md`).
+
+**What PB2's data add:**
+- The bigger bottleneck may be **opportunity**: inventors held their new kind's inputs in only 143 weeks for 1,192
+  kinds (v13).
+- That points to GPT's hypothesis (no intention to gather for a past success) as much as to the cap.
+
+The order after PB3 therefore stays open for the council. It is not "the recipe rule first" by default.
