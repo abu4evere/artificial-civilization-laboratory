@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T11:04:46",
+  "updated": "2026-11-05T11:53:30",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -386,8 +386,9 @@
       "plan": "experiments/LD1_lookahead_diagnosis/questions.md",
       "frozen_tag": "LD1-frozen",
       "approved_by": "the assistant under sleep-mode autonomy; round 63: GPT 97%, Gemini 95%, DeepSeek ~93%; the assistant 75%",
-      "status": "runner (wrappers on code_v13, no code copy), analysis and recompute builder written before data; local zero checks running since 11:03 on 5 November",
-      "next_step": "zero All: PASS -> smoke -> commit -> cloud (64 worlds) -> frozen analysis, findings, blind recompute"
+      "status": "running on the cloud (run 42068513736, launched 11:52 on 5 November; 64 worlds in 16 chunks of 4; amendment 1 before data; local zero All: PASS accepted by the cloud)",
+      "next_step": "when complete: fetch (tools/ci/fetch_cloud.py 42068513736 experiments/LD1_lookahead_diagnosis/output), count 64 worlds, analyse_ld1.py, findings, blind recompute (recompute/build_ld1_counts.py + prompt.txt), INDEX, tag LD1-done",
+      "run": 42068513736
     }
   ],
   "queue_after": [
