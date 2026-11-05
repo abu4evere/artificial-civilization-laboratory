@@ -1,4 +1,4 @@
-# PB1b — A shadow brain with episodic memory: findings (pending the blind recompute)
+# PB1b — A shadow brain with episodic memory: findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `PB1b-frozen`. Read-only on `code_v13`.
 - **The run:** GitHub Actions run 41957772921, with the zero checks on the cloud (`zero_cloud.log`: All: PASS). The
@@ -57,5 +57,9 @@ memory alone is small (+0.9%).
 3. "The gain is largest for food and materials": **partly.** The largest is for a new kind made (+0.28), then
    materials (+0.13) and food gained (+0.11).
 
-## Independent recompute
-Pending: GPT and Gemini in fresh chats, from `recompute/pb1b_sums.csv` with `recompute/prompt.txt`.
+## Independent recompute (4 November 2026)
+GPT and Gemini 3.1 Pro (fresh chats, code) worked from `recompute/pb1b_sums.csv` without the analysis script
+(`recompute_pb1b.md`). Both match every number: E-own +0.0092 [0.0081, 0.0103], both readings GO, E-obs +0.0839 and
++0.0319, and E-obs − E-own +0.0747.
+
+**Final.**
