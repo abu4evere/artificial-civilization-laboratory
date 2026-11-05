@@ -1,0 +1,8 @@
+seed 501, 20 years (brain from year 5): code_pb2 with brain 0 = code_v13: yes; the shadow memory (and the observers) leave the world unchanged: yes; P, G, G0 and the sham act: yes
+seed 601, 60 years (brain from year 5): code_pb2 with brain 0 = code_v13: yes; the shadow memory (and the observers) leave the world unchanged: yes; P, G, G0 and the sham act: yes
+arm G, seed 501 (brain from year 5): saved at year 10 with memories and goals, reloaded, continues exactly to year 15: yes (people holding a goal at the end: 21)
+unit checks, arm G0, seed 701 (brain from year 5, 30 years): no own week -> the value term is q exactly (breaks 0 of 136422 checks); goals never on 'a new kind' or distance (breaks 0); the brain never draws from the world's generator (calls 0): yes
+code_pb2 fingerprint: 3bcb2c0722a372f178b04dab035d7917cb4ae3d6363af22f5c12d6295b7b7f3c
+All: PASS
+
+exit 0
