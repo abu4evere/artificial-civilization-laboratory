@@ -18,10 +18,13 @@
   - five arms: v13, v13 with the look-ahead switched off, memory, memory with a two-week view, and a sham;
   - 32 new worlds;
   - the safety checks are running now, then the cloud.
-- **A clue for re-making.** When someone invents a new thing, it enters their recipe memory with value 0. If they
-  already know 12 recipes, the lowest-valued one is forgotten, and that is often the brand-new invention
-  (`acl/knowhow.py` lines 78–82). In PB2, inventors who held the right materials no longer knew their own recipe in
-  most of those weeks. This is the next thing to check after PB3.
+- **About re-making:**
+  - In PB2, inventors almost never held the materials for their own new thing: 143 weeks for 1,192 new kinds.
+  - When they did, they had usually forgotten the recipe already. A new recipe enters memory with value 0 and is the
+    first forgotten once a person knows 12 (`acl/knowhow.py` lines 78–82).
+  - **Correction:** I first wrote this up as a new clue. It is not: this rule was already found (rules review R1) and
+    partly tested earlier (MO1: people kept recipes longer, but did not make more). Holding the materials looks like
+    the bigger gap.
 
 ## What I decided without you (all in `docs/autonomous_decisions.md`)
 | decision | GPT | Gemini | DeepSeek | me |
@@ -48,4 +51,4 @@
 1. PB3's safety checks, a short test, then the cloud (about 3–4 hours).
 2. If memory steering beats "no look-ahead" and PB2's effect replicates, then memory becomes a **candidate law**. It
    still needs a confirmatory run on new seeds before anything goes live.
-3. Then the recipe-memory rule behind re-making, as its own frozen check.
+3. Then re-making: the council chooses between "remembering new recipes" (already partly tested) and "wanting to make a past success again" (gathering its materials on purpose).
