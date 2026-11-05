@@ -47,3 +47,8 @@ unchanged.
 
    In v13 and c0 (GPT, DeepSeek). Gemini's credit back-link goes in as a described measure: the r the inventor got in
    weeks when they used the made thing.
+
+## Note appended (09:46): the merged study's name
+The merged plan above calls the study "LA1". That name was already used by the 27 October lesson-acceptance audit
+(`experiments/LA1_lesson_acceptance`, tags LA1-frozen and LA1-done). The study is therefore named **LD1** (look-ahead
+diagnosis): `experiments/LD1_lookahead_diagnosis`.

@@ -1,4 +1,4 @@
-# LA1: Why does the habit look-ahead lock choices, and where does remaking fail? (frozen plan; read-only)
+# LD1: Why does the habit look-ahead lock choices, and where does remaking fail? (frozen plan; read-only)
 
 **Read-only on nature v13.**
 - Nothing in nature changes.
@@ -116,4 +116,4 @@ bootstrap). **Decided before data, the first R target:**
 
 ## Sign-off (5 November 2026)
 The assistant, under sleep-mode autonomy. Read-only. Council round 63: GPT 97%, Gemini 95%, DeepSeek about 93%; the
-assistant 75%. Frozen as `LA1-frozen` before any code or data.
+assistant 75%. Frozen as `LD1-frozen` before any code or data.
