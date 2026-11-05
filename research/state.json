@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T06:42:43",
+  "updated": "2026-11-05T09:38:13",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -375,8 +375,8 @@
       "plan": "experiments/PB3_memory_steering/questions.md",
       "frozen_tag": "PB3-frozen",
       "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 62: GPT 94%, Gemini 95%, DeepSeek ~80%; the assistant 70%",
-      "status": "running on the cloud (run 42020737135, launched 06:39 on 5 November; 160 worlds in 40 chunks of 4; the cloud accepted the local zero record All: PASS, fingerprint 9f3701dd...)",
-      "next_step": "when complete: fetch (tools/ci/fetch_cloud.py 42020737135 experiments/PB3_memory_steering/output), count 160 worlds, analyse_pb3.py, findings, blind recompute (recompute/build_pb3_counts.py + prompt.txt to fresh GPT, Gemini and DeepSeek chats), INDEX, tag PB3-done",
+      "status": "final (recomputed blind by GPT and Gemini): MYOPIA, NOT PREDICTION - the habit table's one-week look-ahead (discount 0.8, max over next week's habits) is the habit trap; without it M3 x7.5, makes x6.6, world-new kinds x9, living-weeks +17%; memory steering replicates PB2 but is below no-look-ahead (P - c0 -0.0059); R still 0",
+      "next_step": "council round 63: the look-ahead rule - a read-only diagnosis of why it suppresses making first, or a frozen law test; R (remaking) remains the open mission question",
       "run": 42020737135
     }
   ],

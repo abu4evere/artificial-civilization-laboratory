@@ -1,6 +1,6 @@
 # PB3 findings: memory steering as a candidate law — prediction or myopia?
 
-**Status: not final until the blind recompute** (`recompute_pb3.md`, written from the models' real replies).
+**Status: final.** Blind recompute by GPT and Gemini (fresh chats, with code) matches every number and both readings (`recompute_pb3.md`); DeepSeek's reply is appended there when it ends.
 
 Every number is from `results.md` (analyse_pb3.py, frozen before data) on run 42020737135:
 - 160 worlds: 5 arms × 32 seeds, 23301–23332;
