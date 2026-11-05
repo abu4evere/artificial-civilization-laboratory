@@ -1,6 +1,6 @@
 # PB2 findings: the episodic brain helps choose (a test in a copy of v13)
 
-**Status: not final until the blind recompute** (`recompute_pb2.md`, to be written from the models' real replies).
+**Status: final.** Blind recompute by GPT and Gemini (fresh chats, with code) matches every number (`recompute_pb2.md`); DeepSeek's by-hand reply is appended there when it ends.
 Every number below is from `results.md` (analyse_pb2.py, frozen before data) on run 41985849249: 160 worlds
 (5 arms × 32 seeds, 23201–23232), 170 years, the brain on from year 100. Measured over adults aged 16–49 in years
 130–170. Zero checks All: PASS (local record, accepted by the cloud; fingerprint 3bcb2c07…).

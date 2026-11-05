@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T02:18:04",
+  "updated": "2026-11-05T05:30:07",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -364,8 +364,8 @@
       "plan": "experiments/PB2_brain_steers/questions.md",
       "frozen_tag": "PB2-frozen",
       "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 61: Gemini 90%, DeepSeek ~72%; the assistant 55%",
-      "status": "running on the cloud (run 41985849249, launched 02:14 on 5 November; 160 worlds in 40 chunks of 4; the cloud accepted the local zero record All: PASS, fingerprint 3bcb2c07...)",
-      "next_step": "when the run completes: fetch (tools/ci/fetch_cloud.py 41985849249 experiments/PB2_brain_steers/output), count 160 worlds, the frozen analysis, findings, the blind recompute (recompute/build_pb2_counts.py + prompt.txt to fresh GPT and Gemini chats, DeepSeek too), INDEX, tag PB2-done",
+      "status": "final (recomputed blind by GPT and Gemini): the self-chosen goal is not shown to help (G-P -0.0007 [-0.0020, +0.0005]; G-G0 +0.0002 [-0.0009, +0.0013]); memory steering raises ends-directed chains about 6x (P-c +0.0176 [0.0157, 0.0194]) and living-weeks +28%, no extinction; R near 0",
+      "next_step": "council round 62 on what follows PB2: a frozen test of memory steering itself as a candidate law (P against v13 as primary, a look-ahead control, new seeds), and why R stays near 0",
       "run": 41985849249
     }
   ],
