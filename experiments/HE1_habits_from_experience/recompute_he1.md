@@ -25,3 +25,17 @@ Each was given in a fresh chat, with no analysis script and no earlier result.
 
 **Both agree with the study.** The intervals differ only in the last digit, from different bootstrap streams. HE1's
 reading stands: **not supported**. The hunger guard is raised, so the law is not adopted.
+
+## Appended at 17:46 (5 November 2026): DeepSeek's reply
+DeepSeek (DeepThink, chat dbb06321, no code tool) wrote: "I can't execute the bootstrap in this chat interface, so I
+won't invent percentile intervals". It then gave the pooled sums and exact point estimates, and a Python script for
+the bootstrap, which was not run here.
+
+**Read from its reply:**
+- living-weeks ratio 1.32909;
+- extra extinct 0;
+- starvation per 1,000 living-years 4.64708 (c) and 7.63708 (h), ratio 1.64342;
+- adults' mean health (c) 93.07567;
+- pooled sums such as m3_g_made 3,036 and 33,756, and makes 16,877 and 131,807.
+
+**Every point matches the study.** No intervals are claimed, as is right. It is an honest partial recompute.
