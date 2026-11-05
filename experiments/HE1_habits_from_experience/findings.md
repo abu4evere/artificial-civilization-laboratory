@@ -1,6 +1,6 @@
 # HE1 findings: habits learn from experience — a law test in a copy
 
-**Status: not final until the blind recompute** (`recompute_he1.md`, written from the models' real replies).
+**Status: final.** Blind recompute by GPT and Gemini (fresh chats, with code) matches every number and the reading (`recompute_he1.md`); DeepSeek's reply is appended there when it ends.
 
 Every number is from `results.md` (analyse_he1.py, frozen before data) on run 42099596852:
 - 96 worlds: v13, the law (`discount` 0) and the sham, 32 paired seeds 23501–23532, 200 years;

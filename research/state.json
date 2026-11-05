@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T15:08:20",
+  "updated": "2026-11-05T17:42:34",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -397,9 +397,9 @@
       "plan": "experiments/HE1_habits_from_experience/questions.md",
       "frozen_tag": "HE1-frozen",
       "approved_by": "the assistant under the creator's 2 November permission and sleep-mode autonomy; round 64; the assistant 75%",
-      "status": "running on the cloud (run 42099596852, launched 15:05 on 5 November; 96 worlds in 24 chunks; local zero All: PASS accepted)",
+      "status": "final (recomputed blind by GPT and Gemini): NOT SUPPORTED - harm: starvation rate x1.64 (the hunger guard), killings 4 -> 216; making released (x6); not adopted",
       "run": 42099596852,
-      "next_step": "when complete: fetch, count 96 worlds, analyse_he1.py, findings (with docs/research/habits_bootstrap_caution_2026-11-05.md), blind recompute; if supported, a confirmatory run on new seeds, then council on adoption (the separation law against a look-ahead from well-learned situations)"
+      "next_step": "council round 65: a look-ahead without the familiarity bias (bootstrap only from well-learned situations) as the next law candidate, and value at invention for R"
     }
   ],
   "queue_after": [
