@@ -37,3 +37,18 @@ itself.
 different bootstrap streams; GPT used seed 20261105, and the study used 20261115. PB3's readings stand:
 - **primary: "myopia, not prediction"**;
 - **co-primary: "PB2's steering effect replicates"**.
+
+## Appended at 09:43 (5 November 2026): DeepSeek's reply
+DeepSeek (DeepThink, chat 36e2aac1, no code tool) stopped once at its length limit. "Continue" was pressed once, and
+it then answered. **Read from its reply:**
+- M3: c 0.0035, c0 0.0263, P 0.0203, Pp 0.0149;
+- P − c0 −0.0059 [−0.0084, −0.0035];
+- P − c +0.0169 [0.0146, 0.0191];
+- c0 − c +0.0228 [0.0208, 0.0248];
+- living-weeks: c0 / c 1.1657 [1.019, 1.313] (+1 extinct); P / c 1.2762 [1.230, 1.323]; Pp / c 1.3061 [1.258, 1.354];
+- no guard;
+- primary "myopia, not prediction"; co-primary replicates.
+
+**The points and both readings match.** Its intervals are somewhat wider than the study's. Its visible working notes
+say it used a normal approximation rather than resampling ("Our intervals based on normal not exact"), so its
+intervals are not a true bootstrap. All three models agree with the study's readings.
