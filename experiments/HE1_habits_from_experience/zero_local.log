@@ -1,0 +1,7 @@
+seed 501, 20 years: the observers leave the world unchanged (c and h): yes; h and the sham act: yes
+seed 601, 60 years: the observers leave the world unchanged (c and h): yes; h and the sham act: yes
+unit check, arm h, seed 701, 20 years: every habit update = clamp(q + 0.05 (r - q)) (wrong 0 of 99910): yes
+code_v13 fingerprint: f8b793bffd43d7af1123feb4cfa47fbbc57b015261f9646d64af7173128edcd6
+All: PASS
+
+exit 0
