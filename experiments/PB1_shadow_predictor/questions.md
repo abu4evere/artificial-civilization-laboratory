@@ -122,3 +122,19 @@ world.
 The assistant, under the creator's direction (the brain first: "keep working") and standing autonomy. It is
 read-only. Council round 59: GPT 94%, Gemini 95%, DeepSeek about 82%; the assistant 80%. Frozen as `PB1-frozen` before
 any code or data.
+
+## Amendment 1 (4 November 2026, about 19:50, before any study data)
+- **What happened:** a code-test world (seed 9897, 25 years; not study data) showed the linear predictor's errors
+  exploding on rare outputs (materials held, things held, affection).
+  - Early in a world those outputs almost never change, so their running spread is near zero.
+  - One rare change then became a standardised value in the millions.
+- **The change (numerical safeguards only; no rate, input, output, variant, case or reading changes):**
+  - the running spread has a **floor of 0.05 raw units**;
+  - standardised values are **clipped to ±10**: truths, predictions and learning targets alike, for every variant,
+    including B's prediction;
+  - a week is scored only after 30 followed weeks have entered the world's statistics (the burn-in already in the
+    code).
+- **A clarification of "unfamiliar places":** the action's **destination** tile has never been stood on. The current
+  tile is always one the person stands on.
+- **Not changed:** the learning rates (0.1 and 0.01), although the code test showed the predictors trailing B in a
+  short world. They are fixed in the plan and are not tuned on any data.
