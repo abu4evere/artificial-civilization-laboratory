@@ -1,4 +1,4 @@
-# PB1: independent blind recompute (4 November 2026, about 22:00)
+# PB1: independent blind recompute (4 November 2026, about 21:35; corrected from an estimated "22:00")
 
 **The inputs:** `recompute/pb1_sums.csv` (built by `recompute/build_pb1_sums.py`) and `recompute/prompt.txt`, each
 given in a fresh chat, with no analysis script and no earlier result. **The numbers below are read from the replies.**

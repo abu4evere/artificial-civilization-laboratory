@@ -1,4 +1,4 @@
-# Council round 60: how should the shadow brain learn? (4 November 2026, about 22:30)
+# Council round 60: how should the shadow brain learn? (4 November 2026, about 21:40; corrected from an estimated "22:30")
 
 **Opinions of GPT, Gemini and DeepSeek, not sign-off.**
 - **The question:** `docs/debate_round60_question_2026-11-04.md`, with the episodic-memory research note.

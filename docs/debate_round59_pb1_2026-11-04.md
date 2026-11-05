@@ -1,4 +1,4 @@
-# Council round 59: PB1, the shadow brain (4 November 2026, about 18:30)
+# Council round 59: PB1, the shadow brain (4 November 2026, about 18:00; corrected from an estimated "18:30")
 
 **Opinions of GPT, Gemini and DeepSeek, not sign-off.**
 - **The question:** `docs/pb1_design_draft_2026-11-04.md`.
