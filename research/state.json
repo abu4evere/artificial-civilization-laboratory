@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T01:07:18",
+  "updated": "2026-11-05T02:18:04",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -364,8 +364,9 @@
       "plan": "experiments/PB2_brain_steers/questions.md",
       "frozen_tag": "PB2-frozen",
       "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 61: Gemini 90%, DeepSeek ~72%; the assistant 55%",
-      "status": "code built (run_pb2.py, analyse_pb2.py, recompute builder, all before data); local zero checks running (restarted 01:06 on 5 November after the memories of the dead were freed to bound memory)",
-      "next_step": "zero All: PASS -> short local smoke of the runner and analysis -> commit -> cloud run (40 chunks of 4 worlds, skip_zero=local) -> frozen analysis, findings, blind recompute"
+      "status": "running on the cloud (run 41985849249, launched 02:14 on 5 November; 160 worlds in 40 chunks of 4; the cloud accepted the local zero record All: PASS, fingerprint 3bcb2c07...)",
+      "next_step": "when the run completes: fetch (tools/ci/fetch_cloud.py 41985849249 experiments/PB2_brain_steers/output), count 160 worlds, the frozen analysis, findings, the blind recompute (recompute/build_pb2_counts.py + prompt.txt to fresh GPT and Gemini chats, DeepSeek too), INDEX, tag PB2-done",
+      "run": 41985849249
     }
   ],
   "queue_after": [
