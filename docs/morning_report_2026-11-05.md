@@ -1,47 +1,51 @@
-# Morning report, 5 November 2026 (written in the night; updated as PB2 finishes)
+# Morning report, 5 November 2026 (written in the night)
 
 ## In short
-- **PB2 is running on the cloud** (run 41985849249, launched 02:14). It is the first test where the new brain actually
-  **guides people's choices**, in a copy of the world. The live world is untouched.
-  - Each adult remembers their own weeks and what they saw others do.
-  - When choosing, they ask their memory: "last time I was in a week like this and did this, how did it feel?" That
-    answer takes the place of the old habit table.
-  - In one arm, people also pick a **goal** for a season: the thing they are learning fastest about (for example
-    health or materials). A control arm picks goals at random.
-  - The question: does a self-chosen goal help people **finish what they start** (gather materials, then make
-    something)?
-- **All safety checks passed** before launch:
-  - with the brain off, the copy is exactly v13;
-  - the read-only memory changes nothing;
-  - saving and reloading a world with memories is exact;
-  - the brain never touches the world's dice.
-- **A problem caught before launch:** memories stayed stored after people died, so a 170-year world could have needed
-  several GB. Memories now end with their owner. Nothing reads them after death, so behaviour is the same.
+- **PB2 is done and checked.** GPT, Gemini and DeepSeek each recomputed every number blind, and all three match.
+  - **Memory works.** When people choose using their own memory of past weeks instead of the old habit table:
+    - they finish about **6 times** more "gather materials, then make something" tasks;
+    - they make about 4 times as much;
+    - the worlds hold **28% more people**;
+    - no world died out.
+  - **The self-chosen goal added nothing.** A goal picked by "what am I learning fastest" did no better than no goal,
+    or than a random goal.
+  - **Re-making inventions is still almost absent.** Almost nobody makes a new kind of thing a second time.
+  - **Nothing in the live world changed.** This was a test in a copy.
+- **Why "memory works" needs one more test.** The old habit table looks one week ahead, and the memory does not.
+  Maybe people do better simply because they stop looking ahead, and not because memory predicts better. All three
+  AIs said to test this first (council round 62).
+- **PB3 is frozen and being built:**
+  - five arms: v13, v13 with the look-ahead switched off, memory, memory with a two-week view, and a sham;
+  - 32 new worlds;
+  - the safety checks are running now, then the cloud.
+- **A clue for re-making.** When someone invents a new thing, it enters their recipe memory with value 0. If they
+  already know 12 recipes, the lowest-valued one is forgotten, and that is often the brand-new invention
+  (`acl/knowhow.py` lines 78–82). In PB2, inventors who held the right materials no longer knew their own recipe in
+  most of those weeks. This is the next thing to check after PB3.
 
 ## What I decided without you (all in `docs/autonomous_decisions.md`)
 | decision | GPT | Gemini | DeepSeek | me |
 |---|---|---|---|---|
 | PB2 frozen and run (the brain road, step 3; a test in a copy) | no estimate | 90% | about 72% | 55% |
-| Cloud plan: 40 chunks of 4 worlds (one world per core), so no job comes near the 340-minute limit | | | | (engineering) |
+| Cloud plan for PB2: 40 chunks of 4 worlds (jobs took 48–91 minutes, far inside the limit) | | | | (engineering) |
+| PB3 frozen: memory steering as a candidate law; is it prediction or just "no look-ahead"? | 94% | 95% | about 80% | 70% |
 
 ## Research (notes in `docs/research/`)
-- **People choose what to practise by learning progress** (Ten et al. 2021; 382 people). This is the idea behind the
-  goal arm. A difference I noted before any data: people also use how hard a task is, and PB2 uses learning
-  progress only.
-- **People choose by recalling single past episodes**, not only running averages (Bornstein et al. 2017). This is the
-  idea behind the memory steering. A difference I noted before any data: people weigh recent memories more, and PB2
-  weighs memories by similarity only.
+- **People choose what to practise by learning progress** (Ten et al. 2021). This was the idea behind the goal arm;
+  PB2 found it adds nothing in ACL as built.
+- **People choose by recalling single past episodes** (Bornstein et al. 2017). This is the idea behind memory
+  steering, which worked.
+- **The brain balances habit and deliberate prediction by how reliable each has been** (Lee et al. 2014). This is a
+  principled option if memory alone ever needs to be mixed with habit.
 
 ## Things to know
 - **My mistake, corrected in the open:** four decisions (PB0, PB1, PB1b, PB2) were missing from the decisions log.
   They are added now, marked "recorded late".
+- **A memory problem caught before launch:** memories stayed stored after people died, so a 170-year world could
+  have needed several GB. Memories now end with their owner; behaviour is unchanged.
 
 ## What is next
-1. When PB2 finishes (about 5–7 hours after launch):
-   - fetch the 160 worlds;
-   - run the frozen analysis;
-   - write the findings;
-   - send the blind recompute to GPT, Gemini and DeepSeek.
-2. Then the next brain step depends on the result:
-   - if the goal helps, a confirmatory run on new seeds;
-   - if it does not, find out why before changing anything.
+1. PB3's safety checks, a short test, then the cloud (about 3–4 hours).
+2. If memory steering beats "no look-ahead" and PB2's effect replicates, then memory becomes a **candidate law**. It
+   still needs a confirmatory run on new seeds before anything goes live.
+3. Then the recipe-memory rule behind re-making, as its own frozen check.

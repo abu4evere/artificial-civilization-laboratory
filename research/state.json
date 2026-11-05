@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T05:30:07",
+  "updated": "2026-11-05T05:42:55",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -367,6 +367,16 @@
       "status": "final (recomputed blind by GPT and Gemini): the self-chosen goal is not shown to help (G-P -0.0007 [-0.0020, +0.0005]; G-G0 +0.0002 [-0.0009, +0.0013]); memory steering raises ends-directed chains about 6x (P-c +0.0176 [0.0157, 0.0194]) and living-weeks +28%, no extinction; R near 0",
       "next_step": "council round 62 on what follows PB2: a frozen test of memory steering itself as a candidate law (P against v13 as primary, a look-ahead control, new seeds), and why R stays near 0",
       "run": 41985849249
+    },
+    {
+      "id": "PB3",
+      "title": "Memory steering as a candidate law: prediction or myopia? (a test in a copy; the brain road, step 4)",
+      "kind": "nature test in a copy",
+      "plan": "experiments/PB3_memory_steering/questions.md",
+      "frozen_tag": "PB3-frozen",
+      "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 62: GPT 94%, Gemini 95%, DeepSeek ~80%; the assistant 70%",
+      "status": "code built (code_pb3, run_pb3.py, analyse_pb3.py, recompute builder; all before data); local zero checks running since 05:40 on 5 November",
+      "next_step": "zero All: PASS -> short smoke -> commit -> cloud run (40 chunks of 4, skip_zero=local) -> frozen analysis, findings, blind recompute (GPT, Gemini, DeepSeek)"
     }
   ],
   "queue_after": [

@@ -1,0 +1,158 @@
+diff -r -u --strip-trailing-cr -x __pycache__ -N PB2_brain_steers/code_pb2/acl/brain.py PB3_memory_steering/code_pb3/acl/brain.py
+--- PB2_brain_steers/code_pb2/acl/brain.py	2026-11-05 01:06:38.834078400 -0500
++++ PB3_memory_steering/code_pb3/acl/brain.py	2026-11-05 05:38:39.472526400 -0500
+@@ -10,7 +10,8 @@
+ learning progress on one of seven observable outputs (never "a new kind made", never distance) adds the curiosity
+ pull's size to options expected to move it the chosen way. With `brain_shadow` 1 (and `brain` 0) the memory is kept
+ outside the world's saved state and only scored: nothing it holds changes any choice.
+-A memory ends with its owner: the memories of the dead are not kept. Nothing here uses the world's random generator.
++A memory ends with its owner: the memories of the dead are not kept. PB3: with `brain_lookahead` 1, r-hat uses each
++own week's two-week return r(t) + discount x r(t+1), once the next own week is lived. Nothing here uses the world's random generator.
+ """
+ from __future__ import annotations
+ 
+@@ -176,6 +177,10 @@
+         self.hid_n = 0
+         self.last2 = []
+         self.made = []
++        self.r2 = {}                  # PB3 (brain_lookahead): action -> own weeks' two-week returns (aligned with own)
++        self.r2ok = {}                # PB3: action -> 1 where the next own week has been lived
++        self.c2 = {}                  # PB3: "ctx,action" -> [sum of two-week returns, count]
++        self.pend = None              # PB3: [action, ctx, index, r] of the last own week, waiting for its next week
+ 
+     # -- cells
+     def _cell(self, ctx, act):
+@@ -201,6 +206,25 @@
+             s[4] += r * r
+         self.ncorr += 1
+ 
++    def chain2(self, act, ctx, r, disc):
++        """PB3: complete the last own week's two-week return with this week's r, then hold this week open."""
++        if self.pend is not None:
++            pa, pc, pi, pr = self.pend
++            v = pr + disc * r
++            self.r2[pa][pi], self.r2ok[pa][pi] = v, 1
++            c = self.c2.setdefault(f"{pc},{pa}", [0.0, 0])
++            c[0] += v
++            c[1] += 1
++        n = self.own[act].n
++        for d, dt in ((self.r2, float), (self.r2ok, int)):
++            a = d.get(act)
++            if a is None or len(a) < n:
++                b = np.zeros(max(8, 2 * n), dtype=dt)
++                if a is not None:
++                    b[:len(a)] = a
++                d[act] = b
++        self.pend = [act, ctx, n - 1, r]
++
+     def add_obs(self, act, ctx, xd, y, m, wb):
+         old = self.obs.setdefault(act, _Store(cap=OBS_CAP)).add(xd, y, m, 0.0, ctx, wb)
+         c = self._cell(ctx, act)
+@@ -226,6 +250,24 @@
+         w = 1.0 / (d[idx] + EPS)
+         return float((w * s.R[idx]).sum() / w.sum())
+ 
++    def rhat2(self, ctx, act, xd):
++        """PB3: r-hat from two-week returns (only own weeks whose next own week has been lived)."""
++        c = self.c2.get(f"{ctx},{act}")
++        if c is not None and c[1] > 0:
++            return c[0] / c[1]
++        s = self.own.get(act)
++        ok = self.r2ok.get(act)
++        if s is None or ok is None:
++            return None
++        sel = np.flatnonzero(ok[:s.n])
++        if not len(sel):
++            return None
++        d = np.sqrt(((s.X[sel] - xd) ** 2 * GW).sum(1))
++        kk = min(K, len(sel))
++        idx = np.argpartition(d, kk - 1)[:kk] if kk < len(sel) else np.arange(len(sel))
++        w = 1.0 / (d[idx] + EPS)
++        return float((w * self.r2[act][sel][idx]).sum() / w.sum())
++
+     def yhat(self, ctx, act, xd):
+         c = self.cells.get(f"{ctx},{act}")
+         if c is not None and c[2] > 0:
+@@ -273,7 +315,14 @@
+                 "cells": {k: [list(v[0]), v[1], v[2], list(v[3]), list(v[4])] for k, v in sorted(self.cells.items())},
+                 "errs": [list(e) for e in self.errs], "corr": [list(s) for s in self.corr], "ncorr": self.ncorr,
+                 "goal": self.goal, "wait": self.wait, "hid": list(self.hid), "hid_n": self.hid_n,
+-                "last2": list(self.last2), "made": sorted(self.made)}
++                "last2": list(self.last2), "made": sorted(self.made)} | self._la_dict()
++
++    def _la_dict(self):
++        if self.pend is None and not self.c2:
++            return {}                 # saved only when used (PB3's P+), so PB2's saved worlds are unchanged
++        return {"r2": {a: v[:self.own[a].n].tolist() for a, v in sorted(self.r2.items())},
++                "r2ok": {a: v[:self.own[a].n].tolist() for a, v in sorted(self.r2ok.items())},
++                "c2": {k: list(v) for k, v in sorted(self.c2.items())}, "pend": self.pend}
+ 
+     @classmethod
+     def from_dict(cls, d):
+@@ -285,6 +334,15 @@
+         b.corr = [list(s) for s in d["corr"]]
+         b.ncorr, b.goal, b.wait = d["ncorr"], d["goal"], d["wait"]
+         b.hid, b.hid_n, b.last2, b.made = list(d["hid"]), d["hid_n"], list(d["last2"]), list(d["made"])
++        if "r2" in d:
++            for a, v in d["r2"].items():
++                b.r2[a] = np.zeros(max(8, 2 * len(v)))
++                b.r2[a][:len(v)] = v
++            for a, v in d["r2ok"].items():
++                b.r2ok[a] = np.zeros(max(8, 2 * len(v)), dtype=int)
++                b.r2ok[a][:len(v)] = v
++            b.c2 = {k: list(v) for k, v in d["c2"].items()}
++            b.pend = d["pend"]
+         return b
+ 
+     def digest(self) -> str:
+@@ -297,6 +355,12 @@
+                 h.update(str((a, s.n, s.head)).encode())
+         h.update(repr((sorted((k, v[1], v[2]) for k, v in self.cells.items()), self.goal, self.wait, self.ncorr,
+                        len(self.errs), self.hid_n, self.last2)).encode())
++        if self.pend is not None or self.c2:           # PB3: only when used, so PB2's digests are unchanged
++            for a in sorted(self.r2):
++                n = self.own[a].n
++                h.update(np.ascontiguousarray(self.r2[a][:n]).tobytes())
++                h.update(np.ascontiguousarray(self.r2ok[a][:n]).tobytes())
++            h.update(repr((sorted((k, v[0], v[1]) for k, v in self.c2.items()), self.pend)).encode())
+         return h.hexdigest()
+ 
+ 
+@@ -353,7 +417,7 @@
+     x = _x(world, p, action, target)
+     xd = x[DIDX]
+     s = stats(world)
+-    rh = b.rhat(ctx, action, xd)
++    rh = b.rhat2(ctx, action, xd) if c.brain_lookahead else b.rhat(ctx, action, xd)
+     val = qv
+     if rh is not None:
+         n, mr, m2r, mq, m2q = s["rq"]
+@@ -376,7 +440,7 @@
+     action, target = chosen
+     b = brain_of(world, p)
+     x = _x(world, p, action, target)
+-    rh = b.rhat(ctx, action, x[DIDX])
++    rh = b.rhat2(ctx, action, x[DIDX]) if world.cfg.brain_lookahead else b.rhat(ctx, action, x[DIDX])
+     s = stats(world)
+     if rh is not None:
+         # running r-hat and q statistics (for the scale), over decisions made with the brain
+@@ -453,6 +517,8 @@
+             if len(b.errs) > 2 * LP_WIN:
+                 del b.errs[0]
+         b.add_own(cap["act"], cap["ctx"], xd, y, float(r))
++        if c.brain_lookahead:                 # PB3's P+: the two-week return of the previous own week is now known
++            b.chain2(cap["act"], cap["ctx"], float(r), c.discount)
+         b.hid = [(h * b.hid_n + v) / (b.hid_n + 1) for h, v in zip(b.hid, cap["x"][:4].tolist())]
+         b.hid_n += 1
+         b.last2 = [cap["act"]] + b.last2[:1]
+diff -r -u --strip-trailing-cr -x __pycache__ -N PB2_brain_steers/code_pb2/acl/config.py PB3_memory_steering/code_pb3/acl/config.py
+--- PB2_brain_steers/code_pb2/acl/config.py	2026-11-04 23:58:39.791785200 -0500
++++ PB3_memory_steering/code_pb3/acl/config.py	2026-11-05 05:38:29.783207500 -0500
+@@ -147,6 +147,7 @@
+                                        # habit's place; 2 = 1 + a goal chosen by learning progress; 3 = 1 + a random goal
+     brain_shadow: int = 0              # PB2: 1 (with brain 0) = the memory is kept outside the saved world and only scored
+     brain_on_year: int = 100           # PB2: the year from which adults keep the memory (it starts empty)
++    brain_lookahead: int = 0           # PB3: 1 = r-hat uses each own week's two-week return r(t) + discount x r(t+1)
+     fix_water_holder: int = 1          # NV13 (FF2's F5): 1 = only a thing that can hold water saves the walk to water; 0 = v12
+                                        # (the best carry thing does, whether or not it holds water)
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);

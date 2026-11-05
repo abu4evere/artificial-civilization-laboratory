@@ -36,3 +36,17 @@ Each was given in a fresh chat, with no analysis script and no earlier result.
 
 PB2's frozen reading stands: **the self-chosen goal is not shown to help** (G − P and G − G0 null). The steering effect
 P − c, +0.0176 [0.0157, 0.0194], is confirmed. PB2 is final.
+
+## Appended at 05:42 (5 November 2026): DeepSeek's reply
+DeepSeek (DeepThink, chat 105c2492, no code tool) hit its length limit while working by hand. "Continue" was pressed
+once, and it then gave a final answer. **Read from its reply:**
+- M3: c 0.0034, P 0.0210, G 0.0203, G0 0.0200, x 0.0035;
+- G − P −0.000728 [−0.00203, 0.00057];
+- G − G0 0.000241 [−0.00084, 0.00132];
+- P − c 0.017606 [0.01575, 0.01946];
+- living-weeks: P / c 1.283 [1.233, 1.332], G / c 1.263 [1.208, 1.318], G0 / c 1.295 [1.243, 1.347]; no extinctions;
+  no guard;
+- MSE memory 0.002664, MSE habit 0.802133, difference 0.799469 [0.7764, 0.8225]: passes;
+- reading: "Not supported".
+
+**DeepSeek agrees with the study and with GPT and Gemini.** All three match.
