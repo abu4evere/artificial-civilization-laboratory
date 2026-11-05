@@ -52,3 +52,27 @@
 2. If memory steering beats "no look-ahead" and PB2's effect replicates, then memory becomes a **candidate law**. It
    still needs a confirmatory run on new seeds before anything goes live.
 3. Then re-making: the council chooses between "remembering new recipes" (already partly tested) and "wanting to make a past success again" (gathering its materials on purpose).
+
+## Update (11:04): PB3 finished, and the next study
+- **PB3 is done and checked:**
+  - GPT and Gemini recomputed every number blind, and DeepSeek matched the main numbers.
+  - **The habit trap has one cause: the habit table's one-week look-ahead.** When people learn a habit, they add
+    0.8 × the best habit they have for next week. Switch that off, and people:
+    - finish about 7.5 times more "gather, then make" tasks;
+    - make about 6.6 times as much;
+    - invent about 9 times as many new kinds;
+    - and the worlds hold 17% more people.
+  - **The memory brain helped in PB2 mainly because it does not look ahead.** It does not beat simply switching the
+    look-ahead off.
+  - **Re-making is still zero:** not one of 11,348 new kinds was made again.
+- **Not a rule change yet.** All three AIs said "discount 0" would be tuning, not a law. First we need to know why
+  the look-ahead locks people in (council round 63).
+- **LD1, read-only, is frozen and being built.** It answers two questions:
+  1. Is it the size of the habit values (they swamp needs and curiosity), or their direction (making is punished
+     because it does not feed you next week)?
+  2. Where does each new invention get lost on the way to being made again?
+
+  The safety checks are running now, then the cloud.
+- **Two of my slips, corrected in the open:**
+  - I first named the study "LA1", a name already used by a study from 27 October. It is now **LD1**.
+  - I first presented the recipe-forgetting rule as a new clue for re-making; it was already known (see above).
