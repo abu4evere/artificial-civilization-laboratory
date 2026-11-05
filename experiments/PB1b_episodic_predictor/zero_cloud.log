@@ -1,0 +1,6 @@
+Zero checks for PB1b, run on GitHub Actions (run 41957772921, zero job 127017113185), saved from the job log on 4 November 2026.
+seed 501, 20 years: observer and predictors read-only (following people born after year 5): yes; E-own's errors are the same alone as beside the others: yes; on lived cells E-own's prediction equals the table's: not applicable (nobody followed yet); {'E_all': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'obs': 0, 'own': 0, 'unit_bad': 0}
+seed 601, 60 years: observer and predictors read-only (following people born after year 5): yes; E-own's errors are the same alone as beside the others: yes; on lived cells E-own's prediction equals the table's: yes; {'E_all': [16015.624954, 21261.818771, 100619.37449, 48282.019778, 32618.811294, 108724.494762, 97091.135396, 29046.506134, 141431.765663], 'obs': 1578699, 'own': 130328, 'unit_bad': 0}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v13 fingerprint: f8b793bffd43d7af1123feb4cfa47fbbc57b015261f9646d64af7173128edcd6
+All: PASS
