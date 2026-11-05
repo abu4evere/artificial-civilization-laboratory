@@ -1,6 +1,6 @@
 # LD1 findings: why the habit look-ahead locks choices, and where remaking fails (read-only on v13)
 
-**Status: not final until the blind recompute** (`recompute_ld1.md`, written from the models' real replies).
+**Status: final.** Blind recompute by GPT and Gemini (fresh chats, with code) matches every number and all readings (`recompute_ld1.md`); DeepSeek's reply is appended there when it ends.
 
 Every number is from `results.md` (analyse_ld1.py, frozen before data, with amendment 1 made before data) on run
 42068513736:
