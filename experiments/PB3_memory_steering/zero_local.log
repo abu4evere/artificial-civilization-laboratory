@@ -1,0 +1,8 @@
+seed 501, 20 years (brain from year 5): code_pb3 with brain 0 = code_v13: yes; the observers leave the world unchanged: yes; P on code_pb3 (brain_lookahead 0) = P on code_pb2, world and memories: yes; c0, P, P+ and the sham act: yes
+seed 601, 60 years (brain from year 5): code_pb3 with brain 0 = code_v13: yes; the observers leave the world unchanged: yes; P on code_pb3 (brain_lookahead 0) = P on code_pb2, world and memories: yes; c0, P, P+ and the sham act: yes
+arm P+, seed 501 (brain from year 5): saved at year 10 with memories and two-week returns, reloaded, continues exactly to year 15: yes (people with an open week at the end: 56)
+unit check, arm P+, seed 701 (brain from year 5, 30 years): every two-week return = r(t) + 0.8 r(t+1) from the next own week (wrong 0 of 44957); the newest own week stays open and unused (wrong 0): yes
+code_pb3 fingerprint: 9f3701ddaeaa449b1c51084fb2e2175c2a1b067a853a68584e91585973231743
+All: PASS
+
+exit 0
