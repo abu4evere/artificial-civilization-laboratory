@@ -1,5 +1,5 @@
 """Builds the blind-recompute file for LD1: per world, the decisions and the summed make-share probabilities under the
-four score versions, and the stage counts of the tracked kinds. Written before data.
+three score versions, and the stage counts of the tracked kinds. Written before data.
 
   python experiments/LD1_lookahead_diagnosis/recompute/build_ld1_counts.py
 """
@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 HERE = Path(__file__).parent
-V = ("actual", "scale", "direction", "none")
+V = ("actual", "scale", "none")             # amendment 1
 rows = ["arm,seed,decisions," + ",".join(f"make_{v}" for v in V) + ",kinds," + ",".join(f"stage{k}" for k in range(6))]
 for f in sorted(glob.glob(str(HERE.parent / "output" / "*_seed_*.json"))):
     r = json.load(open(f))

@@ -4,8 +4,8 @@ set-up (`../ES2_realized_lookahead/run_es2.py`). Wrappers only watch, nothing is
   _learn       biology._learn: the shadow tables q_r (from r) and q_f (from 0.8 x max next q), the look-ahead term by
                action and next food band; entries written by other code or clamped are marked (the exactness check)
   steer        thought.steer sees every scored option of a decision (after the thought pulls): the softmax shares of
-               make, gather, forage, play and person-aimed acts under four score versions (actual, scale, direction,
-               none); whether the top option changes without the habit term; whether a tracked kind was offered
+               make, gather, forage, play and person-aimed acts under three score versions (actual, scale,
+               none; amendment 1); whether the top option changes without the habit term; whether a tracked kind was offered
   kinds        world-new kinds made in play in years 130-165 (AF1's rule), followed 5 years in their inventor's weeks:
                recipe held, inputs in hand, not already holding one, valued > 0.05, offered, remade; others who learn it
   census       year ends: the share of adults' q entries at the clamp; the gap |q - (q_r + q_f)|
@@ -40,7 +40,7 @@ WIN = [130 * WPY, 170 * WPY]               # counted here
 REMAKE = 5 * WPY
 CLASSES = {"make": "make", "gather": "gather", "forage": "forage", "play": "play", "give": "person", "care": "person",
            "talk": "person", "court": "person", "steal": "person", "attack": "person"}
-VERSIONS = ("actual", "scale", "direction", "none")
+VERSIONS = ("actual", "scale", "none")          # amendment 1: "direction" = "none" under a softmax
 
 
 class LD1Obs:
@@ -108,12 +108,10 @@ class LD1Obs:
         ctx = p.last_ctx
         base_i = ctx * N
         qr, qf = self.table(p)
-        mean_f = sum(qf[base_i:base_i + N]) / N
         s = [o[0] for o in options]
         h = [lw * p.q[base_i + self.A[o[1]]] for o in options]
         ver = {"actual": s,
                "scale": [x - y + 0.2 * y for x, y in zip(s, h)],
-               "direction": [x - y + lw * (qr[base_i + self.A[o[1]]] + mean_f) for x, y, o in zip(s, h, options)],
                "none": [x - y + lw * qr[base_i + self.A[o[1]]] for x, y, o in zip(s, h, options)]}
         self.s["decisions"] += 1
         for v, sc in ver.items():
@@ -128,6 +126,12 @@ class LD1Obs:
         self.s["top_changes"] += int(max(range(len(s)), key=lambda k: s[k]) != max(range(len(s)), key=lambda k: no_h[k]))
         self.s["abs_h"] += sum(abs(y) for y in h) / len(h)
         self.s["abs_rest"] += sum(abs(y) for y in no_h) / len(no_h)
+        if any(o[1] == "make" for o in options):   # amendment 1: the look-ahead's and the habit's differences at make
+            idx = [base_i + self.A[o[1]] for o in options]
+            j = base_i + self.A["make"]
+            self.s["mk_n"] += 1
+            self.s["mk_qf_diff"] += lw * (qf[j] - sum(qf[k] for k in idx) / len(idx))
+            self.s["mk_qr_diff"] += lw * (qr[j] - sum(qr[k] for k in idx) / len(idx))
         for o in options:
             if o[1] == "make":
                 kd = self.kinds.get(o[2])

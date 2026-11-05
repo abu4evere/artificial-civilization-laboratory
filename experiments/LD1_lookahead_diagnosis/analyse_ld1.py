@@ -1,6 +1,6 @@
 """LD1 analysis (questions.md, frozen as `LD1-frozen`); written before any data.
 
-Part A: the expected make share of adult decisions in v13 under four score versions (actual, scale, direction, none)
+Part A: the expected make share of adult decisions in v13 under three score versions (actual, scale, none; amendment 1)
 against the actual share in the paired c0 worlds; recovery f = (version - actual) / (c0 - actual); the reading.
 Part B: the stage each world-new kind reached on its way to being remade, by arm; the stage where most stop.
 Paired world bootstrap: 10,000 replicates, NumPy seed 20261116; shares pooled over worlds (sum / sum).
@@ -98,35 +98,32 @@ def main():
     # --- Part A
     sh = {(a, v, k): share(a, v, k) for a in ARMS for v in R.VERSIONS for k in CLS}
     L += ["## Part A: the look-ahead", "",
-          "Expected share of adult decisions (softmax probabilities of all scored options) under four score versions. "
+          "Expected share of adult decisions (softmax probabilities of all scored options) under three score versions (amendment 1). "
           "v13's decisions; c0's own decisions for comparison.", "",
-          "| class | v13 actual | v13 scale | v13 direction | v13 none | c0 actual |", "|---|---|---|---|---|---|"]
+          "| class | v13 actual | v13 scale | v13 none | c0 actual |", "|---|---|---|---|---|"]
     for k in CLS:
         L.append(f"| {k} | " + " | ".join(f"{sh[('c', v, k)][0]:.4f}" for v in R.VERSIONS) +
                  f" | {sh[('c0', 'actual', k)][0]:.4f} |")
     a0, c0v = sh[("c", "actual", "make")], sh[("c0", "actual", "make")]
     rec = {}
-    for v in ("scale", "direction", "none"):
+    for v in ("scale", "none"):
         x = sh[("c", v, "make")]
         with np.errstate(invalid="ignore", divide="ignore"):
             rec[v] = ((x[0] - a0[0]) / (c0v[0] - a0[0]), (x[1] - a0[1]) / (c0v[1] - a0[1]))
     L += ["", "**Recovery of the make share** f = (version − actual) ÷ (c0 − actual):", ""]
-    for v in ("scale", "direction", "none"):
+    for v in ("scale", "none"):
         lo, hi = pct(rec[v][1])
         L.append(f"- {v}: {rec[v][0]:.3f} [{lo:.3f}, {hi:.3f}]")
-    fs, fd, fn = rec["scale"][0], rec["direction"][0], rec["none"][0]
-    if fs >= 0.5 and fd < 0.5:
+    fs, fn = rec["scale"][0], rec["none"][0]
+    if fn >= 0.5:
+        reading = "direction" + (" (the scale version also recovers)" if fs >= 0.5 else "")
+    elif fs >= 0.5:
         reading = "scale"
-    elif fd >= 0.5 and fs < 0.5:
-        reading = "direction"
-    elif fs >= 0.5 and fd >= 0.5:
-        reading = "both"
     else:
-        reading = "neither"
-    label = " (dynamics dominate: f_none < 0.5)" if fn < 0.5 else ""
-    L += ["", "Rule: \"scale\" if f_scale ≥ 0.5 and f_direction < 0.5; \"direction\" if f_direction ≥ 0.5 and f_scale "
-          "< 0.5; \"both\" if both ≥ 0.5; \"neither\" if both < 0.5 (the lock lies in the states people reach). "
-          "f_none is the method's check; below 0.5 the reading is labelled \"dynamics dominate\".", "",
+        reading = "dynamics"
+    label = ""
+    L += ["", "Rule (amendment 1): \"direction\" if f_none >= 0.5; \"scale\" if f_none < 0.5 and f_scale >= 0.5; "
+          "\"dynamics\" if both are below 0.5 (the lock lies in the states people reach).", "",
           f"**Primary A reading: {reading}{label}.**", ""]
 
     def ratio(a, num, den):
@@ -137,7 +134,9 @@ def main():
             ("mean |q|", sm("census_absq"), sm("census_entries")),
             ("decisions whose top option changes without the habit term", sm("top_changes"), sm("decisions")),
             ("mean |habit term| ÷ mean |rest of the score|", sm("abs_h"), sm("abs_rest")),
-            ("approximation gap mean |q − (q_r + q_f)|", sm("gap_sum"), sm("gap_n"))]
+            ("approximation gap mean |q − (q_r + q_f)|", sm("gap_sum"), sm("gap_n")),
+            ("at make offers: 0.6 × (q_f of make − mean q_f of the options)", sm("mk_qf_diff"), sm("mk_n")),
+            ("at make offers: 0.6 × (q_r of make − mean q_r of the options)", sm("mk_qr_diff"), sm("mk_n"))]
     L += ["**Described.**", "", "| measure | v13 | c0 |", "|---|---|---|"]
     for label_, num, den in rows:
         L.append(f"| {label_} | " + " | ".join(f"{ratio(a, num, den)[0]:.4f}" for a in ARMS) + " |")

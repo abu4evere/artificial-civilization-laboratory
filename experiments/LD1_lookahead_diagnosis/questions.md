@@ -117,3 +117,30 @@ bootstrap). **Decided before data, the first R target:**
 ## Sign-off (5 November 2026)
 The assistant, under sleep-mode autonomy. Read-only. Council round 63: GPT 97%, Gemini 95%, DeepSeek about 93%; the
 assistant 75%. Frozen as `LD1-frozen` before any code or data.
+
+## Amendment 1 (5 November 2026, 11:26; before any data): the "direction" version is the same as "none"
+**Found in the smoke run:**
+- The "direction" version scored each option as s − h + 0.6 × (q_r + the mean of q_f over the situation's actions).
+- Its last term is the same for every option of a decision, and a softmax ignores any amount added equally to every
+  option.
+- So "direction" gave exactly the same probabilities as "none" (s − h + 0.6 × q_r).
+
+The look-ahead's *level* never affects a single choice; only its *differences between actions* do. The primary A
+rule as frozen could not separate the two mechanisms. It is amended before data:
+- **Versions:**
+  - actual;
+  - **scale**: s − h + 0.2 h, all habit differences shrunk to the no-look-ahead scale;
+  - **none**: s − h + 0.6 × q_r, the look-ahead's differences between actions removed.
+
+  "direction" is dropped.
+- **Primary A reading (make share; recoveries f as before):**
+  - **"direction"** if f_none ≥ 0.5. The look-ahead's differences between actions explain at least half of c0's make
+    share, within single choices.
+  - **"scale"** if f_none < 0.5 and f_scale ≥ 0.5. The habit's overall weight matters, not the look-ahead's
+    differences.
+  - **"dynamics"** if both are below 0.5. The lock lies in the states people reach.
+  - If both are ≥ 0.5, the reading is "direction", and that the scale also recovers is reported.
+- **Added, described:** at decisions where a make option is offered, 0.6 × (q_f of make − the mean q_f of all offered
+  options), and the same for q_r. The sign of the first shows whether the look-ahead lowers making against the other
+  choices of the moment.
+- The zero checks are run again on the amended runner. The recompute prompt is amended the same way.

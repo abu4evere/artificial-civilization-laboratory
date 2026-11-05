@@ -1,0 +1,6 @@
+seed 501, 20 years (shadow tables from year 5): the observers leave the world unchanged (c and c0): yes; c0 acts: yes; decisions seen 64783/70035, kinds tracked 622/651; q = q_r + q_f on clean entries (c: 0 wrong of 46869; c0: 0 wrong of 48491): yes
+seed 601, 60 years (shadow tables from year 5): the observers leave the world unchanged (c and c0): yes; c0 acts: yes; decisions seen 249031/244457, kinds tracked 1213/1725; q = q_r + q_f on clean entries (c: 0 wrong of 56109; c0: 0 wrong of 54422): yes
+code_v13 fingerprint: f8b793bffd43d7af1123feb4cfa47fbbc57b015261f9646d64af7173128edcd6
+All: PASS
+
+exit 0
