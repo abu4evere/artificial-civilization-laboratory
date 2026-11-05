@@ -1,4 +1,4 @@
-# PB1 — A shadow brain: can a small predictor learn what ACL's actions do? Findings (pending the blind recompute)
+# PB1 — A shadow brain: can a small predictor learn what ACL's actions do? Findings (final: recomputed blind by GPT and Gemini)
 
 Frozen as `PB1-frozen`, with amendments 1 (numerical safeguards) and 2 (the zero check's 20-year world), both made
 before any study data. Read-only on `code_v13`.
@@ -68,5 +68,9 @@ worse than a simple table of their past averages, even in situations they have n
 4. "Skill best for food and distance, worst for affection and new kinds": **wrong.** It was the reverse: L-own does
    best on new kinds and affection, and worst on food.
 
-## Independent recompute
-Pending: GPT and Gemini in fresh chats, from `recompute/pb1_sums.csv` with `recompute/prompt.txt`.
+## Independent recompute (4 November 2026)
+GPT and Gemini 3.1 Pro (fresh chats, code) worked from `recompute/pb1_sums.csv` without the analysis script
+(`recompute_pb1.md`). Both match: primary −0.2017 (GPT [−0.2123, −0.1916], Gemini [−0.2119, −0.1917]), "it does
+not"; secondary −0.0676.
+
+**Final.**
