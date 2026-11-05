@@ -32,3 +32,21 @@ LD1's readings stand:
 - **A: "direction" (the scale version also recovers)**;
 - **B: v13 stage 1 (held the recipe, never its inputs)**;
 - **B: c0 stage 0 (never held the recipe at a week's end)**.
+
+## Appended at 13:14 (5 November 2026): DeepSeek's reply
+DeepSeek (DeepThink, chat 67041a65, no code tool, by hand) stopped once at its length limit. "Continue" was pressed
+once. **Read from its final reply:**
+- make shares 0.0011 / 0.0074 / 0.0064 and c0 0.0080;
+- f_scale 0.912 [0.842, 0.983];
+- f_none 0.770 [0.707, 0.833];
+- reading **direction**;
+- stage shares: c stage 0 0.1165, stage 1 0.8816 (largest); c0 stage 0 0.6419 (largest), stage 1 0.3573.
+
+**It matches the study on every primary quantity.**
+
+In the tiny stages it placed a few kinds one stage off:
+- c's 0.0019 under stage 2, where the study has stage 3;
+- c0's three 0.0003 values under stages 3, 4 and 5, where the study has 2, 3 and 5. GPT and Gemini agree with the
+  study here.
+
+These are slips of its by-hand reading; they do not touch any reading.
