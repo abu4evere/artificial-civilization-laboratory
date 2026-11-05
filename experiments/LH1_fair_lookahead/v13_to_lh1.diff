@@ -1,0 +1,129 @@
+diff -r -u --strip-trailing-cr -x __pycache__ -N NV13_nature_v13/code_v13/acl/biology.py LH1_fair_lookahead/code_lh1/acl/biology.py
+--- NV13_nature_v13/code_v13/acl/biology.py	2026-11-03 20:09:27.995986200 -0500
++++ LH1_fair_lookahead/code_lh1/acl/biology.py	2026-11-05 18:03:21.298556500 -0500
+@@ -23,7 +23,7 @@
+ from .config import CHILD_END, INFANT_END, WEEKS_PER_YEAR
+ from .matter import best_item, pile_room, pile_shape, pile_warmth, worn_warmth
+ from .mind import context_index
+-from .person import A, GENES, N_ACTIONS, Person, Relation
++from .person import A, GENES, N_ACTIONS, N_CONTEXTS, Person, Relation
+ from .social import remember, react
+ from .util import clamp, distance, make_name
+ 
+@@ -385,6 +385,33 @@
+     p.mood += 0.25 * (p.wellbeing - p.mood)
+ 
+ 
++def apply_held(world, p: Person, opts: list, base: int) -> None:
++    """LH1 rule 1 (ES2's rule): complete last week's habit update at this decision. The look-ahead is the expected
++    habit value of this decision under its real choice: the choice's own softmax over the options' scores (no draw)."""
++    c = world.cfg
++    i, r = p.held
++    p.held = None
++    if opts:
++        top = max(s for s, _ in opts)
++        w = [math.exp((s - top) / c.choice_temperature) for s, _ in opts]
++        future = sum(wi * p.q[base + A[a]] for wi, (_, a) in zip(w, opts)) / sum(w)
++    else:
++        future = p.q[base + A["rest"]]
++    p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
++
++
++def situation_value(p: Person, ctx: int) -> float:
++    """LH1 rule 2: the person's own experienced value of a situation (mean r after deciding there); a situation never
++    experienced takes the mean over all their experienced situations (0 before any experience)."""
++    v = p.vexp
++    if v is None:
++        return 0.0
++    if v[ctx][1] > 0:
++        return v[ctx][0]
++    seen = [m for m, n in v if n > 0]
++    return sum(seen) / len(seen) if seen else 0.0
++
++
+ def _learn(world, p: Person) -> None:
+     """Habits: how well this kind of action went here, counting what it led to next week."""
+     c = world.cfg
+@@ -393,7 +420,18 @@
+     future = max(p.q[nxt * N_ACTIONS:(nxt + 1) * N_ACTIONS])
+     r = p.reward + 2.0 * (p.mood - p.mood_before)
+     i = p.last_ctx * N_ACTIONS + A[p.last_action]
+-    p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
++    if c.lookahead_rule == 1:
++        p.held = [i, r]                 # LH1 rule 1: completed at the next decision (apply_held)
++    elif c.lookahead_rule == 2:
++        future = situation_value(p, nxt)            # LH1 rule 2: read before this week's r is added
++        p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
++        if p.vexp is None:
++            p.vexp = [[0.0, 0] for _ in range(N_CONTEXTS)]
++        cell = p.vexp[p.last_ctx]
++        cell[1] += 1
++        cell[0] += max(1.0 / cell[1], c.learning_rate) * (r - cell[0])
++    else:
++        p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
+     if c.curiosity_pull:                # CU1: p remembers having tried this here
+         if p.tried is None:
+             p.tried = [0] * len(p.q)
+diff -r -u --strip-trailing-cr -x __pycache__ -N NV13_nature_v13/code_v13/acl/config.py LH1_fair_lookahead/code_lh1/acl/config.py
+--- NV13_nature_v13/code_v13/acl/config.py	2026-11-03 20:09:28.231391100 -0500
++++ LH1_fair_lookahead/code_lh1/acl/config.py	2026-11-05 18:03:21.282964800 -0500
+@@ -187,6 +187,9 @@
+     choice_temperature: float = 0.2    # how much chance there is in a decision
+     learning_rate: float = 0.05
+     discount: float = 0.8              # how much next week's prospects count toward this week's choice
++    lookahead_rule: int = 0            # LH1: the habit update's 'future' term. 0 = v13 (max over next week's habits);
++                                       # 1 = the expected habit value of the next decision under its real choice (ES2);
++                                       # 2 = the person's own experienced value of next week's situation (no bootstrap)
+     learned_weight: float = 0.6        # how much experience counts against instinct
+     association_rate: float = 0.25     # how fast people link what they left somewhere to what happened there
+     worth_weight: float = 2.0          # how strongly a proven thing or practice pulls on choices
+diff -r -u --strip-trailing-cr -x __pycache__ -N NV13_nature_v13/code_v13/acl/mind.py LH1_fair_lookahead/code_lh1/acl/mind.py
+--- NV13_nature_v13/code_v13/acl/mind.py	2026-11-03 20:09:27.950197000 -0500
++++ LH1_fair_lookahead/code_lh1/acl/mind.py	2026-11-05 18:03:21.303113000 -0500
+@@ -563,10 +563,16 @@
+     if allowed is not None:
+         options = [o for o in options if o[1] in allowed]
+     if not options:
++        if c.lookahead_rule == 1 and p.held is not None:
++            from .biology import apply_held
++            apply_held(world, p, [], base)          # LH1 rule 1
+         p.considered = []
+         _p2_log(world, p2, ("rest", None))
+         return ("rest", None)
+     options = thought.steer(p, options)
++    if c.lookahead_rule == 1 and p.held is not None:
++        from .biology import apply_held
++        apply_held(world, p, [(o[0], o[1]) for o in options], base)    # LH1 rule 1
+     i = softmax_pick(rng, [o[0] for o in options], c.choice_temperature)
+     ranked = sorted(range(len(options)), key=lambda k: -options[k][0])[:4]
+     p.considered = [[options[k][1], _aim(options[k][2]), round(options[k][0], 2), 1 if k == i else 0] for k in ranked]
+diff -r -u --strip-trailing-cr -x __pycache__ -N NV13_nature_v13/code_v13/acl/person.py LH1_fair_lookahead/code_lh1/acl/person.py
+--- NV13_nature_v13/code_v13/acl/person.py	2026-11-03 20:09:27.931231100 -0500
++++ LH1_fair_lookahead/code_lh1/acl/person.py	2026-11-05 18:03:21.298556500 -0500
+@@ -98,7 +98,7 @@
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at", "tried",
++        "kept", "damp", "seen_at", "tried", "held", "vexp",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -180,6 +180,8 @@
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+         self.tried = None              # CU1: how often p has learned from each action in each situation (only with curiosity_pull)
++        self.held = None               # LH1 rule 1: last week's habit update, waiting for the next decision: [index, reward]
++        self.vexp = None               # LH1 rule 2: per situation [sum-like mean, count]: the person's experienced value
+ 
+     # --- life stage -------------------------------------------------------
+ 
+@@ -255,6 +257,8 @@
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+             elif k == "tried" and v is None:
+                 continue                 # CU1: saved only when held, so v8's world is unchanged
++            elif k in ("held", "vexp") and v is None:
++                continue                 # LH1: saved only when held, so v13's world is unchanged
+             elif k == "loc":
+                 v = list(v)
+             d[k] = v
