@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T15:06:26",
+  "updated": "2026-11-05T15:08:20",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -488,7 +488,8 @@
         "H3 step 1 = KL1 (running)",
         "H1 born without learned content (a copy)",
         "H2 graded child abilities (a copy)"
-      ]
+      ],
+      "status": "re-opened 5 November 2026 (the creator asked whether it continues): intention (Sahih al-Bukhari 1), foresight (Q 59:18 with Ibn Kathir) and a practice that outlives its starter (Sahih Muslim 1017a), all verified; note docs/research/iq1_intention_foresight_2026-11-05.md; proposals: value at invention, then an intention study"
     },
     {
       "id": "BOB12",
