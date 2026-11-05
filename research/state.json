@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T17:42:34",
+  "updated": "2026-11-05T18:08:30",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -400,6 +400,17 @@
       "status": "final (recomputed blind by GPT and Gemini): NOT SUPPORTED - harm: starvation rate x1.64 (the hunger guard), killings 4 -> 216; making released (x6); not adopted",
       "run": 42099596852,
       "next_step": "council round 65: a look-ahead without the familiarity bias (bootstrap only from well-learned situations) as the next law candidate, and value at invention for R"
+    },
+    {
+      "id": "LH1",
+      "title": "A fairer look-ahead: keep the protection, lose the familiarity bias (a test in a copy)",
+      "kind": "nature test in a copy",
+      "plan": "experiments/LH1_fair_lookahead/questions.md",
+      "frozen_tag": "LH1-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission and standing autonomy; round 65; the assistant 60%",
+      "status": "running on the cloud (run 42127234508, launched 18:08 on 5 November, with the cloud's own zero checks; 128 worlds in 32 chunks)",
+      "run": 42127234508,
+      "next_step": "when complete: save the cloud zero log as zero_cloud.log (gh run view --log --job), fetch, count 128 worlds, analyse_lh1.py, findings, blind recompute (recompute/build_lh1_counts.py + prompt.txt); a supported rule goes to a confirmatory run"
     }
   ],
   "queue_after": [
