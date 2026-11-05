@@ -138,3 +138,12 @@ any code or data.
   tile is always one the person stands on.
 - **Not changed:** the learning rates (0.1 and 0.01), although the code test showed the predictors trailing B in a
   short world. They are fixed in the plan and are not tuned on any data.
+
+## Amendment 2 (4 November 2026, about 20:25, before any study data): the zero check's 20-year world
+- **What happened:** the cloud zero checks (run 41944862076) failed one line. In the 20-year check world, people born
+  after year 5 are first adult in year 21, so nobody is followed and "each prediction is made before its update" had
+  nothing to test.
+- **The 60-year world** (seed 601) passed every check: read-only, L-own the same alone as beside the others, and every
+  prediction made before its update.
+- **The change:** the prequential check applies to the 60-year world, which must follow someone. In the 20-year world
+  it is reported as not applicable. The read-only and "alone" checks still apply to both.

@@ -483,13 +483,16 @@ def zero():
         a = json.loads(got[(seed, years, 1, "all")].split(":", 2)[2])
         b = json.loads(got[(seed, years, 1, "L")].split(":", 2)[2])
         alone = a["L_all"] == b["L_all"]
-        prequential = a["verify_bad"] == 0 and a["own"] > 0
+        # people born after year 5 are first adult in year 21: in the 20-year world nobody is followed yet, so the
+        # prequential check applies to the 60-year world (it must follow someone there)
+        applies = years > 21
+        prequential = a["verify_bad"] == 0 and (a["own"] > 0 or not applies)
         t = ro and alone and prequential
         ok &= t
         lines.append(f"seed {seed}, {years} years: observer and predictors read-only (following people born after year "
                      f"5): {'yes' if ro else 'NO'}; L-own's errors are the same alone as beside the other variants: "
                      f"{'yes' if alone else 'NO'}; each prediction is made before its update: "
-                     f"{'yes' if prequential else 'NO'}; {a}")
+                     f"{('yes' if prequential else 'NO') if applies else 'not applicable (nobody followed yet)'}; {a}")
     t = rl[-1:] == ["True"]
     ok &= t
     lines.append(f"seed 501: saved at year 10 and reloaded, continues exactly to year 15: {'yes' if t else 'NO'}")
