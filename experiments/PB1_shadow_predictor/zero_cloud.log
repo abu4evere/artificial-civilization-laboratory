@@ -1,0 +1,6 @@
+Zero checks for PB1, run on GitHub Actions (run 41947447573, zero job 126983653261), saved from the job log on 4 November 2026.
+seed 501, 20 years: observer and predictors read-only (following people born after year 5): yes; L-own's errors are the same alone as beside the other variants: yes; each prediction is made before its update: not applicable (nobody followed yet); {'L_all': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'obs': 0, 'own': 0, 'verify_bad': 0}
+seed 601, 60 years: observer and predictors read-only (following people born after year 5): yes; L-own's errors are the same alone as beside the other variants: yes; each prediction is made before its update: yes; {'L_all': [31297.832801, 36187.396745, 111181.956165, 81522.368473, 94863.598146, 105516.031944, 104722.797354, 18762.992059, 130117.099349], 'obs': 1578699, 'own': 130328, 'verify_bad': 0}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v13 fingerprint: f8b793bffd43d7af1123feb4cfa47fbbc57b015261f9646d64af7173128edcd6
+All: PASS
