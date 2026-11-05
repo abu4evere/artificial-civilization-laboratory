@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-04T21:38:45",
+  "updated": "2026-11-04T21:50:27",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -345,6 +345,17 @@
       "status": "final: it does not (recomputed by GPT and Gemini); rethink the learning rule before PB2",
       "run": 41947447573,
       "next_step": "council: how to rethink the predictor's learning (averaging with sharing, interactions, observation weighted by count)"
+    },
+    {
+      "id": "PB1b",
+      "title": "A shadow brain with episodic memory (read-only on v13; the brain road)",
+      "kind": "read-only",
+      "plan": "experiments/PB1b_episodic_predictor/questions.md",
+      "frozen_tag": "PB1b-frozen",
+      "approved_by": "the assistant under the creator's direction and sleep-mode autonomy; round 60: all three choose episodic memory",
+      "status": "running on the cloud",
+      "run": 41957772921,
+      "next_step": "fetch, frozen analysis (two-part gate), blind recompute"
     }
   ],
   "queue_after": [
