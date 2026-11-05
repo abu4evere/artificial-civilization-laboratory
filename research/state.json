@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-04T17:00:43",
+  "updated": "2026-11-04T19:31:50",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -334,6 +334,17 @@
       "status": "final: GO (recomputed by GPT and Gemini); gain is social reward, not survival or making",
       "next_step": "round 58: the brain design with PB0's result",
       "run": 41751443724
+    },
+    {
+      "id": "PB1",
+      "title": "A shadow brain: can a small predictor learn what ACL's actions do? (read-only on v13; the brain road, step 2)",
+      "kind": "read-only",
+      "plan": "experiments/PB1_shadow_predictor/questions.md",
+      "frozen_tag": "PB1-frozen",
+      "approved_by": "the assistant under the creator's direction (brain first) and standing autonomy; round 59: GPT 94%, Gemini 95%, DeepSeek ~82%",
+      "status": "running on the cloud (zero checks on the cloud)",
+      "run": 41941973553,
+      "next_step": "fetch, frozen analysis, blind recompute of the primary skill"
     }
   ],
   "queue_after": [
