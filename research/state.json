@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T20:06:01",
+  "updated": "2026-11-06T11:06:00",
   "nature": {
     "live": "v14",
     "acl_fingerprint": "0e69752c332da9cd28bc92cb1f1d65ea6551a673450f032e4b14ee60fde0d2aa",
@@ -445,6 +445,19 @@
       "status": "done (final 6 November 03:58; tag FF3-done): no harm; adopted as nature v14 (NV14, tag nature-v14)",
       "run": 42177471748,
       "next_step": "none (done); next: CI1 on v14 (docs/ci1_design_draft_2026-11-06.md)"
+    },
+    {
+      "id": "CI1",
+      "title": "Children may make again (LG) and a held aim that keeps the pieces (IN): two laws tested in a copy of v14",
+      "kind": "nature-change test in a copy (code_ci1 = v14 + child_make + held_aim)",
+      "plan": "experiments/CI1_children_and_aims/questions.md",
+      "frozen_tag": "CI1-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission (rounds 67-68: GPT 95%, Gemini 95%, DeepSeek ~75%)",
+      "status": "running on the cloud with its own zero checks, launched 11:05 (6 November)",
+      "run": 42249052146,
+      "zero": "cloud (skip_zero=no; the creator at the PC)",
+      "next_step": "save zero_cloud.log, fetch, analyse, blind recompute by GPT, Gemini and DeepSeek; a supported arm goes to a confirmatory run",
+      "recompute": null
     }
   ],
   "queue_after": [
