@@ -35,7 +35,7 @@ from .config import CHILD_END
 from .matter import FLEXIBLE, FORMS, MATERIALS
 from .person import PLACEABLE
 from .social import HARM, bump, react, remember, salience_for
-from .util import clamp
+from .util import clamp, tie_pick
 
 STRIKABLE = ("stone", "flint", "bone", "wood")
 HARD = ("stone", "flint", "bone")
@@ -86,7 +86,7 @@ def credence(world, listener, speaker, about: str = "", evidence: float = 0.0) -
     return clamp(c)
 
 
-def _note(listener, source: str, held: float, failed: float) -> None:
+def _note(listener, source: str, held: float, failed: float, world=None) -> None:
     rec = listener.records.get(source)
     if rec is None:
         rec = [0.0, 0.0]
@@ -95,6 +95,14 @@ def _note(listener, source: str, held: float, failed: float) -> None:
     rec[1] = round(rec[1] + failed, 3)
     if len(listener.records) > MAX_RECORDS:
         least = min(listener.records, key=lambda k: (sum(listener.records[k]), k))
+        lo = sum(listener.records[least])
+        if world is not None and world.cfg.fix_name_ties:
+            least = tie_pick(world, listener, 3, [k for k in listener.records if sum(listener.records[k]) == lo],
+                             len(listener.records))
+        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
+        if log is not None:
+            log.append(("evict", 3, sum(1 for k in listener.records if sum(listener.records[k]) == lo),
+                        sum(listener.records[least]), lo, int(least == source)))
         if least != source:
             del listener.records[least]
 
@@ -111,7 +119,7 @@ def tested(world, p, hkey: str, outcome: float) -> None:
     for src in h[1]:
         if src == p.id:
             continue
-        _note(p, src, 1.0 if held else 0.0, 0.0 if held else 1.0)
+        _note(p, src, 1.0 if held else 0.0, 0.0 if held else 1.0, world)
         if src in world.people:
             bump(p, src, world.tick, trust=0.06 if held else -0.1, respect=0.03 if held else 0.0)
     world.emit("verified" if held else "refuted", p.id, None, p.loc, claim=hkey, by=list(h[1]))
@@ -133,7 +141,7 @@ def share_reputation(world, speaker, listener) -> bool:
     hd, fl = speaker.records[best]
     est = (hd + 1.0) / (hd + fl + 2.0)
     c = credence(world, listener, speaker)
-    _note(listener, best, 0.5 * c * est, 0.5 * c * (1.0 - est))
+    _note(listener, best, 0.5 * c * est, 0.5 * c * (1.0 - est), world)
     world.emit("vouched", speaker.id, listener.id, None, about=best, good=1 if est > 0.5 else 0,
                record=[round(hd, 1), round(fl, 1)])
     return True

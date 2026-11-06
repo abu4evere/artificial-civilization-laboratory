@@ -145,6 +145,9 @@ class Config:
                                        # limit are left on the tile's pile; 0 = v12 (kept past the limit)
     fix_water_holder: int = 1          # NV13 (FF2's F5): 1 = only a thing that can hold water saves the walk to water; 0 = v12
                                        # (the best carry thing does, whether or not it holds water)
+    fix_name_ties: int = 1             # NV14 (FF3's F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
+                                       # drops its least valued and several share that value, the one dropped is drawn
+                                       # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
     loved_location: str = "last_seen"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
                                        # "last_seen" = toward where the person last had them in sight
     corner_block: int = 1              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step

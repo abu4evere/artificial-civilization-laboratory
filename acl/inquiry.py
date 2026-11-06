@@ -17,7 +17,7 @@ Nothing here knows the answer. The world's physics decides every test.
 """
 from __future__ import annotations
 
-from .util import clamp
+from .util import clamp, tie_pick
 
 THRESHOLD = 0.25   # a gap this big between expectation and outcome is noticed
 SETTLED = 0.1      # a gap this small means it came out as expected
@@ -56,6 +56,13 @@ def notice(world, p, key: str, size: float, expected: float = 0.0) -> None:
     world.emit("puzzled", p.id, None, p.loc, about=key, size=round(size, 2))
     while len(p.puzzles) > MAX_PUZZLES:
         weakest = min(p.puzzles, key=lambda k: (p.puzzles[k][0], k))
+        lo = p.puzzles[weakest][0]
+        if world.cfg.fix_name_ties:
+            weakest = tie_pick(world, p, 4, [k for k in p.puzzles if p.puzzles[k][0] == lo], len(p.puzzles))
+        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
+        if log is not None:
+            log.append(("evict", 4, sum(1 for k in p.puzzles if p.puzzles[k][0] == lo), p.puzzles[weakest][0], lo,
+                        int(weakest == key)))
         del p.puzzles[weakest]
 
 

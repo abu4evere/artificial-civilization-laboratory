@@ -2,6 +2,20 @@
 from __future__ import annotations
 
 import math
+import random
+
+
+def tie_pick(world, p, which: int, tied: list, size: int):
+    """FF3 (F9): one of the tied items, drawn evenly from a stream of its own (never the world's generator), so neither
+    an item's name nor when it was learned decides. Sorting only fixes an order for the draw."""
+    if len(tied) == 1:
+        return tied[0]
+    s = (((world.cfg.seed * 1_000_003 + world.tick) * 1_000_003 + int(p.id[1:])) * 8 + which) * 1_000_003 + size
+    pick = sorted(tied, key=str)[random.Random(s).randrange(len(tied))]
+    log = getattr(world, "ff3log", None)       # FF3 logging (the runner sets it; not saved; read by nothing here)
+    if log is not None:
+        log.append(("draw", which, len(tied)))
+    return pick
 
 
 def clamp(v: float, lo: float = 0.0, hi: float = 1.0) -> float:

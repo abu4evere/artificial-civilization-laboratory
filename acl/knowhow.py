@@ -28,7 +28,7 @@ from __future__ import annotations
 
 from . import inquiry
 from .config import WEEKS_PER_YEAR
-from .util import clamp
+from .util import clamp, tie_pick
 
 MAX_RECIPES = 12
 MAX_PLACES = 8
@@ -79,6 +79,13 @@ def remember_recipe(world, p, sig: str, recipe: dict, how: str, source=None, pro
     p.itemval.setdefault(sig, 0.0)
     if len(p.recipes) > MAX_RECIPES:
         worst = min(p.recipes, key=lambda s: (p.itemval.get(s, 0.0), s))
+        lo = p.itemval.get(worst, 0.0)
+        if world.cfg.fix_name_ties:
+            worst = tie_pick(world, p, 1, [s for s in p.recipes if p.itemval.get(s, 0.0) == lo], len(p.recipes))
+        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
+        if log is not None:
+            log.append(("evict", 1, sum(1 for s in p.recipes if p.itemval.get(s, 0.0) == lo),
+                        p.itemval.get(worst, 0.0), lo, int(worst == sig)))
         del p.recipes[worst]
     rec = world.knowledge.get(sig)
     if rec is None:

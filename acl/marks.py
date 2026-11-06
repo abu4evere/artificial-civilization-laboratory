@@ -46,7 +46,7 @@ from __future__ import annotations
 
 from . import fauna, inquiry
 from .matter import pile_warmth
-from .util import clamp
+from .util import clamp, tie_pick
 
 STROKES = "|-/\\o^v."
 SURFACES = {"rock": (0.75, 0.998), "wood": (0.35, 0.985), "ground": (0.05, 0.8)}   # hardness, share left each week
@@ -220,6 +220,13 @@ def _link(world, p, shape: str, here: list) -> None:
             del links[k]
     if len(p.marks) > MAX_KNOWN:
         least = min(p.marks, key=lambda s: (p.marks[s][0], s))
+        lo = p.marks[least][0]
+        if world.cfg.fix_name_ties:
+            least = tie_pick(world, p, 2, [s for s in p.marks if p.marks[s][0] == lo], len(p.marks))
+        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
+        if log is not None:
+            log.append(("evict", 2, sum(1 for s in p.marks if p.marks[s][0] == lo), p.marks[least][0], lo,
+                        int(least == shape)))
         if least != shape:
             del p.marks[least]
 

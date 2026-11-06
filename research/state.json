@@ -2,13 +2,14 @@
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
   "updated": "2026-11-05T20:06:01",
   "nature": {
-    "live": "v13",
-    "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
-    "frozen_copy": "experiments/NV13_nature_v13/code_v13",
-    "frozen_copy_fingerprint": "f8b793bffd43d7af1123feb4cfa47fbbc57b015261f9646d64af7173128edcd6",
+    "live": "v14",
+    "acl_fingerprint": "0e69752c332da9cd28bc92cb1f1d65ea6551a673450f032e4b14ee60fde0d2aa",
+    "frozen_copy": "experiments/NV14_nature_v14/code_v14",
+    "frozen_copy_fingerprint": "84b542370e2a919f893f632b338080a5dbb043f5b495f71c2d2534092c2aab3c",
     "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
     "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek",
-    "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek"
+    "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek",
+    "note_v14": "adopted 6 November 2026 (night): FF3 fault fix (memory ties drawn evenly instead of settled by name, F9), no harm, recomputed by GPT (code) and DeepSeek (points; its intervals approximate); Gemini failed to answer three times"
   },
   "objectives": [
     "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
@@ -433,6 +434,17 @@
       "status": "done (final 6 November 01:06; tag RF1-done; recomputed by GPT, Gemini 3.1 Pro and DeepSeek): pursuit fails 0.797 [0.702, 0.878] (started but never complete 0.768; gathered pieces lost or used in 45 of 53; missing pieces mostly made parts); 1,062 of 1,246 new kinds invented by people not yet grown, never offered make-again",
       "run": 42164147385,
       "next_step": "none (done); next: council round 67 on an intention law (a held aim toward a valued state, keeping gathered pieces, pursuing parts in order, yielding to hunger) and on the life-stage gate (children invent in play but only the grown may make again); then FF3 (name ties)"
+    },
+    {
+      "id": "FF3",
+      "title": "Memory ties settled by name, a fault fix in v13",
+      "kind": "fault fix (in a copy)",
+      "plan": "experiments/FF3_name_ties/questions.md",
+      "frozen_tag": "FF3-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission; rounds 66 and 67",
+      "status": "done (final 6 November 03:58; tag FF3-done): no harm; adopted as nature v14 (NV14, tag nature-v14)",
+      "run": 42177471748,
+      "next_step": "none (done); next: CI1 on v14 (docs/ci1_design_draft_2026-11-06.md)"
     }
   ],
   "queue_after": [

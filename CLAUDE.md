@@ -74,10 +74,10 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   (the creator, 1 November 2026: "Now u can use pc at max capacity cuz i am not working its all your own just lmk what is
   happening through telegram"), local runs may use full speed, up to 4 at once (`research/state.json` budgets); report
   through Telegram. The careful setting returns when they are back.
-- **Tests:** `python -m pytest -q tests` (68 pass on nature v13, live since 3 November 2026 (evening): three more
-  faults fixed (the hunt decision expected meat a kill does not give; materials past the carry limit; a leaky container
-  saved water walks), adopted under the creator's 2 November permission; `experiments/NV13_nature_v13/findings.md`;
-  v12 = FF1's fixes, 3 November morning; v11 = handing made things, 31 October). New studies use `code_v13`; earlier
+- **Tests:** `python -m pytest -q tests` (69 pass on nature v14, live since 6 November 2026 (night): when a full memory
+  drops its least valued and several tie, the one dropped is now drawn evenly instead of by name (FF3;
+  `experiments/NV14_nature_v14/findings.md`); v13 = FF2's three hunt, carry and water fixes, 3 November; v12 = FF1's
+  fixes; v11 = handing made things). New studies use `code_v14`; earlier findings stay their version's.
   findings stay their version's.
 
 ## Sleep mode (autonomous since 27 October 2026)
