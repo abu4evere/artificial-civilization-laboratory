@@ -108,3 +108,14 @@ A world bootstrap: 10,000 replicates, NumPy seed 20261120; shares pooled over wo
 The assistant, under the creator's standing autonomy ("keep working", 5 November 2026) and the safe path. Read-only.
 Council round 66: all three models ask for this funnel first. The assistant estimates 85% that it is valid and
 informative. Frozen as `RF1-frozen` before any code or data.
+
+## Amendment 1 (5 November 2026, 23:30; before any data): why most kinds have no wanting week
+The smoke run (2 worlds, 40 years; not data) showed that only 13 of 270 kinds ever had a wanting week. The plan already
+reports such kinds apart.
+- **Added (described only):** for each of the inventor's decision weeks that is not a wanting week, the first condition
+  that fails, in this order: not grown; recipe forgotten; valued at or below 0.05; still holding a fresh one.
+- Each kind with no wanting week is reported by the reason seen most often (or "no decision week" if the inventor
+  died).
+- **Nothing else changes:** not the primary, the stages, the reading or the seeds.
+
+The zero checks run again on the amended runner.
