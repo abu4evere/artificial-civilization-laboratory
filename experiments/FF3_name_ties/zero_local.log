@@ -1,0 +1,9 @@
+seed 501, 20 years: code_ff3 with 0 = code_v13: yes; observer and log read-only (c, f): yes; the sham acts: yes; f: triggered (2699 ties), acts: yes
+seed 601, 60 years: code_ff3 with 0 = code_v13: yes; observer and log read-only (c, f): yes; the sham acts: yes; f: triggered (21501 ties), acts: yes
+arm f, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+unit checks, arm f, seed 701, 30 years: evictions 8448, not at the minimum 0: yes; draws 8448, the world's generator moved by a draw 0: yes
+unit checks, a synthetic three-way tie, 30,000 draws: shares 0.3344, 0.3316, 0.3340 (each within 0.31-0.356): yes; the same pick in either order: yes
+code_ff3 fingerprint: 2ccd866b636efdeeac927643159a1a9ba034e47122e3a6558c150d061900186a
+All: PASS
+
+zero exit 0
