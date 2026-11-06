@@ -16,7 +16,8 @@ Plain words first; the details are in the files named.
      tools by about age 4–5.
 3. **A small fault found in four memories.** When a memory is full and several items are equally valued, the item's
    *name* decides which is forgotten. For new inventions, more complex things lose those ties. In one world this
-   decided 64% of recipe forgetting and 34% of mark forgetting. FF3 is testing the fix now.
+   decided 64% of recipe forgetting and 34% of mark forgetting. **Fixed: nature v14 is live** (FF3 found no harm on
+   96 worlds; new inventions now survive their first week 39% of the time instead of 30%).
 
 ## Decisions taken without you (sleep-mode autonomy; each in `docs/autonomous_decisions.md` or a council record)
 | time (clock) | decision | why |
@@ -26,12 +27,14 @@ Plain words first; the details are in the files named.
 | 6 Nov 01:06 | **RF1 final**, after the blind recompute | GPT and Gemini matched with code; DeepSeek matched the counts and admitted its intervals were approximations |
 | 6 Nov 01:11 | **Council round 67**: FF3 first; then one study with separate arms for "children may make again" and an "intention" law | all three put FF3 first; two of three asked for one study with separate arms |
 | 6 Nov 01:13 (git) | **FF3 frozen** (a fault fix in a copy; harm check with a sham) | the fault-fix path in CLAUDE.md |
+| 6 Nov 03:58 | **FF3 final**: no harm | GPT's code recheck matched; DeepSeek matched the points; Gemini failed to answer three times |
+| 6 Nov, git d31f79c7 | **Nature v14 adopted** (the fault-fix path, as v13) | zero checks all pass; 69 tests pass; v13 kept, so it can be undone |
 
 ## Running now
-- FF3's local zero checks, started at 01:16. Then the cloud run.
+- Nothing. Next: council round 68 on the CI1 design (children may make again; a held aim). The draft changed after
+  round 67: the pull toward missing pieces already exists in the code, so the held aim only needs to keep the pieces.
 
 ## What needs you (nothing urgent)
 - Nothing is blocked on you.
-- If FF3 shows no harm, it becomes nature v14 by the safe path, and you get a Telegram message.
 - **Your view would help on one question:** should ACL children be able to make again what they invented? It is a
   law about growing up. The evidence says yes for simple tools. The council wants to test it next, with harm guards.
