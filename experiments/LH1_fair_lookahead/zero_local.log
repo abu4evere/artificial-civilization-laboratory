@@ -1,0 +1,9 @@
+seed 501, 20 years: code_lh1 with rule 0 = code_v13: yes; the observers leave the world unchanged (c, e, m): yes; e, m and the sham act: yes
+seed 601, 60 years: code_lh1 with rule 0 = code_v13: yes; the observers leave the world unchanged (c, e, m): yes; e, m and the sham act: yes
+arm e, seed 501: saved at year 10 (held updates present: 119), reloaded, continues exactly to year 15: yes
+arm m, seed 501: saved at year 10 (situation tables present: 128), reloaded, continues exactly to year 15: yes
+unit checks, seed 701, 15 years: rule 2 future = the stored situation value (wrong 0 of 72048); rule 1 = ES2's formula (wrong 0 of 73340): yes
+code_lh1 fingerprint: b78b1b6dda61fc8ed51210fccc7b0e984d7db43fa3603ccba9231b69693de241
+All: PASS
+
+exit 0
