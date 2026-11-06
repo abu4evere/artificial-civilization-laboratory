@@ -119,3 +119,6 @@ reports such kinds apart.
 - **Nothing else changes:** not the primary, the stages, the reading or the seeds.
 
 The zero checks run again on the amended runner.
+
+**Correction (5 November 2026):** the time "23:30" in amendment 1's title was typed, not read from the clock. Git gives
+the commit of the amendment as 23:26 (commit 7a00126b), still before any data.
