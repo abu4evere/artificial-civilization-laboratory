@@ -1,6 +1,8 @@
 # VA1 findings: is a new invention valued before it is lost? (read-only on v13)
 
-**Status: not final until the blind recompute** (`recompute_va1.md`, written from the models' real replies).
+**Status: final.** The blind recompute (`recompute_va1.md`, 5 November 2026, 21:34) matches. GPT and Gemini ran
+code; DeepSeek, with no code tool, wrote a script blind, and the assistant ran it. All three give the same numbers and
+the same readings.
 
 Every number is from `results.md` (analyse_va1.py, frozen before data, with amendment 1 made before data) on run
 42141156581:
@@ -62,3 +64,19 @@ intention: getting the inputs again**.
   - first check, in the code and read-only, why gathering is not offered for the inputs of a valued new kind. It may
     be a plain gap in which materials the gather option considers, and that would be a fault, not a missing law;
   - then the council on an intention law.
+
+## Appended 5 November 2026, 21:36: what a full recipe memory does (described, from `va1_kinds.csv`; no reading)
+DeepSeek's reasoning noticed that "held at the first week's end" is 0 almost exactly when the memory was full.
+Checked on the CSV:
+- **With room (1,039 kinds): all 1,039 were kept.**
+- **With a full memory (155 kinds): 154 were gone by the first week's end.** All 155 were still used later (the made
+  thing stays in hand after the recipe is gone), and 130 of their first uses felt above 0.05.
+- **130 of the 155 were ties at value 0**, and 129 of those were lost. `knowhow.remember_recipe` drops
+  `min(p.recipes, key=(value, name))`, so a tie is settled by the recipe's name in alphabetical order.
+- **Made kinds are named `(a+b)#binder`, so a more nested (more complex) kind starts with more "(" and sorts first.**
+  On a tie, the more complex kind is the one forgotten.
+
+This is not a fault by the written rule ("the least valued is dropped", `docs/ODD_v11.md`): the rule says nothing about
+ties. But it is an arbitrary tie-break that leans against complexity. It goes to the council as a candidate general
+fix (for example, on a tie the longest-unused recipe is forgotten), never adopted without the safe path. It touches
+about 11% of new kinds here (130 of 1,194).

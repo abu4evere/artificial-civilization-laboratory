@@ -1,0 +1,26 @@
+N rows: 1194
+N worlds: 31
+
+(1) Share used_before_loss = 1
+point: 0.8241206030150754
+95% world-bootstrap CI: (np.float64(0.7882151613659132), np.float64(0.8568936914116504))
+reading: not shown
+
+(2) Share surviving at invention under three first values
+actual = mean held_first_week:
+ point: 0.8710217755443886
+ 95% CI: (np.float64(0.8348321964356878), np.float64(0.9040068255642436))
+v_first = full==0 or first_felt > minval among n_uses>0:
+ point: 0.9982471516213848
+ 95% CI: (np.float64(0.9946524064171123), np.float64(1.0))
+v_sim = full==0 or vsim > minval among vsim present:
+ point: 1.0
+ 95% CI: (np.float64(1.0), np.float64(1.0))
+
+(3) Correlation with first_felt among n_uses>0 and vsim present
+Pearson corr vsim vs first_felt:
+ point: 0.29702048408274195
+ 95% CI: (np.float64(0.24461093263308206), np.float64(0.34956344740643813))
+Pearson corr vmean vs first_felt, point only:
+ point: 0.2669433869985286
+reading: similar experience is informative
