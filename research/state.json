@@ -422,6 +422,17 @@
       "status": "done (final 5 November 21:34; tag VA1-done; recomputed by GPT, Gemini and DeepSeek's blind script): value is not the bottleneck (used before lost 0.824 [0.788, 0.858]); similar experience modestly informative (0.297 vs the plain mean's 0.267); 87% stop at 'never the inputs again'; a full memory loses the newcomer (154 of 155; ties settled by name order against nested kinds)",
       "run": 42141156581,
       "next_step": "none (done); follow-up: the exploratory holding check (explore_holding.py, seeds 9801-9804), then the council on opportunity or intention, and on the cap's tie-break by name"
+    },
+    {
+      "id": "RF1",
+      "title": "Why do the inputs never come together? (read-only remaking funnel on v13)",
+      "kind": "read-only",
+      "plan": "experiments/RF1_remaking_funnel/questions.md",
+      "frozen_tag": "RF1-frozen",
+      "approved_by": "the assistant under the creator's 'keep working' (5 November) and standing autonomy; round 66 (all three ask for the funnel first); the assistant 85%",
+      "status": "running on the cloud (run 42164147385, launched 23:43 on 5 November with skip_zero=local; zero_local.log All: PASS; 32 worlds in 8 chunks); amendment 1 before data",
+      "run": 42164147385,
+      "next_step": "when complete: fetch, count 32 worlds, analyse_rf1.py, findings, blind recompute (recompute/build_rf1_kinds.py + prompt.txt; Gemini 3.1 Pro)"
     }
   ],
   "queue_after": [
