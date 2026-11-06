@@ -89,3 +89,18 @@ A world bootstrap: 10,000 replicates, NumPy seed 20261119; shares pooled over wo
 The assistant, under sleep-mode autonomy. Read-only. Council round 65: all three models ask for this audit (Gemini
 95%, DeepSeek about 80%, GPT for the audit). The assistant 75% that it is valid and informative. Frozen as
 `VA1-frozen` before any code or data.
+
+## Amendment 1 (5 November 2026, 20:01; before any data): two artefacts found in the smoke run
+1. **v_sim's survival of the cap is close to 1 by construction.**
+   - v_sim is a similarity-weighted mean of the inventor's recipe values.
+   - Because properties are small on the 0–100 scale, the weights are close to 1, so it is close to a plain mean.
+   - A mean is almost always above the lowest value.
+   - **The v_sim row of primary 2 is therefore reported but carries no reading.** v_first's row is unaffected.
+2. **Primary 3 may measure the person, not the similarity.** A person whose things are generally useful has both a
+   high v_sim and a high first felt value.
+   - **Added (runner and analysis):** v_mean, the inventor's plain (unweighted) mean recipe value at invention.
+   - Its correlation with the first felt value is reported beside v_sim's.
+   - **"Similar experience is informative" now also requires** that v_sim's correlation exceed v_mean's, as a point
+     estimate. Otherwise the reading is "experience is informative, but not its similarity".
+
+The zero checks run again on the cloud on the amended runner.
