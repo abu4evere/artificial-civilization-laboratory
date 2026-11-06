@@ -1,6 +1,6 @@
 # LH1 findings: a fairer look-ahead (a test in a copy of v13)
 
-**Status: not final until the blind recompute** (`recompute_lh1.md`, written from the models' real replies).
+**Status: final.** The blind recompute (`recompute_lh1.md`, 5 November 2026) matches: GPT and Gemini 3.1 Pro ran code; DeepSeek, with no code tool, gave the same pooled points by hand and a script written blind, which the assistant ran. All three give the same numbers and the same readings.
 
 Every number is from `results.md` (analyse_lh1.py, frozen before data) on run 42127234508:
 - 4 arms × 32 paired seeds 23601–23632, 200 years, counted over years 100–200;

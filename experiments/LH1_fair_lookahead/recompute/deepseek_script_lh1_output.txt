@@ -1,0 +1,65 @@
+POINT ESTIMATES
+
+ e vs c
+living_ratio     point = 1.2898451
+extra_extinct    point = 0
+starv_rate       point = 6.2205629
+starv_ratio      point = 1.377099
+kill_rate        point = 0.039698376
+kill_diff        point = 0.035245788
+health_mean      point = 91.734616
+health_diff      point = -1.3595435
+m3               point = 0.011606297
+m3_diff          point = 0.0081849739
+makes_rate       point = 0.1883773
+makes_ratio      point = 3.2448249
+
+ m vs c
+living_ratio     point = 1.3158397
+extra_extinct    point = 0
+starv_rate       point = 7.9046442
+starv_ratio      point = 1.7499185
+kill_rate        point = 0.19626257
+kill_diff        point = 0.19180998
+health_mean      point = 91.17086
+health_diff      point = -1.9232991
+m3               point = 0.021868422
+m3_diff          point = 0.018447099
+makes_rate       point = 0.33316336
+makes_ratio      point = 5.7387848
+
+BOOTSTRAP 95% INTERVALS
+
+ e vs c
+living_ratio     point = 1.2898451  95% CI = (1.1408868, 1.467082)
+extra_extinct    point = 0  95% CI = (0, 0)
+starv_rate       point = 6.2205629  95% CI = (5.5918651, 6.8766728)
+starv_ratio      point = 1.377099  95% CI = (1.2709823, 1.4966276)
+kill_rate        point = 0.039698376  95% CI = (0.013451975, 0.078643824)
+kill_diff        point = 0.035245788  95% CI = (0.0073903018, 0.07511095)
+health_mean      point = 91.734616  95% CI = (91.036461, 92.444093)
+health_diff      point = -1.3595435  95% CI = (-1.9124121, -0.81230866)
+m3               point = 0.011606297  95% CI = (0.010865893, 0.01245387)
+m3_diff          point = 0.0081849739  95% CI = (0.0074703047, 0.0089578328)
+makes_rate       point = 0.1883773  95% CI = (0.17525699, 0.2036568)
+makes_ratio      point = 3.2448249  95% CI = (3.0228717, 3.4701624)
+
+ m vs c
+living_ratio     point = 1.3158397  95% CI = (1.1720492, 1.491325)
+extra_extinct    point = 0  95% CI = (0, 0)
+starv_rate       point = 7.9046442  95% CI = (7.2647252, 8.4826335)
+starv_ratio      point = 1.7499185  95% CI = (1.568532, 1.936696)
+kill_rate        point = 0.19626257  95% CI = (0.10566594, 0.31810101)
+kill_diff        point = 0.19180998  95% CI = (0.10036744, 0.31413396)
+health_mean      point = 91.17086  95% CI = (90.517505, 91.870795)
+health_diff      point = -1.9232991  95% CI = (-2.6906373, -1.1921628)
+m3               point = 0.021868422  95% CI = (0.02034358, 0.02348988)
+m3_diff          point = 0.018447099  95% CI = (0.01693872, 0.019976096)
+makes_rate       point = 0.33316336  95% CI = (0.3106561, 0.35803486)
+makes_ratio      point = 5.7387848  95% CI = (5.2898766, 6.1666421)
+
+READING e
+({'living_ratio': np.False_, 'extra_extinct': np.False_, 'starvation': np.True_, 'killing': np.False_, 'health': np.False_}, np.True_, np.True_, False)
+
+READING m
+({'living_ratio': np.False_, 'extra_extinct': np.False_, 'starvation': np.True_, 'killing': np.True_, 'health': np.False_}, np.True_, np.True_, False)

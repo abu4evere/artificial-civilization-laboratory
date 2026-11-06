@@ -408,9 +408,9 @@
       "plan": "experiments/LH1_fair_lookahead/questions.md",
       "frozen_tag": "LH1-frozen",
       "approved_by": "the assistant under the creator's 2 November permission and standing autonomy; round 65; the assistant 60%",
-      "status": "running on the cloud (run 42127234508, launched 18:08 on 5 November, with the cloud's own zero checks; 128 worlds in 32 chunks)",
+      "status": "done (final 5 November 22:20; tag LH1-done; recomputed by GPT, Gemini 3.1 Pro and DeepSeek's blind script): neither rule supported (e: starvation x1.377, hunger guard; m: starvation x1.750 and killing +0.19, both guards); making x3.2 and x5.7; remakes still 2 and 2; not adopted",
       "run": 42127234508,
-      "next_step": "when complete: save the cloud zero log as zero_cloud.log (gh run view --log --job), fetch, count 128 worlds, analyse_lh1.py, findings, blind recompute (recompute/build_lh1_counts.py + prompt.txt); a supported rule goes to a confirmatory run"
+      "next_step": "none (done); next: council round 66 (docs/debate_round66_question_2026-11-05.md): close the look-ahead line; remaking (a read-only funnel of why inputs never come together, or an intention law); the 12-recipe tie-break by name"
     },
     {
       "id": "VA1",
