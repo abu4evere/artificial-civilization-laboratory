@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-06T16:30:00",
+  "updated": "2026-11-06T16:41:00",
   "nature": {
     "live": "v14",
     "acl_fingerprint": "0e69752c332da9cd28bc92cb1f1d65ea6551a673450f032e4b14ee60fde0d2aa",
@@ -456,8 +456,21 @@
       "status": "done (final 6 November 16:29; tag CI1-done): LG supported (complete-set share +0.0183 [+0.0125, +0.0239], no guard); IN no harm, no effect; LG+IN supported (+0.0192), no guard",
       "run": 42249052146,
       "zero": "cloud (skip_zero=no; zero_cloud.log, All: PASS, fingerprint e0ccbf07)",
-      "next_step": "council round 69: what goes to the confirmatory run on new seeds (the frozen rule); then CI1-C, then the safe path",
+      "next_step": "none (done); next: CI1-C, LG's confirmatory run (run 42298530869)",
       "recompute": "recompute_ci1.md: GPT (code) and Gemini (code) match every point estimate to 4 decimals and every reading; DeepSeek gave no numbers (no code tool)"
+    },
+    {
+      "id": "CI1C",
+      "title": "Children may make again (LG): confirmatory run on new seeds",
+      "kind": "confirmatory run (a test in a copy; code_ci1 unchanged; arms v14 / LG / sham; seeds 24101-24132)",
+      "plan": "experiments/CI1C_children_confirm/questions.md",
+      "frozen_tag": "CI1C-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission; round 69 unanimous on LG alone (GPT 85%, Gemini 95%, DeepSeek about 92%; the assistant 80%)",
+      "status": "running on the cloud with its own zero checks, launched 16:39 (6 November)",
+      "run": 42298530869,
+      "zero": "cloud (skip_zero=no)",
+      "next_step": "save zero_cloud.log, fetch, analyse (analyse_ci1c.py), blind recompute by GPT, Gemini and DeepSeek; if confirmed, the adoption council and the safe path to v15 (code_v15 = v14 + child_make 1)",
+      "recompute": null
     }
   ],
   "queue_after": [

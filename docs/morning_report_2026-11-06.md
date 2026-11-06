@@ -29,10 +29,17 @@ Plain words first; the details are in the files named.
 | 6 Nov 01:13 (git) | **FF3 frozen** (a fault fix in a copy; harm check with a sham) | the fault-fix path in CLAUDE.md |
 | 6 Nov 03:58 | **FF3 final**: no harm | GPT's code recheck matched; DeepSeek matched the points; Gemini failed to answer three times |
 | 6 Nov, git d31f79c7 | **Nature v14 adopted** (the fault-fix path, as v13) | zero checks all pass; 69 tests pass; v13 kept, so it can be undone |
+| 6 Nov 04:59 (git) | **CI1 frozen**: children may make again (LG); a held aim keeps its pieces (IN) | council round 68: GPT 95%, Gemini 95%, DeepSeek about 75% |
+| 6 Nov 16:29 | **CI1 final**: LG supported, IN no effect, LG+IN supported; no harm guard raised | GPT and Gemini matched every number with code |
+| 6 Nov 16:35 | **Council round 69**: confirm LG alone; IN set aside | all three agreed |
+| 6 Nov 16:39 | **CI1-C launched** on the cloud: LG on 32 new worlds | the frozen rule: confirm before adopting |
 
 ## Running now
-- Nothing. Next: council round 68 on the CI1 design (children may make again; a held aim). The draft changed after
-  round 67: the pull toward missing pieces already exists in the code, so the held aim only needs to keep the pieces.
+- **CI1-C** on the cloud (run 42298530869, since 16:39): children may make again, on 32 new worlds. If it
+  confirms with no harm, it goes the safe path to nature v15.
+- **CI1's result** (final): children making again lifts complete sets of pieces about 5 times (0.0042 to
+  0.0225), and children's inventions were made again for the first time (22 kinds). Keeping the pieces for a
+  plan did nothing measurable.
 
 ## What needs you (nothing urgent)
 - Nothing is blocked on you.
