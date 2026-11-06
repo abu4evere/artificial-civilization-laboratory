@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T18:08:30",
+  "updated": "2026-11-05T20:03:37",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -411,6 +411,17 @@
       "status": "running on the cloud (run 42127234508, launched 18:08 on 5 November, with the cloud's own zero checks; 128 worlds in 32 chunks)",
       "run": 42127234508,
       "next_step": "when complete: save the cloud zero log as zero_cloud.log (gh run view --log --job), fetch, count 128 worlds, analyse_lh1.py, findings, blind recompute (recompute/build_lh1_counts.py + prompt.txt); a supported rule goes to a confirmatory run"
+    },
+    {
+      "id": "VA1",
+      "title": "Is a new invention valued before it is lost? (read-only value-at-invention audit on v13)",
+      "kind": "read-only",
+      "plan": "experiments/VA1_value_at_invention/questions.md",
+      "frozen_tag": "VA1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy; round 65 (all three ask for this audit); the assistant 75%",
+      "status": "running on the cloud (run 42141156581, launched 20:03 on 5 November, with the cloud's own zero checks; 32 worlds in 8 chunks); amendment 1 before data",
+      "run": 42141156581,
+      "next_step": "when complete: save the cloud zero log as zero_cloud.log, fetch, count 32 worlds, analyse_va1.py, findings, blind recompute (recompute/build_va1_kinds.py + prompt.txt)"
     }
   ],
   "queue_after": [
