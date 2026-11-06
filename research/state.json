@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-05T20:03:37",
+  "updated": "2026-11-05T20:06:01",
   "nature": {
     "live": "v13",
     "acl_fingerprint": "0251e516da131d7486a7cda77e0f8ef0e90b1041c1b5e99b8832f1afb3c06706",
@@ -497,7 +497,8 @@
     "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud.",
     "pc_full_use_2": "the creator, Telegram 2026-11-02 02:21: 'Ok good you can use pc at max capacity now'. pc_light_use (1 Nov 16:44) ends. While the creator is away, local simulations may run at normal priority, up to 4 at once; reported through Telegram. Ends when the creator writes otherwise or is back at the PC (then CLAUDE.md: Idle, at most 2).",
     "cloud_note": "raised from 1 to 2 on 2 November 2026 (22:20) for AF1 and FX1 together: the repository is public, so Actions minutes cost nothing, and extra chunks wait for free runners",
-    "pc_note_2026_11_02_22_20": "the creator was at the PC this evening (opened a DeepSeek tab), so local simulations were set to Idle priority; long work goes to the cloud"
+    "pc_note_2026_11_02_22_20": "the creator was at the PC this evening (opened a DeepSeek tab), so local simulations were set to Idle priority; long work goes to the cloud",
+    "pc_full_use_4": "the creator, in the Claude Code chat 2026-11-05 about 20:10: 'you can work on pc fully now'. Local simulations may run at normal priority, up to local_simulations_max (4), until the creator says otherwise."
   },
   "directions": [
     {
