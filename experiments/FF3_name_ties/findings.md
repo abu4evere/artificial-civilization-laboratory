@@ -1,6 +1,6 @@
 # FF3 findings: memory ties settled by name, a fault fix in nature v13
 
-**Status: not final until the blind recompute** (`recompute_ff3.md`, written from the models' real replies).
+**Status: final.** The blind recompute (`recompute_ff3.md`, 6 November 2026, 03:58) matches: GPT with code, and DeepSeek in every point estimate (its intervals approximate, as it said). Gemini's replies failed twice (stalled or lost); a third try is pending and will be appended.
 
 Every number is from `results.md` (analyse_ff3.py, frozen before data) on run 42177471748:
 - 3 arms × 32 paired seeds 23901–23932, 200 years, years 100–200 counted;
