@@ -50,3 +50,16 @@ before they are needed than after.
 ## Parked (4 November 2026)
 The creator: "bro we do not talk about this yet because we do not have Bob-like mind yet". The principles and the
 proposed amendments stay as drafts, undecided, until a Bob-like mind exists.
+
+## Appended (5 November 2026, 20:54): the creator's view on copies of Bob (parked, for when this opens)
+- **The creator, in the Claude Code chat:** "i think one Bob with many bodies sounds more reasonable".
+- **Context.** The question was whether a copied Bob stays the same Bob.
+  - Copies diverge as soon as their experiences differ.
+  - Copies with self-directed goals can become rivals.
+  - A restored backup is an older Bob.
+- **What "one Bob, many bodies" would need:**
+  - a constant link that shares what every body learns;
+  - a way to merge experiences and settle conflicting choices;
+  - a rule for when the link breaks (a cut-off body pauses, or does only simple tasks, until it merges back).
+- **Open question:** who controls the link, and how many bodies are allowed.
+- **Nothing here applies yet.** In ACL, people cannot copy themselves or reach outside the simulation.
