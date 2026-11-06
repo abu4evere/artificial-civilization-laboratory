@@ -1,0 +1,169 @@
+diff -ru --strip-trailing-cr -x __pycache__ experiments/NV13_nature_v13/code_v13/acl/config.py experiments/FF3_name_ties/code_ff3/acl/config.py
+--- experiments/NV13_nature_v13/code_v13/acl/config.py	2026-11-03 20:09:28.231391100 -0500
++++ experiments/FF3_name_ties/code_ff3/acl/config.py	2026-11-06 01:14:22.150718600 -0500
+@@ -145,6 +145,9 @@
+                                        # limit are left on the tile's pile; 0 = v12 (kept past the limit)
+     fix_water_holder: int = 1          # NV13 (FF2's F5): 1 = only a thing that can hold water saves the walk to water; 0 = v12
+                                        # (the best carry thing does, whether or not it holds water)
++    fix_name_ties: int = 0             # FF3 (F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
++                                       # drops its least valued and several share that value, the one dropped is drawn
++                                       # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff -ru --strip-trailing-cr -x __pycache__ experiments/NV13_nature_v13/code_v13/acl/information.py experiments/FF3_name_ties/code_ff3/acl/information.py
+--- experiments/NV13_nature_v13/code_v13/acl/information.py	2026-11-03 20:09:27.945549900 -0500
++++ experiments/FF3_name_ties/code_ff3/acl/information.py	2026-11-06 01:14:22.163617800 -0500
+@@ -35,7 +35,7 @@
+ from .matter import FLEXIBLE, FORMS, MATERIALS
+ from .person import PLACEABLE
+ from .social import HARM, bump, react, remember, salience_for
+-from .util import clamp
++from .util import clamp, tie_pick
+ 
+ STRIKABLE = ("stone", "flint", "bone", "wood")
+ HARD = ("stone", "flint", "bone")
+@@ -86,7 +86,7 @@
+     return clamp(c)
+ 
+ 
+-def _note(listener, source: str, held: float, failed: float) -> None:
++def _note(listener, source: str, held: float, failed: float, world=None) -> None:
+     rec = listener.records.get(source)
+     if rec is None:
+         rec = [0.0, 0.0]
+@@ -95,6 +95,14 @@
+     rec[1] = round(rec[1] + failed, 3)
+     if len(listener.records) > MAX_RECORDS:
+         least = min(listener.records, key=lambda k: (sum(listener.records[k]), k))
++        lo = sum(listener.records[least])
++        if world is not None and world.cfg.fix_name_ties:
++            least = tie_pick(world, listener, 3, [k for k in listener.records if sum(listener.records[k]) == lo],
++                             len(listener.records))
++        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
++        if log is not None:
++            log.append(("evict", 3, sum(1 for k in listener.records if sum(listener.records[k]) == lo),
++                        sum(listener.records[least]), lo, int(least == source)))
+         if least != source:
+             del listener.records[least]
+ 
+@@ -111,7 +119,7 @@
+     for src in h[1]:
+         if src == p.id:
+             continue
+-        _note(p, src, 1.0 if held else 0.0, 0.0 if held else 1.0)
++        _note(p, src, 1.0 if held else 0.0, 0.0 if held else 1.0, world)
+         if src in world.people:
+             bump(p, src, world.tick, trust=0.06 if held else -0.1, respect=0.03 if held else 0.0)
+     world.emit("verified" if held else "refuted", p.id, None, p.loc, claim=hkey, by=list(h[1]))
+@@ -133,7 +141,7 @@
+     hd, fl = speaker.records[best]
+     est = (hd + 1.0) / (hd + fl + 2.0)
+     c = credence(world, listener, speaker)
+-    _note(listener, best, 0.5 * c * est, 0.5 * c * (1.0 - est))
++    _note(listener, best, 0.5 * c * est, 0.5 * c * (1.0 - est), world)
+     world.emit("vouched", speaker.id, listener.id, None, about=best, good=1 if est > 0.5 else 0,
+                record=[round(hd, 1), round(fl, 1)])
+     return True
+diff -ru --strip-trailing-cr -x __pycache__ experiments/NV13_nature_v13/code_v13/acl/inquiry.py experiments/FF3_name_ties/code_ff3/acl/inquiry.py
+--- experiments/NV13_nature_v13/code_v13/acl/inquiry.py	2026-11-03 20:09:27.931231100 -0500
++++ experiments/FF3_name_ties/code_ff3/acl/inquiry.py	2026-11-06 01:14:22.163617800 -0500
+@@ -17,7 +17,7 @@
+ """
+ from __future__ import annotations
+ 
+-from .util import clamp
++from .util import clamp, tie_pick
+ 
+ THRESHOLD = 0.25   # a gap this big between expectation and outcome is noticed
+ SETTLED = 0.1      # a gap this small means it came out as expected
+@@ -56,6 +56,13 @@
+     world.emit("puzzled", p.id, None, p.loc, about=key, size=round(size, 2))
+     while len(p.puzzles) > MAX_PUZZLES:
+         weakest = min(p.puzzles, key=lambda k: (p.puzzles[k][0], k))
++        lo = p.puzzles[weakest][0]
++        if world.cfg.fix_name_ties:
++            weakest = tie_pick(world, p, 4, [k for k in p.puzzles if p.puzzles[k][0] == lo], len(p.puzzles))
++        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
++        if log is not None:
++            log.append(("evict", 4, sum(1 for k in p.puzzles if p.puzzles[k][0] == lo), p.puzzles[weakest][0], lo,
++                        int(weakest == key)))
+         del p.puzzles[weakest]
+ 
+ 
+diff -ru --strip-trailing-cr -x __pycache__ experiments/NV13_nature_v13/code_v13/acl/knowhow.py experiments/FF3_name_ties/code_ff3/acl/knowhow.py
+--- experiments/NV13_nature_v13/code_v13/acl/knowhow.py	2026-11-03 20:09:27.879767300 -0500
++++ experiments/FF3_name_ties/code_ff3/acl/knowhow.py	2026-11-06 01:14:22.163617800 -0500
+@@ -28,7 +28,7 @@
+ 
+ from . import inquiry
+ from .config import WEEKS_PER_YEAR
+-from .util import clamp
++from .util import clamp, tie_pick
+ 
+ MAX_RECIPES = 12
+ MAX_PLACES = 8
+@@ -79,6 +79,13 @@
+     p.itemval.setdefault(sig, 0.0)
+     if len(p.recipes) > MAX_RECIPES:
+         worst = min(p.recipes, key=lambda s: (p.itemval.get(s, 0.0), s))
++        lo = p.itemval.get(worst, 0.0)
++        if world.cfg.fix_name_ties:
++            worst = tie_pick(world, p, 1, [s for s in p.recipes if p.itemval.get(s, 0.0) == lo], len(p.recipes))
++        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
++        if log is not None:
++            log.append(("evict", 1, sum(1 for s in p.recipes if p.itemval.get(s, 0.0) == lo),
++                        p.itemval.get(worst, 0.0), lo, int(worst == sig)))
+         del p.recipes[worst]
+     rec = world.knowledge.get(sig)
+     if rec is None:
+diff -ru --strip-trailing-cr -x __pycache__ experiments/NV13_nature_v13/code_v13/acl/marks.py experiments/FF3_name_ties/code_ff3/acl/marks.py
+--- experiments/NV13_nature_v13/code_v13/acl/marks.py	2026-11-03 20:09:27.983473500 -0500
++++ experiments/FF3_name_ties/code_ff3/acl/marks.py	2026-11-06 01:14:22.163617800 -0500
+@@ -46,7 +46,7 @@
+ 
+ from . import fauna, inquiry
+ from .matter import pile_warmth
+-from .util import clamp
++from .util import clamp, tie_pick
+ 
+ STROKES = "|-/\\o^v."
+ SURFACES = {"rock": (0.75, 0.998), "wood": (0.35, 0.985), "ground": (0.05, 0.8)}   # hardness, share left each week
+@@ -220,6 +220,13 @@
+             del links[k]
+     if len(p.marks) > MAX_KNOWN:
+         least = min(p.marks, key=lambda s: (p.marks[s][0], s))
++        lo = p.marks[least][0]
++        if world.cfg.fix_name_ties:
++            least = tie_pick(world, p, 2, [s for s in p.marks if p.marks[s][0] == lo], len(p.marks))
++        log = getattr(world, "ff3log", None)   # FF3 logging (the runner sets it; not saved; read by nothing here)
++        if log is not None:
++            log.append(("evict", 2, sum(1 for s in p.marks if p.marks[s][0] == lo), p.marks[least][0], lo,
++                        int(least == shape)))
+         if least != shape:
+             del p.marks[least]
+ 
+diff -ru --strip-trailing-cr -x __pycache__ experiments/NV13_nature_v13/code_v13/acl/util.py experiments/FF3_name_ties/code_ff3/acl/util.py
+--- experiments/NV13_nature_v13/code_v13/acl/util.py	2026-11-03 20:09:27.983473500 -0500
++++ experiments/FF3_name_ties/code_ff3/acl/util.py	2026-11-06 01:14:22.150718600 -0500
+@@ -2,6 +2,20 @@
+ from __future__ import annotations
+ 
+ import math
++import random
++
++
++def tie_pick(world, p, which: int, tied: list, size: int):
++    """FF3 (F9): one of the tied items, drawn evenly from a stream of its own (never the world's generator), so neither
++    an item's name nor when it was learned decides. Sorting only fixes an order for the draw."""
++    if len(tied) == 1:
++        return tied[0]
++    s = (((world.cfg.seed * 1_000_003 + world.tick) * 1_000_003 + int(p.id[1:])) * 8 + which) * 1_000_003 + size
++    pick = sorted(tied, key=str)[random.Random(s).randrange(len(tied))]
++    log = getattr(world, "ff3log", None)       # FF3 logging (the runner sets it; not saved; read by nothing here)
++    if log is not None:
++        log.append(("draw", which, len(tied)))
++    return pick
+ 
+ 
+ def clamp(v: float, lo: float = 0.0, hi: float = 1.0) -> float:
