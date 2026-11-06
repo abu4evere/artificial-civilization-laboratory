@@ -45,3 +45,21 @@ name, and are not part of this.
 "The longest-unused recipe is forgotten" (recency; Anderson & Schooler 1991,
 `docs/research/memory_recency_forgetting_2026-11-05.md`). This would be a frozen law test against the corrected
 baseline, with a sham. It is not part of FF3.
+
+## Appended 6 November 2026, 00:04: how often each tie happens (exploratory, `experiments/FF3_name_ties/explore_ties.py`)
+Seed 9812, 60 years, nature v13, each call site counted apart (`explore_ties_9812.json`). A tie means the minimum
+value is shared, so the second part of the key decides.
+
+| memory (call site) | evictions | settled by the tie-break | tied candidates in all |
+|---|---|---|---|
+| recipes (`knowhow` 81), by name | 4,142 | **2,656 (64%)** | 11,005 |
+| known marks (`marks` 222), by shape | 51,618 | **17,387 (34%)** | 49,275 |
+| source records (`information` 97), by person id | 1,429 | **210 (15%)** | 2,367 |
+| puzzles (`inquiry` 58), by name | 14,373 | **1,341 (9%)** | 2,906 |
+| known places (`knowhow` 207), by "x,y" | 171,922 | 0 | 0 |
+| marks on a tile (`marks` 142), by position | 1 | 0 | 0 |
+
+The first pass (seeds 9811 and 9812 together, call sites merged) is kept in `experiments/FF3_name_ties/v1/`.
+- **So the name decides most of the recipe forgetting, and a third of the mark forgetting.**
+- Places never tie, so they can be left out of FF3.
+- These are counts from one world, exploratory, not a frozen measure.
