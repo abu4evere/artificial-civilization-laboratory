@@ -1,6 +1,6 @@
 # RF1 findings: why do the inputs never come together? (read-only on v13)
 
-**Status: not final until the blind recompute** (`recompute_rf1.md`, written from the models' real replies).
+**Status: final.** The blind recompute (`recompute_rf1.md`, 6 November 2026, 01:06) matches: GPT and Gemini 3.1 Pro ran code and agree in every number; DeepSeek, with no code tool, agrees in the counts, shares and reading (its intervals approximate, as it said).
 
 Every number is from `results.md` (analyse_rf1.py, frozen before data, with amendment 1 made before data) on run
 42164147385:

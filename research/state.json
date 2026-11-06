@@ -430,9 +430,9 @@
       "plan": "experiments/RF1_remaking_funnel/questions.md",
       "frozen_tag": "RF1-frozen",
       "approved_by": "the assistant under the creator's 'keep working' (5 November) and standing autonomy; round 66 (all three ask for the funnel first); the assistant 85%",
-      "status": "running on the cloud (run 42164147385, launched 23:43 on 5 November with skip_zero=local; zero_local.log All: PASS; 32 worlds in 8 chunks); amendment 1 before data",
+      "status": "done (final 6 November 01:06; tag RF1-done; recomputed by GPT, Gemini 3.1 Pro and DeepSeek): pursuit fails 0.797 [0.702, 0.878] (started but never complete 0.768; gathered pieces lost or used in 45 of 53; missing pieces mostly made parts); 1,062 of 1,246 new kinds invented by people not yet grown, never offered make-again",
       "run": 42164147385,
-      "next_step": "when complete: fetch, count 32 worlds, analyse_rf1.py, findings, blind recompute (recompute/build_rf1_kinds.py + prompt.txt; Gemini 3.1 Pro)"
+      "next_step": "none (done); next: council round 67 on an intention law (a held aim toward a valued state, keeping gathered pieces, pursuing parts in order, yielding to hunger) and on the life-stage gate (children invent in play but only the grown may make again); then FF3 (name ties)"
     }
   ],
   "queue_after": [
