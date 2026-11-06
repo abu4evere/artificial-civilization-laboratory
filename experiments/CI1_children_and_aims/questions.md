@@ -140,7 +140,7 @@ autonomy (the creator's last messages: "keep working"; on Telegram at 01:58, "yo
 Council rounds 67 and 68: GPT 95%, Gemini 95%, DeepSeek about 75%; the assistant 75%. Frozen as `CI1-frozen` before
 any code or data.
 
-## Amendment 1 (6 November 2026, 10:47, before any code or data): three readings of the IN rule made exact
+## Amendment 1 (6 November 2026, 10:37, before any code or data): three readings of the IN rule made exact
 The frozen text left three cases open. They are read as follows, so the code can be checked against them.
 - **"A make" includes making in play.** Play turns held pieces into things through the same crafting (`_craft`) as a
   make, and RF1 found gathered pieces lost to other uses. So, while an aim is held, play is not offered a trial that
