@@ -63,3 +63,5 @@ The first pass (seeds 9811 and 9812 together, call sites merged) is kept in `exp
 - **So the name decides most of the recipe forgetting, and a third of the mark forgetting.**
 - Places never tie, so they can be left out of FF3.
 - These are counts from one world, exploratory, not a frozen measure.
+
+**Correction:** the time "00:04" in the heading above was typed, not read from the clock; the clock and git give 00:03 (commit ae80741a).
