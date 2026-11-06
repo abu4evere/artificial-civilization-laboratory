@@ -480,6 +480,11 @@
       "needs": "PB0 frozen plan; council on the design note"
     },
     {
+      "what": "HAND-LIMITS ROAD (the creator, 6 November 2026 17:38: 'Double check all laws of world again and filter all with other ai modules make sure we are not limiting like this'): audit docs/law_limits_audit_2026-11-06.md; council docs/gpt_review_law_limits_2026-11-06.md. First frozen test: who holds a kill (remove the forced equal hunt split; sharing becomes a choice), one gate per test, sham, CI1-style harm checks plus offered/chosen/attempted counts; then the attack gate with a contested thing; threat/display as its own test.",
+      "status": "council done 6 Nov 17:45; waits for CI1-C; freezing needs the creator's code on Telegram (asked 6 Nov)",
+      "needs": "real forager sources on violence, theft, meat sharing and pair break-up (docs/research/); a frozen plan"
+    },
+    {
       "what": "after the new brain is built and live: redraw the ACL Brain Scan picture (acl_brain_scan.html, from brain_data.py + brain_template.html; also acl_mind_map*.html) to show the new brain (predictor, goal memory, planner) instead of the habit table",
       "status": "the creator, 3 November 2026: 'note after you build whole brain then change that brain picture from acl'",
       "needs": "the new brain adopted as nature; the files are the creator's (untracked), so redraw, do not delete the old ones; the creator, 3 November 2026: 'in brain scanner do not put any extra info and text just brain neural network thats it nothing extra' (the picture shows only the neural network: no labels, no text, no extra panels); style reference shared by the creator (3 November): a clean drawing of neurons as circles joined by lines on a plain background, layered left to right; draw Bob's real network (its loops, its parts, and connection strength from his own learning)"
