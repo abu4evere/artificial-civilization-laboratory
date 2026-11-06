@@ -139,3 +139,16 @@ The assistant, under the creator's 2 November permission (tests of new laws in a
 autonomy (the creator's last messages: "keep working"; on Telegram at 01:58, "you can use pc at full capability").
 Council rounds 67 and 68: GPT 95%, Gemini 95%, DeepSeek about 75%; the assistant 75%. Frozen as `CI1-frozen` before
 any code or data.
+
+## Amendment 1 (6 November 2026, 10:47, before any code or data): three readings of the IN rule made exact
+The frozen text left three cases open. They are read as follows, so the code can be checked against them.
+- **"A make" includes making in play.** Play turns held pieces into things through the same crafting (`_craft`) as a
+  make, and RF1 found gathered pieces lost to other uses. So, while an aim is held, play is not offered a trial that
+  would use up a kept piece, unless that trial's recipe is worth more than the aim. A new trial has value 0, so in
+  practice play leaves kept pieces alone.
+- **"Heating at a fire" stays open,** as the frozen text says. Heat-verb crafts (holding a material or part in a fire)
+  may use a kept piece.
+- **"Used" means used up.** A strike uses up the struck material, not the hammer, so only the struck material is
+  protected. A bind uses up both parts and the binder; a shape uses up its material.
+
+Nothing else changes: no arm, measure, guard or reading.
