@@ -1,0 +1,338 @@
+diff --git a/experiments/NV14_nature_v14/code_v14/acl/config.py b/experiments/CI1_children_and_aims/code_ci1/acl/config.py
+index ab227cd4..08ba4780 100644
+--- a/experiments/NV14_nature_v14/code_v14/acl/config.py
++++ b/experiments/CI1_children_and_aims/code_ci1/acl/config.py
+@@ -148,6 +148,11 @@ class Config:
+     fix_name_ties: int = 1             # NV14 (FF3's F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
+                                        # drops its least valued and several share that value, the one dropped is drawn
+                                        # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
++    child_make: int = 0                # CI1 (LG): 1 = children aged 3 and over are offered the make option (make again a
++                                       # recipe they know, by the same rule as the grown); 0 = v14
++    held_aim: int = 0                  # CI1 (IN): 1 = a person holds one aim (their most valued recipe whose inputs are not
++                                       # all in hand) and its pieces are not set down, handed, or used up by a make worth
++                                       # no more than the aim; 0 = v14
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff --git a/experiments/NV14_nature_v14/code_v14/acl/person.py b/experiments/CI1_children_and_aims/code_ci1/acl/person.py
+index 3229d71e..c99a415f 100644
+--- a/experiments/NV14_nature_v14/code_v14/acl/person.py
++++ b/experiments/CI1_children_and_aims/code_ci1/acl/person.py
+@@ -98,7 +98,7 @@ class Person:
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at", "tried",
++        "kept", "damp", "seen_at", "tried", "aim",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -180,6 +180,7 @@ class Person:
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+         self.tried = None              # CU1: how often p has learned from each action in each situation (only with curiosity_pull)
++        self.aim = None                # CI1 (IN): the recipe whose pieces p is keeping (only with held_aim)
+ 
+     # --- life stage -------------------------------------------------------
+ 
+@@ -255,6 +256,8 @@ class Person:
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+             elif k == "tried" and v is None:
+                 continue                 # CU1: saved only when held, so v8's world is unchanged
++            elif k == "aim" and v is None:
++                continue                 # CI1: saved only when held, so v14's world is unchanged
+             elif k == "loc":
+                 v = list(v)
+             d[k] = v
+diff --git a/experiments/NV14_nature_v14/code_v14/acl/mind.py b/experiments/CI1_children_and_aims/code_ci1/acl/mind.py
+index ccce5479..3484678e 100644
+--- a/experiments/NV14_nature_v14/code_v14/acl/mind.py
++++ b/experiments/CI1_children_and_aims/code_ci1/acl/mind.py
+@@ -24,7 +24,7 @@ from .knowhow import belief
+ from .config import WEEKS_PER_YEAR
+ from .matter import MATERIALS, SOFT_WHEN_WET, best_holder, best_item, holding
+ from .person import A, N_ACTIONS, PLACEABLE, Person
+-from .util import clamp, distance, softmax_pick
++from .util import clamp, distance, softmax_pick, tie_pick
+ import math
+ 
+ COST = {
+@@ -153,6 +153,8 @@ def decide(world, p: Person) -> tuple:
+     company = bool(near)
+     ctx = context_index(world, p, company)
+     p.last_ctx = ctx
++    if c.held_aim:
++        aim_week(world, p)           # CI1 (IN)
+     base = ctx * N_ACTIONS
+     lw = c.learned_weight
+ 
+@@ -285,11 +287,14 @@ def decide(world, p: Person) -> tuple:
+             u = (0.04 + 0.3 * g["curiosity"] * (1.0 - hunger)) * (1.6 if st == "child" else 1.0)
+             add("play", None, u)
+ 
+-    if grown:
++    if grown or (c.child_make and not toddler):          # CI1 (LG): children 3+ are offered the make option too
+         # Make again something that has proved its worth.
+         best, best_u = None, 0.05
+         fire_here = world.tile(p.loc).fire > 0
+         part_of = _wanted_parts(p)
++        keep = kept_pieces(world, p)               # CI1 (IN): {} unless an aim is held
++        aim_v = p.itemval.get(p.aim, 0.0) if keep else 0.0
++        log_ci1 = getattr(world, "ci1log", None)
+         cands = []           # FX1: the eligible recipes, in the order learned: (sig, v, u)
+         for sig, recipe in p.recipes.items():
+             if recipe["verb"] == "heat" and not fire_here:
+@@ -301,6 +306,10 @@ def decide(world, p: Person) -> tuple:
+                 v = max(v, belief(p, f"{recipe['target']}/{recipe['tool']}@{season}") or 0.0)
+             # Something about it surprised them: they want to try it again and see.
+             v = max(v, 0.5 * max(inquiry.pull(p, "m:" + sig), inquiry.pull(p, "f:" + sig)))
++            if keep and sig != p.aim and v <= aim_v and uses_kept(p, recipe, keep):
++                if log_ci1 is not None and v > 0.05 and can_make(p, recipe):
++                    log_ci1.append(("block_make", p.id, sig))
++                continue                           # CI1 (IN): a make worth no more than the aim keeps off its pieces
+             if v <= 0.05 or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or not can_make(p, recipe):
+                 continue
+             cands.append((sig, v, c.worth_weight * v * (0.6 + 0.4 * g["diligence"]) * (1.0 - 0.5 * hunger)))
+@@ -320,6 +329,7 @@ def decide(world, p: Person) -> tuple:
+         if best is not None:
+             add("make", best, best_u)
+ 
++    if grown:
+         # Set something down here, if leaving such things has gone well before.
+         put = _best_put(world, p, need + dep_need, hunger, season, c)
+         if put is not None:
+@@ -436,7 +446,7 @@ def decide(world, p: Person) -> tuple:
+             # HD1: or hand them a made thing, if it would help them more than it costs the giver.
+             world.hand_intent.pop((p.id, q.id), None)
+             if p.items and len(q.items) < c.item_limit:
+-                net, _ = hand_pick(p, q)
++                net, _ = hand_pick(p, q, world, count=True)
+                 if net > 0.0:
+                     social = (0.25 * g["kindness"] + 0.6 * max(aff, 0.0) + 0.6 * kin + (0.6 if is_partner else 0.0)
+                               + 0.35 * clamp(bal / need) * (0.5 + g["kindness"]))
+@@ -610,12 +620,14 @@ def _worth_trying(p: Person, key: str, c, learned: str | None = None) -> float:
+ HAND_USES = ("forage", "hunt", "wood", "stone", "fiber", "fight", "carry", "cold")
+ 
+ 
+-def hand_pick(p: Person, q: Person) -> tuple[float, int]:
++def hand_pick(p: Person, q: Person, world=None, count: bool = False) -> tuple[float, int]:
+     """HD1: the made thing p holds that would help q most, net of what p would lose without it: (net use, index).
+     q's gain is how far the item beats q's own best for any use; p's loss is how far p's own best for any use falls
+     without it. (0.0, -1) if nothing would help q more than it costs p."""
+     from .matter import factor
+     best = (0.0, -1)
++    keep = kept_pieces(world, p)                   # CI1 (IN): a kept made part is not handed
++    blocked = False
+     for i, it in enumerate(p.items):
+         gain = max(max(0.0, factor(it, u) - best_item(q, u)[1]) for u in HAND_USES)
+         loss = 0.0
+@@ -623,8 +635,14 @@ def hand_pick(p: Person, q: Person) -> tuple[float, int]:
+             rest = max([factor(o, u) for j, o in enumerate(p.items) if j != i] + [1.0])
+             loss = max(loss, best_item(p, u)[1] - rest)
+         net = gain - loss
++        if keep.get(it["sig"], 0) >= _held(p, it["sig"]):
++            blocked = blocked or net > best[0] + 1e-12
++            continue
+         if net > best[0] + 1e-12:
+             best = (net, i)
++    log = getattr(world, "ci1log", None) if count else None
++    if log is not None and blocked:
++        log.append(("block_hand", p.id, ""))
+     return best
+ 
+ 
+@@ -694,6 +712,8 @@ def _material_wants(p: Person, season: int) -> dict:
+ def _best_put(world, p: Person, total_need: float, hunger: float, season: int, c):
+     """Which thing p most wants to set down here, if any. Untried things get tried now and then."""
+     g = p.genes
++    keep = kept_pieces(world, p)                   # CI1 (IN)
++    log_ci1 = getattr(world, "ci1log", None)
+     best, best_u = None, 0.0
+     for thing in PLACEABLE:
+         if thing == "food":
+@@ -702,6 +722,10 @@ def _best_put(world, p: Person, total_need: float, hunger: float, season: int, c
+             have = p.seeds - (2.0 * total_need - p.food if p.food < 2.0 * total_need else 0.0)
+         else:
+             have = p.mats.get(thing, 0.0)
++            if thing in keep:                      # CI1 (IN): a kept piece is not set down
++                if have >= 1.0 and have - keep[thing] < 1.0 and log_ci1 is not None:
++                    log_ci1.append(("block_put", p.id, thing))
++                have -= keep[thing]
+         if have < 1.0:
+             continue
+         key = f"{thing}@{season}"
+@@ -767,6 +791,98 @@ def can_make(p: Person, recipe: dict) -> bool:
+     return all(p.mats.get(k, 0.0) >= n for k, n in need.items())
+ 
+ 
++def _needs(recipe: dict) -> dict:
++    """CI1 (IN): a recipe's inputs as can_make reads them, with the number needed: {name: count}."""
++    v = recipe["verb"]
++    if v == "shape":
++        return {recipe["material"]: 1}
++    if v == "heat":
++        return {recipe["part"]: 1}
++    if v == "fill":
++        return {}
++    if v == "strike":
++        d = {recipe["target"]: 1}
++        d[recipe["tool"]] = d.get(recipe["tool"], 0) + 1 if recipe["tool"] == recipe["target"] else 1
++        return d
++    out: dict = {}
++    for part in recipe["parts"]:
++        out[part] = out.get(part, 0) + 1
++    out[recipe["binder"]] = out.get(recipe["binder"], 0) + 1
++    return out
++
++
++def _used_up(recipe: dict) -> dict:
++    """CI1 (IN; amendment 1): what a craft by this recipe uses up. A strike uses up the struck material, not the hammer;
++    heating at a fire stays open, so a heat craft protects nothing."""
++    v = recipe["verb"]
++    if v == "shape":
++        return {recipe["material"]: 1}
++    if v == "strike":
++        return {recipe["target"]: 1}
++    if v in ("heat", "fill"):
++        return {}
++    return _needs(recipe)
++
++
++def _held(p: Person, name: str) -> float:
++    return p.mats.get(name, 0.0) if name in MATERIALS else sum(1 for it in p.items if it["sig"] == name)
++
++
++def kept_pieces(world, p: Person) -> dict:
++    """CI1 (IN): what p's held aim keeps, {name: amount}: the aim recipe's inputs up to the number needed and, for each
++    missing made part whose recipe p knows, that part's inputs (one level down). Recomputed from what is held."""
++    if world is None or not world.cfg.held_aim or not p.aim:
++        return {}
++    recipe = p.recipes.get(p.aim)
++    if recipe is None:
++        return {}
++    keep: dict = {}
++    for name, n in _needs(recipe).items():
++        keep[name] = keep.get(name, 0) + n
++        if name not in MATERIALS:
++            missing = n - _held(p, name)
++            sub = p.recipes.get(name)
++            if missing > 0 and sub is not None:
++                for nm, k in _needs(sub).items():
++                    keep[nm] = keep.get(nm, 0) + k * missing
++    return {name: min(n, _held(p, name)) for name, n in keep.items() if _held(p, name) > 0}
++
++
++def uses_kept(p: Person, recipe: dict, keep: dict) -> bool:
++    """CI1 (IN): would a craft by this recipe use up a kept piece?"""
++    return any(_held(p, name) - keep.get(name, 0) < n for name, n in _used_up(recipe).items() if name in keep)
++
++
++def aim_week(world, p: Person) -> None:
++    """CI1 (IN): at p's decision, end the held aim if its time is over, and form one if none is held. Draws nothing from
++    the world's generator (ties as v14 draws them)."""
++    log = getattr(world, "ci1log", None)        # CI1 logging (the runner sets it; not saved; read by nothing here)
++    if p.aim:
++        r = p.recipes.get(p.aim)
++        cause = None
++        if r is None:
++            cause = "forgotten"
++        elif p.itemval.get(p.aim, 0.0) <= 0.05:
++            cause = "value"
++        elif _holding(p, p.aim):
++            cause = "held"
++        elif can_make(p, r):
++            cause = "complete"
++        if cause:
++            if log is not None:
++                log.append(("end", p.id, p.aim, cause))
++            p.aim = None
++    if not p.aim:
++        cands = [s for s, r in p.recipes.items() if r["verb"] != "fill" and p.itemval.get(s, 0.0) > 0.05
++                 and not _holding(p, s) and not can_make(p, r)]
++        if cands:
++            top = max(p.itemval[s] for s in cands)
++            tied = [s for s in cands if p.itemval[s] == top]
++            p.aim = tie_pick(world, p, 5, tied, len(cands))
++            if log is not None:
++                log.append(("form", p.id, p.aim))
++
++
+ def _holding(p: Person, sig: str, worn_ok: bool = False) -> bool:
+     for it in p.items:
+         if it["sig"] == sig and (worn_ok or it["uses"] > 5):
+diff --git a/experiments/NV14_nature_v14/code_v14/acl/actions.py b/experiments/CI1_children_and_aims/code_ci1/acl/actions.py
+index fe849e60..c74db46f 100644
+--- a/experiments/NV14_nature_v14/code_v14/acl/actions.py
++++ b/experiments/CI1_children_and_aims/code_ci1/acl/actions.py
+@@ -6,7 +6,8 @@ from __future__ import annotations
+ 
+ from . import biology, fauna, information, inquiry, knowhow, marks, matter, social, thought
+ from .matter import MATERIALS, best_item, carry_capacity, pile_warmth
+-from .mind import COST, MOVE_COST, can_fill, can_make, forage_rate, hunger_of, hunt_chance, recipe_materials, strength
++from .mind import (COST, MOVE_COST, can_fill, can_make, forage_rate, hunger_of, hunt_chance, kept_pieces,
++                   recipe_materials, strength, uses_kept)
+ from .person import A, N_ACTIONS, Person
+ from .social import bump, remember, witness
+ from .util import clamp, distance
+@@ -265,7 +266,7 @@ def _put(world, p, thing, eff):
+     elif thing == "seeds":
+         amount = min(p.seeds - max(0.0, 0.5 * keep - p.food), 40.0)
+     else:
+-        amount = min(p.mats[thing], 10.0)
++        amount = min(p.mats[thing] - kept_pieces(world, p).get(thing, 0.0), 10.0)    # CI1 (IN): kept pieces stay
+     if amount < 1.0:
+         return
+     belief = p.beliefs.get(f"{thing}@{world.season}", 0.0)
+@@ -393,6 +394,13 @@ def _make(world, p, sig, eff):
+     recipe = p.recipes.get(sig)
+     if recipe is None:
+         return
++    if world.cfg.held_aim and p.aim and sig != p.aim:     # CI1 (IN): a make worth more than the aim interrupts it
++        keep = kept_pieces(world, p)
++        if keep and uses_kept(p, recipe, keep):
++            log = getattr(world, "ci1log", None)
++            if log is not None:
++                log.append(("end", p.id, p.aim, "interrupted"))
++            p.aim = None
+     item = _craft(world, p, recipe)
+     if item is not None:
+         p.reward += 0.1
+@@ -589,6 +597,15 @@ def _play(world, p, target, eff):
+                     trial = {"verb": "bind", "parts": sorted([a, bb]), "binder": b}
+                     if can_make(p, trial):
+                         choices.append(trial)
++    if world.cfg.held_aim and p.aim and choices:         # CI1 (IN; amendment 1): play keeps off the aim's pieces
++        keep = kept_pieces(world, p)
++        if keep:
++            aim_v = p.itemval.get(p.aim, 0.0)
++            ok = [r for r in choices if not uses_kept(p, r, keep) or p.itemval.get(_sig_of(r), 0.0) > aim_v]
++            log = getattr(world, "ci1log", None)
++            if log is not None and len(ok) < len(choices):
++                log.append(("block_play", p.id, len(choices) - len(ok)))
++            choices = ok
+     if not choices:
+         p.reward -= 0.01
+         return
+@@ -604,6 +621,13 @@ def _play(world, p, target, eff):
+                 pool = near
+     recipe = pool[rng.randrange(len(pool))]
+     p.expect[_sig_of(recipe)] = 0.0
++    if world.cfg.held_aim and p.aim:                     # CI1 (IN): a trial worth more than the aim interrupts it
++        keep = kept_pieces(world, p)
++        if keep and uses_kept(p, recipe, keep):
++            log = getattr(world, "ci1log", None)
++            if log is not None:
++                log.append(("end", p.id, p.aim, "interrupted"))
++            p.aim = None
+     if recipe["verb"] == "fill":
+         _fill(world, p, recipe["substance"], 1.0)
+         return
+@@ -720,7 +744,7 @@ def _hand(world, p, q) -> None:
+     from .mind import hand_pick
+     if not p.items or len(q.items) >= world.cfg.item_limit:
+         return
+-    net, idx = hand_pick(p, q)
++    net, idx = hand_pick(p, q, world)
+     if idx < 0 or net <= 0.0:
+         return
+     it = p.items.pop(idx)
