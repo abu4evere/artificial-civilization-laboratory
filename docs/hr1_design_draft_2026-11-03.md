@@ -50,3 +50,21 @@ FF2 is adopted (F8 fixed: the hunt decision expects the meat of the prey it sees
    needing a sham-controlled test of its own?
 4. **Foraging is generous** (20.77 food a week, about 3 weeks of an adult's need). Should HR1 calibrate hunting only, or
    is foraging the side that is off? The older review found tools add 1% because the world is forgiving (TR1).
+
+## Added after council round 70 (6 November 2026, 19:2x): HR1 is next on the laws road
+- **Why now.** HK1 (who holds the kill) was shelved: on v14 there were 0 party kills in 105 kills, 1 pair in 713 hunt
+  attempts, and 0.043-0.085 hunts per grown-year (`docs/debate_round70_hk1_design_2026-11-06.md`). Every social law
+  about kills waits on hunting being real.
+- **The council's conditions (unanimous after one revision):**
+  - the target is an outside, pre-registered evidence quantity, never an ACL outcome;
+  - **the conversion of units is frozen first**: what one ACL hunt is (one action a week at a tile with prey), and how
+    per-day and per-encounter figures become per-week figures;
+  - **F7's table is dropped.** Any per-species rate is derived from evidence. This settles open question 3 above:
+    choosing the species before the roll is part of using evidence-derived rates, and it still needs a sham.
+  - one setting per arm;
+  - CI1-style harm guards;
+  - participation and returns are described against the evidence, **never tuned afterwards** (GPT: the decision may
+    still prefer foraging, and that is an informative null).
+- **Open question 4 (is foraging too generous?) stays the first thing to settle.** If foraging is off, calibrating
+  hunting alone moves the wrong side. A forage-week of 20.77 food is about 3 weeks of an adult's need.
+- **Base:** the nature live when HR1 is frozen (v15 if CI1-C confirms and it is adopted).
