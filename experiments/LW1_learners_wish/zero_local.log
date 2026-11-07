@@ -1,0 +1,8 @@
+seed 501, 20 years: code_lw1 with learn_wish 0 = code_v15: yes; observer read-only (c, w): yes; LW and the sham act: yes; {'c': {'kinds': 743, 'learned': 38, 'pairs': 1390, 'wish': {}}, 'w': {'kinds': 778, 'learned': 39, 'pairs': 1343, 'wish': {'end_expired': 224, 'end_known': 86, 'form': 805, 'met': 677}}}
+seed 601, 60 years: code_lw1 with learn_wish 0 = code_v15: yes; observer read-only (c, w): yes; LW and the sham act: yes; {'c': {'kinds': 1398, 'learned': 61, 'pairs': 6019, 'wish': {}}, 'w': {'kinds': 1588, 'learned': 57, 'pairs': 7770, 'wish': {'end_expired': 1564, 'end_known': 446, 'form': 3850, 'met': 3018}}}
+arm w, seed 501: saved at year 10 (wishes held: 24) and reloaded, continues exactly to year 15, wishes saved: yes
+unit checks, arm w, seed 701, 30 years (wishes form on the first missing made part of a failed follow; every wish lesson shows the wished part, unknown, at most 52 weeks old, from a speaker who knows it; endings match their cause; no talk gives two lessons): yes; {"ended":412,"forms":864,"met":818,"talks_with_lesson_calls":24103}
+code_lw1 fingerprint: 81f9484a04441681dbb10bc6d213707a62ad76f383129a93b40666849f9d3857
+All: PASS
+
+EXIT 0
