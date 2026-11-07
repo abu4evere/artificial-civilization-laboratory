@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-06T16:41:00",
+  "updated": "2026-11-06T19:21:00",
   "nature": {
     "live": "v14",
     "acl_fingerprint": "0e69752c332da9cd28bc92cb1f1d65ea6551a673450f032e4b14ee60fde0d2aa",
@@ -481,7 +481,7 @@
     },
     {
       "what": "HAND-LIMITS ROAD (the creator, 6 November 2026 17:38: 'Double check all laws of world again and filter all with other ai modules make sure we are not limiting like this'): audit docs/law_limits_audit_2026-11-06.md; council docs/gpt_review_law_limits_2026-11-06.md. First frozen test: who holds a kill (remove the forced equal hunt split; sharing becomes a choice), one gate per test, sham, CI1-style harm checks plus offered/chosen/attempted counts; then the attack gate with a contested thing; threat/display as its own test.",
-      "status": "council done 6 Nov 17:45; waits for CI1-C; freezing needs the creator's code on Telegram (asked 6 Nov)",
+      "status": "council round 70 (docs/debate_round70_hk1_design_2026-11-06.md, two parts, unanimous): HK1 SHELVED (read-only counts on v14: 0 party kills of 105; 1 pair in 713 hunt attempts; plan kept as experiments/HK1_who_holds_the_kill/questions_SHELVED.md; revival when party kills >= 50 in smoke worlds). Order now: HR1 (hunting calibrated to evidence), then a general ability to act together on purpose, then HK1's revival check, then the attack and taking gates",
       "needs": "real forager sources on violence, theft, meat sharing and pair break-up (docs/research/); a frozen plan"
     },
     {
@@ -496,8 +496,8 @@
     },
     {
       "what": "HR1: calibrate per-species success (F7's table, provenance unknown) and meat per kill to forager evidence (return ratio 0.5-1.5; success per hunter-week as a second check; docs/research/hunting_success_hadza_2026-11-03.md)",
-      "status": "after the brain road's PB0 and FF2 (lower priority by the creator's 3 November order)",
-      "needs": "FF2 final; a frozen plan; council"
+      "status": "NEXT on the laws road after CI1-C (council round 70 part 2, unanimous): define one ACL hunt; freeze the unit conversion (day / week / encounter) first; drop F7's unused table (provenance unknown) and derive any per-species rate from evidence; one setting per arm; CI1-style harm guards; participation and returns described, never tuned afterwards",
+      "needs": "a frozen plan written from docs/research/hunting_success_hadza_2026-11-03.md and HN1; council on the plan"
     },
     {
       "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",

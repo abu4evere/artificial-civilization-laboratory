@@ -35,3 +35,24 @@ Agta 12% of adult male deaths. Caveats on the page: wide variation; often cannot
   below every forager figure listed above (4-28%). Not a target to tune toward; a reference to judge the gates by.
 - Side note from the code (`acl/actions.py:181`): each hunter gets `min(share, carry room)`; meat above carry room
   is not given to anyone in this block. Not yet checked whether it is placed elsewhere.
+
+## Added 6 November 18:43 (for council round 70, HK1's design): who owns a kill
+
+**Search summaries only; the papers were not read. Hawkes et al. 2001 is offered only as a file download, so it was
+not opened.**
+- **Hadza.** Hawkes, O'Connell & Blurton Jones (2001), "Hadza meat sharing", *Evolution and Human Behavior*.
+  - The summary says the "hunter does not control" the distribution of a large kill.
+  - It says the successful hunter's household kept on average 10% or less of a carcass.
+  - It says the sharing "does not fit" simple risk-reduction reciprocity.
+- **Ju/'hoansi (!Kung).** From the Marshall ethnography, as summarised in search results (the book was not read).
+  - The owner of the arrow that made the kill owns the meat, not necessarily the shooter.
+  - That owner decides the first distribution.
+
+**What it suggests for HK1 (not a finding).** "Who holds the kill" varies:
+- Among the Hadza, others' demands take most of it.
+- Among the Ju/'hoansi, the instrument's owner holds it, and distribution norms follow.
+
+Either way, the meat goes through a person's decision, or through others' demands. It is never an automatic equal
+split. ACL has no demand-sharing act (asking, or taking openly while tolerated); theft is gated (item 2 of the
+law-limits audit). After HK, holders of a big kill become the natural theft targets of hungry non-kin. That is the
+nearest thing ACL has to tolerated scrounging, and the measures should watch it.
