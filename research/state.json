@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-07T04:40:00",
+  "updated": "2026-11-07T06:00:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -498,6 +498,19 @@
       "zero": "local (zero_local.log; skip_zero=local)",
       "next_step": "council: the next frozen test (nested missing parts; the acceptance draw), together with FP1's HR1 targets",
       "recompute": "recompute_sp1.md: GPT (code) and Gemini (code) match; DeepSeek unfinished, not counted"
+    },
+    {
+      "id": "PC1",
+      "title": "The part chains of new kinds: why lessons fail on a missing part (read-only on v15)",
+      "kind": "read-only (one arm on code_v15; seeds 24501-24532)",
+      "plan": "experiments/PC1_part_chains/questions.md",
+      "frozen_tag": "PC1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy; council round 73 (GPT 98%, DeepSeek ~93% first; Gemini alongside HR1)",
+      "status": "running on the cloud, launched 05:59 (7 November); zero checks local (All: PASS)",
+      "run": 42366219425,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "fetch, analyse_pc1.py, recompute (pc1_counts.csv), findings; then design (b) learner-driven deeper part lessons, or not, by the frozen reading",
+      "recompute": null
     }
   ],
   "queue_after": [
