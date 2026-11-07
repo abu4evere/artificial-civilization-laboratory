@@ -19,6 +19,10 @@ weighed list). One choice is one week. Everyone else lives by their own minds.
 | 2086 | hunger 0.93 | forage a neighbouring tile | forage | **25.3 food on a rich tile (33 plants, plus someone's sown crop, harvested)**; 10.3 left |
 | 2087 | food 10.3, hunger 0.27 | forage; care; rest; join; talk | forage | 27.7 food; **my son told me the story going round that I stole from Kenon**: reputation spreads by word of mouth |
 | 2088 | **food 21.4, hunger 0**, health 65 | forage; rest; talk (my children, a stranger); join; make; gather; **explore offered again** | talk with Motone (12) | passed him news and a game spot; **no making lesson, and I could not choose one** |
+| 2089 | food 5.6 (three children eat fast); **my one made thing has worn out** | forage; rest; join; talk; make a cord | forage | 20.2 food |
+| 2090 | food 9.7 | forage; care for a neighbour's child; talk; make | **make a fiber cord** | a cord with 34 uses: flexible 90, holds 70, warmth 24, floats 22, burns 50 |
+| 2091 | food fine | forage; make **a clay pot**; steal Kenon (he came near) | make the pot | soft clay pot, 30 uses: holds 60, plastic 80 (unfired) |
+| 2092 | carrying a cord and a pot | **give** (hand a made thing) to my children, neighbours and Boushous; care; rest | give to Boushous | **handed him the pot. I chose the person, the world chose the thing** |
 
 ## Limits found from inside (for the council; each to check in code before it counts)
 1. **Fatigue gates food.** An option is dropped when energy is below its cost: forage 25, explore 30, join 20, plus 4
@@ -40,3 +44,6 @@ weighed list). One choice is one week. Everyone else lives by their own minds.
 9. **Children foraging for themselves:** the 12-year-old was fed and healthy on his own foraging, while the 3- and 6-year-olds depended on me. This matches FP1's early self-sufficiency.
 10. **A teacher cannot choose what to teach.** The lesson inside a talk is drawn among the speaker's three most valued things (`show_how`). I wanted to show my son how to make a cord, and there is no way to choose it (the law-limits audit, item 12). With LW1's wish, the learner would steer it, but the teacher still cannot.
 11. **Reputation works.** My theft was retold by my own son within 5 weeks. Word of mouth carries who did what.
+12. **A pot cannot keep food.** I made a clay pot (holds 60), but containers hold only water or embers. There is no option to store food in it for my children's lean weeks (the affordance audit's limit).
+13. **Giving a thing: I choose whom, not what.** `hand_pick` chose the pot over the cord.
+14. **Tools wear out quietly.** My one made thing was used up within weeks. I had to notice it myself, and then make again.
