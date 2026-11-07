@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-06T21:46:00",
+  "updated": "2026-11-06T23:10:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -472,6 +472,19 @@
       "zero": "cloud (skip_zero=no; zero_cloud.log, All: PASS, fingerprint e0ccbf07)",
       "next_step": "none (done). Next: HR1 (hunting calibrated to evidence; round 70) on v15; the spread of new kinds (0 of about 11,500 made by anyone but the inventor) is the next wall for Bob",
       "recompute": "recompute_ci1c.md: GPT (code) and Gemini (code) match; DeepSeek's page froze, not read"
+    },
+    {
+      "id": "FP1",
+      "title": "Food production by age in nature v15, against forager evidence (HR1's read-only step 0)",
+      "kind": "read-only (one arm on code_v15; seeds 24301-24332; a food account per person-week with a conservation check)",
+      "plan": "experiments/FP1_food_production_by_age/questions.md",
+      "frozen_tag": "FP1-frozen",
+      "approved_by": "the assistant under the creator's permissions; round 72 (GPT 97%, Gemini 95%, DeepSeek ~87%; the assistant 90%); the creator OK'd downloading Kaplan et al. 2000",
+      "status": "running on the cloud, launched 23:09 (6 November); zero checks local (All: PASS, 0 conservation breaches)",
+      "run": 42337207529,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "fetch, analyse_fp1.py, recompute (fp1_counts.csv; GPT, Gemini, DeepSeek), findings; then the council picks HR1's target",
+      "recompute": null
     }
   ],
   "queue_after": [
