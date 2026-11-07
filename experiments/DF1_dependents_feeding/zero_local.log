@@ -1,0 +1,7 @@
+seed 501, 20 years: observer read-only (world and random stream): yes; {"carers":{"father":10018,"mother":45192,"other":1403},"check":{},"fcs":499,"weeks":67070}
+seed 601, 60 years: observer read-only (world and random stream): yes; {"carers":{"father":24654,"mother":152384,"other":3069},"check":{},"fcs":1954,"weeks":301921}
+seed 701, 30 years: the ledger's food fed out equals the dependents' gain in the feeding step, every feeder-week (within 1e-6): yes; {'carers': {'father': 8738, 'mother': 29053, 'other': 1906}, 'check': {'feeders': 16630}, 'fcs': 471, 'weeks': 72796}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v16 fingerprint: 9388f16ef24e3216691a306ee77254065d9957c901a77344805c7c702c858300
+All: PASS
+
