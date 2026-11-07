@@ -532,7 +532,7 @@
       "plan": "experiments/EG1_energy_gate/questions.md",
       "frozen_tag": "EG1-frozen",
       "approved_by": "the assistant under the creator's standing permissions ('you can keep going do not rely on me'); council round 75 after the code facts (GPT 96%, Gemini, DeepSeek ~87%)",
-      "status": "zero checks running locally (7 November); then the cloud with skip_zero=local"
+      "status": "done (final 7 November 13:54; tag EG1-done): energy is a minor contributor, P 0.0628 [0.0540, 0.0713] of starving person-weeks; 0.350 of starvation deaths had a blocked week in their last 4; women 30-49 0.119 vs men 0.054; best-tile quirk 0.429 of blocked starving weeks"
     }
   ],
   "queue_after": [
