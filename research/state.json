@@ -524,6 +524,15 @@
       "zero": "local (zero_local.log; skip_zero=local)",
       "next_step": "fetch, analyse_lw1.py, recompute (lw1_counts.csv), findings; a supported reading goes to a confirmatory run",
       "recompute": null
+    },
+    {
+      "id": "EG1",
+      "title": "When someone is starving, does the energy rule stand between them and food? (read-only audit on v15)",
+      "kind": "read-only (one arm on code_eg1 = code_v15 + logging only; seeds 24701-24732)",
+      "plan": "experiments/EG1_energy_gate/questions.md",
+      "frozen_tag": "EG1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions ('you can keep going do not rely on me'); council round 75 after the code facts (GPT 96%, Gemini, DeepSeek ~87%)",
+      "status": "zero checks running locally (7 November); then the cloud with skip_zero=local"
     }
   ],
   "queue_after": [
