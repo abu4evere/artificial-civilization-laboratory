@@ -33,13 +33,15 @@ Plain words first; the details are in the files named.
 | 6 Nov 16:29 | **CI1 final**: LG supported, IN no effect, LG+IN supported; no harm guard raised | GPT and Gemini matched every number with code |
 | 6 Nov 16:35 | **Council round 69**: confirm LG alone; IN set aside | all three agreed |
 | 6 Nov 16:39 | **CI1-C launched** on the cloud: LG on 32 new worlds | the frozen rule: confirm before adopting |
+| 6 Nov 19:20 | **Council round 70: HK1 (who holds the kill) shelved, HR1 first** | measured: 0 party kills in 105 kills; 1 pair in 713 hunts; all three agreed |
+| 6 Nov 19:29 | **CI1-C final: CONFIRMED** | GPT and Gemini matched every number with code |
+| 6 Nov 21:33 | **Nature v15 adopted**: children aged 3 and over may make again | round 71: GPT 99%, Gemini 100%, DeepSeek about 94%; zero checks pass; 70 tests pass; v14 kept |
 
 ## Running now
-- **CI1-C** on the cloud (run 42298530869, since 16:39): children may make again, on 32 new worlds. If it
-  confirms with no harm, it goes the safe path to nature v15.
-- **CI1's result** (final): children making again lifts complete sets of pieces about 5 times (0.0042 to
-  0.0225), and children's inventions were made again for the first time (22 kinds). Keeping the pieces for a
-  plan did nothing measurable.
+- Nothing. **Nature v15 is live:** children aged 3 and over may make again. New inventions reach a full set of
+  pieces about 6 times as often, and children's inventions are made again (32 against 2), with no harm.
+- **The next wall for Bob:** no new invention is ever made by anyone but its inventor (0 of about 11,500).
+- **Next on the laws road:** HR1, making hunting real. People hunt about once in 12–23 years, and never together.
 
 ## What needs you (nothing urgent)
 - Nothing is blocked on you.
