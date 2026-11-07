@@ -1,0 +1,84 @@
+diff --git a/experiments/NV15_nature_v15/code_v15/acl/config.py b/experiments/LW1_learners_wish/code_lw1/acl/config.py
+index da06b8bb..a6ddea3a 100644
+--- a/experiments/NV15_nature_v15/code_v15/acl/config.py
++++ b/experiments/LW1_learners_wish/code_lw1/acl/config.py
+@@ -152,6 +152,9 @@ class Config:
+                                        # option (make again a recipe they know, by the same rule as the grown, heat
+                                        # recipes too when at a fire); setting things down, holding food in the fire
+                                        # and filling stay for the grown; 0 = v14
++    learn_wish: int = 0                # LW1: 1 = a learner who cannot follow a lesson for a missing made part holds
++                                       # that part as a wish (one, the most recent, for 52 weeks); anyone who knows it
++                                       # then shows that part first in a talk; 0 = v15
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff --git a/experiments/NV15_nature_v15/code_v15/acl/person.py b/experiments/LW1_learners_wish/code_lw1/acl/person.py
+index 3229d71e..1e23549a 100644
+--- a/experiments/NV15_nature_v15/code_v15/acl/person.py
++++ b/experiments/LW1_learners_wish/code_lw1/acl/person.py
+@@ -98,7 +98,7 @@ class Person:
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at", "tried",
++        "kept", "damp", "seen_at", "tried", "wish",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -180,6 +180,7 @@ class Person:
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+         self.tried = None              # CU1: how often p has learned from each action in each situation (only with curiosity_pull)
++        self.wish = None               # LW1: [part, tick]: the made part p could not follow, to be shown it (only with learn_wish)
+ 
+     # --- life stage -------------------------------------------------------
+ 
+@@ -255,6 +256,8 @@ class Person:
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+             elif k == "tried" and v is None:
+                 continue                 # CU1: saved only when held, so v8's world is unchanged
++            elif k == "wish" and v is None:
++                continue                 # LW1: saved only when held, so v15's world is unchanged
+             elif k == "loc":
+                 v = list(v)
+             d[k] = v
+diff --git a/experiments/NV15_nature_v15/code_v15/acl/information.py b/experiments/LW1_learners_wish/code_lw1/acl/information.py
+index a3ee35d7..40c0fa5d 100644
+--- a/experiments/NV15_nature_v15/code_v15/acl/information.py
++++ b/experiments/LW1_learners_wish/code_lw1/acl/information.py
+@@ -257,6 +257,19 @@ def show_how(world, teacher, learner, parent: bool) -> bool:
+     """The teacher shows or tells one of the things they value most. Returns True if the learner took
+     something new from it."""
+     rng = world.rng
++    if world.cfg.learn_wish and learner.wish is not None:        # LW1: the learner's wish is shown first
++        want, since = learner.wish
++        log = getattr(world, "lwlog", None)
++        if want in learner.recipes or world.tick - since > 52:
++            learner.wish = None
++            if log is not None:
++                log.append(("end", learner.id, want, "known" if want in learner.recipes else "expired"))
++        elif want in teacher.recipes:
++            claim = teacher.itemval.get(want, 0.0) * (0.85 + 0.35 * rng.random())
++            if log is not None:
++                log.append(("met", learner.id, want, teacher.id))
++            recipe = _recipe_as_shown(world, teacher, learner, teacher.recipes[want])
++            return hear_how(world, learner, teacher, want, recipe, claim, parent)
+     offers = []
+     for sig in teacher.recipes:
+         v = teacher.itemval.get(sig, 0.0)
+@@ -371,6 +384,15 @@ def hear_how(world, learner, teacher, meant: str, recipe: dict, claim: float, pa
+     if world.rng.random() >= c * _openness(learner, parent):
+         return False
+     if not can_follow(learner, recipe):
++        if world.cfg.learn_wish:                         # LW1: the first made part they could not follow becomes their wish
++            from .matter import MATERIALS as _M
++            need = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe.get("verb") == "heat" else [])
++            miss = [x for x in need if x not in _M and x not in learner.recipes]
++            if miss:
++                learner.wish = [miss[0], world.tick]
++                log = getattr(world, "lwlog", None)
++                if log is not None:
++                    log.append(("form", learner.id, miss[0], meant))
+         if world.cfg.parts_first and not part_lesson:    # NV3 (LM1's L1): seeing the lesson fail, show a part instead
+             from .matter import MATERIALS
+             parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe.get("verb") == "heat" else [])
