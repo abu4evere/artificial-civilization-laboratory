@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-07T10:00:00",
+  "updated": "2026-11-07T10:38:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -511,6 +511,19 @@
       "zero": "local (zero_local.log; skip_zero=local)",
       "next_step": "council: (b) learner-driven part lessons across talks (bottom-up, with a budget) vs (c) the acceptance draw (0.211 per part lesson compounds per level)",
       "recompute": "recompute_pc1.md: GPT (code) and Gemini (code) match; DeepSeek unfinished, not counted"
+    },
+    {
+      "id": "LW1",
+      "title": "A learner's wish for the part they could not follow: a law tested in a copy of v15",
+      "kind": "nature-change test in a copy (code_lw1 = v15 + learn_wish; arms v15 / LW / sham; seeds 24601-24632)",
+      "plan": "experiments/LW1_learners_wish/questions.md",
+      "frozen_tag": "LW1-frozen",
+      "approved_by": "the assistant under the creator's permissions ('do not ask for permissions from me just go'); council round 74 (GPT 96%, DeepSeek ~75%, Gemini 95% for a wider design)",
+      "status": "running on the cloud, launched 10:37 (7 November); zero checks local (All: PASS)",
+      "run": 42387280021,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "fetch, analyse_lw1.py, recompute (lw1_counts.csv), findings; a supported reading goes to a confirmatory run",
+      "recompute": null
     }
   ],
   "queue_after": [
