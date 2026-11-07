@@ -1,7 +1,7 @@
-# PL1: where do the made parts of new kinds go? (frozen plan)
+# MP1: where do the made parts of new kinds go? (frozen plan)
 
 **A read-only audit of nature v15.** Council round 76 chose it unanimously (`docs/debate_round76_after_lw1_eg1_2026-11-07.md`;
-GPT 97%, Gemini 95%, DeepSeek about 90%). **Nothing in nature changes, and PL1 decides no law.**
+GPT 97%, Gemini 95%, DeepSeek about 90%). **Nothing in nature changes, and MP1 decides no law.**
 
 ## Why
 - **LW1:** learners got missing parts nearly 3 times as often, but no one but the inventor made a new kind (1 → 0).
@@ -100,4 +100,5 @@ Council round 76:
 - DeepSeek about 90%;
 - the assistant 85%.
 
-Frozen as `PL1-frozen` before any code or data.
+Frozen as `MP1-frozen` before any code or data. (First committed under the name PL1, which an earlier study already
+uses (`experiments/PL1_child_play`); renamed MP1 before any code or data.)
