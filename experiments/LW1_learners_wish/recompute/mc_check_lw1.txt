@@ -1,0 +1,4 @@
+point estimate w - c: +0.00699 (63/3297 against 37/3053)
+frozen random seed 20261109, 10,000 draws: [-0.00005, +0.01401]; share of draws <= 0: 0.0261
+50 other random seeds (1-50), 10,000 draws each: lower bound min -0.00016, median +0.00001, max +0.00012; above 0 in 28 of 50
+random seed 7, 200,000 draws: [-0.00001, +0.01395]; share of draws <= 0: 0.0252

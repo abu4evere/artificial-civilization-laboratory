@@ -519,7 +519,7 @@
       "plan": "experiments/LW1_learners_wish/questions.md",
       "frozen_tag": "LW1-frozen",
       "approved_by": "the assistant under the creator's permissions ('do not ask for permissions from me just go'); council round 74 (GPT 96%, DeepSeek ~75%, Gemini 95% for a wider design)",
-      "status": "running on the cloud, launched 10:37 (7 November); zero checks local (All: PASS)",
+      "status": "done (final 7 November 12:37; tag LW1-done): no harm, no effect, on a knife-edge. Part learning 0.0059 -> 0.0165 (+0.0107 [+0.0072, +0.0146]); co-primary +0.0070 [-0.0001, +0.0140] (GPT +0.0002, Gemini +0.0001 with their own draws; the bootstrap's noise, recompute/mc_check_lw1.py); made by a non-inventor 1 -> 0; not adopted",
       "run": 42387280021,
       "zero": "local (zero_local.log; skip_zero=local)",
       "next_step": "fetch, analyse_lw1.py, recompute (lw1_counts.csv), findings; a supported reading goes to a confirmatory run",
