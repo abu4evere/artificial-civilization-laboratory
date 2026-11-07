@@ -1,0 +1,36 @@
+diff --git a/experiments/NV14_nature_v14/code_v14/acl/config.py b/experiments/NV15_nature_v15/code_v15/acl/config.py
+index ab227cd4..da06b8bb 100644
+--- a/experiments/NV14_nature_v14/code_v14/acl/config.py
++++ b/experiments/NV15_nature_v15/code_v15/acl/config.py
+@@ -148,6 +148,10 @@ class Config:
+     fix_name_ties: int = 1             # NV14 (FF3's F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
+                                        # drops its least valued and several share that value, the one dropped is drawn
+                                        # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
++    child_make: int = 1                # NV15 (CI1 and CI1-C's LG): 1 = children aged 3 and over are offered the make
++                                       # option (make again a recipe they know, by the same rule as the grown, heat
++                                       # recipes too when at a fire); setting things down, holding food in the fire
++                                       # and filling stay for the grown; 0 = v14
+     loved_location: str = "current"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
+                                        # "last_seen" = toward where the person last had them in sight
+     corner_block: int = 0              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
+diff --git a/experiments/NV14_nature_v14/code_v14/acl/mind.py b/experiments/NV15_nature_v15/code_v15/acl/mind.py
+index ccce5479..accea04d 100644
+--- a/experiments/NV14_nature_v14/code_v14/acl/mind.py
++++ b/experiments/NV15_nature_v15/code_v15/acl/mind.py
+@@ -285,7 +285,7 @@ def decide(world, p: Person) -> tuple:
+             u = (0.04 + 0.3 * g["curiosity"] * (1.0 - hunger)) * (1.6 if st == "child" else 1.0)
+             add("play", None, u)
+ 
+-    if grown:
++    if grown or (c.child_make and not toddler):          # NV15 (LG): children 3+ are offered the make option too
+         # Make again something that has proved its worth.
+         best, best_u = None, 0.05
+         fire_here = world.tile(p.loc).fire > 0
+@@ -320,6 +320,7 @@ def decide(world, p: Person) -> tuple:
+         if best is not None:
+             add("make", best, best_u)
+ 
++    if grown:
+         # Set something down here, if leaving such things has gone well before.
+         put = _best_put(world, p, need + dep_need, hunger, season, c)
+         if put is not None:

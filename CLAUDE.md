@@ -74,10 +74,10 @@ Bob matters more to the creator than civilization for its own sake. No LLMs insi
   (the creator, 1 November 2026: "Now u can use pc at max capacity cuz i am not working its all your own just lmk what is
   happening through telegram"), local runs may use full speed, up to 4 at once (`research/state.json` budgets); report
   through Telegram. The careful setting returns when they are back.
-- **Tests:** `python -m pytest -q tests` (69 pass on nature v14, live since 6 November 2026 (night): when a full memory
-  drops its least valued and several tie, the one dropped is now drawn evenly instead of by name (FF3;
-  `experiments/NV14_nature_v14/findings.md`); v13 = FF2's three hunt, carry and water fixes, 3 November; v12 = FF1's
-  fixes; v11 = handing made things). New studies use `code_v14`; earlier findings stay their version's.
+- **Tests:** `python -m pytest -q tests` (70 pass on nature v15, live since 6 November 2026 (evening): children aged 3
+  and over may make again what they know (CI1 and CI1-C; `experiments/NV15_nature_v15/findings.md`); v14 = memory ties
+  drawn evenly instead of by name (FF3), 6 November; v13 = FF2's three hunt, carry and water fixes, 3 November;
+  v12 = FF1's fixes; v11 = handing made things). New studies use `code_v15`; earlier findings stay their version's.
   findings stay their version's.
 
 ## Sleep mode (autonomous since 27 October 2026)

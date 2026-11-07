@@ -1,0 +1,11 @@
+seed 11, 5 years: code_v15 with child_make 0 = code_v14 (world and random stream): yes
+seed 501, 5 years: code_v15 with child_make 0 = code_v14 (world and random stream): yes
+seed 501, 20 years: code_v15 with child_make 0 = code_v14 (world and random stream): yes
+seed 601, 20 years: code_v15 with child_make 0 = code_v14 (world and random stream): yes
+seed 501, 20 years, CI1-C's set-up: v15 = CI1-C's arm g (code_ci1, child_make 1, held_aim 0), world and random stream: yes
+seed 501, 20 years: the live package with its own defaults = v15: yes
+seed 601, 20 years, CI1-C's set-up: v15 = CI1-C's arm g (code_ci1, child_make 1, held_aim 0), world and random stream: yes
+seed 601, 20 years: the live package with its own defaults = v15: yes
+seed 501, 20 years: the law changes the world (it acts): yes
+v15, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

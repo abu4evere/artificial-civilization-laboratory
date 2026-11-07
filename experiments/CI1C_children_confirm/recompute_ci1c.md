@@ -45,3 +45,6 @@ result "does not establish that the law produces broader cultural transmission" 
 
 These come from its working, not a finished reply, and are not counted as a recompute. Its reply will be appended
 when it comes.
+
+**Appended 21:15:** DeepSeek's chat page (d82b802a) froze on every reload, so its finished reply, if any, was not
+read. The recompute rests on GPT and Gemini, each with code, as for FF3.

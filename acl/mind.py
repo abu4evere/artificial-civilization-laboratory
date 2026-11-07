@@ -285,7 +285,7 @@ def decide(world, p: Person) -> tuple:
             u = (0.04 + 0.3 * g["curiosity"] * (1.0 - hunger)) * (1.6 if st == "child" else 1.0)
             add("play", None, u)
 
-    if grown:
+    if grown or (c.child_make and not toddler):          # NV15 (LG): children 3+ are offered the make option too
         # Make again something that has proved its worth.
         best, best_u = None, 0.05
         fire_here = world.tile(p.loc).fire > 0
@@ -320,6 +320,7 @@ def decide(world, p: Person) -> tuple:
         if best is not None:
             add("make", best, best_u)
 
+    if grown:
         # Set something down here, if leaving such things has gone well before.
         put = _best_put(world, p, need + dep_need, hunger, season, c)
         if put is not None:

@@ -1,15 +1,16 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-06T19:21:00",
+  "updated": "2026-11-06T21:36:00",
   "nature": {
-    "live": "v14",
-    "acl_fingerprint": "0e69752c332da9cd28bc92cb1f1d65ea6551a673450f032e4b14ee60fde0d2aa",
-    "frozen_copy": "experiments/NV14_nature_v14/code_v14",
-    "frozen_copy_fingerprint": "84b542370e2a919f893f632b338080a5dbb043f5b495f71c2d2534092c2aab3c",
+    "live": "v15",
+    "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
+    "frozen_copy": "experiments/NV15_nature_v15/code_v15",
+    "frozen_copy_fingerprint": "3d46cd2c1cd2c514d37ec73072c5097854d26270e6ab6fd3da6ab7606b4eb89f",
     "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
     "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek",
     "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek",
-    "note_v14": "adopted 6 November 2026 (night): FF3 fault fix (memory ties drawn evenly instead of settled by name, F9), no harm, recomputed by GPT (code) and DeepSeek (points; its intervals approximate); Gemini failed to answer three times"
+    "note_v14": "adopted 6 November 2026 (night): FF3 fault fix (memory ties drawn evenly instead of settled by name, F9), no harm, recomputed by GPT (code) and DeepSeek (points; its intervals approximate); Gemini failed to answer three times",
+    "note_v15": "adopted 6 November 2026 (evening) by the safe path for a new law: CI1 supported LG (children 3+ offered the make option), CI1-C confirmed it on new seeds, blind recomputes by GPT and Gemini (code) matched both, council round 71 (GPT 99%, Gemini 100%, DeepSeek ~94%; the assistant 92%); zero checks pass; 70 tests"
   },
   "objectives": [
     "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
@@ -466,11 +467,11 @@
       "plan": "experiments/CI1C_children_confirm/questions.md",
       "frozen_tag": "CI1C-frozen",
       "approved_by": "the assistant under the creator's 2 November permission; round 69 unanimous on LG alone (GPT 85%, Gemini 95%, DeepSeek about 92%; the assistant 80%)",
-      "status": "running on the cloud with its own zero checks, launched 16:39 (6 November)",
+      "status": "done (final 6 November 19:29; tag CI1C-done): CONFIRMED (+0.0221 [+0.0166, +0.0283]; LG - sham +0.0218; no guard); adopted as nature v15 (NV15, tag nature-v15)",
       "run": 42298530869,
-      "zero": "cloud (skip_zero=no)",
-      "next_step": "save zero_cloud.log, fetch, analyse (analyse_ci1c.py), blind recompute by GPT, Gemini and DeepSeek; if confirmed, the adoption council and the safe path to v15 (code_v15 = v14 + child_make 1)",
-      "recompute": null
+      "zero": "cloud (skip_zero=no; zero_cloud.log, All: PASS, fingerprint e0ccbf07)",
+      "next_step": "none (done). Next: HR1 (hunting calibrated to evidence; round 70) on v15; the spread of new kinds (0 of about 11,500 made by anyone but the inventor) is the next wall for Bob",
+      "recompute": "recompute_ci1c.md: GPT (code) and Gemini (code) match; DeepSeek's page froze, not read"
     }
   ],
   "queue_after": [

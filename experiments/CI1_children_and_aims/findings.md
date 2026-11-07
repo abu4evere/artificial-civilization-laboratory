@@ -85,3 +85,13 @@ to confirmation is the council's choice on this frozen data (round 69).
 - The co-primary counts holding the **complete set**, not making again. Making again is described, because it is rare.
 - Seeds 24001–24032 are used here only. The confirmation must use new seeds.
 - Heat crafts stay out of children's reach (they need the grown block); a possible LG2.
+
+## Correction (6 November 2026, 21:15): heat recipes were within children's reach
+The "Limits" line above says heat crafts stay out of children's reach. **That is wrong.**
+- The make option offers a heat-verb recipe to anyone at a fire (`mind.decide`), and `actions._make` crafts it by
+  holding the part in the fire.
+- So under LG, children aged 3 and over at a fire could make heat recipes. What stayed for the grown is the separate
+  option of holding *food* in the fire (`_heat_food`), along with put and fill.
+- The claim came from council round 68 and the plan's "Known limits", unchecked against the code.
+- **No result changes:** the study tested the code as it is. Found during round 71
+  (`docs/debate_round71_adoption_v15_2026-11-06.md`).

@@ -148,6 +148,10 @@ class Config:
     fix_name_ties: int = 1             # NV14 (FF3's F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
                                        # drops its least valued and several share that value, the one dropped is drawn
                                        # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
+    child_make: int = 1                # NV15 (CI1 and CI1-C's LG): 1 = children aged 3 and over are offered the make
+                                       # option (make again a recipe they know, by the same rule as the grown, heat
+                                       # recipes too when at a fire); setting things down, holding food in the fire
+                                       # and filling stay for the grown; 0 = v14
     loved_location: str = "last_seen"    # LK1: "current" = an absent loved one pulls toward where they are now (A5);
                                        # "last_seen" = toward where the person last had them in sight
     corner_block: int = 1              # NV2 (A1): 1 = water touching only at a corner blocks a diagonal step
