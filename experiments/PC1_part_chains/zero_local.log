@@ -1,0 +1,7 @@
+seed 501, 20 years: observer read-only (world and random stream): yes; tree check mismatches 0; part lessons taken without a matching learn event 0 (of 82); failed-on-part lessons observed 734: yes; {'failed_rows': 734, 'kinds': 743, 'lessons': {'declined': 3859, 'knew': 2840, 'missing_part': 734, 'taken': 687}, 'part_taken': 82, 'part_taken_mismatch': 0, 'tree_mismatch': 0}
+seed 601, 60 years: observer read-only (world and random stream): yes; tree check mismatches 0; part lessons taken without a matching learn event 0 (of 292); failed-on-part lessons observed 3077: yes; {'failed_rows': 3077, 'kinds': 1398, 'lessons': {'declined': 13957, 'knew': 8283, 'missing_part': 3077, 'taken': 2018}, 'part_taken': 292, 'part_taken_mismatch': 0, 'tree_mismatch': 0}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v15 fingerprint: 3d46cd2c1cd2c514d37ec73072c5097854d26270e6ab6fd3da6ab7606b4eb89f
+All: PASS
+
+EXIT 0
