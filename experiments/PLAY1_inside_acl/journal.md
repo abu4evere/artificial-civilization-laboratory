@@ -66,3 +66,21 @@ weighed list). One choice is one week. Everyone else lives by their own minds.
 - **Limit 2 is not a plain fault.** The steal rule is from the first commit; its comment is "hunger, without kindness or
   love to hold you back". Its "not a child" check gates the actor, as attack and flee do. No record says children were
   meant to be off-limits, and a ban would write a moral norm into nature.
+
+## Week 2109 and a side look at making (7 November 2026, afternoon)
+- **Week 2109:** I talked with Gubo (6). We passed stories (Kenon's attack on me, which he already knew) and vouched
+  for someone. There was no making lesson, and I could not choose one.
+  - What I carried: a cord and a stone tool.
+  - What I knew: 12 recipes, including a binding chain 5 levels deep.
+  - What I was offered to make: only the clay pot. Every deeper thing needs a made part I did not hold.
+- **A side look, not data** (`explore_making.py`; one world, seed 7, week 2110, 42 living people). For every recipe a
+  living person knows, what stands between them and making it now:
+  - **recipes others invented (299):** 91 can be made now (55 of them valued above 0.05); 147 are short of a raw
+    material; 61 lack a made part;
+  - **recipes they invented themselves (90):** **86 lack a made part in hand** (72 valued), and 4 are short of a raw
+    material. None can be made now.
+- **What it suggests for the council:** after LW1 ("knowing is not making"), the next wall looks like holding the
+  made parts.
+  - Old, shallow kinds spread and get made by others.
+  - Deep new kinds stall even for their inventors, because the parts must be made first, then kept, then bound.
+  - This agrees with RF1 (pursuit fails; pieces lost or used). A frozen study must check it.
