@@ -1,0 +1,7 @@
+seed 501, 20 years: observer read-only (world and random stream): yes; offer replica misses 0 of 8120 lessons; taken lessons without a matching learn event 0 (of 687); {'kinds': 790, 'learned_other': 2075, 'offer_miss': 0, 'shown': 8120, 'taken': 687, 'taken_mismatch': 0, 'top_lessons': 8120}
+seed 601, 60 years: observer read-only (world and random stream): yes; offer replica misses 0 of 27543 lessons; taken lessons without a matching learn event 0 (of 2061); {'kinds': 1480, 'learned_other': 5946, 'offer_miss': 0, 'shown': 27543, 'taken': 2061, 'taken_mismatch': 0, 'top_lessons': 27543}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v15 fingerprint: 3d46cd2c1cd2c514d37ec73072c5097854d26270e6ab6fd3da6ab7606b4eb89f
+All: PASS
+
+EXIT 0
