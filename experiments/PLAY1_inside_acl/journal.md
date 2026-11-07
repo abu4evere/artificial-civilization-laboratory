@@ -23,6 +23,11 @@ weighed list). One choice is one week. Everyone else lives by their own minds.
 | 2090 | food 9.7 | forage; care for a neighbour's child; talk; make | **make a fiber cord** | a cord with 34 uses: flexible 90, holds 70, warmth 24, floats 22, burns 50 |
 | 2091 | food fine | forage; make **a clay pot**; steal Kenon (he came near) | make the pot | soft clay pot, 30 uses: holds 60, plastic 80 (unfired) |
 | 2092 | carrying a cord and a pot | **give** (hand a made thing) to my children, neighbours and Boushous; care; rest | give to Boushous | **handed him the pot. I chose the person, the world chose the thing** |
+| 2093 | **health 36** (from 68): no food in the gift week (14 health a week lost with no food at all) | forage (2.40); join; care | forage | 31.5 food |
+| 2094 | food 19.3; Shazon (3) at health 59 | forage; **care for Shazon** (1.00); rest | care for Shazon | her health 59 → 64. A story told me: "Kenon attacked Seimougaim", from before I took over ("known") |
+| 2095 | food 11.3 | forage | forage | 11.8 food; Letourei repaid 4.5 again |
+| 2096–2108 | **her own mind for one season (13 weeks), the player only watching** | | (her own) | foraged 6 times; cared for her own mother; **found Meihe and gave him 14 food**; gave Yuteikoum 14; her 12-year-old cared for her twice; she puzzled over something and tested a belief |
+| 2109 | after the season | | | **her health 70 (from 39), 27.7 food; Gubo 100, Shazon 87, Motone 100, Meihe 100** |
 
 ## Limits found from inside (for the council; each to check in code before it counts)
 1. **Fatigue gates food.** An option is dropped when energy is below its cost: forage 25, explore 30, join 20, plus 4
@@ -47,3 +52,5 @@ weighed list). One choice is one week. Everyone else lives by their own minds.
 12. **A pot cannot keep food.** I made a clay pot (holds 60), but containers hold only water or embers. There is no option to store food in it for my children's lean weeks (the affordance audit's limit).
 13. **Giving a thing: I choose whom, not what.** `hand_pick` chose the pot over the cord.
 14. **Tools wear out quietly.** My one made thing was used up within weeks. I had to notice it myself, and then make again.
+15. **Her own mind kept the family alive better than I did.** In 13 weeks it foraged 6 times and the family recovered (her health 39 → 70; the youngest 64 → 87). My human-style weeks (caring for a stranger, stealing, crafting, a gift trip) each cost a foraging week, and in this world a skipped forage week costs up to 14 health. **The world's margins are thin:** any week not spent on food is dangerous for a lone parent, which leaves little room for making, teaching or exploring. Is the margin right? That is FP1's question, seen from inside.
+16. **She did find her partner on her own,** by her own mind's pull (`join` toward loved ones, NV2's last-seen rule), and gave him food. The partner did not seek out his starving family.
