@@ -42,3 +42,62 @@ adult's need (1 food = one adult-day). **A source suggests; only a frozen study 
    - **Reference:** Kaplan et al.'s net production curves and the 60% hunted share. Their exact values must be read
      from the paper before freezing, which needs the creator's OK to download it, or another open copy.
    - **Use:** decide which side is off, foraging, hunting or the action budget, before any calibration is frozen.
+
+## Kaplan et al. 2000, read in full (6 November 2026, 22:47; downloaded with the creator's OK)
+**Read: the full text, extracted from the PDF.** The file is kept locally, not committed:
+`research/local/sources/Kaplan_etal_2000_LHEvolution.pdf`. The figures were not seen as images, only their captions.
+The search-summary figures above are **confirmed**:
+- Aché men 5,590 kcal a day and Hiwi men 3,489 (Table 2);
+- Hadza per-capita consumption about 3,400. The text says this is "probably" unrealistically high, because the camps had
+  more young consumers than the life table implies.
+
+**Table 2: adult daily production (kcal), men / women:**
+| society | men | women |
+|---|---|---|
+| Onge | 4,000 | 1,021 |
+| Anbarra | 2,742 | 1,174 |
+| Arnhem | 4,578 | 2,012 |
+| Aché | 5,590 | 1,055 |
+| Nukak | 4,556 | 2,988 |
+| Hiwi | 3,489 | 916 |
+| !Kung (Lee) | 3,221 | 3,864 |
+| Gwi | 2,412 | 3,200 |
+| Hadza | 8,089 | 4,397 |
+
+Men's share of total adult calories is 43–84%.
+
+**Table 3: diet.**
+- Calories per person-day, all ages counted as equal consumers: Onge 1,243; Anbarra 1,085; Arnhem 2,357; Aché 2,712;
+  Nukak 1,886; Hiwi 1,793; !Kung 2,355; Hadza 4,030 (flagged as high).
+- **Hunted share of the diet:** 26.0–78.0% over ten societies, median 68.7% (the assistant's arithmetic). This
+  confirms the about-60% figure as a central value.
+
+**The text:**
+- "No children in any forager society produced as much as they consumed until they reached their mid- to late teens."
+- By 15 they had eaten over 25% of their lifetime energy but acquired under 5% of it.
+- Adult men provide most of the surplus.
+- A standard consumer of 1 is a young adult; children start at 0.3.
+
+**The assistant's arithmetic** (a script; production ÷ per-capita intake, where per-capita counts children as full
+consumers, so an adult's own intake is higher and these ratios run high):
+| society | men's production ÷ per-capita intake | women's | per-capita intake (kcal/day) |
+|---|---|---|---|
+| Onge | 3.22 | 0.82 | 1,243 |
+| Anbarra | 2.53 | 1.08 | 1,085 |
+| Arnhem | 1.94 | 0.85 | 2,357 |
+| Ache | 2.06 | 0.39 | 2,712 |
+| Nukak | 2.42 | 1.58 | 1,886 |
+| Hiwi | 1.95 | 0.51 | 1,793 |
+| !Kung1 | 1.37 | 1.64 | 2,355 |
+| Hadza | 2.01 | 1.09 | 4,030 |
+
+Men's ratios run 1.37–3.22, and women's 0.39–1.64.
+
+**For FP1:**
+- The comparison in **shape** is now fixed from a source read in full:
+  - production is below need until the mid-to-late teens;
+  - grown men produce well above their need;
+  - women produce at about or below it;
+  - most energy is hunted (26–78%).
+- For the comparison in **level**, FP1 should report ACL's production ÷ need over all weeks by age and sex beside
+  these ratios, without a pass/fail band (round 72).
