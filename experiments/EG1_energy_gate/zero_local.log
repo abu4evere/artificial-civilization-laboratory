@@ -1,0 +1,8 @@
+seed 501, 20 years: code_eg1 with no log = code_v15 (world and random stream): yes; with the log on = code_v15: yes
+seed 601, 60 years: code_eg1 with no log = code_v15 (world and random stream): yes; with the log on = code_v15: yes
+seed 701, 30 years: hook check (forage and hunt offered exactly when the log predicts, every person-week aged 6+): yes; {'c': 1912, 'check': {'energy_mismatch': 0, 'forage_mismatch': 0, 'hunt_mismatch': 0, 'weeks': 122823}, 'd': 54, 'weeks': 122823}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+costs in code_eg1 (forage, hunt, a tile): [25, 40, 4]: match the observer's yes
+code_eg1 fingerprint: 7334081948f01355da4c618b411157a7f05adbed502f7b41f1f9ba5cbea1262c
+All: PASS
+
