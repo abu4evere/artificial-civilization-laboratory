@@ -68,3 +68,31 @@ FF2 is adopted (F8 fixed: the hunt decision expects the meat of the prey it sees
 - **Open question 4 (is foraging too generous?) stays the first thing to settle.** If foraging is off, calibrating
   hunting alone moves the wrong side. A forage-week of 20.77 food is about 3 weeks of an adult's need.
 - **Base:** the nature live when HR1 is frozen (v15 if CI1-C confirms and it is adopted).
+
+## Added after FP1 (7 November 2026, 06:4x): the gap in ACL's own unit (a proposal for the unit conversion, not frozen)
+**ACL v15, from FP1's 32 worlds** (a script on FP1's outputs):
+- 2,092 hunts, 99 successful (**4.73%**);
+- **9.24 food per success**;
+- **0.437 food per hunt-week**;
+- 17.50 food per forage-week (all ages);
+- hunting ÷ foraging per week = **0.025**. HN1 measured 0.023 on v11, so nothing has moved.
+
+**The evidence in ACL's unit** (Kaplan et al. 2000, Table 2, read in full: men's daily meat production in kcal; a
+script). ACL's unit is one adult-day's need. An adult-day is taken as 2,500–3,400 kcal; that range is an
+assumption, to be fixed from a source before freezing. Men's meat per man-week, in ACL food units:
+- Hadza 14.9–20.3; Aché 10.2–13.9; Arnhem 9.4–12.8; Onge 8.1–11.0; Hiwi 6.6–9.0; Nukak 6.3–8.6; !Kung 4.6–6.3;
+  Gwi 3.3–4.5.
+- So **a forager man's meat week is worth roughly 3–20 ACL food units, against ACL's 0.44 per hunt-week: about 10–45
+  times more.** It is the same order as an ACL foraging week (17.5).
+- These are averages over all days, including days without hunting. So per hunting week the evidence is higher still.
+
+**What this suggests (for the council, nothing decided):**
+1. **The size of a success.** At the Hadza's about 21% large-game success per hunter-week, 10–20 food a week needs
+   about 50–100 food per success. That is the order of ACL's bison (55), not its rabbits (3 each; 9.2 per success on
+   average).
+   - So the calibration may be the **mix and size of prey taken** as much as the success chance.
+   - Which prey a success yields today follows `take_prey`: a random herd on the tile. Small game dominates.
+2. **Children's foraging (FP1):** children reach their need at 8–11 against the mid-to-late teens. It is a separate
+   calibration, with its own evidence (Kaplan's Figure 2 and text; Hadza children forage more than Aché children).
+3. **A unit source** for "1 food = an adult-day" in kcal is needed before freezing: for example, adult energy needs in
+   forager studies (Pontzer et al. 2012 on the Hadza, not yet read).
