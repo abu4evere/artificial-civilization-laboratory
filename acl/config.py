@@ -148,6 +148,9 @@ class Config:
     fix_name_ties: int = 1             # NV14 (FF3's F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
                                        # drops its least valued and several share that value, the one dropped is drawn
                                        # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
+    fix_affordable_target: int = 1     # NV16 (FF4): 1 = forage, hunt and gather are offered at the best target the
+                                       # person can afford when the best one is too far (0 = v15: the whole action was
+                                       # dropped)
     child_make: int = 1                # NV15 (CI1 and CI1-C's LG): 1 = children aged 3 and over are offered the make
                                        # option (make again a recipe they know, by the same rule as the grown, heat
                                        # recipes too when at a fire); setting things down, holding food in the fire

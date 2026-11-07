@@ -2,15 +2,16 @@
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
   "updated": "2026-11-07T10:38:00",
   "nature": {
-    "live": "v15",
-    "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
-    "frozen_copy": "experiments/NV15_nature_v15/code_v15",
-    "frozen_copy_fingerprint": "3d46cd2c1cd2c514d37ec73072c5097854d26270e6ab6fd3da6ab7606b4eb89f",
+    "live": "v16",
+    "acl_fingerprint": "a6560695a88396a77e673d5bb6b4c0578197ac6b93af0804de60c92ba4a58f82",
+    "frozen_copy": "experiments/NV16_nature_v16/code_v16",
+    "frozen_copy_fingerprint": "9388f16ef24e3216691a306ee77254065d9957c901a77344805c7c702c858300",
     "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
     "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek",
     "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek",
     "note_v14": "adopted 6 November 2026 (night): FF3 fault fix (memory ties drawn evenly instead of settled by name, F9), no harm, recomputed by GPT (code) and DeepSeek (points; its intervals approximate); Gemini failed to answer three times",
-    "note_v15": "adopted 6 November 2026 (evening) by the safe path for a new law: CI1 supported LG (children 3+ offered the make option), CI1-C confirmed it on new seeds, blind recomputes by GPT and Gemini (code) matched both, council round 71 (GPT 99%, Gemini 100%, DeepSeek ~94%; the assistant 92%); zero checks pass; 70 tests"
+    "note_v15": "adopted 6 November 2026 (evening) by the safe path for a new law: CI1 supported LG (children 3+ offered the make option), CI1-C confirmed it on new seeds, blind recomputes by GPT and Gemini (code) matched both, council round 71 (GPT 99%, Gemini 100%, DeepSeek ~94%; the assistant 92%); zero checks pass; 70 tests",
+    "note_v16": "adopted 7 November 2026 by the assistant by the safe path (fault fix: FF4 no harm; GPT and Gemini recompute matched; council round 77: GPT 98%, Gemini 100%, DeepSeek ~94%); zero checks All: PASS; 71 tests pass; tag nature-v16; v15 kept in experiments/NV15_nature_v15/code_v15"
   },
   "objectives": [
     "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",

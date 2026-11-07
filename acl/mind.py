@@ -216,6 +216,7 @@ def decide(world, p: Person) -> tuple:
     if not small:
         rate = forage_rate(world, p)
         best, best_u, best_d = None, -1.0, 0
+        aff, aff_u, aff_d = None, -1.0, 0       # NV16 (FF4): the best target this person can afford
         for t in tiles:
             d = distance(p.loc, t, w, h)
             tile = world.tile(t)
@@ -223,7 +224,13 @@ def decide(world, p: Person) -> tuple:
             u = (0.25 + 1.6 * food_hunger) * min(1.0, got / (need * 1.5)) + 0.08 * g["diligence"]
             if u > best_u:
                 best, best_u, best_d = t, u, d
-        add("forage", best, best_u, best_d)
+            if u > aff_u and p.energy >= COST["forage"] + MOVE_COST * d:
+                aff, aff_u, aff_d = t, u, d
+        if c.fix_affordable_target and p.energy < COST["forage"] + MOVE_COST * best_d:
+            if aff is not None:
+                add("forage", aff, aff_u, aff_d)
+        else:
+            add("forage", best, best_u, best_d)
         best_forage = best_u
 
     if grown:
@@ -231,6 +238,7 @@ def decide(world, p: Person) -> tuple:
         _, tool = best_item(p, "hunt")
         best, best_u, best_d = None, -1.0, 0
         best_n = 1.0
+        aff, aff_u, aff_d, aff_n = None, -1.0, 0, 1.0       # NV16 (FF4): the best target this person can afford
         for t in tiles:
             tile = world.tile(t)
             if fauna.prey_here(world, t) < 1 or tile.fire > 0:
@@ -251,6 +259,11 @@ def decide(world, p: Person) -> tuple:
             if u > best_u:
                 best, best_u, best_d = t, u, d
                 best_n = n
+            if u > aff_u and p.energy >= COST["hunt"] + MOVE_COST * d:
+                aff, aff_u, aff_d, aff_n = t, u, d, n
+        if (c.fix_affordable_target and best is not None
+                and p.energy < COST["hunt"] + MOVE_COST * best_d):
+            best, best_u, best_d, best_n = aff, aff_u, aff_d, aff_n
         if best is not None:
             add("hunt", best, best_u, best_d)
             log = getattr(world, "ff2log", None)    # FF2 logging (runner sets it; not saved; read by nothing here)
@@ -264,6 +277,7 @@ def decide(world, p: Person) -> tuple:
         if p.mat_total() < c.material_limit:
             want = _material_wants(p, season)
             best, best_u, best_d = None, 0.0, 0
+            aff, aff_u, aff_d = None, 0.0, 0     # NV16 (FF4): the best target this person can afford
             for kind in GATHERABLE + (("earth",) if c.digging else ()):
                 wk = c.worth_weight * want.get(kind, 0.0) + 0.03 + 0.08 * g["curiosity"]
                 if f"handled:{kind}" not in p.expect:
@@ -276,6 +290,11 @@ def decide(world, p: Person) -> tuple:
                     u = wk * (1.0 - 0.7 * hunger) * min(1.0, stock / 3.0) * (1.0 - 0.1 * d)
                     if u > best_u:
                         best, best_u, best_d = (t, kind), u, d
+                    if u > aff_u and p.energy >= COST["gather"] + MOVE_COST * d:
+                        aff, aff_u, aff_d = (t, kind), u, d
+            if (c.fix_affordable_target and best is not None
+                    and p.energy < COST["gather"] + MOVE_COST * best_d):
+                best, best_u, best_d = aff, aff_u, aff_d
             if best is not None:
                 add("gather", best, best_u, best_d)
 

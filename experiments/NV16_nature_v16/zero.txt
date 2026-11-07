@@ -1,0 +1,12 @@
+seed 11, 5 years: code_v16 with fix_affordable_target 0 = code_v15 (world and random stream): yes
+seed 501, 5 years: code_v16 with fix_affordable_target 0 = code_v15 (world and random stream): yes
+seed 501, 20 years: code_v16 with fix_affordable_target 0 = code_v15 (world and random stream): yes
+seed 601, 20 years: code_v16 with fix_affordable_target 0 = code_v15 (world and random stream): yes
+seed 501, 20 years, FF4's set-up: v16 = FF4's arm f (code_ff4, fix_affordable_target 1), world and random stream: yes
+seed 501, 20 years: the live package with its own defaults = v16: yes
+seed 601, 20 years, FF4's set-up: v16 = FF4's arm f (code_ff4, fix_affordable_target 1), world and random stream: yes
+seed 601, 20 years: the live package with its own defaults = v16: yes
+seed 501, 20 years: the fix changes the world (it acts): yes
+v16, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS
+
