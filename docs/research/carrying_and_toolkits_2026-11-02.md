@@ -36,3 +36,38 @@ things (`item_limit`). This note gathers what bears on it. **A source suggests; 
 ## Sources
 - [Kuhn 1994 (Crossref)](https://api.crossref.org/works?query.bibliographic=Kuhn+mobile+toolkits+design+assembly+American+Antiquity)
 - [Kline & Boyd 2010 (Europe PMC)](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Population%20size%20predicts%20technological%20complexity%20in%20Oceania%22&format=json&resultType=core)
+
+## Addendum (7 November 2026): a real count of one person's carried kit
+**Chlachula D, Marko A-M, Moník M, Cristiani E, … Novák M (2025).** Tracking the Hunter: A Study of the Personal Gear
+of a Gravettian Hunter-Gatherer from Milovice IV. *Journal of Paleolithic Archaeology* 8: 24.
+doi 10.1007/s41982-025-00228-z (open access).
+
+**What was read:**
+- **Word for word**, through a web-fetch agent: the abstract, introduction, background and the first part of the
+  methods.
+- **Only as machine summaries** (unverified): the results and discussion.
+
+**Read word for word:**
+- **The find.** A cluster of **29 blades and bladelets**, some retouched and some not, found in 2021 at Milovice IV
+  (Moravia). It is dated to 30,250–29,550 cal BP.
+- **Why it is one person's kit.** The authors judge it a **personal toolkit carried on hunting trips** from the tight
+  packing and the aligned pieces. They think it was probably bundled in a case of perishable material.
+- **How it was used.** It was maintained regularly and sometimes modified. The use of small and broken pieces points to
+  thrifty use when stone was scarce on trips.
+- **What it was for.** The abstract names cutting, scraping and drilling, and a substantial share of pieces with
+  projectile fractures.
+
+**From summaries only** (treat as unverified):
+- 18 pieces are retouched and only 10 are complete.
+- Wear traces are on 25 of 29 pieces.
+- Most of the stone came from more than 130 km away.
+- Small broken parts and spalls were kept and reused. The phrase used is "stored as reserve components".
+
+**Bearing on ACL** (the assistant's reading):
+- **One real person's carried kit held about 29 small made pieces.** ACL's people carry **3 made things** of any kind.
+  The evidence is a single find, but it is a concrete count, an order of magnitude above 3.
+- **The pieces are small,** so this fits Kuhn's frame: carrying is limited by size and weight, not by a count.
+  It also fits the curation note (`curation_and_parts_2026-11-07.md`): people keep parts, sometimes as reserves.
+- **This bears directly on MP1** (where made parts go). If MP1 finds parts dropped at the carry limit, this is the
+  evidence the council would weigh next: a carry limit by size or weight, from the things' own properties, not a
+  higher count.
