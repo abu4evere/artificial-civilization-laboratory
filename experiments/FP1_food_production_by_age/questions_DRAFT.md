@@ -42,3 +42,30 @@ from search summaries; its PDF is a file download, and the creator has been aske
 ## Prior (the assistant)
 Prime adults' production ÷ need over all weeks is about 1–2. Foraging per active week is high, but people forage few
 weeks. Hunting's share is under 1%. The gap is mostly hunting, about 70%.
+
+## Code trace for the conservation identity (6 November 2026, after round 72; live = v15)
+**Flows into a person's held food (`food` + `seeds`):**
+- **forage:** `actions._forage`; `got` goes to food and seeds, capped by carry room, with no eating on the spot, so
+  gross = net; event `forage got`;
+- **hunt:** `resolve_hunts`; min(meat ÷ n, carry room); event `hunt meat` with its party;
+- **taking a stash:** own or another's; event `take food`;
+- **theft from a stash:** event `steal ... stash=True`;
+- **theft from a person:** event `steal amount`;
+- **a gift received:** event `give amount`, the receiver being `b`;
+- **inheritance:** event `inherit food`;
+- **being fed by a parent:** inside `biology.body_phase`; no event. The HF4 ledger's `fed_out` gives the parent's side.
+
+**Flows out:**
+- **spoilage:** at the start of `body_phase`; loose food × `spoil_rate` (slower in smoke and for food kept in a fire),
+  seeds × `seed_spoil`; no event;
+- **eaten:** in `body_phase`, `eat_food` + `eat_seeds`, with heated food going further; no event;
+- **feeding dependents;**
+- **setting food down in a stash:** `actions._put`, `p.food -= amount`;
+- **a gift given;**
+- **being stolen from;**
+- **death:** held food goes to the heir or the ground.
+
+**So the observer must read `body_phase` itself**, as a read-only wrapper that records each person's food and seeds
+before and after, split into spoilage, feeding and eating. The other flows come from events. The zero check is that,
+for every person-week, the change in held food equals inflows − outflows, within rounding. The HF4 ledger hook
+(`world.ledger`) already logs need, held food before eating, the deficit and `fed_out`.
