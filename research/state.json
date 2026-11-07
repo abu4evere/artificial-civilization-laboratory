@@ -533,6 +533,24 @@
       "frozen_tag": "EG1-frozen",
       "approved_by": "the assistant under the creator's standing permissions ('you can keep going do not rely on me'); council round 75 after the code facts (GPT 96%, Gemini, DeepSeek ~87%)",
       "status": "done (final 7 November 13:54; tag EG1-done): energy is a minor contributor, P 0.0628 [0.0540, 0.0713] of starving person-weeks; 0.350 of starvation deaths had a blocked week in their last 4; women 30-49 0.119 vs men 0.054; best-tile quirk 0.429 of blocked starving weeks"
+    },
+    {
+      "id": "FF4",
+      "title": "A whole action dropped because one target is too far: a fault fix in a copy of v15",
+      "kind": "fault-fix check in a copy (code_ff4 = v15 + fix_affordable_target; arms v15 / f / sham; seeds 24801-24832)",
+      "plan": "experiments/FF4_affordable_targets/questions.md",
+      "frozen_tag": "FF4-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission; council round 76 (GPT 98%, Gemini 95%, DeepSeek ~92%)",
+      "status": "done (final 7 November 16:57; tag FF4-done): no harm; to adoption as nature v16 by the safe path"
+    },
+    {
+      "id": "MP1",
+      "title": "Where do the made parts of new kinds go? (read-only stage funnel and part fates on v15)",
+      "kind": "read-only (one arm on code_v15; seeds 24901-24932)",
+      "plan": "experiments/MP1_made_parts/questions.md",
+      "frozen_tag": "MP1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 76 (GPT 97%, Gemini 95%, DeepSeek ~90%)",
+      "status": "running on the cloud (run 42412372759)"
     }
   ],
   "queue_after": [
