@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-07T01:05:00",
+  "updated": "2026-11-07T02:41:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -480,11 +480,11 @@
       "plan": "experiments/FP1_food_production_by_age/questions.md",
       "frozen_tag": "FP1-frozen",
       "approved_by": "the assistant under the creator's permissions; round 72 (GPT 97%, Gemini 95%, DeepSeek ~87%; the assistant 90%); the creator OK'd downloading Kaplan et al. 2000",
-      "status": "running on the cloud, launched 23:09 (6 November); zero checks local (All: PASS, 0 conservation breaches)",
+      "status": "done (final 7 November 02:39; tag FP1-done): children reach need at 8-11 (evidence mid-late teens); women out-produce men (1.33 vs 1.10, active more weeks); per active week about 3 x need; hunted share 0.000 (26-78% in foragers); hunting chosen in about 1 of 9,100 grown weeks",
       "run": 42337207529,
       "zero": "local (zero_local.log; skip_zero=local)",
-      "next_step": "fetch, analyse_fp1.py, recompute (fp1_counts.csv; GPT, Gemini, DeepSeek), findings; then the council picks HR1's target",
-      "recompute": null
+      "next_step": "council round on HR1's target from FP1's table (hunting the largest gap; children's foraging a second)",
+      "recompute": "recompute_fp1.md: GPT (code) and Gemini (code) match every point estimate; DeepSeek gave a script, no numbers"
     }
   ],
   "queue_after": [
