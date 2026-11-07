@@ -1,0 +1,7 @@
+seed 501, 20 years: observer read-only (world and random stream): yes; {"check":{"looks":114916,"looks_no_block":11995,"make_mismatch":0},"p3":{"floor":3,"other_won":166},"stages":{"stage_P0a":139,"stage_P0b":37,"stage_P1":150,"stage_P2":22,"stage_P3":6,"stage_P4":24,"stage_P6":59,"stage_P7":88}}
+seed 601, 60 years: observer read-only (world and random stream): yes; {"check":{"looks":477621,"looks_no_block":33816,"make_mismatch":0},"p3":{"floor":4,"other_won":501},"stages":{"stage_P0a":538,"stage_P0b":98,"stage_P1":400,"stage_P2":38,"stage_P3":8,"stage_P4":41,"stage_P6":127,"stage_P7":132}}
+seed 701, 30 years: eligibility check (the make option offered is exactly the one the block's own rule predicts, at every look) and event checks: yes; {'check': {'looks': 107771, 'looks_no_block': 8342, 'make_mismatch': 0}, 'p3': {'other_won': 65}, 'stages': {'stage_P0a': 104, 'stage_P0b': 37, 'stage_P1': 113, 'stage_P2': 21, 'stage_P3': 3, 'stage_P4': 23, 'stage_P6': 52, 'stage_P7': 80}}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v16 fingerprint: 9388f16ef24e3216691a306ee77254065d9957c901a77344805c7c702c858300
+All: PASS
+
