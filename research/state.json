@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-07T02:41:00",
+  "updated": "2026-11-07T02:46:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -485,6 +485,19 @@
       "zero": "local (zero_local.log; skip_zero=local)",
       "next_step": "council round on HR1's target from FP1's table (hunting the largest gap; children's foraging a second)",
       "recompute": "recompute_fp1.md: GPT (code) and Gemini (code) match every point estimate; DeepSeek gave a script, no numbers"
+    },
+    {
+      "id": "SP1",
+      "title": "Where does the spreading of new kinds stop? (read-only funnel on v15)",
+      "kind": "read-only (one arm on code_v15; seeds 24401-24432)",
+      "plan": "experiments/SP1_where_spreading_stops/questions.md",
+      "frozen_tag": "SP1-frozen",
+      "approved_by": "the creator, by Telegram with the listener's code (7 November 00:26)",
+      "status": "running on the cloud, launched 02:45 (7 November); zero checks local (00:54, All: PASS)",
+      "run": 42352592253,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "fetch, analyse_sp1.py, recompute (sp1_counts.csv; GPT, Gemini, DeepSeek), findings",
+      "recompute": null
     }
   ],
   "queue_after": [
