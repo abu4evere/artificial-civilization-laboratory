@@ -69,7 +69,7 @@ FF2 is adopted (F8 fixed: the hunt decision expects the meat of the prey it sees
   hunting alone moves the wrong side. A forage-week of 20.77 food is about 3 weeks of an adult's need.
 - **Base:** the nature live when HR1 is frozen (v15 if CI1-C confirms and it is adopted).
 
-## Added after FP1 (7 November 2026, 06:4x): the gap in ACL's own unit (a proposal for the unit conversion, not frozen)
+## Added after FP1 (7 November 2026, written by 06:37): the gap in ACL's own unit (a proposal for the unit conversion, not frozen)
 **ACL v15, from FP1's 32 worlds** (a script on FP1's outputs):
 - 2,092 hunts, 99 successful (**4.73%**);
 - **9.24 food per success**;
