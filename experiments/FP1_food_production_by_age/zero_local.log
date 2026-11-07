@@ -1,0 +1,7 @@
+seed 501, 20 years: observer read-only (world and random stream): yes; conservation breaches 0 (largest 7.11e-15); {'forage_events': 809737.97, 'forage_flows': 809737.91, 'forage_n': 46928, 'hunt_events': 264.0, 'hunt_flows': 264.0, 'max_residual': 7.105427357601002e-15, 'n_residual': 0}
+seed 601, 60 years: observer read-only (world and random stream): yes; conservation breaches 0 (largest 1.24e-14); {'forage_events': 3410831.01, 'forage_flows': 3410831.64, 'forage_n': 200136, 'hunt_events': 266.0, 'hunt_flows': 266.0, 'max_residual': 1.2434497875801753e-14, 'n_residual': 0}
+seed 701, 30 years: every person-week conserves held food (end - start = recorded flows, within 1e-6): yes; breaches 0, largest 1.24e-14; {'forage_events': 962241.22, 'forage_flows': 962243.03, 'forage_n': 56334, 'hunt_events': 186.5, 'hunt_flows': 186.5, 'max_residual': 1.2434497875801753e-14, 'n_residual': 0}
+seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_v15 fingerprint: 3d46cd2c1cd2c514d37ec73072c5097854d26270e6ab6fd3da6ab7606b4eb89f
+All: PASS
+
