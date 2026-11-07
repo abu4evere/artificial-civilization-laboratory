@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-06T23:10:00",
+  "updated": "2026-11-07T01:05:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -590,5 +590,6 @@
       "note": "docs/research/bob_twelve_capacities_2026-11-02.md",
       "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
     }
-  ]
+  ],
+  "next_step": "FP1: blind recompute (GPT, Gemini, DeepSeek) from recompute/fp1_counts.csv + prompt.txt, then findings.md. SP1 frozen, launch awaits the creator's code."
 }
