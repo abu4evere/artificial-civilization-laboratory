@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-06T21:36:00",
+  "updated": "2026-11-06T21:46:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -497,8 +497,8 @@
     },
     {
       "what": "HR1: calibrate per-species success (F7's table, provenance unknown) and meat per kill to forager evidence (return ratio 0.5-1.5; success per hunter-week as a second check; docs/research/hunting_success_hadza_2026-11-03.md)",
-      "status": "NEXT on the laws road after CI1-C (council round 70 part 2, unanimous): define one ACL hunt; freeze the unit conversion (day / week / encounter) first; drop F7's unused table (provenance unknown) and derive any per-species rate from evidence; one setting per arm; CI1-style harm guards; participation and returns described, never tuned afterwards",
-      "needs": "a frozen plan written from docs/research/hunting_success_hadza_2026-11-03.md and HN1; council on the plan"
+      "status": "NEXT on the laws road, now on v15. Step 0, FP1 (read-only, proposed 6 Nov 21:46; docs/research/forager_production_2026-11-06.md): food acquired per person-week by age, sex and source against need (a net production curve) and the share of adult weeks per action, against Kaplan et al. 2000's curves and the ~60% hunted energy share, to decide which side is off (foraging, hunting or the action budget) before any calibration; then HR1 proper with round 70's conditions",
+      "needs": "Kaplan et al. 2000's exact values (the PDF is a file download: ask the creator, or find an open copy); FP1 plan; council"
     },
     {
       "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
