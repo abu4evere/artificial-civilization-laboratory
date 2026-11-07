@@ -54,3 +54,15 @@ weighed list). One choice is one week. Everyone else lives by their own minds.
 14. **Tools wear out quietly.** My one made thing was used up within weeks. I had to notice it myself, and then make again.
 15. **Her own mind kept the family alive better than I did.** In 13 weeks it foraged 6 times and the family recovered (her health 39 → 70; the youngest 64 → 87). My human-style weeks (caring for a stranger, stealing, crafting, a gift trip) each cost a foraging week, and in this world a skipped forage week costs up to 14 health. **The world's margins are thin:** any week not spent on food is dangerous for a lone parent, which leaves little room for making, teaching or exploring. Is the margin right? That is FP1's question, seen from inside.
 16. **She did find her partner on her own,** by her own mind's pull (`join` toward loved ones, NV2's last-seen rule), and gave him food. The partner did not seek out his starving family.
+
+## Correction (7 November 2026, after checking the code for council round 75)
+- **Limit 12 was overstated.** Containers do help keep food: the carry limit (100 food) is multiplied by 1 + contain
+  (`matter.factor` "carry"; my pot of contain 60 would let me carry 160). Loose food rots 4% a week, a quarter as fast
+  near a fire's smoke (`biology`). What a pot cannot do is slow rot, or hold food once set down. So storage was not what
+  bound me as a lone parent; production was.
+- **Limit 7 needs a qualifier.** Energy recovers 25 a week when fed (12.5 when starving), and a rest week adds 40 more
+  (`actions._rest`). Foraging on one's own tile costs 25, so it is break-even when fed; it runs down only with moves
+  (4 a tile), walks to far water (`weather`), or hunger.
+- **Limit 2 is not a plain fault.** The steal rule is from the first commit; its comment is "hunger, without kindness or
+  love to hold you back". Its "not a child" check gates the actor, as attack and flee do. No record says children were
+  meant to be off-limits, and a ban would write a moral norm into nature.
