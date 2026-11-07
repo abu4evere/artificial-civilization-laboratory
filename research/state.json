@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-07T06:00:00",
+  "updated": "2026-11-07T07:41:00",
   "nature": {
     "live": "v15",
     "acl_fingerprint": "2c95d3236e0828359c15860e21521419e32204b82dbbc5f7ad477dbcfee5e7e4",
@@ -506,11 +506,11 @@
       "plan": "experiments/PC1_part_chains/questions.md",
       "frozen_tag": "PC1-frozen",
       "approved_by": "the assistant under sleep-mode autonomy; council round 73 (GPT 98%, DeepSeek ~93% first; Gemini alongside HR1)",
-      "status": "running on the cloud, launched 05:59 (7 November); zero checks local (All: PASS)",
+      "status": "done (final 7 November 07:40; tag PC1-done): COULD HELP. Teacher knows every missing part in 0.926 of failed lessons; chains 3+ deep in 0.557; the one-level part lesson aims right (0.990) but never helps (0 of 4,359 taken: 0.780 declined, 0.209 deeper part missing)",
       "run": 42366219425,
       "zero": "local (zero_local.log; skip_zero=local)",
-      "next_step": "fetch, analyse_pc1.py, recompute (pc1_counts.csv), findings; then design (b) learner-driven deeper part lessons, or not, by the frozen reading",
-      "recompute": null
+      "next_step": "council: (b) learner-driven part lessons across talks (bottom-up, with a budget) vs (c) the acceptance draw (0.211 per part lesson compounds per level)",
+      "recompute": "recompute_pc1.md: GPT (code) and Gemini (code) match; DeepSeek unfinished, not counted"
     }
   ],
   "queue_after": [
