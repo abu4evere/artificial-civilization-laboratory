@@ -1,0 +1,21 @@
+# Council round 80: the doors package, before the world is frozen (the question, 7 November 2026)
+
+The same text goes to GPT (an ACL council chat, not the main chat, which the creator was using), Gemini (ACL chat) and
+DeepSeek (ACL chat). Their answers are opinions, not sign-off.
+
+The creator's decisions, 7 November 2026 (CLAUDE.md, "Direction"):
+- open the closed doors once;
+- then freeze the world until 7 December;
+- then work almost only on Bob's brain;
+- the doors package goes live **if its frozen test shows no harm**.
+
+Sources:
+- `docs/affordance_audit_2026-11-02.md`;
+- AF1 (`experiments/AF1_open_affordances/findings.md`);
+- code read for this question (live v16):
+  - `acl/matter.py`: `RAW`, `strike`, `bind`, `factor`, `best_item`, `carry_capacity`, `worn_warmth`, `pile_shape`;
+  - `acl/actions.py`: `_craft`, `_play`, `STRIKABLE`, `HARD`;
+  - `acl/config.py`: `item_limit` 3, `material_limit` 20.
+
+## The question (sent as one paragraph)
+Council round 80 (ACL, 7 November 2026). The creator decided a new direction today: 'bug = law' (inside a world a quirk feels like a law, and no one can tell in reasonable time which quirk blocks and which shapes), so: open the world's closed doors once, then freeze the world until a review on 7 December, then work almost only on Bob's brain. The creator also set the bar for the doors package: it goes live if its frozen test shows no harm (CI1's eight guards), as for fault fixes, because the doors only open possibilities and push no outcome. The proposed package, all general laws through the 10 properties (edge reach hard contain warm float tight plastic fuel flex), no named thing, no recipe, no reward; each 0 = v16 exactly: (D1) similar parts, AF1's S as tested on v11: when making a known thing, an input not held may be replaced by a held thing whose 10 properties are each within 10 of the original's; (D2) containers carry, AF1's K: the best container's carry factor (1 + contain/100) also multiplies the made-thing limit (3) and the material limit (20), as it already multiplies the food limit; (D3) made binders: today only raw fiber and hide (flex >= 50) can bind; with D3 any held made thing with flex >= 50 can bind too, its own properties entering bind() where the raw binder's do now, and it is used up like a raw binder; (D4) made hammers: today strike takes a raw target and a raw hammer from stone, flint, bone (hard 80, 70, 50); with D4 any held made thing with hard >= 50 can be the hammer, its own hard setting the force through the existing strike formula, and it is not used up, like a raw hammer; (D5) layers add: today only the single best item counts for each use; with D5, for warmth worn and for carrying only (not for tools of work or fighting), several items combine by the world's own existing law for joining coverings (matter._layer: the bigger counts fully, the smaller half), applied in order from best down. Left out for now: heaps of made things (pile_shape is written by material names; a property-based shelter would need new coefficients, which would be tuning). AF1 found S and K inconclusive on v11 but raised no guard; adults made something about once in 14 years, so the package is not expected to raise making by itself: that is the brain's work. Design: one frozen test in a copy of v16: arms v16 / doors (D1-D5 together) / sham; 32 new paired seeds; 200 years; CI1's eight guards as the only gate; manipulation checks that each door acts (counts of stand-ins, extra items carried, made binders and hammers used, layered warmth and carrying); descriptive: making, new kinds, MP1 stages, remaking. Questions: (a) are D1-D5 general laws and not tuning, and is leaving heaps out right? (b) is any door missing that is a plain general law (for example containers holding food or materials, repair, a made thing as a shaping or heating tool)? (c) should the five go as one package (one gate) or as separate arms? (d) any guard to add for these doors (e.g. carried-item hoarding, fighting with layered items)? (e) your estimate (0-100%) that this test is valid and the reading 'no harm' meaningful. Please answer briefly, point by point.

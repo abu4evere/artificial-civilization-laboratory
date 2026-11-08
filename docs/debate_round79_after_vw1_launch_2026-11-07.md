@@ -67,3 +67,44 @@ improved child welfare."
 - **The shared risk** (GPT, DeepSeek): how often is the father on the child's tile with food to spare? A side look (not
   data) is running on two v16 worlds, exploration seeds 26901–26902
   (`experiments/BF1_both_feed/explore/colocation.py`).
+
+## Follow-up (after the co-location side look)
+The follow-up text: `docs/debate_round79_question_2026-11-07.md`, "Follow-up". The side look (not data; seeds
+26901-26902) found:
+- a living father is on the child's tile in 0.053 of mother-cared child-weeks, 1 tile away in 0.082, and 2+ tiles away
+  in 0.865;
+- the case "father on the tile and the mother short" happens in 0.0010.
+
+It went to Gemini and DeepSeek. **GPT's follow-up was not sent:** the creator was using the main GPT chat at the time,
+and nothing was typed into their conversation.
+
+**Gemini's opinion, not sign-off.**
+- (1) Test as a factorial (v16 / MC1 / B / MC1+B / sham). "Law B alone is functionally dead code." Its guess: MC1's
+  extra children "likely died because MC1 brought the parents together, but the lack of Law B prevented the father from
+  helping feed the extra mouths."
+- (2) It moves from B3 to "a revised B2": the child's unmet need is "split between them in proportion to their current
+  food holdings", each applying the v16 care formula to their share.
+- (3) Child-weeks with unmet need and child survival to 16 as co-primaries; the gap is descriptive.
+- (4) 85%. Its risk: MC1 could limit the father's foraging range.
+
+**DeepSeek's opinion, not sign-off.**
+- (1) The factorial: yes. MC "must be re-tested on v16 regardless"; "B is conditional on it".
+- (2) It moves to a "symmetric sequential second-parent form (B2′)":
+  - the caregiver feeds exactly as in v16;
+  - then "another living parent on the same tile" feeds the remaining shortfall from food beyond their own and their
+    dependents' needs, scaled by their care gene.
+
+  This reduces to v16 "bit-for-bit" and is "the non-caregiving parent second", not "father second". "A true
+  simultaneous pool cannot reduce to v16."
+- (3) Primary: child-weeks with unmet need. Co-primary: child survival to 16. The gap is descriptive. Manipulation check:
+  the second parent's food reaching children rises in MC+B against MC. Guards: CI1's eight plus men's starvation.
+- (4) About 84%.
+
+**Claude's note.** The forms converge:
+- DeepSeek's B2′ is GPT's B1, made symmetric by role ("the parent who is not the caregiver");
+- Gemini's revised B2 is a proportional split.
+
+All three now tie B to partners sharing a place (MC). Both MC and B are world and biology laws, **paused by the
+creator's Direction (7 November) until the review on 7 December.** Recorded for that review: a factorial v16 / MC / B /
+MC+B / sham, B in DeepSeek's B2′ form or Gemini's split, with child-weeks with unmet need and child survival to 16 as
+co-primaries.

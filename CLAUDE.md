@@ -40,6 +40,7 @@ build what the makers never planned). The creator chose this order (the assistan
    others learned, and choosing one's own goals.
    - Law tests of the mind (like VW1) continue.
    - World and biology laws (like law B, "both parents feed", council round 79) are paused.
+4. **The aim of the brain work** (the creator, 7 November 2026): "Don't build a world where intelligence is guaranteed to succeed. Build a mind capable of discovering how to succeed in the world it inherits. The important ability isn't never making mistakes. It's learning from them." So the doors only open possibilities; they never make success easy.
 
 ## Hard rules
 - Freeze a plan (`questions.md`, git tag `X-frozen`) and get the **creator's sign-off** before any code or data.
