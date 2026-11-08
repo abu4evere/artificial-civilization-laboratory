@@ -578,7 +578,7 @@
       "plan": "experiments/VW1_value_of_wholes/questions.md",
       "frozen_tag": "VW1-frozen",
       "approved_by": "the assistant under the creator's standing permissions; council round 78 (GPT 96%, Gemini 95% as a fault, DeepSeek ~78%)",
-      "status": "running on the cloud (run 42439579177, 20 chunks, skip_zero=local; launched 7 November 21:41); zero checks All: PASS locally"
+      "status": "done (final 7 November 23:41; tag VW1-done): no harm, no effect (co-primaries +0.0084 [-0.0046, +0.0210] and +0.0063 [-0.0049, +0.0171]; no guard); not adopted; repeats WP1's A2 on v16; recomputed by GPT and Gemini"
     },
     {
       "id": "OD1",
