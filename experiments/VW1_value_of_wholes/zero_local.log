@@ -1,0 +1,7 @@
+seed 501, 20 years: code_vw1 with want_down 0 = code_v16: yes; observers read-only (c, w): yes; VW acts: yes; the sham acts: yes; w: {"mech":{"make_offers":46494,"offer_part_deeper_only":180,"offer_part_level1":21532},"parts_check":{"open_at_end":0,"tracked":535},"stages":{"stage_A":350,"stage_B":58,"stage_C":4,"stage_D":15,"stage_E":123}}
+seed 601, 60 years: code_vw1 with want_down 0 = code_v16: yes; observers read-only (c, w): yes; VW acts: yes; the sham acts: yes; w: {"mech":{"make_offers":271384,"offer_part_deeper_only":967,"offer_part_level1":146179},"parts_check":{"open_at_end":0,"tracked":681},"stages":{"stage_A":1002,"stage_B":140,"stage_C":5,"stage_D":22,"stage_E":143}}
+unit checks, arm w, seed 701, 30 years (the wanted map equals an independent computation of the law; v16's one-level values kept; the materials of every wanted, known, unheld recipe wanted): yes; {'looks': 18505, 'deep_keys': 58944, 'deeper_only': 750}
+arm w, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_vw1 fingerprint: ef0ee834ef683cf7c616f418e7db954946ffff421edd760fd718d80a21f92681
+All: PASS
+
