@@ -181,6 +181,8 @@ def check_craft_before(world, p, recipe):
     tool = tool if tool and tool not in MATERIALS else None
     binder = binder if binder and binder not in MATERIALS else None
     return {"cnt": Counter(it["sig"] for it in p.items), "tool": tool, "binder": binder, "can": can_make(p, recipe),
+            "g0": len(world.ground),        # corrected 8 Nov, before data: things set down at the carry limit count
+                                            # as kept, not used up (explore_hammer_check.py traced all 5 zero-check cases)
             "tool_item": next((it for it in p.items if tool and it["sig"] == tool), None),
             "binder_item": next((it for it in p.items if binder and it["sig"] == binder), None)}
 
@@ -197,7 +199,8 @@ def check_craft_after(world, p, recipe, item, pre):
         b = pre["binder"]
         used = 1 + sum(1 for x in recipe["parts"] if x == b)
         made_same = int(item is not None and item["sig"] == b)
-        if cnt[b] != pre["cnt"][b] - used + made_same:
+        down = sum(1 for g in world.ground[pre["g0"]:] if g["item"]["sig"] == b)
+        if cnt[b] + down != pre["cnt"][b] - used + made_same:
             st["binder_not_used_up"] += 1
         if pre["binder_item"]["flex"] < 50:
             st["binder_flex_low"] += 1
@@ -205,7 +208,11 @@ def check_craft_after(world, p, recipe, item, pre):
     if pre["tool"] is not None:
         st["made_hammers"] += 1
         t = pre["tool"]
-        if cnt[t] != pre["cnt"][t] + int(item is not None and item["sig"] == t):
+        obj = pre["tool_item"]
+        kept = any(it is obj for it in p.items)
+        down = any(g["item"] is obj for g in world.ground[pre["g0"]:])
+        st["hammer_set_down_at_limit"] += int(not kept and down)
+        if not kept and not down:
             st["hammer_used_up"] += 1
         if pre["tool_item"]["hard"] < 50:
             st["hammer_hard_low"] += 1
