@@ -36,7 +36,9 @@ build what the makers never planned). The creator chose this order (the assistan
    - While frozen, there are no world-rule studies and no fault hunts.
    - The one exception: code that plainly does not do what its own comment says may be fixed quickly.
    - A brain test that shows the world lacks something is noted for the review, not acted on.
-3. **Then almost all work goes to Bob's brain:** value, memory, curiosity, learning from others, building on what
+3. **Then almost all work goes to Bob's brain.** It starts **together with the creator**. The creator, 8 November
+   2026: "we will start together when we move to brain itself till that you keep working yourself". No session
+   starts brain design or brain studies alone before that. The focus: value, memory, curiosity, learning from others, building on what
    others learned, and choosing one's own goals.
    - Law tests of the mind (like VW1) continue.
    - World and biology laws (like law B, "both parents feed", council round 79) are paused.
