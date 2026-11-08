@@ -1,17 +1,18 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-08 02:09",
+  "updated": "2026-11-08 05:25",
   "nature": {
-    "live": "v16",
-    "acl_fingerprint": "a6560695a88396a77e673d5bb6b4c0578197ac6b93af0804de60c92ba4a58f82",
-    "frozen_copy": "experiments/NV16_nature_v16/code_v16",
-    "frozen_copy_fingerprint": "9388f16ef24e3216691a306ee77254065d9957c901a77344805c7c702c858300",
+    "live": "v17",
+    "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
+    "frozen_copy": "experiments/NV17_nature_v17/code_v17",
+    "frozen_copy_fingerprint": "c1db69ab5616f50ce6eb4b6d810119fa4276fe94e77059741ee6382f3084253a",
     "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
     "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek",
     "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek",
     "note_v14": "adopted 6 November 2026 (night): FF3 fault fix (memory ties drawn evenly instead of settled by name, F9), no harm, recomputed by GPT (code) and DeepSeek (points; its intervals approximate); Gemini failed to answer three times",
     "note_v15": "adopted 6 November 2026 (evening) by the safe path for a new law: CI1 supported LG (children 3+ offered the make option), CI1-C confirmed it on new seeds, blind recomputes by GPT and Gemini (code) matched both, council round 71 (GPT 99%, Gemini 100%, DeepSeek ~94%; the assistant 92%); zero checks pass; 70 tests",
-    "note_v16": "adopted 7 November 2026 by the assistant by the safe path (fault fix: FF4 no harm; GPT and Gemini recompute matched; council round 77: GPT 98%, Gemini 100%, DeepSeek ~94%); zero checks All: PASS; 71 tests pass; tag nature-v16; v15 kept in experiments/NV15_nature_v15/code_v15"
+    "note_v16": "adopted 7 November 2026 by the assistant by the safe path (fault fix: FF4 no harm; GPT and Gemini recompute matched; council round 77: GPT 98%, Gemini 100%, DeepSeek ~94%); zero checks All: PASS; 71 tests pass; tag nature-v16; v15 kept in experiments/NV15_nature_v15/code_v15",
+    "note_v17": "adopted 8 November 2026 by the safe path: OD1's five doors (similar parts, containers carry, made binders, made hammers, layers add); the creator decided the direction, package and no-harm bar; OD1 no guard, every door used; GPT and Gemini recompute matched; council round 81: GPT 82%, Gemini 100%, DeepSeek ~93%; zero checks All: PASS; 72 tests pass; tag nature-v17; v16 kept in experiments/NV16_nature_v16/code_v16. THE WORLD IS FROZEN AS v17 UNTIL THE REVIEW ON 7 DECEMBER 2026 (CLAUDE.md, Direction); the brain work starts with the creator"
   },
   "objectives": [
     "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",

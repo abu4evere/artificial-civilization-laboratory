@@ -314,7 +314,7 @@ def _recipe_as_shown(world, teacher, learner, recipe: dict) -> dict:
             out["tool"] = rng.choice([h for h in HARD if h != out["tool"]])
         elif roll < 0.8:
             out["target"] = rng.choice([t for t in STRIKABLE if t != out["target"]])
-        elif out["target"] in HARD:
+        elif out["target"] in HARD and out["tool"] in HARD:      # OD1 (D4): a made hammer is never a target
             out["target"], out["tool"] = out["tool"], out["target"]
     else:
         raw = [i for i, part in enumerate(out["parts"]) if part in MATERIALS]

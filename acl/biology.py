@@ -21,7 +21,7 @@ import math
 
 from . import inquiry, knowhow, matter, thought, weather
 from .config import CHILD_END, INFANT_END, WEEKS_PER_YEAR
-from .matter import best_item, pile_room, pile_shape, pile_warmth, worn_warmth
+from .matter import best_item, factor, pile_room, pile_shape, pile_warmth, worn_warmth
 from .mind import context_index
 from .person import A, GENES, N_ACTIONS, Person, Relation
 from .social import remember, react
@@ -130,7 +130,7 @@ def body_phase(world) -> None:
         cold = cold_at[p.loc]
         if cold > 0:
             place_warm = 1.0 - (1.0 - inside.get(p.id, 0.0)) * (1.0 - (c.fire_warmth if fire else 0.0))
-            worn = worn_warmth(p)
+            worn = worn_warmth(p, world)
             exposure = (1.0 - place_warm) * (1.0 - worn) * min(cold, 1.0)
             felt_warmth[p.id] = 1.0 - exposure
             p.health -= c.cold_damage * exposure * max(cold, 1.0) * (2.0 if frail else 1.0)
@@ -143,9 +143,13 @@ def body_phase(world) -> None:
                 if worn > 0:
                     idx, _ = best_item(p, "cold")
                     knowhow.judge_item(world, p, p.items[idx]["sig"], worn)
-                    p.items[idx]["uses"] -= 1
-                    if p.items[idx]["uses"] <= 0:
-                        p.items.pop(idx)
+                    layers = [idx]
+                    if c.layers_add:                    # OD1 (D5): every layer that keeps out cold wears
+                        layers += [i for i, it in enumerate(p.items) if i != idx and factor(it, "cold") > 1.0]
+                    for i in sorted(layers, reverse=True):
+                        p.items[i]["uses"] -= 1
+                        if p.items[i]["uses"] <= 0:
+                            p.items.pop(i)
 
         # Orphaned little ones suffer without someone to look after them.
         if st in ("infant", "child") and p.age(tick) < 6 * WEEKS_PER_YEAR and not p.caregiver:
@@ -610,7 +614,7 @@ def die(world, p: Person, cause: str, killer) -> None:
         for it in p.items:
             heir.items.append(it)
         log = getattr(world, "fx1log", None)    # FX1 logging (runner sets it; not saved; read by nothing here)
-        while len(heir.items) > world.cfg.item_limit:
+        while len(heir.items) > matter.item_cap(world, heir):          # OD1 (D2)
             if world.cfg.fix_overflow:          # FX1 (F2): the least valued goes onto the ground, as in _keep
                 worst = min(range(len(heir.items)), key=lambda i: (heir.itemval.get(heir.items[i]["sig"], 0.0), -i))
                 gone = heir.items.pop(worst)
@@ -764,7 +768,7 @@ def bodies_week(world) -> None:
                                                                            and q.age(tick) >= CHILD_END)):
                 for it in b["items"]:
                     q.items.append(it)
-                while len(q.items) > world.cfg.item_limit:
+                while len(q.items) > matter.item_cap(world, q):          # OD1 (D2)
                     if world.cfg.fix_overflow:      # FX1 (F3): the least valued, as in _keep
                         worst = min(range(len(q.items)), key=lambda i: (q.itemval.get(q.items[i]["sig"], 0.0), -i))
                         gone = q.items.pop(worst)

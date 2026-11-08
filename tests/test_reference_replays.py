@@ -34,10 +34,11 @@ CODES = {"acl": ROOT, "control": ROOT / "experiments" / "E13R_replication" / "co
          "v13": ROOT / "experiments" / "NV13_nature_v13" / "code_v13",
          "v14": ROOT / "experiments" / "NV14_nature_v14" / "code_v14",
          "v15": ROOT / "experiments" / "NV15_nature_v15" / "code_v15",
-         "v16": ROOT / "experiments" / "NV16_nature_v16" / "code_v16"}
+         "v16": ROOT / "experiments" / "NV16_nature_v16" / "code_v16",
+         "v17": ROOT / "experiments" / "NV17_nature_v17" / "code_v17"}
 # Each code's settings: ACL's own code has none (since 16 October 2026 its defaults were nature v2; since 21 October 2026 nature v3; since 23 October 2026
 # nature v4; since 24 October 2026 nature v5, then v6; since 25 October 2026 nature v7; since 27 October 2026 nature v8;
-# since 29 October 2026 nature v9; since 31 October 2026 nature v10, then v11; since 3 November 2026 nature v12, then v13; since 6 November 2026 nature v14, then v15; since 7 November 2026 nature v16, so its hashes equal v16's); the control copy runs as the experiments do; v2 is the control code with
+# since 29 October 2026 nature v9; since 31 October 2026 nature v10, then v11; since 3 November 2026 nature v12, then v13; since 6 November 2026 nature v14, then v15; since 7 November 2026 nature v16; since 8 November 2026 nature v17, so its hashes equal v17's); the control copy runs as the experiments do; v2 is the control code with
 # NV2's four changes on (experiments/NV2_nature_v2/questions.md). Like the control hashes, v2's should never change.
 EXTRA = {"acl": "", "control": ", anticipation_weight=1.0",
          "v2": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1",
@@ -54,7 +55,8 @@ EXTRA = {"acl": "", "control": ", anticipation_weight=1.0",
          "v13": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1, parts_first=1, bodies_stay=1, digging=1, body_rot=1, twins=1, sex_ratio_birth=1, ground_items=1, curiosity_pull=1",
          "v14": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1, parts_first=1, bodies_stay=1, digging=1, body_rot=1, twins=1, sex_ratio_birth=1, ground_items=1, curiosity_pull=1",
          "v15": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1, parts_first=1, bodies_stay=1, digging=1, body_rot=1, twins=1, sex_ratio_birth=1, ground_items=1, curiosity_pull=1",
-         "v16": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1, parts_first=1, bodies_stay=1, digging=1, body_rot=1, twins=1, sex_ratio_birth=1, ground_items=1, curiosity_pull=1"}
+         "v16": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1, parts_first=1, bodies_stay=1, digging=1, body_rot=1, twins=1, sex_ratio_birth=1, ground_items=1, curiosity_pull=1",
+         "v17": ", anticipation_weight=1.0, loved_location='last_seen', corner_block=1, ashore_if_float_breaks=1, knowledge_copy=1, parts_first=1, bodies_stay=1, digging=1, body_rot=1, twins=1, sex_ratio_birth=1, ground_items=1, curiosity_pull=1"}
 CASES = [(11, 5), (501, 5)]          # (seed, years)
 
 
@@ -141,6 +143,10 @@ def test_nature_v15_replays():
 
 def test_nature_v16_replays():
     _check("v16")
+
+
+def test_nature_v17_replays():
+    _check("v17")
 
 
 if __name__ == "__main__" and sys.argv[1:2] == ["--update"]:

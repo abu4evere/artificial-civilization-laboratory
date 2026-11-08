@@ -95,12 +95,13 @@ build what the makers never planned). The creator chose this order (the assistan
   (the creator, 1 November 2026: "Now u can use pc at max capacity cuz i am not working its all your own just lmk what is
   happening through telegram"), local runs may use full speed, up to 4 at once (`research/state.json` budgets); report
   through Telegram. The careful setting returns when they are back.
-- **Tests:** `python -m pytest -q tests` (71 pass on nature v16, live since 7 November 2026 (evening): forage, hunt and
-  gather are offered at the best target the person can afford when the best is too far (FF4, a fault fix;
-  `experiments/NV16_nature_v16/findings.md`); v15 = children aged 3
+- **Tests:** `python -m pytest -q tests` (72 pass on nature v17, live since 8 November 2026 (morning) and **frozen
+  until the review on 7 December**: OD1's five doors, general laws through properties (similar parts, containers
+  carry, made binders, made hammers, layers add; `experiments/NV17_nature_v17/findings.md`); v16 = forage, hunt and
+  gather offered at the best target the person can afford (FF4, a fault fix; `experiments/NV16_nature_v16/findings.md`); v15 = children aged 3
   and over may make again what they know (CI1 and CI1-C; `experiments/NV15_nature_v15/findings.md`); v14 = memory ties
   drawn evenly instead of by name (FF3), 6 November; v13 = FF2's three hunt, carry and water fixes, 3 November;
-  v12 = FF1's fixes; v11 = handing made things). New studies use `code_v16`; earlier findings stay their version's.
+  v12 = FF1's fixes; v11 = handing made things). New studies use `code_v17`; earlier findings stay their version's.
   findings stay their version's.
 
 ## Sleep mode (autonomous since 27 October 2026)

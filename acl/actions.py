@@ -238,7 +238,7 @@ def _gather(world, p, target, eff):
     tile = world.tile(p.loc)
     idx, f = best_item(p, kind)
     rate = (c.gather_base + c.gather_skill * p.skills["crafting"]) * eff * f
-    got = min(tile.material(kind), rate, max(0.0, c.material_limit - p.mat_total()))
+    got = min(tile.material(kind), rate, max(0.0, matter.material_cap(world, p) - p.mat_total()))   # OD1 (D2)
     setattr(tile, kind, tile.material(kind) - got)
     if matter.RAW[kind][7] >= 50:          # soft earth comes up wet
         have = p.mats[kind]
@@ -393,7 +393,8 @@ def _make(world, p, sig, eff):
     recipe = p.recipes.get(sig)
     if recipe is None:
         return
-    item = _craft(world, p, recipe)
+    from .mind import resolve_recipe
+    item = _craft(world, p, resolve_recipe(world, p, recipe) or recipe)          # OD1 (D1): stand-in inputs
     if item is not None:
         p.reward += 0.1
         p.doing = "make"
@@ -416,11 +417,14 @@ def _craft(world, p: Person, recipe: dict):
         return _hold_in_fire(world, p, recipe["part"])
     elif recipe["verb"] == "strike":
         p.mats[recipe["target"]] -= 1.0
-        item = matter.strike(recipe["target"], recipe["tool"], p.skills["crafting"], rng)
+        hp = None
+        if recipe["tool"] not in MATERIALS:             # OD1 (D4): a made hammer, not used up
+            hp = next(it for it in p.items if it["sig"] == recipe["tool"])
+        item = matter.strike(recipe["target"], recipe["tool"], p.skills["crafting"], rng, hp)
         sig = f"{recipe['target']}/{recipe['tool']}"
         knowhow.placed(world, p, sig, p.loc)
         leave_trace(world.tile(p.loc), f"struck:{recipe['target']}", world.tick, 0.5)
-        if matter.sparks(recipe["target"], recipe["tool"]):
+        if matter.sparks(recipe["target"], recipe["tool"], hp):
             # Sparks fly, and sometimes something catches. Either can be a surprise.
             got = 1.0 if _spark(world, p) else 0.5
             before = p.expect.get("fire:" + sig, 0.0)
@@ -437,8 +441,12 @@ def _craft(world, p: Person, recipe: dict):
                     if it["sig"] == part:
                         parts.append(p.items.pop(i))
                         break
-        p.mats[recipe["binder"]] -= 1.0
-        item = matter.bind(parts[0], parts[1], recipe["binder"])
+        bp = None
+        if recipe["binder"] in MATERIALS:
+            p.mats[recipe["binder"]] -= 1.0
+        else:                                           # OD1 (D3): a made binder, used up
+            bp = p.items.pop(next(i for i, it in enumerate(p.items) if it["sig"] == recipe["binder"]))
+        item = matter.bind(parts[0], parts[1], recipe["binder"], bp)
     if item is None:
         return None
     _keep(p, item, world.cfg.item_limit, world)
@@ -483,6 +491,8 @@ def _hold_in_fire(world, p: Person, part: str):
 
 def _keep(p: Person, item: dict, limit: int, world=None) -> None:
     p.items.append(item)
+    if world is not None:
+        limit = matter.item_cap(world, p)          # OD1 (D2); = the given limit in v16
     while len(p.items) > limit:
         worst = min(range(len(p.items)), key=lambda i: (p.itemval.get(p.items[i]["sig"], 0.0), -i))
         gone = p.items.pop(worst)
@@ -499,11 +509,15 @@ def drop_on_ground(world, p: Person, item: dict) -> None:
 def ground_week(world) -> None:
     """OP1: whoever stands where things lie, aged 12 or more and with room in hand, picks them up, the most valued
     first, until full. Things on the ground neither rot nor wear (as tools on a body). Draws nothing at random."""
+    if world.cfg.containers_carry:                  # OD1 (D2): over the limit (a container lost), the least valued go down
+        for q in sorted(world.living(), key=lambda q: q.id):
+            while len(q.items) > matter.item_cap(world, q):
+                worst = min(range(len(q.items)), key=lambda i: (q.itemval.get(q.items[i]["sig"], 0.0), -i))
+                drop_on_ground(world, q, q.items.pop(worst))
     if not world.ground:
         return
     from .config import CHILD_END
     tick = world.tick
-    limit = world.cfg.item_limit
     by_tile: dict = {}
     for g in world.ground:
         by_tile.setdefault((g["x"], g["y"]), []).append(g)
@@ -512,7 +526,7 @@ def ground_week(world) -> None:
         lying = by_tile.get(p.loc)
         if not lying or p.age(tick) < CHILD_END:
             continue
-        while len(p.items) < limit:
+        while len(p.items) < matter.item_cap(world, p):          # OD1 (D2); = item_limit in v16
             left = [g for g in lying if id(g) not in taken]
             if not left:
                 break
@@ -570,6 +584,9 @@ def _play(world, p, target, eff):
             for h in HARD:
                 if p.mats[h] >= (2.0 if h == t else 1.0):
                     choices.append({"verb": "strike", "target": t, "tool": h})
+            if world.cfg.made_hammers:                  # OD1 (D4): a held made thing hard enough to strike with
+                for h in sorted({it["sig"] for it in p.items if it["hard"] >= 50}):
+                    choices.append({"verb": "strike", "target": t, "tool": h})
     for m in have:
         if matter.RAW[m][7] >= 50 and p.damp.get(m, 0) >= matter.SOFT_WHEN_WET:
             for form in matter.FORMS:
@@ -581,6 +598,8 @@ def _play(world, p, target, eff):
         if _can_fill(world, p, substance):
             choices.append({"verb": "fill", "substance": substance})
     binders = [b for b in matter.FLEXIBLE if p.mats[b] >= 1.0]
+    if world.cfg.made_binders:                      # OD1 (D3): a held made thing flexible enough to tie with
+        binders += sorted({it["sig"] for it in p.items if it["flex"] >= 50})
     if binders:
         parts = [m for m in MATERIALS] + [it["sig"] for it in p.items]
         for b in binders:
@@ -718,7 +737,7 @@ def _hand(world, p, q) -> None:
     """HD1: p hands q the made thing that would help q most, net of what p loses, if q has room. The thing moves from
     one hand to the other; nothing else changes."""
     from .mind import hand_pick
-    if not p.items or len(q.items) >= world.cfg.item_limit:
+    if not p.items or len(q.items) >= matter.item_cap(world, q):          # OD1 (D2)
         return
     net, idx = hand_pick(p, q)
     if idx < 0 or net <= 0.0:

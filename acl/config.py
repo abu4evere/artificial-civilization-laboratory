@@ -148,6 +148,14 @@ class Config:
     fix_name_ties: int = 1             # NV14 (FF3's F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
                                        # drops its least valued and several share that value, the one dropped is drawn
                                        # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
+    similar_parts: int = 1             # NV17 (OD1, D1, AF1's S): 1 = when making a known thing, an input not held may be replaced
+                                       # by a held thing whose 10 properties are each within 10 of the original's
+    containers_carry: int = 1          # NV17 (OD1, D2, AF1's K): 1 = the best container's carry factor also multiplies the
+                                       # made-thing and material limits, as it multiplies the food limit
+    made_binders: int = 1              # NV17 (OD1, D3): 1 = a held made thing with flex >= 50 can bind, as raw fiber and hide do
+    made_hammers: int = 1              # NV17 (OD1, D4): 1 = a held made thing with hard >= 50 can be the hammer in striking
+    layers_add: int = 1                # NV17 (OD1, D5): 1 = for warmth worn and for carrying, several things combine by the law
+                                       # for joining coverings (the best fully, each next half), capped at 100
     fix_affordable_target: int = 1     # NV16 (FF4): 1 = forage, hunt and gather are offered at the best target the
                                        # person can afford when the best one is too far (0 = v15: the whole action was
                                        # dropped)

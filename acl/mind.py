@@ -22,7 +22,7 @@ from __future__ import annotations
 from . import fauna, inquiry, thought, weather
 from .knowhow import belief
 from .config import WEEKS_PER_YEAR
-from .matter import MATERIALS, SOFT_WHEN_WET, best_holder, best_item, holding
+from .matter import MATERIALS, PROPS, SOFT_WHEN_WET, best_holder, best_item, holding, item_cap, material_cap, raw_props
 from .person import A, N_ACTIONS, PLACEABLE, Person
 from .util import clamp, distance, softmax_pick
 import math
@@ -274,7 +274,7 @@ def decide(world, p: Person) -> tuple:
 
     if not toddler:
         # Gather: picking things up, out of curiosity or because you have found a use for them.
-        if p.mat_total() < c.material_limit:
+        if p.mat_total() < material_cap(world, p):          # OD1 (D2)
             want = _material_wants(p, season)
             best, best_u, best_d = None, 0.0, 0
             aff, aff_u, aff_d = None, 0.0, 0     # NV16 (FF4): the best target this person can afford
@@ -320,7 +320,7 @@ def decide(world, p: Person) -> tuple:
                 v = max(v, belief(p, f"{recipe['target']}/{recipe['tool']}@{season}") or 0.0)
             # Something about it surprised them: they want to try it again and see.
             v = max(v, 0.5 * max(inquiry.pull(p, "m:" + sig), inquiry.pull(p, "f:" + sig)))
-            if v <= 0.05 or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or not can_make(p, recipe):
+            if v <= 0.05 or (_holding(p, sig) and v == p.itemval.get(sig, 0.0)) or resolve_recipe(world, p, recipe) is None:     # OD1 (D1)
                 continue
             cands.append((sig, v, c.worth_weight * v * (0.6 + 0.4 * g["diligence"]) * (1.0 - 0.5 * hunger)))
         old, old_u = None, 0.05          # v11: a recipe is skipped if its value is at or below the best's utility
@@ -455,7 +455,7 @@ def decide(world, p: Person) -> tuple:
         if c.hand_items:
             # HD1: or hand them a made thing, if it would help them more than it costs the giver.
             world.hand_intent.pop((p.id, q.id), None)
-            if p.items and len(q.items) < c.item_limit:
+            if p.items and len(q.items) < item_cap(world, q):          # OD1 (D2)
                 net, _ = hand_pick(p, q)
                 if net > 0.0:
                     social = (0.25 * g["kindness"] + 0.6 * max(aff, 0.0) + 0.6 * kin + (0.6 if is_partner else 0.0)
@@ -656,6 +656,7 @@ def _wanted_parts(p: Person) -> dict:
         if v <= 0 or _holding(p, sig):
             continue
         parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe["verb"] == "heat" else [])
+        parts += [x for x in (recipe.get("binder"), recipe.get("tool")) if x and x not in MATERIALS]   # OD1 (D3, D4)
         for part in parts:
             if part not in MATERIALS and not _holding(p, part, worn_ok=True):
                 out[part] = max(out.get(part, 0.0), 0.8 * v)
@@ -742,7 +743,7 @@ def _best_put(world, p: Person, total_need: float, hunger: float, season: int, c
 
 def recipe_materials(recipe: dict) -> list:
     if recipe["verb"] == "strike":
-        return [recipe["target"], recipe["tool"]]
+        return [recipe["target"]] + ([recipe["tool"]] if recipe["tool"] in MATERIALS else [])     # OD1 (D4)
     if recipe["verb"] == "shape":
         return [recipe["material"]]
     if recipe["verb"] == "heat":
@@ -750,7 +751,8 @@ def recipe_materials(recipe: dict) -> list:
     if recipe["verb"] == "fill":
         return []
     out = [part for part in recipe["parts"] if part in MATERIALS]
-    out.append(recipe["binder"])
+    if recipe["binder"] in MATERIALS:                    # OD1 (D3): a made binder is not a material
+        out.append(recipe["binder"])
     return out
 
 
@@ -773,6 +775,10 @@ def can_make(p: Person, recipe: dict) -> bool:
         # The hammer is not used up, but striking a thing with its own kind needs two of them.
         if recipe["tool"] != recipe["target"]:
             need[recipe["tool"]] = 1
+        if recipe["tool"] not in MATERIALS:             # OD1 (D4): a made hammer in hand; the target stays raw
+            if recipe["target"] not in MATERIALS or not any(it["sig"] == recipe["tool"] for it in p.items):
+                return False
+            need = {recipe["target"]: 1}
     else:
         made: dict = {}
         for part in recipe["parts"]:
@@ -783,8 +789,79 @@ def can_make(p: Person, recipe: dict) -> bool:
         for sig, n in made.items():
             if sum(1 for it in p.items if it["sig"] == sig) < n:
                 return False
-        need[recipe["binder"]] = need.get(recipe["binder"], 0) + 1
+        if recipe["binder"] in MATERIALS:
+            need[recipe["binder"]] = need.get(recipe["binder"], 0) + 1
+        elif sum(1 for it in p.items if it["sig"] == recipe["binder"]) < made.get(recipe["binder"], 0) + 1:
+            return False                                # OD1 (D3): a made binder in hand, besides the parts
     return all(p.mats.get(k, 0.0) >= n for k, n in need.items())
+
+
+SIMILAR_D = 10   # OD1 (D1, AF1's S): how close, in every one of the 10 properties, a stand-in must be
+
+
+def _props_of(world, p: Person, name: str):
+    """The 10 properties of an input: a raw material's from the table, a made kind's from the world's record, else from
+    a held thing of that kind. None if unknown."""
+    if name in MATERIALS:
+        return raw_props(name)
+    rec = world.knowledge.get(name)
+    if rec is not None and rec.get("props"):
+        return rec["props"]
+    for it in p.items:
+        if it["sig"] == name:
+            return it
+    return None
+
+
+def resolve_recipe(world, p: Person, recipe: dict):
+    """The recipe as p can make it now, or None. v11: only with the exact inputs. OD1 (D1, AF1's S): an input p does not hold may
+    be replaced by a held thing whose 10 properties are each within SIMILAR_D of the original's; the closest first, in a
+    fixed order (no chance). The remembered recipe itself never changes."""
+    if can_make(p, recipe):
+        return recipe
+    if not world.cfg.similar_parts or recipe["verb"] == "fill":
+        return None
+    if recipe["verb"] == "strike":
+        slots = [("target", None), ("tool", None)]
+    elif recipe["verb"] == "shape":
+        slots = [("material", None)]
+    elif recipe["verb"] == "heat":
+        slots = [("part", None)]
+    else:
+        slots = [("parts", 0), ("parts", 1), ("binder", None)]
+    held = sorted({m for m in MATERIALS if p.mats.get(m, 0.0) >= 1.0} | {it["sig"] for it in p.items})
+    options = []
+    for key, i in slots:
+        name = recipe[key][i] if i is not None else recipe[key]
+        target = _props_of(world, p, name)
+        close = []
+        if target is not None:
+            for h in held:
+                if h == name:
+                    continue
+                hp = _props_of(world, p, h)
+                if hp is None:
+                    continue
+                d = max(abs(hp[k] - target[k]) for k in PROPS)
+                if d <= SIMILAR_D:
+                    close.append((d, h))
+        cands = ([name] if name in held else []) + [h for _, h in sorted(close)]
+        if not cands:
+            return None
+        options.append(cands)
+    import itertools
+    for combo in itertools.product(*options):
+        out = dict(recipe)
+        if "parts" in out:
+            out["parts"] = list(out["parts"])
+        for (key, i), name in zip(slots, combo):
+            if i is None:
+                out[key] = name
+            else:
+                out[key][i] = name
+        if can_make(p, out):
+            return out
+    return None
 
 
 def _holding(p: Person, sig: str, worn_ok: bool = False) -> bool:

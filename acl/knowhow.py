@@ -227,6 +227,7 @@ def can_follow(learner, recipe: dict) -> bool:
     """A recipe that needs a made part can only be followed by someone who knows how to make that part."""
     from .matter import MATERIALS
     parts = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe.get("verb") == "heat" else [])
+    parts += [x for x in (recipe.get("binder"), recipe.get("tool")) if x and x not in MATERIALS]   # OD1 (D3, D4)
     for part in parts:
         if part not in MATERIALS and part not in learner.recipes:
             return False

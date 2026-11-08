@@ -1,0 +1,12 @@
+adopted arm: o (similar_parts, containers_carry, made_binders, made_hammers, layers_add)
+seed 11, 5 years: code_v17 with the five doors at 0 = code_v16 (world and random stream): yes
+seed 501, 5 years: code_v17 with the five doors at 0 = code_v16 (world and random stream): yes
+seed 501, 20 years: code_v17 with the five doors at 0 = code_v16 (world and random stream): yes
+seed 601, 20 years: code_v17 with the five doors at 0 = code_v16 (world and random stream): yes
+seed 501, 20 years, OD1's set-up: v17 = OD1's arm o (code_od1), world and random stream: yes
+seed 501, 20 years: the live package with its own defaults = v17: yes
+seed 601, 20 years, OD1's set-up: v17 = OD1's arm o (code_od1), world and random stream: yes
+seed 601, 20 years: the live package with its own defaults = v17: yes
+seed 501, 20 years: the doors change the world (they act): yes
+v17, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+All: PASS

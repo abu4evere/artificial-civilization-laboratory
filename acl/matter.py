@@ -76,9 +76,11 @@ def raw_props(kind: str) -> dict:
     return d
 
 
-def strike(target: str, hammer: str, skill: float, rng) -> dict | None:
-    """Hit a raw material with another. Brittle things flake to an edge if the hammer is hard enough."""
-    t, hm = raw_props(target), raw_props(hammer)
+def strike(target: str, hammer: str, skill: float, rng, hammer_props: dict | None = None) -> dict | None:
+    """Hit a raw material with another. Brittle things flake to an edge if the hammer is hard enough.
+    OD1 (D4): the hammer may be a made thing; its own hardness sets the force."""
+    t = raw_props(target)
+    hm = hammer_props if hammer_props is not None else raw_props(hammer)
     force = min(100, (hm["hard"] * 100) // max(t["hard"], 1))
     skill100 = int(skill * 100)
     roll = rng.randrange(80, 101)
@@ -90,9 +92,10 @@ def strike(target: str, hammer: str, skill: float, rng) -> dict | None:
     return item_from(f"{target}/{hammer}", t)
 
 
-def sparks(target: str, hammer: str) -> bool:
-    """Flint struck against something hard throws sparks."""
-    return "flint" in (target, hammer) and min(RAW[target][2], RAW[hammer][2]) >= 50
+def sparks(target: str, hammer: str, hammer_props: dict | None = None) -> bool:
+    """Flint struck against something hard throws sparks. OD1 (D4): a made hammer's hardness is its own."""
+    hh = hammer_props["hard"] if hammer_props is not None else RAW[hammer][2]
+    return "flint" in (target, hammer) and min(RAW[target][2], hh) >= 50
 
 
 def _layer(x: int, y: int, binder: int) -> int:
@@ -100,9 +103,10 @@ def _layer(x: int, y: int, binder: int) -> int:
     return max(x, y) + min(x, y) // 2 + (15 * binder) // 100
 
 
-def bind(a: dict, b: dict, binder: str) -> dict:
-    """Tie two things together with something flexible."""
-    bd = raw_props(binder)
+def bind(a: dict, b: dict, binder: str, binder_props: dict | None = None) -> dict:
+    """Tie two things together with something flexible. OD1 (D3): the binder may be a made thing; its own properties
+    enter where a raw binder's do."""
+    bd = binder_props if binder_props is not None else raw_props(binder)
     flexible = int(a["flex"] >= 50) + int(b["flex"] >= 50) + 1
     p = {
         "edge": max(a["edge"], b["edge"]),
@@ -262,7 +266,7 @@ def receive(world, p, kind: str, amount: float, loc: tuple, how: str) -> None:
     """Raw material coming to p at loc (spoils of a kill, an inheritance). FF2 (F4): with fix_mat_limit, what goes past
     the material limit is left on that tile's pile, kept and not deleted; 0 = v12 (p keeps it all). The runner's log
     (read by nothing here) counts the units past the limit either way."""
-    over = min(amount, max(0.0, p.mat_total() + amount - world.cfg.material_limit))
+    over = min(amount, max(0.0, p.mat_total() + amount - material_cap(world, p)))          # OD1 (D2)
     log = getattr(world, "ff2log", None)
     if log is not None and over > 0:
         log.append(("mat_over", how, over))
@@ -273,15 +277,48 @@ def receive(world, p, kind: str, amount: float, loc: tuple, how: str) -> None:
     p.mats[kind] += amount
 
 
+def layered(p, use: str) -> float:
+    """OD1 (D5): what several things do together for warmth worn or for carrying, by the law for joining coverings
+    (`_layer`, as `bind` uses it): the best counts fully, each next one half, in order from the best down; capped at 100
+    on the property scale (1.0 here), as `bind` caps it."""
+    v = 0.0
+    for e in sorted((factor(it, use) - 1.0 for it in p.items), reverse=True):
+        if e <= 0:
+            break
+        v = min(1.0, max(v, e) + min(v, e) / 2)
+    return 1.0 + v
+
+
+def use_factor(world, p, use: str) -> float:
+    """How much p's things help with this use: the single best thing (v16), or for warmth worn and carrying the layered
+    whole (OD1, D5)."""
+    if world is not None and world.cfg.layers_add and use in ("carry", "cold"):
+        return layered(p, use)
+    return best_item(p, use)[1]
+
+
 def carry_capacity(world, p) -> float:
-    _, f = best_item(p, "carry")
-    return world.cfg.carry_limit * f
+    return world.cfg.carry_limit * use_factor(world, p, "carry")
 
 
-def worn_warmth(p) -> float:
+def item_cap(world, p) -> int:
+    """How many made things p can carry. OD1 (D2, AF1's K): multiplied by the carry factor, as food is; the container
+    counts toward its own limit."""
+    if not world.cfg.containers_carry:
+        return world.cfg.item_limit
+    return int(world.cfg.item_limit * use_factor(world, p, "carry"))
+
+
+def material_cap(world, p) -> float:
+    """How much raw material p can carry. OD1 (D2, AF1's K): multiplied by the carry factor."""
+    if not world.cfg.containers_carry:
+        return world.cfg.material_limit
+    return world.cfg.material_limit * use_factor(world, p, "carry")
+
+
+def worn_warmth(p, world=None) -> float:
     """Share of cold kept out by what p wears."""
-    _, f = best_item(p, "cold")
-    return clamp(0.7 * (f - 1.0))
+    return clamp(0.7 * (use_factor(world, p, "cold") - 1.0))
 
 
 # --- piles of things on the ground ---------------------------------------------
