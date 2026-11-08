@@ -587,7 +587,7 @@
       "plan": "experiments/OD1_open_doors/questions.md",
       "frozen_tag": "OD1-frozen",
       "approved_by": "the creator (direction, package and no-harm bar, 7 November 2026, in session); council round 80 (GPT, Gemini, DeepSeek: no objection)",
-      "status": "running on the cloud (run 42457601901, 20 chunks, skip_zero=local; launched 8 November 02:09); zero checks All: PASS locally (second run; the first failed on a too-strict unit check, traced and corrected before data)"
+      "status": "done (final 8 November; tag OD1-done): no harm detected; the full package (D1-D5) goes live as nature v17; every door used; recomputed by GPT and Gemini; council round 81: GPT 82%, Gemini 100%, DeepSeek ~93%"
     }
   ],
   "queue_after": [
