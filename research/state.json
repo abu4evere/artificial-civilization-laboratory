@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-08 05:25",
+  "updated": "2026-11-08 14:10",
   "nature": {
     "live": "v17",
     "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
@@ -589,6 +589,15 @@
       "frozen_tag": "OD1-frozen",
       "approved_by": "the creator (direction, package and no-harm bar, 7 November 2026, in session); council round 80 (GPT, Gemini, DeepSeek: no objection)",
       "status": "done (final 8 November; tag OD1-done): no harm detected; the full package (D1-D5) goes live as nature v17; every door used; recomputed by GPT and Gemini; council round 81: GPT 82%, Gemini 100%, DeepSeek ~93%"
+    },
+    {
+      "id": "NB1",
+      "title": "Can a neural-brained people survive and improve over generations? (the first neural-brain test; the creator's decision of 8 November)",
+      "kind": "exploratory law test (code_nb1 = v17 + nb_brain; arms c v17, n neural with learning, e neural evolution only; seeds 25401-25416; 600 years; phase 2 common garden, generations 1, 9, 18, learning on/off, seeds 25501-25516, 60 years)",
+      "plan": "experiments/NB1_neural_brain/questions.md",
+      "frozen_tag": "NB1-frozen",
+      "approved_by": "the creator ('go ahead now', 8 November 2026, in session); council round 82 (GPT 85%, Gemini 80%, DeepSeek ~70%; no objection to the resolved design)",
+      "status": "phase 1 running on the cloud (run 42513724775, 20 chunks, skip_zero=local; launched 8 November 14:10)"
     }
   ],
   "queue_after": [
