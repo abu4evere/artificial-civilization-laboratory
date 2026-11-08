@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-07T10:38:00",
+  "updated": "2026-11-07 21:41",
   "nature": {
     "live": "v16",
     "acl_fingerprint": "a6560695a88396a77e673d5bb6b4c0578197ac6b93af0804de60c92ba4a58f82",
@@ -570,6 +570,15 @@
       "frozen_tag": "PM1-frozen",
       "approved_by": "the assistant under the creator's standing permissions; council round 77",
       "status": "done (final 7 November 20:10; tag PM1-done): P1 clear, 0.710 of new kinds: the part's recipe known but its inputs never in hand (0.838 at depth 3+); value does not flow from wholes to parts' materials or sub-parts"
+    },
+    {
+      "id": "VW1",
+      "title": "What a valued whole needs is wanted: value flows down the recipe tree (a law test in a copy of v16 with a sham)",
+      "kind": "law test (code_vw1 = v16 + want_down; arms c v16, w VW, x sham; seeds 25201-25232; 200 years)",
+      "plan": "experiments/VW1_value_of_wholes/questions.md",
+      "frozen_tag": "VW1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 78 (GPT 96%, Gemini 95% as a fault, DeepSeek ~78%)",
+      "status": "running on the cloud (run 42439579177, 20 chunks, skip_zero=local; launched 7 November 21:41); zero checks All: PASS locally"
     }
   ],
   "queue_after": [
