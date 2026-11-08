@@ -42,6 +42,16 @@ build what the makers never planned). The creator chose this order (the assistan
    others learned, and choosing one's own goals.
    - Law tests of the mind (like VW1) are brain work, so they also wait for the creator.
    - World and biology laws (like law B, "both parents feed", council round 79) are paused.
+5. **The brain will be a neural network** (the creator, 8 November 2026: "I think our current structure is more
+   predetermined we should go back to neural network cuz i think bob's brain will emerge from neural network"; after
+   the reading in `docs/research/neural_brains_2026-11-08.md`, "go ahead now"). The approved direction:
+   - **program the body, not the decisions:** the drives become feelings (rewards), and a small network decides;
+   - genes set the starting brain and how it learns, and they evolve;
+   - fast learning within a life;
+   - people see what others do and how it turns out;
+   - **deep time** (thousands of years), with selection only by survival and children; no hand-made fitness.
+   The first test is "can a neural-brained people survive and improve over generations?", in a copy of v17. It goes
+   through council, a frozen plan, the blind recompute and the safe path, as always. No LLMs inside ACL's people.
 4. **The aim of the brain work** (the creator, 7 November 2026): "Don't build a world where intelligence is guaranteed to succeed. Build a mind capable of discovering how to succeed in the world it inherits. The important ability isn't never making mistakes. It's learning from them." So the doors only open possibilities; they never make success easy.
 
 ## Hard rules
