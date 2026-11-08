@@ -1,0 +1,7 @@
+seed 501, 20 years: code_nb1 with nb_brain 0 = code_v17: yes; observers read-only (c, n): yes; n acts: yes; e acts: yes; n and e differ: yes; n: {"corr":{"corr_n":2272,"corr_sum":-470.08530604554693,"looks":2272,"sd_hand":591.8457732976528,"sd_net":223.60627748954334},"last_year":{"eta_mean":0.009841315040307318,"g_mean":0.9940439395812919,"g_sd":0.0668919459190735,"gen_mean":0.6747967479674797,"pop":123,"w_var":0.021067922486249863,"year":20},"samples":{"1":60,"12":0,"24":0}}
+seed 601, 60 years: code_nb1 with nb_brain 0 = code_v17: yes; observers read-only (c, n): yes; n acts: yes; e acts: yes; n and e differ: yes; n: {"corr":{"corr_n":5705,"corr_sum":-1623.6544474766106,"looks":5705,"sd_hand":1585.8545358460806,"sd_net":1141.2051077725216},"last_year":{"eta_mean":0.010384594971729583,"g_mean":1.034021044039013,"g_sd":0.11416357493937791,"gen_mean":1.9014084507042253,"pop":71,"w_var":0.020708286969005472,"year":60},"samples":{"1":60,"12":0,"24":0}}
+unit checks, arm n, seed 701, 10 years (scores = an independent computation; the learning step = a finite-difference gradient; a child's genome is one parent's within the mutation; g within [0, 2]; learning off leaves the weights = the genome): yes; {'score_looks': 300, 'grad_looks': 60, 'child_looks': 57, 'learn_off_changed': 0, 'learn_off_people': 88}
+arm n, seed 501: saved at year 10 and reloaded, continues exactly to year 15: yes
+code_nb1 fingerprint: 53fd539914c8999b40bb237e11ca6530bb37e782f9edef8a3d852e67bc3f65ad
+All: PASS
+

@@ -144,3 +144,11 @@ the work. **g staying near 1** means the network is decorative (the quiet-predet
 - the common garden uses generations **1, 12 and 24** in place of 1, 20 and 40.
 
 **This is below the council's 1,000 years.** If NB1 shows a signal (g falling, or a positive trend), a longer follow-up (checkpointed across jobs) is the next step, as GPT suggested for 3,000–5,000 years. Everything else is unchanged.
+
+## Amendment 3 (8 November 2026, before any data): generations 1, 9 and 18
+**The zero checks** (not data) showed a mean generation of only 1.9 at year 60 (seed 601). That is about 31 years per generation. So 600 years give about 19–20 generations, not 27, and generation 24 might never be reached.
+- The common garden uses generations **1, 9 and 18**.
+- Primary 2 is **generation 18 against 1**.
+- Primary 1's slope is over generations **1–20**.
+
+Everything else is unchanged.
