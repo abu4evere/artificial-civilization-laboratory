@@ -76,9 +76,10 @@ The other side of the debate:
   a shared family pool than to a strict mother-first order. Two cautions:
   - it is an analytic assumption, not a measured rule;
   - the Tsimane' grow crops.
-- **Food flows to need along kinship** between families. ACL's gift rule already weighs kin and trouble
-  (`mind.py`, the gift utility uses `care × kin` and `q_trouble`). So ACL's between-family part is already
-  roughly of this shape.
+- **Food flows to need along kinship** between families. ACL's gift rule already weighs the receiver's hunger, kin,
+  affection and partner (`mind.py`, the give motive). So ACL's between-family part is already roughly of this shape.
+  - *Correction (7 November, before commit of any study):* first written as "`care × kin` and `q_trouble`". Those
+    weigh the separate care action, not gifts.
 - **For the council (round 79):**
   - Does law B in either form fit these anchors?
   - Should the father's share depend on presence and food in hand (GPT's "do not teleport food"), as these
