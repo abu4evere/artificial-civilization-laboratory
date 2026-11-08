@@ -6,7 +6,7 @@ creator can choose between. **Nothing here is decided.** The brain work starts t
 ## In plain words
 The world (v17, frozen) now lets people make far more than they do. Their minds hold them back in three ways:
 1. **They rarely make anything.** Grown people spend about 0.0014 of their weeks making (VW1).
-2. **They never make an invention again.** Remaking within 5 years is 0.0127–0.0150 of new kinds (OD1). In CI1,
+2. **They almost never make an invention again.** Remaking within 5 years is 0.0127–0.0150 of new kinds (OD1). In CI1,
    every kind made again by its inventor was made again by a child.
 3. **They don't keep a goal across weeks.** They choose afresh every week. A held aim alone did not help (CI1's IN arm).
 
