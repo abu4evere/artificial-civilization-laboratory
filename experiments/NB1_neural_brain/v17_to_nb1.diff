@@ -1,0 +1,105 @@
+diff -ru --strip-trailing-cr -x __pycache__ ../NV17_nature_v17/code_v17/acl/biology.py code_nb1/acl/biology.py
+--- ../NV17_nature_v17/code_v17/acl/biology.py	2026-11-08 04:41:47.611638500 -0500
++++ code_nb1/acl/biology.py	2026-11-08 12:44:04.743096500 -0500
+@@ -396,6 +396,9 @@
+     nxt = context_index(world, p, bool(near))
+     future = max(p.q[nxt * N_ACTIONS:(nxt + 1) * N_ACTIONS])
+     r = p.reward + 2.0 * (p.mood - p.mood_before)
++    if c.nb_brain:                      # NB1: the network's own learning, from the same feeling
++        from . import brain_nb
++        brain_nb.learn(world, p, r, c.nb_learn)
+     i = p.last_ctx * N_ACTIONS + A[p.last_action]
+     p.q[i] = clamp(p.q[i] + c.learning_rate * (r + c.discount * future - p.q[i]), -1.5, 1.5)
+     if c.curiosity_pull:                # CU1: p remembers having tried this here
+@@ -544,6 +547,9 @@
+     child.mother = mother.id
+     child.father = father.id if father else None
+     child.caregiver = mother.id
++    if world.cfg.nb_brain:              # NB1: one parent's network genome, mutated a little
++        from . import brain_nb
++        child.nb = brain_nb.child(world, mother, father)
+     parents = [mother] + ([father] if father else [])
+     for par in parents:
+         par.children.append(child.id)
+@@ -570,6 +576,9 @@
+ def die(world, p: Person, cause: str, killer) -> None:
+     tick = world.tick
+     p.alive = False
++    if world.cfg.nb_brain:              # NB1: the network is dropped at death (nothing reads it again)
++        from . import brain_nb
++        brain_nb.forget(world, p)
+     p.death_tick = tick
+     p.death_cause = cause
+     world._living = None
+Only in code_nb1/acl: brain_nb.py
+diff -ru --strip-trailing-cr -x __pycache__ ../NV17_nature_v17/code_v17/acl/config.py code_nb1/acl/config.py
+--- ../NV17_nature_v17/code_v17/acl/config.py	2026-11-08 04:41:47.631614900 -0500
++++ code_nb1/acl/config.py	2026-11-08 12:44:04.727433400 -0500
+@@ -154,6 +154,9 @@
+                                        # made-thing and material limits, as it multiplies the food limit
+     made_binders: int = 1              # NV17 (OD1, D3): 1 = a held made thing with flex >= 50 can bind, as raw fiber and hide do
+     made_hammers: int = 1              # NV17 (OD1, D4): 1 = a held made thing with hard >= 50 can be the hammer in striking
++    nb_brain: int = 0                  # NB1: 1 = a small inherited, evolving network scores each option, added to the
++                                       # hand-written score times an inherited gene g; the habit table is not used
++    nb_learn: int = 1                  # NB1: with nb_brain, 1 = the network also learns within a life (REINFORCE)
+     layers_add: int = 1                # NV17 (OD1, D5): 1 = for warmth worn and for carrying, several things combine by the law
+                                        # for joining coverings (the best fully, each next half), capped at 100
+     fix_affordable_target: int = 1     # NV16 (FF4): 1 = forage, hunt and gather are offered at the best target the
+diff -ru --strip-trailing-cr -x __pycache__ ../NV17_nature_v17/code_v17/acl/mind.py code_nb1/acl/mind.py
+--- ../NV17_nature_v17/code_v17/acl/mind.py	2026-11-08 04:41:47.619616100 -0500
++++ code_nb1/acl/mind.py	2026-11-08 12:44:04.743096500 -0500
+@@ -587,7 +587,12 @@
+         _p2_log(world, p2, ("rest", None))
+         return ("rest", None)
+     options = thought.steer(p, options)
++    if c.nb_brain:                      # NB1: g x the hand-written score + the network's score
++        from . import brain_nb
++        options = brain_nb.rescore(world, p, options, near, hunger, fatigue, lw, base)
+     i = softmax_pick(rng, [o[0] for o in options], c.choice_temperature)
++    if c.nb_brain:
++        brain_nb.chosen(world, p, i, [o[0] for o in options], c.choice_temperature)
+     ranked = sorted(range(len(options)), key=lambda k: -options[k][0])[:4]
+     p.considered = [[options[k][1], _aim(options[k][2]), round(options[k][0], 2), 1 if k == i else 0] for k in ranked]
+     if i not in ranked:
+diff -ru --strip-trailing-cr -x __pycache__ ../NV17_nature_v17/code_v17/acl/person.py code_nb1/acl/person.py
+--- ../NV17_nature_v17/code_v17/acl/person.py	2026-11-08 04:41:47.332074700 -0500
++++ code_nb1/acl/person.py	2026-11-08 12:44:04.743096500 -0500
+@@ -98,7 +98,7 @@
+         "focus", "focus_weeks", "thoughts", "considered",
+         "heard", "puzzles", "marks", "thirst", "springs",
+         "records", "sightings", "shores", "voyage",
+-        "kept", "damp", "seen_at", "tried",
++        "kept", "damp", "seen_at", "tried", "nb",
+     )
+ 
+     def __init__(self, pid: str, name: str, sex: str, birth: int, generation: int,
+@@ -180,6 +180,7 @@
+         self.damp: dict = {}           # how wet each material they carry is, 0 .. 10
+         self.seen_at = {}              # NV2 (LK1): loved one's id -> [x, y, tick] where last in sight (only when last_seen)
+         self.tried = None              # CU1: how often p has learned from each action in each situation (only with curiosity_pull)
++        self.nb = None                 # NB1: the network (genome, working weights, g, learning rate, baseline), with nb_brain
+ 
+     # --- life stage -------------------------------------------------------
+ 
+@@ -255,6 +256,8 @@
+                 continue                 # NV2 (LK1): saved only when held, so v1's world is unchanged
+             elif k == "tried" and v is None:
+                 continue                 # CU1: saved only when held, so v8's world is unchanged
++            elif k == "nb" and v is None:
++                continue                 # NB1: saved only when held, so v17's world is unchanged
+             elif k == "loc":
+                 v = list(v)
+             d[k] = v
+diff -ru --strip-trailing-cr -x __pycache__ ../NV17_nature_v17/code_v17/acl/world.py code_nb1/acl/world.py
+--- ../NV17_nature_v17/code_v17/acl/world.py	2026-11-08 04:41:47.381075400 -0500
++++ code_nb1/acl/world.py	2026-11-08 12:44:04.743096500 -0500
+@@ -226,6 +226,9 @@
+             p = Person(self._new_pid(), name, sexes[i], -age_weeks, 0, genes, loc)
+             p.skills = {s: round(0.2 + 0.2 * rng.random(), 4) for s in SKILLS}
+             p.food = c.founder_food
++            if c.nb_brain:              # NB1: a founder's network, random from the world's generator
++                from . import brain_nb
++                p.nb = brain_nb.founder(self)
+             self.people[p.id] = p
+             groups[g].append(p)
+         # People who start together grew up together.

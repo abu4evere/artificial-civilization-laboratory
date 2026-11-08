@@ -128,3 +128,19 @@ the work. **g staying near 1** means the network is decorative (the quiet-predet
 - The creator decided the direction and said "go ahead now".
 - The design is the assistant's, after council round 82; all three have no objection.
 - Frozen as `NB1-frozen` before any code or data.
+
+## Amendment 1 (8 November 2026, before any data)
+**g's range is [0, 2], not [0, 1].** A 3-year code test (not data) showed mean g already at 0.988. Founders start at g = 1, the top of [0, 1], so mutation could only lower it. That drift would mimic the very readout "g falls". With [0, 2], mutation from 1 is symmetric, and only selection can move the mean. Everything else is unchanged.
+
+## Amendment 2 (8 November 2026, before any data): 600 years, generations 1, 12 and 24
+**The cloud cannot run 1,000-year worlds within its limit.**
+- **The evidence**, cloud speed, not outcomes: VW1's cloud run (42439579177) took about 50 minutes per 200-year world when 4 worlds shared a chunk. That is about 15 seconds per world-year.
+- **The network** adds about half again (measured locally: 12 seconds against 8 for 3 years).
+- **The cost:** a 1,000-year neural world would need about 6 hours. A cloud job stops at 340 minutes.
+
+**So NB1 runs 600 years** (about 27 generations):
+- the guard and population window is years 100–600;
+- primary 1's slope is over generations 1–24;
+- the common garden uses generations **1, 12 and 24** in place of 1, 20 and 40.
+
+**This is below the council's 1,000 years.** If NB1 shows a signal (g falling, or a positive trend), a longer follow-up (checkpointed across jobs) is the next step, as GPT suggested for 3,000–5,000 years. Everything else is unchanged.
