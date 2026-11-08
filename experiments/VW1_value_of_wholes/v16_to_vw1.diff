@@ -1,0 +1,91 @@
+--- code_v16/acl/config.py
++++ code_vw1/acl/config.py
+@@ -148,6 +148,8 @@
+     fix_name_ties: int = 1             # NV14 (FF3's F9): 1 = when a full memory (recipes, known marks, records of sources, puzzles)
+                                        # drops its least valued and several share that value, the one dropped is drawn
+                                        # evenly among them from a stream of its own; 0 = v13 (the key's text decides)
++    want_down: int = 0                 # VW1: 1 = what a valued whole needs is wanted: value flows down the recipe tree
++                                       # through recipes the person knows (0.8 a step) into the make and gather rules
+     fix_affordable_target: int = 1     # NV16 (FF4): 1 = forage, hunt and gather are offered at the best target the
+                                        # person can afford when the best one is too far (0 = v15: the whole action was
+                                        # dropped)
+--- code_v16/acl/mind.py
++++ code_vw1/acl/mind.py
+@@ -275,7 +275,7 @@
+     if not toddler:
+         # Gather: picking things up, out of curiosity or because you have found a use for them.
+         if p.mat_total() < c.material_limit:
+-            want = _material_wants(p, season)
++            want = _material_wants(p, season, c.want_down)
+             best, best_u, best_d = None, 0.0, 0
+             aff, aff_u, aff_d = None, 0.0, 0     # NV16 (FF4): the best target this person can afford
+             for kind in GATHERABLE + (("earth",) if c.digging else ()):
+@@ -308,7 +308,7 @@
+         # Make again something that has proved its worth.
+         best, best_u = None, 0.05
+         fire_here = world.tile(p.loc).fire > 0
+-        part_of = _wanted_parts(p)
++        part_of = _wanted_parts(p, c.want_down)
+         cands = []           # FX1: the eligible recipes, in the order learned: (sig, v, u)
+         for sig, recipe in p.recipes.items():
+             if recipe["verb"] == "heat" and not fire_here:
+@@ -648,8 +648,9 @@
+     return best
+ 
+ 
+-def _wanted_parts(p: Person) -> dict:
+-    """Made things that go into something they value and do not have: worth making for that."""
++def _wanted_parts(p: Person, deep: int = 0) -> dict:
++    """Made things that go into something they value and do not have: worth making for that.
++    VW1 (deep): the want flows on down, through the recipes they know, to the parts of those parts (0.8 a step)."""
+     out: dict = {}
+     for sig, recipe in p.recipes.items():
+         v = p.itemval.get(sig, 0.0)
+@@ -659,6 +660,23 @@
+         for part in parts:
+             if part not in MATERIALS and not _holding(p, part, worn_ok=True):
+                 out[part] = max(out.get(part, 0.0), 0.8 * v)
++    if deep:
++        frontier = list(out.items())
++        while frontier:
++            part, v = frontier.pop()
++            if v < out.get(part, 0.0):
++                continue
++            recipe = p.recipes.get(part)
++            if recipe is None:
++                continue
++            subs = list(recipe.get("parts", ())) + ([recipe["part"]] if recipe["verb"] == "heat" else [])
++            for sub in subs:
++                if sub in MATERIALS or _holding(p, sub, worn_ok=True):
++                    continue
++                nv = 0.8 * v
++                if nv >= 0.01 and nv > out.get(sub, 0.0):
++                    out[sub] = nv
++                    frontier.append((sub, nv))
+     return out
+ 
+ 
+@@ -687,7 +705,7 @@
+     return ""
+ 
+ 
+-def _material_wants(p: Person, season: int) -> dict:
++def _material_wants(p: Person, season: int, deep: int = 0) -> dict:
+     """How much each material is wanted for the things p knows how to make, or likes to leave places."""
+     want = {k: 0.0 for k in GATHERABLE}
+     for sig, recipe in p.recipes.items():
+@@ -697,6 +715,14 @@
+         for kind in recipe_materials(recipe):
+             if kind in want and p.mats.get(kind, 0.0) < 1.0:
+                 want[kind] = max(want[kind], v)
++    if deep:                    # VW1: what the wanted parts are made of is wanted too
++        for sig, v in _wanted_parts(p, deep).items():
++            recipe = p.recipes.get(sig)
++            if recipe is None or _holding(p, sig):
++                continue
++            for kind in recipe_materials(recipe):
++                if kind in want and p.mats.get(kind, 0.0) < 1.0:
++                    want[kind] = max(want[kind], v)
+     for kind in GATHERABLE:
+         b = max(belief(p, f"{kind}@{season}") or 0.0, belief(p, f"{kind}@{(season + 1) % 4}") or 0.0)
+         if b > 0:
