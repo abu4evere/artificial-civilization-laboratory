@@ -569,7 +569,7 @@
       "plan": "experiments/PM1_part_making/questions.md",
       "frozen_tag": "PM1-frozen",
       "approved_by": "the assistant under the creator's standing permissions; council round 77",
-      "status": "running on the cloud (run 42427166476)"
+      "status": "done (final 7 November 20:10; tag PM1-done): P1 clear, 0.710 of new kinds: the part's recipe known but its inputs never in hand (0.838 at depth 3+); value does not flow from wholes to parts' materials or sub-parts"
     }
   ],
   "queue_after": [
