@@ -1,4 +1,4 @@
-# DF1: independent blind recompute (7 November 2026, 19:56)
+# DF1: independent blind recompute (7 November 2026, 19:49)
 
 ## The inputs
 - `recompute/df1_counts.csv`: 32 rows, one per world. It was built by `recompute/build_df1_counts.py`, written before

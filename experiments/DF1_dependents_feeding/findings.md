@@ -1,6 +1,6 @@
 # DF1 findings: who feeds the children, and what does it cost them?
 
-**Status: final.** The blind recompute (`recompute_df1.md`, 7 November 2026, 19:56) matches: GPT and Gemini agree
+**Status: final.** The blind recompute (`recompute_df1.md`, 7 November 2026, 19:49) matches: GPT and Gemini agree
 in every point estimate and in the reading.
 
 Every number is from `results.md` (analyse_df1.py, frozen before data) on cloud run 42425472140:
