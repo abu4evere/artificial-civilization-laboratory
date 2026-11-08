@@ -12,6 +12,10 @@ experiment, edit its stage list and run `python docs/make_roadmap.py`; the book 
 
 ---
 
+## Direction since 7 November 2026 (the creator)
+
+Open the closed doors of the world once (general laws through properties), then **freeze the world** until a review on 7 December 2026, and put almost all work into **Bob's brain**. "bug=law": a world need not be perfect, only permit survival and learning. Details: `CLAUDE.md`, 'Direction'.
+
 ## The goal, in one line
 
 Civilization emerging in a world where **nature is programmed and culture is written by nobody**: people who keep,

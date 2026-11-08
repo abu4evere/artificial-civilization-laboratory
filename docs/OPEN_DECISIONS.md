@@ -3,6 +3,7 @@
 Kept short and current by the assistant. `tools/project_status.py` prints the list below. One line each; the details live in
 the file named.
 
+- [x] **Direction (7 November 2026), decided by the creator:** open the closed doors once (one package of general laws through properties, frozen test with a sham), then freeze the world until a review on 7 December 2026, and put almost all work into Bob's brain; law B paused (CLAUDE.md, 'Direction')
 - [ ] Nature candidates N1–N7 under Law 126: what to do with each (`experiments/NL1_nature_line/audit.md`)
 - [ ] Law 126 open point 3: classify all ~1,340 formula constants, or the outcome-related ones first (`experiments/NL1_nature_line/rule20_draft.md`)
 - [ ] Law 126 open point 4: kin and ownership knowledge case by case, or a general rule (same file)

@@ -23,6 +23,24 @@ Bob does not exist yet, and is not a person to pick or breed now. Every study is
 toward minds that build on what they and others learned (cumulative) and choose their own goals (autonomy).
 Bob matters more to the creator than civilization for its own sake. No LLMs inside ACL's people.
 
+## Direction: open the doors, then freeze the world, then the brain (the creator, 7 November 2026)
+The creator: "bug=law" … "we should freeze the world for a while and focus almost entirely on building the Bob's
+brain". Inside a world, a bug feels like a law (gravity could be one), and no one can tell in reasonable time which
+quirk shapes the world and which blocks it. A perfect world is not needed; a world that permits survival and learning,
+plus minds capable of cumulative adaptation, may be enough (the Minecraft lesson: simple rules that combine, and people
+build what the makers never planned). The creator chose this order (the assistant's recommendation "B"):
+1. **Open the closed doors, once:** one package of general laws through properties, never named things (made things
+   as binders or hammers when their properties allow, containers that contain, made things in heaps, tools together,
+   room to carry; `docs/affordance_audit_2026-11-02.md`). It goes as one frozen test with a sham.
+2. **Then freeze the world** (nature after step 1) until a review on **7 December 2026**.
+   - While frozen, there are no world-rule studies and no fault hunts.
+   - The one exception: code that plainly does not do what its own comment says may be fixed quickly.
+   - A brain test that shows the world lacks something is noted for the review, not acted on.
+3. **Then almost all work goes to Bob's brain:** value, memory, curiosity, learning from others, building on what
+   others learned, and choosing one's own goals.
+   - Law tests of the mind (like VW1) continue.
+   - World and biology laws (like law B, "both parents feed", council round 79) are paused.
+
 ## Hard rules
 - Freeze a plan (`questions.md`, git tag `X-frozen`) and get the **creator's sign-off** before any code or data.
 - Never change nature (`acl/`, `code_vN`) without the creator's explicit decision. Zero checks before runs.
