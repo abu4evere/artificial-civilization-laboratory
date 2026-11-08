@@ -53,3 +53,27 @@ believe, is a question for the brain session. Reading the paper itself would nee
 ## Not read
 - Kinny & Georgeff 1991 itself (known here only through Schut et al.).
 - Schank 1982, *Dynamic Memory*.
+
+## Addendum (8 November, morning): long apprenticeships
+**Dallos 2021 — full text read** (extracted from the open-access PDF; every quote below was checked against it).
+Dallos C (2021). Is there more to human social learning than enhanced facilitation? Prolonged learning and its impact
+on culture. *Humanities and Social Sciences Communications* 8: 152.
+
+- **The argument:** work on cumulative culture stresses teaching. That "fails to take into account instances when
+  experts inhibit, rather than facilitate, learning". Experts lengthen learning to keep their prestige, and the added
+  complexity becomes part of the craft. So "mechanisms to extend learning constitute a vital source of cultural
+  creativity and innovation".
+- **Apprenticeship** "is often considerably longer than the time required to acquire technical competence".
+  "Repetitive rehearsal and practice certainly enhance performance".
+- **Langda adze makers** (citing Stout 2002, p. 702): "in the past men had been killed for using [rough-outs] without
+  permission". Experts control materials and the large adze heads.
+- **What it does not cover:** the words "failure" and "trial and error" do not appear in the paper. It is about experts
+  slowing learners, not about learners recovering from failure.
+
+**For the brain session (not a decision):**
+- In ACL, learning a recipe is one event: a lesson taken or declined, or an invention.
+- Real crafts take years of repeated practice, and the craft itself grows harder over time. ACL has no notion of
+  practice making a known recipe better or more reliable, beyond the crafting skill.
+- That may matter for "learning from mistakes": a person could improve by repeating something that failed.
+
+**Not read:** Stout 2002 itself (the Emory PDF returned an empty bot-check page).
