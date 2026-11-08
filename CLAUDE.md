@@ -40,7 +40,7 @@ build what the makers never planned). The creator chose this order (the assistan
    2026: "we will start together when we move to brain itself till that you keep working yourself". No session
    starts brain design or brain studies alone before that. The focus: value, memory, curiosity, learning from others, building on what
    others learned, and choosing one's own goals.
-   - Law tests of the mind (like VW1) continue.
+   - Law tests of the mind (like VW1) are brain work, so they also wait for the creator.
    - World and biology laws (like law B, "both parents feed", council round 79) are paused.
 4. **The aim of the brain work** (the creator, 7 November 2026): "Don't build a world where intelligence is guaranteed to succeed. Build a mind capable of discovering how to succeed in the world it inherits. The important ability isn't never making mistakes. It's learning from them." So the doors only open possibilities; they never make success easy.
 
