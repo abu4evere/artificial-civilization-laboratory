@@ -552,6 +552,24 @@
       "frozen_tag": "MP1-frozen",
       "approved_by": "the assistant under the creator's standing permissions; council round 76 (GPT 97%, Gemini 95%, DeepSeek ~90%)",
       "status": "done (final 7 November 17:35; tag MP1-done): A clear, 0.902 of new kinds never have a made part held again by a knower; carry limit not the wall (dropped 0.025); half of the few parts made are handed away"
+    },
+    {
+      "id": "DF1",
+      "title": "Who feeds the children, and what does it cost them? (read-only on v16)",
+      "kind": "read-only (one arm on code_v16; seeds 25101-25132)",
+      "plan": "experiments/DF1_dependents_feeding/questions.md",
+      "frozen_tag": "DF1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 77",
+      "status": "done (final 7 November 19:56; tag DF1-done): feeding drives the gap (women 7.38 vs men 0.74 per 1,000; women's share 0.888); the mother is the sole caregiver by rule"
+    },
+    {
+      "id": "PM1",
+      "title": "Why are the parts of new kinds never made again? (read-only part-making funnel on v16)",
+      "kind": "read-only (one arm on code_v16; seeds 25001-25032)",
+      "plan": "experiments/PM1_part_making/questions.md",
+      "frozen_tag": "PM1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 77",
+      "status": "running on the cloud (run 42427166476)"
     }
   ],
   "queue_after": [
