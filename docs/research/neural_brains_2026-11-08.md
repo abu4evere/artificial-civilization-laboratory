@@ -163,19 +163,19 @@ Episodic memory with fast value updates, read out from the 50 nearest stored sit
    - "experience can only be incorporated into a neural network slowly";
    - every neural-agent success above used millions to billions of steps, or evolution across many generations.
    
-   An ACL person makes roughly 1,500–3,000 weekly decisions in a life.
+   An ACL person makes roughly 1,500–3,000 weekly decisions in a life (a rough estimate: 30–60 years × 52).
 2. **Evolution is the answer real life used, and ACL already has it** (genes, birth and death):
    - Polyworld evolved its brains' wiring and learning rates;
    - Hinton & Nowlan show that learning plus evolution solves what evolution alone never did;
    - Najarro & Risi evolve only the *learning rules* and start every life with random weights.
    
-   **The catch:** a 200-year ACL world has only about 8–10 generations, far too few for brains to evolve. A neural
+   **The catch:** a 200-year ACL world has only about 8–10 generations (a rough estimate at 20–25 years each), far too few for brains to evolve. A neural
    brain would need **deep time**: many generations in the same physics, selected only by survival and children.
    - Polyworld needed a scaffold (system-created organisms with an ad hoc fitness) until populations sustained
      themselves.
    - ACL should avoid any hand-made fitness: survival and birth only, perhaps across many worlds.
 3. **Fast learning inside a life comes from memory, not from slow weight change:**
-   - episodic memory (NEC: about 3 times prioritised replay's score at 1–10 million frames);
+   - episodic memory (NEC: 54.6% against prioritised replay's 22.4% at 10 million frames);
    - Hebbian plasticity (Miconi: 250 times faster than an LSTM on a memory task);
    - ACL's PB1b and PB2 agree.
 4. **Learning from others does not come free.** It needed:
