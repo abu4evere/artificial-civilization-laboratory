@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-10 10:50",
+  "updated": "2026-11-10 11:05",
   "nature": {
     "live": "v17",
     "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
@@ -705,5 +705,5 @@
       "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
     }
   ],
-  "next_step": "NB1 final (decorative): what next on the brain road is for the creator and the council (findings.md). Cradle C0-A running on the cloud (c0a-run 42845179399): analyse, then the blind recompute. FP1: blind recompute (GPT, Gemini, DeepSeek) from recompute/fp1_counts.csv + prompt.txt, then findings.md. SP1 frozen, launch awaits the creator's code."
+  "next_step": "Waiting for the creator: (1) NB1 final, decorative: what next on the brain road (findings.md); (2) Cradle C0-A final, words yes, correction no, task at ceiling by day 90: a harder C0-A or C1. FP1: blind recompute from recompute/fp1_counts.csv + prompt.txt, then findings.md. SP1 frozen, launch awaits the creator."
 }
