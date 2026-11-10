@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-10 11:05",
+  "updated": "2026-11-10 15:32",
   "nature": {
     "live": "v17",
     "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
@@ -705,5 +705,5 @@
       "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
     }
   ],
-  "next_step": "(1) NB2 long-run 42874664849 (81 jobs; 59 done, 20 running, 2 queued at 15:20 on 10 Nov): fetch, run the frozen analysis, blind recompute by GPT, Gemini and DeepSeek. (2) Cradle: C0-B done (C0B-done); next a harder hearing or C1. (3) The creator, 10 Nov 15:15 (Telegram): the assistant should live inside both worlds - in ACL as a watcher (never as a person: no LLMs inside ACL people), in Cradle as the ghost. So: build a read-only watcher on v17 (week by week through one person's eyes: options weighed, thoughts, what they chose; like tools/mind_views/life_record.py, which runs on the old code_e13r) and write what it shows about the brain; and keep the Cradle director (cradle/director.py) deciding events each world month, every decision in the chronicle."
+  "next_step": "(1) NB2 long-run 42874664849 (81 jobs; 70 done, 0 failures at 15:28 on 10 Nov): fetch, run the frozen analysis, blind recompute by GPT, Gemini and DeepSeek. (2) Cradle: C0-B done (C0B-done); next a harder hearing or C1. (3) The creator, 10 Nov 15:24 (Telegram): live inside ACL as one of its people. Done by hand this session with the new probe tools/mind_views/inhabit.py (seed 7103, p00027, weeks 1040-1045); record docs/inhabit_2026-11-10.md. Nature unchanged. Next time the probe runs, live a longer stretch (20+ weeks) and keep one project across weeks; everything it shows is noted for the 7 December review, not acted on. Keep the Cradle director deciding events each world month."
 }
