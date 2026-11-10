@@ -1,709 +1,709 @@
 {
- "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
- "updated": "2026-11-10 15:32",
- "nature": {
-  "live": "v17",
-  "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
-  "frozen_copy": "experiments/NV17_nature_v17/code_v17",
-  "frozen_copy_fingerprint": "c1db69ab5616f50ce6eb4b6d810119fa4276fe94e77059741ee6382f3084253a",
-  "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
-  "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek",
-  "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek",
-  "note_v14": "adopted 6 November 2026 (night): FF3 fault fix (memory ties drawn evenly instead of settled by name, F9), no harm, recomputed by GPT (code) and DeepSeek (points; its intervals approximate); Gemini failed to answer three times",
-  "note_v15": "adopted 6 November 2026 (evening) by the safe path for a new law: CI1 supported LG (children 3+ offered the make option), CI1-C confirmed it on new seeds, blind recomputes by GPT and Gemini (code) matched both, council round 71 (GPT 99%, Gemini 100%, DeepSeek ~94%; the assistant 92%); zero checks pass; 70 tests",
-  "note_v16": "adopted 7 November 2026 by the assistant by the safe path (fault fix: FF4 no harm; GPT and Gemini recompute matched; council round 77: GPT 98%, Gemini 100%, DeepSeek ~94%); zero checks All: PASS; 71 tests pass; tag nature-v16; v15 kept in experiments/NV15_nature_v15/code_v15",
-  "note_v17": "adopted 8 November 2026 by the safe path: OD1's five doors (similar parts, containers carry, made binders, made hammers, layers add); the creator decided the direction, package and no-harm bar; OD1 no guard, every door used; GPT and Gemini recompute matched; council round 81: GPT 82%, Gemini 100%, DeepSeek ~93%; zero checks All: PASS; 72 tests pass; tag nature-v17; v16 kept in experiments/NV16_nature_v16/code_v16. THE WORLD IS FROZEN AS v17 UNTIL THE REVIEW ON 7 DECEMBER 2026 (CLAUDE.md, Direction); the brain work starts with the creator"
- },
- "objectives": [
-  "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
-  "define and measure autonomy early",
-  "a world where knowing matters (measure before making it harder)",
-  "connected populations",
-  "later: language, emergent feelings, talent"
- ],
- "authorized_scope": {
-  "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
-  "nature_change_tests": "only studies listed below with approved_by set",
-  "nature_adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
-  "money_credentials_publishing_deleting": "never",
-  "rule_edits": "the creator, 2 November 2026 (at the PC): 'I give you permission to edit world rules. Take a look and check all rules. If you find something fix it or add any new rules. From now on keep working without me'. Fixes and new general laws without asking first, each via council (GPT, Gemini, DeepSeek), a frozen test in a copy with a sham, blind recomputes and the safe path; a fault fix needs only a harm check (FX1); never named inventions, recipe chains, rewards or tuning",
-  "council": "GPT, Gemini and DeepSeek (the creator, 2 November 2026: 'from now on you will use those 3'); the same question to all three; close browser tabs when done"
- },
- "studies": [
-  {
-   "id": "AG1",
-   "title": "Ageing anchored to forager evidence",
-   "kind": "nature-change test (calibration); exploratory (20 seeds)",
-   "plan": "experiments/AG1_ageing_anchor/questions.md",
-   "frozen_tag": "AG1-frozen",
-   "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
-   "status": "final",
-   "jobs": {
-    "cloud_run": 41042869183,
-    "cloud_saved": 75,
-    "local": [
-     "b:20501",
-     "a:20501",
-     "b:20506",
-     "a:20506",
-     "x:20506"
-    ],
-    "local_dir": "experiments/AG1_ageing_anchor/output_local",
-    "identity_check": "passed"
-   },
-   "next_step": "adopted as nature v10 (the creator, 31 October 2026); see experiments/NV10_nature_v10/findings.md",
-   "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
+  "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
+  "updated": "2026-11-10 17:45",
+  "nature": {
+    "live": "v17",
+    "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
+    "frozen_copy": "experiments/NV17_nature_v17/code_v17",
+    "frozen_copy_fingerprint": "c1db69ab5616f50ce6eb4b6d810119fa4276fe94e77059741ee6382f3084253a",
+    "adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
+    "note_v12": "adopted 3 November 2026: FF1 fault fixes (make choice, inheritance overflow), no harm, recomputed by GPT, Gemini and DeepSeek",
+    "note_v13": "adopted 3 November 2026 (evening): FF2 fault fixes (hunt expectation F8, material limit F4, water holder F5), no harm, recomputed by GPT, Gemini and DeepSeek",
+    "note_v14": "adopted 6 November 2026 (night): FF3 fault fix (memory ties drawn evenly instead of settled by name, F9), no harm, recomputed by GPT (code) and DeepSeek (points; its intervals approximate); Gemini failed to answer three times",
+    "note_v15": "adopted 6 November 2026 (evening) by the safe path for a new law: CI1 supported LG (children 3+ offered the make option), CI1-C confirmed it on new seeds, blind recomputes by GPT and Gemini (code) matched both, council round 71 (GPT 99%, Gemini 100%, DeepSeek ~94%; the assistant 92%); zero checks pass; 70 tests",
+    "note_v16": "adopted 7 November 2026 by the assistant by the safe path (fault fix: FF4 no harm; GPT and Gemini recompute matched; council round 77: GPT 98%, Gemini 100%, DeepSeek ~94%); zero checks All: PASS; 71 tests pass; tag nature-v16; v15 kept in experiments/NV15_nature_v15/code_v15",
+    "note_v17": "adopted 8 November 2026 by the safe path: OD1's five doors (similar parts, containers carry, made binders, made hammers, layers add); the creator decided the direction, package and no-harm bar; OD1 no guard, every door used; GPT and Gemini recompute matched; council round 81: GPT 82%, Gemini 100%, DeepSeek ~93%; zero checks All: PASS; 72 tests pass; tag nature-v17; v16 kept in experiments/NV16_nature_v16/code_v16. THE WORLD IS FROZEN AS v17 UNTIL THE REVIEW ON 7 DECEMBER 2026 (CLAUDE.md, Direction); the brain work starts with the creator"
   },
-  {
-   "id": "AW1",
-   "title": "Learning a craft from others: watching (W) and being shown (T)",
-   "kind": "nature-change test; 32 paired seeds, 200 years",
-   "plan": "experiments/AW1_watch_and_teach/questions.md",
-   "frozen_tag": "AW1-frozen",
-   "approved_by": "the creator, 30 Oct: 'yea go ahead with AW1 run it after AG1'",
-   "status": "final",
-   "jobs": {
-    "cloud_run": 41111670960
-   },
-   "next_step": "none; next study: a read-only look at why the choice to make falls (to debate, then freeze)",
-   "evidence": "verified: not supported (making unchanged); being shown nearly doubles skill; recompute matched (GPT, Gemini)"
+  "objectives": [
+    "knowledge that survives death and builds up across generations (the creator's order, 30 October 2026)",
+    "define and measure autonomy early",
+    "a world where knowing matters (measure before making it harder)",
+    "connected populations",
+    "later: language, emergent feelings, talent"
+  ],
+  "authorized_scope": {
+    "read_only_studies": "allowed in sleep mode under the 40% rule, with GPT and Gemini consulted (needs the browser: interactive sessions only)",
+    "nature_change_tests": "only studies listed below with approved_by set",
+    "nature_adoption": "autonomous only by the safe path (CLAUDE.md, the creator 31 October 2026): final supported study, matching GPT+Gemini recompute, confirmatory run on new seeds, both models consulted at >=40%, code_vN zero checks, tests, tag, Telegram message; never in a tick or Telegram session",
+    "money_credentials_publishing_deleting": "never",
+    "rule_edits": "the creator, 2 November 2026 (at the PC): 'I give you permission to edit world rules. Take a look and check all rules. If you find something fix it or add any new rules. From now on keep working without me'. Fixes and new general laws without asking first, each via council (GPT, Gemini, DeepSeek), a frozen test in a copy with a sham, blind recomputes and the safe path; a fault fix needs only a harm check (FX1); never named inventions, recipe chains, rewards or tuning",
+    "council": "GPT, Gemini and DeepSeek (the creator, 2 November 2026: 'from now on you will use those 3'); the same question to all three; close browser tabs when done"
   },
-  {
-   "id": "CO2",
-   "title": "What makes the other options beat making under v9 (read-only)",
-   "kind": "read-only; 32 seeds, 200 years",
-   "plan": "experiments/CO2_choice_v9/questions.md",
-   "frozen_tag": "CO2-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
-   "status": "final",
-   "jobs": {
-    "cloud_run": 41138990924
-   },
-   "next_step": "none; next: read-only study of how the worth of made things forms (debate first); the learning-rule study waits for the creator",
-   "evidence": "verified: level of the deficit = built-in pull (0.562); decline = habit (0.87); curiosity -0.051; recompute matched (GPT, Gemini)"
+  "studies": [
+    {
+      "id": "AG1",
+      "title": "Ageing anchored to forager evidence",
+      "kind": "nature-change test (calibration); exploratory (20 seeds)",
+      "plan": "experiments/AG1_ageing_anchor/questions.md",
+      "frozen_tag": "AG1-frozen",
+      "approved_by": "the creator's delegation, 30 Oct: 'just discuss with gpt and gemini and solve this aging problem'",
+      "status": "final",
+      "jobs": {
+        "cloud_run": 41042869183,
+        "cloud_saved": 75,
+        "local": [
+          "b:20501",
+          "a:20501",
+          "b:20506",
+          "a:20506",
+          "x:20506"
+        ],
+        "local_dir": "experiments/AG1_ageing_anchor/output_local",
+        "identity_check": "passed"
+      },
+      "next_step": "adopted as nature v10 (the creator, 31 October 2026); see experiments/NV10_nature_v10/findings.md",
+      "evidence": "verified: both anchors more realistic; b (the !Kung step) no flags; a two flags; recompute matched (GPT, Gemini)"
+    },
+    {
+      "id": "AW1",
+      "title": "Learning a craft from others: watching (W) and being shown (T)",
+      "kind": "nature-change test; 32 paired seeds, 200 years",
+      "plan": "experiments/AW1_watch_and_teach/questions.md",
+      "frozen_tag": "AW1-frozen",
+      "approved_by": "the creator, 30 Oct: 'yea go ahead with AW1 run it after AG1'",
+      "status": "final",
+      "jobs": {
+        "cloud_run": 41111670960
+      },
+      "next_step": "none; next study: a read-only look at why the choice to make falls (to debate, then freeze)",
+      "evidence": "verified: not supported (making unchanged); being shown nearly doubles skill; recompute matched (GPT, Gemini)"
+    },
+    {
+      "id": "CO2",
+      "title": "What makes the other options beat making under v9 (read-only)",
+      "kind": "read-only; 32 seeds, 200 years",
+      "plan": "experiments/CO2_choice_v9/questions.md",
+      "frozen_tag": "CO2-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (Gemini 95%; GPT unreachable, to be asked before any outcome is read)",
+      "status": "final",
+      "jobs": {
+        "cloud_run": 41138990924
+      },
+      "next_step": "none; next: read-only study of how the worth of made things forms (debate first); the learning-rule study waits for the creator",
+      "evidence": "verified: level of the deficit = built-in pull (0.562); decline = habit (0.87); curiosity -0.051; recompute matched (GPT, Gemini)"
+    },
+    {
+      "id": "IW1",
+      "title": "How the worth of made things forms (read-only, frozen on code_v9)",
+      "kind": "read-only",
+      "status": "final",
+      "run": 41180403699,
+      "next_step": "none; next: debate a read-only look at where tools could matter more (a world where knowing matters)"
+    },
+    {
+      "id": "TR1",
+      "title": "What do tools really add? (read-only, frozen on code_v10)",
+      "kind": "read-only",
+      "status": "final",
+      "run": 41199047689,
+      "next_step": "none; next: debate a read-only look at tool access and choice (who holds the best tools; why others do not make or get them)",
+      "note": "run 1 (41191446977) not valid: 3 deaths within forage counted as mismatches; amendment 1; outputs kept in output_run1_invalid/"
+    },
+    {
+      "id": "TA1",
+      "title": "Why tools do not reach hands (read-only, frozen on code_v10)",
+      "kind": "read-only",
+      "status": "final",
+      "run": 41213975492,
+      "next_step": "none; next: debate B (handing a made thing, a nature-change test in a copy) against the choice to make"
+    },
+    {
+      "id": "HD1",
+      "title": "Handing a made thing (nature-change test in a copy, code_hd1)",
+      "kind": "nature-change test (copy)",
+      "status": "final",
+      "run": 41226917887,
+      "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
+    },
+    {
+      "id": "HD1-C",
+      "title": "Handing law, confirmatory run on new seeds",
+      "kind": "nature-change test (copy), confirmatory",
+      "status": "final",
+      "run": 41241346782,
+      "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
+    },
+    {
+      "id": "ES1",
+      "title": "Expected look-ahead in habit learning (nature-change test in a copy, code_es1)",
+      "kind": "nature-change test (copy)",
+      "status": "final",
+      "run": 41256219936,
+      "next_step": "not adopted; next: debate ES2 (expected look-ahead over the whole choice, calibration primary) and whether relative accuracy is the better test"
+    },
+    {
+      "id": "ES2",
+      "title": "Realized look-ahead (deferred Expected Sarsa over the real choice; nature-change test in a copy, code_es2)",
+      "kind": "nature-change test (copy)",
+      "status": "final: not supported (rest guard)",
+      "run": 41274072560,
+      "next_step": "debate round 40 with GPT and Gemini (research/local/next_debate_prompt.txt): A read-only under-valuation diagnostic, B longer view, C handing audit",
+      "plan": "experiments/ES2_realized_lookahead/questions.md",
+      "frozen_tag": "ES2-frozen",
+      "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0).",
+      "recompute": "experiments/ES2_realized_lookahead/recompute_es2.md (GPT and Gemini match, 1 November 2026, 11:45)"
+    },
+    {
+      "id": "UV1",
+      "title": "Does habit under-valuation fade with experience? (read-only replay of ES2's v11 and r worlds)",
+      "kind": "read-only",
+      "plan": "experiments/UV1_undervaluation_by_experience/questions.md",
+      "frozen_tag": "UV1-frozen",
+      "status": "final: persistent bias",
+      "run": 41331098954,
+      "next_step": "debate round 41: the floor (coarse situations) and the children (upbringing pull), read-only first",
+      "recompute": "experiments/UV1_undervaluation_by_experience/recompute_uv1.md (GPT and Gemini match)"
+    },
+    {
+      "id": "UV2",
+      "title": "Does the habit floor come from unpractised choices further ahead? (read-only replay of ES2's r arm)",
+      "kind": "read-only",
+      "plan": "experiments/UV2_propagation/questions.md",
+      "frozen_tag": "UV2-frozen",
+      "status": "final: not propagation",
+      "next_step": "debate round 42: rising returns vs a generations-long climb (the time trend), read-only first",
+      "run": 41341318088,
+      "recompute": "experiments/UV2_propagation/recompute_uv2.md (GPT and Gemini match)"
+    },
+    {
+      "id": "UV3",
+      "title": "Is the shrinking habit gap rising returns or climbing values? (read-only replay of ES2's r arm)",
+      "kind": "read-only",
+      "plan": "experiments/UV3_time_trend/questions.md",
+      "frozen_tag": "UV3-frozen",
+      "status": "final: returns stable",
+      "next_step": "debate round 43: ES3, value passing-on, or the handing/making line",
+      "run": 41357015837,
+      "recompute": "experiments/UV3_time_trend/recompute_uv3.md (GPT and Gemini match)"
+    },
+    {
+      "id": "HA1",
+      "title": "Why does handing stay rare? (read-only audit on live v11)",
+      "kind": "read-only",
+      "plan": "experiments/HA1_handing_audit/questions.md",
+      "frozen_tag": "HA1-frozen",
+      "status": "final: opportunity-limited",
+      "run": 41365641251,
+      "next_step": "debate: knowledge transmission; IQ1 report first (the creator, 1 Nov)",
+      "recompute": "experiments/HA1_handing_audit/recompute_ha1.md (GPT and Gemini match)"
+    },
+    {
+      "id": "KL1",
+      "title": "Does know-how outlive its holders? (read-only audit on live v11; IQ1-H3 step 1)",
+      "kind": "read-only",
+      "plan": "experiments/KL1_knowledge_loss/questions.md",
+      "frozen_tag": "KL1-frozen",
+      "status": "final: death is the main road of loss; marks do not (yet)",
+      "run": 41380622576,
+      "next_step": "literature review (the creator's sources); then H1 in a copy",
+      "recompute": "experiments/KL1_knowledge_loss/recompute_kl1.md (GPT and Gemini match)"
+    },
+    {
+      "id": "BN1",
+      "title": "Born without learned content (a nature-change test in a copy; IQ1-H1)",
+      "kind": "nature-change test in a copy (code_bn1); adoption only with the creator's explicit approval",
+      "plan": "experiments/BN1_born_without_learned_content/questions.md",
+      "frozen_tag": "BN1-frozen",
+      "approved_by": "the assistant under the 40% rule, the creator present (2 Nov); adoption needs the creator",
+      "status": "final: inconclusive (D_z +0.0205 [+0.0157, +0.0252] vs margin 0.02); no guard",
+      "run": 41394713611,
+      "zero": "cloud, All: PASS (zero_cloud.log, fingerprint f236c149...)",
+      "next_step": "the creator decides on birth inheritance (no change without them); next study SC1 (debate round 46)",
+      "recompute": "experiments/BN1_born_without_learned_content/recompute_bn1.md (GPT and Gemini match)"
+    },
+    {
+      "id": "SC1",
+      "title": "A scorecard of the creator's twelve capacities (read-only on live v11)",
+      "kind": "read-only",
+      "plan": "experiments/SC1_bob_scorecard/questions.md",
+      "frozen_tag": "SC1-frozen",
+      "approved_by": "the assistant under the 40% rule, the creator present (GPT 86%, Gemini 94%, round 47)",
+      "status": "final: communication and individuality positive; uptake missing (0 of 3,883 late kinds remade); several capacities not measurable",
+      "run": 41424864945,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "council: a read-only audit of why new kinds are never made again (uptake)",
+      "recompute": "experiments/SC1_bob_scorecard/recompute_sc1.md (GPT matches; Gemini 3.1 Pro matches)"
+    },
+    {
+      "id": "UP1",
+      "title": "Why is a new kind never made again? (read-only funnel on live v11)",
+      "kind": "read-only",
+      "plan": "experiments/UP1_uptake_of_new_kinds/questions.md",
+      "frozen_tag": "UP1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 95%, round 48)",
+      "status": "final: mainly blocked at 'cannot make' (0.867 [0.852, 0.883]); new kinds are nested, parts not in hand",
+      "run": 41450747356,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "for the creator: a frozen nature-change test of a general condition (goal kept across weeks, deeper wanted-part bridge, or carrying room); read-only follow-ups for the council meanwhile",
+      "recompute": "experiments/UP1_uptake_of_new_kinds/recompute_up1.md (GPT and Gemini 3.1 Pro match)"
+    },
+    {
+      "id": "WP1",
+      "title": "Want propagation: can new inventions be made again? (a nature-change test in a copy)",
+      "kind": "nature-change test in a copy (code_wp1 = v11 + want_propagation); adoption only by the safe path, the creator asked first",
+      "plan": "experiments/WP1_want_propagation/questions.md",
+      "frozen_tag": "WP1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 94%, round 49); the creator on Telegram 10:05 'Yes go ahead'",
+      "status": "final: A1 and A2 inconclusive (late inventions still never remade); no guard",
+      "run": 41476346903,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "for the creator: a goal kept across weeks, or carrying room, or neither (a frozen test in a copy first)",
+      "recompute": "experiments/WP1_want_propagation/recompute_wp1.md (GPT and Gemini 3.1 Pro match)"
+    },
+    {
+      "id": "AF1",
+      "title": "Open what made things can do: S make by what it does, K containers contain (a nature-change test in a copy)",
+      "kind": "nature-change test in a copy (code_af1 = v11 + similar_parts + containers_carry)",
+      "plan": "experiments/AF1_open_affordances/questions.md",
+      "frozen_tag": "AF1-frozen",
+      "approved_by": "the creator's 'go ahead' for step 1 (2 November); GPT 93%, Gemini 95% (round 50)",
+      "status": "final: S, K and S+K inconclusive (late inventions still not remade: 1, 2, 0, 0 of ~3,300); no guard; adults hold <1 made thing, make ~once in 14 years",
+      "run": 41573896983,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "council round 53: why making is so rare (read-only, worth vs real help) and the rules-review queue",
+      "recompute": "experiments/AF1_open_affordances/recompute_af1.md (GPT and Gemini 3.1 Pro match with code; DeepSeek matches by hand)"
+    },
+    {
+      "id": "FF1",
+      "title": "Fixing three faults in nature v11 (a fault-fix harm check in a copy)",
+      "kind": "fault-fix check in a copy (code_fx1 = v11 + fix_make_choice + fix_overflow); 'no harm' -> nature v12",
+      "plan": "experiments/FX1_fault_fixes/questions.md",
+      "frozen_tag": "FX1-frozen",
+      "approved_by": "the assistant under the creator's permission to edit world rules (2 November); GPT 97%, Gemini 99%, DeepSeek ~95% (round 51)",
+      "status": "final: no harm; adopted as nature v12 (3 November)",
+      "run": 41571953456,
+      "zero": "cloud (skip_zero=no)",
+      "next_step": "done",
+      "recompute": "experiments/FX1_fault_fixes/recompute_ff1.md (GPT, Gemini and DeepSeek match)",
+      "note": "frozen and run under the folder name FX1_fault_fixes and tag FX1-frozen; renamed FF1 because FX1 was already used (FX1_extracted_foods)"
+    },
+    {
+      "id": "AM1",
+      "title": "Measuring autonomy against constrained controls (read-only on v11)",
+      "kind": "read-only",
+      "plan": "experiments/AM1_autonomy_measures/questions.md",
+      "frozen_tag": "AM1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy and the 2 November permission (GPT 94%, Gemini 97%, DeepSeek ~92%, round 52)",
+      "status": "final: M1 partly validated; M3 and M5 not validated (controls higher: habits suppress gather-then-make); M2 a candidate",
+      "run": 41587348657,
+      "zero": "local, All: PASS (zero_local.log)",
+      "next_step": "rerun the identical battery on v12; council on the habit/ends tension",
+      "recompute": "experiments/AM1_autonomy_measures/recompute_am1.md (GPT and Gemini match with code; DeepSeek values and readings)"
+    },
+    {
+      "id": "HN1",
+      "title": "Where do v11's hunts fail? (read-only funnel)",
+      "kind": "read-only",
+      "plan": "experiments/HN1_hunting_funnel/questions.md",
+      "frozen_tag": "HN1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy (round 53: GPT 95%, Gemini 98%, DeepSeek ~78%)",
+      "status": "final: F = 0, routing base chance; ratio 0.023; base chance alone cannot reach 0.5 (ceiling 0.42)",
+      "run": 41595719392,
+      "zero": "local, All: PASS",
+      "next_step": "done: round 54 chose FF2 (F8, F4, F5) and AM2 in parallel; HR1 (with F7) after FF2",
+      "recompute": "experiments/HN1_hunting_funnel/recompute_hn1.md (all three match)"
+    },
+    {
+      "id": "FF2",
+      "title": "Fixing three more faults in nature v12 (F8 hunt expectation, F4 material limit, F5 water holder; a fault-fix harm check in a copy)",
+      "kind": "fault-fix check in a copy (code_ff2 = v12 + fix_hunt_expect + fix_mat_limit + fix_water_holder); 'no harm' -> nature v13",
+      "plan": "experiments/FF2_fault_fixes_2/questions.md",
+      "frozen_tag": "FF2-frozen",
+      "approved_by": "the assistant under the creator's permission to edit world rules (2 November); round 54: GPT 97%, Gemini 99%, DeepSeek ~92%",
+      "status": "final: no harm; adopted as nature v13",
+      "next_step": "done",
+      "run": 41680655094,
+      "zero": "cloud"
+    },
+    {
+      "id": "AM2",
+      "title": "AM1's autonomy battery, unchanged, on nature v12 (read-only)",
+      "kind": "read-only",
+      "plan": "experiments/AM2_autonomy_measures_v12/questions.md",
+      "frozen_tag": "AM2-frozen",
+      "approved_by": "the assistant under standing autonomy; round 54",
+      "status": "final: M3/M5 not validated again (habits suppress gather-then-make, ~7.7x); M1 not validated (does not replicate); M2 falls in both controls; v12 = v11 on all measures",
+      "run": 41676999711,
+      "zero": "cloud",
+      "next_step": "done",
+      "recompute": "GPT and Gemini match (recompute_am2.md)"
+    },
+    {
+      "id": "PB0",
+      "title": "Would knowing what happens next change people's choices? (read-only prediction audit on v12; the brain road, step 1)",
+      "kind": "read-only",
+      "plan": "experiments/PB0_prediction_audit/questions.md",
+      "frozen_tag": "PB0-frozen",
+      "approved_by": "the assistant under the creator's direction (brain first) and sleep-mode autonomy; round 57: Gemini 85%, DeepSeek ~80% after the control fix",
+      "status": "final: GO (recomputed by GPT and Gemini); gain is social reward, not survival or making",
+      "next_step": "round 58: the brain design with PB0's result",
+      "run": 41751443724
+    },
+    {
+      "id": "PB1",
+      "title": "A shadow brain: can a small predictor learn what ACL's actions do? (read-only on v13; the brain road, step 2)",
+      "kind": "read-only",
+      "plan": "experiments/PB1_shadow_predictor/questions.md",
+      "frozen_tag": "PB1-frozen",
+      "approved_by": "the assistant under the creator's direction (brain first) and standing autonomy; round 59: GPT 94%, Gemini 95%, DeepSeek ~82%",
+      "status": "final: it does not (recomputed by GPT and Gemini); rethink the learning rule before PB2",
+      "run": 41947447573,
+      "next_step": "council: how to rethink the predictor's learning (averaging with sharing, interactions, observation weighted by count)"
+    },
+    {
+      "id": "PB1b",
+      "title": "A shadow brain with episodic memory (read-only on v13; the brain road)",
+      "kind": "read-only",
+      "plan": "experiments/PB1b_episodic_predictor/questions.md",
+      "frozen_tag": "PB1b-frozen",
+      "approved_by": "the assistant under the creator's direction and sleep-mode autonomy; round 60: all three choose episodic memory",
+      "status": "final: GO (recomputed by GPT and Gemini); E-obs (learning from others' weeks) preferred for PB2",
+      "run": 41957772921,
+      "next_step": "PB2 design: E-obs connected to choices (v13 / reward-steered / + learning-progress goal memory / goal memory off / sham), council round 61"
+    },
+    {
+      "id": "PB2",
+      "title": "The episodic brain helps choose (a nature-change test in a copy of v13; the brain road, step 3)",
+      "kind": "nature test in a copy",
+      "plan": "experiments/PB2_brain_steers/questions.md",
+      "frozen_tag": "PB2-frozen",
+      "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 61: Gemini 90%, DeepSeek ~72%; the assistant 55%",
+      "status": "final (recomputed blind by GPT and Gemini): the self-chosen goal is not shown to help (G-P -0.0007 [-0.0020, +0.0005]; G-G0 +0.0002 [-0.0009, +0.0013]); memory steering raises ends-directed chains about 6x (P-c +0.0176 [0.0157, 0.0194]) and living-weeks +28%, no extinction; R near 0",
+      "next_step": "council round 62 on what follows PB2: a frozen test of memory steering itself as a candidate law (P against v13 as primary, a look-ahead control, new seeds), and why R stays near 0",
+      "run": 41985849249
+    },
+    {
+      "id": "PB3",
+      "title": "Memory steering as a candidate law: prediction or myopia? (a test in a copy; the brain road, step 4)",
+      "kind": "nature test in a copy",
+      "plan": "experiments/PB3_memory_steering/questions.md",
+      "frozen_tag": "PB3-frozen",
+      "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 62: GPT 94%, Gemini 95%, DeepSeek ~80%; the assistant 70%",
+      "status": "final (recomputed blind by GPT and Gemini): MYOPIA, NOT PREDICTION - the habit table's one-week look-ahead (discount 0.8, max over next week's habits) is the habit trap; without it M3 x7.5, makes x6.6, world-new kinds x9, living-weeks +17%; memory steering replicates PB2 but is below no-look-ahead (P - c0 -0.0059); R still 0",
+      "next_step": "council round 63: the look-ahead rule - a read-only diagnosis of why it suppresses making first, or a frozen law test; R (remaking) remains the open mission question",
+      "run": 42020737135
+    },
+    {
+      "id": "LD1",
+      "title": "Why does the habit look-ahead lock choices, and where does remaking fail? (read-only on v13)",
+      "kind": "read-only",
+      "plan": "experiments/LD1_lookahead_diagnosis/questions.md",
+      "frozen_tag": "LD1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy; round 63: GPT 97%, Gemini 95%, DeepSeek ~93%; the assistant 75%",
+      "status": "final (recomputed blind by GPT and Gemini): A direction (scale also recovers) - the look-ahead is a familiarity bias that marks down making (-0.245 at make offers); B: v13 new kinds stop at 'held the recipe, never its inputs' (88%), c0 at 'forgotten by the first week' (64%)",
+      "next_step": "council round 64: a general-law candidate for the look-ahead (a situation's value counted only as far as it has been learned, or expectation), and the R path (opportunity/intention in v13; recipe memory once making rises)",
+      "run": 42068513736
+    },
+    {
+      "id": "HE1",
+      "title": "Habits learn from experience: a law test in a copy (discount 0 on code_v13)",
+      "kind": "nature test in a copy",
+      "plan": "experiments/HE1_habits_from_experience/questions.md",
+      "frozen_tag": "HE1-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission and sleep-mode autonomy; round 64; the assistant 75%",
+      "status": "final (recomputed blind by GPT and Gemini): NOT SUPPORTED - harm: starvation rate x1.64 (the hunger guard), killings 4 -> 216; making released (x6); not adopted",
+      "run": 42099596852,
+      "next_step": "council round 65: a look-ahead without the familiarity bias (bootstrap only from well-learned situations) as the next law candidate, and value at invention for R"
+    },
+    {
+      "id": "LH1",
+      "title": "A fairer look-ahead: keep the protection, lose the familiarity bias (a test in a copy)",
+      "kind": "nature test in a copy",
+      "plan": "experiments/LH1_fair_lookahead/questions.md",
+      "frozen_tag": "LH1-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission and standing autonomy; round 65; the assistant 60%",
+      "status": "done (final 5 November 22:20; tag LH1-done; recomputed by GPT, Gemini 3.1 Pro and DeepSeek's blind script): neither rule supported (e: starvation x1.377, hunger guard; m: starvation x1.750 and killing +0.19, both guards); making x3.2 and x5.7; remakes still 2 and 2; not adopted",
+      "run": 42127234508,
+      "next_step": "none (done); next: council round 66 (docs/debate_round66_question_2026-11-05.md): close the look-ahead line; remaking (a read-only funnel of why inputs never come together, or an intention law); the 12-recipe tie-break by name"
+    },
+    {
+      "id": "VA1",
+      "title": "Is a new invention valued before it is lost? (read-only value-at-invention audit on v13)",
+      "kind": "read-only",
+      "plan": "experiments/VA1_value_at_invention/questions.md",
+      "frozen_tag": "VA1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy; round 65 (all three ask for this audit); the assistant 75%",
+      "status": "done (final 5 November 21:34; tag VA1-done; recomputed by GPT, Gemini and DeepSeek's blind script): value is not the bottleneck (used before lost 0.824 [0.788, 0.858]); similar experience modestly informative (0.297 vs the plain mean's 0.267); 87% stop at 'never the inputs again'; a full memory loses the newcomer (154 of 155; ties settled by name order against nested kinds)",
+      "run": 42141156581,
+      "next_step": "none (done); follow-up: the exploratory holding check (explore_holding.py, seeds 9801-9804), then the council on opportunity or intention, and on the cap's tie-break by name"
+    },
+    {
+      "id": "RF1",
+      "title": "Why do the inputs never come together? (read-only remaking funnel on v13)",
+      "kind": "read-only",
+      "plan": "experiments/RF1_remaking_funnel/questions.md",
+      "frozen_tag": "RF1-frozen",
+      "approved_by": "the assistant under the creator's 'keep working' (5 November) and standing autonomy; round 66 (all three ask for the funnel first); the assistant 85%",
+      "status": "done (final 6 November 01:06; tag RF1-done; recomputed by GPT, Gemini 3.1 Pro and DeepSeek): pursuit fails 0.797 [0.702, 0.878] (started but never complete 0.768; gathered pieces lost or used in 45 of 53; missing pieces mostly made parts); 1,062 of 1,246 new kinds invented by people not yet grown, never offered make-again",
+      "run": 42164147385,
+      "next_step": "none (done); next: council round 67 on an intention law (a held aim toward a valued state, keeping gathered pieces, pursuing parts in order, yielding to hunger) and on the life-stage gate (children invent in play but only the grown may make again); then FF3 (name ties)"
+    },
+    {
+      "id": "FF3",
+      "title": "Memory ties settled by name, a fault fix in v13",
+      "kind": "fault fix (in a copy)",
+      "plan": "experiments/FF3_name_ties/questions.md",
+      "frozen_tag": "FF3-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission; rounds 66 and 67",
+      "status": "done (final 6 November 03:58; tag FF3-done): no harm; adopted as nature v14 (NV14, tag nature-v14)",
+      "run": 42177471748,
+      "next_step": "none (done); next: CI1 on v14 (docs/ci1_design_draft_2026-11-06.md)"
+    },
+    {
+      "id": "CI1",
+      "title": "Children may make again (LG) and a held aim that keeps the pieces (IN): two laws tested in a copy of v14",
+      "kind": "nature-change test in a copy (code_ci1 = v14 + child_make + held_aim)",
+      "plan": "experiments/CI1_children_and_aims/questions.md",
+      "frozen_tag": "CI1-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission (rounds 67-68: GPT 95%, Gemini 95%, DeepSeek ~75%)",
+      "status": "done (final 6 November 16:29; tag CI1-done): LG supported (complete-set share +0.0183 [+0.0125, +0.0239], no guard); IN no harm, no effect; LG+IN supported (+0.0192), no guard",
+      "run": 42249052146,
+      "zero": "cloud (skip_zero=no; zero_cloud.log, All: PASS, fingerprint e0ccbf07)",
+      "next_step": "none (done); next: CI1-C, LG's confirmatory run (run 42298530869)",
+      "recompute": "recompute_ci1.md: GPT (code) and Gemini (code) match every point estimate to 4 decimals and every reading; DeepSeek gave no numbers (no code tool)"
+    },
+    {
+      "id": "CI1C",
+      "title": "Children may make again (LG): confirmatory run on new seeds",
+      "kind": "confirmatory run (a test in a copy; code_ci1 unchanged; arms v14 / LG / sham; seeds 24101-24132)",
+      "plan": "experiments/CI1C_children_confirm/questions.md",
+      "frozen_tag": "CI1C-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission; round 69 unanimous on LG alone (GPT 85%, Gemini 95%, DeepSeek about 92%; the assistant 80%)",
+      "status": "done (final 6 November 19:29; tag CI1C-done): CONFIRMED (+0.0221 [+0.0166, +0.0283]; LG - sham +0.0218; no guard); adopted as nature v15 (NV15, tag nature-v15)",
+      "run": 42298530869,
+      "zero": "cloud (skip_zero=no; zero_cloud.log, All: PASS, fingerprint e0ccbf07)",
+      "next_step": "none (done). Next: HR1 (hunting calibrated to evidence; round 70) on v15; the spread of new kinds (0 of about 11,500 made by anyone but the inventor) is the next wall for Bob",
+      "recompute": "recompute_ci1c.md: GPT (code) and Gemini (code) match; DeepSeek's page froze, not read"
+    },
+    {
+      "id": "FP1",
+      "title": "Food production by age in nature v15, against forager evidence (HR1's read-only step 0)",
+      "kind": "read-only (one arm on code_v15; seeds 24301-24332; a food account per person-week with a conservation check)",
+      "plan": "experiments/FP1_food_production_by_age/questions.md",
+      "frozen_tag": "FP1-frozen",
+      "approved_by": "the assistant under the creator's permissions; round 72 (GPT 97%, Gemini 95%, DeepSeek ~87%; the assistant 90%); the creator OK'd downloading Kaplan et al. 2000",
+      "status": "done (final 7 November 02:39; tag FP1-done): children reach need at 8-11 (evidence mid-late teens); women out-produce men (1.33 vs 1.10, active more weeks); per active week about 3 x need; hunted share 0.000 (26-78% in foragers); hunting chosen in about 1 of 9,100 grown weeks",
+      "run": 42337207529,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "council round on HR1's target from FP1's table (hunting the largest gap; children's foraging a second)",
+      "recompute": "recompute_fp1.md: GPT (code) and Gemini (code) match every point estimate; DeepSeek gave a script, no numbers"
+    },
+    {
+      "id": "SP1",
+      "title": "Where does the spreading of new kinds stop? (read-only funnel on v15)",
+      "kind": "read-only (one arm on code_v15; seeds 24401-24432)",
+      "plan": "experiments/SP1_where_spreading_stops/questions.md",
+      "frozen_tag": "SP1-frozen",
+      "approved_by": "the creator, by Telegram with the listener's code (7 November 00:26)",
+      "status": "done (final 7 November 04:39; tag SP1-done): spreading stops at the lesson (learned | shown 0.062 [0.045, 0.081]); 80% of lessons declined by the trust x openness draw (applies to all lessons); of new-kind lessons that pass it, 97.6% fail on a missing part; 1 of 3,597 new kinds made by a learner",
+      "run": 42352592253,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "council: the next frozen test (nested missing parts; the acceptance draw), together with FP1's HR1 targets",
+      "recompute": "recompute_sp1.md: GPT (code) and Gemini (code) match; DeepSeek unfinished, not counted"
+    },
+    {
+      "id": "PC1",
+      "title": "The part chains of new kinds: why lessons fail on a missing part (read-only on v15)",
+      "kind": "read-only (one arm on code_v15; seeds 24501-24532)",
+      "plan": "experiments/PC1_part_chains/questions.md",
+      "frozen_tag": "PC1-frozen",
+      "approved_by": "the assistant under sleep-mode autonomy; council round 73 (GPT 98%, DeepSeek ~93% first; Gemini alongside HR1)",
+      "status": "done (final 7 November 07:40; tag PC1-done): COULD HELP. Teacher knows every missing part in 0.926 of failed lessons; chains 3+ deep in 0.557; the one-level part lesson aims right (0.990) but never helps (0 of 4,359 taken: 0.780 declined, 0.209 deeper part missing)",
+      "run": 42366219425,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "council: (b) learner-driven part lessons across talks (bottom-up, with a budget) vs (c) the acceptance draw (0.211 per part lesson compounds per level)",
+      "recompute": "recompute_pc1.md: GPT (code) and Gemini (code) match; DeepSeek unfinished, not counted"
+    },
+    {
+      "id": "LW1",
+      "title": "A learner's wish for the part they could not follow: a law tested in a copy of v15",
+      "kind": "nature-change test in a copy (code_lw1 = v15 + learn_wish; arms v15 / LW / sham; seeds 24601-24632)",
+      "plan": "experiments/LW1_learners_wish/questions.md",
+      "frozen_tag": "LW1-frozen",
+      "approved_by": "the assistant under the creator's permissions ('do not ask for permissions from me just go'); council round 74 (GPT 96%, DeepSeek ~75%, Gemini 95% for a wider design)",
+      "status": "done (final 7 November 12:37; tag LW1-done): no harm, no effect, on a knife-edge. Part learning 0.0059 -> 0.0165 (+0.0107 [+0.0072, +0.0146]); co-primary +0.0070 [-0.0001, +0.0140] (GPT +0.0002, Gemini +0.0001 with their own draws; the bootstrap's noise, recompute/mc_check_lw1.py); made by a non-inventor 1 -> 0; not adopted",
+      "run": 42387280021,
+      "zero": "local (zero_local.log; skip_zero=local)",
+      "next_step": "fetch, analyse_lw1.py, recompute (lw1_counts.csv), findings; a supported reading goes to a confirmatory run",
+      "recompute": null
+    },
+    {
+      "id": "EG1",
+      "title": "When someone is starving, does the energy rule stand between them and food? (read-only audit on v15)",
+      "kind": "read-only (one arm on code_eg1 = code_v15 + logging only; seeds 24701-24732)",
+      "plan": "experiments/EG1_energy_gate/questions.md",
+      "frozen_tag": "EG1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions ('you can keep going do not rely on me'); council round 75 after the code facts (GPT 96%, Gemini, DeepSeek ~87%)",
+      "status": "done (final 7 November 13:54; tag EG1-done): energy is a minor contributor, P 0.0628 [0.0540, 0.0713] of starving person-weeks; 0.350 of starvation deaths had a blocked week in their last 4; women 30-49 0.119 vs men 0.054; best-tile quirk 0.429 of blocked starving weeks"
+    },
+    {
+      "id": "FF4",
+      "title": "A whole action dropped because one target is too far: a fault fix in a copy of v15",
+      "kind": "fault-fix check in a copy (code_ff4 = v15 + fix_affordable_target; arms v15 / f / sham; seeds 24801-24832)",
+      "plan": "experiments/FF4_affordable_targets/questions.md",
+      "frozen_tag": "FF4-frozen",
+      "approved_by": "the assistant under the creator's 2 November permission; council round 76 (GPT 98%, Gemini 95%, DeepSeek ~92%)",
+      "status": "done (final 7 November 16:57; tag FF4-done): no harm; to adoption as nature v16 by the safe path"
+    },
+    {
+      "id": "MP1",
+      "title": "Where do the made parts of new kinds go? (read-only stage funnel and part fates on v15)",
+      "kind": "read-only (one arm on code_v15; seeds 24901-24932)",
+      "plan": "experiments/MP1_made_parts/questions.md",
+      "frozen_tag": "MP1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 76 (GPT 97%, Gemini 95%, DeepSeek ~90%)",
+      "status": "done (final 7 November 17:35; tag MP1-done): A clear, 0.902 of new kinds never have a made part held again by a knower; carry limit not the wall (dropped 0.025); half of the few parts made are handed away"
+    },
+    {
+      "id": "DF1",
+      "title": "Who feeds the children, and what does it cost them? (read-only on v16)",
+      "kind": "read-only (one arm on code_v16; seeds 25101-25132)",
+      "plan": "experiments/DF1_dependents_feeding/questions.md",
+      "frozen_tag": "DF1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 77",
+      "status": "done (final 7 November 19:49; tag DF1-done): feeding drives the gap (women 7.38 vs men 0.74 per 1,000; women's share 0.888); the mother is the sole caregiver by rule"
+    },
+    {
+      "id": "PM1",
+      "title": "Why are the parts of new kinds never made again? (read-only part-making funnel on v16)",
+      "kind": "read-only (one arm on code_v16; seeds 25001-25032)",
+      "plan": "experiments/PM1_part_making/questions.md",
+      "frozen_tag": "PM1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 77",
+      "status": "done (final 7 November 20:10; tag PM1-done): P1 clear, 0.710 of new kinds: the part's recipe known but its inputs never in hand (0.838 at depth 3+); value does not flow from wholes to parts' materials or sub-parts"
+    },
+    {
+      "id": "VW1",
+      "title": "What a valued whole needs is wanted: value flows down the recipe tree (a law test in a copy of v16 with a sham)",
+      "kind": "law test (code_vw1 = v16 + want_down; arms c v16, w VW, x sham; seeds 25201-25232; 200 years)",
+      "plan": "experiments/VW1_value_of_wholes/questions.md",
+      "frozen_tag": "VW1-frozen",
+      "approved_by": "the assistant under the creator's standing permissions; council round 78 (GPT 96%, Gemini 95% as a fault, DeepSeek ~78%)",
+      "status": "done (final 7 November 23:41; tag VW1-done): no harm, no effect (co-primaries +0.0084 [-0.0046, +0.0210] and +0.0063 [-0.0049, +0.0171]; no guard); not adopted; repeats WP1's A2 on v16; recomputed by GPT and Gemini"
+    },
+    {
+      "id": "OD1",
+      "title": "Open the world's closed doors, once (five general laws through properties; the creator's Direction, 7 November)",
+      "kind": "law package test (code_od1 = v16 + similar_parts, containers_carry, made_binders, made_hammers, layers_add; arms c v16, o doors, p doors without D1, x sham; seeds 25301-25332; 200 years)",
+      "plan": "experiments/OD1_open_doors/questions.md",
+      "frozen_tag": "OD1-frozen",
+      "approved_by": "the creator (direction, package and no-harm bar, 7 November 2026, in session); council round 80 (GPT, Gemini, DeepSeek: no objection)",
+      "status": "done (final 8 November; tag OD1-done): no harm detected; the full package (D1-D5) goes live as nature v17; every door used; recomputed by GPT and Gemini; council round 81: GPT 82%, Gemini 100%, DeepSeek ~93%"
+    },
+    {
+      "id": "NB1",
+      "title": "Can a neural-brained people survive and improve over generations? (the first neural-brain test; the creator's decision of 8 November)",
+      "kind": "exploratory law test (code_nb1 = v17 + nb_brain; arms c v17, n neural with learning, e neural evolution only; seeds 25401-25416; 600 years; phase 2 common garden, generations 1, 9, 18, learning on/off, seeds 25501-25516, 60 years)",
+      "plan": "experiments/NB1_neural_brain/questions.md",
+      "frozen_tag": "NB1-frozen",
+      "approved_by": "the creator ('go ahead now', 8 November 2026, in session); council round 82 (GPT 85%, Gemini 80%, DeepSeek ~70%; no objection to the resolved design)",
+      "status": "done (final 10 November; tag NB1-done): decorative. Viable; g rose 1.00 -> 1.23; primary 1 yes but e also rises; inherited no; learning on - off -0.045. e:25408 rerun locally (cloud job limit twice). Recomputed by GPT and Gemini (third Gemini chat; two stalled); DeepSeek hand point values match (no code tool)."
+    }
+  ],
+  "queue_after": [
+    {
+      "what": "THE BRAIN ROAD (first priority, the creator 3 November 2026: 'first of everything we should work on agent brain'): PB0 read-only prediction-opportunity audit on v12, then a brain design note (predictor + goal memory + short planner, general abilities only, evolvable structure), council, frozen tests in a copy",
+      "status": "first priority; PB0 next after FF2/AM2 are written up",
+      "needs": "PB0 frozen plan; council on the design note"
+    },
+    {
+      "what": "HAND-LIMITS ROAD (the creator, 6 November 2026 17:38: 'Double check all laws of world again and filter all with other ai modules make sure we are not limiting like this'): audit docs/law_limits_audit_2026-11-06.md; council docs/gpt_review_law_limits_2026-11-06.md. First frozen test: who holds a kill (remove the forced equal hunt split; sharing becomes a choice), one gate per test, sham, CI1-style harm checks plus offered/chosen/attempted counts; then the attack gate with a contested thing; threat/display as its own test.",
+      "status": "council round 70 (docs/debate_round70_hk1_design_2026-11-06.md, two parts, unanimous): HK1 SHELVED (read-only counts on v14: 0 party kills of 105; 1 pair in 713 hunt attempts; plan kept as experiments/HK1_who_holds_the_kill/questions_SHELVED.md; revival when party kills >= 50 in smoke worlds). Order now: HR1 (hunting calibrated to evidence), then a general ability to act together on purpose, then HK1's revival check, then the attack and taking gates",
+      "needs": "real forager sources on violence, theft, meat sharing and pair break-up (docs/research/); a frozen plan"
+    },
+    {
+      "what": "after the new brain is built and live: redraw the ACL Brain Scan picture (acl_brain_scan.html, from brain_data.py + brain_template.html; also acl_mind_map*.html) to show the new brain (predictor, goal memory, planner) instead of the habit table",
+      "status": "the creator, 3 November 2026: 'note after you build whole brain then change that brain picture from acl'",
+      "needs": "the new brain adopted as nature; the files are the creator's (untracked), so redraw, do not delete the old ones; the creator, 3 November 2026: 'in brain scanner do not put any extra info and text just brain neural network thats it nothing extra' (the picture shows only the neural network: no labels, no text, no extra panels); style reference shared by the creator (3 November): a clean drawing of neurons as circles joined by lines on a plain background, layered left to right; draw Bob's real network (its loops, its parts, and connection strength from his own learning)"
+    },
+    {
+      "what": "the creator's list of ways to build ACL toward Bob (round 55; to discuss after the brain road is under way): 2 brains that evolve (inherit how the brain learns, never knowledge); 3 open actions (general abilities, physics decides); 4 fewer scripted feelings, grown ones; 5 a signal channel with no meanings; 6 much bigger and longer worlds",
+      "status": "listed by the creator, 3 November 2026: 'keep going in this pathway then we will discuss other things from this list'",
+      "needs": "discussion with the creator after the brain road's first steps; council; frozen studies"
+    },
+    {
+      "what": "HR1: calibrate per-species success (F7's table, provenance unknown) and meat per kill to forager evidence (return ratio 0.5-1.5; success per hunter-week as a second check; docs/research/hunting_success_hadza_2026-11-03.md)",
+      "status": "NEXT on the laws road, now on v15. Step 0, FP1 (read-only, proposed 6 Nov 21:46; docs/research/forager_production_2026-11-06.md): food acquired per person-week by age, sex and source against need (a net production curve) and the share of adult weeks per action, against Kaplan et al. 2000's curves and the ~60% hunted energy share, to decide which side is off (foraging, hunting or the action budget) before any calibration; then HR1 proper with round 70's conditions",
+      "needs": "Kaplan et al. 2000's exact values (the PDF is a file download: ask the creator, or find an open copy); FP1 plan; council"
+    },
+    {
+      "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
+      "status": "deferred until after UV3",
+      "needs": "debate after UV3; biological justification for the age line independent of ES2"
+    },
+    {
+      "what": "wider value passing-on in childhood (oblique and horizontal from age 6; Hewlett 2011): a nature-change test in a copy, after reading the full text",
+      "status": "queued (GPT's order after HA1: B then A/ES3)",
+      "needs": "full text read; debate; frozen plan with no target outcome"
+    },
+    {
+      "what": "an early, read-only autonomy audit (design note Part 2)",
+      "status": "proposed",
+      "needs": "debate with GPT and Gemini, then a frozen plan"
+    },
+    {
+      "what": "talent (a heritable learning-speed gene)",
+      "status": "listed by the creator",
+      "needs": "debate when its turn comes"
+    },
+    {
+      "what": "children making known things before 12 (in ACL 'make' starts at 12; forager children make their own toys, Lew-Levy et al. 2022)",
+      "status": "found 31 October 2026; for the creator",
+      "needs": "the creator's decision; evidence on ages, then a frozen nature-change study"
+    }
+  ],
+  "pending_approvals": [
+    {
+      "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
+      "status": "asked in the morning report"
+    },
+    {
+      "what": "fix the in-world brain screen acl/viewer.html (says 17 action neurons and 544 habits at lines 193, 431, 645, 651; v11 has 19 and 608; better to read the counts from the data than hard-code them); display only, no nature change; then run the tests",
+      "status": "done 2 November 2026 ~03:55 in the desktop Claude Code session (approved by the creator on Telegram 02:52): acl/viewer.html reads the counts from the brain data (19 actions, 32 situations, 608 habits shown in the viewer); display only; nature fingerprint unchanged (a1fb3d5e...)"
+    },
+    {
+      "what": "after UP1: which general condition (if any) to test in a copy so that nested inventions can be remade: a goal kept across weeks, a deeper wanted-part bridge, or more carrying room (forager evidence first)",
+      "status": "for the creator; WP1 (2 Nov) ruled out want propagation, leaving goal persistence and carrying room"
+    }
+  ],
+  "budgets": {
+    "tick_minutes": 60,
+    "ticks_per_day": 24,
+    "tick_timeout_minutes": 45,
+    "local_simulations_max": 4,
+    "cloud_studies_at_once": 2,
+    "failures_before_pause": 3,
+    "daily_summary_at": "07:30",
+    "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2).",
+    "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud.",
+    "pc_full_use_2": "the creator, Telegram 2026-11-02 02:21: 'Ok good you can use pc at max capacity now'. pc_light_use (1 Nov 16:44) ends. While the creator is away, local simulations may run at normal priority, up to 4 at once; reported through Telegram. Ends when the creator writes otherwise or is back at the PC (then CLAUDE.md: Idle, at most 2).",
+    "cloud_note": "raised from 1 to 2 on 2 November 2026 (22:20) for AF1 and FX1 together: the repository is public, so Actions minutes cost nothing, and extra chunks wait for free runners",
+    "pc_note_2026_11_02_22_20": "the creator was at the PC this evening (opened a DeepSeek tab), so local simulations were set to Idle priority; long work goes to the cloud",
+    "pc_full_use_4": "the creator, in the Claude Code chat 2026-11-05 about 20:10: 'you can work on pc fully now'. Local simulations may run at normal priority, up to local_simulations_max (4), until the creator says otherwise.",
+    "pc_full_use_5": "the creator, Telegram 2026-11-06 11:33: 'Today whole day you can work on pc fully i am using you remotely only through phone'. For all of 6 November: local simulations at normal priority, up to local_simulations_max (4); long work still prefers the cloud.",
+    "pc_light_use_2": "the creator, in the Claude Code session 2026-11-07 10:00: 'btw keep the light work on computer right now'. Full use ends. Until the creator says otherwise: Idle priority, at most 2 local simulations (CLAUDE.md), short jobs; anything long goes to the cloud. Running LW1 zero checks were set to Idle at once."
   },
-  {
-   "id": "IW1",
-   "title": "How the worth of made things forms (read-only, frozen on code_v9)",
-   "kind": "read-only",
-   "status": "final",
-   "run": 41180403699,
-   "next_step": "none; next: debate a read-only look at where tools could matter more (a world where knowing matters)"
-  },
-  {
-   "id": "TR1",
-   "title": "What do tools really add? (read-only, frozen on code_v10)",
-   "kind": "read-only",
-   "status": "final",
-   "run": 41199047689,
-   "next_step": "none; next: debate a read-only look at tool access and choice (who holds the best tools; why others do not make or get them)",
-   "note": "run 1 (41191446977) not valid: 3 deaths within forage counted as mismatches; amendment 1; outputs kept in output_run1_invalid/"
-  },
-  {
-   "id": "TA1",
-   "title": "Why tools do not reach hands (read-only, frozen on code_v10)",
-   "kind": "read-only",
-   "status": "final",
-   "run": 41213975492,
-   "next_step": "none; next: debate B (handing a made thing, a nature-change test in a copy) against the choice to make"
-  },
-  {
-   "id": "HD1",
-   "title": "Handing a made thing (nature-change test in a copy, code_hd1)",
-   "kind": "nature-change test (copy)",
-   "status": "final",
-   "run": 41226917887,
-   "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
-  },
-  {
-   "id": "HD1-C",
-   "title": "Handing law, confirmatory run on new seeds",
-   "kind": "nature-change test (copy), confirmatory",
-   "status": "final",
-   "run": 41241346782,
-   "next_step": "adopted as nature v11 (31 October 2026); see experiments/NV11_nature_v11/findings.md"
-  },
-  {
-   "id": "ES1",
-   "title": "Expected look-ahead in habit learning (nature-change test in a copy, code_es1)",
-   "kind": "nature-change test (copy)",
-   "status": "final",
-   "run": 41256219936,
-   "next_step": "not adopted; next: debate ES2 (expected look-ahead over the whole choice, calibration primary) and whether relative accuracy is the better test"
-  },
-  {
-   "id": "ES2",
-   "title": "Realized look-ahead (deferred Expected Sarsa over the real choice; nature-change test in a copy, code_es2)",
-   "kind": "nature-change test (copy)",
-   "status": "final: not supported (rest guard)",
-   "run": 41274072560,
-   "next_step": "debate round 40 with GPT and Gemini (research/local/next_debate_prompt.txt): A read-only under-valuation diagnostic, B longer view, C handing audit",
-   "plan": "experiments/ES2_realized_lookahead/questions.md",
-   "frozen_tag": "ES2-frozen",
-   "note": "exploratory (not frozen): under r every well-sampled action is under-valued (q below G in 20 of 20 rows); rest is one case. Candidate cause: newborn habits start at half the parents' mean, learning rate 0.05. See explore_q_vs_G.md. Findings correction appended 10:45 (122 held updates dropped, not 0).",
-   "recompute": "experiments/ES2_realized_lookahead/recompute_es2.md (GPT and Gemini match, 1 November 2026, 11:45)"
-  },
-  {
-   "id": "UV1",
-   "title": "Does habit under-valuation fade with experience? (read-only replay of ES2's v11 and r worlds)",
-   "kind": "read-only",
-   "plan": "experiments/UV1_undervaluation_by_experience/questions.md",
-   "frozen_tag": "UV1-frozen",
-   "status": "final: persistent bias",
-   "run": 41331098954,
-   "next_step": "debate round 41: the floor (coarse situations) and the children (upbringing pull), read-only first",
-   "recompute": "experiments/UV1_undervaluation_by_experience/recompute_uv1.md (GPT and Gemini match)"
-  },
-  {
-   "id": "UV2",
-   "title": "Does the habit floor come from unpractised choices further ahead? (read-only replay of ES2's r arm)",
-   "kind": "read-only",
-   "plan": "experiments/UV2_propagation/questions.md",
-   "frozen_tag": "UV2-frozen",
-   "status": "final: not propagation",
-   "next_step": "debate round 42: rising returns vs a generations-long climb (the time trend), read-only first",
-   "run": 41341318088,
-   "recompute": "experiments/UV2_propagation/recompute_uv2.md (GPT and Gemini match)"
-  },
-  {
-   "id": "UV3",
-   "title": "Is the shrinking habit gap rising returns or climbing values? (read-only replay of ES2's r arm)",
-   "kind": "read-only",
-   "plan": "experiments/UV3_time_trend/questions.md",
-   "frozen_tag": "UV3-frozen",
-   "status": "final: returns stable",
-   "next_step": "debate round 43: ES3, value passing-on, or the handing/making line",
-   "run": 41357015837,
-   "recompute": "experiments/UV3_time_trend/recompute_uv3.md (GPT and Gemini match)"
-  },
-  {
-   "id": "HA1",
-   "title": "Why does handing stay rare? (read-only audit on live v11)",
-   "kind": "read-only",
-   "plan": "experiments/HA1_handing_audit/questions.md",
-   "frozen_tag": "HA1-frozen",
-   "status": "final: opportunity-limited",
-   "run": 41365641251,
-   "next_step": "debate: knowledge transmission; IQ1 report first (the creator, 1 Nov)",
-   "recompute": "experiments/HA1_handing_audit/recompute_ha1.md (GPT and Gemini match)"
-  },
-  {
-   "id": "KL1",
-   "title": "Does know-how outlive its holders? (read-only audit on live v11; IQ1-H3 step 1)",
-   "kind": "read-only",
-   "plan": "experiments/KL1_knowledge_loss/questions.md",
-   "frozen_tag": "KL1-frozen",
-   "status": "final: death is the main road of loss; marks do not (yet)",
-   "run": 41380622576,
-   "next_step": "literature review (the creator's sources); then H1 in a copy",
-   "recompute": "experiments/KL1_knowledge_loss/recompute_kl1.md (GPT and Gemini match)"
-  },
-  {
-   "id": "BN1",
-   "title": "Born without learned content (a nature-change test in a copy; IQ1-H1)",
-   "kind": "nature-change test in a copy (code_bn1); adoption only with the creator's explicit approval",
-   "plan": "experiments/BN1_born_without_learned_content/questions.md",
-   "frozen_tag": "BN1-frozen",
-   "approved_by": "the assistant under the 40% rule, the creator present (2 Nov); adoption needs the creator",
-   "status": "final: inconclusive (D_z +0.0205 [+0.0157, +0.0252] vs margin 0.02); no guard",
-   "run": 41394713611,
-   "zero": "cloud, All: PASS (zero_cloud.log, fingerprint f236c149...)",
-   "next_step": "the creator decides on birth inheritance (no change without them); next study SC1 (debate round 46)",
-   "recompute": "experiments/BN1_born_without_learned_content/recompute_bn1.md (GPT and Gemini match)"
-  },
-  {
-   "id": "SC1",
-   "title": "A scorecard of the creator's twelve capacities (read-only on live v11)",
-   "kind": "read-only",
-   "plan": "experiments/SC1_bob_scorecard/questions.md",
-   "frozen_tag": "SC1-frozen",
-   "approved_by": "the assistant under the 40% rule, the creator present (GPT 86%, Gemini 94%, round 47)",
-   "status": "final: communication and individuality positive; uptake missing (0 of 3,883 late kinds remade); several capacities not measurable",
-   "run": 41424864945,
-   "zero": "local, All: PASS (zero_local.log)",
-   "next_step": "council: a read-only audit of why new kinds are never made again (uptake)",
-   "recompute": "experiments/SC1_bob_scorecard/recompute_sc1.md (GPT matches; Gemini 3.1 Pro matches)"
-  },
-  {
-   "id": "UP1",
-   "title": "Why is a new kind never made again? (read-only funnel on live v11)",
-   "kind": "read-only",
-   "plan": "experiments/UP1_uptake_of_new_kinds/questions.md",
-   "frozen_tag": "UP1-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 95%, round 48)",
-   "status": "final: mainly blocked at 'cannot make' (0.867 [0.852, 0.883]); new kinds are nested, parts not in hand",
-   "run": 41450747356,
-   "zero": "local, All: PASS (zero_local.log)",
-   "next_step": "for the creator: a frozen nature-change test of a general condition (goal kept across weeks, deeper wanted-part bridge, or carrying room); read-only follow-ups for the council meanwhile",
-   "recompute": "experiments/UP1_uptake_of_new_kinds/recompute_up1.md (GPT and Gemini 3.1 Pro match)"
-  },
-  {
-   "id": "WP1",
-   "title": "Want propagation: can new inventions be made again? (a nature-change test in a copy)",
-   "kind": "nature-change test in a copy (code_wp1 = v11 + want_propagation); adoption only by the safe path, the creator asked first",
-   "plan": "experiments/WP1_want_propagation/questions.md",
-   "frozen_tag": "WP1-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy (GPT 95%, Gemini 94%, round 49); the creator on Telegram 10:05 'Yes go ahead'",
-   "status": "final: A1 and A2 inconclusive (late inventions still never remade); no guard",
-   "run": 41476346903,
-   "zero": "local, All: PASS (zero_local.log)",
-   "next_step": "for the creator: a goal kept across weeks, or carrying room, or neither (a frozen test in a copy first)",
-   "recompute": "experiments/WP1_want_propagation/recompute_wp1.md (GPT and Gemini 3.1 Pro match)"
-  },
-  {
-   "id": "AF1",
-   "title": "Open what made things can do: S make by what it does, K containers contain (a nature-change test in a copy)",
-   "kind": "nature-change test in a copy (code_af1 = v11 + similar_parts + containers_carry)",
-   "plan": "experiments/AF1_open_affordances/questions.md",
-   "frozen_tag": "AF1-frozen",
-   "approved_by": "the creator's 'go ahead' for step 1 (2 November); GPT 93%, Gemini 95% (round 50)",
-   "status": "final: S, K and S+K inconclusive (late inventions still not remade: 1, 2, 0, 0 of ~3,300); no guard; adults hold <1 made thing, make ~once in 14 years",
-   "run": 41573896983,
-   "zero": "local, All: PASS (zero_local.log)",
-   "next_step": "council round 53: why making is so rare (read-only, worth vs real help) and the rules-review queue",
-   "recompute": "experiments/AF1_open_affordances/recompute_af1.md (GPT and Gemini 3.1 Pro match with code; DeepSeek matches by hand)"
-  },
-  {
-   "id": "FF1",
-   "title": "Fixing three faults in nature v11 (a fault-fix harm check in a copy)",
-   "kind": "fault-fix check in a copy (code_fx1 = v11 + fix_make_choice + fix_overflow); 'no harm' -> nature v12",
-   "plan": "experiments/FX1_fault_fixes/questions.md",
-   "frozen_tag": "FX1-frozen",
-   "approved_by": "the assistant under the creator's permission to edit world rules (2 November); GPT 97%, Gemini 99%, DeepSeek ~95% (round 51)",
-   "status": "final: no harm; adopted as nature v12 (3 November)",
-   "run": 41571953456,
-   "zero": "cloud (skip_zero=no)",
-   "next_step": "done",
-   "recompute": "experiments/FX1_fault_fixes/recompute_ff1.md (GPT, Gemini and DeepSeek match)",
-   "note": "frozen and run under the folder name FX1_fault_fixes and tag FX1-frozen; renamed FF1 because FX1 was already used (FX1_extracted_foods)"
-  },
-  {
-   "id": "AM1",
-   "title": "Measuring autonomy against constrained controls (read-only on v11)",
-   "kind": "read-only",
-   "plan": "experiments/AM1_autonomy_measures/questions.md",
-   "frozen_tag": "AM1-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy and the 2 November permission (GPT 94%, Gemini 97%, DeepSeek ~92%, round 52)",
-   "status": "final: M1 partly validated; M3 and M5 not validated (controls higher: habits suppress gather-then-make); M2 a candidate",
-   "run": 41587348657,
-   "zero": "local, All: PASS (zero_local.log)",
-   "next_step": "rerun the identical battery on v12; council on the habit/ends tension",
-   "recompute": "experiments/AM1_autonomy_measures/recompute_am1.md (GPT and Gemini match with code; DeepSeek values and readings)"
-  },
-  {
-   "id": "HN1",
-   "title": "Where do v11's hunts fail? (read-only funnel)",
-   "kind": "read-only",
-   "plan": "experiments/HN1_hunting_funnel/questions.md",
-   "frozen_tag": "HN1-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy (round 53: GPT 95%, Gemini 98%, DeepSeek ~78%)",
-   "status": "final: F = 0, routing base chance; ratio 0.023; base chance alone cannot reach 0.5 (ceiling 0.42)",
-   "run": 41595719392,
-   "zero": "local, All: PASS",
-   "next_step": "done: round 54 chose FF2 (F8, F4, F5) and AM2 in parallel; HR1 (with F7) after FF2",
-   "recompute": "experiments/HN1_hunting_funnel/recompute_hn1.md (all three match)"
-  },
-  {
-   "id": "FF2",
-   "title": "Fixing three more faults in nature v12 (F8 hunt expectation, F4 material limit, F5 water holder; a fault-fix harm check in a copy)",
-   "kind": "fault-fix check in a copy (code_ff2 = v12 + fix_hunt_expect + fix_mat_limit + fix_water_holder); 'no harm' -> nature v13",
-   "plan": "experiments/FF2_fault_fixes_2/questions.md",
-   "frozen_tag": "FF2-frozen",
-   "approved_by": "the assistant under the creator's permission to edit world rules (2 November); round 54: GPT 97%, Gemini 99%, DeepSeek ~92%",
-   "status": "final: no harm; adopted as nature v13",
-   "next_step": "done",
-   "run": 41680655094,
-   "zero": "cloud"
-  },
-  {
-   "id": "AM2",
-   "title": "AM1's autonomy battery, unchanged, on nature v12 (read-only)",
-   "kind": "read-only",
-   "plan": "experiments/AM2_autonomy_measures_v12/questions.md",
-   "frozen_tag": "AM2-frozen",
-   "approved_by": "the assistant under standing autonomy; round 54",
-   "status": "final: M3/M5 not validated again (habits suppress gather-then-make, ~7.7x); M1 not validated (does not replicate); M2 falls in both controls; v12 = v11 on all measures",
-   "run": 41676999711,
-   "zero": "cloud",
-   "next_step": "done",
-   "recompute": "GPT and Gemini match (recompute_am2.md)"
-  },
-  {
-   "id": "PB0",
-   "title": "Would knowing what happens next change people's choices? (read-only prediction audit on v12; the brain road, step 1)",
-   "kind": "read-only",
-   "plan": "experiments/PB0_prediction_audit/questions.md",
-   "frozen_tag": "PB0-frozen",
-   "approved_by": "the assistant under the creator's direction (brain first) and sleep-mode autonomy; round 57: Gemini 85%, DeepSeek ~80% after the control fix",
-   "status": "final: GO (recomputed by GPT and Gemini); gain is social reward, not survival or making",
-   "next_step": "round 58: the brain design with PB0's result",
-   "run": 41751443724
-  },
-  {
-   "id": "PB1",
-   "title": "A shadow brain: can a small predictor learn what ACL's actions do? (read-only on v13; the brain road, step 2)",
-   "kind": "read-only",
-   "plan": "experiments/PB1_shadow_predictor/questions.md",
-   "frozen_tag": "PB1-frozen",
-   "approved_by": "the assistant under the creator's direction (brain first) and standing autonomy; round 59: GPT 94%, Gemini 95%, DeepSeek ~82%",
-   "status": "final: it does not (recomputed by GPT and Gemini); rethink the learning rule before PB2",
-   "run": 41947447573,
-   "next_step": "council: how to rethink the predictor's learning (averaging with sharing, interactions, observation weighted by count)"
-  },
-  {
-   "id": "PB1b",
-   "title": "A shadow brain with episodic memory (read-only on v13; the brain road)",
-   "kind": "read-only",
-   "plan": "experiments/PB1b_episodic_predictor/questions.md",
-   "frozen_tag": "PB1b-frozen",
-   "approved_by": "the assistant under the creator's direction and sleep-mode autonomy; round 60: all three choose episodic memory",
-   "status": "final: GO (recomputed by GPT and Gemini); E-obs (learning from others' weeks) preferred for PB2",
-   "run": 41957772921,
-   "next_step": "PB2 design: E-obs connected to choices (v13 / reward-steered / + learning-progress goal memory / goal memory off / sham), council round 61"
-  },
-  {
-   "id": "PB2",
-   "title": "The episodic brain helps choose (a nature-change test in a copy of v13; the brain road, step 3)",
-   "kind": "nature test in a copy",
-   "plan": "experiments/PB2_brain_steers/questions.md",
-   "frozen_tag": "PB2-frozen",
-   "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 61: Gemini 90%, DeepSeek ~72%; the assistant 55%",
-   "status": "final (recomputed blind by GPT and Gemini): the self-chosen goal is not shown to help (G-P -0.0007 [-0.0020, +0.0005]; G-G0 +0.0002 [-0.0009, +0.0013]); memory steering raises ends-directed chains about 6x (P-c +0.0176 [0.0157, 0.0194]) and living-weeks +28%, no extinction; R near 0",
-   "next_step": "council round 62 on what follows PB2: a frozen test of memory steering itself as a candidate law (P against v13 as primary, a look-ahead control, new seeds), and why R stays near 0",
-   "run": 41985849249
-  },
-  {
-   "id": "PB3",
-   "title": "Memory steering as a candidate law: prediction or myopia? (a test in a copy; the brain road, step 4)",
-   "kind": "nature test in a copy",
-   "plan": "experiments/PB3_memory_steering/questions.md",
-   "frozen_tag": "PB3-frozen",
-   "approved_by": "the assistant under the creator's direction (brain first), the 2 November permission to edit world rules (tests in a copy) and sleep-mode autonomy; round 62: GPT 94%, Gemini 95%, DeepSeek ~80%; the assistant 70%",
-   "status": "final (recomputed blind by GPT and Gemini): MYOPIA, NOT PREDICTION - the habit table's one-week look-ahead (discount 0.8, max over next week's habits) is the habit trap; without it M3 x7.5, makes x6.6, world-new kinds x9, living-weeks +17%; memory steering replicates PB2 but is below no-look-ahead (P - c0 -0.0059); R still 0",
-   "next_step": "council round 63: the look-ahead rule - a read-only diagnosis of why it suppresses making first, or a frozen law test; R (remaking) remains the open mission question",
-   "run": 42020737135
-  },
-  {
-   "id": "LD1",
-   "title": "Why does the habit look-ahead lock choices, and where does remaking fail? (read-only on v13)",
-   "kind": "read-only",
-   "plan": "experiments/LD1_lookahead_diagnosis/questions.md",
-   "frozen_tag": "LD1-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy; round 63: GPT 97%, Gemini 95%, DeepSeek ~93%; the assistant 75%",
-   "status": "final (recomputed blind by GPT and Gemini): A direction (scale also recovers) - the look-ahead is a familiarity bias that marks down making (-0.245 at make offers); B: v13 new kinds stop at 'held the recipe, never its inputs' (88%), c0 at 'forgotten by the first week' (64%)",
-   "next_step": "council round 64: a general-law candidate for the look-ahead (a situation's value counted only as far as it has been learned, or expectation), and the R path (opportunity/intention in v13; recipe memory once making rises)",
-   "run": 42068513736
-  },
-  {
-   "id": "HE1",
-   "title": "Habits learn from experience: a law test in a copy (discount 0 on code_v13)",
-   "kind": "nature test in a copy",
-   "plan": "experiments/HE1_habits_from_experience/questions.md",
-   "frozen_tag": "HE1-frozen",
-   "approved_by": "the assistant under the creator's 2 November permission and sleep-mode autonomy; round 64; the assistant 75%",
-   "status": "final (recomputed blind by GPT and Gemini): NOT SUPPORTED - harm: starvation rate x1.64 (the hunger guard), killings 4 -> 216; making released (x6); not adopted",
-   "run": 42099596852,
-   "next_step": "council round 65: a look-ahead without the familiarity bias (bootstrap only from well-learned situations) as the next law candidate, and value at invention for R"
-  },
-  {
-   "id": "LH1",
-   "title": "A fairer look-ahead: keep the protection, lose the familiarity bias (a test in a copy)",
-   "kind": "nature test in a copy",
-   "plan": "experiments/LH1_fair_lookahead/questions.md",
-   "frozen_tag": "LH1-frozen",
-   "approved_by": "the assistant under the creator's 2 November permission and standing autonomy; round 65; the assistant 60%",
-   "status": "done (final 5 November 22:20; tag LH1-done; recomputed by GPT, Gemini 3.1 Pro and DeepSeek's blind script): neither rule supported (e: starvation x1.377, hunger guard; m: starvation x1.750 and killing +0.19, both guards); making x3.2 and x5.7; remakes still 2 and 2; not adopted",
-   "run": 42127234508,
-   "next_step": "none (done); next: council round 66 (docs/debate_round66_question_2026-11-05.md): close the look-ahead line; remaking (a read-only funnel of why inputs never come together, or an intention law); the 12-recipe tie-break by name"
-  },
-  {
-   "id": "VA1",
-   "title": "Is a new invention valued before it is lost? (read-only value-at-invention audit on v13)",
-   "kind": "read-only",
-   "plan": "experiments/VA1_value_at_invention/questions.md",
-   "frozen_tag": "VA1-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy; round 65 (all three ask for this audit); the assistant 75%",
-   "status": "done (final 5 November 21:34; tag VA1-done; recomputed by GPT, Gemini and DeepSeek's blind script): value is not the bottleneck (used before lost 0.824 [0.788, 0.858]); similar experience modestly informative (0.297 vs the plain mean's 0.267); 87% stop at 'never the inputs again'; a full memory loses the newcomer (154 of 155; ties settled by name order against nested kinds)",
-   "run": 42141156581,
-   "next_step": "none (done); follow-up: the exploratory holding check (explore_holding.py, seeds 9801-9804), then the council on opportunity or intention, and on the cap's tie-break by name"
-  },
-  {
-   "id": "RF1",
-   "title": "Why do the inputs never come together? (read-only remaking funnel on v13)",
-   "kind": "read-only",
-   "plan": "experiments/RF1_remaking_funnel/questions.md",
-   "frozen_tag": "RF1-frozen",
-   "approved_by": "the assistant under the creator's 'keep working' (5 November) and standing autonomy; round 66 (all three ask for the funnel first); the assistant 85%",
-   "status": "done (final 6 November 01:06; tag RF1-done; recomputed by GPT, Gemini 3.1 Pro and DeepSeek): pursuit fails 0.797 [0.702, 0.878] (started but never complete 0.768; gathered pieces lost or used in 45 of 53; missing pieces mostly made parts); 1,062 of 1,246 new kinds invented by people not yet grown, never offered make-again",
-   "run": 42164147385,
-   "next_step": "none (done); next: council round 67 on an intention law (a held aim toward a valued state, keeping gathered pieces, pursuing parts in order, yielding to hunger) and on the life-stage gate (children invent in play but only the grown may make again); then FF3 (name ties)"
-  },
-  {
-   "id": "FF3",
-   "title": "Memory ties settled by name, a fault fix in v13",
-   "kind": "fault fix (in a copy)",
-   "plan": "experiments/FF3_name_ties/questions.md",
-   "frozen_tag": "FF3-frozen",
-   "approved_by": "the assistant under the creator's 2 November permission; rounds 66 and 67",
-   "status": "done (final 6 November 03:58; tag FF3-done): no harm; adopted as nature v14 (NV14, tag nature-v14)",
-   "run": 42177471748,
-   "next_step": "none (done); next: CI1 on v14 (docs/ci1_design_draft_2026-11-06.md)"
-  },
-  {
-   "id": "CI1",
-   "title": "Children may make again (LG) and a held aim that keeps the pieces (IN): two laws tested in a copy of v14",
-   "kind": "nature-change test in a copy (code_ci1 = v14 + child_make + held_aim)",
-   "plan": "experiments/CI1_children_and_aims/questions.md",
-   "frozen_tag": "CI1-frozen",
-   "approved_by": "the assistant under the creator's 2 November permission (rounds 67-68: GPT 95%, Gemini 95%, DeepSeek ~75%)",
-   "status": "done (final 6 November 16:29; tag CI1-done): LG supported (complete-set share +0.0183 [+0.0125, +0.0239], no guard); IN no harm, no effect; LG+IN supported (+0.0192), no guard",
-   "run": 42249052146,
-   "zero": "cloud (skip_zero=no; zero_cloud.log, All: PASS, fingerprint e0ccbf07)",
-   "next_step": "none (done); next: CI1-C, LG's confirmatory run (run 42298530869)",
-   "recompute": "recompute_ci1.md: GPT (code) and Gemini (code) match every point estimate to 4 decimals and every reading; DeepSeek gave no numbers (no code tool)"
-  },
-  {
-   "id": "CI1C",
-   "title": "Children may make again (LG): confirmatory run on new seeds",
-   "kind": "confirmatory run (a test in a copy; code_ci1 unchanged; arms v14 / LG / sham; seeds 24101-24132)",
-   "plan": "experiments/CI1C_children_confirm/questions.md",
-   "frozen_tag": "CI1C-frozen",
-   "approved_by": "the assistant under the creator's 2 November permission; round 69 unanimous on LG alone (GPT 85%, Gemini 95%, DeepSeek about 92%; the assistant 80%)",
-   "status": "done (final 6 November 19:29; tag CI1C-done): CONFIRMED (+0.0221 [+0.0166, +0.0283]; LG - sham +0.0218; no guard); adopted as nature v15 (NV15, tag nature-v15)",
-   "run": 42298530869,
-   "zero": "cloud (skip_zero=no; zero_cloud.log, All: PASS, fingerprint e0ccbf07)",
-   "next_step": "none (done). Next: HR1 (hunting calibrated to evidence; round 70) on v15; the spread of new kinds (0 of about 11,500 made by anyone but the inventor) is the next wall for Bob",
-   "recompute": "recompute_ci1c.md: GPT (code) and Gemini (code) match; DeepSeek's page froze, not read"
-  },
-  {
-   "id": "FP1",
-   "title": "Food production by age in nature v15, against forager evidence (HR1's read-only step 0)",
-   "kind": "read-only (one arm on code_v15; seeds 24301-24332; a food account per person-week with a conservation check)",
-   "plan": "experiments/FP1_food_production_by_age/questions.md",
-   "frozen_tag": "FP1-frozen",
-   "approved_by": "the assistant under the creator's permissions; round 72 (GPT 97%, Gemini 95%, DeepSeek ~87%; the assistant 90%); the creator OK'd downloading Kaplan et al. 2000",
-   "status": "done (final 7 November 02:39; tag FP1-done): children reach need at 8-11 (evidence mid-late teens); women out-produce men (1.33 vs 1.10, active more weeks); per active week about 3 x need; hunted share 0.000 (26-78% in foragers); hunting chosen in about 1 of 9,100 grown weeks",
-   "run": 42337207529,
-   "zero": "local (zero_local.log; skip_zero=local)",
-   "next_step": "council round on HR1's target from FP1's table (hunting the largest gap; children's foraging a second)",
-   "recompute": "recompute_fp1.md: GPT (code) and Gemini (code) match every point estimate; DeepSeek gave a script, no numbers"
-  },
-  {
-   "id": "SP1",
-   "title": "Where does the spreading of new kinds stop? (read-only funnel on v15)",
-   "kind": "read-only (one arm on code_v15; seeds 24401-24432)",
-   "plan": "experiments/SP1_where_spreading_stops/questions.md",
-   "frozen_tag": "SP1-frozen",
-   "approved_by": "the creator, by Telegram with the listener's code (7 November 00:26)",
-   "status": "done (final 7 November 04:39; tag SP1-done): spreading stops at the lesson (learned | shown 0.062 [0.045, 0.081]); 80% of lessons declined by the trust x openness draw (applies to all lessons); of new-kind lessons that pass it, 97.6% fail on a missing part; 1 of 3,597 new kinds made by a learner",
-   "run": 42352592253,
-   "zero": "local (zero_local.log; skip_zero=local)",
-   "next_step": "council: the next frozen test (nested missing parts; the acceptance draw), together with FP1's HR1 targets",
-   "recompute": "recompute_sp1.md: GPT (code) and Gemini (code) match; DeepSeek unfinished, not counted"
-  },
-  {
-   "id": "PC1",
-   "title": "The part chains of new kinds: why lessons fail on a missing part (read-only on v15)",
-   "kind": "read-only (one arm on code_v15; seeds 24501-24532)",
-   "plan": "experiments/PC1_part_chains/questions.md",
-   "frozen_tag": "PC1-frozen",
-   "approved_by": "the assistant under sleep-mode autonomy; council round 73 (GPT 98%, DeepSeek ~93% first; Gemini alongside HR1)",
-   "status": "done (final 7 November 07:40; tag PC1-done): COULD HELP. Teacher knows every missing part in 0.926 of failed lessons; chains 3+ deep in 0.557; the one-level part lesson aims right (0.990) but never helps (0 of 4,359 taken: 0.780 declined, 0.209 deeper part missing)",
-   "run": 42366219425,
-   "zero": "local (zero_local.log; skip_zero=local)",
-   "next_step": "council: (b) learner-driven part lessons across talks (bottom-up, with a budget) vs (c) the acceptance draw (0.211 per part lesson compounds per level)",
-   "recompute": "recompute_pc1.md: GPT (code) and Gemini (code) match; DeepSeek unfinished, not counted"
-  },
-  {
-   "id": "LW1",
-   "title": "A learner's wish for the part they could not follow: a law tested in a copy of v15",
-   "kind": "nature-change test in a copy (code_lw1 = v15 + learn_wish; arms v15 / LW / sham; seeds 24601-24632)",
-   "plan": "experiments/LW1_learners_wish/questions.md",
-   "frozen_tag": "LW1-frozen",
-   "approved_by": "the assistant under the creator's permissions ('do not ask for permissions from me just go'); council round 74 (GPT 96%, DeepSeek ~75%, Gemini 95% for a wider design)",
-   "status": "done (final 7 November 12:37; tag LW1-done): no harm, no effect, on a knife-edge. Part learning 0.0059 -> 0.0165 (+0.0107 [+0.0072, +0.0146]); co-primary +0.0070 [-0.0001, +0.0140] (GPT +0.0002, Gemini +0.0001 with their own draws; the bootstrap's noise, recompute/mc_check_lw1.py); made by a non-inventor 1 -> 0; not adopted",
-   "run": 42387280021,
-   "zero": "local (zero_local.log; skip_zero=local)",
-   "next_step": "fetch, analyse_lw1.py, recompute (lw1_counts.csv), findings; a supported reading goes to a confirmatory run",
-   "recompute": null
-  },
-  {
-   "id": "EG1",
-   "title": "When someone is starving, does the energy rule stand between them and food? (read-only audit on v15)",
-   "kind": "read-only (one arm on code_eg1 = code_v15 + logging only; seeds 24701-24732)",
-   "plan": "experiments/EG1_energy_gate/questions.md",
-   "frozen_tag": "EG1-frozen",
-   "approved_by": "the assistant under the creator's standing permissions ('you can keep going do not rely on me'); council round 75 after the code facts (GPT 96%, Gemini, DeepSeek ~87%)",
-   "status": "done (final 7 November 13:54; tag EG1-done): energy is a minor contributor, P 0.0628 [0.0540, 0.0713] of starving person-weeks; 0.350 of starvation deaths had a blocked week in their last 4; women 30-49 0.119 vs men 0.054; best-tile quirk 0.429 of blocked starving weeks"
-  },
-  {
-   "id": "FF4",
-   "title": "A whole action dropped because one target is too far: a fault fix in a copy of v15",
-   "kind": "fault-fix check in a copy (code_ff4 = v15 + fix_affordable_target; arms v15 / f / sham; seeds 24801-24832)",
-   "plan": "experiments/FF4_affordable_targets/questions.md",
-   "frozen_tag": "FF4-frozen",
-   "approved_by": "the assistant under the creator's 2 November permission; council round 76 (GPT 98%, Gemini 95%, DeepSeek ~92%)",
-   "status": "done (final 7 November 16:57; tag FF4-done): no harm; to adoption as nature v16 by the safe path"
-  },
-  {
-   "id": "MP1",
-   "title": "Where do the made parts of new kinds go? (read-only stage funnel and part fates on v15)",
-   "kind": "read-only (one arm on code_v15; seeds 24901-24932)",
-   "plan": "experiments/MP1_made_parts/questions.md",
-   "frozen_tag": "MP1-frozen",
-   "approved_by": "the assistant under the creator's standing permissions; council round 76 (GPT 97%, Gemini 95%, DeepSeek ~90%)",
-   "status": "done (final 7 November 17:35; tag MP1-done): A clear, 0.902 of new kinds never have a made part held again by a knower; carry limit not the wall (dropped 0.025); half of the few parts made are handed away"
-  },
-  {
-   "id": "DF1",
-   "title": "Who feeds the children, and what does it cost them? (read-only on v16)",
-   "kind": "read-only (one arm on code_v16; seeds 25101-25132)",
-   "plan": "experiments/DF1_dependents_feeding/questions.md",
-   "frozen_tag": "DF1-frozen",
-   "approved_by": "the assistant under the creator's standing permissions; council round 77",
-   "status": "done (final 7 November 19:49; tag DF1-done): feeding drives the gap (women 7.38 vs men 0.74 per 1,000; women's share 0.888); the mother is the sole caregiver by rule"
-  },
-  {
-   "id": "PM1",
-   "title": "Why are the parts of new kinds never made again? (read-only part-making funnel on v16)",
-   "kind": "read-only (one arm on code_v16; seeds 25001-25032)",
-   "plan": "experiments/PM1_part_making/questions.md",
-   "frozen_tag": "PM1-frozen",
-   "approved_by": "the assistant under the creator's standing permissions; council round 77",
-   "status": "done (final 7 November 20:10; tag PM1-done): P1 clear, 0.710 of new kinds: the part's recipe known but its inputs never in hand (0.838 at depth 3+); value does not flow from wholes to parts' materials or sub-parts"
-  },
-  {
-   "id": "VW1",
-   "title": "What a valued whole needs is wanted: value flows down the recipe tree (a law test in a copy of v16 with a sham)",
-   "kind": "law test (code_vw1 = v16 + want_down; arms c v16, w VW, x sham; seeds 25201-25232; 200 years)",
-   "plan": "experiments/VW1_value_of_wholes/questions.md",
-   "frozen_tag": "VW1-frozen",
-   "approved_by": "the assistant under the creator's standing permissions; council round 78 (GPT 96%, Gemini 95% as a fault, DeepSeek ~78%)",
-   "status": "done (final 7 November 23:41; tag VW1-done): no harm, no effect (co-primaries +0.0084 [-0.0046, +0.0210] and +0.0063 [-0.0049, +0.0171]; no guard); not adopted; repeats WP1's A2 on v16; recomputed by GPT and Gemini"
-  },
-  {
-   "id": "OD1",
-   "title": "Open the world's closed doors, once (five general laws through properties; the creator's Direction, 7 November)",
-   "kind": "law package test (code_od1 = v16 + similar_parts, containers_carry, made_binders, made_hammers, layers_add; arms c v16, o doors, p doors without D1, x sham; seeds 25301-25332; 200 years)",
-   "plan": "experiments/OD1_open_doors/questions.md",
-   "frozen_tag": "OD1-frozen",
-   "approved_by": "the creator (direction, package and no-harm bar, 7 November 2026, in session); council round 80 (GPT, Gemini, DeepSeek: no objection)",
-   "status": "done (final 8 November; tag OD1-done): no harm detected; the full package (D1-D5) goes live as nature v17; every door used; recomputed by GPT and Gemini; council round 81: GPT 82%, Gemini 100%, DeepSeek ~93%"
-  },
-  {
-   "id": "NB1",
-   "title": "Can a neural-brained people survive and improve over generations? (the first neural-brain test; the creator's decision of 8 November)",
-   "kind": "exploratory law test (code_nb1 = v17 + nb_brain; arms c v17, n neural with learning, e neural evolution only; seeds 25401-25416; 600 years; phase 2 common garden, generations 1, 9, 18, learning on/off, seeds 25501-25516, 60 years)",
-   "plan": "experiments/NB1_neural_brain/questions.md",
-   "frozen_tag": "NB1-frozen",
-   "approved_by": "the creator ('go ahead now', 8 November 2026, in session); council round 82 (GPT 85%, Gemini 80%, DeepSeek ~70%; no objection to the resolved design)",
-   "status": "done (final 10 November; tag NB1-done): decorative. Viable; g rose 1.00 -> 1.23; primary 1 yes but e also rises; inherited no; learning on - off -0.045. e:25408 rerun locally (cloud job limit twice). Recomputed by GPT and Gemini (third Gemini chat; two stalled); DeepSeek hand point values match (no code tool)."
-  }
- ],
- "queue_after": [
-  {
-   "what": "THE BRAIN ROAD (first priority, the creator 3 November 2026: 'first of everything we should work on agent brain'): PB0 read-only prediction-opportunity audit on v12, then a brain design note (predictor + goal memory + short planner, general abilities only, evolvable structure), council, frozen tests in a copy",
-   "status": "first priority; PB0 next after FF2/AM2 are written up",
-   "needs": "PB0 frozen plan; council on the design note"
-  },
-  {
-   "what": "HAND-LIMITS ROAD (the creator, 6 November 2026 17:38: 'Double check all laws of world again and filter all with other ai modules make sure we are not limiting like this'): audit docs/law_limits_audit_2026-11-06.md; council docs/gpt_review_law_limits_2026-11-06.md. First frozen test: who holds a kill (remove the forced equal hunt split; sharing becomes a choice), one gate per test, sham, CI1-style harm checks plus offered/chosen/attempted counts; then the attack gate with a contested thing; threat/display as its own test.",
-   "status": "council round 70 (docs/debate_round70_hk1_design_2026-11-06.md, two parts, unanimous): HK1 SHELVED (read-only counts on v14: 0 party kills of 105; 1 pair in 713 hunt attempts; plan kept as experiments/HK1_who_holds_the_kill/questions_SHELVED.md; revival when party kills >= 50 in smoke worlds). Order now: HR1 (hunting calibrated to evidence), then a general ability to act together on purpose, then HK1's revival check, then the attack and taking gates",
-   "needs": "real forager sources on violence, theft, meat sharing and pair break-up (docs/research/); a frozen plan"
-  },
-  {
-   "what": "after the new brain is built and live: redraw the ACL Brain Scan picture (acl_brain_scan.html, from brain_data.py + brain_template.html; also acl_mind_map*.html) to show the new brain (predictor, goal memory, planner) instead of the habit table",
-   "status": "the creator, 3 November 2026: 'note after you build whole brain then change that brain picture from acl'",
-   "needs": "the new brain adopted as nature; the files are the creator's (untracked), so redraw, do not delete the old ones; the creator, 3 November 2026: 'in brain scanner do not put any extra info and text just brain neural network thats it nothing extra' (the picture shows only the neural network: no labels, no text, no extra panels); style reference shared by the creator (3 November): a clean drawing of neurons as circles joined by lines on a plain background, layered left to right; draw Bob's real network (its loops, its parts, and connection strength from his own learning)"
-  },
-  {
-   "what": "the creator's list of ways to build ACL toward Bob (round 55; to discuss after the brain road is under way): 2 brains that evolve (inherit how the brain learns, never knowledge); 3 open actions (general abilities, physics decides); 4 fewer scripted feelings, grown ones; 5 a signal channel with no meanings; 6 much bigger and longer worlds",
-   "status": "listed by the creator, 3 November 2026: 'keep going in this pathway then we will discuss other things from this list'",
-   "needs": "discussion with the creator after the brain road's first steps; council; frozen studies"
-  },
-  {
-   "what": "HR1: calibrate per-species success (F7's table, provenance unknown) and meat per kill to forager evidence (return ratio 0.5-1.5; success per hunter-week as a second check; docs/research/hunting_success_hadza_2026-11-03.md)",
-   "status": "NEXT on the laws road, now on v15. Step 0, FP1 (read-only, proposed 6 Nov 21:46; docs/research/forager_production_2026-11-06.md): food acquired per person-week by age, sex and source against need (a net production curve) and the share of adult weeks per action, against Kaplan et al. 2000's curves and the ~60% hunted energy share, to decide which side is off (foraging, hunting or the action budget) before any calibration; then HR1 proper with round 70's conditions",
-   "needs": "Kaplan et al. 2000's exact values (the PDF is a file download: ask the creator, or find an open copy); FP1 plan; council"
-  },
-  {
-   "what": "ES3: ES2's realized look-ahead on new seeds with the per-action guard for ages 12+ (children reported, not decisive); a new experiment, ES2 stays failed (GPT, round 42)",
-   "status": "deferred until after UV3",
-   "needs": "debate after UV3; biological justification for the age line independent of ES2"
-  },
-  {
-   "what": "wider value passing-on in childhood (oblique and horizontal from age 6; Hewlett 2011): a nature-change test in a copy, after reading the full text",
-   "status": "queued (GPT's order after HA1: B then A/ES3)",
-   "needs": "full text read; debate; frozen plan with no target outcome"
-  },
-  {
-   "what": "an early, read-only autonomy audit (design note Part 2)",
-   "status": "proposed",
-   "needs": "debate with GPT and Gemini, then a frozen plan"
-  },
-  {
-   "what": "talent (a heritable learning-speed gene)",
-   "status": "listed by the creator",
-   "needs": "debate when its turn comes"
-  },
-  {
-   "what": "children making known things before 12 (in ACL 'make' starts at 12; forager children make their own toys, Lew-Levy et al. 2022)",
-   "status": "found 31 October 2026; for the creator",
-   "needs": "the creator's decision; evidence on ages, then a frozen nature-change study"
-  }
- ],
- "pending_approvals": [
-  {
-   "what": "a learning-rule study (expected look-ahead instead of the max), a nature-change test",
-   "status": "asked in the morning report"
-  },
-  {
-   "what": "fix the in-world brain screen acl/viewer.html (says 17 action neurons and 544 habits at lines 193, 431, 645, 651; v11 has 19 and 608; better to read the counts from the data than hard-code them); display only, no nature change; then run the tests",
-   "status": "done 2 November 2026 ~03:55 in the desktop Claude Code session (approved by the creator on Telegram 02:52): acl/viewer.html reads the counts from the brain data (19 actions, 32 situations, 608 habits shown in the viewer); display only; nature fingerprint unchanged (a1fb3d5e...)"
-  },
-  {
-   "what": "after UP1: which general condition (if any) to test in a copy so that nested inventions can be remade: a goal kept across weeks, a deeper wanted-part bridge, or more carrying room (forager evidence first)",
-   "status": "for the creator; WP1 (2 Nov) ruled out want propagation, leaving goal persistence and carrying room"
-  }
- ],
- "budgets": {
-  "tick_minutes": 60,
-  "ticks_per_day": 24,
-  "tick_timeout_minutes": 45,
-  "local_simulations_max": 4,
-  "cloud_studies_at_once": 2,
-  "failures_before_pause": 3,
-  "daily_summary_at": "07:30",
-  "pc_full_use": "the creator, Telegram 2026-11-01 01:39: 'Now u can use pc at max capacity cuz i am not working'. While the creator is away, local simulations may run at normal priority, up to local_simulations_max (4). Ends when the creator writes again or is back at the PC; then the CLAUDE.md rule returns (Idle priority, at most 2).",
-  "pc_light_use": "the creator, Telegram 2026-11-01 16:44: 'Do not use pc too much right now i am using it partly i do not want it to lag'. Full use ended. Until the creator says otherwise: at most 1 local simulation, Idle priority, short jobs only (analysis, smoke tests); anything long goes to the cloud.",
-  "pc_full_use_2": "the creator, Telegram 2026-11-02 02:21: 'Ok good you can use pc at max capacity now'. pc_light_use (1 Nov 16:44) ends. While the creator is away, local simulations may run at normal priority, up to 4 at once; reported through Telegram. Ends when the creator writes otherwise or is back at the PC (then CLAUDE.md: Idle, at most 2).",
-  "cloud_note": "raised from 1 to 2 on 2 November 2026 (22:20) for AF1 and FX1 together: the repository is public, so Actions minutes cost nothing, and extra chunks wait for free runners",
-  "pc_note_2026_11_02_22_20": "the creator was at the PC this evening (opened a DeepSeek tab), so local simulations were set to Idle priority; long work goes to the cloud",
-  "pc_full_use_4": "the creator, in the Claude Code chat 2026-11-05 about 20:10: 'you can work on pc fully now'. Local simulations may run at normal priority, up to local_simulations_max (4), until the creator says otherwise.",
-  "pc_full_use_5": "the creator, Telegram 2026-11-06 11:33: 'Today whole day you can work on pc fully i am using you remotely only through phone'. For all of 6 November: local simulations at normal priority, up to local_simulations_max (4); long work still prefers the cloud.",
-  "pc_light_use_2": "the creator, in the Claude Code session 2026-11-07 10:00: 'btw keep the light work on computer right now'. Full use ends. Until the creator says otherwise: Idle priority, at most 2 local simulations (CLAUDE.md), short jobs; anything long goes to the cloud. Running LW1 zero checks were set to Idle at once."
- },
- "directions": [
-  {
-   "id": "IQ1",
-   "title": "Islamic Sources and Emergent Cognition",
-   "from": "the creator, 1 November 2026",
-   "rules": "literature and proposals first; verify every source; no change to live nature or adoption without the creator's explicit approval; inspiration, not proof",
-   "report": "docs/research/iq1_islamic_sources_report_2026-11-01.md",
-   "priorities": [
-    "H3 step 1 = KL1 (running)",
-    "H1 born without learned content (a copy)",
-    "H2 graded child abilities (a copy)"
-   ],
-   "status": "re-opened 5 November 2026 (the creator asked whether it continues): intention (Sahih al-Bukhari 1), foresight (Q 59:18 with Ibn Kathir) and a practice that outlives its starter (Sahih Muslim 1017a), all verified; note docs/research/iq1_intention_foresight_2026-11-05.md; proposals: value at invention, then an intention study"
-  },
-  {
-   "id": "BOB12",
-   "title": "Bob's twelve capacities as a scorecard",
-   "from": "the creator, Telegram 2026-11-02 02:21",
-   "note": "docs/research/bob_twelve_capacities_2026-11-02.md",
-   "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
-  }
- ],
- "next_step": "(1) NB2 long-run 42874664849 (81 jobs; 72 done, 0 failures at 15:40 on 10 Nov): fetch, run the frozen analysis, blind recompute by GPT, Gemini and DeepSeek. (2) Cradle: C0-B done (C0B-done); next a harder hearing or C1, and keep the Cradle director deciding events each world month. (3) The creator, 10 Nov 15:35 (Telegram): \"keep living inside acl\" - so each session that has room lives one more hand-played life with tools/mind_views/inhabit.py (a probe, not a study; nature untouched; findings noted for the 7 December review). Lives so far: p00027 seed 7103 (docs/inhabit_2026-11-10.md), p00028 seed 7211 weeks 1040-1053 (docs/inhabit_life2_2026-11-10.md). Next life: use a different kind of person (a child, or a parent with children) and try to be the one who LEARNS from others rather than the one who makes."
+  "directions": [
+    {
+      "id": "IQ1",
+      "title": "Islamic Sources and Emergent Cognition",
+      "from": "the creator, 1 November 2026",
+      "rules": "literature and proposals first; verify every source; no change to live nature or adoption without the creator's explicit approval; inspiration, not proof",
+      "report": "docs/research/iq1_islamic_sources_report_2026-11-01.md",
+      "priorities": [
+        "H3 step 1 = KL1 (running)",
+        "H1 born without learned content (a copy)",
+        "H2 graded child abilities (a copy)"
+      ],
+      "status": "re-opened 5 November 2026 (the creator asked whether it continues): intention (Sahih al-Bukhari 1), foresight (Q 59:18 with Ibn Kathir) and a practice that outlives its starter (Sahih Muslim 1017a), all verified; note docs/research/iq1_intention_foresight_2026-11-05.md; proposals: value at invention, then an intention study"
+    },
+    {
+      "id": "BOB12",
+      "title": "Bob's twelve capacities as a scorecard",
+      "from": "the creator, Telegram 2026-11-02 02:21",
+      "note": "docs/research/bob_twelve_capacities_2026-11-02.md",
+      "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
+    }
+  ],
+  "next_step": "(1) NB2 is COMPLETE and analysed (experiments/NB2_connected_brain/results.md): the frozen reading is 'NOT VIABLE' - the full neural brain (n) is worse than v17 (survival to 16 per birth n-c -0.0770 [-0.1174,-0.0352]; extinct worlds c 4, s 9, o 15, l 11, n 13; starvation x2.52, killing x910). Removing the thresholds alone (sham s) already costs (s-c -0.0586 [-0.1165,+0.0090]), so the council's stated risk came true. NEXT: the blind recompute by GPT, Gemini and DeepSeek from experiments/NB2_connected_brain/recompute/ (nb2_worlds.csv, nb2_g.csv built 10 Nov; prompt.txt), then findings.md. Phase 2 (the common gardens, run_nb2_garden.py) is NOT run: the reading is already 'not viable', so the garden cannot change it; it would only measure inherited competence inside a failing arm. Design NB3 from the diagnosis: keep the body's safety thresholds (especially attack and the child-feeding ones), and give the brain memory instead of more freedom. (2) Cradle: C0-B final; C1 (routines) drafted at D:/cradle/docs/C1_draft_2026-11-10.md - the rung that forces the first memory; next its council round (GPT, Gemini, DeepSeek), then a difficulty check, then a frozen plan. (3) The creator, 10 Nov 15:35: 'keep living inside acl' - each session with room lives one more hand-played life with tools/mind_views/inhabit.py (a probe, not a study; nature untouched; findings noted for the 7 December review). Lives so far: p00027 seed 7103, p00028 seed 7211. Next life: a child or a parent, trying to be the one who LEARNS from others rather than the one who makes."
 }
