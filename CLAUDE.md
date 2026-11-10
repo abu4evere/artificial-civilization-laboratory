@@ -54,6 +54,14 @@ build what the makers never planned). The creator chose this order (the assistan
    through council, a frozen plan, the blind recompute and the safe path, as always. No LLMs inside ACL's people.
 4. **The aim of the brain work** (the creator, 7 November 2026): "Don't build a world where intelligence is guaranteed to succeed. Build a mind capable of discovering how to succeed in the world it inherits. The important ability isn't never making mistakes. It's learning from them." So the doors only open possibilities; they never make success easy.
 
+6. **The brain matters more than the world** (the creator, 10 November 2026, after NB1): "Keep working on acl's agent
+   brain. Because we find out brain plays bigger role than world itself. If we create good brain it should survive in
+   not perfect world even if there are bugs mistakes just like ours."
+   - So the brain is the main line, and the world stays frozen (v17).
+   - Cradle is the brain's nursery: "maybe we find our answer from cradle then we will transform that cradle child
+     brain to acl with some edits".
+   - Brain plans still need the creator's sign-off before code or data.
+
 ## Hard rules
 - Freeze a plan (`questions.md`, git tag `X-frozen`) and get the **creator's sign-off** before any code or data.
 - Never change nature (`acl/`, `code_vN`) without the creator's explicit decision. Zero checks before runs.
