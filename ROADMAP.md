@@ -16,6 +16,15 @@ experiment, edit its stage list and run `python docs/make_roadmap.py`; the book 
 
 Open the closed doors of the world once (general laws through properties), then **freeze the world** until a review on 7 December 2026, and put almost all work into **Bob's brain**. "bug=law": a world need not be perfect, only permit survival and learning. Details: `CLAUDE.md`, 'Direction'.
 
+**The brain road so far:**
+- **NB1** (10 November 2026; final; recomputed by GPT and Gemini) asked whether a people with an inherited, evolving neural brain survives and improves by itself. **Decorative.**
+  - The people survive.
+  - g, the inherited weight on the old hand-written score, *rose* from 1.00 to 1.23 instead of falling.
+  - Learning within a life lowered children's survival to 16 by 0.045.
+  - Survival rose over generations, but also without learning.
+  - Costs: starvation 2.2×, child deaths 1.9×.
+- Next: for the creator and the council (`experiments/NB1_neural_brain/findings.md`).
+
 ## The goal, in one line
 
 Civilization emerging in a world where **nature is programmed and culture is written by nobody**: people who keep,
