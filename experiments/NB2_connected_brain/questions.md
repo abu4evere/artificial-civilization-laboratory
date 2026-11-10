@@ -1,4 +1,8 @@
-# NB2: connect the world to the neural brain. Can the network decide? (DRAFT, not frozen)
+# NB2: connect the world to the neural brain. Can the network decide? (frozen plan)
+
+**Frozen** as git tag `NB2-frozen`, before any code or data.
+**Sign-off:** the creator, 10 November 2026, in the Claude Code session, answering "Shall I freeze NB2 and build it?": "do not
+ask me go ahead bro".
 
 **Why:** the creator, 10 November 2026: "Check the world itself laws and nature if anything against our new neural
 brain fix it … we gotta stay with this brain and connect it to world not against its laws."
