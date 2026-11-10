@@ -1,0 +1,161 @@
+# Deep-time worlds that outlast one job (6 hours). Each job runs one world for up to `budget` minutes, then saves a
+# checkpoint; the last job of each stage starts the next stage of this workflow by itself, until every world is
+# finished. So a long study keeps going with the creator's computer off. Same system as `cloud-run` (Windows Server
+# 2022, Python 3.14.7, numpy 2.5.3), where ACL's worlds replay exactly as on the creator's computer.
+#
+# The runner must accept `part <arm> <seed> <years> <out> <ckpt_dir> <budget_minutes>` (start or continue a world;
+# checkpoint when the budget is spent; the world's result file when it finishes) and `fp`; and its folder must hold a
+# committed zero_local.log ("All: PASS", the same code fingerprint), checked at every stage.
+#
+# Start: gh workflow run long-run.yml -f runner=experiments/NB2_connected_brain/run_nb2.py
+# Results: the newest stage's artifact `results` holds every finished world so far.
+name: long-run
+
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: "the study's runner"
+        required: true
+      years:
+        description: "years per world (leave as 'study' to use the runner's YEARS)"
+        default: "study"
+      budget:
+        description: "minutes of world time per job before a checkpoint"
+        default: "320"
+      stage:
+        description: "set by the workflow itself"
+        default: "1"
+      prev_run:
+        description: "set by the workflow itself: the previous stage's run id"
+        default: ""
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  plan:
+    runs-on: windows-2022
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      todo: ${{ steps.plan.outputs.todo }}
+      total: ${{ steps.plan.outputs.total }}
+      years: ${{ steps.plan.outputs.years }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.7"
+      - shell: bash
+        run: python -m pip install --disable-pip-version-check -q "numpy==2.5.3"
+      - name: The committed local zero record (All: PASS, same fingerprint)
+        shell: bash
+        run: python tools/ci/check_local_zero.py "${{ inputs.runner }}"
+      - name: The finished worlds so far (previous stage)
+        if: ${{ inputs.prev_run != '' }}
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: results
+          path: done
+          run-id: ${{ inputs.prev_run }}
+          github-token: ${{ github.token }}
+      - id: plan
+        shell: bash
+        run: |
+          P=$(python tools/ci/long_plan.py "${{ inputs.runner }}" done)
+          echo "$P"
+          echo "matrix=$(python -c "import json,sys; print(json.dumps(json.loads(sys.argv[1])['matrix']))" "$P")" >> "$GITHUB_OUTPUT"
+          echo "todo=$(python -c "import json,sys; print(json.loads(sys.argv[1])['todo'])" "$P")" >> "$GITHUB_OUTPUT"
+          echo "total=$(python -c "import json,sys; print(json.loads(sys.argv[1])['total'])" "$P")" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.years }}" = "study" ]; then
+            Y=$(python -c "import sys; sys.path.insert(0, 'tools/ci'); from cloud_plan import load; print(load(sys.argv[1]).YEARS)" "${{ inputs.runner }}")
+          else
+            Y="${{ inputs.years }}"
+          fi
+          echo "years=$Y" >> "$GITHUB_OUTPUT"
+
+  part:
+    needs: plan
+    if: ${{ needs.plan.outputs.todo != '0' }}
+    runs-on: windows-2022
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.7"
+      - shell: bash
+        run: python -m pip install --disable-pip-version-check -q "numpy==2.5.3"
+      - name: This world's checkpoint from the previous stage, if any
+        if: ${{ inputs.prev_run != '' }}
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: ckpt-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ck
+          run-id: ${{ inputs.prev_run }}
+          github-token: ${{ github.token }}
+      - name: Run (or continue) this world
+        shell: bash
+        run: python "${{ inputs.runner }}" part ${{ matrix.arm }} ${{ matrix.seed }} ${{ needs.plan.outputs.years }} out ck ${{ inputs.budget }}
+      - name: The finished world
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: out-${{ matrix.arm }}-${{ matrix.seed }}
+          path: out/
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: The checkpoint (new, or the one it started from if this job failed)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ckpt-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ck/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  gather:
+    needs: [plan, part]
+    if: ${{ always() && needs.plan.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: The finished worlds so far (previous stage)
+        if: ${{ inputs.prev_run != '' }}
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: results
+          path: all
+          run-id: ${{ inputs.prev_run }}
+          github-token: ${{ github.token }}
+      - name: The worlds finished in this stage
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: out-*
+          path: all
+          merge-multiple: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: all/
+          retention-days: 30
+      - name: Start the next stage if any world is unfinished
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p all
+          N=$(ls all | grep -c '_seed_.*\.json$' || true)
+          echo "finished $N of ${{ needs.plan.outputs.total }} (stage ${{ inputs.stage }})"
+          if [ "$N" -lt "${{ needs.plan.outputs.total }}" ] && [ "${{ inputs.stage }}" -lt 12 ]; then
+            gh workflow run long-run.yml -R "${{ github.repository }}" --ref "${{ github.ref_name }}" \
+              -f runner="${{ inputs.runner }}" -f years="${{ inputs.years }}" -f budget="${{ inputs.budget }}" \
+              -f stage="$(( ${{ inputs.stage }} + 1 ))" -f prev_run="${{ github.run_id }}"
+          fi
