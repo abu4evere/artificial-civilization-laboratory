@@ -378,7 +378,7 @@ def _memory_words(w, m, me: str = "") -> str:
 def _belief_words(thing: str, season: int, v: float) -> str:
     when = SEASONS[season]
     if "/" in thing:
-        a, b = thing.split("/")
+        a, b = thing.split("/", 1)          # the target is raw; a made tool's name can hold "/"
         what = f"striking {a} with {b}"
     elif thing == "seeds":
         what = "leaving seeds in the ground"
