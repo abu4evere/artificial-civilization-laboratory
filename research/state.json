@@ -705,5 +705,5 @@
       "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
     }
   ],
-  "next_step": "Waiting for the creator: (1) NB1 final, decorative: what next on the brain road (findings.md); (2) Cradle C0-A final, words yes, correction no, task at ceiling by day 90: a harder C0-A or C1. FP1: blind recompute from recompute/fp1_counts.csv + prompt.txt, then findings.md. SP1 frozen, launch awaits the creator."
+  "next_step": "Waiting for the creator: (1) NB1 final, decorative: what next on the brain road (experiments/NB1_neural_brain/findings.md); (2) Cradle C0-A final, words yes, correction no, task at ceiling by day 90: a harder C0-A or C1 (D:/cradle/studies/C0A/findings.md)."
 }
