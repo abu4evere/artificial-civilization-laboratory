@@ -16,7 +16,7 @@ Frozen as `NB2-frozen`. run_nb2.py, run_nb2_garden.py, analyse_nb2.py (written b
 - Viability: extinct worlds c 4, s 9, o 15, l 11, n 13; population (living-weeks, years 100-600) against c: s 0.2705 [0.1290, 0.4498], o 0.0458 [0.0002, 0.1476], l 0.2177 [0.0832, 0.3655], n 0.1769 [0.0515, 0.3406]; n viable: **no**.
 - **Primary**, survival to 16 per birth (born years 100-600), n - s: -0.0184 [-0.0581, +0.0077]; above 0: **no**.
 - Inherited competence (generation 18 - 1, g = 0, learning off): phase 2 not present; above 0: **no**.
-- Learning's worth (generation 18, on - off): phase 2 not present.
+- Learning's worth (generation 18, on - off): +0.0327 [-0.0490, +0.0754] (3 source worlds).
 
 Rule: 'not viable' if n has more than 3 extra extinct worlds than c or the population ratio's upper bound is below 0.80; 'the network decides' if n - s and the inherited garden both have lower bounds above 0; 'learning helps, but the instincts still carry it' if only n - s does; otherwise 'no improvement shown'.
 

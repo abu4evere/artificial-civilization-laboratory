@@ -24,6 +24,11 @@ Open the closed doors of the world once (general laws through properties), then 
   - Survival rose over generations, but also without learning.
   - Costs: starvation 2.2×, child deaths 1.9×.
 - Next: for the creator and the council (`experiments/NB1_neural_brain/findings.md`).
+- **NB2** (11 November 2026; final; recomputed by GPT and Gemini) connected the world to the brain: real choices, the facts, a critic and learning from others. **Not viable.**
+  - Without the old brain's thresholds, most worlds die out: 13 of 16, against 4 for the old minds. This holds even with learning off.
+  - The network alone fails within a year.
+  - The world also rewards every attack.
+  - Next: the autopsy NB2-A, then the feelings the creator approved: empathy, guilt, love of one's child, shame, curiosity, and an inborn reluctance to harm.
 
 ## The goal, in one line
 

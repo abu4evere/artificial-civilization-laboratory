@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-10 17:45",
+  "updated": "2026-11-11 03:20",
   "nature": {
     "live": "v17",
     "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
@@ -598,6 +598,22 @@
       "frozen_tag": "NB1-frozen",
       "approved_by": "the creator ('go ahead now', 8 November 2026, in session); council round 82 (GPT 85%, Gemini 80%, DeepSeek ~70%; no objection to the resolved design)",
       "status": "done (final 10 November; tag NB1-done): decorative. Viable; g rose 1.00 -> 1.23; primary 1 yes but e also rises; inherited no; learning on - off -0.045. e:25408 rerun locally (cloud job limit twice). Recomputed by GPT and Gemini (third Gemini chat; two stalled); DeepSeek hand point values match (no code tool)."
+    },
+    {
+      "id": "NB2",
+      "title": "Connect the world to the neural brain: can the network decide? (the creator's audit, 10 November 2026)",
+      "plan": "experiments/NB2_connected_brain/questions.md",
+      "frozen_tag": "NB2-frozen",
+      "approved_by": "the creator, 10 November 2026: 'do not ask me go ahead bro'; council round 83",
+      "status": "done (final 11 November; tag NB2-done): not viable; most neural worlds die out even with learning off; with g = 0 the network alone fails within a year; recomputed by GPT and Gemini"
+    },
+    {
+      "id": "NB2A",
+      "title": "Why did NB2's people die out? A read-only autopsy (exact replay)",
+      "plan": "experiments/NB2A_autopsy/questions.md",
+      "frozen_tag": "NB2A-frozen",
+      "approved_by": "the creator, 10 November 2026: 'go ahead check the data first then add them'",
+      "status": "running on the cloud (cloud-run 42947973136)"
     }
   ],
   "queue_after": [
@@ -705,5 +721,5 @@
       "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
     }
   ],
-  "next_step": "(1) NB2 is COMPLETE and analysed (experiments/NB2_connected_brain/results.md): the frozen reading is 'NOT VIABLE' - the full neural brain (n) is worse than v17 (survival to 16 per birth n-c -0.0770 [-0.1174,-0.0352]; extinct worlds c 4, s 9, o 15, l 11, n 13; starvation x2.52, killing x910). Removing the thresholds alone (sham s) already costs (s-c -0.0586 [-0.1165,+0.0090]), so the council's stated risk came true. NEXT: the blind recompute by GPT, Gemini and DeepSeek from experiments/NB2_connected_brain/recompute/ (nb2_worlds.csv, nb2_g.csv built 10 Nov; prompt.txt), then findings.md. Phase 2 (the common gardens, run_nb2_garden.py) is NOT run: the reading is already 'not viable', so the garden cannot change it; it would only measure inherited competence inside a failing arm. Design NB3 from the diagnosis: keep the body's safety thresholds (especially attack and the child-feeding ones), and give the brain memory instead of more freedom. (2) Cradle: C0-B final; C1 (routines) drafted at D:/cradle/docs/C1_draft_2026-11-10.md - the rung that forces the first memory; next its council round (GPT, Gemini, DeepSeek), then a difficulty check, then a frozen plan. (3) The creator, 10 Nov 15:35: 'keep living inside acl' - each session with room lives one more hand-played life with tools/mind_views/inhabit.py (a probe, not a study; nature untouched; findings noted for the 7 December review). Lives so far: p00027 seed 7103, p00028 seed 7211. Next life: a child or a parent, trying to be the one who LEARNS from others rather than the one who makes."
+  "next_step": "NB2-A autopsy (cloud-run 42947973136): fetch, analyse, report; then the feelings study (empathy, guilt, love of one's child, shame, curiosity, an inborn reluctance to harm; no reward for attacking) through council. Cradle: C1 (routines) with a mix of AI adults and neural siblings, and hearing that keeps word order."
 }
