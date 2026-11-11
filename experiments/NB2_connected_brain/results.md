@@ -67,4 +67,3 @@ Rule: 'not viable' if n has more than 3 extra extinct worlds than c or the popul
 | l | 240,158 | 26.5 | 0.2666 | -0.1607 | 0.1977 |
 | n | 209,548 | 26.6 | 0.2354 | -0.1697 | 0.1814 |
 
-
