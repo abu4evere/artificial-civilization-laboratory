@@ -16,7 +16,7 @@ Frozen as `NB3-frozen`. run_nb3.py, analyse_nb3.py (written before data).
 - Viability: extinct worlds c 4, n2 12, f0 11, fH 7, f 5, fmE 10, fmH 12; population (living-weeks, years 100-600) against c, point [2.5%, 97.5%]: n2 0.1654 [0.0615, 0.3048], f0 0.2209 [0.1047, 0.3659], fH 0.4658 [0.3042, 0.6724], f 0.4893 [0.3251, 0.6705], fmE 0.3896 [0.2373, 0.5400], fmH 0.1693 [0.0751, 0.2747].
 - **Primary: f viable against c: no.** (By the same rule: n2 no, f0 no, fH no, f no, fmE no, fmH no)
 - Survival to 16 per birth, f - n2: -0.0310 [-0.0601, -0.0043].
-- Garden (if present; g = 0, learning off, feeling genes as inherited): founders alive after one year, generation 1 phase 2 not present, generation 18 phase 2 not present; survival to 16, generation 18 - 1: phase 2 not present.
+- Garden (if present; g = 0, learning off, feeling genes as inherited): founders alive after one year, generation 1 +0.0000 [+0.0000, +0.0000] (16 source worlds), generation 18 +0.0000 [+0.0000, +0.0000] (12 source worlds); survival to 16, generation 18 - 1: phase 2 not present.
 
 Rule (frozen): 'f viable' if f's extinct worlds are at most c's + 3 and the upper bound of f/c's population ratio is at least 0.80. Council 84 asked that the point and the lower bound be read too.
 

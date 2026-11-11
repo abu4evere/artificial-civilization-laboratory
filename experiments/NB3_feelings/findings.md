@@ -3,7 +3,7 @@
 **Status:**
 - the analysis is valid;
 - GPT's blind recompute matches every point value and the reading; Gemini's is in progress;
-- the garden (phase 2) is running on the cloud (cloud-run 43078717989).
+- the garden (phase 2) is done (cloud-run 43078717989): see below.
 
 **Run:** long-run 42987899452, all 112 worlds (7 arms × 16 seeds, 600 years) in one stage. Zero checks All: PASS
 (code_nb3 11fa02ec…).
@@ -36,6 +36,13 @@
 - **The feeling genes barely moved** in 600 years (E 0.50→0.52, G 0.50→0.54, H 1.00→0.96).
   - **g (the weight on the old instincts) rose a little** (1.00→1.08), as in NB2: the instincts are still favoured.
 - **The network still changes the top choice in about a quarter of decisions** (f 0.28), as in NB2.
+
+## The garden: the inherited brain alone (g = 0, learning off, feeling genes as inherited)
+- **Every garden world died out within a year:** 21–47 weeks, no births. This holds for generation 1 (16 worlds) and
+  generation 18 (12 worlds; 4 source worlds had no generation 18).
+- **Founders alive after one year:** 0 of 80 in every world.
+- **The same as NB2:** 600 years of selection with feelings did not make a network that can live without the old
+  instincts.
 
 ## What it means (the assistant's reading)
 1. **Violence is solved, by an inborn brake, not by learned feelings.** A reluctance wired into the choice works at
