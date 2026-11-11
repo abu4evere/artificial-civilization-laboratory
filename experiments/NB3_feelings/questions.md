@@ -18,6 +18,19 @@ add them".
 - council round 84;
 - the creator's standing go-ahead.
 
+## What the autopsy NB2-A found (11 November 2026), and how it shapes this draft
+- **Unprovoked violence is the new killer:**
+  - killed is 17.7% of adult deaths in NB2 against 0.5% in v17, and 33% of teens';
+  - 55–64% of attacks had no grudge, only 3% of attackers were hungry, and 20% of attacks hit children under 12;
+  - the world rewards every attack.
+
+  So feeling 0 (no joy in attacking) and feeling 6 (an inborn reluctance to harm, **strong at birth**) come first. Then
+  empathy and guilt.
+- **Sharing broke down:** about a quarter of those who starved had kin nearby with plenty, and children gave in 3% of
+  weeks against 10%. So love of one's own child, empathy, and approval for helping.
+- **Even the sham with learning off collapsed:** a bad option offered often enough becomes a frequent act. So the
+  reluctance must work from birth, not only through learning.
+
 ## The feelings (each a switch and an inherited gene, so evolution can tune its strength)
 Base: `code_nb2`, arm n, the full NB2 brain.
 
@@ -47,13 +60,13 @@ Base: `code_nb2`, arm n, the full NB2 brain.
 
 None of these is a rule. Every act stays possible; only how it feels changes.
 
-## Arms (to be set with the council and the autopsy)
+## Arms (shaped by the autopsy; the council may change them)
+- **c:** v17's old minds, the yardstick.
 - **n2:** NB2's full brain, unchanged (the control).
-- **f0:** n2 with no joy in attacking only.
-- **f:** all the feelings.
-- **One-out arms:** f without empathy; f without the inborn reluctance (the two the council and the autopsy may rank
-  highest).
-- **c:** v17's old minds, as the yardstick.
+- **f0:** n2 with no joy in attacking.
+- **fH:** f0 plus the inborn reluctance to harm.
+- **f:** all the feelings (0–6).
+- **f−E:** f without empathy (does empathy add to the reluctance?).
 
 16 seeds; 600 years; on the cloud (long-run).
 
