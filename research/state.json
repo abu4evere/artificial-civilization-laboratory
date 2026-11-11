@@ -1,6 +1,6 @@
 {
   "about": "Machine-readable research state for scheduled ticks (docs/proposal_autonomous_researcher_2026-10-30.md, Phase 1). The prose records stay the source for people: WORKLOG.md, docs/OPEN_DECISIONS.md, experiments/INDEX.md. Labels: research/README.md.",
-  "updated": "2026-11-11 03:20",
+  "updated": "2026-11-11 02:00",
   "nature": {
     "live": "v17",
     "acl_fingerprint": "676f5639f2370f53ae970c0dbc96e3f913e799d8497998f473d137a511d6924d",
@@ -613,7 +613,7 @@
       "plan": "experiments/NB2A_autopsy/questions.md",
       "frozen_tag": "NB2A-frozen",
       "approved_by": "the creator, 10 November 2026: 'go ahead check the data first then add them'",
-      "status": "running on the cloud (cloud-run 42947973136)"
+      "status": "done (descriptive, 11 November): unprovoked violence (55-64% without grudge; 20% against small children; rewarded by the world), more starvation beside kin with plenty, early death; correction 1 for cross-machine drift (46 exact worlds read)"
     }
   ],
   "queue_after": [
@@ -721,5 +721,5 @@
       "next_step": "in an interactive or heartbeat session with the browser: ask GPT and Gemini the same question (which of the twelve must be laws, which should emerge, one honest read-only measure per capacity); save as gpt_view_bob12_*.md; then the creator decides"
     }
   ],
-  "next_step": "NB2-A autopsy (cloud-run 42947973136): fetch, analyse, report; then the feelings study (empathy, guilt, love of one's child, shame, curiosity, an inborn reluctance to harm; no reward for attacking) through council. Cradle: C1 (routines) with a mix of AI adults and neural siblings, and hearing that keeps word order."
+  "next_step": "NB3 (feelings): adjust the draft by NB2-A, council round 84, freeze, build, run. Cradle: C1 Gemini recompute pending; C1-B (sibling), C1.5 (word order). Mind Lab: scorecard first."
 }

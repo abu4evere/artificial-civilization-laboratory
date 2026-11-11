@@ -24,8 +24,17 @@ def main():
         runs[r["arm"]][r["seed"]] = r
     present = all(sorted(runs[a]) == list(SEEDS) for a in ARMS)
     same = all(r["same_as_nb2"] for a in ARMS for r in runs[a].values())
+    # Correction 1 (appended after the data, 11 November 2026; questions.md): with --exact-only, the replays that do not
+    # end with NB2's fingerprint are left out and named; with --all, every replay is kept. See questions.md.
+    dropped = [f"{a}:{s}" for a in ARMS for s, r in runs[a].items() if not r["same_as_nb2"]]
+    if "--exact-only" in sys.argv or "--all" in sys.argv:
+        if "--exact-only" in sys.argv:
+            runs = {a: {s: r for s, r in runs[a].items() if r["same_as_nb2"]} for a in ARMS}
+        same = True
+    mode = "exact-only" if "--exact-only" in sys.argv else ("all" if "--all" in sys.argv else "frozen")
     L = ["# NB2-A: why did NB2's people die out? (autopsy results)", "",
-         f"- All 48 replays present: **{'yes' if present else 'NO'}**",
+         f"Mode: **{mode}** (correction 1 in questions.md). Replays not ending with NB2's fingerprint: {dropped}", "",
+         f"- All 48 replays present: **{'yes' if present else 'NO'}**; worlds used: {sum(len(v) for v in runs.values())}",
          f"- Every replay ends exactly as NB2's world did (read-only recorders): **{'yes' if same else 'NO'}**", ""]
     if not (present and same):
         L.append("**NOT VALID: nothing is concluded.**")
@@ -113,7 +122,7 @@ def main():
         for act in acts:
             L.append(f"| {act} | " + " | ".join(f"{tot[a][act] / max(1, sum(tot[a].values())):.3f}" for a in ARMS) + " |")
         L.append("")
-    (HERE / "results.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    (HERE / ("results_all48.md" if mode == "all" else "results.md")).write_text("\n".join(L) + "\n", encoding="utf-8")
     print("\n".join(L))
 
 

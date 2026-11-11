@@ -45,3 +45,20 @@ what killed people. Already seen in NB2's own records:
 - Violence drives the collapse: about 60%.
 - Most attacks would never have been offered by the old brain: about 85%.
 - Starvation drives it: about 35% (both can hold).
+
+## Correction 1 (appended 11 November 2026, after the data; the frozen text above is unchanged)
+- **What happened:** the frozen validity check failed. 2 of the 48 replays (n:25606 and n:25611) end in the same
+  week, with the same extinction, but with a different world fingerprint from NB2's phase-1 result.
+- **Diagnosis:**
+  - n:25611 was replayed on the creator's PC with **NB2's own runner and no recorders at all**. Its fingerprint also
+    differs from the cloud original (local 5d56cbd0…, cloud 368a0207…).
+  - So the world itself does not reproduce bit for bit across machines. This is most likely floating-point
+    differences in the numpy arithmetic of the neural arms on different cloud CPUs.
+  - The recorders are therefore not the cause. The 46 replays made with recorders on other cloud machines match NB2
+    exactly; if the recorders changed anything, nearly every world with an attack would differ.
+- **What is done** (not the frozen rule, stated as a deviation):
+  - the results are read on the **46 exact replays** (`results.md`, `--exact-only`);
+  - **all 48** are reported beside them (`results_all48.md`, `--all`);
+  - any reading that differs between the two is reported as such.
+- **For later studies:** a replay is checked against a replay made on the same machine, not across machines. Arms with
+  neural brains are not assumed to replay exactly across cloud machines.
