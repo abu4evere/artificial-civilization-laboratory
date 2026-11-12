@@ -94,3 +94,17 @@ may then be the cause.
 - "Hard times" leads: about 15%.
 - Food gained per adult-week in f below c's: about 60%.
 - GPT: child not fed 60%, not shared 55%, does not try 45%, cannot find 25%, hard times 15%.
+
+## Correction 1 (appended 12 November 2026, after the data; the frozen text above is unchanged)
+- **The frozen validity rule failed.** 10 of 48 replays ended with a world fingerprint different from NB3's (more than
+  4), so by the rule nothing is concluded. That result is kept: `results_frozen_rule.md`.
+- **The diagnosis** (`replay_plain.py`; long-run 43164318860):
+  - the 10 worlds were replayed with NB3's own runner, unchanged and with no recorders. 7 of the 10 also ended with a
+    different fingerprint from NB3's originals. Long neural worlds do not replay bit-exactly on the cloud, recorders
+    or not (NB2-A's correction 1 saw the same in 2 of 48);
+  - **all 48 autopsy replays reproduce NB3's history exactly:** the same living-weeks and the same count of every
+    cause of death over years 100–600, and the same final week. The 10 plain replays do too. The drift is in the
+    last bits of the final state, not in what happened.
+- **Correction 1 reading:** a replay is read if its history matches NB3's exactly (living-weeks, deaths by cause,
+  final week). The fingerprint test was meant to show that the recorders do not change the world, and this shows it
+  directly. All 48 are read. The results are labelled "Correction 1" (`results.md`), beside the frozen-rule result.

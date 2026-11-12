@@ -50,6 +50,25 @@ def patterns(hist, row, age_group, window=8):
     return out
 
 
+CORR1 = "--correction1" in sys.argv
+NB3_OUT = HERE.parent / "NB3_feelings" / "output"
+
+
+def same_history(a, s, r):
+    """Correction 1: the replay's living-weeks and deaths by cause (years 100-600) and final week equal NB3's."""
+    o = json.loads((NB3_OUT / f"{a}_seed_{s}.json").read_text())
+    lw = sum(v.get("living_weeks", 0) for d, v in r["decades"].items() if 10 <= int(d) < 60)
+    dr = {}
+    for d, v in r["decades"].items():
+        if 10 <= int(d) < 60:
+            for k, c in v.items():
+                if k.startswith("death:"):
+                    dr[k.split(":")[1]] = dr.get(k.split(":")[1], 0) + c
+    od = {k[6:]: v for k, v in o["sums"].items() if k.startswith("death_") and not k.startswith("death_?")}
+    return (lw == o["sums"].get("living_weeks", 0) and all(dr.get(k, 0) == v for k, v in od.items())
+            and r["final_tick"] == o["final_tick"])
+
+
 def pct(x):
     x = np.asarray(x, dtype=float)
     x = x[np.isfinite(x)]
@@ -65,20 +84,26 @@ def main():
             runs[r["arm"]][r["seed"]] = r
     present = all(sorted(runs[a]) == SEEDS for a in ARMS)
     differ = [(a, s) for a in ARMS for s, r in runs[a].items() if not r["same_as_nb3"]]
+    if CORR1:                                   # Correction 1 (questions.md): read replays whose history matches NB3's
+        differ = [(a, s) for a in ARMS for s, r in runs[a].items() if not same_history(a, s, r)]
     zero = (HERE / "zero_local.log").read_text(encoding="utf-8") if (HERE / "zero_local.log").exists() else ""
     valid = present and len(differ) <= 4 and "All: PASS" in zero
     L = ["# NB3-A: why do the feeling people starve? (results)", "",
-         "Frozen as `NB3A-frozen`. run_nb3a.py, analyse_nb3a.py (written before data).", "", "## Validity", "",
+         "Frozen as `NB3A-frozen`. run_nb3a.py, analyse_nb3a.py (written before data).",
+         *(["", "**Correction 1** (questions.md, after the data): replays are read if their history matches NB3's "
+            "exactly; the frozen fingerprint rule failed (`results_frozen_rule.md`)."] if CORR1 else []),
+         "", "## Validity", "",
          f"- Read-only check (zero_local.log, All: PASS): **{'yes' if 'All: PASS' in zero else 'NO'}**",
          f"- All 48 replays present: **{'yes' if present else 'NO'}**",
-         f"- Replays ending with NB3's fingerprint: {48 - len(differ)} of 48; differing (reported beside, not read): "
+         f"- Replays {'with NB3' + chr(39) + 's exact history (Correction 1)' if CORR1 else 'ending with NB3' + chr(39) + 's fingerprint'}: {48 - len(differ)} of 48; differing (reported beside, not read): "
          f"{', '.join(f'{a}:{s}' for a, s in differ) or 'none'}",
          f"- **{'Valid.' if valid else 'NOT VALID: nothing is concluded (more than 4 differ, or missing).'}**", ""]
     if not valid:
         print("\n".join(L))
         (HERE / "results.md").write_text("\n".join(L) + "\n", encoding="utf-8")
         return
-    read = {a: {s: r for s, r in runs[a].items() if r["same_as_nb3"]} for a in ARMS}
+    read = {a: {s: r for s, r in runs[a].items() if (same_history(a, s, r) if CORR1 else r["same_as_nb3"])}
+            for a in ARMS}
     L.append("Worlds read: " + ", ".join(f"{a} {len(read[a])}" for a in ARMS) + ".")
     checks = sum(r["checks"].get("held_but_did_not_eat", 0) for a in ARMS for r in read[a].values())
     L += [f"Code check, 'held food but did not eat' weeks: {checks} (expected 0).", ""]
