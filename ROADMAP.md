@@ -35,7 +35,8 @@ Open the closed doors of the world once (general laws through properties), then 
   - **The inborn reluctance to harm ended the killing:** 12.8% of deaths in NB2's brain, 0.0% with it. Learned feelings alone (guilt, empathy and the rest) did not stop it.
   - **Starvation is now the main killer:** 44% of deaths, against 19% for the old minds.
   - The network alone still fails within a year.
-  - Next: NB3-A, an autopsy of how the feeling people starve (running).
+  - Next: NB3-A, an autopsy of how the feeling people starve.
+- **NB3-A** (12 November 2026; descriptive; Correction 1, labelled): the feeling people starve the same ways as the old minds, 2.4 times as often. They forage and eat as well, but have 44% more births per adult and give less outside the household. A demographic trap. Next: the council on what the brain lacks (weighing another child; sharing beyond the household; spatial structure, from Mind Lab's W1b and W1c).
 
 ## The goal, in one line
 
