@@ -16,9 +16,10 @@ is a people that lives without the old hand-written brain, and later more autono
   demographic trap.
 - **The garden (NB2, NB3):** the network alone (instinct weight g = 0) dies within a year.
 - **Mind Lab's W1b** (a small grid-world detour test): a flat network of this kind could not even learn to walk to
-  food it could see, by actor-critic or by imitating a planner. **W1c** (running): with an egocentric view and a
-  convolutional network trained by imitation, it learns to navigate (about 0.86 on simple layouts) but detours
-  poorly (about 0.35). Actor-critic alone still learns nothing.
+  food it could see, by actor-critic or by imitating a planner. **W1c** (done): a small convolutional network learns
+  to navigate (0.73 on simple layouts by imitation in 30,000 episodes; 0.95 in empty rooms from reward alone in
+  100,000), but still takes the short way round a barrier only about a third of the time. An egocentric view without
+  convolution barely helps. The convolution is the missing part for navigation; looking ahead needs more.
 
 ## The question
 Which one or two changes should come next for ACL's people, tested as a frozen study against the old minds?
