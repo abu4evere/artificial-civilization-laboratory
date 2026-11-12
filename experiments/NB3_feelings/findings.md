@@ -2,7 +2,7 @@
 
 **Status:**
 - the analysis is valid;
-- GPT's blind recompute matches every point value and the reading; Gemini's is in progress;
+- **final:** GPT's and Gemini's blind recomputes both match every point value and the reading (`recompute_nb3.md`);
 - the garden (phase 2) is done (cloud-run 43078717989): see below.
 
 **Run:** long-run 42987899452, all 112 worlds (7 arms × 16 seeds, 600 years) in one stage. Zero checks All: PASS

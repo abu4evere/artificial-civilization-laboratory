@@ -29,6 +29,13 @@ Open the closed doors of the world once (general laws through properties), then 
   - The network alone fails within a year.
   - The world also rewards every attack.
   - Next: the autopsy NB2-A, then the feelings the creator approved: empathy, guilt, love of one's child, shame, curiosity, and an inborn reluctance to harm.
+- **NB2-A** (11 November 2026; descriptive) found why: unprovoked violence (17.7% of adult deaths), starvation beside kin with plenty, and early death.
+- **NB3** (11 November 2026; final; recomputed by GPT and Gemini) gave the brain feelings. **Still not viable, but much closer.**
+  - Extinct worlds: 5 of 16, against 4 for the old minds. The population reached 0.49 of theirs (NB2: 0.17).
+  - **The inborn reluctance to harm ended the killing:** 12.8% of deaths in NB2's brain, 0.0% with it. Learned feelings alone (guilt, empathy and the rest) did not stop it.
+  - **Starvation is now the main killer:** 44% of deaths, against 19% for the old minds.
+  - The network alone still fails within a year.
+  - Next: NB3-A, an autopsy of how the feeling people starve (running).
 
 ## The goal, in one line
 

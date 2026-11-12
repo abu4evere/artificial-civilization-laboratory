@@ -10,4 +10,13 @@
   - survival f 0.7813, f − n2 −0.0310 [−0.0612, −0.0043], f − fH −0.0331, f − c −0.0936;
   - the g and gene means are the same;
   - reading: **f not viable.**
-- **Gemini** (chat `a2054078`, the instructions and both tables in one attached text file): pending.
+- **Gemini** (3.6 Flash, High), chat `5282dea8`: the instructions and both tables were in one attached text file.
+  - The first chat (`a2054078`) stalled. The second ran code and **matches every point value and the reading**:
+    - extinct c 4, n2 12, f0 11, fH 7, f 5, f−E 10, f−H 12;
+    - population f/c 0.4893 [0.3271, 0.6731];
+    - survival f 0.7813;
+    - f − n2 −0.0310 [−0.0603, −0.0040], f − fH −0.0331, f − c −0.0936;
+    - every gene mean is the same;
+    - **f not viable.**
+
+**Both match. NB3 is final:** tag `NB3-done`.
