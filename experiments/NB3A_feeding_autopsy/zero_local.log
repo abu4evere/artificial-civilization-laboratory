@@ -1,0 +1,6 @@
+arm c, seed 25801, 8 years: recorders read-only (same fingerprint and generator): yes; starved 18 survivors 18 checks {}
+arm fH, seed 25801, 8 years: recorders read-only (same fingerprint and generator): yes; starved 20 survivors 20 checks {}
+arm f, seed 25801, 8 years: recorders read-only (same fingerprint and generator): yes; starved 28 survivors 28 checks {}
+arm f, seed 25802: 3 years in one job = 1 year, a checkpoint, and 2 years in a second job (every record equal): yes
+code_nb3 fingerprint: 11fa02ec5f4f7d80bcc5c041301c823f65a5e42e3f15d2ba51fc41c333aa7720
+All: PASS
