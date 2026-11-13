@@ -335,3 +335,14 @@ the file named.
 - [ ] **After PB2** (running on the cloud since 5 November, run 41985849249): if the self-chosen goal helps finish chains (G − P and G − G0 above 0, no guard, validity passed), a confirmatory run on new seeds before any adoption; if steering harms (a guard raised) or does not help, find why first (candidates noted before data: reliability arbitration between habit and memory, `docs/research/habit_planning_arbitration_2026-11-05.md`; recency in memory; competence in goal choice).
 - [ ] **The creator's list of ways to build ACL toward Bob** (round 55; "keep going in this pathway then we will discuss other things from this list"): brains that evolve, open actions, fewer scripted feelings, a signal channel with no meanings, bigger and longer worlds. To be discussed after the brain road's first steps.
 - [ ] **HR1** (hunting calibration with F7, the unused per-species catch rates; `docs/hr1_design_draft_2026-11-03.md`): queued behind the brain road.
+
+
+## The Long World (the creator's idea, 12 November 2026)
+After the Mind Lab brain is ready: one ACL world that never stops (cloud stages with checkpoints), with the assistant
+inside as a director choosing events, like Cradle's. It stops only on success (defined in advance) or extinction.
+Open, for the creator:
+- are the events from a fixed menu with frozen rates (safer for 'culture written by nobody'), or freely invented?
+- the definition of success;
+- the world's size.
+The assistant's proposal: a fixed menu; every intervention logged with its reason; never hand people knowledge or
+skills, only events.
