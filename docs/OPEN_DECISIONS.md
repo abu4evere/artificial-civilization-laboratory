@@ -339,10 +339,16 @@ the file named.
 
 ## The Long World (the creator's idea, 12 November 2026)
 After the Mind Lab brain is ready: one ACL world that never stops (cloud stages with checkpoints), with the assistant
-inside as a director choosing events, like Cradle's. It stops only on success (defined in advance) or extinction.
-Open, for the creator:
-- are the events from a fixed menu with frozen rates (safer for 'culture written by nobody'), or freely invented?
-- the definition of success;
-- the world's size.
-The assistant's proposal: a fixed menu; every intervention logged with its reason; never hand people knowledge or
-skills, only events.
+inside. It stops only on success (defined in advance) or extinction.
+
+**The creator's clarification:** "i am not asking you to help them but control their world learn their world learn
+what they doing. Put them in random situtations and see their reactions." So the assistant is an observer and
+experimenter, not a helper:
+- it watches and keeps a journal of their lives, knowledge and customs;
+- it puts them in situations (drought, hard winter, a flood splitting a band, a stranger, a herd nearby, disease, an
+  elder dying with what they knew), at random or chosen out of curiosity, and records their reactions;
+- it never aims events at an outcome and never gives knowledge or skills;
+- every intervention is logged with its reason;
+- repeated situations over time show whether their reactions change as their minds and culture grow.
+
+Still open: the definition of success, and the world's size.
