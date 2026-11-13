@@ -351,4 +351,15 @@ experimenter, not a helper:
 - every intervention is logged with its reason;
 - repeated situations over time show whether their reactions change as their minds and culture grow.
 
+**Further (the creator, same night):** "that world keep living we do not put year like 500 or sum just that world should
+be exist ... if they do not react as you expecting change something from that world at same time do editing in that
+world ... everything in one world". And: it may start earlier, once the brain is good and the start is shown valid.
+- **The assistant's proposal to keep edits honest ("twin futures"):** at each change the world forks for a while from
+  the identical state (with and without the change). The pair is compared, the twin is then dropped, and the main world
+  lives on as one continuous history. Every change is logged with its year and reason.
+- **The start:** one frozen test of the Mind Lab brain against the old minds on ACL's survival rule. Pass: the Long World
+  starts with it. Fail: back to the workshop.
+- **Open for the creator:** may the world's laws be edited inside the Long World before the 7 December review, or only
+  events until then?
+
 Still open: the definition of success, and the world's size.
