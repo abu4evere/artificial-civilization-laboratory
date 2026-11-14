@@ -363,3 +363,23 @@ world ... everything in one world". And: it may start earlier, once the brain is
   events until then?
 
 Still open: the definition of success, and the world's size.
+
+## The Red Pill test (the creator's idea, 14 November 2026)
+The creator: "can we build matrix in acl so one day we will show Bob real life just like asking to choose between 2
+pills and decide if Bob actually grow like a Neo it means success i guess".
+
+The assistant's reading, for the creator to decide later (nothing is built):
+- **ACL is already Bob's Matrix.** The test is what happens when Bob meets a bigger world it was not made for: a
+  new nature, with one or more laws changed (`docs/gpt_view_other_natures_2026-10-24.md`), later perhaps a richer
+  world.
+- **"Grows like Neo" could be measured as:**
+  1. **Choice:** offered a door to an unknown world beside a safe known one, with no reward for either, does Bob
+     choose? Is the choice its own (curiosity, not a reflex)?
+  2. **Adapting:** in the new world, does Bob learn its laws faster than a newborn there?
+  3. **Building on the past:** does Bob carry over what it and others learned before?
+  4. **Bending the rules:** does Bob find uses of the new laws nobody planned?
+- **A tension to settle:**
+  - the creator writes laws, never history, and the Long World's experimenter never helps;
+  - an offered pill is an intervention, so it would be logged as a situation, like the Long World's, never aimed at
+    an outcome.
+- **When:** after the brain can survive and learn in ACL. It cannot be tested before Bob exists.
