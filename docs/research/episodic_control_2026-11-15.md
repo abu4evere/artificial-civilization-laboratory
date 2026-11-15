@@ -20,9 +20,10 @@
     pays most.
 
 ## 2. Blundell, C., Uria, B., Pritzel, A., Li, Y., Ruderman, A., Leibo, J. Z., Rae, J., Wierstra, D., & Hassabis, D. (2016). Model-free episodic control. arXiv:1606.04460.
-- **Claim:** a simple model of hippocampal episodic control (store the return seen after a state and action; act on
-  the best remembered return) learns sequential tasks much faster than the deep reinforcement learning of the time,
+- **Claim:** a simple model of hippocampal episodic control learns sequential tasks much faster than the deep reinforcement learning of the time,
   and reaches higher reward on some hard tasks.
+- **How it works (from memory, not in the abstract; to be checked in the full text):** it stores the best return seen
+  after each state and action, and acts on the best remembered return.
 - **Bearing on W3b:**
   - the first food found by chance is exactly the kind of rare, rewarding discovery such a store keeps and reuses at
     once;
