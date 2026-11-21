@@ -101,12 +101,19 @@ build what the makers never planned). The creator chose this order (the assistan
   page can freeze when typing: insert the text with JavaScript (`document.execCommand('insertText', ...)` on
   `div.ProseMirror[contenteditable="true"]`; `#prompt-textarea` is gone since 28 October) and click the send button
   (`[data-testid="send-button"]`, or the round button right of the input if that is not found).
-- **Cloud runs:** studies run on GitHub Actions (`.github/workflows/cloud-run.yml`), so the creator's PC can be off.
-  `gh` is at `C:\Users\User\gh\bin\gh.exe`; fetch with `python tools/ci/fetch_cloud.py <run-id> <out_dir>`.
-  Run the zero checks locally first and commit `zero_local.log`, then launch with `-f skip_zero=local`. The cloud then
-  only checks that record (All: PASS, same code fingerprint) instead of re-running the zero checks, which saves about
-  15–20 minutes.
-  The `tests` workflow runs only when code changes (`acl/`, `tests/`, `code_*`).
+- **Compute (since 20 November 2026): NEVER run studies on GitHub Actions.**
+  - GitHub disabled the Mind Lab repository for using Actions as general compute, and does not allow research runs on
+    any account. A second account to get around this would be ban evasion.
+  - The study workflows `cloud-run.yml` and `long-run.yml` were moved to `.github/disabled_workflows/` on 21 Nov, at the
+    creator's word.
+  - Actions is only for code tests (`tests.yml`, run when `acl/`, `tests/` or `code_*` change), short checks
+    (`diagnose.yml`) and the website (`pages.yml`).
+  - Studies run on the creator's PC and on cloud machines the creator made:
+    - a Google Cloud VM, `ssh -i ~/.ssh/mindlab_cloud mindlab-cloud@35.221.60.73` ($300 trial credit; stop it when
+      idle);
+    - Oracle, when capacity allows.
+    Details: `docs/HANDOFF_2026-11-20.md` and the memory note `reference-cloud-runs`.
+  - Different machines do not train bit-identically (Windows vs Linux): record each run's machine.
 - **Local runs must not slow the creator's PC** (1 November 2026: the PC lagged under four of the assistant's
   simulations). Run local simulations at Idle priority (PowerShell: `(Get-Process -Id <pid>).PriorityClass = 'Idle'`,
   or start them with `start /low`), at most 2 at once; prefer the cloud for anything long. **While the creator is away**
