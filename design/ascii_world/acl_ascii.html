@@ -8,9 +8,10 @@
 /* ACL drawn in text characters (a look, nothing more). The land, people, animals, fires, crops and weather are read from
    the running world through the viewer's own /terrain and /stream; the world is never touched.
    Each frame is drawn twice: once in colour, and once as a map of what each spot is (sea, grass, tree, rock, a person,
-   a fire, an animal ...). Then every small cell of the screen becomes one character: WHAT the cell is picks the kind of
-   character (@ a person's head, % a tree, " grass, ~ the sea), and how bright it is picks how dense the character is
-   and its colour. The camera stays close and follows one person, as a game follows its character. Day and night are a
+   a fire, an animal ...). Then every small cell of the screen becomes one character. Two styles (the council, 22 Nov):
+   "reel" (default): brightness picks the character from one ramp, sharp changes of brightness become edge strokes
+   | / - \, a fixed 4 x 4 dither breaks up bands, and the kind map only keeps small things (people) from being lost;
+   "clear": each kind has its own characters (@ a person's head, % a tree, " grass, ~ the sea), with the same edges. The camera stays close and follows one person, as a game follows its character. Day and night are a
    slow clock for looks only: ACL's people live in weeks, not hours. */
 :root{--bg:#020306;--ink:#c8d2df;--dim:#5d6a7e;--warm:#ffb45c;--line:#161f2c;--panel:rgba(4,6,10,.82)}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);overflow:hidden;
@@ -48,6 +49,7 @@ canvas#view.drag{cursor:grabbing}
 <div class="hud"><div class="t" id="title">A C L</div><div id="line1" class="s">waiting for the world…</div><div class="who" id="who"></div></div>
 <div class="bar">
   <div class="row"><span>light</span><button data-light="auto">auto</button><button data-light="day">day</button><button data-light="dusk">dusk</button><button data-light="night" class="on">night</button></div>
+  <div class="row"><span>style</span><button data-style="reel" class="on" title="Characters chosen by the picture and its edges, as in the reel">reel</button><button data-style="clear" title="Each kind of thing has its own characters (see the key)">clear</button></div>
   <div class="row"><span>text</span><button data-cell="s">small</button><button data-cell="m" class="on">medium</button><button data-cell="l">large</button><button id="plain">plain</button></div>
   <div class="row"><span>camera</span><button id="follow" class="on" title="Follow one person; click someone to follow them">follow</button><button id="near">close</button><button id="far">whole world</button><button id="keyBtn">key</button></div>
   <div class="row" id="speedRow"><span>weeks/s</span><button data-wps="0">pause</button><button data-wps="0.5">½</button><button data-wps="1">1</button><button data-wps="4">4</button></div>
@@ -96,7 +98,10 @@ const GLYPHS = [
   " .vvvvww",   // crops
   " .:=+###",   // a heap of things
   " .:[$$$$",   // a store
-  " .''////"];  // rain
+  " .''////",   // rain
+  " .:,;=+*xo#%&8@",   // the reel style: one ramp for everything, by brightness (sorted again by ink when the atlas is built)
+  "|/-\\"];     // edges: vertical, rising, flat, falling
+const RAMP = 19, EDGE = 20;
 const KEY = [["@", "#ffd27a", "a person"], ["^", "#ffb050", "fire"], ["d", "#c08850", "deer"], ["r", "#e0d2b4", "rabbit"],
   ["b", "#a87048", "bison"], ["B", "#8a6a50", "bear"], ["&", "#5fb08a", "tree"], ["\"", "#8fbf62", "grass"],
   ["n", "#a4ac84", "hill, rock"], ["*", "#e6edf2", "snow"], ["~", "#5a8ac0", "sea"],
@@ -122,8 +127,8 @@ let RX = 0, RY = 0;                                      // the world wraps; the
 const TW = 64, TH = 32, SEA = -0.2, STEP = 0.035, LV = 3.2;   // iso tile size, terrace step (height units) and its height in px
 let OX = 0, OY = 0, WWID = 0, WHGT = 0, levels = [], kinds = [];
 const cam = {x: 0, y: 0, z: 1, touched: false};
-const view = {light: "night", cell: "m", plain: false, follow: null};
-const CELLS = {s: [6, 9], m: [8, 12], l: [10, 15]};
+const view = {light: "night", cell: "m", plain: false, follow: null, style: "reel"};
+const COLUMNS = {s: 190, m: 150, l: 115};   // characters across the screen (the reel shows about 140)
 const news = [];
 let picks = [];
 
@@ -247,7 +252,7 @@ function busiest(){     // the person at the heart of the biggest gathering
   for (const a of ppl){ if (a[P.stage] < 2) continue; let n = 0; for (const b of ppl) if (Math.abs(wrapD(a[P.x] - b[P.x], W)) + Math.abs(wrapD(a[P.y] - b[P.y], H)) <= 4) n++; if (n > bn){ bn = n; best = a; } }
   return best;
 }
-const CLOSE = 4.6;   // tiles across the screen when close
+const CLOSE = 6;   // tiles across the screen when close (pulled back a little, so a person stands in a scene)
 function closeZoom(){ cam.z = Math.max(1, Math.min(9, CW / (CLOSE * TW))); }
 function closeUp(){ const b = busiest(); if (!b){ fitCamera(); return; } closeZoom(); const [wx, wy] = worldPx(b[P.x] + .5, b[P.y] + .5); cam.x = wx; cam.y = wy - 14 - CH * HZ / 2 / cam.z; }
 
@@ -365,7 +370,7 @@ function drawThings(now, L, r){
 // ================= the text pass (WebGL: every cell of the screen becomes one character) =================
 const cv = $("view");
 const gl = cv.getContext("webgl2", {antialias: false, premultipliedAlpha: false});
-let prog, texScene, texKind, texLight, texAtlas, texTab, U = {}, NALL = 0;
+let prog, texScene, texKind, texLight, texAtlas, texTab, U = {}, NALL = 0, NRAMP = 15;
 function buildAtlas(cw, ch){
   const chars = [...new Set(GLYPHS.join(""))];
   const a = document.createElement("canvas"); a.width = cw * chars.length; a.height = ch;
@@ -374,23 +379,33 @@ function buildAtlas(cw, ch){
   ag.font = `bold ${Math.round(ch * .9)}px Consolas,"Cascadia Mono","DejaVu Sans Mono","Courier New",monospace`;
   chars.forEach((c, i) => ag.fillText(c, i * cw + cw / 2, ch / 2 + ch * .05));
   NALL = chars.length;
+  // the reel ramp is ordered by how much ink each character really leaves in this font
+  const d = ag.getImageData(0, 0, a.width, ch).data, ink = c => { const i = chars.indexOf(c); let s = 0;
+    for (let y = 0; y < ch; y++) for (let x = 0; x < cw; x++) s += d[(y * a.width + i * cw + x) * 4]; return s; };
+  const rows = GLYPHS.slice(); rows[RAMP] = [...GLYPHS[RAMP]].sort((p, q) => ink(p) - ink(q)).join("");
+  NRAMP = rows[RAMP].length;
   gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, texAtlas); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, a);
-  const tab = new Uint8Array(8 * GLYPHS.length * 4);
-  GLYPHS.forEach((row, r) => [...row].forEach((c, k) => { tab[(r * 8 + k) * 4] = chars.indexOf(c); tab[(r * 8 + k) * 4 + 3] = 255; }));
+  const tab = new Uint8Array(16 * rows.length * 4);
+  rows.forEach((row, r) => [...row].forEach((c, k) => { tab[(r * 16 + k) * 4] = chars.indexOf(c); tab[(r * 16 + k) * 4 + 3] = 255; }));
   gl.activeTexture(gl.TEXTURE4); gl.bindTexture(gl.TEXTURE_2D, texTab);
   gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
-  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 8, GLYPHS.length, 0, gl.RGBA, gl.UNSIGNED_BYTE, tab);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 16, rows.length, 0, gl.RGBA, gl.UNSIGNED_BYTE, tab);
 }
 const VS = `#version 300 es
 in vec2 p; void main(){ gl_Position = vec4(p, 0., 1.); }`;
 const FS = `#version 300 es
 precision highp float;
 uniform sampler2D uScene, uKind, uLight, uAtlas, uTab;
-uniform vec2 uRes, uCell; uniform float uTime, uDark, uAscii, uNAll, uSeed, uHz, uRain;
+uniform vec2 uRes, uCell, uOff; uniform float uTime, uDark, uAscii, uNAll, uSeed, uHz, uRain, uStyle, uNRamp;
 uniform vec3 uAmb, uTop, uBot; uniform vec2 uMoon;
 out vec4 o;
 const float SKY = 0., SEA = 1., FRESH = 2., SAND = 3., WALL = 8., LEAF = 9., TRUNK = 10., HEAD = 11., BODY = 12., FIRE = 13.,
-  ANIMAL = 14., RAIN = 18.;
+  ANIMAL = 14., RAIN = 18., RAMP = 19., EDGE = 20.;
+float bayer(vec2 c){   // a 4 x 4 ordered dither, 0..1, fixed to the world so it does not crawl when the camera moves
+  ivec2 p = ivec2(mod(c, 4.));
+  int b[16] = int[16](0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5);
+  return (float(b[p.y * 4 + p.x]) + .5) / 16.;
+}
 float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7)) + uSeed) * 43758.5453); }
 float lum(vec3 c){ return dot(c, vec3(.299, .587, .114)); }
 // what a spot is; ok = 0 where shapes' soft edges blend two kinds into a number that is neither
@@ -414,7 +429,7 @@ vec3 lit(vec2 uv, vec2 cell, float id){
   vec3 s = texture(uScene, uv).rgb, L = texture(uLight, uv).rgb;
   // moonlight: cooler and greyer the darker it is; light from fires and the living keeps its colour
   vec3 base = s * uAmb, grey = vec3(lum(base));
-  base = mix(base, grey, .58 * uDark) * mix(vec3(1.), vec3(.82, .95, 1.3), uDark);
+  base = mix(base, grey, .42 * uDark) * mix(vec3(1.), vec3(.8, .93, 1.32), uDark) + vec3(.012, 0., .03) * uDark;   // grey-blue, indigo in the shadows
   if (id == HEAD || id == BODY || id == ANIMAL) base = s * max(uAmb, vec3(.8));   // the living keep their colours in the dark, so they can be told from the ground
   vec3 c = base + s * L * vec3(1., .78, .55);
   if (id == SEA){   // moonlight on the water below the moon, broken by the ripples
@@ -442,12 +457,33 @@ void main(){
   }
   if (best < 0.){ float p, ok; id = kindAt(cuv, p, ok); part = p; }
   vec3 c = (lit(buv, cell, id) * 2. + lit(cuv, cell, id)) / 3.;
+  vec2 wc = cell + uOff;   // the cell's place in the world, for patterns that should stay put
   float l = lum(c), g = pow(clamp(l * 1.35, 0., 1.), .62);
-  float lev = floor(g * 7.99);
+  float dith = bayer(wc) - .5;
+  float lev = floor(clamp(g + dith / 8., 0., .999) * 8.);
   bool ground = id >= FRESH && id <= TRUNK;
-  if (ground){ float r = h(cell * 1.37); lev = clamp(lev + (r > .86 ? -1. : r < .12 ? 1. : 0.), 2., 7.); }   // grain: texture shows even in the dark
+  if (ground) lev = max(lev, 2.);   // texture shows even in the dark
+  // edges: where brightness changes sharply across the cell, a line character along the edge (both styles)
+  bool edge = false; float ei = 0.;
+  if (id > FRESH && id < HEAD){
+    vec2 e = uCell / uRes * .5;
+    float lr = lum(lit(cuv + vec2(e.x, 0.), cell, id)) - lum(lit(cuv - vec2(e.x, 0.), cell, id));
+    float ld = lum(lit(cuv + vec2(0., e.y), cell, id)) - lum(lit(cuv - vec2(0., e.y), cell, id));
+    float m = length(vec2(lr, ld));
+    if (m > .045 && m / (l + .07) > .55){
+      edge = true; float ax = abs(lr), ay = abs(ld);
+      ei = ax > 2.2 * ay ? 0. : ay > 2.2 * ax ? 2. : (lr * ld > 0. ? 1. : 3.);
+    }
+  }
   float gi;
-  if (id == ANIMAL) gi = glyph(ANIMAL, part);
+  if (edge && id != SKY) gi = glyph(EDGE, ei);
+  else if (uStyle > .5 && id != SKY && id != SEA && id != FRESH){   // the reel: one ramp by brightness, dithered
+    float ri = floor(clamp(pow(l * 1.45, .85) + dith / uNRamp * 1.6, 0., .999) * uNRamp);   // dark ground stays light, only lights get dense
+    if (ground) ri = clamp(ri, 2., uNRamp - 3.);   // every patch of ground carries a small character; the densest are kept for lights
+    if (id >= HEAD && id <= ANIMAL) ri = max(ri, uNRamp * .45);   // the living never fade into the ground
+    gi = glyph(RAMP, ri);
+  }
+  else if (id == ANIMAL) gi = glyph(ANIMAL, part);
   else if (id == SKY){   // the sky is written only where something shines: stars, the moon; a few faint dots elsewhere
     float shine = l - lum(mix(uTop, uBot, smoothstep(0., 1., buv.y / uHz))) * .8;
     float cloud = sin(cell.x * .09 + uTime * .03 + sin(cell.y * .7) * 1.3) * sin(cell.y * .45 - cell.x * .02);   // daytime: a soft dotted sky with drifting cloud bands
@@ -457,14 +493,15 @@ void main(){
   else if (id == SEA || id == FRESH){ float w = wave(cell); gi = glyph(id, g < .04 ? 0. : w > .5 ? (id == SEA ? 3. : 4.) : w > .2 ? (id == SEA ? 2. : 3.) : (g > .12 ? 1. : 0.)); }
   else gi = glyph(id, max(lev, id >= HEAD ? 3. : 0.));
   vec3 col = pow(c, vec3(.75)) * 1.5 + .025;
+  if (edge) col *= 1.3;   // outlines catch the light
   if (id >= HEAD && id <= ANIMAL) col = col * 1.25 + .08;   // the living and fire stand out
   if (uRain > 0. && id < HEAD){   // rain falls through the cells
     float drop = h(vec2(cell.x, floor(cell.y / 3. - uTime * 7. + h(vec2(cell.x, 9.)) * 50.)));
     if (drop < .05 * uRain){ gi = glyph(RAIN, 7.); col = vec3(.55, .65, .8) * (.6 + .5 * (1. - uDark * .4)); }
   }
   float mask = texture(uAtlas, vec2((gi + f.x) / uNAll, f.y)).r;
-  vec3 haze = texture(uLight, cuv).rgb * vec3(1., .66, .38) * .16;   // a soft glow behind the characters near lights
-  o = vec4((col * mask + c * .04 + haze) * vig, 1.);
+  vec3 haze = texture(uLight, cuv).rgb * vec3(1., .62, .32) * .2;   // a glow behind the characters, only near fires
+  o = vec4((col * mask + haze) * vig, 1.);   // otherwise pure black between the characters
 }`;
 function setupGL(){
   if (!gl){ $("msg").textContent = "This browser has no WebGL2; showing the plain picture."; return false; }
@@ -479,7 +516,7 @@ function setupGL(){
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, filter); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, filter);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE); return t; };
   texScene = tex(0, gl.LINEAR); texKind = tex(1, gl.NEAREST); texLight = tex(2, gl.LINEAR); texAtlas = tex(3, gl.NEAREST); texTab = tex(4, gl.NEAREST);
-  for (const n of ["uScene", "uKind", "uLight", "uAtlas", "uTab", "uRes", "uCell", "uTime", "uDark", "uAscii", "uNAll", "uSeed", "uAmb", "uTop", "uBot", "uMoon", "uHz", "uRain"])
+  for (const n of ["uScene", "uKind", "uLight", "uAtlas", "uTab", "uRes", "uCell", "uOff", "uTime", "uDark", "uAscii", "uNAll", "uSeed", "uAmb", "uTop", "uBot", "uMoon", "uHz", "uRain", "uStyle", "uNRamp"])
     U[n] = gl.getUniformLocation(prog, n);
   gl.uniform1i(U.uScene, 0); gl.uniform1i(U.uKind, 1); gl.uniform1i(U.uLight, 2); gl.uniform1i(U.uAtlas, 3); gl.uniform1i(U.uTab, 4);
   return true;
@@ -513,7 +550,7 @@ function draw(now){
   const L = lightNow(now);
   drawScene(now, L);
   if (!glOK){ if (!gl){ const g2 = cv.getContext("2d"); if (g2) g2.drawImage(scene, 0, 0, cv.width, cv.height); } return; }
-  const [cw, ch] = CELLS[view.cell].map(v => Math.round(v * DPR)), key = cw + "x" + ch;
+  const cw = Math.max(5, Math.round(cv.width / COLUMNS[view.cell])), ch = Math.round(cw * 1.5), key = cw + "x" + ch;
   if (key !== atlasFor){ buildAtlas(cw, ch); atlasFor = key; }
   gl.viewport(0, 0, cv.width, cv.height);
   gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
@@ -526,6 +563,8 @@ function draw(now){
   gl.uniform1f(U.uSeed, (terrain.seed || 0) % 97); gl.uniform3fv(U.uAmb, L.amb); gl.uniform3fv(U.uTop, L.top); gl.uniform3fv(U.uBot, L.bot);
   gl.uniform2f(U.uMoon, .7, HZ * .5); gl.uniform1f(U.uHz, HZ);
   gl.uniform1f(U.uRain, sky.storm ? 2.5 : sky.rain > 0 ? Math.min(2, .8 + sky.rain) : 0);
+  gl.uniform1f(U.uStyle, view.style === "reel" ? 1 : 0); gl.uniform1f(U.uNRamp, NRAMP);
+  gl.uniform2f(U.uOff, Math.floor(cam.x * cam.z * DPR / cw), Math.floor(cam.y * cam.z * DPR / ch));
   gl.drawArrays(gl.TRIANGLES, 0, 3);
 }
 
@@ -574,6 +613,7 @@ addEventListener("keydown", e => {
 document.querySelectorAll("[data-light]").forEach(b => b.onclick = () => { view.light = b.dataset.light; document.querySelectorAll("[data-light]").forEach(x => x.classList.toggle("on", x === b)); });
 document.querySelectorAll("[data-cell]").forEach(b => b.onclick = () => { view.cell = b.dataset.cell; document.querySelectorAll("[data-cell]").forEach(x => x.classList.toggle("on", x === b)); });
 $("plain").onclick = () => { view.plain = !view.plain; $("plain").classList.toggle("on", view.plain); };
+document.querySelectorAll("[data-style]").forEach(b => b.onclick = () => { view.style = b.dataset.style; document.querySelectorAll("[data-style]").forEach(x => x.classList.toggle("on", x === b)); });
 $("follow").onclick = () => { if (view.follow) setFollow(null); else { const b = busiest(); if (b){ setFollow(b[P.id]); closeZoom(); } } };
 $("near").onclick = () => { setFollow(null); closeUp(); cam.touched = true; };
 $("far").onclick = () => { setFollow(null); fitCamera(); cam.touched = true; };
