@@ -17,7 +17,27 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[1]))
-from acl import viewer as V  # noqa: E402
+from acl import stage, viewer as V  # noqa: E402
+from acl.config import SEASONS  # noqa: E402
+
+
+def _belief_said(key: str) -> str:
+    """stage._belief_said, except that a made tool's name may hold "/" (as viewer._belief_words already allows).
+    The original splits "target/tool" into exactly two and raises when the tool's name has a "/" of its own, which
+    stops the watching thread (seen 22 Nov 2026, seed 42, year 6). Display only; noted for the 7 December review."""
+    thing, season = key.split("@", 1)
+    when_ = SEASONS[int(season)]
+    if "/" in thing:
+        a, b = thing.split("/", 1)
+        return f"In {when_}, strike {a} with {b} at home."
+    if thing == "seeds":
+        return f"Leave seeds in the ground in {when_}. They come back as food."
+    if thing == "food":
+        return f"Leave food somewhere in {when_}, and come back for it."
+    return f"Heap up {thing} in {when_}. It keeps the cold out."
+
+
+stage._belief_said = _belief_said   # this process only; acl/ is not changed
 
 
 def handler(live, holder):

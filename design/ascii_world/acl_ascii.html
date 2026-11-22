@@ -6,10 +6,11 @@
 <title>ACL in Text</title>
 <style>
 /* ACL drawn in text characters (a look, nothing more). The land, people, animals, fires, crops and weather are read from
-   the running world through the viewer's own /terrain and /stream; the world is never touched. Each frame is drawn as
-   an ordinary picture first, then every small cell of the screen becomes one character: brighter cells get denser
-   characters, edges get / | - \, the sea gets ~, and each character keeps its cell's colour. Day and night here are a
-   slow clock for looks only: ACL's people live in weeks, not hours. */
+   the running world through the viewer's own /terrain and /stream; the world is never touched.
+   Each frame is drawn twice: once in colour, and once as a map of what each spot is (sea, grass, tree, rock, a person,
+   a fire, an animal ...). Then every small cell of the screen becomes one character: WHAT the cell is picks the kind of
+   character (@ a person, % a tree, " grass, ~ the sea), and how bright it is picks how dense the character is and its
+   colour. Day and night are a slow clock for looks only: ACL's people live in weeks, not hours. */
 :root{--bg:#030508;--ink:#c8d2df;--dim:#647287;--warm:#ffb45c;--line:#1b2534;--panel:rgba(5,8,13,.86)}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);overflow:hidden;
   font:13px/1.45 Consolas,"Cascadia Mono","DejaVu Sans Mono","Courier New",monospace}
@@ -25,6 +26,9 @@ canvas#view.drag{cursor:grabbing}
 .bar button{background:var(--panel);color:var(--ink);border:1px solid var(--line);font:inherit;font-size:12px;padding:3px 8px;cursor:pointer}
 .bar button:hover{border-color:#3a4a60}
 .bar button.on{color:var(--warm);border-color:#6a4a22}
+.key{position:fixed;left:16px;bottom:62px;background:var(--panel);border:1px solid var(--line);padding:7px 10px;font-size:12px;line-height:1.7;
+  display:grid;grid-template-columns:repeat(4,auto);column-gap:14px;pointer-events:none}
+.key i{font-style:normal;font-weight:bold;display:inline-block;width:1.4em;text-align:center}
 .news{position:fixed;left:16px;right:16px;bottom:12px;color:var(--dim);pointer-events:none;text-shadow:0 0 8px #000}
 .news div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .news div:last-child{color:var(--ink)}
@@ -32,7 +36,7 @@ canvas#view.drag{cursor:grabbing}
 .tip b{color:var(--warm);font-weight:normal;font-size:13px}
 .tip .s{color:var(--dim)}
 .msg{position:fixed;inset:0;display:grid;place-items:center;color:var(--dim);pointer-events:none}
-@media (max-width:700px){.bar{top:auto;bottom:56px}.hud .s{display:none}}
+@media (max-width:700px){.bar{top:auto;bottom:56px}.hud .s{display:none}.key{display:none}}
 </style>
 </head>
 <body>
@@ -41,8 +45,10 @@ canvas#view.drag{cursor:grabbing}
 <div class="bar">
   <div class="row"><span>light</span><button data-light="auto" class="on" title="A slow clock for looks; ACL's people live in weeks, not hours">auto</button><button data-light="day">day</button><button data-light="dusk">dusk</button><button data-light="night">night</button></div>
   <div class="row"><span>text</span><button data-cell="s">small</button><button data-cell="m" class="on">medium</button><button data-cell="l">large</button><button id="plain">plain</button></div>
+  <div class="row"><span>view</span><button id="near">close</button><button id="far">whole world</button><button id="keyBtn" class="on">key</button></div>
   <div class="row" id="speedRow"><span>weeks/s</span><button data-wps="0">pause</button><button data-wps="0.5">½</button><button data-wps="1">1</button><button data-wps="4">4</button></div>
 </div>
+<div class="key" id="key"></div>
 <div class="news" id="news"></div>
 <div class="tip" id="tip"></div>
 <div class="msg" id="msg"></div>
@@ -60,7 +66,39 @@ const STAGE = ["baby", "child", "teen", "adult", "elder"];
 const P = {id:0, name:1, x:2, y:3, fx:4, fy:5, sex:6, stage:7, doing:8, aim:9, line:10, carer:11, things:12, mood:13,
   sick:14, starving:15, grief:16, pregnant:17, health:18, partner:19, age:20, thought:21, state:22};
 const BAND_COLS = ["#5fe08a", "#b083ff", "#ffb547", "#3fc8ff", "#ff7aa8", "#e8e36a", "#6ee7d8", "#ff9f5a"];
-const ANIMAL = {rabbit:["#d8cbb0", 2.2], deer:["#b07a48", 3.4], bison:["#6e4a30", 4.4], bear:["#3c2a20", 4.8], fish:["#9fc4d8", 1.8]};
+const SPECIES = ["", "rabbit", "deer", "bison", "bear", "fish"];
+const ANIMAL = {rabbit:["#e0d2b4", 2.6], deer:["#c08850", 3.6], bison:["#8a5c3a", 4.6], bear:["#6a4a36", 5], fish:["#a8d0e4", 2]};
+
+// ================= what each spot is, and the characters each kind is written with =================
+// Each kind gets its own characters; brightness picks one of 8 from dark to bright. The sea and fresh water ripple.
+const M = {sky:0, sea:1, fresh:2, sand:3, grass:4, floor:5, rock:6, snow:7, wall:8, leaf:9, trunk:10, head:11, body:12,
+  fire:13, animal:14, crop:15, heap:16, store:17, rain:18};
+const GLYPHS = [
+  "   .:+*@",   // sky (stars, the moon)
+  " .-~    ",   // sea: chosen by the ripple
+  " .-=~   ",   // fresh water: rivers and lakes
+  " ..,,::;",   // sand
+  " .,,;;\"\"",  // grass
+  " .,;;;\"\"",  // forest floor
+  " .:;nnMM",   // rock: hills and mountains
+  " .:-=+**",   // snow
+  " ..:::||",   // the side of a block of land
+  " .:o%%&&",   // leaves
+  " .:IIIII",   // tree trunk
+  "@@@@@@@@",   // a person's head
+  "YYYYYYYY",   // a person's body
+  "^^^^^^^^",   // fire
+  "?rdbBf??",   // animals, by kind: rabbit deer bison bear fish
+  " .vvvvww",   // crops
+  "########",   // a heap of things
+  "$$$$$$$$",   // a store
+  " .''////"];  // rain
+const KEY = [["@", "#ffd27a", "a person"], ["^", "#ffb050", "fire"], ["d", "#c08850", "deer"], ["r", "#e0d2b4", "rabbit"],
+  ["b", "#a87048", "bison"], ["B", "#8a6a50", "bear"], ["&", "#5fb08a", "tree"], ["\"", "#8fbf62", "grass"],
+  ["n", "#a4ac84", "hill"], ["M", "#a8a49a", "mountain"], ["*", "#e6edf2", "snow"], ["~", "#5a8ac0", "sea"],
+  ["=", "#4a9fd8", "river"], ["|", "#8a9a7a", "cliff side"], ["v", "#d8c46a", "crops"], ["#", "#b08a60", "heap"], ["$", "#b08a60", "store"]];
+const mc = (id, part = 0) => `rgb(${id * 12},${part * 12},0)`;   // a kind, written as a colour on the second map
+
 const hexRgb = h => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
 const rgb = (c, k = 1) => `rgb(${Math.min(255, c[0] * k) | 0},${Math.min(255, c[1] * k) | 0},${Math.min(255, c[2] * k) | 0})`;
 const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t);
@@ -68,20 +106,24 @@ const hash = (a, b, c = 0) => ((Math.imul(a * 73856093 ^ b * 19349663 ^ c * 8349
 const wrapD = (d, n) => { d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; };
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;"}[c]));
 
+// paint one shape on both maps: in colour, and as its kind
+function both(g, m, col, id, part, path){ g.fillStyle = col; g.beginPath(); path(g); g.fill(); m.fillStyle = mc(id, part); m.beginPath(); path(m); m.fill(); }
+function rectBoth(g, m, col, id, part, x, y, w, h){ g.fillStyle = col; g.fillRect(x, y, w, h); m.fillStyle = mc(id, part); m.fillRect(x, y, w, h); }
+
 // ================= state =================
 let terrain = null, W = 40, H = 40, frame = null, frameAt = 0, interval = 1000, season = "";
 let RX = 0, RY = 0;                                      // the world wraps; the seam is put where the sea is widest
-const TW = 64, TH = 32, SEA = -0.2, STEP = 0.035, LV = 5;   // iso tile size, terrace step (height units) and its height in px
+const TW = 64, TH = 32, SEA = -0.2, STEP = 0.035, LV = 3.2;   // iso tile size, terrace step (height units) and its height in px
 let OX = 0, OY = 0, levels = [], kinds = [];
 const cam = {x: 0, y: 0, z: 1, touched: false};
 const view = {light: "auto", cell: "m", plain: false};
-const CELLS = {s: [5, 8], m: [7, 11], l: [9, 14]};
+const CELLS = {s: [6, 9], m: [8, 12], l: [10, 15]};
 const news = [];
 let picks = [];
 
 // ================= the land, once (and again when the season turns) =================
-const land = document.createElement("canvas"), seaC = document.createElement("canvas");
-const HZ = .16;   // the horizon, as a share of the screen's height: open sea below it, sky and moon above
+const land = document.createElement("canvas"), landM = document.createElement("canvas"), seaC = document.createElement("canvas");
+const HZ = .14;   // the horizon, as a share of the screen's height: open sea below it, sky and moon above
 function disp(x, y){ return [((x - RX) % W + W) % W, ((y - RY) % H + H) % H]; }
 function iso(dx, dy){ return [(dx - dy) * TW / 2 + OX, (dx + dy) * TH / 2 + OY]; }
 function tileAt(x, y){ return terrain.tiles[(((y % H) + H) % H) * W + (((x % W) + W) % W)]; }
@@ -91,6 +133,8 @@ function chooseSeam(){
   RX = landIn({n: W, m: H, at: (k, j) => tileAt(k, j)});
   RY = landIn({n: H, m: W, at: (k, j) => tileAt(j, k)});
 }
+const KIND_OF = {beach: M.sand, desert: M.sand, plains: M.grass, tundra: M.grass, forest: M.floor, woods: M.floor,
+  hills: M.rock, mountain: M.rock, snow: M.snow, river: M.fresh, lake: M.fresh};
 function paintLand(){
   levels = new Array(W * H); kinds = new Array(W * H);
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){
@@ -103,39 +147,34 @@ function paintLand(){
   }
   const maxLv = Math.max(...levels);
   OX = H * TW / 2 + TW; OY = maxLv * LV + TH * 2;
-  land.width = (W + H) * TW / 2 + TW * 2; land.height = (W + H) * TH / 2 + OY + TH * 2;
-  seaC.width = land.width; seaC.height = land.height;
-  const sea = seaC.getContext("2d"), g = land.getContext("2d");
-  sea.clearRect(0, 0, land.width, land.height); g.clearRect(0, 0, land.width, land.height);
+  for (const c of [land, landM, seaC]){ c.width = (W + H) * TW / 2 + TW * 2; c.height = (W + H) * TH / 2 + OY + TH * 2; }
+  const sea = seaC.getContext("2d"), g = land.getContext("2d"), m = landM.getContext("2d");
+  for (const c of [sea, g, m]) c.clearRect(0, 0, land.width, land.height);
   const winter = season === "winter", autumn = season === "autumn";
   const lv = (dx, dy) => { const [x, y] = [(dx + RX) % W, (dy + RY) % H]; return levels[y * W + x]; };
   const kd = (dx, dy) => { const [x, y] = [(dx + RX) % W, (dy + RY) % H]; return kinds[y * W + x]; };
-  // the sea, flat, on its own layer (the frame marks it for the text pass, which makes it ripple)
+  const diamond = (sx, sy, grow = 0) => c => { c.moveTo(sx, sy - grow); c.lineTo(sx + TW / 2 + grow, sy + TH / 2); c.lineTo(sx, sy + TH + grow); c.lineTo(sx - TW / 2 - grow, sy + TH / 2); c.closePath(); };
+  // the world's own sea, flat (its kind is the open sea's, painted under everything)
   for (let dy = 0; dy < H; dy++) for (let dx = 0; dx < W; dx++){
     if (kd(dx, dy) !== "water") continue;
     const t = tileAt(dx + RX, dy + RY), deep = t[6] === "deep" || t[7] < -0.21;
     const [sx, sy] = iso(dx, dy), c = hexRgb(BIOME[t[6]] || BIOME.sea);
-    sea.fillStyle = rgb(c, deep ? .8 : 1 + Math.max(0, t[7] + .2) * 4);
-    sea.beginPath(); sea.moveTo(sx, sy - .5); sea.lineTo(sx + TW / 2 + 1, sy + TH / 2); sea.lineTo(sx, sy + TH + .5); sea.lineTo(sx - TW / 2 - 1, sy + TH / 2); sea.closePath(); sea.fill();
+    sea.fillStyle = rgb(c, deep ? .8 : 1 + Math.max(0, t[7] + .2) * 4); sea.beginPath(); diamond(sx, sy, .6)(sea); sea.fill();
   }
   // then the land, back to front, as terraced blocks
   for (let s = 0; s < W + H - 1; s++) for (let dx = Math.max(0, s - H + 1); dx <= Math.min(W - 1, s); dx++){
     const dy = s - dx; if (kd(dx, dy) === "water") continue;
-    const k = kd(dx, dy), L = lv(dx, dy), e = L * LV;
+    const k = kd(dx, dy), L = lv(dx, dy), e = L * LV, kind = KIND_OF[k] ?? M.grass;
     const [sx, sy0] = iso(dx, dy), sy = sy0 - e;
-    let c = hexRgb(BIOME[k] || BIOME.plains);
-    if (winter && k !== "river" && k !== "lake") c = mix(c, [214, 222, 232], k === "beach" || k === "desert" ? .25 : .62);
+    let c = hexRgb(BIOME[k] || BIOME.plains), topKind = kind;
+    if (winter && k !== "river" && k !== "lake"){ c = mix(c, [214, 222, 232], k === "beach" || k === "desert" ? .25 : .62); if (k !== "beach" && k !== "desert") topKind = M.snow; }
     // light from the north-west: a block higher than its north and west neighbours is lit, lower is shaded
     const back = (dx > 0 ? lv(dx - 1, dy) : L) + (dy > 0 ? lv(dx, dy - 1) : L);
     const top = c.map(v => v * Math.max(.7, Math.min(1.25, 1 + (2 * L - back) * .05)));
-    const left = c.map(v => v * .62), right = c.map(v => v * .42);
-    g.fillStyle = rgb(left);
-    g.beginPath(); g.moveTo(sx - TW / 2, sy + TH / 2); g.lineTo(sx, sy + TH); g.lineTo(sx, sy0 + TH); g.lineTo(sx - TW / 2, sy0 + TH / 2); g.closePath(); g.fill();
-    g.fillStyle = rgb(right);
-    g.beginPath(); g.moveTo(sx + TW / 2, sy + TH / 2); g.lineTo(sx, sy + TH); g.lineTo(sx, sy0 + TH); g.lineTo(sx + TW / 2, sy0 + TH / 2); g.closePath(); g.fill();
-    g.fillStyle = rgb(top);
-    g.beginPath(); g.moveTo(sx, sy); g.lineTo(sx + TW / 2, sy + TH / 2); g.lineTo(sx, sy + TH); g.lineTo(sx - TW / 2, sy + TH / 2); g.closePath(); g.fill();
-    // ground texture: small specks, so the text pass has something to grow grass and stone from
+    both(g, m, rgb(c, .62), M.wall, 1, q => { q.moveTo(sx - TW / 2, sy + TH / 2); q.lineTo(sx, sy + TH); q.lineTo(sx, sy0 + TH); q.lineTo(sx - TW / 2, sy0 + TH / 2); q.closePath(); });
+    both(g, m, rgb(c, .42), M.wall, 2, q => { q.moveTo(sx + TW / 2, sy + TH / 2); q.lineTo(sx, sy + TH); q.lineTo(sx, sy0 + TH); q.lineTo(sx + TW / 2, sy0 + TH / 2); q.closePath(); });
+    both(g, m, rgb(top), topKind, 0, diamond(sx, sy));
+    // ground texture: small specks of lighter and darker ground
     const specks = k === "snow" ? 4 : k === "river" ? 0 : 14;
     for (let n = 0; n < specks; n++){
       const u = hash(dx, dy, n) - .5, v = hash(dy, dx, n + 99) - .5, px = sx + (u - v) * TW / 2 * .9, py = sy + TH / 2 + (u + v) * TH / 2 * .9;
@@ -147,17 +186,17 @@ function paintLand(){
     const nTrees = k === "forest" ? 4 : k === "woods" ? 2 : (k === "plains" && hash(dx, dy, 5) < .12) ? 1 : 0;
     const trees = [];
     for (let n = 0; n < nTrees; n++){ const u = hash(dx, dy, 11 + n) - .5, v = hash(dy, dx, 31 + n) - .5;
-      trees.push([sx + (u - v) * TW / 2 * .75, sy + TH / 2 + (u + v) * TH / 2 * .75, .75 + hash(dx, dy, 51 + n) * .5]); }
+      trees.push([sx + (u - v) * TW / 2 * .75, sy + TH / 2 + (u + v) * TH / 2 * .75, .8 + hash(dx, dy, 51 + n) * .5]); }
     trees.sort((a, b) => a[1] - b[1]);
     for (const [tx, ty, sz] of trees){
-      let leaf = autumn ? [168, 104, 46] : winter ? [54, 78, 70] : k === "forest" ? [52, 128, 104] : [74, 138, 84];
-      g.fillStyle = "#3a2a1c"; g.fillRect(tx - 1.5, ty - 10 * sz, 3, 10 * sz);
-      for (let b = 0; b < 3; b++){ const r = (7 - b * 1.6) * sz;
-        g.fillStyle = rgb(leaf, .8 + b * .22); g.beginPath(); g.arc(tx + (b - 1) * 1.5 * sz, ty - (12 + b * 6) * sz, r, 0, 7); g.fill(); }
-      if (winter){ g.fillStyle = "#dfe8f0"; g.beginPath(); g.arc(tx, ty - 24 * sz, 3.5 * sz, Math.PI, 0); g.fill(); }
+      const leaf = autumn ? [190, 112, 46] : winter ? [70, 100, 88] : k === "forest" ? [56, 140, 108] : [84, 150, 90];
+      rectBoth(g, m, "#4a3424", M.trunk, 0, tx - 2, ty - 11 * sz, 4, 11 * sz);
+      for (let b = 0; b < 3; b++){ const r = (7.5 - b * 1.8) * sz;
+        both(g, m, rgb(leaf, .8 + b * .22), M.leaf, 0, q => q.arc(tx + (b - 1) * 1.5 * sz, ty - (13 + b * 6) * sz, r, 0, 7)); }
+      if (winter) both(g, m, "#dfe8f0", M.snow, 0, q => q.arc(tx, ty - 25 * sz, 3.5 * sz, Math.PI, 0));
     }
-    if (k === "mountain" || k === "snow"){ g.fillStyle = rgb(c, k === "snow" ? 1.08 : 1.3);   // a rock crown
-      g.beginPath(); g.moveTo(sx - 12, sy + TH / 2 + 2); g.lineTo(sx - 2, sy + TH / 2 - 16 - hash(dx, dy, 3) * 10); g.lineTo(sx + 9, sy + TH / 2 + 3); g.closePath(); g.fill(); }
+    if (k === "mountain" || k === "snow")   // a rock crown
+      both(g, m, rgb(c, k === "snow" ? 1.08 : 1.3), k === "snow" ? M.snow : M.rock, 0, q => { q.moveTo(sx - 12, sy + TH / 2 + 2); q.lineTo(sx - 2, sy + TH / 2 - 16 - hash(dx, dy, 3) * 10); q.lineTo(sx + 9, sy + TH / 2 + 3); q.closePath(); });
   }
 }
 
@@ -169,61 +208,60 @@ function worldPx(x, y){   // a fractional tile position (centre at +.5) -> land 
   const [sx, sy] = iso(dx + fx, dy + fy); return [sx, sy - lvAt(x, y) * LV];
 }
 function toScene(wx, wy){ return [(wx - cam.x) * S + SW / 2, (wy - cam.y) * S + SH / 2]; }
-function fitCamera(){   // the whole world ("0" key)
+function fitCamera(){   // the whole world
   let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){ if (tileAt(x, y)[5]) continue;
     const [px, py] = worldPx(x + .5, y + .5); x0 = Math.min(x0, px); x1 = Math.max(x1, px); y0 = Math.min(y0, py - 40); y1 = Math.max(y1, py); }
   if (x0 > x1){ x0 = 0; x1 = land.width; y0 = 0; y1 = land.height; }
   cam.x = (x0 + x1) / 2; cam.y = (y0 + y1) / 2;
-  cam.z = Math.min(CW / (x1 - x0 + 2 * TW), CH / (y1 - y0 + 2 * TH)) * 1.05;
+  cam.z = Math.min(CW / (x1 - x0 + 2 * TW), CH * (1 - HZ) / (y1 - y0 + 2 * TH)) * 1.02;
+  cam.y -= CH * HZ / 2 / cam.z;
 }
-function closeUp(){     // the opening view: where most people are, about 14 tiles across
+function closeUp(){     // where most people are, about 9 tiles across
   const ppl = (frame && frame.people) || []; if (!ppl.length){ fitCamera(); return; }
   let best = ppl[0], bn = -1;
   for (const a of ppl){ let n = 0; for (const b of ppl) if (Math.abs(wrapD(a[P.x] - b[P.x], W)) + Math.abs(wrapD(a[P.y] - b[P.y], H)) <= 5) n++; if (n > bn){ bn = n; best = a; } }
-  const [wx, wy] = worldPx(best[P.x] + .5, best[P.y] + .5); cam.x = wx; cam.y = wy - 20;
-  cam.z = Math.max(.6, Math.min(4, CW / (14 * TW)));
+  const [wx, wy] = worldPx(best[P.x] + .5, best[P.y] + .5);
+  cam.z = Math.max(.8, Math.min(5, CW / (9 * TW))); cam.x = wx; cam.y = wy - CH * HZ / 2 / cam.z;
 }
 
 // ================= light (for looks: a slow clock, not ACL's time) =================
 const LIGHTS = {
   day:   {amb: [1.0, 1.0, .97], top: [.32, .52, .82], bot: [.72, .83, .94], dark: 0},
-  dusk:  {amb: [.82, .58, .52], top: [.16, .13, .32], bot: [.92, .5, .32], dark: .55},
-  night: {amb: [.40, .47, .72], top: [.008, .015, .045], bot: [.05, .07, .15], dark: 1}};
+  dusk:  {amb: [.86, .64, .56], top: [.16, .13, .32], bot: [.92, .5, .32], dark: .55},
+  night: {amb: [.48, .55, .82], top: [.008, .015, .045], bot: [.05, .07, .15], dark: 1}};
 function lightNow(t){
   if (view.light !== "auto") return LIGHTS[view.light];
-  // day 40%, dusk 10%, night 40%, dawn 10% of a 150-second round
-  const p = (t / 150000 + .52) % 1, D = LIGHTS.day, K = LIGHTS.dusk, N = LIGHTS.night;
+  // day 40%, dusk 10%, night 40%, dawn 10% of a 150-second round; it opens in the day
+  const p = (t / 150000 + .1) % 1, D = LIGHTS.day, K = LIGHTS.dusk, N = LIGHTS.night;
   const blend = (a, b, u) => { u = u * u * (3 - 2 * u); return {amb: mix(a.amb, b.amb, u), top: mix(a.top, b.top, u), bot: mix(a.bot, b.bot, u), dark: a.dark + (b.dark - a.dark) * u}; };
   if (p < .4) return D; if (p < .45) return blend(D, K, (p - .4) / .05); if (p < .5) return blend(K, N, (p - .45) / .05);
   if (p < .9) return N; if (p < .95) return blend(N, K, (p - .9) / .05); return blend(K, D, (p - .95) / .05);
 }
 
-// ================= drawing one frame (an ordinary picture, before the text pass) =================
+// ================= drawing one frame (in colour, and as kinds) =================
 const scene = document.createElement("canvas"), sg = scene.getContext("2d");
+const kindC = document.createElement("canvas"), kg = kindC.getContext("2d");
 const lightC = document.createElement("canvas"), lg = lightC.getContext("2d");
 function personPos(r, t){
   const dx = wrapD(r[P.x] - r[P.fx], W), dy = wrapD(r[P.y] - r[P.fy], H), e = t < 1 ? t * t * (3 - 2 * t) : 1;
   return [r[P.fx] + dx * e, r[P.fy] + dy * e];
 }
-function bandMap(){ const m = new Map(); (frame.bands || []).forEach(([id], i) => (frame.bands[i][2] || []).forEach(pid => m.set(pid, i))); return m; }
+function bandMap(){ const m = new Map(); (frame.bands || []).forEach((b, i) => (b[2] || []).forEach(pid => m.set(pid, i))); return m; }
 function drawScene(now, L){
-  sg.setTransform(1, 0, 0, 1, 0, 0); sg.clearRect(0, 0, SW, SH);
+  for (const c of [sg, kg]){ c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, SW, SH); c.imageSmoothingEnabled = false; }
+  sg.imageSmoothingEnabled = true;
   lg.setTransform(1, 0, 0, 1, 0, 0); lg.clearRect(0, 0, lightC.width, lightC.height);
   const [lx, ly] = toScene(0, 0), hz = Math.round(SH * HZ);
-  sg.imageSmoothingEnabled = true;
-  // open sea out to the horizon, then the world's own sea; both are then made slightly see-through, which is how the
-  // text pass tells water from land (the sky stays empty)
+  // open sea out to the horizon, under the world's own sea
   const sgr = sg.createLinearGradient(0, hz, 0, SH); sgr.addColorStop(0, "#1d4466"); sgr.addColorStop(.25, "#0b2a46"); sgr.addColorStop(1, "#071f36");
-  sg.fillStyle = sgr; sg.fillRect(0, hz, SW, SH - hz);
+  sg.fillStyle = sgr; sg.fillRect(0, hz, SW, SH - hz); kg.fillStyle = mc(M.sea); kg.fillRect(0, hz, SW, SH - hz);
+  for (const c of [sg, kg]){ c.save(); c.beginPath(); c.rect(0, hz, SW, SH - hz); c.clip(); }   // beyond the horizon is not seen
   sg.drawImage(seaC, lx, ly, land.width * S, land.height * S);
-  sg.clearRect(0, 0, SW, hz);
-  sg.globalCompositeOperation = "destination-out"; sg.fillStyle = "rgba(0,0,0,.12)"; sg.fillRect(0, 0, SW, SH);
-  sg.globalCompositeOperation = "source-over";
-  sg.save(); sg.beginPath(); sg.rect(0, hz, SW, SH - hz); sg.clip();   // whatever lies beyond the horizon is not seen
   sg.drawImage(land, lx, ly, land.width * S, land.height * S);
+  kg.drawImage(landM, lx, ly, land.width * S, land.height * S);
   if (frame) drawThings(now, L);
-  sg.restore();
+  sg.restore(); kg.restore();
 }
 function drawThings(now, L){
   const k = lightC.width / SW, glow = .35 + .65 * L.dark;
@@ -237,138 +275,146 @@ function drawThings(now, L){
     if (!(tr[1] || tr[2] || tr[3] || tr[4] || tr[5])) continue;
     const [wx, wy] = worldPx(x + .5, y + .5), [sx, sy] = toScene(wx, wy), u = S;
     if (tr[2] > 0 && !tr[4]) light(sx, sy - 3 * u, 34 * u, "255,120,50", Math.min(.5, .06 * tr[2]) * glow);   // a heap's warmth
-    if (tr[1]){ sg.strokeStyle = tr[1] >= 2 ? "#c9b25a" : "#7fb35a"; sg.lineWidth = Math.max(1, 1.4 * u);
-      for (let n = -2; n <= 2; n++){ sg.beginPath(); sg.moveTo(sx - 14 * u + n * 5 * u, sy + n * 2.5 * u - 4 * u); sg.lineTo(sx - 4 * u + n * 5 * u, sy + n * 2.5 * u + 1 * u); sg.stroke(); } }
-    if (tr[3] || tr[5]){ const n = Math.max(1, tr[3]) + (tr[5] ? 1 : 0);
-      for (let j = 0; j < n; j++){ sg.fillStyle = j % 2 ? "#8a6a48" : "#6a5038"; sg.fillRect(sx + (6 + j * 3) * u, sy - (3 + j * 3) * u, 7 * u, 4 * u); } }
+    if (tr[1]) for (let n = -2; n <= 2; n++) rectBoth(sg, kg, tr[1] >= 2 ? "#d8c46a" : "#8fc46a", M.crop, 0, sx - 13 * u + n * 6 * u, sy + n * 3 * u - 5 * u, 5 * u, 3 * u);
+    if (tr[3]) for (let j = 0; j < Math.max(1, tr[3]); j++) rectBoth(sg, kg, j % 2 ? "#a88058" : "#8a6644", M.heap, 0, sx + (5 + j * 3) * u, sy - (4 + j * 3.5) * u, 8 * u, 4 * u);
+    if (tr[5]) rectBoth(sg, kg, "#9a7a52", M.store, 0, sx - 14 * u, sy - 9 * u, 8 * u, 7 * u);
     if (tr[4]){
       const f = .75 + .25 * Math.sin(now / 90 + i) * Math.sin(now / 37 + i * 3);
-      sg.fillStyle = "#ffcf6a"; sg.beginPath(); sg.moveTo(sx - 4 * u, sy); sg.lineTo(sx, sy - 13 * u * f); sg.lineTo(sx + 4 * u, sy); sg.closePath(); sg.fill();
-      sg.fillStyle = "#ff7a2a"; sg.beginPath(); sg.moveTo(sx - 3 * u, sy); sg.lineTo(sx + 1 * u, sy - 7 * u * f); sg.lineTo(sx + 3 * u, sy); sg.closePath(); sg.fill();
+      both(sg, kg, "#ffcf6a", M.fire, 0, q => { q.moveTo(sx - 5 * u, sy); q.lineTo(sx, sy - 15 * u * f); q.lineTo(sx + 5 * u, sy); q.closePath(); });
+      sg.fillStyle = "#ff7a2a"; sg.beginPath(); sg.moveTo(sx - 3 * u, sy); sg.lineTo(sx + 1 * u, sy - 8 * u * f); sg.lineTo(sx + 3 * u, sy); sg.closePath(); sg.fill();
       light(sx, sy - 4 * u, 95 * u * (.92 + .08 * f), "255,150,60", 1.25 * glow * f);
       light(sx, sy - 4 * u, 22 * u, "255,220,150", .9 * glow);
     }
   }
   // animals: a few bodies per group, by kind
   for (const [sp, x, y, n] of frame.animals || []){
-    const [col, size] = ANIMAL[sp] || ["#a08060", 3], c = hexRgb(col);
+    const [col, size] = ANIMAL[sp] || ["#a08060", 3], c = hexRgb(col), part = Math.max(1, SPECIES.indexOf(sp));
     for (let j = 0; j < Math.min(4, Math.ceil(n / 3)); j++){
       const ox = (hash(x, y, j) - .5) * .7, oy = (hash(y, x, j + 9) - .5) * .7, [wx, wy] = worldPx(x + .5 + ox, y + .5 + oy), [sx, sy] = toScene(wx, wy);
-      if (sp === "fish"){ if (L.dark > .5) continue; sg.fillStyle = rgb(c); sg.fillRect(sx - 2 * S, sy - 1 * S, 4 * S, 2 * S); continue; }
-      sg.fillStyle = rgb(c); sg.beginPath(); sg.ellipse(sx, sy - size * S, size * 1.3 * S, size * .8 * S, 0, 0, 7); sg.fill();
-      sg.fillStyle = rgb(c, .7); sg.fillRect(sx - size * S, sy - size * .5 * S, S, size * .6 * S); sg.fillRect(sx + size * .8 * S, sy - size * .5 * S, S, size * .6 * S);
+      if (sp === "fish"){ if (L.dark > .5) continue; rectBoth(sg, kg, rgb(c), M.animal, part, sx - 3 * S, sy - 1.5 * S, 6 * S, 3 * S); continue; }
+      both(sg, kg, rgb(c), M.animal, part, q => q.ellipse(sx, sy - size * S, size * 1.4 * S, size * .9 * S, 0, 0, 7));
+      rectBoth(sg, kg, rgb(c, .7), M.animal, part, sx - size * S, sy - size * .4 * S, 1.6 * S, size * .7 * S);
+      rectBoth(sg, kg, rgb(c, .7), M.animal, part, sx + size * .7 * S, sy - size * .4 * S, 1.6 * S, size * .7 * S);
+      light(sx, sy - size * S, size * 3 * S, c.join(","), .3 * glow);
     }
   }
-  // people: one small figure each, in their band's colour
+  // people: a small figure each, in their band's colour (head and body are told apart in the text pass)
   const t = Math.min(1, (now - frameAt) / Math.max(250, interval * .85)), bands = bandMap(), seen = new Map();
   picks = [];
   const order = (frame.people || []).map(r => [r, personPos(r, t)]).sort((a, b) => (a[1][0] + a[1][1]) - (b[1][0] + b[1][1]));
   for (const [r, [px, py]] of order){
     const key = Math.round(px) + "," + Math.round(py), n = seen.get(key) || 0; seen.set(key, n + 1);
-    const ox = n ? Math.cos(n * 2.4) * .28 : 0, oy = n ? Math.sin(n * 2.4) * .28 : 0;
+    const ox = n ? Math.cos(n * 2.4) * .3 : 0, oy = n ? Math.sin(n * 2.4) * .3 : 0;
     const [wx, wy] = worldPx(px + .5 + ox, py + .5 + oy), [sx, sy] = toScene(wx, wy);
     const bi = bands.has(r[P.id]) ? bands.get(r[P.id]) : bands.get(r[P.carer]);
-    const c = hexRgb(bi !== undefined ? BAND_COLS[bi % BAND_COLS.length] : "#dfe6ef"), sz = (r[P.stage] >= 2 ? 1.3 : .9) * S;
-    light(sx, sy - 7 * sz, 11 * sz, c.join(","), .55 * glow);   // not a lamp: only so a person can be told from the dark ground
-    const resting = (r[P.doing] || "").startsWith("rest");
-    sg.fillStyle = rgb(c, .55);
-    if (resting){ sg.fillRect(sx - 6 * sz, sy - 3 * sz, 12 * sz, 3.5 * sz); sg.fillStyle = rgb(c, 1.1); sg.beginPath(); sg.arc(sx - 7 * sz, sy - 2 * sz, 2.4 * sz, 0, 7); sg.fill(); }
-    else {
-      sg.fillRect(sx - 2.4 * sz, sy - 9 * sz, 4.8 * sz, 9 * sz);
-      sg.fillStyle = rgb(c, 1.15); sg.fillRect(sx - 2.4 * sz, sy - 9 * sz, 4.8 * sz, 3 * sz);
-      sg.beginPath(); sg.arc(sx, sy - 12.5 * sz, 2.8 * sz, 0, 7); sg.fill();
+    const c = hexRgb(bi !== undefined ? BAND_COLS[bi % BAND_COLS.length] : "#dfe6ef"), sz = (r[P.stage] >= 2 ? 1.5 : 1.05) * S;
+    light(sx, sy - 8 * sz, 12 * sz, c.join(","), .6 * glow);   // not a lamp: only so a person can be told from the dark ground
+    if ((r[P.doing] || "").startsWith("rest")){
+      rectBoth(sg, kg, rgb(c, .7), M.body, 0, sx - 6 * sz, sy - 4 * sz, 12 * sz, 4.5 * sz);
+      both(sg, kg, rgb(c, 1.15), M.head, 0, q => q.arc(sx - 8 * sz, sy - 2.5 * sz, 3 * sz, 0, 7));
+    } else {
+      rectBoth(sg, kg, rgb(c, .8), M.body, 0, sx - 3 * sz, sy - 10 * sz, 6 * sz, 10 * sz);
+      both(sg, kg, rgb(c, 1.2), M.head, 0, q => q.arc(sx, sy - 14 * sz, 3.6 * sz, 0, 7));
     }
-    if (r[P.starving]){ sg.fillStyle = "#ff5a4a"; sg.fillRect(sx - 1 * sz, sy - 20 * sz, 2 * sz, 3 * sz); }
-    picks.push([sx / SS / DPR, sy / SS / DPR - 6 * sz / SS / DPR, r]);
+    picks.push([sx / SS / DPR, sy / SS / DPR - 8 * sz / SS / DPR, r]);
   }
-  // weather: rain falls in screen space
-  const sky = frame.sky || {};
-  if (sky.rain > 0){ const n = Math.min(900, 160 * sky.rain + (sky.storm ? 300 : 0)); sg.strokeStyle = "rgba(170,190,215,.55)"; sg.lineWidth = Math.max(1, SS * DPR);
-    for (let j = 0; j < n; j++){ const x = (hash(j, 1) * SW + now * .05 * (1 + hash(j, 2))) % SW, y = (hash(j, 3) * SH + now * .9 * (1 + hash(j, 4))) % SH;
-      sg.beginPath(); sg.moveTo(x, y); sg.lineTo(x - 3 * SS * DPR, y + 14 * SS * DPR); sg.stroke(); } }
 }
 
 // ================= the text pass (WebGL: every cell of the screen becomes one character) =================
 const cv = $("view");
 const gl = cv.getContext("webgl2", {antialias: false, premultipliedAlpha: false});
-let prog, texScene, texLight, texAtlas, U = {}, NRAMP = 0, NALL = 0;
-const EXTRA = ["|", "/", "-", "\\", "~", "="];
+let prog, texScene, texKind, texLight, texAtlas, texTab, U = {}, NALL = 0;
 function buildAtlas(cw, ch){
-  // measure how much ink each character leaves, then keep a ramp evenly spread from empty to dense
-  const cand = " `.,:^;=+*xo#%$&@";
-  const m = document.createElement("canvas"); m.width = cw * cand.length; m.height = ch;
-  const g = m.getContext("2d"); g.fillStyle = "#fff"; g.textAlign = "center"; g.textBaseline = "middle";
-  g.font = `bold ${Math.round(ch * .92)}px Consolas,"Cascadia Mono","DejaVu Sans Mono","Courier New",monospace`;
-  [...cand].forEach((c, i) => g.fillText(c, i * cw + cw / 2, ch / 2 + ch * .04));
-  const d = g.getImageData(0, 0, m.width, ch).data, cov = [...cand].map((c, i) => { let s = 0;
-    for (let y = 0; y < ch; y++) for (let x = 0; x < cw; x++) s += d[(y * m.width + i * cw + x) * 4 + 3]; return s / (cw * ch * 255); });
-  const ramp = [...cand].map((c, i) => [c, cov[i]]).sort((a, b) => a[1] - b[1]).map(x => x[0]);
-  const all = ramp.concat(EXTRA); NRAMP = ramp.length; NALL = all.length;
-  const a = document.createElement("canvas"); a.width = cw * NALL; a.height = ch;
-  const ag = a.getContext("2d"); ag.fillStyle = "#000"; ag.fillRect(0, 0, a.width, ch); ag.fillStyle = "#fff"; ag.textAlign = "center"; ag.textBaseline = "middle"; ag.font = g.font;
-  all.forEach((c, i) => ag.fillText(c, i * cw + cw / 2, ch / 2 + ch * .04));
-  gl.bindTexture(gl.TEXTURE_2D, texAtlas); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, a);
+  const chars = [...new Set(GLYPHS.join(""))];
+  const a = document.createElement("canvas"); a.width = cw * chars.length; a.height = ch;
+  const ag = a.getContext("2d"); ag.fillStyle = "#000"; ag.fillRect(0, 0, a.width, ch);
+  ag.fillStyle = "#fff"; ag.textAlign = "center"; ag.textBaseline = "middle";
+  ag.font = `bold ${Math.round(ch * .9)}px Consolas,"Cascadia Mono","DejaVu Sans Mono","Courier New",monospace`;
+  chars.forEach((c, i) => ag.fillText(c, i * cw + cw / 2, ch / 2 + ch * .05));
+  NALL = chars.length;
+  gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, texAtlas); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, a);
+  const tab = new Uint8Array(8 * GLYPHS.length * 4);
+  GLYPHS.forEach((row, r) => [...row].forEach((c, k) => { tab[(r * 8 + k) * 4] = chars.indexOf(c); tab[(r * 8 + k) * 4 + 3] = 255; }));
+  gl.activeTexture(gl.TEXTURE4); gl.bindTexture(gl.TEXTURE_2D, texTab);
+  gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 8, GLYPHS.length, 0, gl.RGBA, gl.UNSIGNED_BYTE, tab);
 }
 const VS = `#version 300 es
 in vec2 p; void main(){ gl_Position = vec4(p, 0., 1.); }`;
 const FS = `#version 300 es
 precision highp float;
-uniform sampler2D uScene, uLight, uAtlas;
-uniform vec2 uRes, uCell; uniform float uTime, uDark, uAscii, uNRamp, uNAll, uSeed;
-uniform vec3 uAmb, uTop, uBot; uniform vec2 uMoon; uniform float uHz;
+uniform sampler2D uScene, uKind, uLight, uAtlas, uTab;
+uniform vec2 uRes, uCell; uniform float uTime, uDark, uAscii, uNAll, uSeed, uHz, uRain;
+uniform vec3 uAmb, uTop, uBot; uniform vec2 uMoon;
 out vec4 o;
+const float SKY = 0., SEA = 1., FRESH = 2., SAND = 3., WALL = 8., LEAF = 9., TRUNK = 10., HEAD = 11., BODY = 12., FIRE = 13.,
+  ANIMAL = 14., RAIN = 18.;
 float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7)) + uSeed) * 43758.5453); }
+// what a spot is; ok = 0 where shapes' soft edges blend two kinds into a number that is neither
+float kindAt(vec2 uv, out float part, out float ok){
+  vec4 m = texture(uKind, uv); float v = m.r * 255., pv = m.g * 255.;
+  float id = floor(v / 12. + .5); part = floor(pv / 12. + .5);
+  ok = step(abs(v - id * 12.), 2.5) * step(abs(pv - part * 12.), 2.5) * step(.9, m.a + step(v, .5));
+  return id;
+}
 vec3 skyAt(vec2 uv, vec2 cell){
   vec3 c = mix(uTop, uBot, smoothstep(0., 1., uv.y / uHz));
-  float st = step(.986, h(cell)) * uDark * (.55 + .45 * sin(uTime * 1.7 + h(cell + 3.) * 40.));
+  float st = step(.986, h(cell)) * uDark * (.3 + .2 * sin(uTime * 1.7 + h(cell + 3.) * 40.));   // stars stay small: . : +
   vec2 d = (uv - uMoon) * vec2(uRes.x / uRes.y, 1.); float r = length(d);
-  float moon = smoothstep(.052, .046, r) * uDark, halo = .25 * exp(-r * 9.) * uDark;
+  float moon = smoothstep(.048, .042, r) * uDark, halo = .25 * exp(-r * 9.) * uDark;
   float crater = .14 * smoothstep(.02, .012, length(d - vec2(.015, -.012))) + .1 * smoothstep(.012, .007, length(d - vec2(-.018, .014)));
-  return c + vec3(st) + vec3(.92, .9, .8) * moon * (1. - crater) + vec3(.5, .55, .7) * halo;
+  return (c + vec3(st) + vec3(.92, .9, .8) * moon * (1. - crater) + vec3(.5, .55, .7) * halo) * .8;
 }
-vec3 lit(vec2 uv, vec2 cell, out float kind){
-  vec4 s = texture(uScene, uv);
-  if (s.a < .05){ kind = 0.; return skyAt(uv, cell) * .7; }
-  vec3 L = texture(uLight, uv).rgb;
-  kind = (s.a > .8 && s.a < .95) ? 1. : 2.;
-  vec3 c = s.rgb * (uAmb + L * vec3(1., .78, .55));
-  if (kind == 1.){   // the sea: moonlight on the water below the moon, broken by the ripples
-    float w = sin(cell.x * .9 + cell.y * 1.7 + uTime * 1.6) * sin(cell.x * .31 - cell.y * .53 - uTime * .9);
-    float streak = exp(-pow((uv.x - uMoon.x) * 9., 2.)) * uDark * smoothstep(.2, .8, w);
-    c += vec3(.55, .6, .7) * streak * .55 + s.rgb * .25 * w * (1. - uDark * .5);
+float wave(vec2 cell){ return sin(cell.x * .9 + cell.y * 1.7 + uTime * 1.6) * sin(cell.x * .31 - cell.y * .53 - uTime * .9) + (h(cell) - .5) * .5; }
+vec3 lit(vec2 uv, vec2 cell, float id){
+  if (id == SKY) return skyAt(uv, cell);
+  vec3 s = texture(uScene, uv).rgb, L = texture(uLight, uv).rgb;
+  vec3 c = s * (uAmb + L * vec3(1., .78, .55));
+  if (id == SEA){   // moonlight on the water below the moon, broken by the ripples
+    float w = wave(cell);
+    c += vec3(.55, .6, .7) * exp(-pow((uv.x - uMoon.x) * 9., 2.)) * uDark * smoothstep(.2, .8, w) * .55 + s * .25 * w * (1. - uDark * .5);
   }
-  float mist = 1. - smoothstep(uHz, uHz + .1, uv.y);   // distance fades into the horizon
-  return mix(c, mix(uBot, uTop, .35) * 1.1, mist * .85);
+  float mist = 1. - smoothstep(uHz, uHz + .08, uv.y);   // distance fades into the horizon
+  return mix(c, mix(uBot, uTop, .35) * 1.1, mist * .8);
 }
 float lum(vec3 c){ return dot(c, vec3(.299, .587, .114)); }
+float prio(float id){ return id == HEAD ? 9. : id == BODY ? 8. : id == FIRE ? 7. : id == ANIMAL ? 6. : id >= 15. ? 5. : id == TRUNK ? 3. : id == LEAF ? 2. : 1.; }
+float glyph(float id, float col){ return floor(texelFetch(uTab, ivec2(int(col), int(id)), 0).r * 255. + .5); }
 void main(){
   vec2 px = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);
-  if (uAscii < .5){ float k; vec3 c = lit(px / uRes, floor(px / 3.), k); o = vec4(pow(c, vec3(.9)), 1.); return; }
-  vec2 cell = floor(px / uCell), f = (px - cell * uCell) / uCell;
-  vec2 cuv = (cell + .5) * uCell / uRes, q = uCell / uRes * .26;
-  float k0, k1, k2, k3, k4;
-  vec3 c = (lit(cuv, cell, k0) * 2. + lit(cuv + vec2(q.x, q.y), cell, k1) + lit(cuv - vec2(q.x, q.y), cell, k2)
-           + lit(cuv + vec2(q.x, -q.y), cell, k3) + lit(cuv + vec2(-q.x, q.y), cell, k4)) / 6.;
-  float l = lum(c);
-  float g = pow(clamp(l * 1.1, 0., 1.), .72);
-  g = clamp(g + (h(cell * 1.31) - .5) * .09 * step(1.5, k0), 0., 1.);   // a little grain, like grass
-  float idx = floor(g * (uNRamp - 1.) + .5);
-  if (k0 > 1.5){   // edges become strokes
-    float d; vec2 e = uCell / uRes;
-    float lx = lum(lit(cuv + vec2(e.x, 0.), cell, d)) - lum(lit(cuv - vec2(e.x, 0.), cell, d));
-    float ly = lum(lit(cuv + vec2(0., e.y), cell, d)) - lum(lit(cuv - vec2(0., e.y), cell, d));
-    float m = length(vec2(lx, ly)) / (l + .08);
-    if (m > .9 && l > .03){
-      float ax = abs(lx), ay = abs(ly);
-      idx = ax > 2.6 * ay ? uNRamp : ay > 2.6 * ax ? uNRamp + 2. : (lx * ly > 0. ? uNRamp + 3. : uNRamp + 1.);
-    }
-  } else if (k0 > .5){   // the sea ripples
-    float w = sin(cell.x * .9 + cell.y * 1.7 + uTime * 1.6) * sin(cell.x * .31 - cell.y * .53 - uTime * .9) + (h(cell) - .5) * .5;
-    idx = g < .05 ? 0. : w > .55 ? uNRamp + 4. : w > .3 ? uNRamp + 2. : min(idx, 1.);
+  if (uAscii < .5){ float p, ok; vec2 uv = px / uRes; float id = kindAt(uv, p, ok); o = vec4(pow(lit(uv, floor(px / 3.), id), vec3(.9)), 1.); return; }
+  vec2 cell = floor(px / uCell), f = (px - cell * uCell) / uCell, cuv = (cell + .5) * uCell / uRes;
+  // look at five spots in the cell; the most telling kind wins (a person over the grass they stand on)
+  vec2 offs[5] = vec2[5](vec2(0.), vec2(.3, .3), vec2(-.3, .3), vec2(.3, -.3), vec2(-.3, -.3));
+  float best = -1., id = 0., part = 0.; vec2 buv = cuv;
+  for (int i = 0; i < 5; i++){
+    vec2 uv = (cell + .5 + offs[i]) * uCell / uRes; float p, ok, m = kindAt(uv, p, ok);
+    if (ok < .5) continue;
+    float pr = prio(m) + (i == 0 ? .5 : 0.);
+    if (pr > best){ best = pr; id = m; part = p; buv = uv; }
   }
-  float mask = texture(uAtlas, vec2((idx + f.x) / uNAll, f.y)).r;
-  vec3 col = pow(c, vec3(.78)) * 1.45 + .04;
-  o = vec4(col * mask + c * .07, 1.);
+  if (best < 0.){ float p, ok; id = kindAt(cuv, p, ok); part = p; }
+  vec3 c = lit(buv, cell, id);
+  float l = lum(c), g = pow(clamp(l * 1.3, 0., 1.), .6);
+  float lev = floor(g * 7.99);
+  bool ground = id >= FRESH && id <= TRUNK;
+  if (ground){ float r = h(cell * 1.37); lev = clamp(lev + (r > .88 ? -1. : r < .1 ? 1. : 0.), 2., 7.); }   // texture shows even in the dark
+  float gi;
+  if (id == ANIMAL) gi = glyph(ANIMAL, part);
+  else if (id == SKY){   // the sky is written only where something shines: stars, the moon; a few faint dots elsewhere
+    float shine = l - lum(mix(uTop, uBot, smoothstep(0., 1., buv.y / uHz))) * .8;
+    gi = glyph(SKY, shine > .45 ? 7. : shine > .3 ? 6. : shine > .15 ? 5. : shine > .06 ? 4. : (h(cell * 1.7) < .05 ? 3. : 0.));
+  }
+  else if (id == SEA || id == FRESH){ float w = wave(cell); gi = glyph(id, g < .04 ? 0. : w > .5 ? (id == SEA ? 3. : 4.) : w > .2 ? (id == SEA ? 2. : 3.) : (g > .12 ? 1. : 0.)); }
+  else gi = glyph(id, lev);
+  vec3 col = pow(c, vec3(.75)) * 1.5 + .03;
+  if (id >= HEAD && id <= ANIMAL) col = col * 1.35 + .12;   // living things and fire stand out
+  if (uRain > 0. && id < HEAD){   // rain falls through the cells
+    float drop = h(vec2(cell.x, floor(cell.y / 3. - uTime * 7. + h(vec2(cell.x, 9.)) * 50.)));
+    if (drop < .05 * uRain){ gi = glyph(RAIN, 7.); col = vec3(.55, .65, .8) * (.6 + .5 * (1. - uDark * .4)); }
+  }
+  float mask = texture(uAtlas, vec2((gi + f.x) / uNAll, f.y)).r;
+  o = vec4(col * mask + c * .05, 1.);
 }`;
 function setupGL(){
   if (!gl){ $("msg").textContent = "This browser has no WebGL2; showing the plain picture."; return false; }
@@ -382,23 +428,26 @@ function setupGL(){
   const tex = (unit, filter) => { const t = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, t);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, filter); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, filter);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE); return t; };
-  texScene = tex(0, gl.LINEAR); texLight = tex(1, gl.LINEAR); texAtlas = tex(2, gl.NEAREST);
-  for (const n of ["uScene", "uLight", "uAtlas", "uRes", "uCell", "uTime", "uDark", "uAscii", "uNRamp", "uNAll", "uSeed", "uAmb", "uTop", "uBot", "uMoon", "uHz"]) U[n] = gl.getUniformLocation(prog, n);
-  gl.uniform1i(U.uScene, 0); gl.uniform1i(U.uLight, 1); gl.uniform1i(U.uAtlas, 2);
+  texScene = tex(0, gl.LINEAR); texKind = tex(1, gl.NEAREST); texLight = tex(2, gl.LINEAR); texAtlas = tex(3, gl.NEAREST); texTab = tex(4, gl.NEAREST);
+  for (const n of ["uScene", "uKind", "uLight", "uAtlas", "uTab", "uRes", "uCell", "uTime", "uDark", "uAscii", "uNAll", "uSeed", "uAmb", "uTop", "uBot", "uMoon", "uHz", "uRain"])
+    U[n] = gl.getUniformLocation(prog, n);
+  gl.uniform1i(U.uScene, 0); gl.uniform1i(U.uKind, 1); gl.uniform1i(U.uLight, 2); gl.uniform1i(U.uAtlas, 3); gl.uniform1i(U.uTab, 4);
   return true;
 }
 let atlasFor = "";
 function resize(){
   DPR = Math.min(2, devicePixelRatio || 1); CW = innerWidth; CH = innerHeight;
   cv.width = Math.round(CW * DPR); cv.height = Math.round(CH * DPR);
-  SW = Math.round(cv.width * SS); SH = Math.round(cv.height * SS); scene.width = SW; scene.height = SH;
+  SW = Math.round(cv.width * SS); SH = Math.round(cv.height * SS);
+  scene.width = kindC.width = SW; scene.height = kindC.height = SH;
   lightC.width = Math.max(8, Math.round(SW / 4)); lightC.height = Math.max(8, Math.round(SH / 4));
   if (terrain && !cam.touched) closeUp();
 }
 addEventListener("resize", resize);
 
 // ================= the loop =================
-let glOK = false;
+let glOK = false, glLost = false;
+function upload(unit, t, src){ gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, t); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, src); }
 function draw(now){
   requestAnimationFrame(draw);
   if (!terrain || glLost) return;
@@ -407,19 +456,23 @@ function draw(now){
   drawScene(now, L);
   if (!glOK){ if (!gl){ const g2 = cv.getContext("2d"); if (g2) g2.drawImage(scene, 0, 0, cv.width, cv.height); } return; }
   const [cw, ch] = CELLS[view.cell].map(v => Math.round(v * DPR)), key = cw + "x" + ch;
-  if (key !== atlasFor){ gl.activeTexture(gl.TEXTURE2); buildAtlas(cw, ch); atlasFor = key; }
+  if (key !== atlasFor){ buildAtlas(cw, ch); atlasFor = key; }
   gl.viewport(0, 0, cv.width, cv.height);
-  gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, texScene); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, scene);
-  gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, texLight); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, lightC);
-  gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, texAtlas);
+  gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+  upload(0, texScene, scene); upload(1, texKind, kindC); upload(2, texLight, lightC);
+  gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, texAtlas);
+  gl.activeTexture(gl.TEXTURE4); gl.bindTexture(gl.TEXTURE_2D, texTab);
+  const sky = (frame && frame.sky) || {};
   gl.uniform2f(U.uRes, cv.width, cv.height); gl.uniform2f(U.uCell, cw, ch); gl.uniform1f(U.uTime, now / 1000);
-  gl.uniform1f(U.uDark, L.dark); gl.uniform1f(U.uAscii, view.plain ? 0 : 1); gl.uniform1f(U.uNRamp, NRAMP); gl.uniform1f(U.uNAll, NALL);
+  gl.uniform1f(U.uDark, L.dark); gl.uniform1f(U.uAscii, view.plain ? 0 : 1); gl.uniform1f(U.uNAll, NALL);
   gl.uniform1f(U.uSeed, (terrain.seed || 0) % 97); gl.uniform3fv(U.uAmb, L.amb); gl.uniform3fv(U.uTop, L.top); gl.uniform3fv(U.uBot, L.bot);
-  gl.uniform2f(U.uMoon, .68, HZ * .5); gl.uniform1f(U.uHz, HZ);
+  gl.uniform2f(U.uMoon, .66, HZ * .5); gl.uniform1f(U.uHz, HZ);
+  gl.uniform1f(U.uRain, sky.storm ? 2.5 : sky.rain > 0 ? Math.min(2, .8 + sky.rain) : 0);
   gl.drawArrays(gl.TRIANGLES, 0, 3);
 }
 
 // ================= words on the screen =================
+$("key").innerHTML = KEY.map(([g, c, w]) => `<div><i style="color:${c}">${esc(g)}</i>${esc(w)}</div>`).join("");
 function hud(){
   if (!frame) return;
   $("title").innerHTML = `A C L <span class="s">·</span> <b>year ${frame.year}</b>, week ${frame.week + 1}, ${esc(frame.season)}`;
@@ -431,7 +484,7 @@ function hud(){
   const wps = frame.wps; document.querySelectorAll("[data-wps]").forEach(b => b.classList.toggle("on", Number(b.dataset.wps) === wps));
 }
 cv.addEventListener("mousemove", e => {
-  if (drag) return; let best = null, bd = 18;
+  if (drag) return; let best = null, bd = 22;
   for (const [x, y, r] of picks){ const d = Math.hypot(x - e.clientX, y - e.clientY); if (d < bd){ bd = d; best = r; } }
   const tip = $("tip"); if (!best){ tip.style.display = "none"; return; }
   const what = (best[P.doing] || "").split(" ")[0];
@@ -452,16 +505,18 @@ addEventListener("keydown", e => {
   if (e.key === "+" || e.key === "=") cam.z = Math.min(8, cam.z * 1.2); else if (e.key === "-") cam.z = Math.max(.25, cam.z / 1.2);
   else if (e.key === "ArrowLeft") cam.x -= step; else if (e.key === "ArrowRight") cam.x += step;
   else if (e.key === "ArrowUp") cam.y -= step; else if (e.key === "ArrowDown") cam.y += step;
-  else if (e.key === "0"){ cam.touched = false; fitCamera(); return; } else return;
+  else if (e.key === "0"){ fitCamera(); } else return;
   cam.touched = true;
 });
 document.querySelectorAll("[data-light]").forEach(b => b.onclick = () => { view.light = b.dataset.light; document.querySelectorAll("[data-light]").forEach(x => x.classList.toggle("on", x === b)); });
 document.querySelectorAll("[data-cell]").forEach(b => b.onclick = () => { view.cell = b.dataset.cell; document.querySelectorAll("[data-cell]").forEach(x => x.classList.toggle("on", x === b)); });
 $("plain").onclick = () => { view.plain = !view.plain; $("plain").classList.toggle("on", view.plain); };
+$("near").onclick = () => { closeUp(); cam.touched = true; };
+$("far").onclick = () => { fitCamera(); cam.touched = true; };
+$("keyBtn").onclick = () => { const k = $("key"); k.hidden = !k.hidden; $("keyBtn").classList.toggle("on", !k.hidden); };
 document.querySelectorAll("[data-wps]").forEach(b => b.onclick = () => fetch("/speed?wps=" + b.dataset.wps).catch(() => {}));
 
 // ================= the world =================
-let glLost = false;
 function startGL(){ try { glOK = setupGL(); atlasFor = ""; $("msg").textContent = ""; } catch (err) { glOK = false; $("msg").textContent = "The text pass failed: " + err.message; } }
 // the browser may take the graphics context back when the computer is busy; wait, then build it again
 cv.addEventListener("webglcontextlost", e => { e.preventDefault(); glLost = true; $("msg").textContent = "graphics paused by the browser; resuming…"; });
@@ -470,8 +525,8 @@ startGL();
 resize();
 fetch("/terrain").then(r => r.json()).then(t => {
   terrain = t; W = t.width; H = t.height; chooseSeam(); paintLand(); fitCamera();
+  $("speedRow").style.display = t.live ? "none" : "";
   let first = true;
-  if (!t.live) $("speedRow").style.display = ""; else $("speedRow").style.display = "none";
   const es = new EventSource("/stream");
   es.onmessage = e => {
     const f = JSON.parse(e.data); const moved = !frame || f.t !== frame.t;
