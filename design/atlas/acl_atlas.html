@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACL Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* The Living Atlas: ACL drawn as a naturalist's atlas of a world nobody wrote (the council's choice, 22 Nov 2026:
+   GPT, Gemini and DeepSeek; design/council_design_fit_2026-11-22.md). Everything on the map is read from the running
+   world through the viewer's own /terrain, /stream, /history and /person: the land's real height and biome, people,
+   bands, animals, fires, heaps, stores, crops, births, deaths, what was passed on in words, the chronicle. Nothing is
+   drawn that the world does not contain: no houses, no tools, no faces. Paper by day; the dark observatory as night. */
+:root{
+  --paper:#f1ebdd; --paper-2:#e7ddc8; --ink:#2c261f; --ink-2:#5f5446; --ink-3:#8c7f6c;
+  --rule:#cbbd9f; --accent:#9b3b22; --panel:rgba(241,235,221,.92); --shadow:rgba(60,45,25,.18);
+  --serif:"EB Garamond",Garamond,"Iowan Old Style",Georgia,serif; --mono:"IBM Plex Mono",Consolas,"Courier New",monospace;
+  color-scheme:light;
+}
+:root[data-mode="night"]{
+  --paper:#0c131d; --paper-2:#121c29; --ink:#e4dccb; --ink-2:#aaa18f; --ink-3:#6f6a60; --rule:#283445;
+  --accent:#f0a35a; --panel:rgba(12,19,29,.92); --shadow:rgba(0,0,0,.4); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.5 var(--serif);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .18 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+:root[data-mode="night"] body{background-image:none}
+.page{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto minmax(0,1fr) 150px;gap:14px 22px;
+  height:100%;padding-block:16px;padding-inline:22px;max-width:1700px;margin:0 auto}
+header{grid-column:1/3;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding-bottom:10px}
+h1{font-weight:500;font-size:28px;letter-spacing:.14em;margin:0}
+.sub{font-style:italic;color:var(--ink-2);font-size:17px}
+.when{margin-left:auto;font-family:var(--mono);font-size:12.5px;color:var(--ink-2);letter-spacing:.02em;text-align:right}
+.when b{color:var(--ink);font-weight:500}
+.plate{position:relative;min-height:0;border:1px solid var(--ink-3);padding:6px;background:var(--paper)}
+.plate::before{content:"";position:absolute;inset:3px;border:1px solid var(--rule);pointer-events:none}
+canvas#map{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+canvas#map.drag{cursor:grabbing}
+.cartouche{position:absolute;left:18px;top:16px;background:var(--panel);border:1px solid var(--rule);padding:8px 12px 9px;pointer-events:none;
+  box-shadow:0 1px 6px var(--shadow)}
+.cartouche .k{font-variant:small-caps;letter-spacing:.12em;font-size:13px;color:var(--ink-2)}
+.cartouche .v{font-size:18px}
+.legend{position:absolute;left:18px;bottom:16px;background:var(--panel);border:1px solid var(--rule);padding:8px 12px;font-size:13.5px;
+  display:grid;grid-template-columns:auto auto;gap:3px 16px;box-shadow:0 1px 6px var(--shadow)}
+.legend .h{grid-column:1/3;font-variant:small-caps;letter-spacing:.12em;font-size:12.5px;color:var(--ink-2)}
+.legend span{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.legend svg{flex:none}
+.tools{position:absolute;left:18px;top:104px;display:flex;flex-direction:column;gap:5px;align-items:flex-start;max-width:210px}
+.tools .row{display:flex;gap:3px;flex-wrap:wrap}
+.tools button{font:12px var(--mono);color:var(--ink-2);background:var(--panel);border:1px solid var(--rule);padding:3px 8px;cursor:pointer}
+.tools button:hover{color:var(--ink);border-color:var(--ink-3)}
+.tools button.on{color:var(--ink);border-color:var(--ink-2);background:var(--paper-2)}
+.scale{position:absolute;right:18px;bottom:16px;font:11px var(--mono);color:var(--ink-2);text-align:center;pointer-events:none}
+.scale .bar{height:5px;border:1px solid var(--ink-2);border-top:0;margin-top:2px;background:linear-gradient(90deg,var(--ink-2) 50%,transparent 50%)}
+.north{position:absolute;right:22px;bottom:52px;font:600 13px var(--serif);color:var(--ink-2);text-align:center;pointer-events:none}
+aside{grid-row:2/4;grid-column:2;display:flex;flex-direction:column;gap:14px;min-height:0}
+.card{border-top:2px solid var(--ink);padding-top:8px}
+.card h2{font-variant:small-caps;letter-spacing:.14em;font-size:14px;font-weight:600;margin:0 0 6px;color:var(--ink-2)}
+#person{display:none}
+#person .name{font-size:24px;line-height:1.15}
+#person .meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin:3px 0 8px}
+#person .thought{font-style:italic;font-size:17px;margin:4px 0 8px;color:var(--ink)}
+#person dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0;font-size:15px}
+#person dt{font-variant:small-caps;letter-spacing:.08em;color:var(--ink-2)}
+#person dd{margin:0}
+#person .x{float:right;font:12px var(--mono);color:var(--ink-3);cursor:pointer;border:0;background:none}
+.notes{flex:1;min-height:0;overflow-y:auto;padding-right:4px}
+.notes p{margin:0 0 9px;font-size:15.5px;line-height:1.42}
+.notes p .y{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);display:block;letter-spacing:.03em}
+.notes p.first::before{content:"✦ ";color:var(--accent);font-size:12px}
+.foot{font-size:13px;font-style:italic;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:6px}
+.time{grid-column:1;min-height:0;border-top:1px solid var(--rule);padding-top:6px;display:flex;flex-direction:column}
+.time .h{display:flex;gap:14px;align-items:baseline;font-variant:small-caps;letter-spacing:.12em;font-size:13px;color:var(--ink-2)}
+.time .h i{font-style:normal;font-variant:normal;letter-spacing:0;font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+svg#chart{flex:1;width:100%;min-height:0;display:block}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--rule);padding:5px 9px;font-size:14px;display:none;
+  box-shadow:0 1px 6px var(--shadow);max-width:300px;z-index:5}
+.tip .m{font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
+@media (max-width:1000px){
+  .tools{left:auto;right:16px;top:14px;align-items:flex-end}.tools .row{justify-content:flex-end}
+  html,body{height:auto}
+  .page{grid-template-columns:1fr;grid-template-rows:auto 78vh auto auto;height:auto}
+  header{grid-column:1}.when{margin-left:0;text-align:left}
+  aside{grid-row:auto;grid-column:1}.notes{max-height:50vh}.time{height:160px}
+  .legend{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>A C L</h1>
+    <div class="sub">An atlas of a world nobody wrote</div>
+    <div class="when" id="when">waiting for the world…</div>
+  </header>
+  <div class="plate">
+    <canvas id="map" aria-label="Map of the ACL world"></canvas>
+    <div class="cartouche"><div class="k">plate</div><div class="v" id="plateTitle">The islands</div><div class="k" id="plateSub"></div></div>
+    <div class="tools">
+      <div class="row"><button data-mode="day" class="on">paper</button><button data-mode="night">night</button></div>
+      <div class="row"><button data-layer="trails" class="on" title="Where people walked in the last half year">paths</button><button data-layer="words" class="on" title="A dotted arc when something is passed on in words">words</button><button data-layer="animals" class="on">animals</button><button data-layer="dead" title="Keep a faint mark wherever someone died since this page opened">the dead</button></div>
+      <div class="row" id="speedRow"><button data-wps="0">pause</button><button data-wps="0.5">½</button><button data-wps="1">1</button><button data-wps="4">4 weeks/s</button><button id="fit">whole map</button></div>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="north">N<br>↑</div>
+    <div class="scale" id="scale">5 tiles<div class="bar"></div></div>
+  </div>
+  <aside>
+    <div class="card" id="person"></div>
+    <div class="card notes" id="notesCard"><h2>Field notes</h2><div id="notes"></div></div>
+    <div class="foot">Everything here is read from the running world. Nothing is drawn that the world does not contain.</div>
+  </aside>
+  <div class="time">
+    <div class="h">the years <i id="timeKey">population · births above, deaths below · ✦ firsts</i></div>
+    <svg id="chart" preserveAspectRatio="none"></svg>
+  </div>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const WORDS = {rest:"resting", forage:"gathering plants", hunt:"hunting", fish:"fishing", gather:"picking something up", put:"setting something down",
+  take:"fetching stored food", make:"making something", play:"playing", explore:"exploring", give:"giving food", care:"caring for someone",
+  talk:"talking", court:"courting", steal:"stealing", attack:"attacking", flee:"fleeing", join:"going to someone", heat:"tending a fire", fill:"fetching water"};
+const STAGE = ["baby", "child", "teen", "adult", "elder"];
+const P = {id:0, name:1, x:2, y:3, fx:4, fy:5, sex:6, stage:7, doing:8, aim:9, line:10, carer:11, things:12, mood:13,
+  sick:14, starving:15, grief:16, pregnant:17, health:18, partner:19, age:20, thought:21, state:22};
+
+// ================= the inks =================
+const INKS = {
+  day: {
+    deep:[104,138,160], sea:[138,172,188], lake:[150,186,200], river:[150,186,200], beach:[228,212,170], plains:[208,206,156],
+    forest:[163,182,136], woods:[183,194,146], hills:[205,186,145], mountain:[184,172,155], snow:[247,245,238], desert:[230,206,152],
+    tundra:[200,200,178], contour:[120,92,60], coast:[58,52,44], waterline:[70,104,128], river_ink:[70,118,160], tree:[70,98,64],
+    peak:[96,82,70], grid:[90,78,60], paper:[241,235,221], ink:[44,38,31], fire:[214,74,32], glow:"255,140,60",
+    bands:["#2f6f99", "#7d4a92", "#3d7d55", "#946b1f", "#a23c5c", "#287b7b", "#5a5ea0", "#6f7d2f"], person_edge:"#2c261f",
+    animal:"#7a6250", fish:"#3d6f8f", heap:"#6f5636", crop:"#8a8a2a", ash:"90,84,76", ring:"#2c261f", word:"#5f5446", winter:[236,238,240]},
+  night: {
+    deep:[10,30,50], sea:[16,44,68], lake:[22,58,86], river:[22,58,86], beach:[96,86,64], plains:[58,74,52], forest:[34,58,42],
+    woods:[46,70,50], hills:[78,76,60], mountain:[84,80,76], snow:[170,178,186], desert:[100,88,62], tundra:[74,80,74],
+    contour:[150,140,110], coast:[180,170,150], waterline:[60,100,130], river_ink:[90,150,200], tree:[110,150,110], peak:[170,160,145],
+    grid:[120,130,140], paper:[12,19,29], ink:[228,220,203], fire:[255,150,70], glow:"255,150,70",
+    bands:["#6fb5e0", "#c49be0", "#7fd49a", "#e0b85a", "#f08aa8", "#6fd4d0", "#a3a8f0", "#c4d070"], person_edge:"#0c131d",
+    animal:"#c4a890", fish:"#7fb0d0", heap:"#c4a070", crop:"#c8c870", ash:"170,165,155", ring:"#e4dccb", word:"#aaa18f", winter:[150,160,175]}};
+let mode = "day", K = INKS.day;
+const hash = (a, b, c = 0) => ((Math.imul(a * 73856093 ^ b * 19349663 ^ c * 83492791, 2654435761) >>> 0) % 100000) / 100000;
+const wrapD = (d, n) => { d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;"}[c]));
+const rgbs = (c, a = 1) => `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${a})`;
+
+// ================= state =================
+let terrain = null, W = 40, H = 40, RX = 0, RY = 0, frame = null, frameAt = 0, interval = 1000, season = "";
+let history = [], selected = null, personInfo = null;
+const layers = {trails: true, words: true, animals: true, dead: false};
+const notes = [], trails = new Map(), marks = [], arcs = [];   // marks: births and deaths; arcs: words passed on
+const PX = 28;                                                  // base map pixels per tile
+const base = document.createElement("canvas");
+const cam = {x: 0, y: 0, z: 1, fit: 1, touched: false};
+
+// ================= the land: real height and biome, drawn as an atlas plate =================
+function chooseSeam(){   // the world wraps; put the seam where the sea is widest
+  const t = (x, y) => terrain.tiles[(((y % H) + H) % H) * W + (((x % W) + W) % W)];
+  let best = -1; for (let x = 0; x < W; x++){ let n = 0; for (let y = 0; y < H; y++) n += t(x, y)[5]; if (n > best){ best = n; RX = x; } }
+  best = -1; for (let y = 0; y < H; y++){ let n = 0; for (let x = 0; x < W; x++) n += t(x, y)[5]; if (n > best){ best = n; RY = y; } }
+}
+const tileD = (dx, dy) => terrain.tiles[(((dy + RY) % H + H) % H) * W + (((dx + RX) % W + W) % W)];   // by display position
+const disp = (x, y) => [((x - RX) % W + W) % W, ((y - RY) % H + H) % H];
+function renderBase(){
+  const N = W * PX, M = H * PX; base.width = N; base.height = M;
+  const g = base.getContext("2d"), img = g.createImageData(N, M), d = img.data;
+  const winter = season === "winter";
+  // per-pixel fields: land (smoothed between tile centres), height, colour
+  const land = new Float32Array(N * M), hh = new Float32Array(N * M), col = new Float32Array(N * M * 3);
+  for (let py = 0; py < M; py++){
+    const fy = py / PX - .5, y0 = Math.floor(fy), uy = fy - y0;
+    for (let px = 0; px < N; px++){
+      const fx = px / PX - .5, x0 = Math.floor(fx), ux = fx - x0;
+      const ts = [tileD(x0, y0), tileD(x0 + 1, y0), tileD(x0, y0 + 1), tileD(x0 + 1, y0 + 1)];
+      const ws = [(1 - ux) * (1 - uy), ux * (1 - uy), (1 - ux) * uy, ux * uy];
+      let l = 0, h = 0, r = 0, gg = 0, b = 0, wl = 0;
+      for (let k = 0; k < 4; k++){ const t = ts[k], w = ws[k]; l += (t[5] ? 0 : 1) * w; h += t[7] * w;
+        if (!t[5]){ const c = K[t[6] === "river" ? "plains" : t[6]] || K.plains; r += c[0] * w; gg += c[1] * w; b += c[2] * w; wl += w; } }
+      const i = py * N + px; land[i] = l; hh[i] = h;
+      if (wl > 0){ col[i * 3] = r / wl; col[i * 3 + 1] = gg / wl; col[i * 3 + 2] = b / wl; }
+    }
+  }
+  // soften the coast: blur the land field (two box passes each way), so the shore follows the land, not the tiles
+  const blur = (src, r) => { const tmp = new Float32Array(N * M), out = new Float32Array(N * M);
+    for (let y = 0; y < M; y++){ let acc = 0; for (let x = -r; x <= r; x++) acc += src[y * N + Math.min(N - 1, Math.max(0, x))];
+      for (let x = 0; x < N; x++){ tmp[y * N + x] = acc / (2 * r + 1); acc += src[y * N + Math.min(N - 1, x + r + 1)] - src[y * N + Math.max(0, x - r)]; } }
+    for (let x = 0; x < N; x++){ let acc = 0; for (let y = -r; y <= r; y++) acc += tmp[Math.min(M - 1, Math.max(0, y)) * N + x];
+      for (let y = 0; y < M; y++){ out[y * N + x] = acc / (2 * r + 1); acc += tmp[Math.min(M - 1, y + r + 1) * N + x] - tmp[Math.max(0, y - r) * N + x]; } }
+    return out; };
+  const soft = blur(blur(land, Math.round(PX * .3)), Math.round(PX * .3)); land.set(soft);
+  const at = (px, py) => hh[Math.min(M - 1, Math.max(0, py)) * N + Math.min(N - 1, Math.max(0, px))];
+  const DC = .05;   // one contour every 0.05 of height; every fourth one is drawn heavier
+  for (let py = 0; py < M; py++) for (let px = 0; px < N; px++){
+    const i = py * N + px, o = i * 4, l = land[i], h = hh[i];
+    let c;
+    if (l < .5){   // the sea: deeper is darker; three lines follow the coast, as on old charts
+      const t = Math.max(0, Math.min(1, (h + .22) * 8 + l)), deep = K.deep, sh = K.sea;
+      c = [deep[0] + (sh[0] - deep[0]) * t, deep[1] + (sh[1] - deep[1]) * t, deep[2] + (sh[2] - deep[2]) * t];
+      for (const lv of [.4, .29, .18]){ const dl = Math.abs(l - lv); if (dl < .018){ const a = (1 - dl / .018) * (lv === .4 ? .55 : lv === .29 ? .38 : .24);
+        c = c.map((v, k) => v + (K.waterline[k] - v) * a); } }
+    } else {
+      c = [col[i * 3], col[i * 3 + 1], col[i * 3 + 2]];
+      if (winter) c = c.map((v, k) => v + (K.winter[k] - v) * .55);
+      const sx = at(px + 2, py) - at(px - 2, py), sy = at(px, py + 2) - at(px, py - 2);
+      const shade = Math.max(.78, Math.min(1.16, 1 - (sx + sy) * 9));   // light from the north-west
+      c = c.map(v => v * shade);
+      // contours: where the height crosses a step between this pixel and the next
+      const a = Math.floor(h / DC), bR = Math.floor(at(px + 1, py) / DC), bD = Math.floor(at(px, py + 1) / DC);
+      if (h > -.06 && (a !== bR || a !== bD)){ const idx = Math.max(a, bR, bD), heavy = idx % 4 === 0;
+        const al = heavy ? .62 : .32; c = c.map((v, k) => v + (K.contour[k] - v) * al); }
+    }
+    // the coastline, in ink
+    const lR = land[Math.min(N - 1, px + 1) + py * N], lD = land[px + Math.min(M - 1, py + 1) * N];
+    if ((l >= .5) !== (lR >= .5) || (l >= .5) !== (lD >= .5)) c = c.map((v, k) => v + (K.coast[k] - v) * .85);
+    const grain = 1 + (hash(px, py, 3) - .5) * .045;   // the paper's grain
+    d[o] = Math.min(255, c[0] * grain); d[o + 1] = Math.min(255, c[1] * grain); d[o + 2] = Math.min(255, c[2] * grain); d[o + 3] = 255;
+  }
+  g.putImageData(img, 0, 0);
+  // rivers: each river tile flows to its lowest neighbour (river or water, diagonals too), as water runs downhill
+  g.strokeStyle = rgbs(K.river_ink, .75); g.lineCap = "round"; g.lineJoin = "round"; g.lineWidth = PX * .085;
+  for (let dy = 0; dy < H; dy++) for (let dx = 0; dx < W; dx++){
+    const t = tileD(dx, dy); if (t[6] !== "river") continue;
+    let best = null, bh = t[7];
+    for (let ey = -1; ey <= 1; ey++) for (let ex = -1; ex <= 1; ex++){ if (!ex && !ey) continue;
+      const nx = dx + ex, ny = dy + ey; if (nx < 0 || ny < 0 || nx >= W || ny >= H) continue;
+      const n = tileD(nx, ny); if (n[6] !== "river" && !n[5]) continue;
+      const nh = n[5] ? n[7] - 1 : n[7]; if (nh < bh){ bh = nh; best = [nx, ny]; } }
+    if (!best) continue;
+    const x0 = (dx + .5) * PX, y0 = (dy + .5) * PX, x1 = (best[0] + .5) * PX, y1 = (best[1] + .5) * PX;
+    const bend = (hash(dx, dy, 41) - .5) * PX * .35;   // a little wander, fixed per tile
+    g.beginPath(); g.moveTo(x0, y0); g.quadraticCurveTo((x0 + x1) / 2 + bend, (y0 + y1) / 2 - bend, x1, y1); g.stroke();
+  }
+  // trees on forest and woods, peaks on mountains: the old map symbols, placed by a fixed hash
+  for (let dy = 0; dy < H; dy++) for (let dx = 0; dx < W; dx++){
+    const t = tileD(dx, dy), k = t[6]; if (t[5]) continue;
+    const n = k === "forest" ? 5 : k === "woods" ? 3 : 0;
+    for (let j = 0; j < n; j++){
+      const x = (dx + .15 + hash(dx, dy, j) * .7) * PX, y = (dy + .2 + hash(dy, dx, j + 7) * .7) * PX, r = PX * (.085 + hash(dx, j, dy) * .04);
+      g.fillStyle = rgbs(K.tree, winter ? .45 : .72); g.beginPath(); g.arc(x, y - r * .6, r, 0, 7); g.fill();
+      g.strokeStyle = rgbs(K.tree, .8); g.lineWidth = 1; g.beginPath(); g.moveTo(x, y + r * .1); g.lineTo(x, y + r * .9); g.stroke();
+    }
+    if (k === "mountain" || k === "snow"){
+      const x = (dx + .5) * PX, y = (dy + .62) * PX, s = PX * .3;
+      g.strokeStyle = rgbs(K.peak, .75); g.lineWidth = 1.3; g.beginPath(); g.moveTo(x - s, y); g.lineTo(x, y - s * 1.1); g.lineTo(x + s, y); g.stroke();
+      g.strokeStyle = rgbs(K.peak, .35); g.beginPath(); g.moveTo(x, y - s * 1.1); g.lineTo(x + s * .35, y); g.stroke();
+    }
+  }
+  // the graticule: a faint line every five tiles
+  g.strokeStyle = rgbs(K.grid, .13); g.lineWidth = 1;
+  for (let k = 5; k < W; k += 5){ g.beginPath(); g.moveTo(k * PX, 0); g.lineTo(k * PX, M); g.stroke(); }
+  for (let k = 5; k < H; k += 5){ g.beginPath(); g.moveTo(0, k * PX); g.lineTo(N, k * PX); g.stroke(); }
+}
+
+// ================= the view =================
+const map = $("map"), g = map.getContext("2d");
+let CW = 0, CH = 0, DPR = 1;
+function fitView(){
+  const r = map.getBoundingClientRect(); DPR = Math.min(2, devicePixelRatio || 1);
+  if (r.width < 10 || r.height < 10) return;   // not laid out yet
+  CW = r.width; CH = r.height; map.width = Math.round(CW * DPR); map.height = Math.round(CH * DPR);
+  const pad = CW > CH * 1.25 ? Math.min(230, CW - CH) : 0;   // on a wide plate, keep the map clear of the key and title
+  cam.fit = Math.min((CW - pad) / (W * PX), CH / (H * PX)) * .98;
+  if (!cam.touched){ cam.z = cam.fit; cam.x = W * PX / 2 - pad / 2 / cam.z; cam.y = H * PX / 2; }
+}
+addEventListener("resize", fitView);
+const toScreen = (bx, by) => [(bx - cam.x) * cam.z + CW / 2, (by - cam.y) * cam.z + CH / 2];   // base px -> css px
+const tilePx = (x, y) => { const [dx, dy] = disp(x, y); return [(dx + (x - Math.floor(x)) + .5) * PX, (dy + (y - Math.floor(y)) + .5) * PX]; };
+function personPos(r, t){
+  const dx = wrapD(r[P.x] - r[P.fx], W), dy = wrapD(r[P.y] - r[P.fy], H), e = t < 1 ? t * t * (3 - 2 * t) : 1;
+  return [r[P.fx] + dx * e, r[P.fy] + dy * e];
+}
+function bandIndex(){ const m = new Map(); (frame.bands || []).forEach((b, i) => (b[2] || []).forEach(pid => m.set(pid, i))); return m; }
+let picks = [];
+function draw(now){
+  requestAnimationFrame(draw);
+  if (!terrain || !base.width) return;
+  if (!(cam.z > 0) || !CW){ cam.touched = false; fitView(); if (!(cam.z > 0)) return; }
+  g.setTransform(DPR, 0, 0, DPR, 0, 0);
+  g.fillStyle = rgbs(K.paper); g.fillRect(0, 0, CW, CH);
+  const [ox, oy] = toScreen(0, 0);
+  g.imageSmoothingEnabled = cam.z < 1.5; g.drawImage(base, ox, oy, base.width * cam.z, base.height * cam.z);
+  if (!frame) return;
+  const z = cam.z, u = Math.max(.7, Math.min(2.4, z * PX / 22));   // marks grow a little when close, never much
+  // what lies on each tile: crops, heaps, stores, fires
+  const T = frame.tiles || [];
+  for (let i = 0; i < T.length; i++){
+    const tr = T[i]; if (!tr || !(tr[1] || tr[3] || tr[4] || tr[5])) continue;
+    const [bx, by] = tilePx(i % W, (i / W) | 0), [sx, sy] = toScreen(bx, by);
+    if (sx < -40 || sy < -40 || sx > CW + 40 || sy > CH + 40) continue;
+    if (tr[1]){ g.fillStyle = K.crop; for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) g.fillRect(sx - 9 * u + a * 2.6 * u, sy + 4 * u + b * 2.2 * u, 1.3 * u, 1.3 * u); }
+    if (tr[3]){ const s = (2.4 + tr[3]) * u; g.strokeStyle = K.heap; g.lineWidth = 1.1; g.beginPath(); g.moveTo(sx + 5 * u - s, sy + 6 * u); g.lineTo(sx + 5 * u, sy + 6 * u - s * 1.1); g.lineTo(sx + 5 * u + s, sy + 6 * u); g.closePath(); g.stroke(); }
+    if (tr[5]){ g.strokeStyle = K.heap; g.lineWidth = 1.1; g.strokeRect(sx - 9 * u, sy - 9 * u, 4.5 * u, 4.5 * u); }
+    if (tr[4]){
+      const f = .85 + .15 * Math.sin(now / 160 + i) * Math.sin(now / 71 + i * 2), R = 26 * u * f;
+      const gr = g.createRadialGradient(sx, sy, 0, sx, sy, R); gr.addColorStop(0, `rgba(${K.glow},${mode === "day" ? .38 : .55})`); gr.addColorStop(1, `rgba(${K.glow},0)`);
+      g.fillStyle = gr; g.fillRect(sx - R, sy - R, 2 * R, 2 * R);
+      g.fillStyle = rgbs(K.fire); g.beginPath(); g.arc(sx, sy, 2.4 * u, 0, 7); g.fill();
+    }
+  }
+  // animals: small marks by kind
+  if (layers.animals) for (const [sp, x, y, n] of frame.animals || []){
+    const [bx, by] = tilePx(x, y), [sx, sy] = toScreen(bx, by);
+    for (let j = 0; j < Math.min(3, Math.ceil(n / 4)); j++){
+      const ax = sx + (hash(x, y, j) - .5) * PX * .55 * z, ay = sy + (hash(y, x, j + 5) - .5) * PX * .55 * z;
+      if (sp === "fish"){ g.strokeStyle = K.fish; g.lineWidth = 1; g.beginPath(); g.moveTo(ax - 2.5 * u, ay); g.lineTo(ax + 2.5 * u, ay); g.stroke(); continue; }
+      g.fillStyle = K.animal; const s = ({rabbit: .9, deer: 1.4, bison: 1.8, bear: 1.8})[sp] || 1.2;
+      g.beginPath(); g.ellipse(ax, ay, 1.6 * s * u, 1 * s * u, 0, 0, 7); g.fill();
+    }
+  }
+  const bands = bandIndex(), t = Math.min(1, (now - frameAt) / Math.max(250, interval * .85));
+  // paths: where each person walked in the last half year, in their band's ink
+  if (layers.trails){
+    g.lineWidth = 1; g.lineJoin = "round";
+    for (const [pid, pts] of trails){
+      if (pts.length < 2) continue; const bi = bands.get(pid); g.strokeStyle = bi !== undefined ? K.bands[bi % K.bands.length] : K.word;
+      g.globalAlpha = .22; g.beginPath(); let prev = null;
+      for (const [x, y] of pts){ const [bx, by] = tilePx(x, y), [sx, sy] = toScreen(bx, by);
+        if (prev && (Math.abs(sx - prev[0]) > W * PX * z / 2 || Math.abs(sy - prev[1]) > H * PX * z / 2)) g.moveTo(sx, sy); else if (prev) g.lineTo(sx, sy); else g.moveTo(sx, sy);
+        prev = [sx, sy]; }
+      g.stroke(); g.globalAlpha = 1;
+    }
+  }
+  // births (an ink ring that opens) and deaths (an ash mark that fades)
+  const nowWeek = frame.t + t;
+  for (let k = marks.length - 1; k >= 0; k--){
+    const m = marks[k], age = now - m.at; if (age < 0) continue;
+    const [bx, by] = tilePx(m.x, m.y), [sx, sy] = toScreen(bx, by), weeks = nowWeek - m.week;
+    if (m.kind === "birth"){
+      const r = 3 * u + Math.min(1, age / 1600) * 9 * u, a = Math.max(0, 1 - weeks / 26) * (age < 1600 ? 1 : .55);
+      if (a <= 0){ marks.splice(k, 1); continue; }
+      g.strokeStyle = K.ring; g.globalAlpha = a * .8; g.lineWidth = 1.1; g.beginPath(); g.arc(sx, sy, r, 0, 7); g.stroke(); g.globalAlpha = 1;
+    } else {
+      const a = layers.dead ? Math.max(.18, 1 - weeks / 52) : Math.max(0, 1 - weeks / 52);
+      if (a <= 0){ if (!layers.dead) marks.splice(k, 1); continue; }
+      g.fillStyle = `rgba(${K.ash},${.55 * a})`; g.beginPath(); g.arc(sx, sy, 2.2 * u, 0, 7); g.fill();
+      g.strokeStyle = `rgba(${K.ash},${.5 * a})`; g.lineWidth = 1; g.beginPath(); g.arc(sx, sy, 4 * u, 0, 7); g.stroke();
+    }
+  }
+  // people: small faceless marks in their band's ink; children smaller
+  picks = []; const seen = new Map(), pos = new Map();
+  for (const r of frame.people || []){
+    let [x, y] = personPos(r, t); const key = Math.round(x) + "," + Math.round(y), n = seen.get(key) || 0; seen.set(key, n + 1);
+    if (n){ x += Math.cos(n * 2.4) * .22; y += Math.sin(n * 2.4) * .22; }
+    const [bx, by] = tilePx(x, y), [sx, sy] = toScreen(bx, by); pos.set(r[P.id], [sx, sy]);
+    if (sx < -10 || sy < -10 || sx > CW + 10 || sy > CH + 10) continue;
+    const bi = bands.has(r[P.id]) ? bands.get(r[P.id]) : bands.get(r[P.carer]);
+    const rad = (r[P.stage] >= 2 ? 3.1 : r[P.stage] === 1 ? 2.3 : 1.7) * u;
+    g.fillStyle = bi !== undefined ? K.bands[bi % K.bands.length] : K.word; g.strokeStyle = K.person_edge; g.lineWidth = .9;
+    g.beginPath(); g.arc(sx, sy, rad, 0, 7); g.fill(); g.stroke();
+    if (r[P.id] === selected){ g.strokeStyle = K.ink; g.lineWidth = 1.2; g.beginPath(); g.arc(sx, sy, rad + 4.5, 0, 7); g.stroke();
+      label(r[P.name], sx, sy - rad - 9, 15, false); }
+    picks.push([sx, sy, r]);
+  }
+  // words passed on: a dotted arc from the one who said it to the one who heard
+  if (layers.words) for (let k = arcs.length - 1; k >= 0; k--){
+    const w = arcs[k], age = now - w.at; if (age < 0) continue; if (age > 2600){ arcs.splice(k, 1); continue; }
+    const A = pos.get(w.a), B = pos.get(w.b); if (!A || !B) continue;
+    const mx = (A[0] + B[0]) / 2, my = (A[1] + B[1]) / 2 - Math.hypot(B[0] - A[0], B[1] - A[1]) * .35 - 6;
+    g.strokeStyle = K.word; g.globalAlpha = Math.min(1, age / 300) * Math.max(0, 1 - age / 2600) * .9; g.setLineDash([2, 3]); g.lineWidth = 1.1;
+    g.beginPath(); g.moveTo(A[0], A[1]); g.quadraticCurveTo(mx, my, B[0], B[1]); g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
+  }
+  // band names, set like place names on a map
+  (frame.bands || []).forEach(([id, name, members], i) => {
+    const pts = members.map(m => pos.get(m)).filter(Boolean); if (pts.length < 2) return;
+    let cx = 0, cy = 0; pts.forEach(([x, y]) => { cx += x; cy += y; }); cx /= pts.length; cy /= pts.length;
+    const spread = Math.max(...pts.map(([x, y]) => Math.hypot(x - cx, y - cy)));
+    if (spread > 160) return;   // a scattered band has no single place to name
+    label(name.replace(/^the band of /i, "") + "'s band", cx, cy - spread - 14, 14.5, true, K.bands[i % K.bands.length]);
+  });
+  $("scale").firstChild.textContent = "5 tiles"; $("scale").querySelector(".bar").style.width = (5 * PX * z) + "px";
+}
+const SERIF = '"EB Garamond",Garamond,Georgia,serif';
+function label(text, x, y, size, italic, color){
+  g.font = `${italic ? "italic " : ""}500 ${size}px ${SERIF}`;
+  g.textAlign = "center"; g.lineJoin = "round"; g.lineWidth = 3.2; g.strokeStyle = rgbs(K.paper, .9); g.strokeText(text, x, y);
+  g.fillStyle = color || K.ink; g.fillText(text, x, y);
+}
+requestAnimationFrame(draw);
+
+// ================= the margin: field notes, a person, the years =================
+function addNote(n){
+  if (!n) return; const e = typeof n === "string" ? {text: n} : n;
+  if (notes.some(x => x.t === e.t && x.text === e.text)) return;
+  notes.unshift(e); notes.length = Math.min(notes.length, 60);
+}
+function renderNotes(){
+  $("notes").innerHTML = notes.map(n => `<p class="${n.kind === "first" ? "first" : ""}"><span class="y">${n.year !== undefined ? "year " + n.year : ""}${n.kind ? " · " + esc(n.kind) : ""}</span>${esc(n.text)}</p>`).join("");
+}
+function header(){
+  const w = frame; if (!w) return;
+  const sk = w.sky || {}, weather = sk.storm ? "a storm" : sk.flood ? "flooding" : sk.rain > 0 ? "rain" : "dry";
+  $("when").innerHTML = `<b>year ${w.year}</b>, week ${w.week + 1}, ${esc(w.season)} · ${weather}<br>${w.pop} people · ${w.gen} generations · ${(w.bands || []).length} bands · born this year ${w.born_year}, died ${w.died_year}`;
+  $("plateSub").textContent = `year ${w.year} · ${w.season}`;
+  document.querySelectorAll("[data-wps]").forEach(b => b.classList.toggle("on", Number(b.dataset.wps) === w.wps));
+}
+async function loadPerson(){
+  if (!selected){ $("person").style.display = "none"; return; }
+  try { personInfo = await (await fetch("/person?id=" + encodeURIComponent(selected))).json(); } catch (e) { return; }
+  const p = personInfo, row = frame && (frame.people || []).find(r => r[P.id] === selected);
+  if (!p || !p.name){ $("person").style.display = "none"; return; }
+  const what = (p.doing || "").split(" ")[0], fam = [];
+  if (p.mother || p.father) fam.push(["parents", [p.mother, p.father].filter(Boolean).join(" and ")]);
+  if (p.partner) fam.push(["partner", p.partner]);
+  if (p.children && p.children.length) fam.push(["children", p.children.join(", ")]);
+  if (p.makes && p.makes.length) fam.push(["can make", p.makes.slice(0, 3).map(m => m.what).join("; ")]);
+  if (p.things && p.things.length) fam.push(["carries", p.things.slice(0, 3).join("; ")]);
+  if (p.beliefs && p.beliefs.length) fam.push(["believes", p.beliefs[0]]);
+  if (p.memories && p.memories.length) fam.push(["remembers", p.memories[0]]);
+  $("person").innerHTML = `<button class="x" id="closeP">close</button><h2>a person</h2><div class="name">${esc(p.name)}</div>
+    <div class="meta">${esc(p.stage)}, ${p.age} years · generation ${p.generation} · ${p.band ? esc(p.band) : "no band"} · health ${p.health}</div>
+    <div>${esc(WORDS[what] || p.doing || (p.alive ? "" : "died: " + (p.death || "")))}</div>
+    ${row && row[P.thought] ? `<div class="thought">“${esc(row[P.thought])}”</div>` : ""}
+    <dl>${fam.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(typeof v === "string" ? v : JSON.stringify(v))}</dd>`).join("")}</dl>`;
+  $("person").style.display = "block";
+  $("closeP").onclick = () => { selected = null; loadPerson(); };
+}
+setInterval(() => { if (selected) loadPerson(); }, 5000);
+async function loadHistory(){ try { history = await (await fetch("/history")).json(); drawChart(); } catch (e) {} }
+setInterval(loadHistory, 8000);
+function drawChart(){
+  const svg = $("chart"), r = svg.getBoundingClientRect(), w = Math.max(100, r.width), h = Math.max(60, r.height);
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  const ink = getComputedStyle(document.documentElement).getPropertyValue("--ink").trim(), ink3 = getComputedStyle(document.documentElement).getPropertyValue("--ink-3").trim();
+  const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
+  const now = frame ? frame.year : (history.length ? history[history.length - 1].year + 1 : 1);
+  const years = Math.max(5, now + 1), X = y => 30 + (y + .5) / years * (w - 40);
+  const maxPop = Math.max(10, ...history.map(r => r.population), frame ? frame.pop : 0), maxBD = Math.max(3, ...history.map(r => Math.max(r.births, r.deaths)));
+  const mid = h * .62, top = 16, Y = p => mid - (p / maxPop) * (mid - top);
+  let s = `<line x1="30" x2="${w - 10}" y1="${mid}" y2="${mid}" stroke="${ink3}" stroke-width="1"/>`;
+  for (const r of history){ const x = X(r.year), bw = Math.max(1, (w - 40) / years * .5);
+    s += `<rect x="${x - bw / 2}" y="${mid - 1 - r.births / maxBD * 14}" width="${bw}" height="${r.births / maxBD * 14}" fill="${ink3}" opacity=".55"/>`;
+    s += `<rect x="${x - bw / 2}" y="${mid + 1}" width="${bw}" height="${r.deaths / maxBD * (h - mid - 16)}" fill="${ink3}" opacity=".35"/>`; }
+  const pts = history.map(r => `${X(r.year).toFixed(1)},${Y(r.population).toFixed(1)}`); if (frame) pts.push(`${X(frame.year).toFixed(1)},${Y(frame.pop).toFixed(1)}`);
+  if (pts.length > 1) s += `<polyline points="${pts.join(" ")}" fill="none" stroke="${ink}" stroke-width="1.4"/>`;
+  for (const n of notes) if (n.kind === "first" && n.year !== undefined) s += `<text x="${X(n.year)}" y="11" font-size="10" text-anchor="middle" fill="${accent}"><title>${esc("year " + n.year + ": " + n.text)}</title>✦</text>`;
+  if (frame){ const x = X(frame.year); s += `<line x1="${x}" x2="${x}" y1="12" y2="${h - 4}" stroke="${accent}" stroke-width="1" stroke-dasharray="2 3"/>`; }
+  const step = years > 60 ? 20 : years > 20 ? 10 : 5;
+  for (let y = 0; y < years; y += step) s += `<text x="${X(y)}" y="${h - 2}" font-size="10" font-family="IBM Plex Mono,Consolas,monospace" text-anchor="middle" fill="${ink3}">${y}</text>`;
+  s += `<text x="0" y="${Y(maxPop) + 4}" font-size="10" font-family="IBM Plex Mono,Consolas,monospace" fill="${ink3}">${maxPop}</text>`;
+  svg.innerHTML = s;
+}
+addEventListener("resize", drawChart);
+function legend(){
+  const sw = (fill, stroke) => `<svg width="16" height="11"><rect x=".5" y=".5" width="15" height="10" fill="${fill}" stroke="${stroke || "none"}"/></svg>`;
+  const dot = (fill, r = 3.2) => `<svg width="16" height="11"><circle cx="8" cy="5.5" r="${r}" fill="${fill}" stroke="${K.person_edge}" stroke-width=".9"/></svg>`;
+  const c = a => rgbs(a);
+  $("legend").innerHTML = `<div class="h">key</div>
+    <span>${dot(K.bands[0])}a person, by band</span><span>${sw(c(K.plains))}plains</span>
+    <span><svg width="16" height="11"><circle cx="8" cy="5.5" r="2.4" fill="${c(K.fire)}"/></svg>fire</span><span>${sw(c(K.forest))}forest</span>
+    <span><svg width="16" height="11"><circle cx="8" cy="5.5" r="4" fill="none" stroke="${K.ring}"/></svg>a birth</span><span>${sw(c(K.hills))}hills</span>
+    <span><svg width="16" height="11"><circle cx="8" cy="5.5" r="2.2" fill="rgba(${K.ash},.6)"/></svg>a death</span><span>${sw(c(K.snow), c(K.peak))}snow</span>
+    <span><svg width="16" height="11"><path d="M2 9 Q8 0 14 9" fill="none" stroke="${K.word}" stroke-dasharray="2 2"/></svg>words passed on</span><span>${sw(c(K.sea))}sea</span>
+    <span><svg width="16" height="11"><path d="M3 9 L8 3 L13 9 Z" fill="none" stroke="${K.heap}"/></svg>a heap</span><span><svg width="16" height="11"><line x1="1" y1="8" x2="15" y2="3" stroke="${c(K.river_ink)}" stroke-width="2"/></svg>river</span>
+    <span><svg width="16" height="11"><rect x="5" y="2" width="6" height="6" fill="none" stroke="${K.heap}"/></svg>a store</span><span><svg width="16" height="11"><path d="M1 7 Q5 3 9 6 T15 4" fill="none" stroke="${c(K.contour)}"/></svg>height, every 0.05</span>`;
+}
+
+// ================= moving around and choosing =================
+let drag = null, moved = false;
+map.addEventListener("pointerdown", e => { drag = [e.clientX, e.clientY, cam.x, cam.y]; moved = false; map.classList.add("drag"); map.setPointerCapture(e.pointerId); });
+map.addEventListener("pointermove", e => {
+  if (drag){ if (Math.hypot(e.clientX - drag[0], e.clientY - drag[1]) > 3) moved = true;
+    if (moved){ cam.x = drag[2] - (e.clientX - drag[0]) / cam.z; cam.y = drag[3] - (e.clientY - drag[1]) / cam.z; cam.touched = true; } return; }
+  const r = map.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; let best = null, bd = 12;
+  for (const [sx, sy, row] of picks){ const d = Math.hypot(sx - x, sy - y); if (d < bd){ bd = d; best = row; } }
+  const tip = $("tip"); if (!best){ tip.style.display = "none"; return; }
+  const what = (best[P.doing] || "").split(" ")[0];
+  tip.innerHTML = `${esc(best[P.name])}<div class="m">${STAGE[best[P.stage]] || ""}, ${best[P.age]} years · ${esc(WORDS[what] || best[P.doing] || "")}</div>`;
+  tip.style.display = "block"; tip.style.left = Math.min(innerWidth - 310, e.clientX + 14) + "px"; tip.style.top = (e.clientY + 14) + "px";
+});
+map.addEventListener("pointerleave", () => { $("tip").style.display = "none"; });
+map.addEventListener("pointerup", e => {
+  if (drag && !moved){ const r = map.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; let best = null, bd = 14;
+    for (const [sx, sy, row] of picks){ const d = Math.hypot(sx - x, sy - y); if (d < bd){ bd = d; best = row; } }
+    selected = best ? best[P.id] : null; loadPerson(); }
+  drag = null; map.classList.remove("drag");
+});
+map.addEventListener("wheel", e => { e.preventDefault(); const r = map.getBoundingClientRect(), mx = (e.clientX - r.left - CW / 2) / cam.z, my = (e.clientY - r.top - CH / 2) / cam.z;
+  const z = Math.max(cam.fit * .9, Math.min(cam.fit * 8, cam.z * Math.exp(-e.deltaY * .0012)));
+  cam.x += mx - mx * cam.z / z; cam.y += my - my * cam.z / z; cam.z = z; cam.touched = true; }, {passive: false});
+$("fit").onclick = () => { cam.touched = false; fitView(); };
+document.querySelectorAll("[data-mode]").forEach(b => b.onclick = () => {
+  mode = b.dataset.mode; K = INKS[mode]; document.documentElement.dataset.mode = mode === "night" ? "night" : "";
+  document.querySelectorAll("[data-mode]").forEach(x => x.classList.toggle("on", x === b)); renderBase(); legend(); drawChart(); });
+document.querySelectorAll("[data-layer]").forEach(b => b.onclick = () => { layers[b.dataset.layer] = !layers[b.dataset.layer]; b.classList.toggle("on", layers[b.dataset.layer]); });
+document.querySelectorAll("[data-wps]").forEach(b => b.onclick = () => fetch("/speed?wps=" + b.dataset.wps).catch(() => {}));
+
+// ================= the world =================
+function takeWeek(f){
+  // the week's real events, shown at the day and hour the viewer's own stage gives them
+  const at = (day, fr) => performance.now() + ((day || 0) + (fr || 0)) / 7 * Math.max(300, interval);
+  for (const m of f.moments || []) if (m[0] === "birth") marks.push({kind: "birth", x: m[3], y: m[4], at: at(m[5], m[6]), week: f.t});
+  for (const d of f.dead || []) marks.push({kind: "death", x: d[2], y: d[3], at: at(d[8], d[9]), week: f.t});
+  for (const s of f.says || []) if (s[0] === "say" && s[1] && s[2]) arcs.push({a: s[1], b: s[2], at: at(s[4], s[5])});
+  if (arcs.length > 60) arcs.splice(0, arcs.length - 60);
+  for (const r of f.people || []){ const id = r[P.id]; if (!trails.has(id)) trails.set(id, []); const pts = trails.get(id); pts.push([r[P.x], r[P.y]]); if (pts.length > 26) pts.shift(); }
+  const alive = new Set((f.people || []).map(r => r[P.id])); for (const id of trails.keys()) if (!alive.has(id)) trails.delete(id);
+}
+fetch("/terrain").then(r => r.json()).then(t => {
+  terrain = t; W = t.width; H = t.height; chooseSeam(); renderBase(); legend(); fitView();
+  $("speedRow").style.display = t.live ? "none" : "";
+  (t.chronicle || []).forEach(addNote); renderNotes();
+  $("plateTitle").textContent = `The islands of world ${t.seed}`;
+  loadHistory();
+  const es = new EventSource("/stream");
+  es.onmessage = e => {
+    const f = JSON.parse(e.data), changed = !frame || f.t !== frame.t;
+    if (changed){ interval = frameAt ? Math.min(4000, performance.now() - frameAt) : 1000; frameAt = performance.now(); }
+    if (f.season !== season){ season = f.season; renderBase(); }
+    frame = f; if (changed) takeWeek(f);
+    (f.news || []).forEach(addNote); if ((f.news || []).length) { renderNotes(); drawChart(); }
+    header();
+  };
+}).catch(() => { $("when").textContent = "No world here. Start one with: python design/watch.py"; });
+</script>
+</body>
+</html>
