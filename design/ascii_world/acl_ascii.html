@@ -9,46 +9,50 @@
    the running world through the viewer's own /terrain and /stream; the world is never touched.
    Each frame is drawn twice: once in colour, and once as a map of what each spot is (sea, grass, tree, rock, a person,
    a fire, an animal ...). Then every small cell of the screen becomes one character: WHAT the cell is picks the kind of
-   character (@ a person, % a tree, " grass, ~ the sea), and how bright it is picks how dense the character is and its
-   colour. Day and night are a slow clock for looks only: ACL's people live in weeks, not hours. */
-:root{--bg:#030508;--ink:#c8d2df;--dim:#647287;--warm:#ffb45c;--line:#1b2534;--panel:rgba(5,8,13,.86)}
+   character (@ a person's head, % a tree, " grass, ~ the sea), and how bright it is picks how dense the character is
+   and its colour. The camera stays close and follows one person, as a game follows its character. Day and night are a
+   slow clock for looks only: ACL's people live in weeks, not hours. */
+:root{--bg:#020306;--ink:#c8d2df;--dim:#5d6a7e;--warm:#ffb45c;--line:#161f2c;--panel:rgba(4,6,10,.82)}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);overflow:hidden;
   font:13px/1.45 Consolas,"Cascadia Mono","DejaVu Sans Mono","Courier New",monospace}
 canvas#view{position:fixed;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none}
 canvas#view.drag{cursor:grabbing}
 .hud{position:fixed;left:16px;top:12px;pointer-events:none;text-shadow:0 0 8px #000,0 0 2px #000;max-width:calc(100% - 32px)}
-.hud .t{font-size:15px;letter-spacing:.08em}
+.hud .t{font-size:14px;letter-spacing:.08em}
 .hud b{color:var(--warm);font-weight:normal}
 .hud .s{color:var(--dim)}
-.bar{position:fixed;right:16px;top:12px;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.hud .who{margin-top:4px;color:var(--ink)}
+.bar{position:fixed;right:16px;top:12px;display:flex;flex-direction:column;gap:5px;align-items:flex-end;opacity:.55;transition:opacity .2s}
+.bar:hover{opacity:1}
 .row{display:flex;gap:4px;align-items:center}
-.row span{color:var(--dim);margin-right:4px;font-size:12px}
-.bar button{background:var(--panel);color:var(--ink);border:1px solid var(--line);font:inherit;font-size:12px;padding:3px 8px;cursor:pointer}
+.row span{color:var(--dim);margin-right:4px;font-size:11px}
+.bar button{background:var(--panel);color:var(--ink);border:1px solid var(--line);font:inherit;font-size:11px;padding:2px 7px;cursor:pointer}
 .bar button:hover{border-color:#3a4a60}
 .bar button.on{color:var(--warm);border-color:#6a4a22}
-.key{position:fixed;left:16px;bottom:62px;background:var(--panel);border:1px solid var(--line);padding:7px 10px;font-size:12px;line-height:1.7;
+.key{position:fixed;left:16px;bottom:52px;background:var(--panel);border:1px solid var(--line);padding:7px 10px;font-size:12px;line-height:1.7;
   display:grid;grid-template-columns:repeat(4,auto);column-gap:14px;pointer-events:none}
+.key[hidden]{display:none}
 .key i{font-style:normal;font-weight:bold;display:inline-block;width:1.4em;text-align:center}
-.news{position:fixed;left:16px;right:16px;bottom:12px;color:var(--dim);pointer-events:none;text-shadow:0 0 8px #000}
+.news{position:fixed;left:16px;right:16px;bottom:12px;color:var(--dim);pointer-events:none;text-shadow:0 0 8px #000;font-size:12px}
 .news div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.news div:last-child{color:var(--ink)}
+.news div:last-child{color:#9aa6b6}
 .tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);padding:7px 10px;max-width:320px;display:none;font-size:12px}
 .tip b{color:var(--warm);font-weight:normal;font-size:13px}
 .tip .s{color:var(--dim)}
 .msg{position:fixed;inset:0;display:grid;place-items:center;color:var(--dim);pointer-events:none}
-@media (max-width:700px){.bar{top:auto;bottom:56px}.hud .s{display:none}.key{display:none}}
+@media (max-width:700px){.bar{top:auto;bottom:46px}.hud .s{display:none}.key{display:none}}
 </style>
 </head>
 <body>
 <canvas id="view" aria-label="The ACL world drawn in text characters"></canvas>
-<div class="hud"><div class="t" id="title">A C L</div><div id="line1" class="s">waiting for the world…</div></div>
+<div class="hud"><div class="t" id="title">A C L</div><div id="line1" class="s">waiting for the world…</div><div class="who" id="who"></div></div>
 <div class="bar">
-  <div class="row"><span>light</span><button data-light="auto" class="on" title="A slow clock for looks; ACL's people live in weeks, not hours">auto</button><button data-light="day">day</button><button data-light="dusk">dusk</button><button data-light="night">night</button></div>
+  <div class="row"><span>light</span><button data-light="auto">auto</button><button data-light="day">day</button><button data-light="dusk">dusk</button><button data-light="night" class="on">night</button></div>
   <div class="row"><span>text</span><button data-cell="s">small</button><button data-cell="m" class="on">medium</button><button data-cell="l">large</button><button id="plain">plain</button></div>
-  <div class="row"><span>view</span><button id="near">close</button><button id="far">whole world</button><button id="keyBtn" class="on">key</button></div>
+  <div class="row"><span>camera</span><button id="follow" class="on" title="Follow one person; click someone to follow them">follow</button><button id="near">close</button><button id="far">whole world</button><button id="keyBtn">key</button></div>
   <div class="row" id="speedRow"><span>weeks/s</span><button data-wps="0">pause</button><button data-wps="0.5">½</button><button data-wps="1">1</button><button data-wps="4">4</button></div>
 </div>
-<div class="key" id="key"></div>
+<div class="key" id="key" hidden></div>
 <div class="news" id="news"></div>
 <div class="tip" id="tip"></div>
 <div class="msg" id="msg"></div>
@@ -67,7 +71,7 @@ const P = {id:0, name:1, x:2, y:3, fx:4, fy:5, sex:6, stage:7, doing:8, aim:9, l
   sick:14, starving:15, grief:16, pregnant:17, health:18, partner:19, age:20, thought:21, state:22};
 const BAND_COLS = ["#5fe08a", "#b083ff", "#ffb547", "#3fc8ff", "#ff7aa8", "#e8e36a", "#6ee7d8", "#ff9f5a"];
 const SPECIES = ["", "rabbit", "deer", "bison", "bear", "fish"];
-const ANIMAL = {rabbit:["#e0d2b4", 2.6], deer:["#c08850", 3.6], bison:["#8a5c3a", 4.6], bear:["#6a4a36", 5], fish:["#a8d0e4", 2]};
+const ANIMAL = {rabbit:["#e0d2b4", 3], deer:["#c08850", 5.5], bison:["#8a5c3a", 7], bear:["#6a4a36", 7.5], fish:["#a8d0e4", 2.4]};
 
 // ================= what each spot is, and the characters each kind is written with =================
 // Each kind gets its own characters; brightness picks one of 8 from dark to bright. The sea and fresh water ripple.
@@ -77,25 +81,25 @@ const GLYPHS = [
   "   .:+*@",   // sky (stars, the moon)
   " .-~    ",   // sea: chosen by the ripple
   " .-=~   ",   // fresh water: rivers and lakes
-  " ..,,::;",   // sand
+  " .,,::;;",   // sand
   " .,,;;\"\"",  // grass
   " .,;;;\"\"",  // forest floor
-  " .:;nnMM",   // rock: hills and mountains
+  " .,:;=+n",   // rock: hills and mountains
   " .:-=+**",   // snow
-  " ..:::||",   // the side of a block of land
-  " .:o%%&&",   // leaves
-  " .:IIIII",   // tree trunk
-  "@@@@@@@@",   // a person's head
-  "YYYYYYYY",   // a person's body
-  "^^^^^^^^",   // fire
+  " .::;=||",   // the side of a block of land
+  " .:+o%&8",   // leaves
+  " .:!|III",   // tree trunk
+  " .:oO0@@",   // a person's head
+  " .:;!|IY",   // a person's body
+  " .:*^^^^",   // fire
   "?rdbBf??",   // animals, by kind: rabbit deer bison bear fish
   " .vvvvww",   // crops
-  "########",   // a heap of things
-  "$$$$$$$$",   // a store
+  " .:=+###",   // a heap of things
+  " .:[$$$$",   // a store
   " .''////"];  // rain
 const KEY = [["@", "#ffd27a", "a person"], ["^", "#ffb050", "fire"], ["d", "#c08850", "deer"], ["r", "#e0d2b4", "rabbit"],
   ["b", "#a87048", "bison"], ["B", "#8a6a50", "bear"], ["&", "#5fb08a", "tree"], ["\"", "#8fbf62", "grass"],
-  ["n", "#a4ac84", "hill"], ["M", "#a8a49a", "mountain"], ["*", "#e6edf2", "snow"], ["~", "#5a8ac0", "sea"],
+  ["n", "#a4ac84", "hill, rock"], ["*", "#e6edf2", "snow"], ["~", "#5a8ac0", "sea"],
   ["=", "#4a9fd8", "river"], ["|", "#8a9a7a", "cliff side"], ["v", "#d8c46a", "crops"], ["#", "#b08a60", "heap"], ["$", "#b08a60", "store"]];
 const mc = (id, part = 0) => `rgb(${id * 12},${part * 12},0)`;   // a kind, written as a colour on the second map
 
@@ -106,24 +110,25 @@ const hash = (a, b, c = 0) => ((Math.imul(a * 73856093 ^ b * 19349663 ^ c * 8349
 const wrapD = (d, n) => { d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; };
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;"}[c]));
 
-// paint one shape on both maps: in colour, and as its kind
+// paint one shape on both maps: in colour, and as its kind (both maps share the camera's transform: world px)
 function both(g, m, col, id, part, path){ g.fillStyle = col; g.beginPath(); path(g); g.fill(); m.fillStyle = mc(id, part); m.beginPath(); path(m); m.fill(); }
 function rectBoth(g, m, col, id, part, x, y, w, h){ g.fillStyle = col; g.fillRect(x, y, w, h); m.fillStyle = mc(id, part); m.fillRect(x, y, w, h); }
+const circle = (x, y, r) => q => q.arc(x, y, r, 0, 7);
+function shadow(g, x, y, rx, ry, a = .35){ g.fillStyle = `rgba(0,0,0,${a})`; g.beginPath(); g.ellipse(x, y, rx, ry, 0, 0, 7); g.fill(); }
 
 // ================= state =================
 let terrain = null, W = 40, H = 40, frame = null, frameAt = 0, interval = 1000, season = "";
 let RX = 0, RY = 0;                                      // the world wraps; the seam is put where the sea is widest
 const TW = 64, TH = 32, SEA = -0.2, STEP = 0.035, LV = 3.2;   // iso tile size, terrace step (height units) and its height in px
-let OX = 0, OY = 0, levels = [], kinds = [];
+let OX = 0, OY = 0, WWID = 0, WHGT = 0, levels = [], kinds = [];
 const cam = {x: 0, y: 0, z: 1, touched: false};
-const view = {light: "auto", cell: "m", plain: false};
+const view = {light: "night", cell: "m", plain: false, follow: null};
 const CELLS = {s: [6, 9], m: [8, 12], l: [10, 15]};
 const news = [];
 let picks = [];
 
-// ================= the land, once (and again when the season turns) =================
-const land = document.createElement("canvas"), landM = document.createElement("canvas"), seaC = document.createElement("canvas");
-const HZ = .14;   // the horizon, as a share of the screen's height: open sea below it, sky and moon above
+// ================= the land's shape (heights, kinds); drawn fresh each frame so it is sharp at any distance =================
+const HZ = .13;   // the horizon, as a share of the screen's height: open sea below it, sky and moon above
 function disp(x, y){ return [((x - RX) % W + W) % W, ((y - RY) % H + H) % H]; }
 function iso(dx, dy){ return [(dx - dy) * TW / 2 + OX, (dx + dy) * TH / 2 + OY]; }
 function tileAt(x, y){ return terrain.tiles[(((y % H) + H) % H) * W + (((x % W) + W) % W)]; }
@@ -135,7 +140,7 @@ function chooseSeam(){
 }
 const KIND_OF = {beach: M.sand, desert: M.sand, plains: M.grass, tundra: M.grass, forest: M.floor, woods: M.floor,
   hills: M.rock, mountain: M.rock, snow: M.snow, river: M.fresh, lake: M.fresh};
-function paintLand(){
+function prepLand(){
   levels = new Array(W * H); kinds = new Array(W * H);
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){
     const t = tileAt(x, y), i = y * W + x;
@@ -145,65 +150,86 @@ function paintLand(){
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){     // rivers sit a step below their banks
     const i = y * W + x; if (kinds[i] === "river") levels[i] = Math.max(1, levels[i] - 1);
   }
-  const maxLv = Math.max(...levels);
-  OX = H * TW / 2 + TW; OY = maxLv * LV + TH * 2;
-  for (const c of [land, landM, seaC]){ c.width = (W + H) * TW / 2 + TW * 2; c.height = (W + H) * TH / 2 + OY + TH * 2; }
-  const sea = seaC.getContext("2d"), g = land.getContext("2d"), m = landM.getContext("2d");
-  for (const c of [sea, g, m]) c.clearRect(0, 0, land.width, land.height);
-  const winter = season === "winter", autumn = season === "autumn";
-  const lv = (dx, dy) => { const [x, y] = [(dx + RX) % W, (dy + RY) % H]; return levels[y * W + x]; };
-  const kd = (dx, dy) => { const [x, y] = [(dx + RX) % W, (dy + RY) % H]; return kinds[y * W + x]; };
-  const diamond = (sx, sy, grow = 0) => c => { c.moveTo(sx, sy - grow); c.lineTo(sx + TW / 2 + grow, sy + TH / 2); c.lineTo(sx, sy + TH + grow); c.lineTo(sx - TW / 2 - grow, sy + TH / 2); c.closePath(); };
-  // the world's own sea, flat (its kind is the open sea's, painted under everything)
+  OX = H * TW / 2 + TW; OY = Math.max(...levels) * LV + TH * 2;
+  WWID = (W + H) * TW / 2 + TW * 2; WHGT = (W + H) * TH / 2 + OY + TH * 2;
+}
+const lvD = (dx, dy) => { if (dx < 0 || dy < 0 || dx >= W || dy >= H) return 0; const [x, y] = [(dx + RX) % W, (dy + RY) % H]; return levels[y * W + x]; };
+const kdD = (dx, dy) => { const [x, y] = [(dx + RX) % W, (dy + RY) % H]; return kinds[y * W + x]; };
+const diamond = (sx, sy, grow = 0) => c => { c.moveTo(sx, sy - grow); c.lineTo(sx + TW / 2 + grow, sy + TH / 2); c.lineTo(sx, sy + TH + grow); c.lineTo(sx - TW / 2 - grow, sy + TH / 2); c.closePath(); };
+
+function drawTree(g, m, tx, ty, sz, leaf, winter, seed){
+  const th = 15 * sz, cr = 10.5 * sz, cy = ty - th - cr * .55;
+  shadow(g, tx + 3 * sz, ty, cr * .95, cr * .42, .4);
+  both(g, m, "#3a2a1e", M.trunk, 0, q => { q.moveTo(tx - 2.4 * sz, ty); q.lineTo(tx - 1.4 * sz, ty - th); q.lineTo(tx + 1.4 * sz, ty - th); q.lineTo(tx + 2.4 * sz, ty); q.closePath(); });
+  g.fillStyle = "#5a4430"; g.fillRect(tx - 1.6 * sz, ty - th, 1.1 * sz, th);   // light on the trunk's left
+  const blobs = [[0, 0, 1], [-.62, .32, .74], [.64, .3, .72], [-.3, -.62, .72], [.34, -.55, .66], [0, -1.05, .55]];
+  for (const [bx, by, br] of blobs) both(g, m, rgb(leaf, .5), M.leaf, 0, circle(tx + bx * cr, cy + by * cr, br * cr));
+  for (const [bx, by, br] of blobs){ const j = hash(seed, bx * 10 | 0, by * 10 | 0) * .25;
+    g.fillStyle = rgb(leaf, .82 + j); g.beginPath(); g.arc(tx + bx * cr - br * cr * .2, cy + by * cr - br * cr * .22, br * cr * .68, 0, 7); g.fill(); }
+  for (const [bx, by, br] of blobs.slice(3)){ g.fillStyle = rgb(leaf, 1.22); g.beginPath(); g.arc(tx + bx * cr - br * cr * .35, cy + by * cr - br * cr * .38, br * cr * .32, 0, 7); g.fill(); }
+  for (let n = 0; n < 10; n++){ const a = hash(seed, n, 7) * 6.28, r = Math.sqrt(hash(seed, n, 9)) * cr;   // single leaves
+    g.fillStyle = rgb(leaf, hash(seed, n, 3) < .5 ? .55 : 1.3); g.fillRect(tx + Math.cos(a) * r, cy + Math.sin(a) * r * .9 - cr * .2, 1.4, 1.4); }
+  if (winter) both(g, m, "#dfe8f0", M.snow, 0, q => q.ellipse(tx - cr * .15, cy - cr * .9, cr * .55, cr * .22, 0, 0, 7));
+}
+
+function drawLand(g, m, r, now){
+  const winter = season === "winter", autumn = season === "autumn", z = cam.z;
+  const vis = (sx, top, bot) => sx + TW / 2 + 40 >= r.x0 && sx - TW / 2 - 40 <= r.x1 && bot >= r.y0 && top <= r.y1;
+  // the world's own sea: lighter in the shallows (its kind is the open sea's, painted under everything)
   for (let dy = 0; dy < H; dy++) for (let dx = 0; dx < W; dx++){
-    if (kd(dx, dy) !== "water") continue;
-    const t = tileAt(dx + RX, dy + RY), deep = t[6] === "deep" || t[7] < -0.21;
-    const [sx, sy] = iso(dx, dy), c = hexRgb(BIOME[t[6]] || BIOME.sea);
-    sea.fillStyle = rgb(c, deep ? .8 : 1 + Math.max(0, t[7] + .2) * 4); sea.beginPath(); diamond(sx, sy, .6)(sea); sea.fill();
+    if (kdD(dx, dy) !== "water") continue;
+    const [sx, sy] = iso(dx, dy); if (!vis(sx, sy, sy + TH)) continue;
+    const t = tileAt(dx + RX, dy + RY), deep = t[6] === "deep" || t[7] < -0.21, c = hexRgb(BIOME[t[6]] || BIOME.sea);
+    g.fillStyle = rgb(c, deep ? .8 : 1 + Math.max(0, t[7] + .2) * 4); g.beginPath(); diamond(sx, sy, .6)(g); g.fill();
   }
   // then the land, back to front, as terraced blocks
+  const specks = Math.round(Math.min(46, 10 + 7 * z));
   for (let s = 0; s < W + H - 1; s++) for (let dx = Math.max(0, s - H + 1); dx <= Math.min(W - 1, s); dx++){
-    const dy = s - dx; if (kd(dx, dy) === "water") continue;
-    const k = kd(dx, dy), L = lv(dx, dy), e = L * LV, kind = KIND_OF[k] ?? M.grass;
+    const dy = s - dx; if (kdD(dx, dy) === "water") continue;
+    const k = kdD(dx, dy), L = lvD(dx, dy), e = L * LV, kind = KIND_OF[k] ?? M.grass;
     const [sx, sy0] = iso(dx, dy), sy = sy0 - e;
+    if (!vis(sx, sy - 70, sy0 + TH)) continue;
     let c = hexRgb(BIOME[k] || BIOME.plains), topKind = kind;
     if (winter && k !== "river" && k !== "lake"){ c = mix(c, [214, 222, 232], k === "beach" || k === "desert" ? .25 : .62); if (k !== "beach" && k !== "desert") topKind = M.snow; }
-    // light from the north-west: a block higher than its north and west neighbours is lit, lower is shaded
-    const back = (dx > 0 ? lv(dx - 1, dy) : L) + (dy > 0 ? lv(dx, dy - 1) : L);
+    const back = lvD(dx - 1, dy) + lvD(dx, dy - 1);   // light from the north-west: lit when higher than the blocks behind
     const top = c.map(v => v * Math.max(.7, Math.min(1.25, 1 + (2 * L - back) * .05)));
-    both(g, m, rgb(c, .62), M.wall, 1, q => { q.moveTo(sx - TW / 2, sy + TH / 2); q.lineTo(sx, sy + TH); q.lineTo(sx, sy0 + TH); q.lineTo(sx - TW / 2, sy0 + TH / 2); q.closePath(); });
-    both(g, m, rgb(c, .42), M.wall, 2, q => { q.moveTo(sx + TW / 2, sy + TH / 2); q.lineTo(sx, sy + TH); q.lineTo(sx, sy0 + TH); q.lineTo(sx + TW / 2, sy0 + TH / 2); q.closePath(); });
-    both(g, m, rgb(top), topKind, 0, diamond(sx, sy));
-    // ground texture: small specks of lighter and darker ground
-    const specks = k === "snow" ? 4 : k === "river" ? 0 : 14;
-    for (let n = 0; n < specks; n++){
-      const u = hash(dx, dy, n) - .5, v = hash(dy, dx, n + 99) - .5, px = sx + (u - v) * TW / 2 * .9, py = sy + TH / 2 + (u + v) * TH / 2 * .9;
-      g.fillStyle = rgb(top, hash(dx + n, dy, 7) < .5 ? .7 : 1.25); g.fillRect(px, py, 2, 1.5);
+    const lowL = lvD(dx, dy + 1), lowR = lvD(dx + 1, dy);   // the sides show only down to the next block in front
+    if (L > lowL) both(g, m, rgb(c, .55), M.wall, 1, q => { q.moveTo(sx - TW / 2, sy + TH / 2); q.lineTo(sx, sy + TH); q.lineTo(sx, sy0 + TH - lowL * LV); q.lineTo(sx - TW / 2, sy0 + TH / 2 - lowL * LV); q.closePath(); });
+    if (L > lowR) both(g, m, rgb(c, .36), M.wall, 2, q => { q.moveTo(sx + TW / 2, sy + TH / 2); q.lineTo(sx, sy + TH); q.lineTo(sx, sy0 + TH - lowR * LV); q.lineTo(sx + TW / 2, sy0 + TH / 2 - lowR * LV); q.closePath(); });
+    both(g, m, rgb(top), topKind, 0, diamond(sx, sy, .4));
+    // a bright rim where a block stands above the ones behind it, a dark one at its front edge
+    g.lineWidth = .9;
+    if (L > lvD(dx - 1, dy)){ g.strokeStyle = rgb(top, 1.45); g.beginPath(); g.moveTo(sx - TW / 2, sy + TH / 2); g.lineTo(sx, sy); g.stroke(); }
+    if (L > lvD(dx, dy - 1)){ g.strokeStyle = rgb(top, 1.3); g.beginPath(); g.moveTo(sx, sy); g.lineTo(sx + TW / 2, sy + TH / 2); g.stroke(); }
+    if (L > lowL || L > lowR){ g.strokeStyle = rgb(top, .45); g.beginPath(); g.moveTo(sx - TW / 2, sy + TH / 2); g.lineTo(sx, sy + TH); g.lineTo(sx + TW / 2, sy + TH / 2); g.stroke(); }
+    // ground texture: specks of lighter and darker ground, and tufts on grass
+    const n0 = k === "snow" ? specks >> 2 : k === "river" ? 0 : specks;
+    for (let n = 0; n < n0; n++){
+      const u = hash(dx, dy, n) - .5, v = hash(dy, dx, n + 99) - .5, px = sx + (u - v) * TW / 2 * .92, py = sy + TH / 2 + (u + v) * TH / 2 * .92;
+      const lighter = hash(dx + n, dy, 7) < .5;
+      g.fillStyle = rgb(top, lighter ? 1.3 : .68);
+      if ((kind === M.grass || kind === M.floor) && !winter && n % 3 === 0){ g.fillRect(px, py - 2.2, .8, 2.4); g.fillRect(px + 1.1, py - 1.6, .8, 1.8); }
+      else g.fillRect(px, py, 1.3, .9);
     }
-    if (k === "river"){ g.strokeStyle = rgb(c, 1.5); g.lineWidth = 1;
-      for (let n = 0; n < 3; n++){ const o = (n - 1) * 6; g.beginPath(); g.moveTo(sx - 14 + o, sy + TH / 2 - 3 + o * .2); g.lineTo(sx + 14 + o, sy + TH / 2 + 3 + o * .2); g.stroke(); } }
+    if (k === "river"){ g.strokeStyle = rgb(c, 1.6); g.lineWidth = .8;
+      for (let n = 0; n < 4; n++){ const o = (n - 1.5) * 5, f = (now / 900 + n * .37) % 1; g.beginPath(); g.moveTo(sx - 16 + o + f * 6, sy + TH / 2 - 4 + o * .2 + f * 3); g.lineTo(sx - 4 + o + f * 6, sy + TH / 2 + 2 + o * .2 + f * 3); g.stroke(); } }
+    if (k === "mountain" || k === "snow")   // a rock crown
+      both(g, m, rgb(c, k === "snow" ? 1.08 : 1.25), k === "snow" ? M.snow : M.rock, 0, q => { q.moveTo(sx - 13, sy + TH / 2 + 2); q.lineTo(sx - 2, sy + TH / 2 - 17 - hash(dx, dy, 3) * 10); q.lineTo(sx + 10, sy + TH / 2 + 3); q.closePath(); });
     // trees: forest and woods, placed by a fixed hash so they never jump
-    const nTrees = k === "forest" ? 4 : k === "woods" ? 2 : (k === "plains" && hash(dx, dy, 5) < .12) ? 1 : 0;
+    const nTrees = k === "forest" ? 3 : k === "woods" ? 2 : (k === "plains" && hash(dx, dy, 5) < .12) ? 1 : 0;
     const trees = [];
     for (let n = 0; n < nTrees; n++){ const u = hash(dx, dy, 11 + n) - .5, v = hash(dy, dx, 31 + n) - .5;
-      trees.push([sx + (u - v) * TW / 2 * .75, sy + TH / 2 + (u + v) * TH / 2 * .75, .8 + hash(dx, dy, 51 + n) * .5]); }
+      trees.push([sx + (u - v) * TW / 2 * .7, sy + TH / 2 + (u + v) * TH / 2 * .7, .85 + hash(dx, dy, 51 + n) * .45, dx * 97 + dy * 13 + n]); }
     trees.sort((a, b) => a[1] - b[1]);
-    for (const [tx, ty, sz] of trees){
-      const leaf = autumn ? [190, 112, 46] : winter ? [70, 100, 88] : k === "forest" ? [56, 140, 108] : [84, 150, 90];
-      rectBoth(g, m, "#4a3424", M.trunk, 0, tx - 2, ty - 11 * sz, 4, 11 * sz);
-      for (let b = 0; b < 3; b++){ const r = (7.5 - b * 1.8) * sz;
-        both(g, m, rgb(leaf, .8 + b * .22), M.leaf, 0, q => q.arc(tx + (b - 1) * 1.5 * sz, ty - (13 + b * 6) * sz, r, 0, 7)); }
-      if (winter) both(g, m, "#dfe8f0", M.snow, 0, q => q.arc(tx, ty - 25 * sz, 3.5 * sz, Math.PI, 0));
-    }
-    if (k === "mountain" || k === "snow")   // a rock crown
-      both(g, m, rgb(c, k === "snow" ? 1.08 : 1.3), k === "snow" ? M.snow : M.rock, 0, q => { q.moveTo(sx - 12, sy + TH / 2 + 2); q.lineTo(sx - 2, sy + TH / 2 - 16 - hash(dx, dy, 3) * 10); q.lineTo(sx + 9, sy + TH / 2 + 3); q.closePath(); });
+    const leaf = autumn ? [196, 116, 48] : winter ? [72, 104, 96] : k === "forest" ? [52, 148, 128] : [80, 156, 104];
+    for (const [tx, ty, sz, sd] of trees) drawTree(g, m, tx, ty, sz, leaf, winter, sd);
   }
 }
 
 // ================= where things are on screen =================
 let SW = 0, SH = 0, CW = 0, CH = 0, DPR = 1, S = 1, SS = .5;   // scene size, css size, scene px per world px
-function lvAt(x, y){ const [dx, dy] = disp(Math.round(x), Math.round(y)); const [ax, ay] = [(dx + RX) % W, (dy + RY) % H]; return levels[ay * W + ax] || 0; }
-function worldPx(x, y){   // a fractional tile position (centre at +.5) -> land canvas px, standing on the block
+function lvAt(x, y){ const [dx, dy] = disp(Math.round(x), Math.round(y)); return lvD(dx, dy) || 0; }
+function worldPx(x, y){   // a fractional tile position (centre at +.5) -> world px, standing on the block
   const [dx, dy] = disp(x, y); const fx = x - Math.floor(x), fy = y - Math.floor(y);
   const [sx, sy] = iso(dx + fx, dy + fy); return [sx, sy - lvAt(x, y) * LV];
 }
@@ -212,28 +238,28 @@ function fitCamera(){   // the whole world
   let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){ if (tileAt(x, y)[5]) continue;
     const [px, py] = worldPx(x + .5, y + .5); x0 = Math.min(x0, px); x1 = Math.max(x1, px); y0 = Math.min(y0, py - 40); y1 = Math.max(y1, py); }
-  if (x0 > x1){ x0 = 0; x1 = land.width; y0 = 0; y1 = land.height; }
-  cam.x = (x0 + x1) / 2; cam.y = (y0 + y1) / 2;
+  if (x0 > x1){ x0 = 0; x1 = WWID; y0 = 0; y1 = WHGT; }
   cam.z = Math.min(CW / (x1 - x0 + 2 * TW), CH * (1 - HZ) / (y1 - y0 + 2 * TH)) * 1.02;
-  cam.y -= CH * HZ / 2 / cam.z;
+  cam.x = (x0 + x1) / 2; cam.y = (y0 + y1) / 2 - CH * HZ / 2 / cam.z;
 }
-function closeUp(){     // where most people are, about 9 tiles across
-  const ppl = (frame && frame.people) || []; if (!ppl.length){ fitCamera(); return; }
-  let best = ppl[0], bn = -1;
-  for (const a of ppl){ let n = 0; for (const b of ppl) if (Math.abs(wrapD(a[P.x] - b[P.x], W)) + Math.abs(wrapD(a[P.y] - b[P.y], H)) <= 5) n++; if (n > bn){ bn = n; best = a; } }
-  const [wx, wy] = worldPx(best[P.x] + .5, best[P.y] + .5);
-  cam.z = Math.max(.8, Math.min(5, CW / (9 * TW))); cam.x = wx; cam.y = wy - CH * HZ / 2 / cam.z;
+function busiest(){     // the person at the heart of the biggest gathering
+  const ppl = (frame && frame.people) || []; let best = null, bn = -1;
+  for (const a of ppl){ if (a[P.stage] < 2) continue; let n = 0; for (const b of ppl) if (Math.abs(wrapD(a[P.x] - b[P.x], W)) + Math.abs(wrapD(a[P.y] - b[P.y], H)) <= 4) n++; if (n > bn){ bn = n; best = a; } }
+  return best;
 }
+const CLOSE = 4.6;   // tiles across the screen when close
+function closeZoom(){ cam.z = Math.max(1, Math.min(9, CW / (CLOSE * TW))); }
+function closeUp(){ const b = busiest(); if (!b){ fitCamera(); return; } closeZoom(); const [wx, wy] = worldPx(b[P.x] + .5, b[P.y] + .5); cam.x = wx; cam.y = wy - 14 - CH * HZ / 2 / cam.z; }
 
 // ================= light (for looks: a slow clock, not ACL's time) =================
 const LIGHTS = {
   day:   {amb: [1.0, 1.0, .97], top: [.32, .52, .82], bot: [.72, .83, .94], dark: 0},
-  dusk:  {amb: [.86, .64, .56], top: [.16, .13, .32], bot: [.92, .5, .32], dark: .55},
-  night: {amb: [.48, .55, .82], top: [.008, .015, .045], bot: [.05, .07, .15], dark: 1}};
+  dusk:  {amb: [.86, .62, .56], top: [.16, .13, .32], bot: [.92, .5, .32], dark: .55},
+  night: {amb: [.6, .67, .95], top: [.006, .012, .04], bot: [.04, .06, .13], dark: 1}};
 function lightNow(t){
   if (view.light !== "auto") return LIGHTS[view.light];
-  // day 40%, dusk 10%, night 40%, dawn 10% of a 150-second round; it opens in the day
-  const p = (t / 150000 + .1) % 1, D = LIGHTS.day, K = LIGHTS.dusk, N = LIGHTS.night;
+  // night 40%, dawn 10%, day 40%, dusk 10% of a 150-second round; it opens at night
+  const p = (t / 150000 + .52) % 1, D = LIGHTS.day, K = LIGHTS.dusk, N = LIGHTS.night;
   const blend = (a, b, u) => { u = u * u * (3 - 2 * u); return {amb: mix(a.amb, b.amb, u), top: mix(a.top, b.top, u), bot: mix(a.bot, b.bot, u), dark: a.dark + (b.dark - a.dark) * u}; };
   if (p < .4) return D; if (p < .45) return blend(D, K, (p - .4) / .05); if (p < .5) return blend(K, N, (p - .45) / .05);
   if (p < .9) return N; if (p < .95) return blend(N, K, (p - .9) / .05); return blend(K, D, (p - .95) / .05);
@@ -245,78 +271,94 @@ const kindC = document.createElement("canvas"), kg = kindC.getContext("2d");
 const lightC = document.createElement("canvas"), lg = lightC.getContext("2d");
 function personPos(r, t){
   const dx = wrapD(r[P.x] - r[P.fx], W), dy = wrapD(r[P.y] - r[P.fy], H), e = t < 1 ? t * t * (3 - 2 * t) : 1;
-  return [r[P.fx] + dx * e, r[P.fy] + dy * e];
+  return [r[P.fx] + dx * e, r[P.fy] + dy * e, (dx || dy) && t < 1];
 }
 function bandMap(){ const m = new Map(); (frame.bands || []).forEach((b, i) => (b[2] || []).forEach(pid => m.set(pid, i))); return m; }
 function drawScene(now, L){
-  for (const c of [sg, kg]){ c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, SW, SH); c.imageSmoothingEnabled = false; }
-  sg.imageSmoothingEnabled = true;
+  for (const c of [sg, kg]){ c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, SW, SH); }
   lg.setTransform(1, 0, 0, 1, 0, 0); lg.clearRect(0, 0, lightC.width, lightC.height);
-  const [lx, ly] = toScene(0, 0), hz = Math.round(SH * HZ);
-  // open sea out to the horizon, under the world's own sea
+  const hz = Math.round(SH * HZ);
+  // open sea out to the horizon
   const sgr = sg.createLinearGradient(0, hz, 0, SH); sgr.addColorStop(0, "#1d4466"); sgr.addColorStop(.25, "#0b2a46"); sgr.addColorStop(1, "#071f36");
   sg.fillStyle = sgr; sg.fillRect(0, hz, SW, SH - hz); kg.fillStyle = mc(M.sea); kg.fillRect(0, hz, SW, SH - hz);
-  for (const c of [sg, kg]){ c.save(); c.beginPath(); c.rect(0, hz, SW, SH - hz); c.clip(); }   // beyond the horizon is not seen
-  sg.drawImage(seaC, lx, ly, land.width * S, land.height * S);
-  sg.drawImage(land, lx, ly, land.width * S, land.height * S);
-  kg.drawImage(landM, lx, ly, land.width * S, land.height * S);
-  if (frame) drawThings(now, L);
+  for (const c of [sg, kg]){ c.save(); c.beginPath(); c.rect(0, hz, SW, SH - hz); c.clip();   // beyond the horizon is not seen
+    c.setTransform(S, 0, 0, S, SW / 2 - cam.x * S, SH / 2 - cam.y * S); }   // from here on, both maps are drawn in world px
+  const r = {x0: cam.x - SW / 2 / S, x1: cam.x + SW / 2 / S, y0: cam.y - SH / 2 / S, y1: cam.y + SH / 2 / S};
+  drawLand(sg, kg, r, now);
+  if (frame) drawThings(now, L, r);
   sg.restore(); kg.restore();
 }
-function drawThings(now, L){
-  const k = lightC.width / SW, glow = .35 + .65 * L.dark;
-  const light = (x, y, r, col, a) => { const gr = lg.createRadialGradient(x * k, y * k, 0, x * k, y * k, r * k);
-    gr.addColorStop(0, `rgba(${col},${a})`); gr.addColorStop(1, `rgba(${col},0)`); lg.fillStyle = gr; lg.fillRect((x - r) * k, (y - r) * k, 2 * r * k, 2 * r * k); };
+function drawThings(now, L, r){
+  const k = lightC.width / SW, glow = .35 + .65 * L.dark, g = sg, m = kg;
+  const light = (wx, wy, rad, col, a) => { const [x, y] = toScene(wx, wy), rr = rad * S;
+    if (x + rr < 0 || x - rr > SW || y + rr < 0 || y - rr > SH) return;
+    const gr = lg.createRadialGradient(x * k, y * k, 0, x * k, y * k, rr * k);
+    gr.addColorStop(0, `rgba(${col},${a})`); gr.addColorStop(1, `rgba(${col},0)`); lg.fillStyle = gr; lg.fillRect((x - rr) * k, (y - rr) * k, 2 * rr * k, 2 * rr * k); };
   lg.globalCompositeOperation = "lighter";
+  const inView = (wx, wy, pad = 60) => wx > r.x0 - pad && wx < r.x1 + pad && wy > r.y0 - pad && wy < r.y1 + pad;
   // what lies on each tile: crops, heaps of made and gathered things, stores, fires
   const T = frame.tiles || [];
   for (let i = 0; i < T.length; i++){
-    const tr = T[i]; if (!tr) continue; const x = i % W, y = (i / W) | 0;
-    if (!(tr[1] || tr[2] || tr[3] || tr[4] || tr[5])) continue;
-    const [wx, wy] = worldPx(x + .5, y + .5), [sx, sy] = toScene(wx, wy), u = S;
-    if (tr[2] > 0 && !tr[4]) light(sx, sy - 3 * u, 34 * u, "255,120,50", Math.min(.5, .06 * tr[2]) * glow);   // a heap's warmth
-    if (tr[1]) for (let n = -2; n <= 2; n++) rectBoth(sg, kg, tr[1] >= 2 ? "#d8c46a" : "#8fc46a", M.crop, 0, sx - 13 * u + n * 6 * u, sy + n * 3 * u - 5 * u, 5 * u, 3 * u);
-    if (tr[3]) for (let j = 0; j < Math.max(1, tr[3]); j++) rectBoth(sg, kg, j % 2 ? "#a88058" : "#8a6644", M.heap, 0, sx + (5 + j * 3) * u, sy - (4 + j * 3.5) * u, 8 * u, 4 * u);
-    if (tr[5]) rectBoth(sg, kg, "#9a7a52", M.store, 0, sx - 14 * u, sy - 9 * u, 8 * u, 7 * u);
+    const tr = T[i]; if (!tr || !(tr[1] || tr[2] || tr[3] || tr[4] || tr[5])) continue;
+    const x = i % W, y = (i / W) | 0, [sx, sy] = worldPx(x + .5, y + .5);
+    if (!inView(sx, sy, 120)) continue;
+    if (tr[1]) for (let n = -2; n <= 2; n++) for (let j = 0; j < 3; j++){ const cx = sx - 14 + n * 6 + j * 2.5, cy = sy + n * 3 - 6 + j * 1.3;
+      rectBoth(g, m, tr[1] >= 2 ? "#d8c46a" : "#8fc46a", M.crop, 0, cx, cy - 3, 1.2, 3.4); }
+    if (tr[3]){ shadow(g, sx + 10, sy - 1, 6, 2.2, .3);   // a heap: a low mound, bigger with more in it
+      const hw = 4 + 2 * Math.min(3, tr[3]), hh = 2.5 + 1.4 * Math.min(3, tr[3]);
+      both(g, m, "#7a5c40", M.heap, 0, q => q.ellipse(sx + 10, sy - 1, hw, hh, 0, Math.PI, 0));
+      g.fillStyle = "#a07c58"; g.beginPath(); g.ellipse(sx + 9, sy - 1 - hh * .45, hw * .55, hh * .4, 0, 0, 7); g.fill(); }
+    if (tr[5]){ shadow(g, sx - 11, sy - 1, 6, 2.2, .3); rectBoth(g, m, "#86684a", M.store, 0, sx - 15, sy - 8, 8, 7); g.fillStyle = "#b08a62"; g.fillRect(sx - 15, sy - 8, 8, 1.2); }
     if (tr[4]){
       const f = .75 + .25 * Math.sin(now / 90 + i) * Math.sin(now / 37 + i * 3);
-      both(sg, kg, "#ffcf6a", M.fire, 0, q => { q.moveTo(sx - 5 * u, sy); q.lineTo(sx, sy - 15 * u * f); q.lineTo(sx + 5 * u, sy); q.closePath(); });
-      sg.fillStyle = "#ff7a2a"; sg.beginPath(); sg.moveTo(sx - 3 * u, sy); sg.lineTo(sx + 1 * u, sy - 8 * u * f); sg.lineTo(sx + 3 * u, sy); sg.closePath(); sg.fill();
-      light(sx, sy - 4 * u, 95 * u * (.92 + .08 * f), "255,150,60", 1.25 * glow * f);
-      light(sx, sy - 4 * u, 22 * u, "255,220,150", .9 * glow);
+      g.fillStyle = "#3a2a1e"; g.fillRect(sx - 6, sy - 1.5, 12, 2.5);
+      both(g, m, "#ffcf6a", M.fire, 0, q => { q.moveTo(sx - 5, sy); q.lineTo(sx - 1, sy - 16 * f); q.lineTo(sx + 1, sy - 9 * f); q.lineTo(sx + 3, sy - 13 * f); q.lineTo(sx + 5, sy); q.closePath(); });
+      g.fillStyle = "#ff7a2a"; g.beginPath(); g.moveTo(sx - 3, sy); g.lineTo(sx + 1, sy - 8 * f); g.lineTo(sx + 3, sy); g.closePath(); g.fill();
+      light(sx, sy - 5, 110 * (.92 + .08 * f), "255,150,60", 1.25 * glow * f);
+      light(sx, sy - 5, 24, "255,220,150", .9 * glow);
     }
   }
   // animals: a few bodies per group, by kind
   for (const [sp, x, y, n] of frame.animals || []){
-    const [col, size] = ANIMAL[sp] || ["#a08060", 3], c = hexRgb(col), part = Math.max(1, SPECIES.indexOf(sp));
+    const [col, size] = ANIMAL[sp] || ["#a08060", 4], c = hexRgb(col), part = Math.max(1, SPECIES.indexOf(sp));
     for (let j = 0; j < Math.min(4, Math.ceil(n / 3)); j++){
-      const ox = (hash(x, y, j) - .5) * .7, oy = (hash(y, x, j + 9) - .5) * .7, [wx, wy] = worldPx(x + .5 + ox, y + .5 + oy), [sx, sy] = toScene(wx, wy);
-      if (sp === "fish"){ if (L.dark > .5) continue; rectBoth(sg, kg, rgb(c), M.animal, part, sx - 3 * S, sy - 1.5 * S, 6 * S, 3 * S); continue; }
-      both(sg, kg, rgb(c), M.animal, part, q => q.ellipse(sx, sy - size * S, size * 1.4 * S, size * .9 * S, 0, 0, 7));
-      rectBoth(sg, kg, rgb(c, .7), M.animal, part, sx - size * S, sy - size * .4 * S, 1.6 * S, size * .7 * S);
-      rectBoth(sg, kg, rgb(c, .7), M.animal, part, sx + size * .7 * S, sy - size * .4 * S, 1.6 * S, size * .7 * S);
-      light(sx, sy - size * S, size * 3 * S, c.join(","), .3 * glow);
+      const ox = (hash(x, y, j) - .5) * .7, oy = (hash(y, x, j + 9) - .5) * .7, [ax, ay] = worldPx(x + .5 + ox, y + .5 + oy);
+      if (!inView(ax, ay)) continue;
+      if (sp === "fish"){ if (L.dark > .5) continue; rectBoth(g, m, rgb(c), M.animal, part, ax - 3, ay - 1.2, 6, 2.4); continue; }
+      const dir = hash(x, j, 4) < .5 ? -1 : 1, legH = size * .55;
+      shadow(g, ax, ay, size * 1.3, size * .35);
+      for (const lx of [-.8, -.4, .45, .85]) rectBoth(g, m, rgb(c, .65), M.animal, part, ax + lx * size, ay - legH, .9, legH);
+      both(g, m, rgb(c), M.animal, part, q => q.ellipse(ax, ay - legH - size * .4, size * 1.15, size * .55, 0, 0, 7));
+      both(g, m, rgb(c, 1.1), M.animal, part, circle(ax + dir * size * 1.15, ay - legH - size * .75, size * .38));
     }
   }
-  // people: a small figure each, in their band's colour (head and body are told apart in the text pass)
+  // people: a figure each, in their band's colour; legs swing while they walk
   const t = Math.min(1, (now - frameAt) / Math.max(250, interval * .85)), bands = bandMap(), seen = new Map();
   picks = [];
-  const order = (frame.people || []).map(r => [r, personPos(r, t)]).sort((a, b) => (a[1][0] + a[1][1]) - (b[1][0] + b[1][1]));
-  for (const [r, [px, py]] of order){
+  const order = (frame.people || []).map(row => [row, personPos(row, t)]).sort((a, b) => (a[1][0] + a[1][1]) - (b[1][0] + b[1][1]));
+  for (const [row, [px, py, walking]] of order){
     const key = Math.round(px) + "," + Math.round(py), n = seen.get(key) || 0; seen.set(key, n + 1);
     const ox = n ? Math.cos(n * 2.4) * .3 : 0, oy = n ? Math.sin(n * 2.4) * .3 : 0;
-    const [wx, wy] = worldPx(px + .5 + ox, py + .5 + oy), [sx, sy] = toScene(wx, wy);
-    const bi = bands.has(r[P.id]) ? bands.get(r[P.id]) : bands.get(r[P.carer]);
-    const c = hexRgb(bi !== undefined ? BAND_COLS[bi % BAND_COLS.length] : "#dfe6ef"), sz = (r[P.stage] >= 2 ? 1.5 : 1.05) * S;
-    light(sx, sy - 8 * sz, 12 * sz, c.join(","), .6 * glow);   // not a lamp: only so a person can be told from the dark ground
-    if ((r[P.doing] || "").startsWith("rest")){
-      rectBoth(sg, kg, rgb(c, .7), M.body, 0, sx - 6 * sz, sy - 4 * sz, 12 * sz, 4.5 * sz);
-      both(sg, kg, rgb(c, 1.15), M.head, 0, q => q.arc(sx - 8 * sz, sy - 2.5 * sz, 3 * sz, 0, 7));
-    } else {
-      rectBoth(sg, kg, rgb(c, .8), M.body, 0, sx - 3 * sz, sy - 10 * sz, 6 * sz, 10 * sz);
-      both(sg, kg, rgb(c, 1.2), M.head, 0, q => q.arc(sx, sy - 14 * sz, 3.6 * sz, 0, 7));
+    const [x, y] = worldPx(px + .5 + ox, py + .5 + oy);
+    const [csx, csy] = toScene(x, y); picks.push([csx / SS / DPR, (csy - 12 * S) / SS / DPR, row, x, y]);
+    if (!inView(x, y)) continue;
+    const bi = bands.has(row[P.id]) ? bands.get(row[P.id]) : bands.get(row[P.carer]);
+    const c = hexRgb(bi !== undefined ? BAND_COLS[bi % BAND_COLS.length] : "#dfe6ef"), sz = row[P.stage] >= 2 ? 1 : row[P.stage] === 1 ? .72 : .5;
+    shadow(g, x, y, 6 * sz, 2.2 * sz, .45);
+    if ((row[P.doing] || "").startsWith("rest") && !walking){
+      rectBoth(g, m, rgb(c, .75), M.body, 0, x - 8 * sz, y - 5 * sz, 14 * sz, 5 * sz);
+      both(g, m, rgb(c, 1.15), M.head, 0, circle(x - 10 * sz, y - 3.5 * sz, 3.4 * sz));
+      continue;
     }
-    picks.push([sx / SS / DPR, sy / SS / DPR - 8 * sz / SS / DPR, r]);
+    const pid = String(row[P.id]), ph = walking ? Math.sin(now / 110 + pid.charCodeAt(pid.length - 1)) : 0, sw = ph * 2.4 * sz;
+    rectBoth(g, m, rgb(c, .6), M.body, 0, x - 2.9 * sz + sw, y - 10 * sz, 2.4 * sz, 10 * sz);   // legs
+    rectBoth(g, m, rgb(c, .7), M.body, 0, x + .5 * sz - sw, y - 10 * sz, 2.4 * sz, 10 * sz);
+    rectBoth(g, m, rgb(c, .62), M.body, 0, x - 5.6 * sz, y - 19 * sz - sw * .4, 2 * sz, 9 * sz);   // arms
+    rectBoth(g, m, rgb(c, .8), M.body, 0, x + 3.6 * sz, y - 19 * sz + sw * .4, 2 * sz, 9 * sz);
+    rectBoth(g, m, rgb(c, .9), M.body, 0, x - 3.6 * sz, y - 20 * sz, 7.2 * sz, 11 * sz);   // body
+    g.fillStyle = rgb(c, 1.15); g.fillRect(x - 3.6 * sz, y - 20 * sz, 2.4 * sz, 11 * sz);   // light on its left
+    both(g, m, rgb(c, 1.15), M.head, 0, circle(x, y - 24 * sz, 3.8 * sz));
+    if (row[P.starving]){ g.fillStyle = "#ff5a4a"; g.fillRect(x - .8 * sz, y - 33 * sz, 1.6 * sz, 3.5 * sz); }
   }
 }
 
@@ -350,6 +392,7 @@ out vec4 o;
 const float SKY = 0., SEA = 1., FRESH = 2., SAND = 3., WALL = 8., LEAF = 9., TRUNK = 10., HEAD = 11., BODY = 12., FIRE = 13.,
   ANIMAL = 14., RAIN = 18.;
 float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7)) + uSeed) * 43758.5453); }
+float lum(vec3 c){ return dot(c, vec3(.299, .587, .114)); }
 // what a spot is; ok = 0 where shapes' soft edges blend two kinds into a number that is neither
 float kindAt(vec2 uv, out float part, out float ok){
   vec4 m = texture(uKind, uv); float v = m.r * 255., pv = m.g * 255.;
@@ -361,7 +404,7 @@ vec3 skyAt(vec2 uv, vec2 cell){
   vec3 c = mix(uTop, uBot, smoothstep(0., 1., uv.y / uHz));
   float st = step(.986, h(cell)) * uDark * (.3 + .2 * sin(uTime * 1.7 + h(cell + 3.) * 40.));   // stars stay small: . : +
   vec2 d = (uv - uMoon) * vec2(uRes.x / uRes.y, 1.); float r = length(d);
-  float moon = smoothstep(.048, .042, r) * uDark, halo = .25 * exp(-r * 9.) * uDark;
+  float moon = smoothstep(.046, .04, r) * uDark, halo = .25 * exp(-r * 9.) * uDark;
   float crater = .14 * smoothstep(.02, .012, length(d - vec2(.015, -.012))) + .1 * smoothstep(.012, .007, length(d - vec2(-.018, .014)));
   return (c + vec3(st) + vec3(.92, .9, .8) * moon * (1. - crater) + vec3(.5, .55, .7) * halo) * .8;
 }
@@ -369,7 +412,11 @@ float wave(vec2 cell){ return sin(cell.x * .9 + cell.y * 1.7 + uTime * 1.6) * si
 vec3 lit(vec2 uv, vec2 cell, float id){
   if (id == SKY) return skyAt(uv, cell);
   vec3 s = texture(uScene, uv).rgb, L = texture(uLight, uv).rgb;
-  vec3 c = s * (uAmb + L * vec3(1., .78, .55));
+  // moonlight: cooler and greyer the darker it is; light from fires and the living keeps its colour
+  vec3 base = s * uAmb, grey = vec3(lum(base));
+  base = mix(base, grey, .58 * uDark) * mix(vec3(1.), vec3(.82, .95, 1.3), uDark);
+  if (id == HEAD || id == BODY || id == ANIMAL) base = s * max(uAmb, vec3(.8));   // the living keep their colours in the dark, so they can be told from the ground
+  vec3 c = base + s * L * vec3(1., .78, .55);
   if (id == SEA){   // moonlight on the water below the moon, broken by the ripples
     float w = wave(cell);
     c += vec3(.55, .6, .7) * exp(-pow((uv.x - uMoon.x) * 9., 2.)) * uDark * smoothstep(.2, .8, w) * .55 + s * .25 * w * (1. - uDark * .5);
@@ -377,12 +424,12 @@ vec3 lit(vec2 uv, vec2 cell, float id){
   float mist = 1. - smoothstep(uHz, uHz + .08, uv.y);   // distance fades into the horizon
   return mix(c, mix(uBot, uTop, .35) * 1.1, mist * .8);
 }
-float lum(vec3 c){ return dot(c, vec3(.299, .587, .114)); }
 float prio(float id){ return id == HEAD ? 9. : id == BODY ? 8. : id == FIRE ? 7. : id == ANIMAL ? 6. : id >= 15. ? 5. : id == TRUNK ? 3. : id == LEAF ? 2. : 1.; }
 float glyph(float id, float col){ return floor(texelFetch(uTab, ivec2(int(col), int(id)), 0).r * 255. + .5); }
 void main(){
-  vec2 px = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);
-  if (uAscii < .5){ float p, ok; vec2 uv = px / uRes; float id = kindAt(uv, p, ok); o = vec4(pow(lit(uv, floor(px / 3.), id), vec3(.9)), 1.); return; }
+  vec2 px = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y), suv = px / uRes;
+  float vig = mix(1., smoothstep(1.15, .35, length((suv - .5) * vec2(1.25, 1.))), .55);   // darker toward the corners
+  if (uAscii < .5){ float p, ok; float id = kindAt(suv, p, ok); o = vec4(pow(lit(suv, floor(px / 3.), id), vec3(.9)) * vig, 1.); return; }
   vec2 cell = floor(px / uCell), f = (px - cell * uCell) / uCell, cuv = (cell + .5) * uCell / uRes;
   // look at five spots in the cell; the most telling kind wins (a person over the grass they stand on)
   vec2 offs[5] = vec2[5](vec2(0.), vec2(.3, .3), vec2(-.3, .3), vec2(.3, -.3), vec2(-.3, -.3));
@@ -394,11 +441,11 @@ void main(){
     if (pr > best){ best = pr; id = m; part = p; buv = uv; }
   }
   if (best < 0.){ float p, ok; id = kindAt(cuv, p, ok); part = p; }
-  vec3 c = lit(buv, cell, id);
-  float l = lum(c), g = pow(clamp(l * 1.3, 0., 1.), .6);
+  vec3 c = (lit(buv, cell, id) * 2. + lit(cuv, cell, id)) / 3.;
+  float l = lum(c), g = pow(clamp(l * 1.35, 0., 1.), .62);
   float lev = floor(g * 7.99);
   bool ground = id >= FRESH && id <= TRUNK;
-  if (ground){ float r = h(cell * 1.37); lev = clamp(lev + (r > .88 ? -1. : r < .1 ? 1. : 0.), 2., 7.); }   // texture shows even in the dark
+  if (ground){ float r = h(cell * 1.37); lev = clamp(lev + (r > .86 ? -1. : r < .12 ? 1. : 0.), 2., 7.); }   // grain: texture shows even in the dark
   float gi;
   if (id == ANIMAL) gi = glyph(ANIMAL, part);
   else if (id == SKY){   // the sky is written only where something shines: stars, the moon; a few faint dots elsewhere
@@ -406,15 +453,16 @@ void main(){
     gi = glyph(SKY, shine > .45 ? 7. : shine > .3 ? 6. : shine > .15 ? 5. : shine > .06 ? 4. : (h(cell * 1.7) < .05 ? 3. : 0.));
   }
   else if (id == SEA || id == FRESH){ float w = wave(cell); gi = glyph(id, g < .04 ? 0. : w > .5 ? (id == SEA ? 3. : 4.) : w > .2 ? (id == SEA ? 2. : 3.) : (g > .12 ? 1. : 0.)); }
-  else gi = glyph(id, lev);
-  vec3 col = pow(c, vec3(.75)) * 1.5 + .03;
-  if (id >= HEAD && id <= ANIMAL) col = col * 1.35 + .12;   // living things and fire stand out
+  else gi = glyph(id, max(lev, id >= HEAD ? 3. : 0.));
+  vec3 col = pow(c, vec3(.75)) * 1.5 + .025;
+  if (id >= HEAD && id <= ANIMAL) col = col * 1.25 + .08;   // the living and fire stand out
   if (uRain > 0. && id < HEAD){   // rain falls through the cells
     float drop = h(vec2(cell.x, floor(cell.y / 3. - uTime * 7. + h(vec2(cell.x, 9.)) * 50.)));
     if (drop < .05 * uRain){ gi = glyph(RAIN, 7.); col = vec3(.55, .65, .8) * (.6 + .5 * (1. - uDark * .4)); }
   }
   float mask = texture(uAtlas, vec2((gi + f.x) / uNAll, f.y)).r;
-  o = vec4(col * mask + c * .05, 1.);
+  vec3 haze = texture(uLight, cuv).rgb * vec3(1., .66, .38) * .16;   // a soft glow behind the characters near lights
+  o = vec4((col * mask + c * .04 + haze) * vig, 1.);
 }`;
 function setupGL(){
   if (!gl){ $("msg").textContent = "This browser has no WebGL2; showing the plain picture."; return false; }
@@ -441,16 +489,24 @@ function resize(){
   SW = Math.round(cv.width * SS); SH = Math.round(cv.height * SS);
   scene.width = kindC.width = SW; scene.height = kindC.height = SH;
   lightC.width = Math.max(8, Math.round(SW / 4)); lightC.height = Math.max(8, Math.round(SH / 4));
-  if (terrain && !cam.touched) closeUp();
+  if (terrain && !cam.touched && !view.follow) closeUp();
 }
 addEventListener("resize", resize);
 
 // ================= the loop =================
 let glOK = false, glLost = false;
 function upload(unit, t, src){ gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, t); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, src); }
+function followCamera(){   // the camera glides after the person it follows
+  if (!view.follow || !frame) return;
+  const p = picks.find(q => q[2][P.id] === view.follow);
+  if (!p){ const b = busiest(); view.follow = b ? b[P.id] : null; return; }   // they died or left: follow someone else
+  const tx = p[3], ty = p[4] - 14 - CH * HZ / 2 / cam.z;
+  cam.x += (tx - cam.x) * .06; cam.y += (ty - cam.y) * .06;
+}
 function draw(now){
   requestAnimationFrame(draw);
   if (!terrain || glLost) return;
+  followCamera();
   S = cam.z * DPR * SS;
   const L = lightNow(now);
   drawScene(now, L);
@@ -466,53 +522,59 @@ function draw(now){
   gl.uniform2f(U.uRes, cv.width, cv.height); gl.uniform2f(U.uCell, cw, ch); gl.uniform1f(U.uTime, now / 1000);
   gl.uniform1f(U.uDark, L.dark); gl.uniform1f(U.uAscii, view.plain ? 0 : 1); gl.uniform1f(U.uNAll, NALL);
   gl.uniform1f(U.uSeed, (terrain.seed || 0) % 97); gl.uniform3fv(U.uAmb, L.amb); gl.uniform3fv(U.uTop, L.top); gl.uniform3fv(U.uBot, L.bot);
-  gl.uniform2f(U.uMoon, .66, HZ * .5); gl.uniform1f(U.uHz, HZ);
+  gl.uniform2f(U.uMoon, .7, HZ * .5); gl.uniform1f(U.uHz, HZ);
   gl.uniform1f(U.uRain, sky.storm ? 2.5 : sky.rain > 0 ? Math.min(2, .8 + sky.rain) : 0);
   gl.drawArrays(gl.TRIANGLES, 0, 3);
 }
 
 // ================= words on the screen =================
 $("key").innerHTML = KEY.map(([g, c, w]) => `<div><i style="color:${c}">${esc(g)}</i>${esc(w)}</div>`).join("");
+function personLine(r){
+  const what = (r[P.doing] || "").split(" ")[0];
+  return `<b>${esc(r[P.name])}</b> <span class="s">${STAGE[r[P.stage]] || ""}, ${r[P.age]} years</span> · ${esc(WORDS[what] || r[P.doing] || "")}`;
+}
 function hud(){
   if (!frame) return;
   $("title").innerHTML = `A C L <span class="s">·</span> <b>year ${frame.year}</b>, week ${frame.week + 1}, ${esc(frame.season)}`;
   const sk = frame.sky || {}, w = sk.storm ? " · a storm" : sk.flood ? " · flooding" : sk.rain > 0 ? " · rain" : "";
   $("line1").innerHTML = `${frame.pop} people · ${frame.gen} generations · ${(frame.bands || []).length} bands${w}`;
+  const f = view.follow && (frame.people || []).find(r => r[P.id] === view.follow);
+  $("who").innerHTML = f ? `following ${personLine(f)}` : "";
   for (const n of frame.news || []) news.push(typeof n === "string" ? n : `year ${n.year}: ${n.text}`);
-  news.splice(0, Math.max(0, news.length - 3));
+  news.splice(0, Math.max(0, news.length - 2));
   $("news").innerHTML = news.map(n => `<div>${esc(n)}</div>`).join("");
   const wps = frame.wps; document.querySelectorAll("[data-wps]").forEach(b => b.classList.toggle("on", Number(b.dataset.wps) === wps));
 }
+function nearest(e, within = 24){ let best = null, bd = within; for (const p of picks){ const d = Math.hypot(p[0] - e.clientX, p[1] - e.clientY); if (d < bd){ bd = d; best = p; } } return best; }
 cv.addEventListener("mousemove", e => {
-  if (drag) return; let best = null, bd = 22;
-  for (const [x, y, r] of picks){ const d = Math.hypot(x - e.clientX, y - e.clientY); if (d < bd){ bd = d; best = r; } }
-  const tip = $("tip"); if (!best){ tip.style.display = "none"; return; }
-  const what = (best[P.doing] || "").split(" ")[0];
-  tip.innerHTML = `<b>${esc(best[P.name])}</b> <span class="s">${STAGE[best[P.stage]] || ""}, ${best[P.age]} years</span><br>${esc(WORDS[what] || best[P.doing] || "")}`
-    + (best[P.thought] ? `<br><span class="s">${esc(best[P.thought])}</span>` : "");
+  if (drag) return; const p = nearest(e), tip = $("tip");
+  if (!p){ tip.style.display = "none"; return; }
+  tip.innerHTML = personLine(p[2]) + (p[2][P.thought] ? `<br><span class="s">${esc(p[2][P.thought])}</span>` : "") + `<br><span class="s">click to follow</span>`;
   tip.style.display = "block"; tip.style.left = Math.min(innerWidth - 330, e.clientX + 14) + "px"; tip.style.top = (e.clientY + 14) + "px";
 });
 
 // ================= moving around =================
-let drag = null;
-cv.addEventListener("pointerdown", e => { drag = [e.clientX, e.clientY, cam.x, cam.y]; cv.classList.add("drag"); cv.setPointerCapture(e.pointerId); $("tip").style.display = "none"; });
-cv.addEventListener("pointermove", e => { if (!drag) return; cam.x = drag[2] - (e.clientX - drag[0]) / cam.z; cam.y = drag[3] - (e.clientY - drag[1]) / cam.z; cam.touched = true; });
-addEventListener("pointerup", () => { drag = null; cv.classList.remove("drag"); });
+let drag = null, moved = false;
+function setFollow(id){ view.follow = id; $("follow").classList.toggle("on", !!id); hud(); }
+cv.addEventListener("pointerdown", e => { drag = [e.clientX, e.clientY, cam.x, cam.y]; moved = false; cv.classList.add("drag"); cv.setPointerCapture(e.pointerId); $("tip").style.display = "none"; });
+cv.addEventListener("pointermove", e => { if (!drag) return; if (Math.hypot(e.clientX - drag[0], e.clientY - drag[1]) > 4){ moved = true; if (view.follow) setFollow(null); }
+  if (moved){ cam.x = drag[2] - (e.clientX - drag[0]) / cam.z; cam.y = drag[3] - (e.clientY - drag[1]) / cam.z; cam.touched = true; } });
+cv.addEventListener("pointerup", e => { if (drag && !moved){ const p = nearest(e, 30); if (p){ setFollow(p[2][P.id]); if (cam.z < 2.5) closeZoom(); } } drag = null; cv.classList.remove("drag"); });
 cv.addEventListener("wheel", e => { e.preventDefault(); const f = Math.exp(-e.deltaY * .0012), mx = (e.clientX - CW / 2) / cam.z, my = (e.clientY - CH / 2) / cam.z;
-  const z = Math.max(.25, Math.min(8, cam.z * f)); cam.x += mx - mx * cam.z / z; cam.y += my - my * cam.z / z; cam.z = z; cam.touched = true; }, {passive: false});
+  const z = Math.max(.25, Math.min(12, cam.z * f)); if (!view.follow){ cam.x += mx - mx * cam.z / z; cam.y += my - my * cam.z / z; } cam.z = z; cam.touched = true; }, {passive: false});
 addEventListener("keydown", e => {
   const step = 60 / cam.z;
-  if (e.key === "+" || e.key === "=") cam.z = Math.min(8, cam.z * 1.2); else if (e.key === "-") cam.z = Math.max(.25, cam.z / 1.2);
-  else if (e.key === "ArrowLeft") cam.x -= step; else if (e.key === "ArrowRight") cam.x += step;
-  else if (e.key === "ArrowUp") cam.y -= step; else if (e.key === "ArrowDown") cam.y += step;
-  else if (e.key === "0"){ fitCamera(); } else return;
+  if (e.key === "+" || e.key === "=") cam.z = Math.min(12, cam.z * 1.2); else if (e.key === "-") cam.z = Math.max(.25, cam.z / 1.2);
+  else if (e.key.startsWith("Arrow")){ setFollow(null); cam.x += e.key === "ArrowLeft" ? -step : e.key === "ArrowRight" ? step : 0; cam.y += e.key === "ArrowUp" ? -step : e.key === "ArrowDown" ? step : 0; }
+  else if (e.key === "0"){ setFollow(null); fitCamera(); } else return;
   cam.touched = true;
 });
 document.querySelectorAll("[data-light]").forEach(b => b.onclick = () => { view.light = b.dataset.light; document.querySelectorAll("[data-light]").forEach(x => x.classList.toggle("on", x === b)); });
 document.querySelectorAll("[data-cell]").forEach(b => b.onclick = () => { view.cell = b.dataset.cell; document.querySelectorAll("[data-cell]").forEach(x => x.classList.toggle("on", x === b)); });
 $("plain").onclick = () => { view.plain = !view.plain; $("plain").classList.toggle("on", view.plain); };
-$("near").onclick = () => { closeUp(); cam.touched = true; };
-$("far").onclick = () => { fitCamera(); cam.touched = true; };
+$("follow").onclick = () => { if (view.follow) setFollow(null); else { const b = busiest(); if (b){ setFollow(b[P.id]); closeZoom(); } } };
+$("near").onclick = () => { setFollow(null); closeUp(); cam.touched = true; };
+$("far").onclick = () => { setFollow(null); fitCamera(); cam.touched = true; };
 $("keyBtn").onclick = () => { const k = $("key"); k.hidden = !k.hidden; $("keyBtn").classList.toggle("on", !k.hidden); };
 document.querySelectorAll("[data-wps]").forEach(b => b.onclick = () => fetch("/speed?wps=" + b.dataset.wps).catch(() => {}));
 
@@ -524,15 +586,15 @@ cv.addEventListener("webglcontextrestored", () => { glLost = false; startGL(); }
 startGL();
 resize();
 fetch("/terrain").then(r => r.json()).then(t => {
-  terrain = t; W = t.width; H = t.height; chooseSeam(); paintLand(); fitCamera();
+  terrain = t; W = t.width; H = t.height; chooseSeam(); prepLand(); fitCamera();
   $("speedRow").style.display = t.live ? "none" : "";
   let first = true;
   const es = new EventSource("/stream");
   es.onmessage = e => {
-    const f = JSON.parse(e.data); const moved = !frame || f.t !== frame.t;
-    if (moved){ interval = frameAt ? Math.min(4000, performance.now() - frameAt) : 1000; frameAt = performance.now(); }
-    frame = f; if (f.season !== season){ season = f.season; paintLand(); }
-    if (first && !cam.touched){ closeUp(); first = false; }
+    const f = JSON.parse(e.data); const changed = !frame || f.t !== frame.t;
+    if (changed){ interval = frameAt ? Math.min(4000, performance.now() - frameAt) : 1000; frameAt = performance.now(); }
+    frame = f; season = f.season;
+    if (first){ first = false; const b = busiest(); if (b){ closeZoom(); const [wx, wy] = worldPx(b[P.x] + .5, b[P.y] + .5); cam.x = wx; cam.y = wy - 14 - CH * HZ / 2 / cam.z; setFollow(b[P.id]); } }
     hud();
   };
 }).catch(() => { $("msg").textContent = "No world here. Start one with: python design/ascii_world/ascii_watch.py"; });
