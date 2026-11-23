@@ -1,0 +1,9441 @@
+{
+ "seed": 2026,
+ "years": 80,
+ "OLD": {
+  "agent": "p00021",
+  "name": "Theithethour",
+  "born_year": 0,
+  "years": [
+   {
+    "year": 1,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 0.2,
+     "energy": 100.0,
+     "health": 25,
+     "loc": [
+      21,
+      10
+     ],
+     "doing": "",
+     "partner": null,
+     "children": 0,
+     "mood": 0.53,
+     "thought": "",
+     "death": null
+    }
+   },
+   {
+    "year": 2,
+    "pop": 26,
+    "agent": {
+     "alive": true,
+     "age": 1.2,
+     "energy": 100.0,
+     "health": 95,
+     "loc": [
+      22,
+      9
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.71,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 3,
+    "pop": 26,
+    "agent": {
+     "alive": true,
+     "age": 2.2,
+     "energy": 97.9,
+     "health": 86,
+     "loc": [
+      21,
+      9
+     ],
+     "doing": "talk",
+     "partner": null,
+     "children": 0,
+     "mood": 0.68,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 4,
+    "pop": 26,
+    "agent": {
+     "alive": true,
+     "age": 3.2,
+     "energy": 100.0,
+     "health": 100,
+     "loc": [
+      23,
+      5
+     ],
+     "doing": "play",
+     "partner": null,
+     "children": 0,
+     "mood": 0.8,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 5,
+    "pop": 29,
+    "agent": {
+     "alive": true,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": 77,
+     "loc": [
+      19,
+      2
+     ],
+     "doing": "give",
+     "partner": null,
+     "children": 0,
+     "mood": 0.67,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 6,
+    "pop": 29,
+    "agent": {
+     "alive": true,
+     "age": 5.2,
+     "energy": 100.0,
+     "health": 93,
+     "loc": [
+      21,
+      3
+     ],
+     "doing": "play",
+     "partner": null,
+     "children": 0,
+     "mood": 0.7,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 7,
+    "pop": 27,
+    "agent": {
+     "alive": true,
+     "age": 6.2,
+     "energy": 96.0,
+     "health": 100,
+     "loc": [
+      23,
+      4
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.79,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 8,
+    "pop": 27,
+    "agent": {
+     "alive": true,
+     "age": 7.2,
+     "energy": 90.0,
+     "health": 98,
+     "loc": [
+      22,
+      8
+     ],
+     "doing": "play",
+     "partner": null,
+     "children": 0,
+     "mood": 0.78,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 9,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 8.2,
+     "energy": 96.0,
+     "health": 99,
+     "loc": [
+      16,
+      4
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.79,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 10,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 9.2,
+     "energy": 100.0,
+     "health": 98,
+     "loc": [
+      21,
+      6
+     ],
+     "doing": "talk",
+     "partner": null,
+     "children": 0,
+     "mood": 0.78,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 11,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 10.2,
+     "energy": 92.0,
+     "health": 99,
+     "loc": [
+      17,
+      10
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.77,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 12,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 11.2,
+     "energy": 100.0,
+     "health": 96,
+     "loc": [
+      21,
+      5
+     ],
+     "doing": "talk",
+     "partner": null,
+     "children": 0,
+     "mood": 0.77,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 13,
+    "pop": 25,
+    "agent": {
+     "alive": true,
+     "age": 12.2,
+     "energy": 76.0,
+     "health": 99,
+     "loc": [
+      18,
+      4
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.79,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 14,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 13.2,
+     "energy": 64.0,
+     "health": 82,
+     "loc": [
+      22,
+      9
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.64,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 15,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 14.2,
+     "energy": 47.0,
+     "health": 98,
+     "loc": [
+      17,
+      12
+     ],
+     "doing": "gather fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.75,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 16,
+    "pop": 23,
+    "agent": {
+     "alive": true,
+     "age": 15.2,
+     "energy": 90.5,
+     "health": 93,
+     "loc": [
+      18,
+      9
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.26,
+     "thought": "grieving for Duthe",
+     "death": null
+    }
+   },
+   {
+    "year": 17,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 16.2,
+     "energy": 100.0,
+     "health": 100,
+     "loc": [
+      15,
+      11
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.51,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 18,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 17.2,
+     "energy": 91.0,
+     "health": 89,
+     "loc": [
+      22,
+      10
+     ],
+     "doing": "talk",
+     "partner": null,
+     "children": 0,
+     "mood": 0.62,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 19,
+    "pop": 23,
+    "agent": {
+     "alive": true,
+     "age": 18.2,
+     "energy": 32.0,
+     "health": 97,
+     "loc": [
+      22,
+      5
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.7,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 20,
+    "pop": 23,
+    "agent": {
+     "alive": true,
+     "age": 19.2,
+     "energy": 40.0,
+     "health": 100,
+     "loc": [
+      22,
+      8
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.76,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 21,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 20.2,
+     "energy": 17.3,
+     "health": 87,
+     "loc": [
+      17,
+      5
+     ],
+     "doing": "gather stone",
+     "partner": null,
+     "children": 0,
+     "mood": 0.67,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 22,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 21.2,
+     "energy": 96.0,
+     "health": 91,
+     "loc": [
+      19,
+      7
+     ],
+     "doing": "care",
+     "partner": null,
+     "children": 0,
+     "mood": 0.77,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 23,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 22.2,
+     "energy": 49.0,
+     "health": 97,
+     "loc": [
+      20,
+      9
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.75,
+     "thought": "puzzling over what became of the stone/stone left in winter",
+     "death": null
+    }
+   },
+   {
+    "year": 24,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 23.2,
+     "energy": 62.0,
+     "health": 100,
+     "loc": [
+      20,
+      8
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.77,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 25,
+    "pop": 23,
+    "agent": {
+     "alive": true,
+     "age": 24.2,
+     "energy": 92.0,
+     "health": 92,
+     "loc": [
+      18,
+      4
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.74,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 26,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 25.2,
+     "energy": 33.8,
+     "health": 86,
+     "loc": [
+      21,
+      8
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.67,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 27,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 26.2,
+     "energy": 81.0,
+     "health": 100,
+     "loc": [
+      22,
+      9
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.76,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 28,
+    "pop": 21,
+    "agent": {
+     "alive": true,
+     "age": 27.2,
+     "energy": 41.4,
+     "health": 88,
+     "loc": [
+      20,
+      9
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.76,
+     "thought": "puzzling over what became of the fiber left in summer",
+     "death": null
+    }
+   },
+   {
+    "year": 29,
+    "pop": 21,
+    "agent": {
+     "alive": true,
+     "age": 28.2,
+     "energy": 45.0,
+     "health": 88,
+     "loc": [
+      20,
+      9
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.73,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 30,
+    "pop": 21,
+    "agent": {
+     "alive": true,
+     "age": 29.2,
+     "energy": 66.0,
+     "health": 100,
+     "loc": [
+      19,
+      9
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.78,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 31,
+    "pop": 21,
+    "agent": {
+     "alive": true,
+     "age": 30.2,
+     "energy": 41.0,
+     "health": 70,
+     "loc": [
+      20,
+      8
+     ],
+     "doing": "take",
+     "partner": null,
+     "children": 0,
+     "mood": 0.57,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 32,
+    "pop": 21,
+    "agent": {
+     "alive": true,
+     "age": 31.2,
+     "energy": 63.0,
+     "health": 63,
+     "loc": [
+      19,
+      11
+     ],
+     "doing": "take",
+     "partner": null,
+     "children": 0,
+     "mood": 0.58,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 33,
+    "pop": 20,
+    "agent": {
+     "alive": true,
+     "age": 32.2,
+     "energy": 65.0,
+     "health": 100,
+     "loc": [
+      20,
+      12
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.8,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 34,
+    "pop": 20,
+    "agent": {
+     "alive": true,
+     "age": 33.2,
+     "energy": 85.0,
+     "health": 69,
+     "loc": [
+      21,
+      9
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.68,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 35,
+    "pop": 18,
+    "agent": {
+     "alive": true,
+     "age": 34.2,
+     "energy": 89.2,
+     "health": 44,
+     "loc": [
+      21,
+      2
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.45,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 36,
+    "pop": 18,
+    "agent": {
+     "alive": true,
+     "age": 35.2,
+     "energy": 52.0,
+     "health": 49,
+     "loc": [
+      18,
+      9
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.52,
+     "thought": "misses Doubel",
+     "death": null
+    }
+   },
+   {
+    "year": 37,
+    "pop": 16,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 38,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 39,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 40,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 41,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 42,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 43,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 44,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 45,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 46,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 47,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 48,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 49,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 50,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 51,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 52,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 53,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 54,
+    "pop": 12,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 55,
+    "pop": 12,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 56,
+    "pop": 11,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 57,
+    "pop": 10,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 58,
+    "pop": 9,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 59,
+    "pop": 9,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 60,
+    "pop": 9,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 61,
+    "pop": 9,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 62,
+    "pop": 9,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 63,
+    "pop": 8,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 64,
+    "pop": 8,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 65,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 66,
+    "pop": 6,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 67,
+    "pop": 6,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 68,
+    "pop": 6,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 69,
+    "pop": 6,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 70,
+    "pop": 6,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 71,
+    "pop": 6,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 72,
+    "pop": 6,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 73,
+    "pop": 5,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 74,
+    "pop": 4,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 75,
+    "pop": 4,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 76,
+    "pop": 4,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 77,
+    "pop": 3,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 78,
+    "pop": 3,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 79,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 80,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 35.9,
+     "energy": 40.7,
+     "health": -15,
+     "loc": [
+      19,
+      8
+     ],
+     "doing": "put fiber",
+     "partner": null,
+     "children": 0,
+     "mood": 0.09,
+     "thought": "",
+     "death": "starvation"
+    }
+   }
+  ],
+  "choices": [],
+  "weeks": 4160,
+  "seconds": 76.7,
+  "sec_per_week": 0.0184,
+  "final_pop": 1
+ },
+ "NEW": {
+  "agent": "p00021",
+  "name": "Theithethour",
+  "born_year": 0,
+  "years": [
+   {
+    "year": 1,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 0.2,
+     "energy": 100.0,
+     "health": 25,
+     "loc": [
+      21,
+      10
+     ],
+     "doing": "",
+     "partner": null,
+     "children": 0,
+     "mood": 0.53,
+     "thought": "",
+     "death": null
+    }
+   },
+   {
+    "year": 2,
+    "pop": 26,
+    "agent": {
+     "alive": true,
+     "age": 1.2,
+     "energy": 100.0,
+     "health": 95,
+     "loc": [
+      22,
+      9
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.71,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 3,
+    "pop": 26,
+    "agent": {
+     "alive": true,
+     "age": 2.2,
+     "energy": 97.9,
+     "health": 86,
+     "loc": [
+      21,
+      9
+     ],
+     "doing": "talk",
+     "partner": null,
+     "children": 0,
+     "mood": 0.68,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 4,
+    "pop": 26,
+    "agent": {
+     "alive": true,
+     "age": 3.2,
+     "energy": 100.0,
+     "health": 100,
+     "loc": [
+      21,
+      7
+     ],
+     "doing": "gather wood",
+     "partner": null,
+     "children": 0,
+     "mood": 0.8,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 5,
+    "pop": 27,
+    "agent": {
+     "alive": true,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": 32,
+     "loc": [
+      14,
+      2
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 6,
+    "pop": 23,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 7,
+    "pop": 21,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 8,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 9,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 10,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 11,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 12,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 13,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 14,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 15,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 16,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 17,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 18,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 19,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 20,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 21,
+    "pop": 16,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 22,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 23,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 24,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 25,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 26,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 27,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 28,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 29,
+    "pop": 11,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 30,
+    "pop": 11,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 31,
+    "pop": 11,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 32,
+    "pop": 11,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 33,
+    "pop": 10,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 34,
+    "pop": 10,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 35,
+    "pop": 9,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 36,
+    "pop": 9,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 37,
+    "pop": 8,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 38,
+    "pop": 8,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 39,
+    "pop": 8,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 40,
+    "pop": 8,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 41,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 42,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 43,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 44,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 45,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 46,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 47,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 48,
+    "pop": 7,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 49,
+    "pop": 5,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 50,
+    "pop": 4,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 51,
+    "pop": 3,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 52,
+    "pop": 3,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 53,
+    "pop": 3,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 54,
+    "pop": 3,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 55,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 56,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 57,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 58,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 59,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 60,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 61,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 62,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 63,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 64,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 65,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 66,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 67,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 68,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 69,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 70,
+    "pop": 2,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 71,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 72,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 73,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 74,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 75,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 76,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 77,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 78,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 79,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   },
+   {
+    "year": 80,
+    "pop": 1,
+    "agent": {
+     "alive": false,
+     "age": 4.2,
+     "energy": 100.0,
+     "health": -3,
+     "loc": [
+      15,
+      1
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "illness"
+    }
+   }
+  ],
+  "choices": [
+   {
+    "t": 95,
+    "loc": [
+     20,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.23,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.13,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.27,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 96,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00003",
+    "top": [
+     [
+      "rest",
+      "",
+      0.22,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.13,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.27,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.27,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 97,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.22,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.13,
+      1
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 98,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.22,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 99,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.22,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 100,
+    "loc": [
+     23,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.21,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.26,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 101,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.2,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 102,
+    "loc": [
+     18,
+     3
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.19,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 103,
+    "loc": [
+     19,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.2,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.26,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      -0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 104,
+    "loc": [
+     22,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.18,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.13,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.13,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 105,
+    "loc": [
+     19,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.18,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.13,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 106,
+    "loc": [
+     18,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 107,
+    "loc": [
+     18,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 108,
+    "loc": [
+     18,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 109,
+    "loc": [
+     18,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 110,
+    "loc": [
+     18,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.67,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 111,
+    "loc": [
+     18,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.2,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 112,
+    "loc": [
+     19,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 113,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.18,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 114,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      1
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 115,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 116,
+    "loc": [
+     20,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.18,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.1,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 117,
+    "loc": [
+     20,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.02,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.02,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 118,
+    "loc": [
+     20,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.02,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.02,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 119,
+    "loc": [
+     20,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 120,
+    "loc": [
+     20,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 121,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 122,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 123,
+    "loc": [
+     20,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 124,
+    "loc": [
+     19,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.14,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 125,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 126,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00007",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.11,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 127,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 128,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 129,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 130,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.02,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 131,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 132,
+    "loc": [
+     21,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 133,
+    "loc": [
+     20,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 134,
+    "loc": [
+     20,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 135,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "talk",
+      "p00019",
+      0.45,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.45,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.32,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      0.3,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 136,
+    "loc": [
+     19,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.14,
+      1
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.01,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 137,
+    "loc": [
+     22,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00007",
+    "top": [
+     [
+      "talk",
+      "p00011",
+      0.37,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.37,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.32,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      0.22,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      0.22,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 138,
+    "loc": [
+     22,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 0.526,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.23,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 139,
+    "loc": [
+     22,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      1
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 140,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      1
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 141,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 142,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 143,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.13,
+      1
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 144,
+    "loc": [
+     21,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      1
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 145,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00003",
+    "top": [
+     [
+      "talk",
+      "p00011",
+      0.45,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.45,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.32,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      0.31,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 146,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.23,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.01,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 147,
+    "loc": [
+     18,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      1
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 148,
+    "loc": [
+     17,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      1
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.25,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 149,
+    "loc": [
+     20,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      1
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.25,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 150,
+    "loc": [
+     17,
+     12
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 151,
+    "loc": [
+     19,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.25,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 152,
+    "loc": [
+     19,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.21,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.25,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 153,
+    "loc": [
+     16,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.21,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 154,
+    "loc": [
+     18,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.2,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.24,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 155,
+    "loc": [
+     18,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00007",
+    "top": [
+     [
+      "rest",
+      "",
+      0.2,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.24,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.24,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 156,
+    "loc": [
+     21,
+     9
+    ],
+    "energy": 97.9,
+    "hunger": 1.0,
+    "fatigue": 0.021,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.3,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      1
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 157,
+    "loc": [
+     22,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.29,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.25,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 158,
+    "loc": [
+     19,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.28,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      -0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 159,
+    "loc": [
+     22,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 0.3,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00015",
+    "top": [
+     [
+      "rest",
+      "",
+      0.41,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.29,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.29,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      0.15,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 160,
+    "loc": [
+     22,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.36,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      0.0,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 161,
+    "loc": [
+     20,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00003",
+    "top": [
+     [
+      "rest",
+      "",
+      0.44,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.38,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.38,
+      0
+     ],
+     [
+      "talk",
+      "p00015",
+      0.24,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      0.24,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 162,
+    "loc": [
+     20,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00027",
+    "top": [
+     [
+      "rest",
+      "",
+      0.3,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      0.05,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 163,
+    "loc": [
+     22,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.26,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.21,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 164,
+    "loc": [
+     22,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.25,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.21,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 165,
+    "loc": [
+     22,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00027",
+    "top": [
+     [
+      "rest",
+      "",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.21,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 166,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 167,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.22,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 168,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00003",
+    "top": [
+     [
+      "rest",
+      "",
+      0.2,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.24,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 169,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.18,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.21,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 170,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 171,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 172,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 173,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      1
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 174,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00023",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      -0.1,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 175,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00027",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.04,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 176,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 177,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 178,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.02,
+      0
+     ],
+     [
+      "talk",
+      "p00003",
+      -0.07,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 179,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00007",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.02,
+      0
+     ],
+     [
+      "talk",
+      "p00007",
+      -0.08,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 180,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00027",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.02,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 181,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00023",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.02,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      -0.07,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 182,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 183,
+    "loc": [
+     19,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 184,
+    "loc": [
+     21,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.03,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.03,
+      1
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 185,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      1
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 186,
+    "loc": [
+     20,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 187,
+    "loc": [
+     19,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.04,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.04,
+      1
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 188,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00027",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.03,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 189,
+    "loc": [
+     22,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.05,
+      1
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.03,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 190,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 191,
+    "loc": [
+     21,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.05,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 192,
+    "loc": [
+     21,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 193,
+    "loc": [
+     21,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 0.531,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.1,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 194,
+    "loc": [
+     21,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.09,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.09,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.17,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 195,
+    "loc": [
+     23,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.14,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.14,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      0.06,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 196,
+    "loc": [
+     23,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 197,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 198,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 199,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "stone",
+    "top": [
+     [
+      "gather",
+      "stone",
+      0.19,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 200,
+    "loc": [
+     22,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "wood",
+    "top": [
+     [
+      "gather",
+      "wood",
+      0.29,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 201,
+    "loc": [
+     22,
+     9
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "gather",
+      "fiber",
+      0.33,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 202,
+    "loc": [
+     20,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00023",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.2,
+      0
+     ],
+     [
+      "talk",
+      "p00023",
+      -0.25,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 203,
+    "loc": [
+     20,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "gather",
+      "clay",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 204,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "gather",
+      "fiber",
+      0.23,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 205,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "fiber",
+    "top": [
+     [
+      "gather",
+      "fiber",
+      0.45,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 206,
+    "loc": [
+     23,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "clay",
+    "top": [
+     [
+      "gather",
+      "clay",
+      0.71,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 207,
+    "loc": [
+     23,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "wood",
+    "top": [
+     [
+      "gather",
+      "wood",
+      0.65,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 208,
+    "loc": [
+     21,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "gather",
+      "flint",
+      0.26,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 209,
+    "loc": [
+     22,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      1
+     ],
+     [
+      "gather",
+      "earth",
+      0.05,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 210,
+    "loc": [
+     22,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "give",
+    "aim": "p00019",
+    "top": [
+     [
+      "give",
+      "p00019",
+      0.51,
+      1
+     ],
+     [
+      "give",
+      "p00011",
+      0.42,
+      0
+     ],
+     [
+      "gather",
+      "earth",
+      0.33,
+      0
+     ],
+     [
+      "give",
+      "p00027",
+      0.22,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 211,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.08,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.12,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 212,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.08,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 213,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.08,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 214,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "play",
+      "",
+      0.61,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.36,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.36,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.33,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 215,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "play",
+      "",
+      0.27,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.2,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 216,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "earth",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.08,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ],
+     [
+      "gather",
+      "earth",
+      -0.62,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 217,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "play",
+      "",
+      0.27,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.11,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 218,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.08,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 219,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.08,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 220,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.09,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 221,
+    "loc": [
+     20,
+     11
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 222,
+    "loc": [
+     18,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "fiber",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      -0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 223,
+    "loc": [
+     18,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "stone",
+    "top": [
+     [
+      "gather",
+      "stone",
+      0.27,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 224,
+    "loc": [
+     20,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "stone",
+    "top": [
+     [
+      "gather",
+      "stone",
+      0.41,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 225,
+    "loc": [
+     20,
+     10
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00027",
+    "top": [
+     [
+      "gather",
+      "earth",
+      0.47,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.15,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 226,
+    "loc": [
+     22,
+     8
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00019",
+    "top": [
+     [
+      "gather",
+      "wood",
+      0.4,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      -0.11,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 227,
+    "loc": [
+     22,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "stone",
+    "top": [
+     [
+      "gather",
+      "stone",
+      0.38,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 228,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "gather",
+      "clay",
+      0.43,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 229,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "gather",
+      "clay",
+      0.41,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 230,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "gather",
+      "clay",
+      0.18,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.1,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 231,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "play",
+      "",
+      0.62,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.47,
+      1
+     ],
+     [
+      "talk",
+      "p00019",
+      0.47,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      0.44,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 232,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 0.54,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "play",
+      "",
+      0.27,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.1,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 233,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "give",
+    "aim": "p00011",
+    "top": [
+     [
+      "give",
+      "p00011",
+      0.49,
+      1
+     ],
+     [
+      "give",
+      "p00027",
+      0.3,
+      0
+     ],
+     [
+      "give",
+      "p00019",
+      0.29,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.18,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 234,
+    "loc": [
+     22,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "fiber",
+    "top": [
+     [
+      "gather",
+      "fiber",
+      0.46,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 235,
+    "loc": [
+     21,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "play",
+      "",
+      0.52,
+      1
+     ],
+     [
+      "make",
+      "(fiber+fiber)#fiber",
+      0.51,
+      0
+     ],
+     [
+      "talk",
+      "p00019",
+      0.34,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.34,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 236,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 0.537,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00027",
+    "top": [
+     [
+      "make",
+      "(fiber+fiber)#fiber",
+      0.39,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.27,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      0.09,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      0.06,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 237,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "make",
+      "(fiber+fiber)#fiber",
+      0.11,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 238,
+    "loc": [
+     21,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "give",
+      "p00011",
+      0.37,
+      0
+     ],
+     [
+      "give",
+      "p00027",
+      0.3,
+      0
+     ],
+     [
+      "give",
+      "p00019",
+      0.26,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.15,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 239,
+    "loc": [
+     18,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "give",
+    "aim": "p00011",
+    "top": [
+     [
+      "give",
+      "p00011",
+      0.39,
+      1
+     ],
+     [
+      "give",
+      "p00027",
+      0.32,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 240,
+    "loc": [
+     18,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "stone",
+    "top": [
+     [
+      "rest",
+      "",
+      0.15,
+      0
+     ],
+     [
+      "gather",
+      "stone",
+      0.07,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 241,
+    "loc": [
+     16,
+     3
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "gather",
+      "stone",
+      0.13,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 242,
+    "loc": [
+     15,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "gather",
+    "aim": "stone",
+    "top": [
+     [
+      "gather",
+      "stone",
+      0.2,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 243,
+    "loc": [
+     15,
+     5
+    ],
+    "energy": 88.0,
+    "hunger": 1.0,
+    "fatigue": 0.12,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.13,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 244,
+    "loc": [
+     15,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.18,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.11,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.13,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 245,
+    "loc": [
+     13,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "give",
+      "p00027",
+      0.33,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.18,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      1
+     ],
+     [
+      "gather",
+      "stone",
+      0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 246,
+    "loc": [
+     14,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "give",
+      "p00027",
+      0.33,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.18,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "gather",
+      "stone",
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 247,
+    "loc": [
+     13,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "give",
+      "p00027",
+      0.32,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.17,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 248,
+    "loc": [
+     13,
+     7
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "give",
+    "aim": "p00027",
+    "top": [
+     [
+      "give",
+      "p00027",
+      0.32,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 249,
+    "loc": [
+     15,
+     5
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.06,
+      1
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.14,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 250,
+    "loc": [
+     17,
+     2
+    ],
+    "energy": 98.0,
+    "hunger": 1.0,
+    "fatigue": 0.02,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.16,
+      1
+     ],
+     [
+      "gather",
+      "fiber",
+      0.07,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "give",
+      "p00011",
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 251,
+    "loc": [
+     18,
+     2
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.17,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.1,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      1
+     ],
+     [
+      "give",
+      "p00011",
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 252,
+    "loc": [
+     18,
+     2
+    ],
+    "energy": 86.9,
+    "hunger": 1.0,
+    "fatigue": 0.131,
+    "chose": "give",
+    "aim": "p00011",
+    "top": [
+     [
+      "rest",
+      "",
+      0.27,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.12,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "give",
+      "p00011",
+      0.02,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 253,
+    "loc": [
+     15,
+     3
+    ],
+    "energy": 82.9,
+    "hunger": 1.0,
+    "fatigue": 0.171,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.29,
+      1
+     ],
+     [
+      "gather",
+      "fiber",
+      0.12,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 254,
+    "loc": [
+     15,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.28,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      -0.1,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 255,
+    "loc": [
+     15,
+     6
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.37,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.14,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 256,
+    "loc": [
+     16,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.36,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.14,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 257,
+    "loc": [
+     14,
+     3
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.37,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.14,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 258,
+    "loc": [
+     12,
+     4
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.53,
+      1
+     ],
+     [
+      "gather",
+      "fiber",
+      0.11,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 259,
+    "loc": [
+     13,
+     3
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.56,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.14,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 260,
+    "loc": [
+     14,
+     2
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.57,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.07,
+      0
+     ],
+     [
+      "talk",
+      "p00011",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00027",
+      -0.14,
+      0
+     ]
+    ]
+   }
+  ],
+  "weeks": 4160,
+  "seconds": 40.9,
+  "sec_per_week": 0.0098,
+  "final_pop": 1
+ }
+}

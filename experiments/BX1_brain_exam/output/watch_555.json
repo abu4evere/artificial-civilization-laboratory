@@ -1,0 +1,8795 @@
+{
+ "seed": 555,
+ "years": 60,
+ "OLD": {
+  "agent": "p00001",
+  "name": "Zaimem",
+  "years": [
+   {
+    "year": 1,
+    "pop": 23,
+    "agent": {
+     "alive": true,
+     "age": 17.5,
+     "energy": 97.0,
+     "health": 34,
+     "loc": [
+      36,
+      24
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 2,
+    "pop": 23,
+    "agent": {
+     "alive": true,
+     "age": 18.5,
+     "energy": 100.0,
+     "health": 94,
+     "loc": [
+      34,
+      22
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.69,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 3,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 19.5,
+     "energy": 57.0,
+     "health": 99,
+     "loc": [
+      36,
+      22
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.78,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 4,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 20.5,
+     "energy": 95.0,
+     "health": 100,
+     "loc": [
+      32,
+      24
+     ],
+     "doing": "talk",
+     "partner": null,
+     "children": 0,
+     "mood": 0.78,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 5,
+    "pop": 22,
+    "agent": {
+     "alive": true,
+     "age": 21.5,
+     "energy": 48.0,
+     "health": 100,
+     "loc": [
+      31,
+      14
+     ],
+     "doing": "explore",
+     "partner": null,
+     "children": 0,
+     "mood": 0.77,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 6,
+    "pop": 25,
+    "agent": {
+     "alive": true,
+     "age": 22.5,
+     "energy": 94.5,
+     "health": 99,
+     "loc": [
+      34,
+      20
+     ],
+     "doing": "rest",
+     "partner": null,
+     "children": 0,
+     "mood": 0.71,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 7,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 23.5,
+     "energy": 87.2,
+     "health": 92,
+     "loc": [
+      34,
+      15
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.59,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 8,
+    "pop": 23,
+    "agent": {
+     "alive": true,
+     "age": 24.5,
+     "energy": 80.4,
+     "health": 92,
+     "loc": [
+      29,
+      21
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.65,
+     "thought": "misses Kougashu",
+     "death": null
+    }
+   },
+   {
+    "year": 9,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 25.5,
+     "energy": 100.0,
+     "health": 78,
+     "loc": [
+      36,
+      17
+     ],
+     "doing": "put wood",
+     "partner": null,
+     "children": 0,
+     "mood": 0.67,
+     "thought": "puzzling over what became of the wood left in winter",
+     "death": null
+    }
+   },
+   {
+    "year": 10,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 26.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 11,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 27.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 12,
+    "pop": 16,
+    "agent": {
+     "alive": false,
+     "age": 28.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 13,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 29.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 14,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 30.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 15,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 31.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 16,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 32.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 17,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 33.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 18,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 34.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 19,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 35.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 20,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 36.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 21,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 37.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 22,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 38.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 23,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 39.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 24,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 40.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 25,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 41.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 26,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 42.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 27,
+    "pop": 21,
+    "agent": {
+     "alive": false,
+     "age": 43.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 28,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 44.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 29,
+    "pop": 21,
+    "agent": {
+     "alive": false,
+     "age": 45.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 30,
+    "pop": 21,
+    "agent": {
+     "alive": false,
+     "age": 46.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 31,
+    "pop": 23,
+    "agent": {
+     "alive": false,
+     "age": 47.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 32,
+    "pop": 24,
+    "agent": {
+     "alive": false,
+     "age": 48.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 33,
+    "pop": 24,
+    "agent": {
+     "alive": false,
+     "age": 49.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 34,
+    "pop": 25,
+    "agent": {
+     "alive": false,
+     "age": 50.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 35,
+    "pop": 24,
+    "agent": {
+     "alive": false,
+     "age": 51.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 36,
+    "pop": 25,
+    "agent": {
+     "alive": false,
+     "age": 52.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 37,
+    "pop": 26,
+    "agent": {
+     "alive": false,
+     "age": 53.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 38,
+    "pop": 25,
+    "agent": {
+     "alive": false,
+     "age": 54.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 39,
+    "pop": 26,
+    "agent": {
+     "alive": false,
+     "age": 55.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 40,
+    "pop": 27,
+    "agent": {
+     "alive": false,
+     "age": 56.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 41,
+    "pop": 27,
+    "agent": {
+     "alive": false,
+     "age": 57.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 42,
+    "pop": 27,
+    "agent": {
+     "alive": false,
+     "age": 58.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 43,
+    "pop": 28,
+    "agent": {
+     "alive": false,
+     "age": 59.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 44,
+    "pop": 30,
+    "agent": {
+     "alive": false,
+     "age": 60.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 45,
+    "pop": 30,
+    "agent": {
+     "alive": false,
+     "age": 61.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 46,
+    "pop": 30,
+    "agent": {
+     "alive": false,
+     "age": 62.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 47,
+    "pop": 32,
+    "agent": {
+     "alive": false,
+     "age": 63.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 48,
+    "pop": 31,
+    "agent": {
+     "alive": false,
+     "age": 64.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 49,
+    "pop": 32,
+    "agent": {
+     "alive": false,
+     "age": 65.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 50,
+    "pop": 33,
+    "agent": {
+     "alive": false,
+     "age": 66.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 51,
+    "pop": 33,
+    "agent": {
+     "alive": false,
+     "age": 67.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 52,
+    "pop": 34,
+    "agent": {
+     "alive": false,
+     "age": 68.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 53,
+    "pop": 34,
+    "agent": {
+     "alive": false,
+     "age": 69.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 54,
+    "pop": 34,
+    "agent": {
+     "alive": false,
+     "age": 70.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 55,
+    "pop": 34,
+    "agent": {
+     "alive": false,
+     "age": 71.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 56,
+    "pop": 35,
+    "agent": {
+     "alive": false,
+     "age": 72.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 57,
+    "pop": 35,
+    "agent": {
+     "alive": false,
+     "age": 73.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 58,
+    "pop": 35,
+    "agent": {
+     "alive": false,
+     "age": 74.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 59,
+    "pop": 36,
+    "agent": {
+     "alive": false,
+     "age": 75.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   },
+   {
+    "year": 60,
+    "pop": 37,
+    "agent": {
+     "alive": false,
+     "age": 76.5,
+     "energy": 70.9,
+     "health": -7,
+     "loc": [
+      2,
+      23
+     ],
+     "doing": "join",
+     "partner": null,
+     "children": 0,
+     "mood": 0.44,
+     "thought": "",
+     "death": "thirst"
+    }
+   }
+  ],
+  "choices": [],
+  "weeks": 3120,
+  "seconds": 103.1,
+  "sec_per_week": 0.033,
+  "final_pop": 37
+ },
+ "NEW": {
+  "agent": "p00001",
+  "name": "Zaimem",
+  "years": [
+   {
+    "year": 1,
+    "pop": 20,
+    "agent": {
+     "alive": true,
+     "age": 17.5,
+     "energy": 76.3,
+     "health": 36,
+     "loc": [
+      30,
+      25
+     ],
+     "doing": "forage",
+     "partner": null,
+     "children": 0,
+     "mood": 0.54,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 2,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 18.5,
+     "energy": 37.7,
+     "health": 36,
+     "loc": [
+      30,
+      21
+     ],
+     "doing": "join",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.54,
+     "thought": "cold; needs warmth",
+     "death": null
+    }
+   },
+   {
+    "year": 3,
+    "pop": 24,
+    "agent": {
+     "alive": true,
+     "age": 19.5,
+     "energy": 51.3,
+     "health": 4,
+     "loc": [
+      33,
+      24
+     ],
+     "doing": "join",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.47,
+     "thought": "hungry; where is food?",
+     "death": null
+    }
+   },
+   {
+    "year": 4,
+    "pop": 23,
+    "agent": {
+     "alive": false,
+     "age": 20.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 5,
+    "pop": 25,
+    "agent": {
+     "alive": false,
+     "age": 21.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 6,
+    "pop": 24,
+    "agent": {
+     "alive": false,
+     "age": 22.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 7,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 23.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 8,
+    "pop": 22,
+    "agent": {
+     "alive": false,
+     "age": 24.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 9,
+    "pop": 23,
+    "agent": {
+     "alive": false,
+     "age": 25.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 10,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 26.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 11,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 27.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 12,
+    "pop": 21,
+    "agent": {
+     "alive": false,
+     "age": 28.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 13,
+    "pop": 23,
+    "agent": {
+     "alive": false,
+     "age": 29.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 14,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 30.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 15,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 31.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 16,
+    "pop": 20,
+    "agent": {
+     "alive": false,
+     "age": 32.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 17,
+    "pop": 21,
+    "agent": {
+     "alive": false,
+     "age": 33.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 18,
+    "pop": 22,
+    "agent": {
+     "alive": false,
+     "age": 34.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 19,
+    "pop": 22,
+    "agent": {
+     "alive": false,
+     "age": 35.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 20,
+    "pop": 22,
+    "agent": {
+     "alive": false,
+     "age": 36.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 21,
+    "pop": 22,
+    "agent": {
+     "alive": false,
+     "age": 37.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 22,
+    "pop": 22,
+    "agent": {
+     "alive": false,
+     "age": 38.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 23,
+    "pop": 21,
+    "agent": {
+     "alive": false,
+     "age": 39.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 24,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 40.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 25,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 41.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 26,
+    "pop": 18,
+    "agent": {
+     "alive": false,
+     "age": 42.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 27,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 43.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 28,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 44.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 29,
+    "pop": 19,
+    "agent": {
+     "alive": false,
+     "age": 45.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 30,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 46.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 31,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 47.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 32,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 48.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 33,
+    "pop": 16,
+    "agent": {
+     "alive": false,
+     "age": 49.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 34,
+    "pop": 16,
+    "agent": {
+     "alive": false,
+     "age": 50.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 35,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 51.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 36,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 52.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 37,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 53.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 38,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 54.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 39,
+    "pop": 17,
+    "agent": {
+     "alive": false,
+     "age": 55.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 40,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 56.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 41,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 57.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 42,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 58.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 43,
+    "pop": 12,
+    "agent": {
+     "alive": false,
+     "age": 59.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 44,
+    "pop": 12,
+    "agent": {
+     "alive": false,
+     "age": 60.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 45,
+    "pop": 12,
+    "agent": {
+     "alive": false,
+     "age": 61.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 46,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 62.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 47,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 63.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 48,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 64.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 49,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 65.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 50,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 66.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 51,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 67.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 52,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 68.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 53,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 69.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 54,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 70.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 55,
+    "pop": 14,
+    "agent": {
+     "alive": false,
+     "age": 71.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 56,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 72.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 57,
+    "pop": 15,
+    "agent": {
+     "alive": false,
+     "age": 73.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 58,
+    "pop": 13,
+    "agent": {
+     "alive": false,
+     "age": 74.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 59,
+    "pop": 12,
+    "agent": {
+     "alive": false,
+     "age": 75.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   },
+   {
+    "year": 60,
+    "pop": 12,
+    "agent": {
+     "alive": false,
+     "age": 76.5,
+     "energy": 98.0,
+     "health": -2,
+     "loc": [
+      35,
+      23
+     ],
+     "doing": "forage",
+     "partner": "p00013",
+     "children": 0,
+     "mood": 0.5,
+     "thought": "",
+     "death": "starvation"
+    }
+   }
+  ],
+  "choices": [
+   {
+    "t": 0,
+    "loc": [
+     37,
+     21
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "give",
+    "aim": "p00013",
+    "top": [
+     [
+      "talk",
+      "p00005",
+      0.5,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.5,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.5,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.5,
+      0
+     ],
+     [
+      "give",
+      "p00013",
+      0.26,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 1,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.78,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "37,22",
+    "top": [
+     [
+      "forage",
+      "37,22",
+      2.0,
+      1
+     ],
+     [
+      "explore",
+      "34,19",
+      1.38,
+      0
+     ],
+     [
+      "explore",
+      "34,19",
+      1.15,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.42,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 2,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.254,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00017",
+    "top": [
+     [
+      "rest",
+      "",
+      0.35,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.27,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.27,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.27,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.27,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 3,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.784,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "37,22",
+    "top": [
+     [
+      "forage",
+      "37,22",
+      2.06,
+      1
+     ],
+     [
+      "explore",
+      "37,19",
+      1.06,
+      0
+     ],
+     [
+      "explore",
+      "37,19",
+      0.83,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.43,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 4,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.256,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.35,
+      1
+     ],
+     [
+      "talk",
+      "p00017",
+      0.18,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.18,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.18,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 5,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.786,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "38,20",
+    "top": [
+     [
+      "forage",
+      "38,20",
+      2.45,
+      1
+     ],
+     [
+      "explore",
+      "34,19",
+      1.43,
+      0
+     ],
+     [
+      "explore",
+      "34,19",
+      1.2,
+      0
+     ],
+     [
+      "hunt",
+      "35,25",
+      0.39,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 6,
+    "loc": [
+     38,
+     20
+    ],
+    "energy": 92.0,
+    "hunger": 0.453,
+    "fatigue": 0.08,
+    "chose": "forage",
+    "aim": "35,21",
+    "top": [
+     [
+      "forage",
+      "35,21",
+      1.62,
+      1
+     ],
+     [
+      "hunt",
+      "35,21",
+      0.69,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.08,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 7,
+    "loc": [
+     35,
+     21
+    ],
+    "energy": 80.0,
+    "hunger": 0.232,
+    "fatigue": 0.2,
+    "chose": "talk",
+    "aim": "p00017",
+    "top": [
+     [
+      "rest",
+      "",
+      0.3,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.21,
+      1
+     ],
+     [
+      "talk",
+      "p00013",
+      0.21,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 8,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 87.0,
+    "hunger": 0.762,
+    "fatigue": 0.13,
+    "chose": "forage",
+    "aim": "37,22",
+    "top": [
+     [
+      "forage",
+      "37,22",
+      1.85,
+      1
+     ],
+     [
+      "explore",
+      "36,24",
+      0.75,
+      0
+     ],
+     [
+      "join",
+      "38,20",
+      0.63,
+      0
+     ],
+     [
+      "explore",
+      "36,24",
+      0.52,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 9,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 87.0,
+    "hunger": 0.202,
+    "fatigue": 0.13,
+    "chose": "talk",
+    "aim": "p00009",
+    "top": [
+     [
+      "rest",
+      "",
+      0.28,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.2,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.19,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 10,
+    "loc": [
+     37,
+     23
+    ],
+    "energy": 98.0,
+    "hunger": 0.734,
+    "fatigue": 0.02,
+    "chose": "forage",
+    "aim": "37,23",
+    "top": [
+     [
+      "forage",
+      "37,23",
+      1.59,
+      1
+     ],
+     [
+      "explore",
+      "33,25",
+      0.61,
+      0
+     ],
+     [
+      "explore",
+      "33,25",
+      0.39,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 11,
+    "loc": [
+     37,
+     23
+    ],
+    "energy": 98.0,
+    "hunger": 0.166,
+    "fatigue": 0.02,
+    "chose": "explore",
+    "aim": "2,24",
+    "top": [
+     [
+      "explore",
+      "2,24",
+      1.24,
+      1
+     ],
+     [
+      "explore",
+      "2,24",
+      1.15,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.26,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 12,
+    "loc": [
+     38,
+     20
+    ],
+    "energy": 81.0,
+    "hunger": 0.699,
+    "fatigue": 0.19,
+    "chose": "explore",
+    "aim": "37,22",
+    "top": [
+     [
+      "join",
+      "37,23",
+      1.23,
+      0
+     ],
+     [
+      "forage",
+      "38,20",
+      1.07,
+      0
+     ],
+     [
+      "explore",
+      "37,22",
+      0.81,
+      1
+     ],
+     [
+      "explore",
+      "37,22",
+      0.6,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 13,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 62.7,
+    "hunger": 1.0,
+    "fatigue": 0.373,
+    "chose": "forage",
+    "aim": "37,22",
+    "top": [
+     [
+      "forage",
+      "37,22",
+      2.6,
+      1
+     ],
+     [
+      "explore",
+      "34,19",
+      1.24,
+      0
+     ],
+     [
+      "explore",
+      "34,19",
+      0.96,
+      0
+     ],
+     [
+      "hunt",
+      "36,22",
+      0.72,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 14,
+    "loc": [
+     37,
+     22
+    ],
+    "energy": 62.7,
+    "hunger": 0.408,
+    "fatigue": 0.373,
+    "chose": "join",
+    "aim": "37,23",
+    "top": [
+     [
+      "forage",
+      "37,22",
+      1.22,
+      0
+     ],
+     [
+      "join",
+      "37,23",
+      1.11,
+      1
+     ],
+     [
+      "join",
+      "38,19",
+      0.99,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.5,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 15,
+    "loc": [
+     37,
+     23
+    ],
+    "energy": 63.7,
+    "hunger": 0.927,
+    "fatigue": 0.363,
+    "chose": "forage",
+    "aim": "37,23",
+    "top": [
+     [
+      "forage",
+      "37,23",
+      2.4,
+      1
+     ],
+     [
+      "explore",
+      "34,20",
+      1.23,
+      0
+     ],
+     [
+      "explore",
+      "34,20",
+      0.96,
+      0
+     ],
+     [
+      "gather",
+      "wood",
+      0.45,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 16,
+    "loc": [
+     37,
+     23
+    ],
+    "energy": 63.7,
+    "hunger": 0.328,
+    "fatigue": 0.363,
+    "chose": "talk",
+    "aim": "p00005",
+    "top": [
+     [
+      "rest",
+      "",
+      0.49,
+      0
+     ],
+     [
+      "forage",
+      "37,23",
+      0.27,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.26,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.25,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.25,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 17,
+    "loc": [
+     36,
+     20
+    ],
+    "energy": 66.7,
+    "hunger": 0.435,
+    "fatigue": 0.333,
+    "chose": "explore",
+    "aim": "33,23",
+    "top": [
+     [
+      "explore",
+      "33,23",
+      1.62,
+      1
+     ],
+     [
+      "explore",
+      "33,23",
+      1.47,
+      0
+     ],
+     [
+      "forage",
+      "36,20",
+      1.03,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.43,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 18,
+    "loc": [
+     33,
+     23
+    ],
+    "energy": 49.7,
+    "hunger": 0.951,
+    "fatigue": 0.503,
+    "chose": "explore",
+    "aim": "29,25",
+    "top": [
+     [
+      "explore",
+      "29,25",
+      1.54,
+      1
+     ],
+     [
+      "forage",
+      "33,23",
+      1.42,
+      0
+     ],
+     [
+      "join",
+      "36,20",
+      1.28,
+      0
+     ],
+     [
+      "explore",
+      "29,25",
+      1.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 19,
+    "loc": [
+     30,
+     25
+    ],
+    "energy": 21.4,
+    "hunger": 1.0,
+    "fatigue": 0.786,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.97,
+      1
+     ],
+     [
+      "talk",
+      "p00005",
+      -0.21,
+      0
+     ],
+     [
+      "steal",
+      "p00005",
+      -0.25,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 20,
+    "loc": [
+     30,
+     25
+    ],
+    "energy": 73.9,
+    "hunger": 1.0,
+    "fatigue": 0.261,
+    "chose": "forage",
+    "aim": "30,25",
+    "top": [
+     [
+      "forage",
+      "30,25",
+      2.57,
+      1
+     ],
+     [
+      "join",
+      "33,22",
+      1.1,
+      0
+     ],
+     [
+      "join",
+      "33,22",
+      0.99,
+      0
+     ],
+     [
+      "explore",
+      "32,26",
+      0.8,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 21,
+    "loc": [
+     30,
+     25
+    ],
+    "energy": 73.9,
+    "hunger": 0.706,
+    "fatigue": 0.261,
+    "chose": "forage",
+    "aim": "31,23",
+    "top": [
+     [
+      "forage",
+      "31,23",
+      2.04,
+      1
+     ],
+     [
+      "join",
+      "33,22",
+      1.15,
+      0
+     ],
+     [
+      "join",
+      "33,22",
+      1.15,
+      0
+     ],
+     [
+      "explore",
+      "33,22",
+      0.99,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 22,
+    "loc": [
+     31,
+     23
+    ],
+    "energy": 65.9,
+    "hunger": 0.321,
+    "fatigue": 0.341,
+    "chose": "join",
+    "aim": "34,20",
+    "top": [
+     [
+      "join",
+      "34,20",
+      1.01,
+      0
+     ],
+     [
+      "join",
+      "34,20",
+      0.98,
+      1
+     ],
+     [
+      "explore",
+      "28,20",
+      0.68,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.6,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 23,
+    "loc": [
+     34,
+     20
+    ],
+    "energy": 58.9,
+    "hunger": 0.841,
+    "fatigue": 0.411,
+    "chose": "forage",
+    "aim": "34,20",
+    "top": [
+     [
+      "forage",
+      "34,20",
+      1.64,
+      1
+     ],
+     [
+      "explore",
+      "34,23",
+      1.49,
+      0
+     ],
+     [
+      "explore",
+      "34,23",
+      1.24,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.49,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 24,
+    "loc": [
+     34,
+     20
+    ],
+    "energy": 58.9,
+    "hunger": 0.0,
+    "fatigue": 0.411,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.73,
+      1
+     ],
+     [
+      "give",
+      "p00013",
+      0.47,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.45,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.45,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 25,
+    "loc": [
+     34,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "give",
+    "aim": "p00013",
+    "top": [
+     [
+      "talk",
+      "p00017",
+      0.45,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.45,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.44,
+      0
+     ],
+     [
+      "give",
+      "p00013",
+      0.42,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 26,
+    "loc": [
+     34,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.357,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00017",
+    "top": [
+     [
+      "rest",
+      "",
+      0.41,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.22,
+      1
+     ],
+     [
+      "talk",
+      "p00005",
+      0.22,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.22,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 27,
+    "loc": [
+     34,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.875,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "36,20",
+    "top": [
+     [
+      "explore",
+      "34,23",
+      1.53,
+      0
+     ],
+     [
+      "explore",
+      "34,23",
+      1.28,
+      0
+     ],
+     [
+      "forage",
+      "36,20",
+      1.24,
+      1
+     ],
+     [
+      "hunt",
+      "36,22",
+      0.68,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 28,
+    "loc": [
+     36,
+     20
+    ],
+    "energy": 92.0,
+    "hunger": 0.462,
+    "fatigue": 0.08,
+    "chose": "join",
+    "aim": "33,23",
+    "top": [
+     [
+      "join",
+      "33,23",
+      1.35,
+      1
+     ],
+     [
+      "forage",
+      "36,20",
+      0.75,
+      0
+     ],
+     [
+      "explore",
+      "38,22",
+      0.39,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.38,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 29,
+    "loc": [
+     33,
+     23
+    ],
+    "energy": 85.0,
+    "hunger": 0.967,
+    "fatigue": 0.15,
+    "chose": "forage",
+    "aim": "33,23",
+    "top": [
+     [
+      "forage",
+      "33,23",
+      1.35,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.26,
+      0
+     ],
+     [
+      "steal",
+      "p00009",
+      -0.12,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      -0.16,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 30,
+    "loc": [
+     33,
+     23
+    ],
+    "energy": 85.0,
+    "hunger": 0.317,
+    "fatigue": 0.15,
+    "chose": "explore",
+    "aim": "30,20",
+    "top": [
+     [
+      "explore",
+      "30,20",
+      1.18,
+      1
+     ],
+     [
+      "explore",
+      "30,20",
+      1.05,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.43,
+      0
+     ],
+     [
+      "forage",
+      "36,22",
+      0.41,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 31,
+    "loc": [
+     30,
+     20
+    ],
+    "energy": 68.0,
+    "hunger": 0.829,
+    "fatigue": 0.32,
+    "chose": "join",
+    "aim": "33,23",
+    "top": [
+     [
+      "join",
+      "33,23",
+      2.02,
+      1
+     ],
+     [
+      "forage",
+      "30,20",
+      1.7,
+      0
+     ],
+     [
+      "explore",
+      "27,23",
+      0.88,
+      0
+     ],
+     [
+      "explore",
+      "27,23",
+      0.67,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 32,
+    "loc": [
+     33,
+     23
+    ],
+    "energy": 52.7,
+    "hunger": 1.0,
+    "fatigue": 0.473,
+    "chose": "forage",
+    "aim": "33,23",
+    "top": [
+     [
+      "forage",
+      "33,23",
+      1.55,
+      1
+     ],
+     [
+      "explore",
+      "29,25",
+      1.47,
+      0
+     ],
+     [
+      "join",
+      "36,20",
+      1.3,
+      0
+     ],
+     [
+      "explore",
+      "29,25",
+      1.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 33,
+    "loc": [
+     33,
+     23
+    ],
+    "energy": 52.7,
+    "hunger": 0.679,
+    "fatigue": 0.473,
+    "chose": "forage",
+    "aim": "36,20",
+    "top": [
+     [
+      "forage",
+      "36,20",
+      2.94,
+      1
+     ],
+     [
+      "join",
+      "36,20",
+      1.37,
+      0
+     ],
+     [
+      "hunt",
+      "36,21",
+      0.69,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.62,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 34,
+    "loc": [
+     36,
+     20
+    ],
+    "energy": 40.7,
+    "hunger": 0.366,
+    "fatigue": 0.593,
+    "chose": "forage",
+    "aim": "36,20",
+    "top": [
+     [
+      "forage",
+      "36,20",
+      2.07,
+      1
+     ],
+     [
+      "gather",
+      "fiber",
+      1.48,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.85,
+      0
+     ],
+     [
+      "care",
+      "p00009",
+      0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 35,
+    "loc": [
+     36,
+     20
+    ],
+    "energy": 40.7,
+    "hunger": 0.0,
+    "fatigue": 0.593,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.94,
+      1
+     ],
+     [
+      "give",
+      "p00017",
+      0.6,
+      0
+     ],
+     [
+      "forage",
+      "33,17",
+      0.57,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.48,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 36,
+    "loc": [
+     36,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.214,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.45,
+      1
+     ],
+     [
+      "talk",
+      "p00005",
+      0.25,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.23,
+      0
+     ],
+     [
+      "explore",
+      "36,17",
+      -0.08,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 37,
+    "loc": [
+     36,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.718,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "36,20",
+    "top": [
+     [
+      "forage",
+      "36,20",
+      1.58,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.26,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.23,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      -0.01,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 38,
+    "loc": [
+     36,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.039,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00009",
+    "top": [
+     [
+      "rest",
+      "",
+      0.35,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.34,
+      1
+     ],
+     [
+      "forage",
+      "36,17",
+      -0.36,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      -0.85,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 39,
+    "loc": [
+     35,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.552,
+    "fatigue": 0.0,
+    "chose": "explore",
+    "aim": "32,19",
+    "top": [
+     [
+      "explore",
+      "32,19",
+      1.5,
+      1
+     ],
+     [
+      "explore",
+      "32,19",
+      1.32,
+      0
+     ],
+     [
+      "forage",
+      "34,21",
+      1.01,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.33,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 40,
+    "loc": [
+     32,
+     19
+    ],
+    "energy": 81.6,
+    "hunger": 1.0,
+    "fatigue": 0.184,
+    "chose": "join",
+    "aim": "35,22",
+    "top": [
+     [
+      "join",
+      "35,22",
+      2.26,
+      1
+     ],
+     [
+      "forage",
+      "29,17",
+      1.96,
+      0
+     ],
+     [
+      "join",
+      "32,22",
+      0.73,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.27,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 41,
+    "loc": [
+     35,
+     22
+    ],
+    "energy": 62.1,
+    "hunger": 0.339,
+    "fatigue": 0.379,
+    "chose": "forage",
+    "aim": "36,21",
+    "top": [
+     [
+      "rest",
+      "",
+      0.67,
+      0
+     ],
+     [
+      "forage",
+      "36,21",
+      0.3,
+      1
+     ],
+     [
+      "talk",
+      "p00017",
+      0.27,
+      0
+     ],
+     [
+      "join",
+      "36,20",
+      0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 42,
+    "loc": [
+     36,
+     21
+    ],
+    "energy": 58.1,
+    "hunger": 0.0,
+    "fatigue": 0.419,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "give",
+      "p00017",
+      0.82,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.8,
+      1
+     ],
+     [
+      "put",
+      "food",
+      0.6,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.47,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 43,
+    "loc": [
+     36,
+     21
+    ],
+    "energy": 100.0,
+    "hunger": 0.077,
+    "fatigue": 0.0,
+    "chose": "talk",
+    "aim": "p00017",
+    "top": [
+     [
+      "rest",
+      "",
+      0.56,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.43,
+      1
+     ],
+     [
+      "talk",
+      "p00005",
+      0.42,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.41,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 44,
+    "loc": [
+     33,
+     21
+    ],
+    "energy": 100.0,
+    "hunger": 0.612,
+    "fatigue": 0.0,
+    "chose": "explore",
+    "aim": "33,18",
+    "top": [
+     [
+      "explore",
+      "33,18",
+      1.73,
+      1
+     ],
+     [
+      "explore",
+      "33,18",
+      1.54,
+      0
+     ],
+     [
+      "join",
+      "36,20",
+      1.17,
+      0
+     ],
+     [
+      "forage",
+      "33,21",
+      0.77,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 45,
+    "loc": [
+     33,
+     18
+    ],
+    "energy": 79.9,
+    "hunger": 1.0,
+    "fatigue": 0.201,
+    "chose": "forage",
+    "aim": "36,16",
+    "top": [
+     [
+      "forage",
+      "36,16",
+      1.58,
+      1
+     ],
+     [
+      "join",
+      "36,20",
+      1.45,
+      0
+     ],
+     [
+      "join",
+      "32,21",
+      0.91,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.4,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 46,
+    "loc": [
+     36,
+     16
+    ],
+    "energy": 67.9,
+    "hunger": 0.672,
+    "fatigue": 0.321,
+    "chose": "join",
+    "aim": "36,19",
+    "top": [
+     [
+      "join",
+      "36,19",
+      2.19,
+      1
+     ],
+     [
+      "forage",
+      "36,16",
+      1.9,
+      0
+     ],
+     [
+      "join",
+      "33,19",
+      0.83,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.56,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 47,
+    "loc": [
+     36,
+     19
+    ],
+    "energy": 56.3,
+    "hunger": 1.0,
+    "fatigue": 0.437,
+    "chose": "forage",
+    "aim": "36,19",
+    "top": [
+     [
+      "forage",
+      "36,19",
+      2.34,
+      1
+     ],
+     [
+      "join",
+      "36,20",
+      1.51,
+      0
+     ],
+     [
+      "join",
+      "33,22",
+      0.89,
+      0
+     ],
+     [
+      "explore",
+      "38,21",
+      0.73,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 48,
+    "loc": [
+     36,
+     19
+    ],
+    "energy": 56.3,
+    "hunger": 0.31,
+    "fatigue": 0.437,
+    "chose": "join",
+    "aim": "33,22",
+    "top": [
+     [
+      "join",
+      "33,22",
+      1.42,
+      1
+     ],
+     [
+      "join",
+      "36,20",
+      1.25,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.8,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 49,
+    "loc": [
+     33,
+     22
+    ],
+    "energy": 49.3,
+    "hunger": 0.835,
+    "fatigue": 0.507,
+    "chose": "explore",
+    "aim": "30,25",
+    "top": [
+     [
+      "explore",
+      "30,25",
+      2.32,
+      0
+     ],
+     [
+      "explore",
+      "30,25",
+      2.08,
+      1
+     ],
+     [
+      "forage",
+      "36,20",
+      1.31,
+      0
+     ],
+     [
+      "join",
+      "36,20",
+      1.09,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 50,
+    "loc": [
+     30,
+     25
+    ],
+    "energy": 23.8,
+    "hunger": 1.0,
+    "fatigue": 0.762,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      1.16,
+      1
+     ],
+     [
+      "talk",
+      "p00017",
+      -0.19,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      -0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 51,
+    "loc": [
+     30,
+     25
+    ],
+    "energy": 76.3,
+    "hunger": 1.0,
+    "fatigue": 0.237,
+    "chose": "forage",
+    "aim": "30,25",
+    "top": [
+     [
+      "forage",
+      "30,25",
+      2.44,
+      1
+     ],
+     [
+      "join",
+      "33,22",
+      1.68,
+      0
+     ],
+     [
+      "explore",
+      "32,26",
+      0.98,
+      0
+     ],
+     [
+      "explore",
+      "32,26",
+      0.7,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 52,
+    "loc": [
+     30,
+     25
+    ],
+    "energy": 76.3,
+    "hunger": 0.732,
+    "fatigue": 0.237,
+    "chose": "forage",
+    "aim": "28,22",
+    "top": [
+     [
+      "forage",
+      "28,22",
+      2.21,
+      1
+     ],
+     [
+      "join",
+      "33,22",
+      1.86,
+      0
+     ],
+     [
+      "explore",
+      "30,22",
+      0.84,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.67,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 53,
+    "loc": [
+     28,
+     22
+    ],
+    "energy": 64.3,
+    "hunger": 0.399,
+    "fatigue": 0.357,
+    "chose": "explore",
+    "aim": "31,19",
+    "top": [
+     [
+      "explore",
+      "31,19",
+      1.72,
+      1
+     ],
+     [
+      "explore",
+      "31,19",
+      1.57,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.84,
+      0
+     ],
+     [
+      "talk",
+      "p00017",
+      0.24,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 54,
+    "loc": [
+     31,
+     19
+    ],
+    "energy": 47.3,
+    "hunger": 0.922,
+    "fatigue": 0.527,
+    "chose": "forage",
+    "aim": "28,22",
+    "top": [
+     [
+      "forage",
+      "28,22",
+      2.66,
+      1
+     ],
+     [
+      "join",
+      "28,22",
+      1.76,
+      0
+     ],
+     [
+      "explore",
+      "31,22",
+      0.98,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.88,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 55,
+    "loc": [
+     28,
+     22
+    ],
+    "energy": 35.3,
+    "hunger": 0.577,
+    "fatigue": 0.647,
+    "chose": "forage",
+    "aim": "28,22",
+    "top": [
+     [
+      "forage",
+      "28,22",
+      3.29,
+      1
+     ],
+     [
+      "gather",
+      "fiber",
+      2.16,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.13,
+      0
+     ],
+     [
+      "join",
+      "31,22",
+      0.14,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 56,
+    "loc": [
+     28,
+     22
+    ],
+    "energy": 35.3,
+    "hunger": 0.0,
+    "fatigue": 0.647,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      1.27,
+      1
+     ],
+     [
+      "gather",
+      "fiber",
+      1.14,
+      0
+     ],
+     [
+      "forage",
+      "28,22",
+      1.09,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.62,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 57,
+    "loc": [
+     28,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.42,
+    "fatigue": 0.0,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.56,
+      1
+     ],
+     [
+      "talk",
+      "p00013",
+      0.3,
+      0
+     ],
+     [
+      "steal",
+      "p00013",
+      -0.23,
+      0
+     ],
+     [
+      "join",
+      "31,22",
+      -0.4,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 58,
+    "loc": [
+     28,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.942,
+    "fatigue": 0.0,
+    "chose": "explore",
+    "aim": "28,19",
+    "top": [
+     [
+      "forage",
+      "28,22",
+      1.76,
+      0
+     ],
+     [
+      "explore",
+      "28,19",
+      1.58,
+      1
+     ],
+     [
+      "explore",
+      "28,19",
+      1.31,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.48,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 59,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 71.9,
+    "hunger": 1.0,
+    "fatigue": 0.281,
+    "chose": "forage",
+    "aim": "28,19",
+    "top": [
+     [
+      "forage",
+      "28,19",
+      2.32,
+      1
+     ],
+     [
+      "join",
+      "28,22",
+      1.79,
+      0
+     ],
+     [
+      "join",
+      "31,17",
+      0.96,
+      0
+     ],
+     [
+      "explore",
+      "28,22",
+      0.92,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 60,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 71.9,
+    "hunger": 0.277,
+    "fatigue": 0.281,
+    "chose": "forage",
+    "aim": "31,16",
+    "top": [
+     [
+      "forage",
+      "31,16",
+      1.31,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.82,
+      0
+     ],
+     [
+      "explore",
+      "31,22",
+      0.73,
+      0
+     ],
+     [
+      "explore",
+      "31,22",
+      0.61,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 61,
+    "loc": [
+     31,
+     16
+    ],
+    "energy": 59.9,
+    "hunger": 0.0,
+    "fatigue": 0.401,
+    "chose": "join",
+    "aim": "28,19",
+    "top": [
+     [
+      "join",
+      "28,19",
+      1.22,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.98,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.46,
+      0
+     ],
+     [
+      "explore",
+      "34,19",
+      0.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 62,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 52.9,
+    "hunger": 0.488,
+    "fatigue": 0.471,
+    "chose": "forage",
+    "aim": "28,19",
+    "top": [
+     [
+      "forage",
+      "28,19",
+      1.12,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.92,
+      0
+     ],
+     [
+      "explore",
+      "26,21",
+      0.39,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.3,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 63,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 52.9,
+    "hunger": 0.0,
+    "fatigue": 0.471,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      1.04,
+      1
+     ],
+     [
+      "talk",
+      "p00017",
+      0.48,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.47,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.46,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 64,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "court",
+    "aim": "p00013",
+    "top": [
+     [
+      "court",
+      "p00013",
+      0.91,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.63,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.61,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.61,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 65,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 100.0,
+    "hunger": 0.49,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "27,19",
+    "top": [
+     [
+      "forage",
+      "27,19",
+      0.93,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.62,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.26,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.24,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 66,
+    "loc": [
+     27,
+     19
+    ],
+    "energy": 96.0,
+    "hunger": 0.0,
+    "fatigue": 0.04,
+    "chose": "talk",
+    "aim": "p00005",
+    "top": [
+     [
+      "talk",
+      "p00013",
+      0.71,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.68,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.67,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.67,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 67,
+    "loc": [
+     29,
+     22
+    ],
+    "energy": 99.0,
+    "hunger": 0.427,
+    "fatigue": 0.01,
+    "chose": "forage",
+    "aim": "30,20",
+    "top": [
+     [
+      "forage",
+      "30,20",
+      1.64,
+      1
+     ],
+     [
+      "join",
+      "28,19",
+      0.81,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.68,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.36,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 68,
+    "loc": [
+     30,
+     20
+    ],
+    "energy": 91.0,
+    "hunger": 0.0,
+    "fatigue": 0.09,
+    "chose": "talk",
+    "aim": "p00013",
+    "top": [
+     [
+      "rest",
+      "",
+      0.66,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.59,
+      1
+     ],
+     [
+      "talk",
+      "p00005",
+      0.57,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.56,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 69,
+    "loc": [
+     29,
+     21
+    ],
+    "energy": 100.0,
+    "hunger": 0.474,
+    "fatigue": 0.0,
+    "chose": "join",
+    "aim": "28,19",
+    "top": [
+     [
+      "join",
+      "28,19",
+      0.78,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.65,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.34,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.32,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 70,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 97.0,
+    "hunger": 0.986,
+    "fatigue": 0.03,
+    "chose": "forage",
+    "aim": "28,19",
+    "top": [
+     [
+      "forage",
+      "28,19",
+      2.19,
+      1
+     ],
+     [
+      "join",
+      "28,22",
+      0.67,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.42,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.18,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 71,
+    "loc": [
+     28,
+     19
+    ],
+    "energy": 97.0,
+    "hunger": 0.615,
+    "fatigue": 0.03,
+    "chose": "forage",
+    "aim": "27,18",
+    "top": [
+     [
+      "forage",
+      "27,18",
+      1.13,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.51,
+      0
+     ],
+     [
+      "explore",
+      "31,16",
+      0.32,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 72,
+    "loc": [
+     27,
+     18
+    ],
+    "energy": 93.0,
+    "hunger": 0.0,
+    "fatigue": 0.07,
+    "chose": "talk",
+    "aim": "p00022",
+    "top": [
+     [
+      "rest",
+      "",
+      0.6,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.55,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.53,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.52,
+      0
+     ],
+     [
+      "talk",
+      "p00022",
+      0.47,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 73,
+    "loc": [
+     29,
+     21
+    ],
+    "energy": 96.0,
+    "hunger": 0.517,
+    "fatigue": 0.04,
+    "chose": "explore",
+    "aim": "27,17",
+    "top": [
+     [
+      "explore",
+      "27,17",
+      0.87,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.52,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.24,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.23,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 74,
+    "loc": [
+     27,
+     18
+    ],
+    "energy": 78.3,
+    "hunger": 1.0,
+    "fatigue": 0.217,
+    "chose": "forage",
+    "aim": "27,18",
+    "top": [
+     [
+      "forage",
+      "27,18",
+      2.54,
+      1
+     ],
+     [
+      "join",
+      "29,21",
+      0.92,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.45,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.43,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 75,
+    "loc": [
+     27,
+     18
+    ],
+    "energy": 78.3,
+    "hunger": 0.226,
+    "fatigue": 0.217,
+    "chose": "join",
+    "aim": "30,16",
+    "top": [
+     [
+      "rest",
+      "",
+      0.64,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.41,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.4,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.38,
+      0
+     ],
+     [
+      "join",
+      "30,16",
+      0.17,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 76,
+    "loc": [
+     30,
+     16
+    ],
+    "energy": 71.3,
+    "hunger": 0.752,
+    "fatigue": 0.287,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.51,
+      1
+     ],
+     [
+      "forage",
+      "30,16",
+      0.43,
+      0
+     ],
+     [
+      "join",
+      "29,19",
+      0.42,
+      0
+     ],
+     [
+      "explore",
+      "27,19",
+      0.24,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 77,
+    "loc": [
+     30,
+     16
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "33,16",
+    "top": [
+     [
+      "forage",
+      "33,16",
+      2.24,
+      1
+     ],
+     [
+      "join",
+      "29,19",
+      0.63,
+      0
+     ],
+     [
+      "explore",
+      "27,19",
+      0.63,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.41,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 78,
+    "loc": [
+     33,
+     16
+    ],
+    "energy": 88.0,
+    "hunger": 0.604,
+    "fatigue": 0.12,
+    "chose": "forage",
+    "aim": "33,16",
+    "top": [
+     [
+      "forage",
+      "33,16",
+      1.2,
+      1
+     ],
+     [
+      "explore",
+      "30,19",
+      0.67,
+      0
+     ],
+     [
+      "join",
+      "30,19",
+      0.62,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.47,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 79,
+    "loc": [
+     33,
+     16
+    ],
+    "energy": 88.0,
+    "hunger": 0.0,
+    "fatigue": 0.12,
+    "chose": "talk",
+    "aim": "p00022",
+    "top": [
+     [
+      "talk",
+      "p00013",
+      0.71,
+      0
+     ],
+     [
+      "talk",
+      "p00022",
+      0.61,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.55,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.53,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 80,
+    "loc": [
+     30,
+     17
+    ],
+    "energy": 91.0,
+    "hunger": 0.519,
+    "fatigue": 0.09,
+    "chose": "join",
+    "aim": "29,20",
+    "top": [
+     [
+      "join",
+      "29,20",
+      1.96,
+      1
+     ],
+     [
+      "forage",
+      "30,17",
+      1.11,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.47,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.24,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 81,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 83.5,
+    "hunger": 1.0,
+    "fatigue": 0.165,
+    "chose": "forage",
+    "aim": "29,20",
+    "top": [
+     [
+      "forage",
+      "29,20",
+      1.62,
+      1
+     ],
+     [
+      "take",
+      "p00017",
+      0.94,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.42,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      -0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 82,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 83.5,
+    "hunger": 0.213,
+    "fatigue": 0.165,
+    "chose": "explore",
+    "aim": "32,23",
+    "top": [
+     [
+      "rest",
+      "",
+      0.52,
+      0
+     ],
+     [
+      "explore",
+      "32,23",
+      0.36,
+      1
+     ],
+     [
+      "talk",
+      "p00005",
+      0.36,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.35,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 83,
+    "loc": [
+     32,
+     23
+    ],
+    "energy": 66.5,
+    "hunger": 0.728,
+    "fatigue": 0.335,
+    "chose": "forage",
+    "aim": "32,23",
+    "top": [
+     [
+      "forage",
+      "32,23",
+      1.2,
+      1
+     ],
+     [
+      "explore",
+      "29,20",
+      1.03,
+      0
+     ],
+     [
+      "join",
+      "29,20",
+      0.99,
+      0
+     ],
+     [
+      "join",
+      "29,20",
+      0.96,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 84,
+    "loc": [
+     32,
+     23
+    ],
+    "energy": 66.5,
+    "hunger": 0.0,
+    "fatigue": 0.335,
+    "chose": "join",
+    "aim": "29,20",
+    "top": [
+     [
+      "rest",
+      "",
+      0.76,
+      0
+     ],
+     [
+      "join",
+      "29,20",
+      0.54,
+      1
+     ],
+     [
+      "join",
+      "29,20",
+      0.46,
+      0
+     ],
+     [
+      "put",
+      "seeds",
+      0.41,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 85,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 59.5,
+    "hunger": 0.438,
+    "fatigue": 0.405,
+    "chose": "steal",
+    "aim": "p00009",
+    "top": [
+     [
+      "rest",
+      "",
+      0.63,
+      0
+     ],
+     [
+      "take",
+      "p00017",
+      0.54,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.27,
+      0
+     ],
+     [
+      "forage",
+      "29,20",
+      -0.08,
+      0
+     ],
+     [
+      "steal",
+      "p00009",
+      -0.13,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 86,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 65.5,
+    "hunger": 0.548,
+    "fatigue": 0.345,
+    "chose": "forage",
+    "aim": "29,20",
+    "top": [
+     [
+      "forage",
+      "29,20",
+      1.29,
+      1
+     ],
+     [
+      "take",
+      "p00017",
+      0.59,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.56,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.23,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 87,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 61.5,
+    "hunger": 0.06,
+    "fatigue": 0.385,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.65,
+      1
+     ],
+     [
+      "talk",
+      "p00005",
+      0.49,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.48,
+      0
+     ],
+     [
+      "forage",
+      "30,18",
+      0.39,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 88,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.569,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "28,22",
+    "top": [
+     [
+      "forage",
+      "28,22",
+      1.13,
+      1
+     ],
+     [
+      "take",
+      "p00017",
+      0.58,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.37,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 89,
+    "loc": [
+     28,
+     22
+    ],
+    "energy": 92.0,
+    "hunger": 0.015,
+    "fatigue": 0.08,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.58,
+      1
+     ],
+     [
+      "join",
+      "29,20",
+      -0.63,
+      0
+     ],
+     [
+      "forage",
+      "28,22",
+      -0.92,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      -1.28,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 90,
+    "loc": [
+     28,
+     22
+    ],
+    "energy": 100.0,
+    "hunger": 0.526,
+    "fatigue": 0.0,
+    "chose": "take",
+    "aim": "p00017",
+    "top": [
+     [
+      "take",
+      "p00017",
+      0.54,
+      1
+     ],
+     [
+      "join",
+      "29,20",
+      0.5,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.34,
+      0
+     ],
+     [
+      "forage",
+      "28,22",
+      0.33,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 91,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 100.0,
+    "hunger": 0.68,
+    "fatigue": 0.0,
+    "chose": "join",
+    "aim": "32,21",
+    "top": [
+     [
+      "join",
+      "32,21",
+      0.95,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.37,
+      0
+     ],
+     [
+      "forage",
+      "29,20",
+      0.36,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.16,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 92,
+    "loc": [
+     32,
+     21
+    ],
+    "energy": 88.5,
+    "hunger": 1.0,
+    "fatigue": 0.115,
+    "chose": "join",
+    "aim": "29,20",
+    "top": [
+     [
+      "gather",
+      "fiber",
+      1.54,
+      0
+     ],
+     [
+      "join",
+      "29,20",
+      1.21,
+      1
+     ],
+     [
+      "forage",
+      "30,24",
+      0.9,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.35,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 93,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 69.0,
+    "hunger": 1.0,
+    "fatigue": 0.31,
+    "chose": "forage",
+    "aim": "29,20",
+    "top": [
+     [
+      "forage",
+      "29,20",
+      1.44,
+      1
+     ],
+     [
+      "join",
+      "32,23",
+      1.22,
+      0
+     ],
+     [
+      "join",
+      "32,21",
+      1.08,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.54,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 94,
+    "loc": [
+     29,
+     20
+    ],
+    "energy": 69.0,
+    "hunger": 0.619,
+    "fatigue": 0.31,
+    "chose": "join",
+    "aim": "32,23",
+    "top": [
+     [
+      "join",
+      "32,23",
+      1.64,
+      1
+     ],
+     [
+      "forage",
+      "29,21",
+      0.77,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.64,
+      0
+     ],
+     [
+      "join",
+      "32,21",
+      0.59,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 95,
+    "loc": [
+     32,
+     23
+    ],
+    "energy": 58.7,
+    "hunger": 1.0,
+    "fatigue": 0.413,
+    "chose": "forage",
+    "aim": "32,23",
+    "top": [
+     [
+      "forage",
+      "32,23",
+      1.77,
+      1
+     ],
+     [
+      "explore",
+      "32,20",
+      1.23,
+      0
+     ],
+     [
+      "join",
+      "29,21",
+      0.83,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.66,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 96,
+    "loc": [
+     32,
+     23
+    ],
+    "energy": 58.7,
+    "hunger": 0.182,
+    "fatigue": 0.413,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.88,
+      1
+     ],
+     [
+      "talk",
+      "p00013",
+      0.47,
+      0
+     ],
+     [
+      "forage",
+      "29,21",
+      0.45,
+      0
+     ],
+     [
+      "talk",
+      "p00009",
+      0.43,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 97,
+    "loc": [
+     32,
+     23
+    ],
+    "energy": 100.0,
+    "hunger": 0.712,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "29,21",
+    "top": [
+     [
+      "forage",
+      "29,21",
+      1.44,
+      1
+     ],
+     [
+      "join",
+      "29,20",
+      0.61,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.49,
+      0
+     ],
+     [
+      "join",
+      "29,21",
+      0.28,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 98,
+    "loc": [
+     29,
+     21
+    ],
+    "energy": 88.0,
+    "hunger": 0.295,
+    "fatigue": 0.12,
+    "chose": "talk",
+    "aim": "p00005",
+    "top": [
+     [
+      "rest",
+      "",
+      0.56,
+      0
+     ],
+     [
+      "join",
+      "32,24",
+      0.42,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.4,
+      1
+     ],
+     [
+      "talk",
+      "p00009",
+      0.39,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 99,
+    "loc": [
+     32,
+     22
+    ],
+    "energy": 91.0,
+    "hunger": 0.819,
+    "fatigue": 0.09,
+    "chose": "forage",
+    "aim": "35,19",
+    "top": [
+     [
+      "forage",
+      "35,19",
+      2.04,
+      1
+     ],
+     [
+      "join",
+      "30,21",
+      1.1,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.48,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.09,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 100,
+    "loc": [
+     35,
+     19
+    ],
+    "energy": 79.0,
+    "hunger": 0.392,
+    "fatigue": 0.21,
+    "chose": "explore",
+    "aim": "32,22",
+    "top": [
+     [
+      "join",
+      "32,22",
+      1.7,
+      0
+     ],
+     [
+      "explore",
+      "32,22",
+      1.27,
+      1
+     ],
+     [
+      "join",
+      "32,21",
+      1.05,
+      0
+     ],
+     [
+      "forage",
+      "33,19",
+      0.77,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 101,
+    "loc": [
+     32,
+     22
+    ],
+    "energy": 62.0,
+    "hunger": 0.911,
+    "fatigue": 0.38,
+    "chose": "join",
+    "aim": "29,19",
+    "top": [
+     [
+      "forage",
+      "29,21",
+      2.56,
+      0
+     ],
+     [
+      "join",
+      "29,19",
+      1.79,
+      1
+     ],
+     [
+      "join",
+      "30,21",
+      1.21,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.64,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 102,
+    "loc": [
+     29,
+     19
+    ],
+    "energy": 44.7,
+    "hunger": 1.0,
+    "fatigue": 0.553,
+    "chose": "forage",
+    "aim": "28,20",
+    "top": [
+     [
+      "forage",
+      "28,20",
+      2.16,
+      1
+     ],
+     [
+      "join",
+      "30,21",
+      1.24,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.9,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.4,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 103,
+    "loc": [
+     28,
+     20
+    ],
+    "energy": 40.7,
+    "hunger": 0.299,
+    "fatigue": 0.593,
+    "chose": "join",
+    "aim": "30,21",
+    "top": [
+     [
+      "join",
+      "30,21",
+      4.79,
+      1
+     ],
+     [
+      "rest",
+      "",
+      1.04,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.56,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.48,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 104,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 37.7,
+    "hunger": 0.825,
+    "fatigue": 0.623,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      1.86,
+      1
+     ],
+     [
+      "rest",
+      "",
+      1.02,
+      0
+     ],
+     [
+      "gather",
+      "fiber",
+      0.21,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.06,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 105,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 37.7,
+    "hunger": 0.161,
+    "fatigue": 0.623,
+    "chose": "gather",
+    "aim": "fiber",
+    "top": [
+     [
+      "gather",
+      "fiber",
+      4.65,
+      1
+     ],
+     [
+      "forage",
+      "28,20",
+      1.32,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.1,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.44,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 106,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 37.7,
+    "hunger": 0.692,
+    "fatigue": 0.623,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      3.95,
+      1
+     ],
+     [
+      "gather",
+      "stone",
+      2.46,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.02,
+      0
+     ],
+     [
+      "put",
+      "fiber",
+      0.23,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 107,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 37.7,
+    "hunger": 0.42,
+    "fatigue": 0.623,
+    "chose": "gather",
+    "aim": "stone",
+    "top": [
+     [
+      "gather",
+      "stone",
+      3.84,
+      1
+     ],
+     [
+      "rest",
+      "",
+      1.05,
+      0
+     ],
+     [
+      "forage",
+      "28,24",
+      0.73,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.35,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 108,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 37.7,
+    "hunger": 0.941,
+    "fatigue": 0.623,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      3.48,
+      1
+     ],
+     [
+      "gather",
+      "flint",
+      1.43,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.98,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.17,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 109,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 37.7,
+    "hunger": 0.658,
+    "fatigue": 0.623,
+    "chose": "gather",
+    "aim": "flint",
+    "top": [
+     [
+      "gather",
+      "flint",
+      2.66,
+      1
+     ],
+     [
+      "forage",
+      "30,23",
+      2.1,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.0,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.24,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 110,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 33.5,
+    "hunger": 1.0,
+    "fatigue": 0.665,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      2.87,
+      1
+     ],
+     [
+      "rest",
+      "",
+      1.06,
+      0
+     ],
+     [
+      "gather",
+      "wood",
+      0.68,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.15,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 111,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 33.5,
+    "hunger": 0.717,
+    "fatigue": 0.665,
+    "chose": "gather",
+    "aim": "wood",
+    "top": [
+     [
+      "gather",
+      "wood",
+      2.75,
+      1
+     ],
+     [
+      "forage",
+      "32,23",
+      1.8,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.06,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.23,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 112,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 27.8,
+    "hunger": 1.0,
+    "fatigue": 0.722,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      4.39,
+      1
+     ],
+     [
+      "gather",
+      "clay",
+      2.2,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.16,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.15,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 113,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 27.8,
+    "hunger": 0.717,
+    "fatigue": 0.722,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      3.98,
+      1
+     ],
+     [
+      "gather",
+      "clay",
+      3.03,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.19,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.23,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 114,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 27.8,
+    "hunger": 0.837,
+    "fatigue": 0.722,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      3.56,
+      1
+     ],
+     [
+      "gather",
+      "clay",
+      2.69,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.17,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.19,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 115,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 26.0,
+    "hunger": 1.0,
+    "fatigue": 0.74,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      3.75,
+      1
+     ],
+     [
+      "gather",
+      "clay",
+      2.3,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.17,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.15,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 116,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 24.1,
+    "hunger": 1.0,
+    "fatigue": 0.759,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      1.22,
+      1
+     ],
+     [
+      "put",
+      "stone",
+      0.15,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.04,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      -0.06,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 117,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 76.6,
+    "hunger": 1.0,
+    "fatigue": 0.234,
+    "chose": "forage",
+    "aim": "30,21",
+    "top": [
+     [
+      "forage",
+      "30,21",
+      1.67,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.64,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.15,
+      0
+     ],
+     [
+      "make",
+      "(fiber+fiber)#fiber",
+      0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 118,
+    "loc": [
+     30,
+     21
+    ],
+    "energy": 76.6,
+    "hunger": 0.746,
+    "fatigue": 0.234,
+    "chose": "forage",
+    "aim": "29,24",
+    "top": [
+     [
+      "forage",
+      "29,24",
+      1.91,
+      1
+     ],
+     [
+      "join",
+      "33,22",
+      0.69,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.65,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.22,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 119,
+    "loc": [
+     29,
+     24
+    ],
+    "energy": 64.6,
+    "hunger": 0.281,
+    "fatigue": 0.354,
+    "chose": "join",
+    "aim": "27,21",
+    "top": [
+     [
+      "join",
+      "27,21",
+      0.78,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.77,
+      0
+     ],
+     [
+      "talk",
+      "p00005",
+      0.43,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.42,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 120,
+    "loc": [
+     27,
+     21
+    ],
+    "energy": 57.6,
+    "hunger": 0.802,
+    "fatigue": 0.424,
+    "chose": "forage",
+    "aim": "27,21",
+    "top": [
+     [
+      "forage",
+      "27,21",
+      1.03,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.78,
+      0
+     ],
+     [
+      "join",
+      "30,21",
+      0.68,
+      0
+     ],
+     [
+      "join",
+      "29,24",
+      0.34,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 121,
+    "loc": [
+     27,
+     21
+    ],
+    "energy": 57.6,
+    "hunger": 0.0,
+    "fatigue": 0.424,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.84,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.71,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.52,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.48,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 122,
+    "loc": [
+     27,
+     21
+    ],
+    "energy": 100.0,
+    "hunger": 0.439,
+    "fatigue": 0.0,
+    "chose": "explore",
+    "aim": "30,18",
+    "top": [
+     [
+      "explore",
+      "30,18",
+      0.97,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.56,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.48,
+      0
+     ],
+     [
+      "make",
+      "(fiber+fiber)#fiber",
+      0.34,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 123,
+    "loc": [
+     30,
+     18
+    ],
+    "energy": 83.0,
+    "hunger": 0.949,
+    "fatigue": 0.17,
+    "chose": "forage",
+    "aim": "30,18",
+    "top": [
+     [
+      "forage",
+      "30,18",
+      2.22,
+      1
+     ],
+     [
+      "join",
+      "33,21",
+      1.1,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.55,
+      0
+     ],
+     [
+      "explore",
+      "27,21",
+      0.26,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 124,
+    "loc": [
+     30,
+     18
+    ],
+    "energy": 83.0,
+    "hunger": 0.05,
+    "fatigue": 0.17,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.79,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.67,
+      1
+     ],
+     [
+      "make",
+      "(fiber+fiber)#fiber",
+      0.46,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.44,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 125,
+    "loc": [
+     30,
+     18
+    ],
+    "energy": 93.0,
+    "hunger": 0.58,
+    "fatigue": 0.07,
+    "chose": "forage",
+    "aim": "30,18",
+    "top": [
+     [
+      "join",
+      "33,21",
+      1.28,
+      0
+     ],
+     [
+      "forage",
+      "30,18",
+      1.26,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.61,
+      0
+     ],
+     [
+      "make",
+      "flint/flint",
+      0.36,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 126,
+    "loc": [
+     30,
+     18
+    ],
+    "energy": 93.0,
+    "hunger": 0.0,
+    "fatigue": 0.07,
+    "chose": "explore",
+    "aim": "33,21",
+    "top": [
+     [
+      "play",
+      "",
+      0.71,
+      0
+     ],
+     [
+      "make",
+      "flint/flint",
+      0.71,
+      0
+     ],
+     [
+      "explore",
+      "33,21",
+      0.66,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.6,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 127,
+    "loc": [
+     33,
+     21
+    ],
+    "energy": 76.0,
+    "hunger": 0.004,
+    "fatigue": 0.24,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.79,
+      0
+     ],
+     [
+      "make",
+      "flint/flint",
+      0.73,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.64,
+      1
+     ],
+     [
+      "explore",
+      "36,18",
+      0.46,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 128,
+    "loc": [
+     33,
+     21
+    ],
+    "energy": 86.0,
+    "hunger": 0.529,
+    "fatigue": 0.14,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      0.59,
+      1
+     ],
+     [
+      "explore",
+      "2,23",
+      0.55,
+      0
+     ],
+     [
+      "make",
+      "flint/flint",
+      0.33,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.28,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 129,
+    "loc": [
+     33,
+     21
+    ],
+    "energy": 100.0,
+    "hunger": 1.0,
+    "fatigue": 0.0,
+    "chose": "forage",
+    "aim": "33,21",
+    "top": [
+     [
+      "forage",
+      "33,21",
+      2.25,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.44,
+      0
+     ],
+     [
+      "explore",
+      "2,23",
+      0.41,
+      0
+     ],
+     [
+      "join",
+      "30,18",
+      0.25,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 130,
+    "loc": [
+     33,
+     21
+    ],
+    "energy": 100.0,
+    "hunger": 0.0,
+    "fatigue": 0.0,
+    "chose": "explore",
+    "aim": "2,23",
+    "top": [
+     [
+      "explore",
+      "2,23",
+      0.94,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.71,
+      0
+     ],
+     [
+      "make",
+      "flint/flint",
+      0.62,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.57,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 131,
+    "loc": [
+     36,
+     23
+    ],
+    "energy": 83.0,
+    "hunger": 0.532,
+    "fatigue": 0.17,
+    "chose": "join",
+    "aim": "33,20",
+    "top": [
+     [
+      "join",
+      "33,20",
+      1.82,
+      1
+     ],
+     [
+      "join",
+      "36,20",
+      0.98,
+      0
+     ],
+     [
+      "forage",
+      "36,23",
+      0.81,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.5,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 132,
+    "loc": [
+     33,
+     20
+    ],
+    "energy": 74.9,
+    "hunger": 1.0,
+    "fatigue": 0.251,
+    "chose": "forage",
+    "aim": "36,23",
+    "top": [
+     [
+      "forage",
+      "36,23",
+      3.13,
+      1
+     ],
+     [
+      "join",
+      "36,23",
+      2.18,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.52,
+      0
+     ],
+     [
+      "explore",
+      "2,23",
+      0.4,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 133,
+    "loc": [
+     36,
+     23
+    ],
+    "energy": 62.9,
+    "hunger": 0.341,
+    "fatigue": 0.371,
+    "chose": "join",
+    "aim": "33,20",
+    "top": [
+     [
+      "join",
+      "33,20",
+      1.77,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.66,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.39,
+      0
+     ],
+     [
+      "make",
+      "flint/flint",
+      0.34,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 134,
+    "loc": [
+     33,
+     20
+    ],
+    "energy": 55.9,
+    "hunger": 0.0,
+    "fatigue": 0.441,
+    "chose": "give",
+    "aim": "p00013",
+    "top": [
+     [
+      "rest",
+      "",
+      0.8,
+      0
+     ],
+     [
+      "explore",
+      "2,23",
+      0.76,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.57,
+      0
+     ],
+     [
+      "put",
+      "seeds",
+      0.55,
+      0
+     ],
+     [
+      "give",
+      "p00013",
+      0.43,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 135,
+    "loc": [
+     33,
+     20
+    ],
+    "energy": 75.9,
+    "hunger": 0.754,
+    "fatigue": 0.241,
+    "chose": "forage",
+    "aim": "36,23",
+    "top": [
+     [
+      "forage",
+      "36,23",
+      2.44,
+      1
+     ],
+     [
+      "join",
+      "36,23",
+      1.35,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.57,
+      0
+     ],
+     [
+      "explore",
+      "2,23",
+      0.52,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 136,
+    "loc": [
+     36,
+     23
+    ],
+    "energy": 63.9,
+    "hunger": 0.252,
+    "fatigue": 0.361,
+    "chose": "talk",
+    "aim": "p00025",
+    "top": [
+     [
+      "rest",
+      "",
+      0.65,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.46,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.35,
+      0
+     ],
+     [
+      "make",
+      "flint/flint",
+      0.34,
+      0
+     ],
+     [
+      "talk",
+      "p00025",
+      0.13,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 137,
+    "loc": [
+     35,
+     25
+    ],
+    "energy": 70.9,
+    "hunger": 0.763,
+    "fatigue": 0.291,
+    "chose": "forage",
+    "aim": "32,25",
+    "top": [
+     [
+      "forage",
+      "32,25",
+      2.54,
+      1
+     ],
+     [
+      "hunt",
+      "35,25",
+      1.59,
+      0
+     ],
+     [
+      "gather",
+      "earth",
+      1.4,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.58,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 138,
+    "loc": [
+     32,
+     25
+    ],
+    "energy": 58.9,
+    "hunger": 0.303,
+    "fatigue": 0.411,
+    "chose": "put",
+    "aim": "stone",
+    "top": [
+     [
+      "join",
+      "35,23",
+      0.93,
+      0
+     ],
+     [
+      "join",
+      "35,24",
+      0.72,
+      0
+     ],
+     [
+      "forage",
+      "32,25",
+      0.67,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.67,
+      0
+     ],
+     [
+      "put",
+      "stone",
+      0.33,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 139,
+    "loc": [
+     32,
+     25
+    ],
+    "energy": 73.9,
+    "hunger": 0.811,
+    "fatigue": 0.261,
+    "chose": "forage",
+    "aim": "32,25",
+    "top": [
+     [
+      "forage",
+      "32,25",
+      2.14,
+      1
+     ],
+     [
+      "join",
+      "35,24",
+      1.23,
+      0
+     ],
+     [
+      "join",
+      "35,23",
+      0.84,
+      0
+     ],
+     [
+      "join",
+      "35,24",
+      0.66,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 140,
+    "loc": [
+     32,
+     25
+    ],
+    "energy": 73.9,
+    "hunger": 0.0,
+    "fatigue": 0.261,
+    "chose": "give",
+    "aim": "p00013",
+    "top": [
+     [
+      "explore",
+      "2,23",
+      0.96,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.6,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.6,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.46,
+      0
+     ],
+     [
+      "give",
+      "p00013",
+      0.27,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 141,
+    "loc": [
+     35,
+     23
+    ],
+    "energy": 81.9,
+    "hunger": 0.756,
+    "fatigue": 0.181,
+    "chose": "forage",
+    "aim": "35,23",
+    "top": [
+     [
+      "forage",
+      "35,23",
+      1.46,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.48,
+      0
+     ],
+     [
+      "put",
+      "flint",
+      0.22,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.17,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 142,
+    "loc": [
+     35,
+     23
+    ],
+    "energy": 81.9,
+    "hunger": 0.444,
+    "fatigue": 0.181,
+    "chose": "forage",
+    "aim": "32,25",
+    "top": [
+     [
+      "forage",
+      "32,25",
+      0.71,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.46,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.33,
+      0
+     ],
+     [
+      "put",
+      "flint",
+      0.23,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 143,
+    "loc": [
+     32,
+     25
+    ],
+    "energy": 69.9,
+    "hunger": 0.0,
+    "fatigue": 0.301,
+    "chose": "join",
+    "aim": "35,22",
+    "top": [
+     [
+      "join",
+      "35,22",
+      1.31,
+      1
+     ],
+     [
+      "explore",
+      "2,23",
+      0.89,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.74,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.57,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 144,
+    "loc": [
+     35,
+     22
+    ],
+    "energy": 62.9,
+    "hunger": 0.0,
+    "fatigue": 0.371,
+    "chose": "give",
+    "aim": "p00013",
+    "top": [
+     [
+      "rest",
+      "",
+      0.66,
+      0
+     ],
+     [
+      "give",
+      "p00013",
+      0.63,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.57,
+      0
+     ],
+     [
+      "put",
+      "seeds",
+      0.55,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 145,
+    "loc": [
+     35,
+     22
+    ],
+    "energy": 82.9,
+    "hunger": 0.754,
+    "fatigue": 0.171,
+    "chose": "make",
+    "aim": "(fiber+fiber)#fiber",
+    "top": [
+     [
+      "forage",
+      "35,22",
+      1.18,
+      0
+     ],
+     [
+      "join",
+      "32,25",
+      0.49,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.43,
+      0
+     ],
+     [
+      "put",
+      "flint",
+      0.4,
+      0
+     ],
+     [
+      "make",
+      "(fiber+fiber)#fiber",
+      0.27,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 146,
+    "loc": [
+     35,
+     22
+    ],
+    "energy": 76.5,
+    "hunger": 1.0,
+    "fatigue": 0.235,
+    "chose": "forage",
+    "aim": "35,22",
+    "top": [
+     [
+      "forage",
+      "35,22",
+      1.92,
+      1
+     ],
+     [
+      "join",
+      "32,25",
+      0.57,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.48,
+      0
+     ],
+     [
+      "give",
+      "p00013",
+      0.2,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 147,
+    "loc": [
+     35,
+     22
+    ],
+    "energy": 76.5,
+    "hunger": 0.313,
+    "fatigue": 0.235,
+    "chose": "put",
+    "aim": "flint",
+    "top": [
+     [
+      "forage",
+      "32,25",
+      0.84,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.58,
+      0
+     ],
+     [
+      "put",
+      "flint",
+      0.47,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.4,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 148,
+    "loc": [
+     35,
+     22
+    ],
+    "energy": 91.5,
+    "hunger": 0.838,
+    "fatigue": 0.085,
+    "chose": "forage",
+    "aim": "32,25",
+    "top": [
+     [
+      "forage",
+      "32,25",
+      1.83,
+      1
+     ],
+     [
+      "join",
+      "32,25",
+      0.6,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.45,
+      0
+     ],
+     [
+      "put",
+      "wood",
+      0.38,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 149,
+    "loc": [
+     32,
+     25
+    ],
+    "energy": 79.5,
+    "hunger": 0.338,
+    "fatigue": 0.205,
+    "chose": "join",
+    "aim": "34,22",
+    "top": [
+     [
+      "join",
+      "35,23",
+      1.03,
+      0
+     ],
+     [
+      "join",
+      "34,22",
+      0.91,
+      1
+     ],
+     [
+      "explore",
+      "2,23",
+      0.66,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.64,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 150,
+    "loc": [
+     34,
+     22
+    ],
+    "energy": 72.5,
+    "hunger": 0.861,
+    "fatigue": 0.275,
+    "chose": "join",
+    "aim": "32,25",
+    "top": [
+     [
+      "join",
+      "32,25",
+      2.2,
+      1
+     ],
+     [
+      "forage",
+      "34,22",
+      1.59,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.53,
+      0
+     ],
+     [
+      "explore",
+      "2,23",
+      0.45,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 151,
+    "loc": [
+     32,
+     25
+    ],
+    "energy": 56.5,
+    "hunger": 1.0,
+    "fatigue": 0.435,
+    "chose": "hunt",
+    "aim": "35,25",
+    "top": [
+     [
+      "forage",
+      "31,23",
+      2.62,
+      0
+     ],
+     [
+      "hunt",
+      "35,25",
+      1.68,
+      1
+     ],
+     [
+      "join",
+      "35,23",
+      1.33,
+      0
+     ],
+     [
+      "join",
+      "35,25",
+      1.32,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 152,
+    "loc": [
+     35,
+     25
+    ],
+    "energy": 17.0,
+    "hunger": 1.0,
+    "fatigue": 0.83,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      1.4,
+      1
+     ],
+     [
+      "put",
+      "wood",
+      0.15,
+      0
+     ],
+     [
+      "give",
+      "p00005",
+      0.08,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.04,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 153,
+    "loc": [
+     35,
+     25
+    ],
+    "energy": 69.5,
+    "hunger": 1.0,
+    "fatigue": 0.305,
+    "chose": "forage",
+    "aim": "35,23",
+    "top": [
+     [
+      "forage",
+      "35,23",
+      2.79,
+      1
+     ],
+     [
+      "hunt",
+      "35,25",
+      1.05,
+      0
+     ],
+     [
+      "join",
+      "36,22",
+      0.96,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.76,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 154,
+    "loc": [
+     35,
+     23
+    ],
+    "energy": 61.5,
+    "hunger": 0.384,
+    "fatigue": 0.385,
+    "chose": "court",
+    "aim": "p00013",
+    "top": [
+     [
+      "rest",
+      "",
+      0.88,
+      0
+     ],
+     [
+      "put",
+      "wood",
+      0.45,
+      0
+     ],
+     [
+      "hunt",
+      "32,22",
+      0.39,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.36,
+      0
+     ],
+     [
+      "court",
+      "p00013",
+      0.25,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 155,
+    "loc": [
+     36,
+     21
+    ],
+    "energy": 68.5,
+    "hunger": 0.907,
+    "fatigue": 0.315,
+    "chose": "join",
+    "aim": "33,24",
+    "top": [
+     [
+      "join",
+      "33,24",
+      2.34,
+      1
+     ],
+     [
+      "forage",
+      "35,19",
+      2.0,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.78,
+      0
+     ],
+     [
+      "gather",
+      "clay",
+      0.39,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 156,
+    "loc": [
+     33,
+     24
+    ],
+    "energy": 51.3,
+    "hunger": 1.0,
+    "fatigue": 0.487,
+    "chose": "forage",
+    "aim": "33,24",
+    "top": [
+     [
+      "forage",
+      "33,24",
+      2.78,
+      1
+     ],
+     [
+      "join",
+      "32,25",
+      2.22,
+      0
+     ],
+     [
+      "hunt",
+      "35,25",
+      1.17,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.01,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 157,
+    "loc": [
+     33,
+     24
+    ],
+    "energy": 51.3,
+    "hunger": 0.06,
+    "fatigue": 0.487,
+    "chose": "join",
+    "aim": "36,21",
+    "top": [
+     [
+      "join",
+      "36,21",
+      1.45,
+      1
+     ],
+     [
+      "rest",
+      "",
+      1.25,
+      0
+     ],
+     [
+      "join",
+      "36,21",
+      0.77,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.53,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 158,
+    "loc": [
+     36,
+     21
+    ],
+    "energy": 44.3,
+    "hunger": 0.597,
+    "fatigue": 0.557,
+    "chose": "join",
+    "aim": "33,24",
+    "top": [
+     [
+      "join",
+      "33,24",
+      2.46,
+      1
+     ],
+     [
+      "forage",
+      "36,21",
+      1.69,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.12,
+      0
+     ],
+     [
+      "explore",
+      "36,24",
+      0.96,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 159,
+    "loc": [
+     33,
+     24
+    ],
+    "energy": 34.4,
+    "hunger": 1.0,
+    "fatigue": 0.656,
+    "chose": "forage",
+    "aim": "33,24",
+    "top": [
+     [
+      "forage",
+      "33,24",
+      2.38,
+      1
+     ],
+     [
+      "join",
+      "36,21",
+      1.51,
+      0
+     ],
+     [
+      "rest",
+      "",
+      1.25,
+      0
+     ],
+     [
+      "join",
+      "32,25",
+      0.67,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 160,
+    "loc": [
+     33,
+     24
+    ],
+    "energy": 34.4,
+    "hunger": 0.055,
+    "fatigue": 0.656,
+    "chose": "join",
+    "aim": "32,25",
+    "top": [
+     [
+      "join",
+      "32,25",
+      2.07,
+      1
+     ],
+     [
+      "rest",
+      "",
+      1.32,
+      0
+     ],
+     [
+      "join",
+      "36,21",
+      0.92,
+      0
+     ],
+     [
+      "forage",
+      "33,24",
+      0.82,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 161,
+    "loc": [
+     32,
+     25
+    ],
+    "energy": 35.4,
+    "hunger": 0.593,
+    "fatigue": 0.646,
+    "chose": "join",
+    "aim": "35,23",
+    "top": [
+     [
+      "join",
+      "35,22",
+      1.75,
+      0
+     ],
+     [
+      "join",
+      "35,23",
+      1.67,
+      1
+     ],
+     [
+      "forage",
+      "32,25",
+      1.63,
+      0
+     ],
+     [
+      "join",
+      "35,23",
+      1.42,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 162,
+    "loc": [
+     35,
+     23
+    ],
+    "energy": 25.7,
+    "hunger": 1.0,
+    "fatigue": 0.743,
+    "chose": "forage",
+    "aim": "35,23",
+    "top": [
+     [
+      "forage",
+      "35,23",
+      2.31,
+      1
+     ],
+     [
+      "rest",
+      "",
+      1.4,
+      0
+     ],
+     [
+      "put",
+      "wood",
+      0.15,
+      0
+     ],
+     [
+      "gather",
+      "clay",
+      0.14,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 163,
+    "loc": [
+     35,
+     23
+    ],
+    "energy": 25.7,
+    "hunger": 0.052,
+    "fatigue": 0.743,
+    "chose": "rest",
+    "aim": "",
+    "top": [
+     [
+      "rest",
+      "",
+      1.47,
+      1
+     ],
+     [
+      "play",
+      "",
+      0.68,
+      0
+     ],
+     [
+      "talk",
+      "p00013",
+      0.64,
+      0
+     ],
+     [
+      "forage",
+      "35,23",
+      0.62,
+      0
+     ]
+    ]
+   },
+   {
+    "t": 164,
+    "loc": [
+     35,
+     23
+    ],
+    "energy": 90.7,
+    "hunger": 0.589,
+    "fatigue": 0.093,
+    "chose": "play",
+    "aim": "",
+    "top": [
+     [
+      "forage",
+      "35,23",
+      0.83,
+      0
+     ],
+     [
+      "rest",
+      "",
+      0.75,
+      0
+     ],
+     [
+      "explore",
+      "35,20",
+      0.66,
+      0
+     ],
+     [
+      "play",
+      "",
+      0.36,
+      1
+     ]
+    ]
+   },
+   {
+    "t": 165,
+    "loc": [
+     35,
+     23
+    ],
+    "energy": 98.0,
+    "hunger": 1.0,
+    "fatigue": 0.02,
+    "chose": "forage",
+    "aim": "35,23",
+    "top": [
+     [
+      "forage",
+      "35,23",
+      2.02,
+      1
+     ],
+     [
+      "rest",
+      "",
+      0.78,
+      0
+     ],
+     [
+      "explore",
+      "35,20",
+      0.61,
+      0
+     ],
+     [
+      "put",
+      "wood",
+      0.15,
+      0
+     ]
+    ]
+   }
+  ],
+  "weeks": 3120,
+  "seconds": 71.6,
+  "sec_per_week": 0.0229,
+  "final_pop": 12
+ }
+}
