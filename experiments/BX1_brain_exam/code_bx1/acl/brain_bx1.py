@@ -30,6 +30,8 @@ _BRAINS: dict = {}                           # seed -> loaded MoveVIN (one per a
 
 
 def load(path, seed=1):
+    if path in _BRAINS:
+        return _BRAINS[path]
     if seed not in _BRAINS:
         import brains3 as B                   # noqa: F401  (registers the numerical settings)
         d = np.load(path)
@@ -37,6 +39,7 @@ def load(path, seed=1):
         for k in net.p:
             net.p[k] = d[k].copy()
         _BRAINS[seed] = net
+        _BRAINS[path] = net
     return _BRAINS[seed]
 
 
@@ -116,3 +119,34 @@ def z_at(z, p, world, target):
         return None
     val = z[wy, wx]
     return None if np.isnan(val) else float(val)
+
+
+def levels_of(p, hunger, fatigue):
+    return np.array([min(1.0, max(0.0, hunger)), min(1.0, max(0.0, fatigue)),
+                     min(1.0, max(0.0, p.genes.get("curiosity", 1.0) / 2.0))], float)
+
+
+def cell_row(p, world, target):
+    """The window index (y * N + x) of an ACL tile around the agent, or None outside the window."""
+    c = world.cfg
+    dx = ((target[0] - p.loc[0] + c.width // 2) % c.width) - c.width // 2
+    dy = ((target[1] - p.loc[1] + c.height // 2) % c.height) - c.height // 2
+    wx, wy = dx + HALF, dy + HALF
+    if not (0 <= wx < N and 0 <= wy < N):
+        return None
+    return wy * N + wx
+
+
+def learn(net, m, lev, cells, rets):
+    """One value step (Mind Lab's own learning rate and clip, brains3): the brain's value at each lesson cell is pulled
+    toward the feeling that followed there. m: the agent's window (5,N,N); lev: its drives (3,); cells: window
+    indices; rets: the feelings. Returns the mean squared error before the step."""
+    if not cells:
+        return None
+    T = len(cells)
+    fw = net.plan(np.repeat(m[None], T, 0), np.repeat(lev[None], T, 0))
+    rows = np.arange(T) * N * N + np.asarray(cells)
+    z, v = net.head(fw, rows)
+    dv = v - np.asarray(rets, float)
+    net.apply(net.backprop(fw, rows, np.zeros_like(z), dv))
+    return float(np.mean(dv ** 2))

@@ -603,6 +603,14 @@ def decide(world, p: Person) -> tuple:
     if i not in ranked:
         p.considered.append([options[i][1], _aim(options[i][2]), round(options[i][0], 2), 1])
     _p2_log(world, p2, (options[i][1], options[i][2]))
+    watch = getattr(world, "bx1_watch", None)
+    if watch and p.id in watch:
+        t = options[i][2]
+        tile = t if (isinstance(t, tuple) and len(t) == 2 and isinstance(t[0], int)) else None
+        world.bx1_choice[p.id] = (tile, options[i][1])
+        if bx_z is not None:
+            from . import brain_bx1 as BX
+            world.bx1_pending = (BX.window(p, world), BX.levels_of(p, hunger, fatigue))
     if bx_z is not None:
         log = getattr(world, "bx1_log", None)
         if log is not None:
