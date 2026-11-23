@@ -29,7 +29,8 @@ import os
 KEY = "school"
 OUT = HERE / "output"
 BASE = os.environ.get("BX1_BASELINE") == "1"      # the old mind for the same first babies (no brain, no learning)
-TAG = "baseline" if BASE else "school"
+TAG = ("baseline" if BASE else "school") + os.environ.get("BX1_PART", "")    # a second worker: its own log
+START = int(os.environ.get("BX1_START", "0"))     # a second worker starts at this life index (same seeds as one worker)
 
 
 def feeling(p):
@@ -115,7 +116,7 @@ def main():
     net = BX.load(str(start if start.exists() else HERE / "mbb_seed1.npz"), seed=1)
     BX._BRAINS[KEY] = net
     done = sum(1 for _ in open(logf)) if logf.exists() else 0
-    for i in range(done, done + lives):
+    for i in range(START + done, START + done + lives):
         t0 = time.time()
         rec = one_life(net, 10001 + i, max_years)
         rec.update(life=i + 1, seconds=round(time.time() - t0, 1))
