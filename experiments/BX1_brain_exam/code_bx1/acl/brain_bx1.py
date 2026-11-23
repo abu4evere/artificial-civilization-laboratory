@@ -89,3 +89,30 @@ def where_worth(p, world, net, target):
     if not (0 <= wx < N and 0 <= wy < N):
         return None
     return float(worth_map(p, world, net)[wy, wx])
+
+
+def standard_worth(p, world, net, hunger, fatigue):
+    """The brain's worth map for the agent, with ACL's own hunger and fatigue (0-1) as its drives, standardized over
+    the walkable cells (mean 0, sd 1), so it weighs on an option like a hand-written pull does. Walls stay NaN."""
+    m = window(p, world)
+    lev = np.array([min(1.0, max(0.0, hunger)), min(1.0, max(0.0, fatigue)),
+                    min(1.0, max(0.0, p.genes.get("curiosity", 1.0) / 2.0))], float)
+    fw = net.plan(m[None], lev[None])
+    v = fw[8].reshape(5, -1).T.reshape(N, N, -1).max(2)
+    ok = m[CH_WALL] == 0
+    mu, sd = float(v[ok].mean()), float(v[ok].std()) or 1.0
+    z = (v - mu) / sd
+    z[~ok] = np.nan
+    return z
+
+
+def z_at(z, p, world, target):
+    """The standardized worth at an ACL tile (None outside the window or on water)."""
+    c = world.cfg
+    dx = ((target[0] - p.loc[0] + c.width // 2) % c.width) - c.width // 2
+    dy = ((target[1] - p.loc[1] + c.height // 2) % c.height) - c.height // 2
+    wx, wy = dx + HALF, dy + HALF
+    if not (0 <= wx < N and 0 <= wy < N):
+        return None
+    val = z[wy, wx]
+    return None if np.isnan(val) else float(val)
