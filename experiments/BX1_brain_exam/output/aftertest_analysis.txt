@@ -1,0 +1,7 @@
+worlds with all three arms: 150 (OLD 150, MBB 150, SCHOOL 150)
+  OLD   : mean age  26.7, reached 16 88/150; deaths {'starvation': 58, 'thirst': 30, 'illness': 22, 'neglect': 17, 'old age': 15}
+  MBB   : mean age  19.9, reached 16 69/150; deaths {'starvation': 74, 'thirst': 41, 'neglect': 13, 'illness': 12, 'old age': 7}
+  SCHOOL: mean age  27.8, reached 16 86/150; deaths {'starvation': 45, 'thirst': 43, 'illness': 28, 'old age': 20, 'neglect': 10}
+SCHOOL - OLD: +1.2 years (95% bootstrap -2.5 to +4.7); SCHOOL longer in 70/150, shorter in 67/150
+SCHOOL - MBB: +8.0 years (95% bootstrap +4.4 to +11.6); SCHOOL longer in 84/150, shorter in 52/150
+MBB - OLD: -6.8 years (95% bootstrap -10.4 to -3.4); MBB longer in 49/150, shorter in 89/150

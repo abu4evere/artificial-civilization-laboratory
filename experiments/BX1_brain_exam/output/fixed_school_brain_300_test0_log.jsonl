@@ -1,0 +1,50 @@
+{"seed": 20001, "agent": "p00021", "age": 26.5, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.0765, "weeks": 1418, "life": 1, "seconds": 68.2}
+{"seed": 20002, "agent": "p00021", "age": 43.6, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.0901, "weeks": 2326, "life": 2, "seconds": 116.9}
+{"seed": 20003, "agent": "p00021", "age": 39.2, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0971, "weeks": 2090, "life": 3, "seconds": 130.7}
+{"seed": 20004, "agent": "p00021", "age": 37.6, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.0879, "weeks": 2001, "life": 4, "seconds": 134.5}
+{"seed": 20005, "agent": "p00021", "age": 36.2, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.0849, "weeks": 1929, "life": 5, "seconds": 141.2}
+{"seed": 20006, "agent": "p00021", "age": 16.9, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0801, "weeks": 935, "life": 6, "seconds": 37.4}
+{"seed": 20007, "agent": "p00021", "age": 27.4, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0795, "weeks": 1498, "life": 7, "seconds": 63.6}
+{"seed": 20008, "agent": "p00021", "age": 0.9, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 88, "life": 8, "seconds": 1.9}
+{"seed": 20009, "agent": "p00021", "age": 62.2, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0892, "weeks": 3282, "life": 9, "seconds": 187.2}
+{"seed": 20010, "agent": "p00021", "age": 4.9, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 303, "life": 10, "seconds": 7.0}
+{"seed": 20011, "agent": "p00021", "age": 1.1, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 100, "life": 11, "seconds": 2.3}
+{"seed": 20012, "agent": "p00021", "age": 27.9, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.0922, "weeks": 1492, "life": 12, "seconds": 99.6}
+{"seed": 20013, "agent": "p00021", "age": 5.1, "died": "neglect", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 313, "life": 13, "seconds": 10.3}
+{"seed": 20014, "agent": "p00021", "age": 66.4, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0831, "weeks": 3499, "life": 14, "seconds": 250.1}
+{"seed": 20015, "agent": "p00021", "age": 8.5, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.1236, "weeks": 481, "life": 15, "seconds": 18.1}
+{"seed": 20016, "agent": "p00021", "age": 11.7, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.101, "weeks": 649, "life": 16, "seconds": 17.5}
+{"seed": 20017, "agent": "p00021", "age": 13.3, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.1144, "weeks": 736, "life": 17, "seconds": 19.8}
+{"seed": 20018, "agent": "p00021", "age": 32.0, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.0844, "weeks": 1711, "life": 18, "seconds": 114.7}
+{"seed": 20019, "agent": "p00021", "age": 16.3, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.1004, "weeks": 895, "life": 19, "seconds": 41.3}
+{"seed": 20020, "agent": "p00021", "age": 18.4, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0911, "weeks": 1000, "life": 20, "seconds": 41.2}
+{"seed": 20021, "agent": "p00021", "age": 53.1, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.0816, "weeks": 2803, "life": 21, "seconds": 140.8}
+{"seed": 20022, "agent": "p00021", "age": 6.2, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.2043, "weeks": 374, "life": 22, "seconds": 12.9}
+{"seed": 20023, "agent": "p00021", "age": 15.2, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.1092, "weeks": 856, "life": 23, "seconds": 36.2}
+{"seed": 20024, "agent": "p00021", "age": 29.3, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0972, "weeks": 1567, "life": 24, "seconds": 86.8}
+{"seed": 20025, "agent": "p00021", "age": 2.2, "died": "neglect", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 153, "life": 25, "seconds": 4.0}
+{"seed": 20026, "agent": "p00021", "age": 54.2, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0782, "weeks": 2866, "life": 26, "seconds": 170.0}
+{"seed": 20027, "agent": "p00021", "age": 35.2, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0863, "weeks": 1873, "life": 27, "seconds": 85.3}
+{"seed": 20028, "agent": "p00021", "age": 53.0, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0919, "weeks": 2797, "life": 28, "seconds": 273.3}
+{"seed": 20029, "agent": "p00021", "age": 5.7, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 344, "life": 29, "seconds": 11.5}
+{"seed": 20030, "agent": "p00021", "age": 12.5, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.0832, "weeks": 691, "life": 30, "seconds": 29.5}
+{"seed": 20031, "agent": "p00021", "age": 6.3, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.1735, "weeks": 371, "life": 31, "seconds": 13.2}
+{"seed": 20032, "agent": "p00021", "age": 5.1, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 311, "life": 32, "seconds": 9.2}
+{"seed": 20033, "agent": "p00021", "age": 35.2, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.0913, "weeks": 1880, "life": 33, "seconds": 173.1}
+{"seed": 20034, "agent": "p00021", "age": 34.1, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0996, "weeks": 1817, "life": 34, "seconds": 115.8}
+{"seed": 20035, "agent": "p00021", "age": 58.2, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.0905, "weeks": 3073, "life": 35, "seconds": 180.9}
+{"seed": 20036, "agent": "p00021", "age": 11.1, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.1051, "weeks": 624, "life": 36, "seconds": 22.1}
+{"seed": 20037, "agent": "p00021", "age": 59.3, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0807, "weeks": 3125, "life": 37, "seconds": 104.4}
+{"seed": 20038, "agent": "p00021", "age": 5.4, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 331, "life": 38, "seconds": 11.3}
+{"seed": 20039, "agent": "p00021", "age": 29.0, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.1004, "weeks": 1556, "life": 39, "seconds": 136.9}
+{"seed": 20040, "agent": "p00021", "age": 4.2, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 257, "life": 40, "seconds": 7.5}
+{"seed": 20041, "agent": "p00021", "age": 77.2, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0802, "weeks": 4059, "life": 41, "seconds": 301.7}
+{"seed": 20042, "agent": "p00021", "age": 72.8, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": 0.0844, "weeks": 3842, "life": 42, "seconds": 253.0}
+{"seed": 20043, "agent": "p00021", "age": 71.0, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0885, "weeks": 3751, "life": 43, "seconds": 293.4}
+{"seed": 20044, "agent": "p00021", "age": 3.8, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 241, "life": 44, "seconds": 5.7}
+{"seed": 20045, "agent": "p00021", "age": 12.4, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": 0.0943, "weeks": 692, "life": 45, "seconds": 25.7}
+{"seed": 20046, "agent": "p00021", "age": 69.6, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0799, "weeks": 3672, "life": 46, "seconds": 87.8}
+{"seed": 20047, "agent": "p00021", "age": 57.6, "died": "old age", "lessons": 0, "mse": null, "mean_feeling": 0.0839, "weeks": 3040, "life": 47, "seconds": 140.9}
+{"seed": 20048, "agent": "p00021", "age": 5.0, "died": "thirst", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 309, "life": 48, "seconds": 8.5}
+{"seed": 20049, "agent": "p00021", "age": 2.0, "died": "starvation", "lessons": 0, "mse": null, "mean_feeling": null, "weeks": 146, "life": 49, "seconds": 3.7}
+{"seed": 20050, "agent": "p00021", "age": 69.2, "died": "illness", "lessons": 0, "mse": null, "mean_feeling": 0.0819, "weeks": 3639, "life": 50, "seconds": 295.4}

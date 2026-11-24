@@ -9,5 +9,6 @@ learning curve (mean age at death, n lives per block):
 trend: +6.51 years per 100 lives (95% bootstrap +3.99 to +9.05; n=300)
 paired lives 1-112: brain 18.2 y vs old mind 29.8 y; difference -11.6 (95% bootstrap -16.0 to -7.2); brain longer in 34/112, shorter in 63/112
 trend of the gap (brain - old mind) over lives 1-112: +10.28 years per 100 lives (95% bootstrap -4.28 to +25.29)
+school lives 201-300 (n=100): brain 28.5 y vs old mind 30.5 y; difference -2.0 (95% bootstrap -6.8 to +3.0); old mind on Oracle (Linux), the school on the PC: not bit-identical worlds
   brain: reached 16 55/112; deaths {'starvation': 53, 'thirst': 28, 'illness': 14, 'neglect': 11, 'killed': 3}
   old mind: reached 16 64/112; deaths {'starvation': 39, 'old age': 23, 'thirst': 20, 'neglect': 14, 'illness': 12}

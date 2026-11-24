@@ -59,6 +59,19 @@ def main():
     lo, hi = boot_ci(lambda k: np.polyfit(xd[k], d[k], 1)[0], n)
     print(f"trend of the gap (brain - old mind) over lives 1-{n}: {sl * 100:+.2f} years per 100 lives "
           f"(95% bootstrap {lo * 100:+.2f} to {hi * 100:+.2f})")
+    late = {}                                  # the old mind on school lives 201-300 (Oracle; plan addendum)
+    for f in sorted(OUT.glob("baseline_oci*_log.jsonl")):
+        for x in open(f):
+            r = json.loads(x)
+            late[r["seed"]] = r
+    if late:
+        sb = {r["seed"]: r for r in s}
+        ks = sorted(k for k in late if k in sb)
+        dl = np.array([age(sb[k]) - age(late[k]) for k in ks])
+        lo, hi = boot_ci(lambda k: dl[k].mean(), len(dl))
+        print(f"school lives {ks[0] - 10000}-{ks[-1] - 10000} (n={len(ks)}): brain {np.mean([age(sb[k]) for k in ks]):.1f} y vs "
+              f"old mind {np.mean([age(late[k]) for k in ks]):.1f} y; difference {dl.mean():+.1f} (95% bootstrap "
+              f"{lo:+.1f} to {hi:+.1f}); old mind on Oracle (Linux), the school on the PC: not bit-identical worlds")
     for tag, rows in (("brain", s[:n]), ("old mind", b[:n])):
         print(f"  {tag}: reached 16 {sum(age(r) >= 16 for r in rows)}/{n}; deaths {dict(Counter(r['died'] for r in rows).most_common(5))}")
 
