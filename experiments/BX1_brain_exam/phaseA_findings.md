@@ -39,3 +39,28 @@ The brain founder lived shorter in all 5 worlds, almost always starving.
    learns ACL's food instead of carrying Mind Lab's; then Phase B with that brain.
 
 Speed: 0.013-0.016 s per week with one brain agent; Phase B (everyone) is affordable.
+
+# BX1 Phase A2: the learning brain's school (exploratory, labelled; 23-24 Nov 2026)
+The creator: "yes build the learning brain". The brain (from MBb, like genes) lived 300 lives, each as the first baby
+of a new world (seeds 10001-10300), learning each week from its own feeling at the place it chose and from its
+caregiver's while a child (value steps, Mind Lab's LR 0.01, clip 1.0). The old mind ran the same worlds (lives 1-112
+on the PC; 201-300 on Oracle, pending). All numbers: `analyse_school.py` -> `output/analyse_school_300.txt`.
+
+| lives | mean age at death | reached 16 | prediction error |
+|---|---|---|---|
+| 1-50 | 18.9 | 28/50 | 0.0217 |
+| 51-100 | 15.9 | 21/50 | 0.0129 |
+| 101-150 | 19.2 | 23/50 | 0.0110 |
+| 151-200 | 27.8 | 30/50 | 0.0095 |
+| 201-250 | 22.1 | 25/50 | 0.0097 |
+| 251-300 | 35.0 | 37/50 | 0.0071 |
+
+- Trend: +6.5 years per 100 lives (95% bootstrap +4.0 to +9.1; n = 300 lives). But every life is a different world.
+- Paired with the old mind on the same worlds (lives 1-112): brain 18.2 y vs old mind 29.8 y; difference -11.6
+  (-16.0 to -7.2); the gap's trend +10.3 y per 100 lives (-4.3 to +25.3: unclear).
+- Deaths (lives 1-112): brain starvation 53, thirst 28, illness 14, neglect 11, killed 3; old mind starvation 39,
+  old age 23, thirst 20, neglect 14, illness 12.
+- **Reading (provisional):** the brain gets better at predicting its weeks and its lives grow longer over the school,
+  but the rise may be partly the worlds. The fair test is running (questions.md addendum, written before its data):
+  the school brain FIXED vs the old mind vs the untrained MBb on 150 new worlds, paired; plus the old mind on school
+  lives 201-300. Its findings will be appended here.

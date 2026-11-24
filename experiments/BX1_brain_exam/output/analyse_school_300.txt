@@ -1,0 +1,13 @@
+school lives: 300; old-mind lives: 112
+learning curve (mean age at death, n lives per block):
+  lives   1- 50: age  18.9 (n=50), reached 16: 28/50, prediction error 0.0217
+  lives  51-100: age  15.9 (n=50), reached 16: 21/50, prediction error 0.0129
+  lives 101-150: age  19.2 (n=50), reached 16: 23/50, prediction error 0.0110
+  lives 151-200: age  27.8 (n=50), reached 16: 30/50, prediction error 0.0095
+  lives 201-250: age  22.1 (n=50), reached 16: 25/50, prediction error 0.0097
+  lives 251-300: age  35.0 (n=50), reached 16: 37/50, prediction error 0.0071
+trend: +6.51 years per 100 lives (95% bootstrap +3.99 to +9.05; n=300)
+paired lives 1-112: brain 18.2 y vs old mind 29.8 y; difference -11.6 (95% bootstrap -16.0 to -7.2); brain longer in 34/112, shorter in 63/112
+trend of the gap (brain - old mind) over lives 1-112: +10.28 years per 100 lives (95% bootstrap -4.28 to +25.29)
+  brain: reached 16 55/112; deaths {'starvation': 53, 'thirst': 28, 'illness': 14, 'neglect': 11, 'killed': 3}
+  old mind: reached 16 64/112; deaths {'starvation': 39, 'old age': 23, 'thirst': 20, 'neglect': 14, 'illness': 12}
