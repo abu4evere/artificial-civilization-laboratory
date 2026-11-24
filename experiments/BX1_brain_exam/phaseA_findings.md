@@ -64,3 +64,27 @@ on the PC; 201-300 on Oracle, pending). All numbers: `analyse_school.py` -> `out
   but the rise may be partly the worlds. The fair test is running (questions.md addendum, written before its data):
   the school brain FIXED vs the old mind vs the untrained MBb on 150 new worlds, paired; plus the old mind on school
   lives 201-300. Its findings will be appended here.
+
+## The after-school test (Oracle, 24 Nov 2026; plan: questions.md addendum, written before its data)
+The school brain FIXED (no learning) vs the old mind vs Mind Lab's untrained MBb, the same first baby on 150 new
+worlds (seeds 20001-20150), paired by world. `analyse_aftertest.py` -> `output/aftertest_analysis.txt`.
+
+| mind | mean age | reached 16 | old-age deaths | starvation |
+|---|---|---|---|---|
+| OLD (the old mind) | 26.7 | 88/150 | 15 | 58 |
+| MBB (untrained) | 19.9 | 69/150 | 7 | 74 |
+| SCHOOL (300 lives, fixed) | 27.8 | 86/150 | 20 | 45 |
+
+- **SCHOOL - OLD: +1.2 years (95% -2.5 to +4.7)**; by the plan's rule: **as good as the old mind** (not better).
+- **SCHOOL - MBB: +8.0 years (+4.4 to +11.6)**: **the school helped.**
+- MBB - OLD: -6.8 (-10.4 to -3.4).
+- On the school's own worlds the gap closed: lives 1-112 -11.6 (-16.0 to -7.2); lives 201-300 -2.0 (-6.8 to +3.0)
+  (the old mind for 201-300 ran on Oracle Linux, the school on the PC; named).
+- **Blind recompute** (a fresh session that read only the raw logs, `recompute_aftertest_blind.md`): every number
+  agrees (means, intervals, counts). Its notes: 10 lives reached the 80-year cap alive; 12-14 worlds per comparison end
+  in exact ties (the baby dies before the brain steers); old-mind lives 113-200 were never run. **Findings final.**
+
+**Reading.** A brain that learned only from its own weekly feelings and its caregiver's, over 300 lives, became as
+good as ACL's hand-written mind for a first baby, from 6.8 years behind. Not better yet: the old mind still starves
+less often in some worlds and the new one dies more of thirst (43 vs 30): water is a place it has not learned to value.
+Next steps are for the creator (ACL pauses after this round): the 7 Dec review list holds the daily-feeling idea.
