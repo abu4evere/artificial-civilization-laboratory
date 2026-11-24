@@ -63,3 +63,18 @@ Everything else identical: same worlds, same nature v17, same "what" and randomn
    is affordable, or if we need fewer years / seeds for the first comparison.
 3. Train inside ACL from birth (true to the recipe) vs a frozen Mind Lab brain scoring tiles (cheaper, but its eyes
    never saw ACL). The scoping note prefers trained-in-ACL.
+
+## Phase A2 addendum: the after-school test (written 23 Nov 2026, before any test data; exploratory, labelled)
+The school (300 lives, seeds 10001-10300) is over; its brain is kept as `school_brain_300.npz`. A rising lifespan over
+the school can be learning or world luck, so the brain is now tested FIXED (no learning) on NEW worlds, seeds
+20001-20150, the same 150 first babies under three minds, paired by world:
+- OLD: the old mind (no brain);
+- MBB: Mind Lab's MBb as it came (no school), the "before";
+- SCHOOL: the school brain, fixed.
+Measure: age at death (capped at 80), with deaths by cause and "reached 16" beside it; n = 150 per arm.
+Main comparison: SCHOOL minus OLD, the paired mean difference with a 95% bootstrap interval (10,000 resamples of
+worlds, seed 1). Second: SCHOOL minus MBB (did the school help?). Read: SCHOOL is "as good as the old mind" only if the
+interval for SCHOOL minus OLD includes 0 or is above it; "the school helped" only if SCHOOL minus MBB is above 0.
+Also: the old mind on school lives 201-300 (same seeds as the school) to read the gap's trend over the whole school.
+Runs on the Oracle VM (Linux; the school ran on the PC: not bit-identical, named). `run_school.py` with BX1_FIXED and
+BX1_SEED0=20001 (BX1_BASELINE=1 for OLD); analysis `analyse_aftertest.py`, written before the data.

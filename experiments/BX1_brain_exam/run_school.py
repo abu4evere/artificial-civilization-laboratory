@@ -28,8 +28,10 @@ from acl import brain_bx1 as BX           # noqa: E402
 import os
 KEY = "school"
 OUT = HERE / "output"
+FIXED = os.environ.get("BX1_FIXED")                # a fixed brain (no learning, nothing saved): the after-school test
+SEED0 = int(os.environ.get("BX1_SEED0", "10001"))  # the test uses new worlds (20001+), never the school's
 BASE = os.environ.get("BX1_BASELINE") == "1"      # the old mind for the same first babies (no brain, no learning)
-TAG = ("baseline" if BASE else "school") + os.environ.get("BX1_PART", "")    # a second worker: its own log
+TAG = ("baseline" if BASE else ("fixed_" + Path(FIXED).stem) if FIXED else "school") + os.environ.get("BX1_PART", "")    # a second worker: its own log
 START = int(os.environ.get("BX1_START", "0"))     # a second worker starts at this life index (same seeds as one worker)
 
 
@@ -92,7 +94,7 @@ def one_life(net, seed, max_years):
                 if r is not None:
                     cells.append(r)
                     rets.append(feeling(cg))
-        e = None if BASE else BX.learn(net, m, lev, cells, rets)
+        e = None if (BASE or FIXED) else BX.learn(net, m, lev, cells, rets)
         if e is not None:
             errs.append(e)
             lessons += len(cells)
@@ -113,14 +115,14 @@ def main():
     OUT.mkdir(exist_ok=True)
     start = OUT / "school_brain.npz"
     logf = OUT / f"{TAG}_log.jsonl"
-    net = BX.load(str(start if start.exists() else HERE / "mbb_seed1.npz"), seed=1)
+    net = BX.load(str(HERE / FIXED) if FIXED else str(start if start.exists() else HERE / "mbb_seed1.npz"), seed=1)
     BX._BRAINS[KEY] = net
     done = sum(1 for _ in open(logf)) if logf.exists() else 0
     for i in range(START + done, START + done + lives):
         t0 = time.time()
-        rec = one_life(net, 10001 + i, max_years)
+        rec = one_life(net, SEED0 + i, max_years)
         rec.update(life=i + 1, seconds=round(time.time() - t0, 1))
-        if not BASE:
+        if not (BASE or FIXED):
             np.savez(start, **net.p)
         with open(logf, "a") as f:
             f.write(json.dumps(rec) + "\n")
