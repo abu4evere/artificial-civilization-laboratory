@@ -97,6 +97,12 @@ build what the makers never planned). The creator chose this order (the assistan
   briefing on ACL is `docs/deepseek_briefing_2026-11-02.md`. It is a **debate**: Claude is the council. Check each claim against the code and
   the records; where either model is wrong, tell that model with the facts and let it defend or revise; pass each one's
   main argument to the other for a reply. Report to the creator who argued what, and what survived checking.
+  **Round-table format (the creator, 25 November 2026: "yes use round-table for next council"):** one shared
+  transcript; round 1 each model answers; in rounds 2-3 each sees the others' answers and may reply, disagree or ask a
+  question directly to another model, to Claude or to the creator; Claude answers questions about the code and data
+  (checked in the files), puts questions for the creator in their inbox, relays the rest; at most 3 rounds; then
+  Claude's summary of who argued what and what survived checking. Later perhaps an API version built on the creator's
+  Unstuck (keys set by the creator only).
   The Chrome extension follows one Claude account: after switching accounts, ask the creator to sign the extension
   into the current one. When typing into ChatGPT, send one paragraph (a newline sends the message early). The main chat is very long and the
   page can freeze when typing: insert the text with JavaScript (`document.execCommand('insertText', ...)` on
