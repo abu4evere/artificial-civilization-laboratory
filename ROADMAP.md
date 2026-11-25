@@ -525,7 +525,7 @@ about themselves is theirs. It is also the strongest evidence a mind can give ab
 (the mind-evidence line: `docs/research/mind_evidence_and_growing_brains_2026-11-25.md`).
 
 **The conditions (all needed; none is in today's ACL):**
-1. **A general body** (Mind Lab's Standard Body, `D:\mindlabody\`), including a **signal action with no built-in
+1. **A general body** (Mind Lab's Standard Body, `D:\mindlab\body\`), including a **signal action with no built-in
    meaning**. Today's ACL people have hand-named actions (forage, hunt, make) and a hand-written way of telling
    (`acl/information.py`: stories, methods and claims pass as structured knowledge, with noise). That telling gives
    meaning for free; for a language to be invented, it has to give way to free signals.
