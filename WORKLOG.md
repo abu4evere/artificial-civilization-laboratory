@@ -1157,3 +1157,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-11-25 11:46 The creator: "Yes publish it": GitHub profile README (abu4evere/abu4evere) updated (Mind Lab, Crafter outside exam, ACL brain school; 190 studies, 72 tests, links fixed).
 - 2026-11-25 11:52 The creator added GPT's 'lessons from Ava' to the plan: D:\mindlab\brain_v1_plan.md (status per row; proposed next big study G1 'grow and protect', not started).
 - 2026-11-25 12:01 The creator: council becomes a round-table (one transcript, up to 3 rounds, models may ask each other, Claude or the creator); recorded in CLAUDE.md.
+- 2026-11-25 12:21 Check: current brains (W3n HR, W3p MBb) show no post-childhood decline (lifespan flat 2.4M->4.0M); G0 changed to forgetting between worlds (brain_v1_plan).
