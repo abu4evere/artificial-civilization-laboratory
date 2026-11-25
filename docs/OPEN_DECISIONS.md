@@ -385,3 +385,10 @@ The assistant's reading, for the creator to decide later (nothing is built):
   - an offered pill is an intervention, so it would be logged as a situation, like the Long World's, never aimed at
     an outcome.
 - **When:** after the brain can survive and learn in ACL. It cannot be tested before Bob exists.
+
+## For the 7 December review: a general body for ACL's people (the creator, 25 November 2026)
+- The creator: "our old acl agent does not have general body and i think that was our mistake for brain"; the body is
+  part of the conditions for a language to emerge in ACL (ROADMAP: 'Long-term goal: a language nobody wrote').
+- To decide at the review: whether ACL's people get Mind Lab's Standard Body (raw senses, feelings, move, use, operate,
+  and a meaning-free signal action) in a copy of nature first, and whether `acl/information.py`'s hand-written telling
+  gives way to free signals in that copy. Nature stays frozen until then; nothing is changed now.

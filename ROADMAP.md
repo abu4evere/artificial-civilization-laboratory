@@ -512,6 +512,43 @@ each earlier stage will change what this one looks like.
 
 ---
 
+## Long-term goal: a language nobody wrote (the creator, 25 November 2026)
+
+The creator, 25 November 2026: "add that language goal to the plan for acl", and: "I think our old acl agent does not
+have general body and i think that was our mistake for brain because it matters a lot in world. I think body is part
+of that condition to emerge language inside acl. And i guess if we want them to invent full language it takes too much
+time inside simulation and i think in that times we need much better machines computers".
+
+**The goal:** ACL's people invent their own signals, and in time a language, with no meanings given by us and no
+language model inside. Because nothing in them was trained on human words, anything they come to say about the world or
+about themselves is theirs. It is also the strongest evidence a mind can give about itself that we could ever check
+(the mind-evidence line: `docs/research/mind_evidence_and_growing_brains_2026-11-25.md`).
+
+**The conditions (all needed; none is in today's ACL):**
+1. **A general body** (Mind Lab's Standard Body, `D:\mindlabody\`), including a **signal action with no built-in
+   meaning**. Today's ACL people have hand-named actions (forage, hunt, make) and a hand-written way of telling
+   (`acl/information.py`: stories, methods and claims pass as structured knowledge, with noise). That telling gives
+   meaning for free; for a language to be invented, it has to give way to free signals.
+2. **Reasons to talk:** danger, hunting together, food and water far away. Signals appear only where talking pays.
+3. **Brains that learn within a life and from others** (the brain road: W3r and CX2 now, learning from others next).
+4. **Deep time:** many generations, so that signals become shared conventions (research on iterated learning).
+
+**The stages (each a frozen study, each decoded against the speakers' own brains and situations):**
+1. alarm-like calls ("danger", "food here");
+2. signals about others and about oneself ("hungry", "help", "me");
+3. combinations of signals (the first grammar);
+4. talk about what is not present (past, plans, stories): a full language.
+
+**Compute (the creator's point):** stages 1-2 are within reach of our machines (the PC, Oracle, Google). A full
+language would need far bigger brains and far longer runs than CPUs allow: a GPU cluster or a research allocation
+(CUNY's HPCC through a faculty sponsor, student cloud credits, a grant). That is a reason to show stages 1-2 first:
+results open doors to bigger machines.
+
+**When:** after Body v1 works in Mind Lab and Crafter, and after the world review of 7 December 2026 decides whether ACL's
+people get the general body (`docs/OPEN_DECISIONS.md`).
+
+---
+
 ## Rules that never change
 
 These hold at every stage, whatever the results:
