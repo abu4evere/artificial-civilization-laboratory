@@ -98,3 +98,13 @@ Every such decision is listed here with:
 - Estimate that the step succeeds (valid, answers its question, keeps the rules): about 75%.
 - Authority: the creator's handover (21 Nov) and "keep working on project now" (22 Nov). Signed: the assistant, under
   the creator's handover.
+
+## 25 Nov 2026, 06:50: CX2-C, a confirmatory run of CX2 on new seeds (sleep mode)
+- Decision: run CX2's identical frozen code and analysis on Crafter seeds 100001+, 3M steps per arm (LEARN, RANDOM-5P,
+  BLIND, NAMED), on the idle PC; confirmed if the primary interval is again above 0 (`D:\mindlab\exam_crafter\CX2\questions.md`).
+- Why: CX2's primary passed narrowly (+0.027 [+0.004, +0.052]); the PC was idle (the creator: "make sure you using our
+  machines everything at max capacity").
+- Council: GPT yes (55% at the same size); Gemini yes (58% same size, ~85% at 3x; check NAMED for artefacts: checked).
+- Estimate that the step succeeds (valid, answers its question, keeps the rules): about 85% that it runs validly and
+  answers the question; about 80% that the primary is confirmed at 3x.
+- Signed: the assistant, under the creator's sleep-mode autonomy.
