@@ -36,3 +36,8 @@ sense or feeling; (b) grow capacity where surprise stays high. Judged by learnin
 
 Next on this side: read Butlin et al. in full and score the current brain (MBb) against the indicator list, as a first,
 honest baseline (expected: very few properties present).
+
+## Update (25 Nov 2026)
+Butlin et al. 2023: the indicator table (Table 1) and sections 2.4.5-2.4.6 now read in the full text (extracted
+locally). First baseline scored: `D:\mindlab\scorecard\mind_evidence_MBb_2026-11-25.md` (MBb: 1 present (weak), 2 partial,
+11 absent; the assistant's reading, not yet reviewed by the council).
