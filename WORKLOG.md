@@ -1156,3 +1156,4 @@ creator's explicit OK. Cloud runs: .github/workflows/cloud-run.yml; fetch with t
 - 2026-11-25 06:46 Sleep-mode decision: CX2-C confirmatory run started on the PC (seeds 100001+, 3M steps x 4 arms, identical frozen code; council GPT 55%, Gemini 58%/85% at 3x); autonomous_decisions.md.
 - 2026-11-25 11:46 The creator: "Yes publish it": GitHub profile README (abu4evere/abu4evere) updated (Mind Lab, Crafter outside exam, ACL brain school; 190 studies, 72 tests, links fixed).
 - 2026-11-25 11:52 The creator added GPT's 'lessons from Ava' to the plan: D:\mindlab\brain_v1_plan.md (status per row; proposed next big study G1 'grow and protect', not started).
+- 2026-11-25 12:01 The creator: council becomes a round-table (one transcript, up to 3 rounds, models may ask each other, Claude or the creator); recorded in CLAUDE.md.
