@@ -1,6 +1,6 @@
 # Read this first (any assistant, any account)
 
-**Latest handoff (20 November 2026): `docs/HANDOFF_2026-11-20.md`. Read it right after this file** (older: `docs/HANDOFF_2026-11-15.md`, `docs/HANDOFF_2026-11-13.md`, `docs/HANDOFF_2026-11-08.md`, `docs/HANDOFF_2026-11-02.md`, `docs/HANDOFF_2026-10-30.md`). The previous assistant's memory notes are in `research/local/assistant_memory_2026-11-13/` (local). **The creator runs ACL (here), Cradle (`D:\cradle`) and Mind Lab (`D:\mindlab`)**; since 12 November the brain is built in Mind Lab and ACL is the final exam.
+**Latest handoff (25 November 2026): `docs/HANDOFF_2026-11-25.md`** (for a session on another computer). Before it: `docs/HANDOFF_2026-11-20.md`. Read it right after this file** (older: `docs/HANDOFF_2026-11-15.md`, `docs/HANDOFF_2026-11-13.md`, `docs/HANDOFF_2026-11-08.md`, `docs/HANDOFF_2026-11-02.md`, `docs/HANDOFF_2026-10-30.md`). The previous assistant's memory notes are in `research/local/assistant_memory_2026-11-13/` (local). **The creator runs ACL (here), Cradle (`D:\cradle`) and Mind Lab (`D:\mindlab`)**; since 12 November the brain is built in Mind Lab and ACL is the final exam.
 
 The creator works with more than one assistant account. This file is the shared mind: read it, then the tail of
 `WORKLOG.md`, and the creator's inbox `notes/for_claude.md` (local, written in Obsidian; act on new items and move them
