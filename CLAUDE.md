@@ -81,6 +81,10 @@ build what the makers never planned). The creator chose this order (the assistan
 ## How work is done
 - **Talk to the creator simply** (the creator, 27 October 2026: "always send me messages more clearly simply"): plain
   words, short sentences, the big picture first, then what they need to decide. Keep technical detail in the files.
+- **Reports to the creator go by email, not Telegram (the creator, 25 November 2026):** "before we used to communicate
+  through telegram but now i want through gmail ... lmk everything through email cuz im using this pc remotely". Send
+  the morning reports, autonomous decisions, live-rule notices and anything that needs them to the address the creator
+  gives (connected Gmail), short and simple; wherever this file says Telegram or `tools/notify.py`, use that email.
 - **The creator's ideas go into the book notes automatically** (the creator, 31 October 2026: "do not ask me to add my
   ideas to the book but add them automaticly"). Whenever they share an idea or reflection about the project, append it,
   in their exact words, to `drafts/book_rewrite/part2/notes_for_book_<date>.md` (local only, gitignored; never commit or
@@ -94,7 +98,12 @@ build what the makers never planned). The creator chose this order (the assistan
   **Ask DeepSeek too (the creator, 2 November 2026):** "i also opened deepseek tab use that as extra for gpt and
   gemini from now on you will use those 3". DeepSeek (https://chat.deepseek.com, in the same Chrome) gets the same
   question text as GPT and Gemini, and its answer is saved beside theirs, labelled as an opinion, not sign-off. Its
-  briefing on ACL is `docs/deepseek_briefing_2026-11-02.md`. It is a **debate**: Claude is the council. Check each claim against the code and
+  briefing on ACL is `docs/deepseek_briefing_2026-11-02.md`.
+  **Ask Grok too (the creator, 25 November 2026):** "also opened grok ai as new member of council". Grok
+  (https://grok.com, in the same Chrome; its chat "ACL and Mind Lab Research Briefing for Grok") is the fourth member:
+  the same question text as the others, its answer saved beside theirs, labelled as an opinion, not sign-off. Its
+  briefing: `docs/grok_briefing_2026-11-25.md`; its first reply and Claude's check: `docs/grok_review_briefing_2026-11-25.md`.
+  On this account only Grok's "Fast" mode is free (Expert and Auto open a paid-plan page: never buy). It is a **debate**: Claude is the council. Check each claim against the code and
   the records; where either model is wrong, tell that model with the facts and let it defend or revise; pass each one's
   main argument to the other for a reply. Report to the creator who argued what, and what survived checking.
   **Round-table format (the creator, 25 November 2026: "yes use round-table for next council"):** one shared
