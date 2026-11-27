@@ -115,3 +115,8 @@ Every such decision is listed here with:
 - Decision: adopt that order and those rules as the working roadmap. Each step remains its own study with its own council, frozen plan and blind recompute.
 - Estimate that the step succeeds (valid, answers its question, keeps the rules): about 85% (it is an order, not a result; every study keeps its own gates).
 - Signed: the assistant, under the creator's sleep-mode autonomy.
+
+## 2026-11-27 00:36 EST — V2-1 Revise signed off and frozen (Mind Lab brain_v2/V21/questions.md, tag V21-frozen)
+- Under the creator's sleep-mode autonomy (27 Nov). Council (round 1; Mind Lab brain_v2/V21/roundtable_v21_2026-11-27.md): GPT and Gemini: reset the whole look to unknown on a confident contradiction (Claude's check: scaling counts keeps the ratio, so "fed" on walls could never be revised); DeepSeek: reset only the contradicted consequence (fails the same check). Test B in the same study (2 of 3). Added on all three's advice: meaning recovery, false-reset rate, the hunger reflex's share of post-swap meals. Grok not asked (free limit).
+- Estimate that the step succeeds (valid, answers its question, keeps the rules): about 80% (test lives only, frozen brains, a fixed rule, a sham and a no-loss gate).
+- Signed: the assistant, under the creator's sleep-mode autonomy.
