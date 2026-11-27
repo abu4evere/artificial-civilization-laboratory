@@ -120,3 +120,8 @@ Every such decision is listed here with:
 - Under the creator's sleep-mode autonomy (27 Nov). Council (round 1; Mind Lab brain_v2/V21/roundtable_v21_2026-11-27.md): GPT and Gemini: reset the whole look to unknown on a confident contradiction (Claude's check: scaling counts keeps the ratio, so "fed" on walls could never be revised); DeepSeek: reset only the contradicted consequence (fails the same check). Test B in the same study (2 of 3). Added on all three's advice: meaning recovery, false-reset rate, the hunger reflex's share of post-swap meals. Grok not asked (free limit).
 - Estimate that the step succeeds (valid, answers its question, keeps the rules): about 80% (test lives only, frozen brains, a fixed rule, a sham and a no-loss gate).
 - Signed: the assistant, under the creator's sleep-mode autonomy.
+
+## 2026-11-27 04:23 EST — V2-2 Goals signed off and frozen (Mind Lab brain_v2/V22/questions.md, tag V22-frozen)
+- Under the creator's sleep-mode autonomy. Council (round 1; Mind Lab brain_v2/V22/roundtable_v22_2026-11-27.md): all three for a zero-initialised goal layer with adult fine-tuning and the body's reward unchanged; arbitration becomes its own later study (GOAL-NOFLOOR kept as a diagnostic); retirement bar -0.2 chains plus survival and Bob Profile no-loss; GOAL-ABLATE added at test (GPT); training length fixed now, blind to chains. Grok not asked (free limit).
+- Estimate that the step succeeds (valid, answers its question, keeps the rules): about 70%; the largest risk is engineering (a fine-tuning loop around the frozen trainer), then the set-point reward.
+- Signed: the assistant, under the creator's sleep-mode autonomy.
