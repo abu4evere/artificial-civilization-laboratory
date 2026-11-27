@@ -125,3 +125,8 @@ Every such decision is listed here with:
 - Under the creator's sleep-mode autonomy. Council (round 1; Mind Lab brain_v2/V22/roundtable_v22_2026-11-27.md): all three for a zero-initialised goal layer with adult fine-tuning and the body's reward unchanged; arbitration becomes its own later study (GOAL-NOFLOOR kept as a diagnostic); retirement bar -0.2 chains plus survival and Bob Profile no-loss; GOAL-ABLATE added at test (GPT); training length fixed now, blind to chains. Grok not asked (free limit).
 - Estimate that the step succeeds (valid, answers its question, keeps the rules): about 70%; the largest risk is engineering (a fine-tuning loop around the frozen trainer), then the set-point reward.
 - Signed: the assistant, under the creator's sleep-mode autonomy.
+
+## 2026-11-27 15:14 EST — V2-3 (keep learning for life, with protection) signed off and frozen (Mind Lab brain_v2/V23/questions.md, tag V23-frozen)
+- Under the creator's sleep-mode autonomy. Council round 1 (GPT, Gemini, DeepSeek): all for ANCHOR and REHEARSE, a pilot to check the new world is learnable (rule fixed: FREE - FROZEN >= +0.08 or switch to a harder world), REPLAY added (Gemini, DeepSeek), SLOW kept, 1M steps (2 of 3), the margin fixed before data. Grok not asked (free limit).
+- Estimate of success (valid, answers its question, keeps the rules): about 70%.
+- Signed: the assistant, under the creator's sleep-mode autonomy.
