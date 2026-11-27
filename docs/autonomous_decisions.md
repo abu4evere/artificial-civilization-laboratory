@@ -108,3 +108,10 @@ Every such decision is listed here with:
 - Estimate that the step succeeds (valid, answers its question, keeps the rules): about 85% that it runs validly and
   answers the question; about 80% that the primary is confirmed at 3x.
 - Signed: the assistant, under the creator's sleep-mode autonomy.
+
+## 2026-11-27 00:32 EST — Brain v2 roadmap order adopted (Mind Lab brain_v2_roadmap_draft.md, revised section)
+- Under the creator's sleep-mode autonomy (27 Nov, in the Claude Code session: "if u need permission i am giving u right now just ask council then go ahead").
+- Council (round-table, 2 rounds; Mind Lab roadmap_v2_roundtable_2026-11-27.md): GPT, Gemini, DeepSeek agree on V2-1 Revise first, then Goals (with arbitration), then lifelong learning; goals beside hunger; fear in Mind Lab first; growth later; no-loss gates, unseen evaluation worlds, a retirement rule for written decisions. Grok: no answer (free limit reached; nothing bought).
+- Decision: adopt that order and those rules as the working roadmap. Each step remains its own study with its own council, frozen plan and blind recompute.
+- Estimate that the step succeeds (valid, answers its question, keeps the rules): about 85% (it is an order, not a result; every study keeps its own gates).
+- Signed: the assistant, under the creator's sleep-mode autonomy.
