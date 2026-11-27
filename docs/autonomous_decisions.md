@@ -130,3 +130,10 @@ Every such decision is listed here with:
 - Under the creator's sleep-mode autonomy. Council round 1 (GPT, Gemini, DeepSeek): all for ANCHOR and REHEARSE, a pilot to check the new world is learnable (rule fixed: FREE - FROZEN >= +0.08 or switch to a harder world), REPLAY added (Gemini, DeepSeek), SLOW kept, 1M steps (2 of 3), the margin fixed before data. Grok not asked (free limit).
 - Estimate of success (valid, answers its question, keeps the rules): about 70%.
 - Signed: the assistant, under the creator's sleep-mode autonomy.
+
+## 2026-11-27 16:01 EST — V2-3 amendment A1 before any main-run data: B = food regrowth x1.25 (Mind Lab brain_v2/V23/amendment.md, tag V23-amended)
+- Found while building: in the frozen B1 (regrowth x2) the frozen walker survived 0.00 on the pilot lands, and W3's old calibration had already shown that even the scripted forager survives 0.0 at that regrowth (0.9 at home). B2 is harsher. The frozen rule would have put every arm at zero survival in B, so the study could not answer its question.
+- Scan (frozen walker and scripted forager only; no learning arm): R 250 forager 0.95, frozen walker 0.60; R 300 forager 0.25; R 400 all 0. Chosen by W3's own calibration criterion (scarcest R with the forager at least 0.90): R 250.
+- Council: GPT 97%, Gemini 95%, DeepSeek 86%, all for the amendment; commitments: report all pilot and scan results, no further change to B, FREE failing is a finding. Grok not asked (free limit).
+- Estimate of success (valid, answers its question, keeps the rules): about 70%.
+- Signed: the assistant, under the creator's sleep-mode autonomy.
